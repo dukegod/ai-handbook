@@ -1,0 +1,21 @@
+CLAUDE.md
+  s_404a423e23bb3d::t_ddc32ad1e74ff4 117,119-125
+.npmrc
+  s_404a423e23bb3d::t_aa7ffafa8cb2a7 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "6e78e96ccddf3eee8bb35cd8b8295a010fa63733",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
