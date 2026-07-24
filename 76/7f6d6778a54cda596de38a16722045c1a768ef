@@ -1,0 +1,28 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_a926e7a4a23e1e 178
+claude-code/ecosystem/third-party-models.md
+  s_404a423e23bb3d::t_f47a0f2ce074e2 1-198
+getting-started/installation.md
+  s_404a423e23bb3d::t_e241e8740d30d0 110,112-113,115-116
+  s_404a423e23bb3d::t_10315aa85a109f 91,99,108,114
+  s_404a423e23bb3d::t_8b0db488a8ec65 3,6-11,16,18,20,22-25,27,29,31-39,41,43,45-90,92-98,100-107,109,111,118-199,207-209
+  s_404a423e23bb3d::t_0eef9b2e2f5731 117
+contributing/roadmap.md
+  s_404a423e23bb3d::t_9e3a27ea988c18 76-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "767f6d6778a54cda596de38a16722045c1a768ef",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
