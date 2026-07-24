@@ -1,0 +1,19 @@
+claude-code/basics/sessions.md
+  s_404a423e23bb3d::t_d1385202327c74 3,6-11,16,18,23-186,194-197
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "94dae5a4a19695004eed74b82ab9b91cf7a24d07",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
