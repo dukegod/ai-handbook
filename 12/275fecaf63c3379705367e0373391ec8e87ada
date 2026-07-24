@@ -1,0 +1,19 @@
+getting-started/what-is-claude-code.md
+  s_404a423e23bb3d::t_6ccd97f38ce4fd 3,6-11,16,18,22-25,28,30,32,34,36-38,40-127,131
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "12275fecaf63c3379705367e0373391ec8e87ada",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
