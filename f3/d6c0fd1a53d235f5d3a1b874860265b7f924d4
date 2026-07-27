@@ -1,0 +1,20 @@
+claude-code/basics/plan-mode.md
+  s_404a423e23bb3d::t_4ef78976ef1d28 150-151
+  s_404a423e23bb3d::t_e36704d5dae72d 3,6-12,17,19,24-26,29,31-32,34,36,38-43,45-140,144-145,149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "f3d6c0fd1a53d235f5d3a1b874860265b7f924d4",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
