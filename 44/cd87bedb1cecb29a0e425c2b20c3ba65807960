@@ -1,0 +1,22 @@
+claude-code/basics/model-selection.md
+  s_404a423e23bb3d::t_5d4886d3a7a801 3,6-13,18,20,24-210,214,218-221
+CLAUDE.md
+  s_404a423e23bb3d::t_936b58e23abe71 135,137,139-141,143-152
+  s_404a423e23bb3d::t_1d69f2aa63a4b9 163-166
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "44cd87bedb1cecb29a0e425c2b20c3ba65807960",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
