@@ -1,0 +1,23 @@
+claude-code/basics/sessions.md
+  s_404a423e23bb3d::t_b42842f3d9c596 185-188
+  s_404a423e23bb3d::t_1adefefcb2a919 6-7,9,12
+  s_404a423e23bb3d::t_eb22628b877e95 71,76,78
+.vitepress/config.ts
+  s_404a423e23bb3d::t_99448159506d72 83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "8b82713c074abcf9c65def2a8122adf40ccb219c",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
