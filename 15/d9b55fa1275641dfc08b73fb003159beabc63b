@@ -1,0 +1,24 @@
+reference/cli-flags.md
+  s_404a423e23bb3d::t_8d4dc23fb633ab 3,6-12,17,19,21,23,25-152,154-156,158-159,161-162,164-165,167-168,170-171,174,176-182,184,186-188,192-194,198-200
+contributing/roadmap.md
+  s_404a423e23bb3d::t_fcf6050b504480 66,69
+  s_404a423e23bb3d::t_f2bf093e52b6ed 38
+.vitepress/config.ts
+  s_404a423e23bb3d::t_3ff14bb95a6f77 313
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "15d9b55fa1275641dfc08b73fb003159beabc63b",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
