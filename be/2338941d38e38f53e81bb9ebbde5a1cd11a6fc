@@ -1,0 +1,23 @@
+getting-started/installation.md
+  s_404a423e23bb3d::t_c853669b2463d2 197-200
+  s_404a423e23bb3d::t_0c09431a63fe35 6-7,9,12
+  s_404a423e23bb3d::t_92e19a18d23f05 30
+.vitepress/config.ts
+  s_404a423e23bb3d::t_ee787ea9dcddd4 63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "be2338941d38e38f53e81bb9ebbde5a1cd11a6fc",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
