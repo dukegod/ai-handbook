@@ -1,0 +1,23 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_9c0abff634bff4 65
+getting-started/mental-model.md
+  s_404a423e23bb3d::t_288283920ff68f 6-7,9,12
+  s_404a423e23bb3d::t_2a4f3b5805018d 172-176
+  s_404a423e23bb3d::t_eed27a93a07dca 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "6ec7525a1011a1d6ebe4fbd0e151d058559cdef8",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
