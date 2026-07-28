@@ -1,0 +1,23 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_4beda94ffb05f3 86
+claude-code/basics/permissions.md
+  s_404a423e23bb3d::t_d4a7e58d1a251f 6-7,9,12
+  s_404a423e23bb3d::t_ea9117a0533bce 61
+  s_404a423e23bb3d::t_103cadb35d043c 205-208
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "c453e8e776d4b6cee4520fb01fabad4a886cf994",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
