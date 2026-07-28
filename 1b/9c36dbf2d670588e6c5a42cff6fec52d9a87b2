@@ -1,0 +1,23 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_b8bafc0e3c77af 89
+claude-code/basics/plan-mode.md
+  s_404a423e23bb3d::t_278bea22127ad2 6-7,12
+  s_404a423e23bb3d::t_ffc056a1c9fdf3 138-140
+  s_404a423e23bb3d::t_92cb8d10a42c1b 87
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "1b9c36dbf2d670588e6c5a42cff6fec52d9a87b2",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
