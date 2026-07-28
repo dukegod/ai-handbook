@@ -1,0 +1,24 @@
+contributing/roadmap.md
+  s_404a423e23bb3d::t_3d8c328c9ca60e 37
+  s_404a423e23bb3d::t_f1715c7c28d401 53,61
+.vitepress/config.ts
+  s_404a423e23bb3d::t_6392487d843c07 95
+claude-code/tools/overview.md
+  s_404a423e23bb3d::t_4d39724c557d37 3,6-12,17,19,23-26,28,30-31,33,35,37,39-44,46,48,50-156,160-161,165-167
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "431a2edc1b4a07212fee7c56d4ebac931873e8ce",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
