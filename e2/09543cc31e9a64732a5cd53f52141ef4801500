@@ -1,0 +1,23 @@
+contributing/roadmap.md
+  s_404a423e23bb3d::t_64408afeab839f 80
+.vitepress/theme/components/VersionBanner.vue
+  s_404a423e23bb3d::t_1177e6679703e4 1-111
+.vitepress/theme/index.ts
+  s_404a423e23bb3d::t_4d46a893f0f3f6 3-6,8,10,13,17-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "e209543cc31e9a64732a5cd53f52141ef4801500",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
