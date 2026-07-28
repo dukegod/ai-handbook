@@ -1,0 +1,23 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_527d97efafc791 62
+getting-started/what-is-claude-code.md
+  s_404a423e23bb3d::t_1163342fed625e 126-128
+  s_404a423e23bb3d::t_f429232690b9fe 39
+  s_404a423e23bb3d::t_9d568ad1e301b4 6-7,9,12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "51cde134ff9898e3b959b4f38ec52a443112221f",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
