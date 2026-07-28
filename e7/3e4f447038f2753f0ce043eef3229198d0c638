@@ -1,0 +1,38 @@
+contributing/roadmap.md
+  s_404a423e23bb3d::t_9d486445025ef8 76,78-79
+.vitepress/config.ts
+  s_404a423e23bb3d::t_2324db8a3b0a11 41
+  s_404a423e23bb3d::t_f9861ebeace197 29
+index.md
+  s_404a423e23bb3d::t_221dc9ea570fba 10-12
+assets/logo-drafts/v1-eight-spike.svg
+  s_404a423e23bb3d::t_a39209cc814c89 1-17
+assets/logo-drafts/v2-star-with-orbit.svg
+  s_404a423e23bb3d::t_3a94288e1ad418 1-19
+assets/logo-drafts/v3-star-with-satellites.svg
+  s_404a423e23bb3d::t_7be466bc9d4f6e 1-20
+assets/logo-drafts/v4-comet.svg
+  s_404a423e23bb3d::t_0abc60e5ef554c 1-23
+public/favicon.svg
+  s_404a423e23bb3d::t_800b3ec9da1fc6 1-19
+public/hero.svg
+  s_404a423e23bb3d::t_a5ffe1f596a320 1-64
+public/logo.svg
+  s_404a423e23bb3d::t_08fb0f27b72f04 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "e73e4f447038f2753f0ce043eef3229198d0c638",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
