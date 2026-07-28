@@ -1,0 +1,25 @@
+contributing/checklist-published.md
+  s_404a423e23bb3d::t_0fef5b0f6c9dfd 28
+  s_404a423e23bb3d::t_f6498d0257e66a 128,132
+  s_404a423e23bb3d::t_75a915993b0264 1-27,29-127,129-131,133-220
+.vitepress/config.ts
+  s_404a423e23bb3d::t_8ae4b15582136b 335
+contributing/style-guide.md
+  s_404a423e23bb3d::t_bd748ad04923e2 212-213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "883da45601a6e112d5c14033694dab8f1a29612a",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
