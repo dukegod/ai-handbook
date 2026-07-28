@@ -1,0 +1,24 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_f390a7074d4eea 128
+claude-code/skills/what-is-a-skill.md
+  s_404a423e23bb3d::t_1c340e4b9b60c4 3,6-12,17,19,23-28,30,32-33,35,37,39-46,48,50-126,128-130,134-135,140-141
+contributing/roadmap.md
+  s_404a423e23bb3d::t_7611b34cb7ba63 38
+  s_404a423e23bb3d::t_545b62a45b8fbf 66,68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "43b5a09c038d935a22531e507777cc0c35397709",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
