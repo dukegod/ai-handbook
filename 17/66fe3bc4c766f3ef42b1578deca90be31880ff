@@ -1,0 +1,21 @@
+getting-started/comparisons.md
+  s_404a423e23bb3d::t_6c7b512edbe1d9 6-7,9,12
+.vitepress/config.ts
+  s_404a423e23bb3d::t_fa9888f2d063d2 66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "1766fe3bc4c766f3ef42b1578deca90be31880ff",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
