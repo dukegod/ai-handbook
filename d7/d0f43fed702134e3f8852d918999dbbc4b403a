@@ -1,0 +1,25 @@
+contributing/roadmap.md
+  s_404a423e23bb3d::t_b007446f4d44d4 81
+.vitepress/theme/index.ts
+  s_404a423e23bb3d::t_5e7fab8d476faf 3,7-9,25
+  s_404a423e23bb3d::t_bef10d546c618a 10-11
+  s_404a423e23bb3d::t_0ae032c7ea76c4 4-5,12-13,18
+.vitepress/theme/components/DifficultyBadge.vue
+  s_404a423e23bb3d::t_7a2521db920368 1-88
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "d7d0f43fed702134e3f8852d918999dbbc4b403a",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
