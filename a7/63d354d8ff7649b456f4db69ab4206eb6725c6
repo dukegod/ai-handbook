@@ -1,0 +1,28 @@
+contributing/roadmap.md
+  s_404a423e23bb3d::t_2976a9d58829e4 33,35,42
+  s_404a423e23bb3d::t_73009140a95863 39
+  s_404a423e23bb3d::t_36296b65aaf7d9 72,74
+reference/glossary.md
+  s_404a423e23bb3d::t_39dbf351e31236 19-21,25,29
+  s_404a423e23bb3d::t_f878ed4b92f878 3,6-12,17,23,31,33-36,38,40,42-43,47-48,52-53
+  s_404a423e23bb3d::t_f9893495c78e98 30
+contributing/glossary.md
+  s_404a423e23bb3d::t_918d6c94b09ec3 33
+  s_404a423e23bb3d::t_9ccfc87d6ad6d6 108-109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "a763d354d8ff7649b456f4db69ab4206eb6725c6",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
