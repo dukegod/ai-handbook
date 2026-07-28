@@ -1,0 +1,24 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_c512d4b1685d4a 295
+cookbook/first-real-task.md
+  s_404a423e23bb3d::t_9c8597b31dec7b 3,6-12,17-188,198-199
+contributing/roadmap.md
+  s_404a423e23bb3d::t_37cbe7f0dad7a2 38
+  s_404a423e23bb3d::t_14688d98f6dc9c 66,70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "9dfa4a30543699e89141193678fcd97d3cc52cd9",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
