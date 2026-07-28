@@ -1,0 +1,20 @@
+claude-code/customization/slash-commands.md
+  s_404a423e23bb3d::t_c7fd40dea707d2 6-7,12
+  s_404a423e23bb3d::t_2f53b775927f22 172-173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "bc70095cfb00f8877edda1efd4acf6b87dedbe73",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
