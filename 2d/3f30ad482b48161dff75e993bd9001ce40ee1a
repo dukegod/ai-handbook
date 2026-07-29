@@ -1,0 +1,21 @@
+claude-code/skills/skills-vs-commands-vs-agents.md
+  s_404a423e23bb3d::t_f160e13e6be5e0 3,6-12,17-19,23-72,74,76-106,110-113,117-125
+.vitepress/config.ts
+  s_404a423e23bb3d::t_001938a96c5009 132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "2d3f30ad482b48161dff75e993bd9001ce40ee1a",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
