@@ -1,0 +1,21 @@
+claude-code/basics/context-window.md
+  s_404a423e23bb3d::t_5c681a6c8f83ae 3,6-12,17-19,23-27,31-133,137-139,143-150
+.vitepress/config.ts
+  s_404a423e23bb3d::t_9047496bbc2a5a 84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "9c65e04c39f1aef8f123a3961683309e7e5211f8",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
