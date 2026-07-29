@@ -1,0 +1,21 @@
+claude-code/ecosystem/third-party-models.md
+  s_404a423e23bb3d::t_726368dbc7d2cd 115,117-120,122-126
+  s_404a423e23bb3d::t_759f8c0c0ea4fa 7,12-15,18
+  s_404a423e23bb3d::t_ce38b95e29d70a 187,193-200
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "f8ea4355593c92e939863c24b55175e8729e9fcf",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
