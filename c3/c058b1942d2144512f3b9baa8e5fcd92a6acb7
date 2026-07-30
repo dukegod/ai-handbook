@@ -1,0 +1,21 @@
+claude-code/skills/custom-skill.md
+  s_404a423e23bb3d::t_8f126ac6ababaa 3,6-13,18,20,22-25,27,29-210,214-217,221-229
+.vitepress/config.ts
+  s_404a423e23bb3d::t_6dd388a23f39f8 134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "c3c058b1942d2144512f3b9baa8e5fcd92a6acb7",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
