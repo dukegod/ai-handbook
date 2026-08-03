@@ -1,0 +1,21 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_813c6bb8a9040b 144
+claude-code/mcp/official-servers.md
+  s_404a423e23bb3d::t_a8aca8b7344c3d 3-14,19-21,25-74,76,78-119,123-125,129-137
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "40027247e9de898224f292fe9c03492e110e80ea",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
