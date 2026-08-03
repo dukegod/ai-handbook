@@ -1,0 +1,21 @@
+claude-code/mcp/transports.md
+  s_404a423e23bb3d::t_49c6b330b663ba 2-3,6-12,15,17-19,23-134,136,138-238,242-243,247-255
+.vitepress/config.ts
+  s_404a423e23bb3d::t_32668520ddd8c5 143
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "b68e8a8f92d5d4ef958eae6f1ed8fc29f6c85355",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
