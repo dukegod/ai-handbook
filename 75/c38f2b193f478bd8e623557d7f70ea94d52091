@@ -1,0 +1,21 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_44b44979eb2e62 142
+claude-code/mcp/what-is-mcp.md
+  s_404a423e23bb3d::t_d1c70008574bfb 3,6-13,18-20,24-84,86,88-130,134-136,140-148
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "75c38f2b193f478bd8e623557d7f70ea94d52091",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
