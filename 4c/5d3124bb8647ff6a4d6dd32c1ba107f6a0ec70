@@ -1,0 +1,21 @@
+claude-code/mcp/auth-and-debug.md
+  s_404a423e23bb3d::t_a3c181f6ae490f 3-12,17-19,23-109,111,113-189,193-194,198-206
+.vitepress/config.ts
+  s_404a423e23bb3d::t_b1368eaff21894 146
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "4c5d3124bb8647ff6a4d6dd32c1ba107f6a0ec70",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
