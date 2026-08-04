@@ -1,0 +1,21 @@
+.vitepress/config.ts
+  s_404a423e23bb3d::t_1a3b59966f5ade 166
+claude-code/advanced/automation.md
+  s_404a423e23bb3d::t_3bb4ee4f75b01a 3,6-13,18-20,24-105,107,109-182,186-188,192-200
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "a6de7b6869f25ccd85e482f73bc84c7e28a6bebd",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
