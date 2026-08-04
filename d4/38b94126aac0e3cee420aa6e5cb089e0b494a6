@@ -1,0 +1,21 @@
+claude-code/subagents-and-workflows/workflow-orchestration.md
+  s_404a423e23bb3d::t_4518d9b937eb50 3,6-12,17-19,23-117,119-125,127-195,199,203-210
+.vitepress/config.ts
+  s_404a423e23bb3d::t_0dd60a6a0cbb37 156
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "d438b94126aac0e3cee420aa6e5cb089e0b494a6",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
