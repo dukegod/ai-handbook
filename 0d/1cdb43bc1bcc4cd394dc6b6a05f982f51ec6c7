@@ -1,0 +1,19 @@
+contributing/roadmap.md
+  s_404a423e23bb3d::t_96e8d14486298f 105,109-147,149-153,155,157-158,160
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "0d1cdb43bc1bcc4cd394dc6b6a05f982f51ec6c7",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
