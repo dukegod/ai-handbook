@@ -1,0 +1,29 @@
+claude-code/advanced/worktree.md
+  s_404a423e23bb3d::t_222dc76fc859e9 183-184
+claude-code/advanced/memory.md
+  s_404a423e23bb3d::t_788b8ebcb6c7b2 3,6-12,17-19,23-88,90-94,96-156,160-162,166-174
+claude-code/advanced/git-workflow.md
+  s_404a423e23bb3d::t_c5c81a4abe66d7 240
+.vitepress/config.ts
+  s_404a423e23bb3d::t_7a03ca64f20dcb 168
+claude-code/advanced/headless.md
+  s_404a423e23bb3d::t_abdcf88bca9ce1 232-233
+claude-code/advanced/automation.md
+  s_404a423e23bb3d::t_7741dde443cf1b 193
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "3d040703f571b6ca9d8648f1ddb044f3d53a2b56",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
