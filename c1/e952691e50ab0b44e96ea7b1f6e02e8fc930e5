@@ -1,0 +1,21 @@
+claude-code/advanced/worktree.md
+  s_404a423e23bb3d::t_86e038d991e6ab 3,6-12,17-19,23-104,106-108,110-174,178-179,183-191
+.vitepress/config.ts
+  s_404a423e23bb3d::t_6d710a8e301e22 164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "c1e952691e50ab0b44e96ea7b1f6e02e8fc930e5",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
