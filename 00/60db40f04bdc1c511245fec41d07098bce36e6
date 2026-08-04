@@ -1,0 +1,22 @@
+claude-code/subagents-and-workflows/multi-agent-patterns.md
+  s_404a423e23bb3d::t_0c10d564ece56d 3,6-13,18-20,24-130,132,134-226,230-231,235-241
+  s_404a423e23bb3d::t_5b3481f6fae0e2 242
+.vitepress/config.ts
+  s_404a423e23bb3d::t_8cf37dfa6e7dc2 157
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "0060db40f04bdc1c511245fec41d07098bce36e6",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
