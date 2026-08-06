@@ -1,0 +1,19 @@
+claude-capabilities/models/fable.md
+  s_50afea53e07c3e::t_3c82ae6e560ac1 3-14,19,21,25-30,32,34-191,195-199,203-211
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "e4fb2dedec38b37bb80f490c1eab26872198dcd6",
+  "prompts": {},
+  "sessions": {
+    "s_50afea53e07c3e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "17fd7e0c-0ea1-4333-8127-c6e11bce84a2",
+        "model": "moonshotai/kimi-k3"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
