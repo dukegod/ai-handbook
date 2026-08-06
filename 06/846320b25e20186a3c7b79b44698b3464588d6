@@ -1,0 +1,21 @@
+cookbook/build-first-mcp-server.md
+  s_18cd01fd7f1b0f::t_0bfe1b4e8608ec 3,6-14,19,21,23,25-28,30-220,224-228,232-238
+cookbook/build-first-skill.md
+  s_18cd01fd7f1b0f::t_8a2a9b8f662a12 3,6-12,17,19,21,23-26,28-159,163-166,170-176
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "06846320b25e20186a3c7b79b44698b3464588d6",
+  "prompts": {},
+  "sessions": {
+    "s_18cd01fd7f1b0f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5dab971f-e21d-46c4-b3df-ba4709925224",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
