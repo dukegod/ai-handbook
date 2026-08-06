@@ -1,0 +1,34 @@
+examples/check-page/SKILL.md
+  s_404a423e23bb3d::t_eb90ff0145b8c9 1-19
+examples/glossary-mcp-server/main.py
+  s_404a423e23bb3d::t_4f210775c7639e 1-6
+  s_404a423e23bb3d::t_42b551522dd13f 7-9
+examples/glossary-mcp-server/pyproject.toml
+  s_404a423e23bb3d::t_4f210775c7639e 1-9
+examples/glossary-mcp-server/glossary_parser.py
+  s_404a423e23bb3d::t_3e65bf63e3c946 1-126
+examples/glossary-mcp-server/test_glossary_parser.py
+  s_404a423e23bb3d::t_8c82dea5316591 1-114
+examples/glossary-mcp-server/.python-version
+  s_404a423e23bb3d::t_4f210775c7639e 1
+examples/check-page/scripts/check_page.py
+  s_404a423e23bb3d::t_ce526790fde58f 1-212
+examples/glossary-mcp-server/uv.lock
+  s_404a423e23bb3d::t_c7709113b6903a 1-636
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "7a1dff405400085c179a20ca041a4ebabf9ad936",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
