@@ -1,0 +1,14 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 196-201,208-213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "3e647eea054fd413af907ebfef4b702a4c108759",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
