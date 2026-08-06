@@ -1,0 +1,16 @@
+examples/check-page/README.md
+  h_8cc28d3109df27 1-89
+examples/glossary-mcp-server/README.md
+  h_8cc28d3109df27 1-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "40535df15b4a2060de0f148531c86b9f71104f3b",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
