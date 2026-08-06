@@ -1,0 +1,24 @@
+claude-capabilities/core/coding.md
+  h_8cc28d3109df27 3,6-13,18-20,24-160,162-166,168-256,260-265,269-277
+claude-capabilities/core/extended-thinking.md
+  h_8cc28d3109df27 3,6-13,18-20,24-134,136-138,140-217,221-226,230-238
+claude-capabilities/core/long-context.md
+  h_8cc28d3109df27 3,6-13,18-20,24-136,138-144,146-223,227-232,236-244
+claude-capabilities/core/reasoning.md
+  h_8cc28d3109df27 3,6-13,18-20,24-104,106,108-181,185-190,194-202
+claude-capabilities/core/tool-use.md
+  h_8cc28d3109df27 3,6-12,17-19,23-226,228,230-341,345-350,354-362
+claude-capabilities/core/vision.md
+  h_8cc28d3109df27 2-3,6-12,15,17-19,23-145,147-160,162-270,274-278,282-290
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "499c803df370a3cf3f528cb2ac6d9bd1930e55cf",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
