@@ -1,0 +1,14 @@
+claude-capabilities/models/opus.md
+  h_8cc28d3109df27 2-3,6-14,17,19-21,25-103,105,107-155,159-164,168-176
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "4e10560503d1a204273ac15195ad39f4996b883f",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
