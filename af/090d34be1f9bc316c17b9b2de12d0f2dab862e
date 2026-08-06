@@ -1,0 +1,16 @@
+claude-capabilities/index.md
+  h_8cc28d3109df27 26,42
+contributing/roadmap.md
+  h_8cc28d3109df27 162,164,166,168-175,177-219
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "af090d34be1f9bc316c17b9b2de12d0f2dab862e",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
