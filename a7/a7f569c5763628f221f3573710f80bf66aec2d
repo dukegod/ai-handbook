@@ -1,0 +1,16 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 269
+claude-capabilities/agentic/computer-use.md
+  h_8cc28d3109df27 3,6-12,17,19,21,23-24,26-218,222-226,230-238
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "a7a7f569c5763628f221f3573710f80bf66aec2d",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
