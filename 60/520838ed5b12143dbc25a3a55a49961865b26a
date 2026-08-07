@@ -1,0 +1,19 @@
+contributing/roadmap.md
+  s_50afea53e07c3e::t_73880b09de1430 207,211-237
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "60520838ed5b12143dbc25a3a55a49961865b26a",
+  "prompts": {},
+  "sessions": {
+    "s_50afea53e07c3e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "17fd7e0c-0ea1-4333-8127-c6e11bce84a2",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
