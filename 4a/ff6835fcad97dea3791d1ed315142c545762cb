@@ -1,0 +1,16 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 252
+claude-capabilities/sdk/managed-agents.md
+  h_8cc28d3109df27 3,6-12,17,19,21,23-31,33-130,134-137,141-148
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "4aff6835fcad97dea3791d1ed315142c545762cb",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
