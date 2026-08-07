@@ -1,0 +1,16 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 262
+claude-capabilities/mcp-protocol/client-implementation.md
+  h_8cc28d3109df27 3,6-12,17,19,21,23,25-246,250-254,258-265
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "86c63ba70cda6cf126adac493d275a4a3700315e",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
