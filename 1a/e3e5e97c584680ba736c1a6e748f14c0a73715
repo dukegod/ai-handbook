@@ -1,0 +1,16 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 224
+claude-capabilities/prompting/prefill-and-xml.md
+  h_8cc28d3109df27 3,6-13,18-20,24-180,182-186,188-331,335-340,344-352
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "1ae3e5e97c584680ba736c1a6e748f14c0a73715",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
