@@ -1,0 +1,16 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 253
+claude-capabilities/sdk/claude-code-sdk.md
+  h_8cc28d3109df27 3,6-12,17,19,21,23-24,26-169,173-178,182-190
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "42718aae7fcbb77a58a87297aa94d9c1befd257d",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
