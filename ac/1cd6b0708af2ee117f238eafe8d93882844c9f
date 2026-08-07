@@ -1,0 +1,16 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 238
+claude-capabilities/api/files.md
+  h_8cc28d3109df27 3,6-12,17,19,21,23-27,29-177,181-184,188-195
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "ac1cd6b0708af2ee117f238eafe8d93882844c9f",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
