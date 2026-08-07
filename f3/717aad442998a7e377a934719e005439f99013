@@ -1,0 +1,21 @@
+.vitepress/config.ts
+  s_50afea53e07c3e::t_25f9d4dc5026db 221
+claude-capabilities/prompting/system-prompts.md
+  s_50afea53e07c3e::t_0b1b9a4d4f4505 2-3,6-13,16,18-20,24-162,164-169,171-288,292-296,300-308
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "f3717aad442998a7e377a934719e005439f99013",
+  "prompts": {},
+  "sessions": {
+    "s_50afea53e07c3e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "17fd7e0c-0ea1-4333-8127-c6e11bce84a2",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
