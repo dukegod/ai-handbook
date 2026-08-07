@@ -1,0 +1,16 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 280
+claude-capabilities/surfaces/desktop-app.md
+  h_8cc28d3109df27 3,6-12,17,19,21,23-27,29-100,104-106,110-117
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "89f7490f7732a1c90adbe38be8f4c4e6988f2428",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
