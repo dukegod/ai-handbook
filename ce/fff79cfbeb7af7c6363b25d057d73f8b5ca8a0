@@ -1,0 +1,14 @@
+claude-code/customization/hooks.md
+  h_8cc28d3109df27 7,12,324-367
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "cefff79cfbeb7af7c6363b25d057d73f8b5ca8a0",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
