@@ -1,0 +1,26 @@
+examples/anthropic-sdk-typescript-minimal/.gitignore
+  h_8cc28d3109df27 1-4
+examples/anthropic-sdk-typescript-minimal/.nvmrc
+  h_8cc28d3109df27 1
+examples/anthropic-sdk-typescript-minimal/README.md
+  h_8cc28d3109df27 1-136
+examples/anthropic-sdk-typescript-minimal/main.ts
+  h_8cc28d3109df27 1-171
+examples/anthropic-sdk-typescript-minimal/package.json
+  h_8cc28d3109df27 1-21
+examples/anthropic-sdk-typescript-minimal/test_main.ts
+  h_8cc28d3109df27 1-81
+examples/anthropic-sdk-typescript-minimal/tsconfig.json
+  h_8cc28d3109df27 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "e95975868e737fb5f0664597cd9922e760c43bac",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
