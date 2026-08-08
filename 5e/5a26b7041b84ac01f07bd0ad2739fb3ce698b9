@@ -1,0 +1,14 @@
+claude-code/skills/what-is-a-skill.md
+  h_8cc28d3109df27 7,9,12,117-139
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "5e5a26b7041b84ac01f07bd0ad2739fb3ce698b9",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
