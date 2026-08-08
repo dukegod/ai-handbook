@@ -1,0 +1,22 @@
+examples/anthropic-sdk-python-minimal/.python-version
+  h_8cc28d3109df27 1
+examples/anthropic-sdk-python-minimal/README.md
+  h_8cc28d3109df27 1-146
+examples/anthropic-sdk-python-minimal/main.py
+  h_8cc28d3109df27 1-176
+examples/anthropic-sdk-python-minimal/pyproject.toml
+  h_8cc28d3109df27 1-18
+examples/anthropic-sdk-python-minimal/test_main.py
+  h_8cc28d3109df27 1-128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "fd629ef0ed57d8b7e119ada8a5c3efdbeec49aca",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
