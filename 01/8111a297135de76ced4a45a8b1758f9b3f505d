@@ -1,0 +1,26 @@
+.github/workflows/lychee.yml
+  h_8cc28d3109df27 1-63
+.gitignore
+  h_8cc28d3109df27 37-38
+CLAUDE.md
+  h_8cc28d3109df27 96
+contributing/link-checking.md
+  h_8cc28d3109df27 1-197
+lychee.toml
+  h_8cc28d3109df27 1-49
+package.json
+  h_8cc28d3109df27 11-12
+scripts/check-links.sh
+  h_8cc28d3109df27 1-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "018111a297135de76ced4a45a8b1758f9b3f505d",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
