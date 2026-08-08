@@ -1,0 +1,14 @@
+claude-code/basics/claude-md.md
+  h_8cc28d3109df27 7,9,12,137-185
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "9bcc1a3f4d16beedc8545250c1d159e3b25d7857",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
