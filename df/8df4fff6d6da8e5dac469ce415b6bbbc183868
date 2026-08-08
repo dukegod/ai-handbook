@@ -1,0 +1,16 @@
+contributing/link-checking.md
+  h_8cc28d3109df27 31-32
+examples/agent-sdk-minimal/README.md
+  h_8cc28d3109df27 97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "df8df4fff6d6da8e5dac469ce415b6bbbc183868",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
