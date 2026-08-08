@@ -1,0 +1,14 @@
+contributing/link-checking.md
+  h_8cc28d3109df27 31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "31e50a96208f00351680318c1af4edec06c6a767",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
