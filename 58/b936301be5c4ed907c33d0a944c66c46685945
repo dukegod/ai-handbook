@@ -1,0 +1,26 @@
+.github/workflows/lychee.yml
+  h_8cc28d3109df27 3-4,45-46,49,55,59
+claude-capabilities/api/message-batches.md
+  h_8cc28d3109df27 11,178
+claude-capabilities/models/choosing-model.md
+  h_8cc28d3109df27 234
+claude-capabilities/models/haiku.md
+  h_8cc28d3109df27 203
+contributing/link-checking.md
+  h_8cc28d3109df27 3,7,12,16,23,26,32,34,62-68,73-74,77,79-80,87,91-92,94-97,100-110,112,114-127,133,136,138-140,163-184,188-191,194,207-213,216,218,220,223-228,231-250,258-260,262,264,266-285,289,292,297,303,305
+lychee.toml
+  h_8cc28d3109df27 4-6,8-12,15,18,21-23,27,30,32-37,40,46,48-75,78,81-107
+scripts/check-links.sh
+  h_8cc28d3109df27 4-6,23-41,44,48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "58b936301be5c4ed907c33d0a944c66c46685945",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
