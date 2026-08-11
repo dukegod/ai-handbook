@@ -1,0 +1,22 @@
+claude-capabilities/index.md
+  h_8cc28d3109df27 7
+claude-code/index.md
+  h_8cc28d3109df27 64-67,77,79,83-85
+contributing/roadmap.md
+  h_8cc28d3109df27 7,321-365,368,371-378
+cookbook/index.md
+  h_8cc28d3109df27 7,27-29,38,50
+llm-landscape/index.md
+  h_8cc28d3109df27 6,12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "371deebf8c49b6b95bb84e2edb9d6171ed05d3a9",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
