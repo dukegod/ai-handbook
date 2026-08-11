@@ -1,0 +1,16 @@
+llm-landscape/architecture.md
+  h_8cc28d3109df27 6,8-24,29-115,120-126,130-131
+lychee.toml
+  h_8cc28d3109df27 74-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "c9c3cd91f2f0dbfb15b827ca2ca894d77683064d",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
