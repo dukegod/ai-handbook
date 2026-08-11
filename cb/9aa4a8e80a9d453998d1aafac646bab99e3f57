@@ -1,0 +1,36 @@
+claude-capabilities/index.md
+  h_8cc28d3109df27 44
+claude-code/basics/claude-md.md
+  h_8cc28d3109df27 228
+claude-code/basics/permissions.md
+  h_8cc28d3109df27 219
+claude-code/basics/sessions.md
+  h_8cc28d3109df27 199
+claude-code/customization/slash-commands.md
+  h_8cc28d3109df27 68,182
+claude-code/index.md
+  h_8cc28d3109df27 79
+claude-code/skills/built-in-skills.md
+  h_8cc28d3109df27 180
+contributing/checklist-published.md
+  h_8cc28d3109df27 6-7,9,11
+cookbook/first-real-task.md
+  h_8cc28d3109df27 199
+getting-started/first-conversation.md
+  h_8cc28d3109df27 109,172
+reference/cli-flags.md
+  h_8cc28d3109df27 193-194
+reference/index.md
+  h_8cc28d3109df27 21,23,44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "cb9aa4a8e80a9d453998d1aafac646bab99e3f57",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
