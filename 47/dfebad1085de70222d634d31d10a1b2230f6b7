@@ -1,0 +1,32 @@
+.vitepress/config.ts
+  h_8cc28d3109df27 288-307
+llm-landscape/anthropic.md
+  h_8cc28d3109df27 1-45
+llm-landscape/architecture.md
+  h_8cc28d3109df27 1-65
+llm-landscape/comparison.md
+  h_8cc28d3109df27 1-44
+llm-landscape/index.md
+  h_8cc28d3109df27 1-45
+llm-landscape/moonshot.md
+  h_8cc28d3109df27 1-45
+llm-landscape/openai.md
+  h_8cc28d3109df27 1-45
+llm-landscape/qwen.md
+  h_8cc28d3109df27 1-46
+llm-landscape/selection-guide.md
+  h_8cc28d3109df27 1-52
+llm-landscape/zhipu.md
+  h_8cc28d3109df27 1-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "47dfebad1085de70222d634d31d10a1b2230f6b7",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
