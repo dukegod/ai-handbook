@@ -1,0 +1,14 @@
+llm-landscape/anthropic.md
+  h_8cc28d3109df27 3,6,8-18,23,25,27,29,31-36,38,40-104,108-113,118-120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "f6ed519fbe7229b714b8748f11a0d6c3ef373424",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
