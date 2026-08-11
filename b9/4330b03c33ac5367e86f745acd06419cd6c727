@@ -1,0 +1,14 @@
+llm-landscape/architecture.md
+  h_8cc28d3109df27 65-71,83-90,103-109,139-149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b94330b03c33ac5367e86f745acd06419cd6c727",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
