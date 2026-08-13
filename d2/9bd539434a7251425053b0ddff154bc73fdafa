@@ -1,0 +1,19 @@
+README.md
+  s_856d18bb8794f9::t_9ea09e7b6ca123 22-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "d29bd539434a7251425053b0ddff154bc73fdafa",
+  "prompts": {},
+  "sessions": {
+    "s_856d18bb8794f9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1b832456-e0bb-4be5-85a0-1685c32e0d6f",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
