@@ -1,0 +1,251 @@
+.vitepress/config.ts
+  s_856d18bb8794f9::t_e18e2b75ab6a57 1-547
+claude-code/advanced/git-workflow.md
+  s_404a423e23bb3d::t_1255ed78042560 1-248
+getting-started/installation.md
+  s_404a423e23bb3d::t_5df52f7afbb93c 1-210
+ai-trends/research-highlights/papers.md
+  s_856d18bb8794f9::t_91b6408153ecdd 1-12
+.npmrc
+  s_404a423e23bb3d::t_eaae99864b707d 1-9
+contributing/style-guide.md
+  s_404a423e23bb3d::t_da8a54245bbd25 1-238
+ai-coding/tools/others.md
+  s_856d18bb8794f9::t_f0f644cd920a79 1-12
+claude-code/mcp/official-servers.md
+  s_404a423e23bb3d::t_cc8987f4c1b850 1-137
+public/favicon.svg
+  s_404a423e23bb3d::t_91866d0fcd47be 1-19
+ai-coding/tools/claude-code.md
+  s_856d18bb8794f9::t_28c815501addc1 1-12
+ai-coding/tools/copilot.md
+  s_856d18bb8794f9::t_537885dd0c5199 1-12
+ai-coding/workflows/team.md
+  s_856d18bb8794f9::t_e2fe4f6c30ecd1 1-12
+claude-code/customization/settings.md
+  s_404a423e23bb3d::t_29d8c0c7168e92 1-268
+ai-coding/tools/overview.md
+  s_856d18bb8794f9::t_1b962e3d1b1d4a 1-12
+claude-code/skills/custom-skill.md
+  s_404a423e23bb3d::t_3e704d5391da5b 1-229
+reference/env-vars.md
+  s_404a423e23bb3d::t_6ed07a72a50191 1-28
+contributing/glossary.md
+  s_404a423e23bb3d::t_6d2a3790b6eb05 1-114
+ai-core/model-arch/long-context.md
+  s_856d18bb8794f9::t_264ad2cf011a9f 1-12
+ai-coding/index.md
+  s_856d18bb8794f9::t_44455572e4f956 1-59
+ai-core/fundamentals/pretraining.md
+  s_856d18bb8794f9::t_b91fd1a9e15a9d 1-12
+ai-trends/product-updates/monthly.md
+  s_856d18bb8794f9::t_7f9f796d894e40 1-12
+scripts/install-hooks.sh
+  s_856d18bb8794f9::t_dff56d185ae8fa 1-13
+public/hero.svg
+  s_404a423e23bb3d::t_2e1101745e38ae 1-64
+claude-code/ecosystem/jetbrains.md
+  s_404a423e23bb3d::t_77d615c9aa2a98 1-28
+claude-code/tools/shell.md
+  s_404a423e23bb3d::t_5793417eb4d7bb 1-28
+ai-coding/enterprise/deployment.md
+  s_856d18bb8794f9::t_8b96104b6fc4b1 1-12
+ai-coding/patterns/refactor.md
+  s_856d18bb8794f9::t_fed2e6946e525c 1-12
+ai-coding/patterns/documentation.md
+  s_856d18bb8794f9::t_3ede56e0fd9ce8 1-12
+ai-coding/enterprise/cost.md
+  s_856d18bb8794f9::t_7db273e72810c3 1-12
+ai-trends/research-highlights/open-source.md
+  s_856d18bb8794f9::t_4fde39ac5e38a4 1-12
+claude-code/advanced/memory.md
+  s_404a423e23bb3d::t_be69cf9da75092 1-174
+.vitepress/theme/index.ts
+  s_404a423e23bb3d::t_c91c0de5acdcbb 1-30
+claude-code/tools/dispatch-subagent.md
+  s_404a423e23bb3d::t_bb65e5b84f4c27 1-28
+claude-code/skills/plugins-marketplace.md
+  s_404a423e23bb3d::t_733a1e64c59683 1-230
+ai-core/training/data-engineering.md
+  s_856d18bb8794f9::t_3c2e916d1cc8d2 1-12
+claude-code/skills/skills-vs-commands-vs-agents.md
+  s_404a423e23bb3d::t_d0d2ddff07aa4e 1-125
+index.md
+  s_856d18bb8794f9::t_7dcb3d54af1fe3 1-97
+claude-code/ecosystem/third-party-models.md
+  s_404a423e23bb3d::t_ede5f8915570ba 1-211
+assets/logo-drafts/v1-eight-spike.svg
+  s_404a423e23bb3d::t_1340bcc89daa8b 1-17
+ai-coding/enterprise/security.md
+  s_856d18bb8794f9::t_a87dd98765d4ab 1-12
+ai-coding/patterns/testing.md
+  s_856d18bb8794f9::t_1a4a229025e656 1-12
+AGENTS.md
+  s_856d18bb8794f9::t_4de86979dd2739 1-185
+claude-code/tools/notebook.md
+  s_404a423e23bb3d::t_9c324387209d93 1-28
+ai-core/eval/methodology.md
+  s_856d18bb8794f9::t_b9486e659c894b 1-12
+ai-core/fundamentals/transformer.md
+  s_856d18bb8794f9::t_7f89b03fe980f3 1-12
+claude-code/subagents-and-workflows/workflow-orchestration.md
+  s_404a423e23bb3d::t_f2aecf421c668e 1-210
+claude-code/tools/todo.md
+  s_404a423e23bb3d::t_17fee5d7952ba0 1-28
+claude-code/subagents-and-workflows/multi-agent-patterns.md
+  s_404a423e23bb3d::t_e5f553d936ca23 1-242
+scripts/hooks/pre-commit
+  s_856d18bb8794f9::t_3d1a460153d288 1-9
+ai-coding/workflows/ci-cd.md
+  s_856d18bb8794f9::t_c1d1c445a411b2 1-12
+getting-started/comparisons.md
+  s_404a423e23bb3d::t_c00fe6a9fdfd2e 1-122
+assets/logo-drafts/v4-comet.svg
+  s_404a423e23bb3d::t_7fc718bc083cef 1-23
+getting-started/index.md
+  s_856d18bb8794f9::t_3477d3ec7ad861 1-56
+claude-code/skills/skill-md-spec.md
+  s_404a423e23bb3d::t_3e4b5586500cb3 1-177
+claude-code/mcp/auth-and-debug.md
+  s_404a423e23bb3d::t_7b17dfbb4ef433 1-206
+claude-code/basics/context-window.md
+  s_404a423e23bb3d::t_9499315c21055f 1-150
+claude-code/mcp/build-your-own.md
+  s_404a423e23bb3d::t_7125ed21142210 1-203
+claude-code/tools/web.md
+  s_404a423e23bb3d::t_957f134f742f50 1-28
+claude-code/advanced/headless.md
+  s_404a423e23bb3d::t_65732193be0806 1-240
+claude-code/mcp/mcp-json-config.md
+  s_404a423e23bb3d::t_e981402178a73a 1-205
+claude-code/skills/writing-triggers.md
+  s_404a423e23bb3d::t_c3416a58551082 1-202
+contributing/template-howto.md
+  s_404a423e23bb3d::t_9088ba5b83c658 1-199
+ai-coding/tools/cursor.md
+  s_856d18bb8794f9::t_7ebc4b1837e995 1-12
+contributing/template-concept.md
+  s_404a423e23bb3d::t_45b60aafd49c46 1-159
+claude-code/tools/edit-and-write.md
+  s_404a423e23bb3d::t_03ffe2ac41ad98 1-28
+ai-core/eval/benchmarks.md
+  s_856d18bb8794f9::t_249b87ad2d9115 1-12
+cookbook/data-analysis-workflow.md
+  s_404a423e23bb3d::t_2d60fbdb572f70 1-28
+CLAUDE.md
+  s_856d18bb8794f9::t_abb26e9325afaa 1-185
+public/logo.svg
+  s_404a423e23bb3d::t_2ed7e47ec0cabc 1-23
+ai-trends/product-updates/china.md
+  s_856d18bb8794f9::t_7056d723bb2fe3 1-12
+ai-core/model-arch/dense-vs-moe.md
+  s_856d18bb8794f9::t_d57a2eec913d41 1-12
+getting-started/what-is-claude-code.md
+  s_404a423e23bb3d::t_10d7e55290b43f 1-138
+claude-code/ecosystem/neovim.md
+  s_404a423e23bb3d::t_8f1427d6206214 1-28
+ai-core/training/inference-optimization.md
+  s_856d18bb8794f9::t_f575853543aa64 1-12
+ai-core/index.md
+  s_856d18bb8794f9::t_06c06ee289ae47 1-50
+claude-code/tools/search.md
+  s_404a423e23bb3d::t_a7477cb7feae22 1-28
+claude-code/basics/cost-and-tokens.md
+  s_404a423e23bb3d::t_e02b242a70e9c5 1-200
+assets/logo-drafts/v2-star-with-orbit.svg
+  s_404a423e23bb3d::t_e50de3289bf0c2 1-19
+ai-core/model-arch/multimodal.md
+  s_856d18bb8794f9::t_9ef7d0c3f8b252 1-12
+claude-code/advanced/automation.md
+  s_404a423e23bb3d::t_bec6b402df18d0 1-200
+claude-code/basics/model-selection.md
+  s_404a423e23bb3d::t_53c24c1e8d5ad5 1-222
+cookbook/multi-agent-research.md
+  s_404a423e23bb3d::t_8e8db96d675364 1-28
+getting-started/mental-model.md
+  s_404a423e23bb3d::t_a0cd2583f071ad 1-188
+package.json
+  s_856d18bb8794f9::t_55120dcb9950cb 1-26
+claude-code/mcp/transports.md
+  s_404a423e23bb3d::t_a3fcd09b3153a3 1-255
+cookbook/refactor-legacy-project.md
+  s_404a423e23bb3d::t_c3e1b067ce33f2 1-28
+ai-core/training/quantization.md
+  s_856d18bb8794f9::t_bc85f78c439513 1-12
+ai-trends/product-updates/claude.md
+  s_856d18bb8794f9::t_f94eae13dee46f 1-12
+claude-code/advanced/worktree.md
+  s_404a423e23bb3d::t_459c941d258d04 1-191
+ai-trends/index.md
+  s_856d18bb8794f9::t_9aee7b9946e38c 1-43
+claude-code/ecosystem/vscode.md
+  s_404a423e23bb3d::t_1b7b72ea0a77c4 1-28
+ai-core/fundamentals/alignment.md
+  s_856d18bb8794f9::t_7f0cf932564f42 1-12
+claude-code/subagents-and-workflows/what-is-a-subagent.md
+  s_404a423e23bb3d::t_a97cd8246767c2 1-146
+claude-code/ecosystem/enterprise.md
+  s_404a423e23bb3d::t_d39a7a9b0e21ef 1-28
+reference/model-ids.md
+  s_404a423e23bb3d::t_bcabd872bcf018 1-28
+README.md
+  s_856d18bb8794f9::t_3ac90fe4def5dc 1-72
+claude-code/tools/overview.md
+  s_404a423e23bb3d::t_e63a3461db14ef 1-167
+ai-trends/industry/funding.md
+  s_856d18bb8794f9::t_bfd2a31b4c1bfb 1-12
+.vitepress/theme/components/VersionBanner.vue
+  s_404a423e23bb3d::t_f8f8483f65ea7d 1-111
+assets/logo-drafts/v3-star-with-satellites.svg
+  s_404a423e23bb3d::t_25ef028c5f0797 1-20
+reference/index.md
+  s_856d18bb8794f9::t_ecb6ed03029b59 1-44
+.vitepress/theme/components/DifficultyBadge.vue
+  s_404a423e23bb3d::t_4db001bc04ccc6 1-88
+pnpm-lock.yaml
+  s_404a423e23bb3d::t_1bc59f696e8e38 1-4616
+claude-code/mcp/what-is-mcp.md
+  s_404a423e23bb3d::t_bd881340d5e1ec 1-148
+reference/glossary.md
+  s_404a423e23bb3d::t_7a429643924919 1-53
+ai-trends/product-updates/chatgpt.md
+  s_856d18bb8794f9::t_ce0bd4be0d270c 1-12
+claude-capabilities/index.md
+  s_856d18bb8794f9::t_c75938dfd10a38 1-75
+claude-code/basics/plan-mode.md
+  s_404a423e23bb3d::t_2d61a1d6e0ee24 1-151
+ai-coding/workflows/code-review.md
+  s_856d18bb8794f9::t_b93d60fe9289c1 1-12
+ai-core/fundamentals/attention.md
+  s_856d18bb8794f9::t_9ee5f8d3311947 1-12
+ai-trends/industry/trends.md
+  s_856d18bb8794f9::t_3affd0a6c44f25 1-12
+claude-code/tools/read.md
+  s_404a423e23bb3d::t_1f8c3e84bc2113 1-28
+claude-code/customization/keybindings.md
+  s_404a423e23bb3d::t_e85eff103b71ee 1-253
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "d65f98994772d62be50d5db9001aa42c252056f6",
+  "prompts": {},
+  "sessions": {
+    "s_404a423e23bb3d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef81450d-2009-45f3-b5f5-bf52844fd6dd",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    },
+    "s_856d18bb8794f9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1b832456-e0bb-4be5-85a0-1685c32e0d6f",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
