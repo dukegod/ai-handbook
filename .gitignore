@@ -1,0 +1,38 @@
+# 依赖
+node_modules/
+
+# VitePress 产物
+.vitepress/dist/
+.vitepress/cache/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 环境
+.env
+.env.local
+.env.*.local
+
+# examples/ 下的 Python 示例仓库
+examples/**/.venv/
+examples/**/__pycache__/
+examples/**/*.pyc
+examples/**/*.egg-info/
+examples/**/.pytest_cache/
+examples/**/.mypy_cache/
+examples/**/.ruff_cache/
+scripts/.lychee-out
+.lycheecache

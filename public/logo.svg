@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Claude Handbook logo">
+  <!-- 主 logo · 8-芒星 + 斜环 + 环上一颗小行星 -->
+  <!-- 视觉设计：Anthropic 家族的辐射星保留 DNA；斜环表达「围绕运行」；
+       环上的独立小点点明「小行星（Handbook）」的身份。 -->
+  <!-- 斜环（旋转 -20°）-->
+  <ellipse cx="64" cy="64" rx="52" ry="17"
+           fill="none" stroke="#c96442" stroke-width="2.5" stroke-opacity="0.4"
+           transform="rotate(-20 64 64)"/>
+  <!-- 主星 · 8-芒 -->
+  <g fill="#c96442">
+    <path d="M64 22 L67 60 L64 64 L61 60 Z"/>
+    <path d="M64 106 L67 68 L64 64 L61 68 Z"/>
+    <path d="M22 64 L60 61 L64 64 L60 67 Z"/>
+    <path d="M106 64 L68 61 L64 64 L68 67 Z"/>
+    <path d="M33 33 L59 59 L64 64 L58 61 Z"/>
+    <path d="M95 33 L69 59 L64 64 L70 61 Z"/>
+    <path d="M33 95 L59 69 L64 64 L58 67 Z"/>
+    <path d="M95 95 L69 69 L64 64 L70 67 Z"/>
+    <circle cx="64" cy="64" r="5.5"/>
+  </g>
+  <!-- 环上的小行星 · 独立的一颗 -->
+  <circle cx="110" cy="48" r="4.5" fill="#c96442"/>
+</svg>

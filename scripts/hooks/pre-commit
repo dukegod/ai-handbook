@@ -1,0 +1,9 @@
+#!/bin/sh
+# pre-commit hook: 自动同步 CLAUDE.md → AGENTS.md
+# 安装方式: npm install 时自动安装（见 package.json postinstall）
+
+if git diff --cached --name-only | grep -q '^CLAUDE.md$'; then
+  cp CLAUDE.md AGENTS.md
+  git add AGENTS.md
+  echo "pre-commit: CLAUDE.md → AGENTS.md 已同步"
+fi

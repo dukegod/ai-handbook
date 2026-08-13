@@ -1,0 +1,14 @@
+[project]
+name = "agent-sdk-minimal"
+version = "0.1.0"
+description = "Agent SDK 模式最小可复现——3 模式（单 agent / Supervisor 调度 / 带 memory）"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]

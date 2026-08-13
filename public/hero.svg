@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Claude Handbook hero illustration">
+  <!-- Hero 图 · 首页右侧配图
+       构图：左上斜下的轨道带 + 一颗小行星（放大版 logo）+ 背景星点。
+       和站点 theme-color #c96442 一致；深色/浅色主题均可读。 -->
+  <defs>
+    <!-- 轨道渐变（左浅右深）-->
+    <linearGradient id="orbitGrad" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%"  stop-color="#c96442" stop-opacity="0.08"/>
+      <stop offset="60%" stop-color="#c96442" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#c96442" stop-opacity="0.55"/>
+    </linearGradient>
+    <!-- 主星光晕 -->
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c96442" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#c96442" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 背景 · 5 颗散布的小星点，营造宇宙感 -->
+  <g fill="#c96442" opacity="0.35">
+    <circle cx="60"  cy="80"  r="1.5"/>
+    <circle cx="120" cy="330" r="2"/>
+    <circle cx="540" cy="60"  r="1.8"/>
+    <circle cx="480" cy="350" r="1.5"/>
+    <circle cx="30"  cy="220" r="1.2"/>
+  </g>
+
+  <!-- 大斜环 · 主视觉焦点 -->
+  <ellipse cx="380" cy="200" rx="220" ry="55"
+           fill="none" stroke="url(#orbitGrad)" stroke-width="2.5"
+           transform="rotate(-18 380 200)"/>
+
+  <!-- 主星光晕 -->
+  <circle cx="380" cy="200" r="130" fill="url(#glow)"/>
+
+  <!-- 主星 · 放大版 8-芒 -->
+  <g fill="#c96442" transform="translate(380 200)">
+    <path d="M0 -95 L4 -12 L0 0 L-4 -12 Z"/>
+    <path d="M0 95 L4 12 L0 0 L-4 12 Z"/>
+    <path d="M-95 0 L-12 -4 L0 0 L-12 4 Z"/>
+    <path d="M95 0 L12 -4 L0 0 L12 4 Z"/>
+    <path d="M-67 -67 L-10 -10 L0 0 L-12 -6 Z"/>
+    <path d="M67 -67 L10 -10 L0 0 L12 -6 Z"/>
+    <path d="M-67 67 L-10 10 L0 0 L-12 6 Z"/>
+    <path d="M67 67 L10 10 L0 0 L12 6 Z"/>
+    <circle cx="0" cy="0" r="10"/>
+  </g>
+
+  <!-- 环上的小行星 · Handbook 身份点 -->
+  <circle cx="590" cy="128" r="10" fill="#c96442"/>
+  <!-- 小行星的辐射光 · 小 4-芒 -->
+  <g fill="#c96442" transform="translate(590 128)" opacity="0.6">
+    <path d="M0 -22 L2 -12 L0 -10 L-2 -12 Z"/>
+    <path d="M0 22 L2 12 L0 10 L-2 12 Z"/>
+    <path d="M-22 0 L-12 -2 L-10 0 L-12 2 Z"/>
+    <path d="M22 0 L12 -2 L10 0 L12 2 Z"/>
+  </g>
+
+  <!-- 左下角 · 一段轨道虚线（暗示「其他小行星也在轨道上」）-->
+  <path d="M 20 340 Q 130 300 240 280"
+        fill="none" stroke="#c96442" stroke-width="1.5"
+        stroke-opacity="0.35" stroke-dasharray="4 6"/>
+  <circle cx="240" cy="280" r="4" fill="#c96442" opacity="0.5"/>
+</svg>

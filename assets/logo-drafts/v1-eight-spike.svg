@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Claude Handbook logo v1: eight-spike asteroid">
+  <!-- V1 · 单星（Anthropic 官方 8-spike 辐射星，最直白的家族 DNA） -->
+  <g fill="#c96442">
+    <!-- 4 长辐射（上下左右）-->
+    <path d="M64 8 L67 60 L64 64 L61 60 Z"/>
+    <path d="M64 120 L67 68 L64 64 L61 68 Z"/>
+    <path d="M8 64 L60 61 L64 64 L60 67 Z"/>
+    <path d="M120 64 L68 61 L64 64 L68 67 Z"/>
+    <!-- 4 短辐射（对角）-->
+    <path d="M24 24 L59 59 L64 64 L58 61 Z"/>
+    <path d="M104 24 L69 59 L64 64 L70 61 Z"/>
+    <path d="M24 104 L59 69 L64 64 L58 67 Z"/>
+    <path d="M104 104 L69 69 L64 64 L70 67 Z"/>
+    <!-- 中心圆 -->
+    <circle cx="64" cy="64" r="6"/>
+  </g>
+</svg>

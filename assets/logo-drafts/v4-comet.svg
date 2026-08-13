@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Claude Handbook logo v4: comet asteroid with tail">
+  <!-- V4 · 彗星（一颗有尾巴的小行星，最具动感，暗喻「持续更新」）-->
+  <defs>
+    <linearGradient id="tail" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c96442" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#c96442" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <!-- 尾巴（左下往右上拉出）-->
+  <path d="M14 114 Q 40 88 78 62 L 92 76 Q 54 100 22 122 Z" fill="url(#tail)"/>
+  <!-- 主星（8-芒 · 位于右上）-->
+  <g fill="#c96442" transform="translate(20 -20)">
+    <path d="M64 20 L67 60 L64 64 L61 60 Z"/>
+    <path d="M64 108 L67 68 L64 64 L61 68 Z"/>
+    <path d="M20 64 L60 61 L64 64 L60 67 Z"/>
+    <path d="M108 64 L68 61 L64 64 L68 67 Z"/>
+    <path d="M32 32 L59 59 L64 64 L58 61 Z"/>
+    <path d="M96 32 L69 59 L64 64 L70 61 Z"/>
+    <path d="M32 96 L59 69 L64 64 L58 67 Z"/>
+    <path d="M96 96 L69 69 L64 64 L70 67 Z"/>
+    <circle cx="64" cy="64" r="6"/>
+  </g>
+</svg>

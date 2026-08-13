@@ -1,0 +1,59 @@
+# .github/workflows/lychee.yml —— CI 死链检查
+# v0.4.1 引入
+# v0.4.2 升级——适配 lychee 0.24 schema（root_dir 解析 root-relative 链接）
+# v0.4.2 升级——failMode: error（v0.4.1 阶段用 warning 让 PR 不卡）
+# 触发：每个 push + 每个 PR
+# 平台说明：本仓库用 coding.jd.com（公司内 Git），用户可平移此 workflow 到
+#          coding 流水线（语法几乎一致），GitHub 公共仓库直接用即可
+
+name: Lychee Link Check
+
+on:
+  push:
+    branches: [main, content/**, fix/**, infra/**]
+  pull_request:
+    branches: [main]
+
+# 取消进行中的同一 workflow
+concurrency:
+  group: lychee-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 缓存 lychee 运行结果（加速重复运行）
+      - name: Cache Lychee Results
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: lychee-${{ github.ref }}-${{ github.sha }}
+          restore-keys: |
+            lychee-${{.github.ref}}-
+            lychee-
+
+      - name: Run Lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # v0.4.2 升级：加 --root-dir 解析 VitePress root-relative 链接
+          # v0.4.2 升级：failMode=error（v0.4.1 阶段用 warning 让 PR 不卡）
+          args: >-
+            --config lychee.toml
+            --root-dir ${{ github.workspace }}
+            "**/*.md"
+            "!**/node_modules/**"
+            "!**/.vitepress/**"
+            "!**/public/**"
+            "!**/assets/**"
+          failMode: error
+          output: detailed
+          jobSummary: true
+
+      # v0.4.2 阶段 failMode 已设 error，无需额外 step

@@ -1,0 +1,18 @@
+[project]
+name = "anthropic-sdk-python-minimal"
+version = "0.1.0"
+description = "anthropic SDK Python 最小可复现示例——5 个核心模式（最小调用 / Tool Use 循环 / Streaming / Structured Outputs / Prompt Caching）"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = "test_*.py"

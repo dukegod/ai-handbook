@@ -1,0 +1,26 @@
+{
+  "name": "ai-handbook",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "AI 知识体系、技术核心、产品动向与 Coding 落地（中文）",
+  "packageManager": "pnpm@10.28.1",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "check-links": "bash scripts/check-links.sh",
+    "postinstall": "bash scripts/install-hooks.sh"
+  },
+  "devDependencies": {
+    "mermaid": "^11.16.0",
+    "vitepress": "^1.5.0",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "@parcel/watcher"
+    ]
+  }
+}
