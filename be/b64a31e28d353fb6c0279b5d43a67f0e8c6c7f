@@ -1,0 +1,24 @@
+AGENTS.md
+  s_856d18bb8794f9::t_57752fe2da60b3 1-177
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "beb64a31e28d353fb6c0279b5d43a67f0e8c6c7f",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  },
+  "sessions": {
+    "s_856d18bb8794f9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1b832456-e0bb-4be5-85a0-1685c32e0d6f",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
