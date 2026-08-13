@@ -1,0 +1,23 @@
+scripts/install-hooks.sh
+  s_856d18bb8794f9::t_62371817cf177d 1-13
+scripts/hooks/pre-commit
+  s_856d18bb8794f9::t_9ab4c0c1a6b9cd 1-9
+package.json
+  s_856d18bb8794f9::t_818e3052d705d0 12-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b3be2fce6d3b6e730b968aaeba623d56f9731823",
+  "prompts": {},
+  "sessions": {
+    "s_856d18bb8794f9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1b832456-e0bb-4be5-85a0-1685c32e0d6f",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
