@@ -1,0 +1,14 @@
+AGENTS.md
+  h_8cc28d3109df27 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "0f953ae997950b79d4a0bbb7b664260ba0ac84e1",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
