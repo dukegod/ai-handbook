@@ -1,0 +1,40 @@
+getting-started/index.md
+  s_856d18bb8794f9::t_12bdae674cb89e 39-43
+  s_856d18bb8794f9::t_15069050279776 50
+  s_856d18bb8794f9::t_655eb294e6fc3f 55
+README.md
+  s_856d18bb8794f9::t_81945aa3b2816d 50
+reference/index.md
+  s_856d18bb8794f9::t_3d5c07cfdc37ec 20
+  s_856d18bb8794f9::t_2e4a2467232082 25
+  s_856d18bb8794f9::t_7c544edc3a7a2b 38
+.vitepress/config.ts
+  s_856d18bb8794f9::t_b62e6169c7a425 288-289
+  s_856d18bb8794f9::t_2d9405a1989d02 270
+  s_856d18bb8794f9::t_140b7ff8657217 309-310
+claude-capabilities/index.md
+  s_856d18bb8794f9::t_d7147df609dacf 68
+  s_856d18bb8794f9::t_1d91eac76b5574 47
+  s_856d18bb8794f9::t_0d866f2b543f5e 57-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "e035a6bf32ae00c526a2e47791ce33f8601dcb51",
+  "prompts": {},
+  "humans": {
+    "h_8cc28d3109df27": {
+      "author": "liuhui162 <liuhui15@jd.com>"
+    }
+  },
+  "sessions": {
+    "s_856d18bb8794f9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1b832456-e0bb-4be5-85a0-1685c32e0d6f",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "liuhui162 <liuhui15@jd.com>"
+    }
+  }
+}
