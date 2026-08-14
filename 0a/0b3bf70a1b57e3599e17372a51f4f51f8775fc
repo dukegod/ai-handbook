@@ -1,0 +1,30 @@
+llm-landscape/anthropic.md
+  h_a427b9af6cd304 3,10-12,15-18,29,33-34,36-37,39,47,74,76-82,84,86,91-92,97,103,106
+llm-landscape/architecture.md
+  h_a427b9af6cd304 44,59,61,63,136
+llm-landscape/comparison.md
+  h_a427b9af6cd304 35-39,45-53,63,133-134,139
+llm-landscape/index.md
+  h_a427b9af6cd304 18-22
+llm-landscape/moonshot.md
+  h_a427b9af6cd304 3,10-15,30-32,34,38,40,52,64,66,68-70,72
+llm-landscape/openai.md
+  h_a427b9af6cd304 3,10-15,26,28-34,36,42,44,70,72-77,79-81,86-87,92-93,98-99
+llm-landscape/qwen.md
+  h_a427b9af6cd304 3,10-12,15,33-36,39,43,78,80-82,84
+llm-landscape/selection-guide.md
+  h_a427b9af6cd304 25-27,30,32,35-36,43-47,54-55,62-63,67-71,75-81,90,98,100,106,108,114,122,150-152
+llm-landscape/zhipu.md
+  h_a427b9af6cd304 3,10-15,30-33,35,39,59,72,74-77,79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "0a0b3bf70a1b57e3599e17372a51f4f51f8775fc",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
