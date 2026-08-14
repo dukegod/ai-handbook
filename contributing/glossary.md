@@ -27,10 +27,12 @@ lastUpdated: 2026-07-23
 | **Claude.ai** | 网页/桌面/移动端聊天产品 | 与 Claude Code 是不同产品 |
 | **Claude Agent SDK** | 用于构建自定义 Agent 的 SDK | 不同于 Anthropic SDK（HTTP 客户端） |
 | **Claude Code SDK** | 从代码中程序化调用 Claude Code 的 SDK | 与 Claude Agent SDK 不同 |
-| **Opus 4.8** | 最强推理模型；ID `claude-opus-4-8` | 别写 `Opus4.8`、`opus-4-8` |
+| **Opus 5** | 最新最强推理模型；ID `claude-opus-5` | Claude Code v2.1.219+ 默认 `opus` 别名 |
+| **Opus 4.8** | 上一代推理模型；ID `claude-opus-4-8` | 已被 Opus 5 取代，仍可用；别写 `Opus4.8` |
 | **Sonnet 5** | 平衡型；ID `claude-sonnet-5` | |
 | **Haiku 4.5** | 快速轻量；ID `claude-haiku-4-5-20251001` | |
 | **Fable 5** | ID `claude-fable-5`；专精长时运行 agent | 详见 [路线图](/contributing/roadmap) 风险项 |
+| **Mythos 5** | Project Glasswing 新模型；`claude-mythos-5` | limited availability，未 GA |
 
 ## Claude Code 核心概念
 

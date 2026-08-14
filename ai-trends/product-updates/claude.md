@@ -43,11 +43,12 @@ verifiedWith:
 | 模型 | 定位 | 关键事实 |
 | --- | --- | --- |
 | **Fable 5** | 顶级专家（specialist） | 2026-06-09 GA；$10 / $50 per MTok；长时运行 Agent 专用 |
-| **Opus 4.8** | 最强推理（expert） | Claude Code 默认主力；复杂任务首选 |
+| **Opus 5** | 最强推理（expert） | 当前最强；Claude Code v2.1.219+ 默认主力 |
 | **Sonnet 5** | 均衡型（generalist） | 性价比主力；日常编码与工具调用 |
 | **Haiku 4.5** | 快速轻量 | 延迟敏感场景；批量任务 |
+| ~~Opus 4.8~~ | 上一代推理 | 已被 Opus 5 取代，仍可用 |
 
-> 官方比喻：Fable = 顶级专家，Opus = 专家，Sonnet = 通才。选型对照见 [模型选择](/claude-code/basics/model-selection)。
+> 官方比喻：Fable = 顶级专家，Opus = 专家，Sonnet = 通才。选型对照见 [模型选择](/claude-code/basics/model-selection)。谱系核实自官方 [model overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-08-14）。
 
 ## 三、工具线现状
 
