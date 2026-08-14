@@ -1,0 +1,19 @@
+AGENTS.md
+  s_dfc0db47a709dc::t_d86eaed36cf479 50-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "639046b85cf64c0e833e7a1813c043d1004261d3",
+  "prompts": {},
+  "sessions": {
+    "s_dfc0db47a709dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4aac5de1-499e-441f-a331-5d06e9360bba",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
