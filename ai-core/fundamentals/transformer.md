@@ -39,7 +39,7 @@ verifiedWith:
 | Encoder-only | 仅编码 | BERT | 分类 / 理解 |
 | Decoder-only | 仅解码 | GPT / Claude / LLaMA | 生成 / 对话 |
 
-2026 年主流是**Decoder-only**——GPT-5、Claude、Kimi K2、Qwen 3 都是。Encoder-only（BERT 系列）主要用于嵌入和分类。
+2026 年主流是**Decoder-only**——GPT-5.6、Claude、Kimi K3、Qwen3.5 都是。Encoder-only（BERT 系列）主要用于嵌入和分类。
 
 ## 三大核心组件
 

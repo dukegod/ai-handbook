@@ -82,12 +82,11 @@ RoPE 的频率是为训练长度设计的。扩展到更长上下文需要**位�
 
 | 厂商 | 模型 | 上下文 | 技术 |
 |------|------|--------|------|
-| Anthropic | Claude | 200K | RoPE + YaRN（推测） |
+| Anthropic | Claude | 1M（Opus 5 / Sonnet 5） | RoPE + YaRN（推测） |
 | Anthropic | Fable 5 | 1M | RoPE 扩展 |
-| OpenAI | GPT-5 | 128K | RoPE 扩展 |
-| Moonshot | Kimi K2 | 1M | LongRoPE |
-| Moonshot | K2-0905 | 2M | LongRoPE |
-| Qwen | Qwen 3 | 1M | RoPE + 滑动窗口 |
+| OpenAI | GPT-5.6 | 短/长上下文双档 | RoPE 扩展 |
+| Moonshot | Kimi K3 | 1M | LongRoPE 风格 |
+| Qwen | Qwen3.5 / Qwen3.8-Max | 1M | RoPE + 滑动窗口 |
 
 ## KV Cache 优化
 

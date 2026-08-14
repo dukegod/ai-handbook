@@ -111,7 +111,7 @@ verifiedWith:
 | **CMMLU** | 中文知识 | 67 学科 |
 | **SuperCLUE** | 中文综合 | 多维度评估 |
 
-**中文厂商在中文基准上领先**：GLM-Z1 C-Eval 90.1%，Kimi K2 Thinking 91.2%。
+**中文厂商在中文基准上整体领先**（C-Eval / CMMLU / SuperCLUE），具体分数以各家官方技术报告为准。
 
 ## 参考
 

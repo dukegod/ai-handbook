@@ -72,7 +72,7 @@ verifiedWith:
 - 训练需要额外的负载均衡损失
 - 实现复杂
 
-**代表**：Kimi K2（384 专家）、GPT-5（推测）、Qwen 3-Max
+**代表**：Kimi K3（K2 曾为 384 专家）、GPT-5.6（推测）、Qwen3.8-Max
 
 ## 路由策略
 
@@ -121,10 +121,12 @@ L_balance = α * sum((f_i - 1/N)²)
 | 厂商 | 模型 | 架构 | 专家数 | 激活数 |
 |------|------|------|--------|--------|
 | Anthropic | Claude | Dense（推测） | — | 全参 |
-| OpenAI | GPT-5 | MoE（推测） | 未公开 | 未公开 |
-| Moonshot | Kimi K2 | MoE | 384 | 8 |
-| Zhipu | GLM-5 | MoE | 未公开 | 未公开 |
-| Qwen | Qwen 3-Max | MoE | 未公开 | 未公开 |
+| OpenAI | GPT-5.6 | MoE（推测） | 未公开 | 未公开 |
+| Moonshot | Kimi K3 | MoE | 未公开 | 未公开 |
+| Zhipu | GLM-5.2 | MoE | 未公开 | 未公开 |
+| Qwen | Qwen3.8-Max | MoE | 未公开 | 未公开 |
+
+> Kimi K2（2025 年）曾以 384 专家 / 激活 8 的激进 MoE 设计著称，K3 具体参数未公开。
 
 **趋势**：2026 年 MoE 成为主流，只剩 Anthropic 等少数厂商坚持 dense。
 
