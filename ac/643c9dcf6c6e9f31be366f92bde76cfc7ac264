@@ -1,0 +1,24 @@
+AGENTS.md
+  s_dfc0db47a709dc::t_1e1e6f510bdf8c 200-202
+  s_dfc0db47a709dc::t_42ec60321b4b19 1,9,14
+  s_dfc0db47a709dc::t_1b4af8cde1bcfb 78-82
+  s_dfc0db47a709dc::t_be9bf94d00a8b4 95
+  s_dfc0db47a709dc::t_1988ccf977bbad 53-55,57-62
+  s_dfc0db47a709dc::t_803f19a6d04e94 177
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "ac643c9dcf6c6e9f31be366f92bde76cfc7ac264",
+  "prompts": {},
+  "sessions": {
+    "s_dfc0db47a709dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4aac5de1-499e-441f-a331-5d06e9360bba",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
