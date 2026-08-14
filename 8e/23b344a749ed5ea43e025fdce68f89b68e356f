@@ -1,0 +1,32 @@
+.vitepress/config.ts
+  h_a427b9af6cd304 360-363,370-371,378-379
+ai-trends/industry/funding.md
+  h_a427b9af6cd304 3,6-18,23-101
+ai-trends/industry/trends.md
+  h_a427b9af6cd304 3,6-15,20-88
+ai-trends/product-updates/chatgpt.md
+  h_a427b9af6cd304 3,6-15,20-86
+ai-trends/product-updates/china.md
+  h_a427b9af6cd304 3,6-18,23-89
+ai-trends/product-updates/claude.md
+  h_a427b9af6cd304 3,6-18,23-80
+ai-trends/product-updates/monthly.md
+  h_a427b9af6cd304 3,6-18,23-116
+ai-trends/research-highlights/open-source.md
+  h_a427b9af6cd304 3-18,23-100
+ai-trends/research-highlights/papers.md
+  h_a427b9af6cd304 3,6-18,23-91
+lychee.toml
+  h_a427b9af6cd304 84-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "8e23b344a749ed5ea43e025fdce68f89b68e356f",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
