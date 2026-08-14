@@ -1,0 +1,40 @@
+.vitepress/config.ts
+  h_a427b9af6cd304 355,357
+ai-core/model-arch/architecture-landscape.md
+  h_a427b9af6cd304 3,29,33,53,57-62
+ai-trends/product-updates/china.md
+  h_a427b9af6cd304 92
+ai-trends/product-updates/claude.md
+  h_a427b9af6cd304 82
+ai-trends/vendors/anthropic.md
+  h_a427b9af6cd304 23,43
+ai-trends/vendors/grok.md
+  h_a427b9af6cd304 1-102
+ai-trends/vendors/index.md
+  h_a427b9af6cd304 3,30,32,38
+ai-trends/vendors/minimax.md
+  h_a427b9af6cd304 1-101
+ai-trends/vendors/moonshot.md
+  h_a427b9af6cd304 20,40
+ai-trends/vendors/openai.md
+  h_a427b9af6cd304 20
+ai-trends/vendors/qwen.md
+  h_a427b9af6cd304 23
+ai-trends/vendors/zhipu.md
+  h_a427b9af6cd304 20
+reference/model-comparison.md
+  h_a427b9af6cd304 2-3,25-30,33,35,43,45,49,59,61,71-76,79,85-91,93,100-101,103,107,115,117,129-131,135,142-145,149,157-159,162-163,168,174
+reference/model-selection-guide.md
+  h_a427b9af6cd304 47,77-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "c61966f78817648e33e4c49ca7d5b851ebe541a2",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
