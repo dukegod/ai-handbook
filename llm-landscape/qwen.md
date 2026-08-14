@@ -1,18 +1,18 @@
 ---
 title: Qwen · 阿里通义千问全系
-description: Qwen 3-Max / Qwen 3 / Qwen 2.5 / Qwen-VL / Qwen-Coder——全尺寸开源、阿里达摩院、端侧部署
+description: Qwen3.8-Max / Qwen3.5 / Qwen3——全尺寸开源、阿里达摩院、端侧部署
 audience: intermediate
 difficulty: 🟡
 status: published
 lastUpdated: 2026-08-13
 verifiedWith:
   sources:
+    - name: 阿里云百炼 Qwen3.8-Max 模型信息
+      url: https://help.aliyun.com/zh/model-studio/qwen3-8-max
+      accessedAt: 2026-08-14
     - name: Qwen 官方博客
       url: https://qwenlm.github.io/blog/
-      accessedAt: 2026-08-13
-    - name: DashScope 平台
-      url: https://dashscope.aliyun.com/
-      accessedAt: 2026-08-13
+      accessedAt: 2026-08-14
     - name: Qwen GitHub
       url: https://github.com/QwenLM/Qwen
       accessedAt: 2026-08-13
@@ -30,18 +30,17 @@ Qwen（通义千问）由阿里达摩院 2023 年推出，现属阿里云通义�
 
 | 模型 | 定位 | 上下文 | 思考模式 | 主要场景 |
 |------|------|--------|----------|----------|
-| **Qwen 3-Max** | 旗舰 | 1M | adaptive thinking | 复杂推理 / 长文档 / Agent |
-| **Qwen 3** | 主力 | 1M | — | 通用 / 编码 / 工具调用 |
-| **Qwen 2.5** | 上一代 | 1M | — | 已逐步过渡到 Qwen 3 |
-| **Qwen-VL** | 多模态 | 128K | — | 图片理解 / OCR / 视频 |
+| **Qwen3.8-Max** | 旗舰（2026-08 正式版） | 1M | — | 复杂推理 / 长文档 / Agent |
+| **Qwen3.5 系列** | 主力 | 1M | 原生多模态 + 思考 | 通用 / 视觉 / 工具调用 |
+| **Qwen3** | 上一代 | 1M | adaptive thinking | 已由 3.5 / 3.8 取代 |
+| **Qwen-VL** | 多模态专精 | 128K | — | 图片理解 / OCR / 视频 |
 | **Qwen-Coder** | 编码专精 | 128K | — | 代码生成 / 审查 |
-| **Qwen-Math** | 数学专精 | 128K | — | 数学推理 / 公式 |
 
-> **产品线逻辑**：Qwen 3-Max 做旗舰、Qwen 3 做主力、Qwen-VL/Coder/Math 做专精——全尺寸 + 全模态覆盖。
+> **产品线逻辑**：Qwen3.8-Max 做旗舰（2.4T 参数）、Qwen3.5 做主力（plus / flash，原生多模态）、Qwen-VL/Coder 做专精——全尺寸 + 全模态覆盖，开源侧 `qwen3.5-397b-a17b` 等延续 Apache 2.0 路线。
 
 ## 三、技术架构
 
-**MoE 路径** —— Qwen 3-Max 采用 MoE 架构，具体专家数未公开。Qwen 3 系列从 dense 演进到 MoE，与行业趋势一致。
+**MoE 路径** —— Qwen3.8-Max 采用 MoE 架构，具体专家数未公开。Qwen 3 系列从 dense 演进到 MoE，与行业趋势一致。
 
 **全尺寸蒸馏** —— Qwen 的独特策略：从 110B 大模型蒸馏到 0.5B/1.5B/7B/14B/32B/72B 各尺寸，**每个尺寸都经过专门优化**。这让小模型也能保持高质量。
 
@@ -76,16 +75,13 @@ Qwen（通义千问）由阿里达摩院 2023 年推出，现属阿里云通义�
 
 **端侧部署是 Qwen 最大优势** —— 0.5B/1.5B/7B 小模型专为端侧优化，支持 llama.cpp / MLX / Ollama 等主流推理框架。是国内端侧部署最成熟的模型。
 
-## 六、价格 / 性能基准（截至 2026-08）
+## 六、价格（截至 2026-08，阿里云百炼官方定价）
 
-| 模型 | Input | Output | MMLU | C-Eval | HumanEval |
-|------|-------|--------|------|--------|-----------|
-| Qwen 3-Max | ¥10 / MTok | ¥30 / MTok | 88.5% | 89.2% | 82.3% |
-| Qwen 3-72B | ¥4 / MTok | ¥12 / MTok | 85.7% | 86.8% | 78.9% |
-| Qwen 3-7B | ¥0.5 / MTok | ¥1.5 / MTok | 78.2% | 79.5% | 68.3% |
-| Qwen 3-0.5B | 免费（端侧） | — | 62.1% | 63.8% | 45.2% |
+| 模型 | Input | Output | 缓存命中 | 备注 |
+|------|-------|--------|---------|------|
+| Qwen3.8-Max | ¥12 / MTok | ¥36 / MTok | ¥1.5 | 旗舰（原价，不含限时优惠） |
 
-**价格梯度**：端侧（免费）< 7B < 72B < 3-Max。**Qwen 3-7B 是性价比之王**——¥0.5/MTok input，性能追平 GPT-3.5。
+**价格梯度**：开源版自部署免费；API 端 Qwen3.8-Max 为旗舰价，开源尺寸（Qwen3.5 系列）自部署成本可控。
 
 ## 七、适合场景 / 不适合场景
 

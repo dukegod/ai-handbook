@@ -41,7 +41,7 @@ verifiedWith:
 | Decoder-only + MoE | 稀疏激活的专家层 | Mixtral / DeepSeek-V3 / Kimi K2 |
 | Decoder-only + 原生多模态 | 视觉/音频 token 化统一 | GPT-4o / Claude 3.5+ / Qwen-VL |
 
-2026 年的主流选择是**第三/四阶段**——纯文本走 MoE，多模态走"token 化统一"。GLM-4 / Qwen 3 / Kimi K2 / GPT-5 都在 MoE 路径上；Claude 是少数仍坚持 dense（或极小专家数）的厂商。
+2026 年的主流选择是**第三/四阶段**——纯文本走 MoE，多模态走"token 化统一"。GLM-5 / Qwen3.5 / Kimi K3 / GPT-5.6 都在 MoE 路径上；Claude 是少数仍坚持 dense（或极小专家数）的厂商。
 
 ## 二、**dense vs MoE** 路线对比
 
@@ -56,11 +56,11 @@ verifiedWith:
 | --- | --- | --- | --- | --- |
 | Anthropic | Claude Opus 4.8 | dense（推测） | — | 全参 |
 | OpenAI | GPT-5 | MoE（推测） | 未公开 | 未公开 |
-| Moonshot | Kimi K2 | MoE | 384 | 8 |
+| Moonshot | Kimi K2（历史） | MoE | 384 | 8 |
 | Zhipu | GLM-4 / GLM-5 | MoE | 未公开 | 未公开 |
-| Qwen | Qwen 3-Max | MoE | 未公开 | 未公开 |
+| Qwen | Qwen3.8-Max | MoE | 未公开 | 未公开 |
 
-MoE 的**工程红利**：相同训练成本下参数总量可以做得更大；相同推理成本下性能可以追平 dense 大模型。**Kimi K2 是当前公开最激进的 MoE 设计**——384 专家，激活 8，路由用 shared expert + routed expert 双轨。
+MoE 的**工程红利**：相同训练成本下参数总量可以做得更大；相同推理成本下性能可以追平 dense 大模型。**Kimi K2（2025 年）曾是公开最激进的 MoE 设计**——384 专家，激活 8，路由用 shared expert + routed expert 双轨。
 
 ### 2.1 MoE 路由细节
 
@@ -133,7 +133,7 @@ MoE 的**工程红利**：相同训练成本下参数总量可以做得更大；
 
 - **MoE 是 2026 主流**，dense 只剩 Claude 等少数厂商坚持（推测）
 - **RL 训练范式转向 RLVR**——可验证奖励（数学/代码）让小模型能"自学"推理
-- **开源 vs 闭源差距在缩小**——Qwen 3-Max / GLM-5 在基准上追平 GPT-5 / Claude Opus 4
+- **开源 vs 闭源差距在缩小**——Qwen3.8-Max / GLM-5 在基准上追平 GPT-5.6 / Claude Opus 5
 - **中文厂商的长上下文已超 1M**——Kimi 2M、Qwen 1M，Claude 200K 反而显得保守
 
 ## 七、2026 H2 趋势预测

@@ -1,18 +1,18 @@
 ---
 title: Moonshot · Kimi 全系
-description: Kimi K2 / K2 Thinking / K2-0905——MoE 384 专家、2M 长上下文、中文长文档分析
+description: Kimi K3 / K2.5 / K2——MoE 架构、1M 长上下文、中文长文档分析
 audience: intermediate
 difficulty: 🟡
 status: published
 lastUpdated: 2026-08-13
 verifiedWith:
   sources:
-    - name: Kimi 开放平台
-      url: https://platform.moonshot.cn/docs
-      accessedAt: 2026-08-13
-    - name: Kimi K2 技术报告
-      url: https://moonshotai.github.io/Kimi-K2/
-      accessedAt: 2026-08-13
+    - name: Kimi K3 官方定价
+      url: https://platform.kimi.ai/docs/pricing/chat-k3
+      accessedAt: 2026-08-14
+    - name: Kimi K3 官方文档
+      url: https://platform.kimi.ai/docs/guide/kimi-k3-quickstart
+      accessedAt: 2026-08-14
 ---
 
 # Moonshot · Kimi 全系
@@ -27,18 +27,17 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 
 | 模型 | 定位 | 上下文 | 思考模式 | 主要场景 |
 |------|------|--------|----------|----------|
-| **Kimi K2** | 旗舰 | 1M | — | 通用 / 长文档 / Agent |
-| **Kimi K2 Thinking** | 推理增强 | 1M | RLVR | 数学 / 代码 / 逻辑 |
-| **K2-0905** | 最新预览 | 2M | — | 超长文档 / 长视频 |
-| **Kimi K1.5** | 早期版本 | 128K | — | 已逐步淘汰 |
+| **Kimi K3** | 旗舰 | 1M | 总是推理（reasoning_effort） | 长时编码 / 知识工作 |
+| **Kimi K2.5** | 上一代 | 256K | 原生多模态 agentic | 视觉 + 文本 agent |
+| **Kimi K2** | 历史 | 1M | — | 已由 K2.5 / K3 取代 |
 
-> **产品线逻辑**：K2 做通用 + K2 Thinking 做推理 + K2-0905 做超长上下文——三条线覆盖不同长度需求。
+> **产品线逻辑**：K3 做旗舰（2026-07 发布、7-27 开源，2.8T 参数）、K2.5 做多模态 agent、K2 已退居历史。
 
 ## 三、技术架构
 
-**MoE 384 专家** —— Kimi K2 是当前公开最激进的 MoE 设计：384 个专家，每次只激活 8 个。路由用 shared expert + routed expert 双轨——shared expert 始终激活（学通用知识），routed expert 参与 top-k 路由。
+**MoE 架构** —— K2 系列以 384 专家（激活 8）的激进 MoE 设计著称，路由用 shared expert + routed expert 双轨。K3 旗舰的具体架构参数未公开，但延续长上下文 + 编码专精路线。
 
-**2M 长上下文** —— K2-0905 已扩到 2M token，是 5 家厂商中最长。技术用 LongRoPE 风格的位置插值——搜索每个维度最优缩放因子。**中文长文档分析是 Kimi 的核心场景**。
+**2M 长上下文（历史）** —— K2-0905 曾扩到 2M token，当时是 5 家厂商中最长。技术用 LongRoPE 风格的位置插值。**当前旗舰 K3 为 1M**——中文长文档分析仍是 Kimi 的核心场景。
 
 **K2 Thinking（RLVR）** —— 和 OpenAI o-series 同路线：用可验证奖励（数学答案对错、代码单测通过率）训练推理能力。**K2 Thinking 在中文数学/代码基准上追平 o1**。
 
@@ -50,7 +49,7 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 | **Deep Research** | 多步搜索 + 长文档分析 | Kimi Web 内置 |
 | **文件解析** | PDF / Word / PPT 直接解析 | Kimi Web + API |
 | **多模态** | 图片理解 + OCR | K2 原生 |
-| **长视频** | 视频理解（2M 上下文） | K2-0905 |
+| **长视频** | 视频理解（历史 2M 上下文） | K2-0905（已被 K3 取代） |
 
 **文件解析是 Kimi 差异化** —— 直接上传 PDF/Office 文件，Kimi 解析后在 1M context 内分析。Claude 需要先用 Files API 上传，GPT 需要 Code Interpreter。
 
@@ -62,17 +61,15 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 | **Kimi Web/App** | 网页 / 移动端 | 终端用户产品 |
 | **K2 权重** | 部分开源 | 私有部署 / 微调 |
 
-**K2 部分开源** —— K2 基础权重已开源（Apache 2.0），但 K2 Thinking 和 K2-0905 仍闭源。
+**K2 部分开源（历史）** —— K2 基础权重已开源（Apache 2.0），但 K2 Thinking 和 K2-0905 仍闭源。**K3 已开源（2026-07-27）**，是月之暗面最新开源旗舰。
 
-## 六、价格 / 性能基准（截至 2026-08）
+## 六、价格（截至 2026-08，官方定价）
 
-| 模型 | Input | Output | 长上下文检索 | C-Eval | CMMLU |
-|------|-------|--------|-------------|--------|-------|
-| K2 | ¥12 / MTok | ¥36 / MTok | 99.2%（1M） | 89.5% | 88.7% |
-| K2 Thinking | ¥15 / MTok | ¥45 / MTok | — | 91.2% | 90.3% |
-| K2-0905 | ¥18 / MTok | ¥54 / MTok | 98.8%（2M） | 88.9% | 88.1% |
+| 模型 | Input | Output | 缓存命中 | 备注 |
+|------|-------|--------|---------|------|
+| Kimi K3 | $3 / MTok | $15 / MTok | $0.30 | 旗舰，1M 上下文 |
 
-**长上下文检索准确率是 Kimi 强项** —— 1M context 下 needle-in-haystack 准确率 99.2%，领先 Claude 200K 的 99.1%。
+**Kimi K3 官方定价（2026-07 发布）** —— 1M context、自动上下文缓存、ToolCall / JSON Mode / 结构化输出原生支持。
 
 ## 七、适合场景 / 不适合场景
 

@@ -15,11 +15,11 @@ lastUpdated: 2026-08-11
 
 | 厂商 | 模型 | 旗舰 | 开源策略 | 主力市场 |
 | --- | --- | --- | --- | --- |
-| [Anthropic](./anthropic) | Claude | Opus 4.8 / Sonnet 4.8 / Haiku 4.5 | 闭源 | 全球 + 中文 |
-| [OpenAI](./openai) | GPT | GPT-5 / GPT-5 mini | 闭源 | 全球 |
-| [Moonshot 月之暗面](./moonshot) | Kimi | K2 / K2 Thinking | 部分开源 | 中文 |
-| [Zhipu 智谱](./zhipu) | GLM | GLM-5 / GLM-4.6 | 部分开源 | 中文 |
-| [阿里 通义千问](./qwen) | Qwen | Qwen 3-Max / Qwen 3 | 开源 | 全球 + 中文 |
+| [Anthropic](./anthropic) | Claude | Opus 5 / Sonnet 5 / Haiku 4.5 | 闭源 | 全球 + 中文 |
+| [OpenAI](./openai) | GPT | GPT-5.6 Sol / Terra / Luna | 闭源 + 开源双轨 | 全球 |
+| [Moonshot 月之暗面](./moonshot) | Kimi | K3 / K2.5 | 部分开源 | 中文 |
+| [Zhipu 智谱](./zhipu) | GLM | GLM-5.2 / GLM-5 | 部分开源 | 中文 |
+| [阿里 通义千问](./qwen) | Qwen | Qwen3.8-Max / Qwen3.5 | 开源 | 全球 + 中文 |
 
 ## 配套内容
 

@@ -22,62 +22,63 @@ verifiedWith:
 flowchart TD
     A[开始选型] --> B{场景？}
     B -->|对话/通用| C{中文要求？}
-    B -->|编码/Agent| D[Claude Sonnet 4.8]
-    B -->|推理/数学| E[OpenAI o3 / GLM-Z1]
-    B -->|多模态| F[Qwen-VL / Omni]
+    B -->|编码/Agent| D[Claude Sonnet 5]
+    B -->|推理/数学| E[OpenAI o 系列 / GLM-Z1]
+    B -->|多模态| F[Qwen3.5 原生多模态]
     
     C -->|高| G{长文档？}
-    C -->|低| H[GPT-5 mini]
+    C -->|低| H[GPT-5.6 Terra]
     
-    G -->|> 200K| I[Kimi K2 / Qwen 3-Max]
+    G -->|> 200K| I[Kimi K3 / Qwen3.8-Max]
     G -->|< 200K| J{预算？}
     
-    J -->|敏感| K[Qwen 3-7B / GLM-4-Air]
-    J -->|不敏感| L[Claude Sonnet 4.8]
+    J -->|敏感| K[Qwen3.5 开源 / GLM-4-Air]
+    J -->|不敏感| L[Claude Sonnet 5]
 ```
 
 ### 维度 1：场景
 
 | 场景 | 首选 | 理由 |
 |------|------|------|
-| 通用对话 | Claude Sonnet 4.8 / GPT-5 mini | 性价比高，中英文都好 |
-| 编码 + Agent | Claude Sonnet 4.8 | Tool Use + Agent 最完整 |
-| 数学/代码推理 | OpenAI o3 / GLM-Z1 | RLVR 推理最强 |
-| 长文档分析 | Kimi K2 / Qwen 3-Max | 2M/1M 上下文 |
-| 多模态 | Qwen-VL / Omni | 全模态最完整 |
+| 通用对话 | Claude Sonnet 5 / GPT-5.6 Terra | 性价比高，中英文都好 |
+| 编码 + Agent | Claude Sonnet 5 | Tool Use + Agent 最完整 |
+| 数学/代码推理 | OpenAI o 系列 / GLM-Z1 | RLVR 推理最强 |
+| 长文档分析 | Kimi K3 / Qwen3.8-Max | 1M 上下文 |
+| 多模态 | Qwen3.5（原生多模态） | 全模态最完整 |
 
 ### 维度 2：中文要求
 
 | 要求 | 首选 | 理由 |
 |------|------|------|
 | 高（中文原生） | Kimi / Qwen / GLM | 中文基准领先，中文文件解析原生 |
-| 中（中英文均衡） | Claude Sonnet 4.8 | 中英文都好，Agent 最强 |
-| 低（英文为主） | GPT-5 / Claude Opus 4.8 | 英文基准最高 |
+| 中（中英文均衡） | Claude Sonnet 5 | 中英文都好，Agent 最强 |
+| 低（英文为主） | GPT-5.6 Sol / Claude Opus 5 | 英文基准最高 |
 
 ### 维度 3：长文档
 
 | 长度 | 首选 | 理由 |
 |------|------|------|
 | < 200K | 任意旗舰模型 | 都够用 |
-| 200K - 1M | Claude Fable 5 / Qwen 3-Max | 1M 上下文 |
-| > 1M | Kimi K2-0905 | 2M 上下文，唯一选择 |
+| 200K - 1M | Claude Fable 5 / Kimi K3 / Qwen3.8-Max | 1M 上下文 |
+| > 1M | 暂无（主流旗舰封顶 1M） | Kimi K3 / Fable 5 的 1M 是当前上限 |
 
 ### 维度 4：编码能力
 
-| 需求 | 首选 | SWE-bench |
-|------|------|-----------|
-| 最强编码 | Claude Sonnet 4.8 | 72.7% |
-| 编码 + 推理 | Claude Opus 4.8 | 79.4% |
-| 开源编码 | Qwen-Coder | 68.3% |
+| 需求 | 首选 | 备注 |
+|------|------|------|
+| 最强编码 | Claude Opus 5 / Sonnet 5 | 官方 benchmark 见 Anthropic 发布博客 |
+| 编码 + 推理 | Claude Opus 5 | Frontier-Bench 等官方评测领先 |
+| 开源编码 | Qwen3.5 / Qwen-Coder | 自部署成本可控 |
 
 ### 维度 5：预算
 
-| 预算 | 首选 | Input 价格 |
-|------|------|-----------|
-| 极低 | Qwen 3-0.5B（端侧） | 免费 |
-| 低 | Qwen 3-7B / GLM-4-Air | ¥0.5/MTok |
-| 中 | Claude Sonnet 4.8 / GPT-5 mini | $3-1.5/MTok |
-| 高 | Claude Opus 4.8 / o3 | $15-20/MTok |
+| 预算 | 首选 | 备注 |
+|------|------|------|
+| 极低 | Qwen3.5 开源小尺寸（自部署） | 免费（自承担算力） |
+| 低 | GLM-5.1 / GPT-5.6 Luna | $0.2-1.4/MTok |
+| 中 | Claude Sonnet 5 / GPT-5.6 Terra | $2/MTok |
+| 高 | Claude Opus 5 / GPT-5.6 Sol | $5/MTok |
+| 顶 | Claude Fable 5 / GPT-5.6 Cyber | $10+/MTok |
 
 ### 维度 6：部署
 
@@ -86,7 +87,7 @@ flowchart TD
 | API 直调 | 任意厂商 | 都支持 |
 | 海外企业私有 | Claude (Bedrock/Vertex) / GPT (Azure) | 云厂商集成 |
 | 国内企业私有 | Qwen (阿里云) / GLM (智谱云) | 国产化 + 私有化 |
-| 端侧/本地 | Qwen 3-7B / GLM-4-Air | 全尺寸开源 + 端侧优化 |
+| 端侧/本地 | Qwen3.5 开源小尺寸 / GLM-4-Air | 全尺寸开源 + 端侧优化 |
 
 ## 5 个常见决策点
 
@@ -94,23 +95,23 @@ flowchart TD
 
 **需求**：中文 + 私有化 + 成本可控
 
-**推荐**：Qwen 3-7B（阿里云部署）或 GLM-4.6（智谱 MaaS）
+**推荐**：Qwen3.5 开源（阿里云部署）或 GLM-5.1（智谱 MaaS）
 
-**理由**：全尺寸开源 + 国产化合规 + 成本低（¥0.5-5/MTok）
+**理由**：全尺寸开源 + 国产化合规 + 成本低（见各官方定价）
 
 ### 2. "个人 Claude Code 替代品"
 
 **需求**：编码 + 工具调用 + 低成本
 
-**推荐**：Claude Sonnet 4.8（$3/MTok）或 Qwen-Coder（开源）
+**推荐**：Claude Sonnet 5（$2/MTok）或 Qwen3.5 开源（自部署）
 
-**理由**：Claude Agent 最完整，Qwen-Coder 开源免费
+**理由**：Claude Agent 最完整，Qwen 开源免费
 
 ### 3. "长 PDF / 合同分析"
 
 **需求**：长上下文 + 文件解析 + 中文
 
-**推荐**：Kimi K2（1M 上下文 + 文件解析）或 Qwen 3-Max（1M 上下文）
+**推荐**：Kimi K3（1M 上下文 + 文件解析）或 Qwen3.8-Max（1M 上下文）
 
 **理由**：Kimi 文件解析原生支持，Qwen 价格更低
 
@@ -118,7 +119,7 @@ flowchart TD
 
 **需求**：推理能力最强
 
-**推荐**：OpenAI o3（推理最强）或 GLM-Z1（中文推理最强）
+**推荐**：OpenAI o 系列（推理最强）或 GLM-Z1（中文推理最强）
 
 **理由**：RLVR 训练，"想得更久 = 答得更准"
 
@@ -146,9 +147,9 @@ flowchart TD
 **示例路由**：
 
 ```
-用户请求 → 简单分类？ → Qwen 3-7B（¥0.5/MTok）
-         → 需要推理？ → Claude Opus 4.8（$15/MTok）
-         → 长文档？  → Kimi K2（¥12/MTok）
+用户请求 → 简单分类？ → Qwen3.5 开源（自部署）
+         → 需要推理？ → Claude Opus 5（$5/MTok）
+         → 长文档？  → Kimi K3（$3/MTok）
 ```
 
 **收益**：平均成本降低 60-80%，同时保持质量。

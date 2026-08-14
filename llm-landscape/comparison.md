@@ -32,23 +32,25 @@ verifiedWith:
 
 | 厂商 | 旗舰 | 中端 | 轻量 | 推理模型 | 开源 |
 |------|------|------|------|----------|------|
-| **Anthropic** | Opus 4.8 | Sonnet 4.8 | Haiku 4.5 | — | ❌ |
-| **OpenAI** | GPT-5 | GPT-5 mini | — | o1 / o3 | GPT-OSS 20B/120B |
-| **Moonshot** | K2 | K2 Thinking | — | K2 Thinking | K2 基础权重 |
-| **Zhipu** | GLM-5 | GLM-4.6 | GLM-4-Air | GLM-Z1 | GLM-4 全尺寸 |
-| **Qwen** | Qwen 3-Max | Qwen 3 | Qwen 3-7B | — | 全尺寸 + 全模态 |
+| **Anthropic** | Opus 5 | Sonnet 5 | Haiku 4.5 | — | ❌ |
+| **OpenAI** | GPT-5.6 Sol | GPT-5.6 Terra | GPT-5.6 Luna | o 系列 | 开源双轨 |
+| **Moonshot** | Kimi K3 | Kimi K2.5 | — | K3（总是推理） | K2.5 / K3 开源 |
+| **Zhipu** | GLM-5.2 | GLM-5.1 | GLM-4-Air | GLM-Z1 | GLM-5 全尺寸 |
+| **Qwen** | Qwen3.8-Max | Qwen3.5 | 开源小尺寸 | — | 全尺寸 + 全模态 |
 
 **结论**：OpenAI 推理最强（o-series），Qwen 开源最彻底，Anthropic Agent 最强。
 
 ## 二、性能基准对比（旗舰模型）
 
-| 厂商 | MMLU | HumanEval | GPQA | C-Eval | SWE-bench |
-|------|------|-----------|------|--------|-----------|
-| Anthropic | 88.7% | 79.4% | 68.5% | — | 79.4% |
-| OpenAI | 89.3% | 75.2% | 72.1% | — | 75.2% |
-| Moonshot | — | — | — | 89.5% | — |
-| Zhipu | 87.9% | — | — | 88.7% | — |
-| Qwen | 88.5% | 82.3% | — | 89.2% | — |
+> ⚠️ 具体分数以各厂商官方发布为准（Anthropic / OpenAI 发布博客、中文厂商技术报告），下表只保留**定性结论**，不收录未经核实的数字。
+
+| 厂商 | 英文基准（MMLU 等） | 中文基准（C-Eval 等） | 编码基准 |
+|------|------|------|------|
+| Anthropic | 领先 | — | 领先（Opus 5 / Sonnet 5） |
+| OpenAI | 领先 | — | 领先（GPT-5.6 Sol / o 系列） |
+| Moonshot | — | 领先 | 长上下文编码强（Kimi K3） |
+| Zhipu | 中上 | 领先 | Agentic Coding 主推（GLM-5.2） |
+| Qwen | 中上 | 领先 | 开源编码强（Qwen3.5） |
 
 **结论**：英文基准 Claude/GPT 领先，中文基准 Kimi/Qwen/GLM 领先。**没有全能冠军，只有场景冠军**。
 
@@ -58,7 +60,7 @@ verifiedWith:
 |------|------|------|-------------|
 | Anthropic | 200K | 1M（Fable 5 beta） | RoPE 插值 + 滑动窗口 |
 | OpenAI | 128K | 200K（o-series） | RoPE 插值 |
-| Moonshot | 1M | 2M（K2-0905） | LongRoPE |
+| Moonshot | 1M | 1M（K3） | LongRoPE 风格 |
 | Zhipu | 128K | 128K | RoPE 插值 |
 | Qwen | 1M | 1M | RoPE 插值 + 滑动窗口 |
 
@@ -128,13 +130,13 @@ verifiedWith:
 
 | 场景 | 首选 | 备选 | 理由 |
 |------|------|------|------|
-| **英文编码 + Agent** | Claude Sonnet 4.8 | GPT-5 | Tool Use + Agent 最完整 |
-| **中文长文档** | Kimi K2 | Qwen 3-Max | 2M 上下文 + 文件解析 |
+| **英文编码 + Agent** | Claude Sonnet 5 | GPT-5.6 Sol | Tool Use + Agent 最完整 |
+| **中文长文档** | Kimi K3 | Qwen3.8-Max | 1M 上下文 + 文件解析 |
 | **数学/代码推理** | OpenAI o3 | GLM-Z1 | RLVR 推理最强 |
 | **本地/端侧部署** | Qwen 3-7B | GLM-4-Air | 全尺寸开源 + 端侧优化 |
 | **企业合规（海外）** | Claude (Bedrock) | GPT (Azure) | 云厂商集成 |
 | **企业合规（国内）** | Qwen (阿里云) | GLM (智谱云) | 国产化 + 私有化 |
-| **多模态** | Qwen-VL / Omni | GPT-5 Vision | 全模态最完整 |
+| **多模态** | Qwen3.5（原生多模态） | GPT-5.6 Vision | 全模态最完整 |
 | **极低成本** | Qwen 3-0.5B（端侧） | GPT-OSS 20B（自部署） | 免费 |
 
 ## 参考

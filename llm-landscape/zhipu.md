@@ -1,18 +1,18 @@
 ---
 title: Zhipu · 智谱 GLM 全系
-description: GLM-5 / GLM-4.6 / GLM-Z1 / CogVLM——清华系、Agent 能力、全尺寸开源
+description: GLM-5.2 / GLM-5 / GLM-Z1——清华系、Agentic Coding、全尺寸开源
 audience: intermediate
 difficulty: 🟡
 status: published
 lastUpdated: 2026-08-13
 verifiedWith:
   sources:
-    - name: 智谱 BigModel 开放平台
-      url: https://open.bigmodel.cn/
-      accessedAt: 2026-08-13
-    - name: GLM-4 技术报告
-      url: https://github.com/THUDM/GLM-4
-      accessedAt: 2026-08-13
+    - name: 智谱开放平台定价
+      url: https://docs.bigmodel.cn
+      accessedAt: 2026-08-14
+    - name: GLM-5 官方文档
+      url: https://docs.bigmodel.cn/cn/guide/models/text/glm-5
+      accessedAt: 2026-08-14
 ---
 
 # Zhipu · 智谱 GLM 全系
@@ -27,17 +27,16 @@ verifiedWith:
 
 | 模型 | 定位 | 上下文 | 思考模式 | 主要场景 |
 |------|------|--------|----------|----------|
-| **GLM-5** | 旗舰 | 128K | — | 通用 / 复杂推理 / Agent |
-| **GLM-4.6** | 主力 | 128K | — | 编码 / 通用对话 |
-| **GLM-Z1** | 推理增强 | 128K | RLVR | 数学 / 代码 / 逻辑 |
-| **GLM-4-Vision** | 多模态 | 128K | — | 图片理解 / OCR |
-| **GLM-4-Air** | 轻量 | 128K | — | 高并发 / 低成本 |
+| **GLM-5.2** | 旗舰 | 200K+ | — | Agentic Engineering / 通用 |
+| **GLM-5** | 上一代旗舰 | 200K | — | 已由 5.2 取代（744B / 40B） |
+| **GLM-Z1** | 推理增强 | — | RLVR | 数学 / 代码 / 逻辑 |
+| **GLM-4-Air** | 轻量 | — | — | 高并发 / 低成本 |
 
-> **产品线逻辑**：GLM-5 做旗舰、GLM-4.6 做主力、GLM-Z1 做推理、GLM-4-Air 做轻量——四层覆盖。
+> **产品线逻辑**：GLM-5.2 做旗舰（2026 官方定价在售）、GLM-5 是上一代（744B / 40B 激活，主打 Agentic Coding）、GLM-Z1 做推理、GLM-4-Air 做轻量。
 
 ## 三、技术架构
 
-**MoE 路径（推测）** —— GLM-5 采用 MoE 架构，具体专家数未公开。从 GLM-4 的 dense 演进到 GLM-5 的 MoE，与行业趋势一致。
+**MoE 路径** —— GLM-5 系列采用 MoE 架构（GLM-5 为 744B 总参数 / 40B 激活），从 GLM-4 的 dense 演进，与行业趋势一致。
 
 **GLM 双向注意力** —— GLM 系列的独特设计：早期版本用双向注意力（Encoder-Decoder 风格），GLM-4 起转为自回归（Decoder-only）。**双向注意力在理解任务上有优势，但生成任务不如自回归**。
 
@@ -57,7 +56,7 @@ verifiedWith:
 
 **AllTools 是智谱的差异化** —— 一个 API 调用同时支持搜索、计算、绘图、代码执行，类似 ChatGPT 的 Code Interpreter + Web Browsing 组合。
 
-**CodeGeeX 开源** —— 智谱开源的 IDE 编程助手（VS Code / JetBrains），底层用 GLM-4.6，是国内最早的 AI 编程工具之一。
+**CodeGeeX 开源** —— 智谱开源的 IDE 编程助手（VS Code / JetBrains），底层用 GLM 系列，是国内最早的 AI 编程工具之一。
 
 ## 五、部署形态
 
@@ -70,16 +69,14 @@ verifiedWith:
 
 **全尺寸开源是智谱优势** —— GLM-4 / GLM-4-Vision 完全开源（Apache 2.0），从 1.5B 到 130B 全尺寸覆盖。是国内开源最彻底的大模型厂商。
 
-## 六、价格 / 性能基准（截至 2026-08）
+## 六、价格（截至 2026-08，官方定价）
 
-| 模型 | Input | Output | C-Eval | CMMLU | SuperCLUE |
-|------|-------|--------|--------|-------|-----------|
-| GLM-5 | ¥15 / MTok | ¥45 / MTok | 88.7% | 87.9% | 85.3% |
-| GLM-4.6 | ¥5 / MTok | ¥15 / MTok | 85.2% | 84.6% | 82.1% |
-| GLM-Z1 | ¥10 / MTok | ¥30 / MTok | 90.1% | 89.3% | 86.7% |
-| GLM-4-Air | ¥0.5 / MTok | ¥1.5 / MTok | 78.3% | 77.1% | 74.5% |
+| 模型 | Input | Output | 缓存命中 | 备注 |
+|------|-------|--------|---------|------|
+| GLM-5.2 | $1.4 / MTok | $4.4 / MTok | $0.26 | 旗舰 |
+| GLM-5.1 | $1.4 / MTok | $4.4 / MTok | $0.26 | 同价位在售 |
 
-**GLM-Z1 在中文推理基准上最强** —— C-Eval 90.1%、CMMLU 89.3%，超过 GPT-5 和 Claude Opus 4.8。
+**GLM-5.2 / 5.1 官方定价（2026-08）** —— 智谱旗舰 API 定价，大幅低于 Claude / GPT 同档；另有 Coding Plan（Max / Pro 套餐）支持 Claude Code 接入。
 
 ## 七、适合场景 / 不适合场景
 
