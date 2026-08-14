@@ -47,13 +47,16 @@ index.md            首页（layout: home）
 getting-started/    AI 入门（通用 AI 概念 + 工具选型）
 ai-core/            AI 核心技术（fundamentals / model-arch / training / eval）
 ai-coding/          AI Coding 落地（tools / workflows / patterns / enterprise）
-ai-trends/          产品动向（product-updates / research-highlights / industry）
+ai-trends/          产品动向
+├── product-updates/   月度速报
+├── vendors/           国外厂商（Anthropic / OpenAI / xAI）
+├── cn-vendors/        国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen）
+├── research-highlights/ 技术速递
+└── industry/          行业观察
 claude-code/        Claude Code CLI 精通（9 个子章，共 48 页 + index）
 claude-capabilities/ Claude 能力全景（8 个子章，共 47 页 + index）
-ai-trends/vendors/  厂商档案（Anthropic / OpenAI / Moonshot / Zhipu / Qwen）
 reference/          速查手册（含模型横向对比与选型决策树）
 cookbook/           实战案例
-reference/          速查手册
 contributing/       写作规范五件套（本文重要参考）
 ```
 
