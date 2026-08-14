@@ -342,7 +342,6 @@ export default withMermaid(defineConfig({
             { text: '月度产品速报', link: '/ai-trends/product-updates/monthly' },
             { text: 'Claude 动态', link: '/ai-trends/product-updates/claude' },
             { text: 'ChatGPT 动态', link: '/ai-trends/product-updates/chatgpt' },
-            { text: '国内厂商动态', link: '/ai-trends/product-updates/china' },
           ],
         },
         {
@@ -357,6 +356,18 @@ export default withMermaid(defineConfig({
             { text: 'MiniMax 全系', link: '/ai-trends/vendors/minimax' },
             { text: 'Zhipu · 智谱 GLM 全系', link: '/ai-trends/vendors/zhipu' },
             { text: 'Qwen · 阿里通义千问全系', link: '/ai-trends/vendors/qwen' },
+          ],
+        },
+        {
+          text: '国内厂商',
+          collapsed: true,
+          items: [
+            { text: '总览', link: '/ai-trends/cn-vendors/' },
+            { text: 'DeepSeek', link: '/ai-trends/cn-vendors/deepseek' },
+            { text: '字节豆包', link: '/ai-trends/cn-vendors/doubao' },
+            { text: '百度文心', link: '/ai-trends/cn-vendors/baidu' },
+            { text: '腾讯混元', link: '/ai-trends/cn-vendors/tencent' },
+            { text: '小米 MiMo', link: '/ai-trends/cn-vendors/xiaomi' },
           ],
         },
         {

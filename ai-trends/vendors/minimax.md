@@ -98,4 +98,4 @@ MiniMax 由前商汤科技副总裁闫俊杰创立，2021 年成立，总部上�
 
 - 看 Kimi 档案 → [Moonshot · Kimi 全系](/ai-trends/vendors/moonshot)
 - 看 GLM 档案 → [Zhipu · 智谱 GLM 全系](/ai-trends/vendors/zhipu)
-- 看国内厂商动态 → [国内厂商动态](/ai-trends/product-updates/china)
+- 看国内厂商动态 → [国内厂商](/ai-trends/cn-vendors/)

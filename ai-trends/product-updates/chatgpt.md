@@ -36,7 +36,7 @@ verifiedWith:
 - **GPT 系列**：通用对话与生成，主打综合能力（GPT-4、GPT-4o 等）
 - **o 系列**：推理模型，回答前「思考」更久，擅长数学、编程、逻辑（o1、o3 等）
 
-> 关键认知：2024 年起 OpenAI 把「快速应答」与「慢速推理」分成两条模型线，o 系列确立了**推理时计算（inference-time compute）**路线——这也影响了后来的整个行业，包括 [DeepSeek-R1](/ai-trends/product-updates/china)。
+> 关键认知：2024 年起 OpenAI 把「快速应答」与「慢速推理」分成两条模型线，o 系列确立了**推理时计算（inference-time compute）**路线——这也影响了后来的整个行业，包括 [DeepSeek-R1](/ai-trends/cn-vendors/)。
 
 **开发者层 — Platform API**：模型 API、助手 API、微调、批处理端点。价格与限额变化对工程师最直接。
 
@@ -77,7 +77,7 @@ verifiedWith:
 ## 下一步
 
 - 看 Claude 那边 → [Claude 动态](/ai-trends/product-updates/claude)
-- 看国内厂商 → [国内厂商动态](/ai-trends/product-updates/china)
+- 看国内厂商 → [国内厂商](/ai-trends/cn-vendors/)
 - 看整体 → [月度产品速报](/ai-trends/product-updates/monthly)
 
 ## 如果你想

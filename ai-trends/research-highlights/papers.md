@@ -63,7 +63,7 @@ verifiedWith:
 | LoRA | 2021 | 高效微调，成本大降 | [训练与推理](/ai-core/) |
 | InstructGPT | 2022 | RLHF 落地，对齐成为标配 | [对齐](/ai-core/fundamentals/alignment) |
 | Mixtral | 2024 | MoE 架构开源化 | [稠密 vs MoE](/ai-core/model-arch/dense-vs-moe) |
-| DeepSeek-R1 | 2025-01 | 开源推理模型追平闭源 | [推理模型](/ai-trends/product-updates/china) |
+| DeepSeek-R1 | 2025-01 | 开源推理模型追平闭源 | [推理模型](/ai-trends/cn-vendors/) |
 
 > ⚠️ 锚点用于学习路径，非「最新速递」。每周更新部分请自行按第一节漏斗筛。
 

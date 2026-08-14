@@ -19,7 +19,7 @@ lastUpdated: 2026-08-14
 - 核心模型、技术路线、部署方式和价格结构是什么
 - 适合什么场景，不适合什么场景
 
-如果你只想知道最近发布了什么，看 [Claude 动态](/ai-trends/product-updates/claude)、[ChatGPT 动态](/ai-trends/product-updates/chatgpt) 和 [国内厂商动态](/ai-trends/product-updates/china)。
+如果你只想知道最近发布了什么，看 [Claude 动态](/ai-trends/product-updates/claude)、[ChatGPT 动态](/ai-trends/product-updates/chatgpt) 和 [国内厂商](/ai-trends/cn-vendors/)。
 
 ## 厂商列表
 

@@ -99,4 +99,4 @@ xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化�
 
 - 看 Claude 档案 → [Anthropic · Claude 全系](/ai-trends/vendors/anthropic)
 - 看 OpenAI 档案 → [OpenAI · GPT 全系](/ai-trends/vendors/openai)
-- 看国内厂商 → [国内厂商动态](/ai-trends/product-updates/china)
+- 看国内厂商 → [国内厂商](/ai-trends/cn-vendors/)

@@ -72,7 +72,7 @@ verifiedWith:
 ## 下一步
 
 - 看 ChatGPT 那边 → [ChatGPT 动态](/ai-trends/product-updates/chatgpt)
-- 看国内厂商 → [国内厂商动态](/ai-trends/product-updates/china)
+- 看国内厂商 → [国内厂商](/ai-trends/cn-vendors/)
 - 按月汇总所有动态 → [月度产品速报](/ai-trends/product-updates/monthly)
 
 ## 如果你想
