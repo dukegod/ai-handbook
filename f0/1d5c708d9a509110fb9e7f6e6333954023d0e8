@@ -1,0 +1,20 @@
+ai-core/eval/benchmarks.md
+  h_a427b9af6cd304 114
+ai-core/fundamentals/transformer.md
+  h_a427b9af6cd304 42
+ai-core/model-arch/dense-vs-moe.md
+  h_a427b9af6cd304 75,124-129
+ai-core/model-arch/long-context.md
+  h_a427b9af6cd304 85,87-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "f01d5c708d9a509110fb9e7f6e6333954023d0e8",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
