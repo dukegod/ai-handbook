@@ -1,0 +1,94 @@
+ai-trends/vendors/zhipu.md
+  s_511a7b6b9ad9ed::t_267384a281c53b 1-112
+ai-trends/vendors/openai.md
+  s_511a7b6b9ad9ed::t_267384a281c53b 1-114
+ai-core/eval/benchmarks.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 121,126,130
+ai-core/training/quantization.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 132,141
+  s_511a7b6b9ad9ed::t_b5c7cecec54224 142
+ai-core/model-arch/long-context.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 127,136
+ai-core/training/inference-optimization.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 144,153
+ai-core/model-arch/architecture-landscape.md
+  s_511a7b6b9ad9ed::t_267384a281c53b 1-164
+README.md
+  s_511a7b6b9ad9ed::t_50a3f631ea4afd 42-43
+reference/index.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 25-26,46
+ai-core/fundamentals/alignment.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 125,134
+contributing/roadmap.md
+  s_511a7b6b9ad9ed::t_50a3f631ea4afd 353,362,372
+index.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 46-49,81,89
+ai-trends/product-updates/chatgpt.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 70,85
+ai-core/model-arch/multimodal.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 129,138
+ai-coding/tools/overview.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 143,153
+ai-trends/vendors/moonshot.md
+  s_511a7b6b9ad9ed::t_267384a281c53b 1-105
+ai-trends/vendors/qwen.md
+  s_511a7b6b9ad9ed::t_267384a281c53b 1-117
+ai-trends/vendors/anthropic.md
+  s_511a7b6b9ad9ed::t_b5c7cecec54224 1-112,114-120
+  s_511a7b6b9ad9ed::t_267384a281c53b 113,121-122
+ai-trends/index.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 23,44
+ai-trends/industry/funding.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 100
+ai-trends/vendors/index.md
+  s_511a7b6b9ad9ed::t_920fda4b5b9ee1 1-38
+ai-core/training/data-engineering.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 117,126
+ai-trends/product-updates/china.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 92
+ai-trends/research-highlights/open-source.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 98
+ai-core/fundamentals/pretraining.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 121,130
+ai-core/index.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 37,44,49
+ai-core/model-arch/dense-vs-moe.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 147,156
+ai-core/fundamentals/transformer.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 106,115
+CLAUDE.md
+  s_511a7b6b9ad9ed::t_50a3f631ea4afd 14,53-54
+AGENTS.md
+  s_511a7b6b9ad9ed::t_50a3f631ea4afd 14,53-54
+ai-core/eval/methodology.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 116,120-121
+reference/model-selection-guide.md
+  s_511a7b6b9ad9ed::t_267384a281c53b 159-161,167
+  s_511a7b6b9ad9ed::t_b5c7cecec54224 1-158,162-166
+reference/model-comparison.md
+  s_511a7b6b9ad9ed::t_267384a281c53b 1-151
+ai-coding/index.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 59
+ai-core/fundamentals/attention.md
+  s_511a7b6b9ad9ed::t_bb8f4565360dbe 127
+ai-trends/product-updates/claude.md
+  s_511a7b6b9ad9ed::t_20b02cad890ba6 82
+.vitepress/config.ts
+  s_511a7b6b9ad9ed::t_e6db3a131a0e00 305,348-359,455-456
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "d8689981e42addf15fa97220083c72ad8a7b68ba",
+  "prompts": {},
+  "sessions": {
+    "s_511a7b6b9ad9ed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fff22-507f-72d3-a784-9019c43bb78e",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
