@@ -44,7 +44,7 @@ flowchart TD
 | 编码 + Agent | Claude Sonnet 5 | Tool Use + Agent 最完整 |
 | 数学/代码推理 | OpenAI o 系列 / GLM-Z1 | RLVR 推理最强 |
 | 长文档分析 | Kimi K3 / Qwen3.8-Max | 1M 上下文 |
-| 多模态 | Qwen3.5（原生多模态） | 全模态最完整 |
+| 多模态 | Qwen3.5 / MiniMax（原生多模态） | 全模态最完整 |
 
 ### 维度 2：中文要求
 
@@ -74,9 +74,9 @@ flowchart TD
 
 | 预算 | 首选 | 备注 |
 |------|------|------|
-| 极低 | Qwen3.5 开源小尺寸（自部署） | 免费（自承担算力） |
-| 低 | GLM-5.1 / GPT-5.6 Luna | $0.2-1.4/MTok |
-| 中 | Claude Sonnet 5 / GPT-5.6 Terra | $2/MTok |
+| 极低 | MiniMax M2.7 / GLM-5.1 | $0.3-1.4/MTok |
+| 低 | GPT-5.6 Luna / Qwen3.5 开源（自部署） | $0.2/MTok 起 |
+| 中 | Claude Sonnet 5 / GPT-5.6 Terra / Grok 4.6 | $2/MTok |
 | 高 | Claude Opus 5 / GPT-5.6 Sol | $5/MTok |
 | 顶 | Claude Fable 5 / GPT-5.6 Cyber | $10+/MTok |
 

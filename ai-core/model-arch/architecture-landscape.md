@@ -1,6 +1,6 @@
 ---
 title: 跨厂商架构路线
-description: 5 家主流大模型的技术路线——dense vs MoE / 长上下文实现 / RL 训练方法 / 推理优化
+description: 7 家主流大模型的技术路线——dense vs MoE / 长上下文实现 / RL 训练方法 / 推理优化
 audience: advanced
 difficulty: 🔴
 status: published
@@ -26,11 +26,11 @@ verifiedWith:
 
 # 跨厂商架构路线
 
-> 跨 5 家厂商的 4 大技术路线总览——这一页负责厂商路线地图，具体机制见 Dense vs MoE、长上下文技术和多模态架构。
+> 跨 7 家厂商的 4 大技术路线总览——这一页负责厂商路线地图，具体机制见 Dense vs MoE、长上下文技术和多模态架构。
 
 ## 一句话总览
 
-5 家厂商的旗舰模型在 4 大路线上的选择趋同：**dense 已退场、MoE 成主流；长上下文走 RoPE 扩展；RL 训练从 RLHF 演进到 RLVR；推理优化堆叠 5 层**。下表是 4 路线的速查，详细论证见后续 4 节。
+7 家厂商的旗舰模型在 4 大路线上的选择趋同：**dense 已退场、MoE 成主流；长上下文走 RoPE 扩展；RL 训练从 RLHF 演进到 RLVR；推理优化堆叠 5 层**。下表是 4 路线的速查，详细论证见后续 4 节。
 
 ## 一、Transformer 架构演进
 
@@ -50,14 +50,16 @@ verifiedWith:
 - **dense 模型**：每次推理激活全部参数，训练稳定但推理贵
 - **MoE（Mixture of Experts）**：把 FFN 拆成 N 个专家，每次只激活 top-k 个（如 8/384），推理省但路由有负载不均衡问题
 
-**5 家路线**：
+**7 家路线**：
 
 | 厂商 | 模型 | 架构 | 专家数 | 激活数 |
 | --- | --- | --- | --- | --- |
-| Anthropic | Claude Opus 4.8 | dense（推测） | — | 全参 |
-| OpenAI | GPT-5 | MoE（推测） | 未公开 | 未公开 |
-| Moonshot | Kimi K2（历史） | MoE | 384 | 8 |
-| Zhipu | GLM-4 / GLM-5 | MoE | 未公开 | 未公开 |
+| Anthropic | Claude Opus 5 | dense（推测） | — | 全参 |
+| OpenAI | GPT-5.6 | MoE（推测） | 未公开 | 未公开 |
+| xAI | Grok 4.6 | MoE（推测） | 未公开 | 未公开 |
+| Moonshot | Kimi K3 | MoE | 未公开 | 未公开 |
+| MiniMax | M2.7 | MoE（推测） | 未公开 | 未公开 |
+| Zhipu | GLM-5.2 | MoE | 未公开 | 未公开 |
 | Qwen | Qwen3.8-Max | MoE | 未公开 | 未公开 |
 
 MoE 的**工程红利**：相同训练成本下参数总量可以做得更大；相同推理成本下性能可以追平 dense 大模型。**Kimi K2（2025 年）曾是公开最激进的 MoE 设计**——384 专家，激活 8，路由用 shared expert + routed expert 双轨。

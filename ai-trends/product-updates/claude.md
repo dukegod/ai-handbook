@@ -79,4 +79,4 @@ verifiedWith:
 
 - 选模型 → [模型选择](/claude-code/basics/model-selection)
 - 了解 Fable 5 → [Fable 5 深度解读](/claude-capabilities/models/fable)
-- 对比五大厂商 → [5 厂商横向对比](/reference/model-comparison)
+- 对比七家厂商 → [7 厂商横向对比](/reference/model-comparison)

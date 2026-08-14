@@ -20,7 +20,7 @@ verifiedWith:
 
 # Anthropic · Claude 全系
 
-> 5 家厂商里**最坚持 dense 架构** + 唯一公开推 RLAIF 训练方法 + 把 Agent / Computer Use 当一等公民。
+> 7 家厂商里**最坚持 dense 架构** + 唯一公开推 RLAIF 训练方法 + 把 Agent / Computer Use 当一等公民。
 
 ## 一、公司背景
 
@@ -40,7 +40,7 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 
 ## 三、技术架构
 
-**dense 模型路径**（推测）—— 在 5 家厂商里 Anthropic 是少数仍坚持 dense 的（其他 4 家都走 MoE）。代价是训练成本更高、参数总量受限；收益是**推理行为更稳定、不需要路由调优**。
+**dense 模型路径**（推测）—— 在 7 家厂商里 Anthropic 是少数仍坚持 dense 的（其他多数厂商走 MoE）。代价是训练成本更高、参数总量受限；收益是**推理行为更稳定、不需要路由调优**。
 
 **Constitutional AI（RLAIF）** —— Anthropic 主推的训练方法：用 AI 而非人类做偏好标注，先用"宪法"原则（helpful / harmless / honest）让模型自评，再用 RLAIF 训练。**核心差异**：和 OpenAI 的 RLHF / DeepSeek 的 GRPO 路线不同，Constitutional AI 把"价值观"显式编码进训练流程——更适合做安全可控的助手。
 
