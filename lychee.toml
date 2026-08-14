@@ -75,6 +75,12 @@ exclude = [
     "^https?://(www\\.)?anthropic\\.com/research",
     # Slack marketplace 链接已迁移到子路径
     "^https?://slack\\.com/apps/.*-claude$",
+    # openai.com 反爬 403（同 npmjs / claude.ai 模式）
+    "^https?://(www\\.)?openai\\.com",
+    # platform.openai.com 需 JS 渲染，curl / lychee 均超时
+    "^https?://platform\\.openai\\.com",
+    # chat.lmsys.org 网络层屏蔽（154.83.x.x 网段本地与 CI 均不可达，lmarena.ai 同段）
+    "^https?://chat\\.lmsys\\.org",
 ]
 
 # 缓存（加速重复运行）

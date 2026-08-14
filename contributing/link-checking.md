@@ -245,7 +245,7 @@ lychee --files-from /tmp/files.txt
 lychee 输出：Cannot resolve root-relative link '/claude-code/xxx': provide a root dir
 ```
 
-**v0.4.2 解法**：所有调用都加 `--root-dir "$(pwd)"`（本地）或 `--root-dir ${{ github.workspace }}`（CI）。
+**v0.4.2 解法**：所有调用都加 `--root-dir "$(pwd)"`（本地）或 `--root-dir $&#123;&#123; github.workspace &#125;&#125;`（CI）。
 
 **4. `.lycheecache` 误提交**
 

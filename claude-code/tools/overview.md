@@ -38,10 +38,10 @@ verifiedWith:
 
 | 工具 | 一句话作用 | 权限 | 深入 |
 | --- | --- | --- | --- |
-| `Read` | 按行读取文件/图片/PDF/notebook 单元格 | 无需（工作目录外要放行） | [Read](./read) 🚧 |
-| `Edit` | 精准替换文件片段（含 `replace_all`） | 需询问 | [Edit & Write](./edit-and-write) 🚧 |
-| `Write` | 新建或整覆写文件 | 需询问 | [Edit & Write](./edit-and-write) 🚧 |
-| `NotebookEdit` | 改 Jupyter notebook 单元格 | 需询问 | [Notebook](./notebook) 🚧 |
+| `Read` | 按行读取文件/图片/PDF/notebook 单元格 | 无需（工作目录外要放行） | [Read](./read) |
+| `Edit` | 精准替换文件片段（含 `replace_all`） | 需询问 | [Edit & Write](./edit-and-write) |
+| `Write` | 新建或整覆写文件 | 需询问 | [Edit & Write](./edit-and-write) |
+| `NotebookEdit` | 改 Jupyter notebook 单元格 | 需询问 | [Notebook](./notebook) |
 
 > **note**：`MultiEdit` 已合入 `Edit` 的 `replace_all` 语义，不再是独立工具。
 
@@ -49,38 +49,38 @@ verifiedWith:
 
 | 工具 | 一句话作用 | 权限 | 深入 |
 | --- | --- | --- | --- |
-| `Bash` | 执行 shell 命令，支持后台与 timeout | 需询问（内置只读命令直接放行） | [Bash](./shell) 🚧 |
-| `PowerShell` | 原生 PowerShell（Windows / 支持环境） | 需询问 | [Bash](./shell) 🚧 |
+| `Bash` | 执行 shell 命令，支持后台与 timeout | 需询问（内置只读命令直接放行） | [Bash](./shell) |
+| `PowerShell` | 原生 PowerShell（Windows / 支持环境） | 需询问 | [Bash](./shell) |
 | `Monitor` | 后台跑一条命令并把每行输出回喂给 Claude | 需询问 | — |
 
 ### ③ 搜索（3）
 
 | 工具 | 一句话作用 | 权限 | 深入 |
 | --- | --- | --- | --- |
-| `Grep` | 按 ripgrep 语法搜文件内容 | 无需 | [Grep / Glob](./search) 🚧 |
-| `Glob` | 按 glob 模式匹配文件路径 | 无需 | [Grep / Glob](./search) 🚧 |
+| `Grep` | 按 ripgrep 语法搜文件内容 | 无需 | [Grep / Glob](./search) |
+| `Glob` | 按 glob 模式匹配文件路径 | 无需 | [Grep / Glob](./search) |
 | `LSP` | 跳转定义、找引用、类型报错（需装 LSP） | 无需 | — |
 
 ### ④ Web（2）
 
 | 工具 | 一句话作用 | 权限 | 深入 |
 | --- | --- | --- | --- |
-| `WebFetch` | 抓一个 URL 转 markdown 再答一段 prompt | 需询问（可按域名放行） | [Web](./web) 🚧 |
-| `WebSearch` | 联网搜索（美国区）返回带 URL 的结果列表 | 需询问 | [Web](./web) 🚧 |
+| `WebFetch` | 抓一个 URL 转 markdown 再答一段 prompt | 需询问（可按域名放行） | [Web](./web) |
+| `WebSearch` | 联网搜索（美国区）返回带 URL 的结果列表 | 需询问 | [Web](./web) |
 
 ### ⑤ 任务管理（7）
 
 | 工具 | 一句话作用 | 权限 | 深入 |
 | --- | --- | --- | --- |
-| `TaskCreate` / `Get` / `List` / `Update` | v2.1.142+ 的任务清单四件套 | 无需 | [Todo](./todo) 🚧 |
-| `TaskOutput` / `TaskStop` | 读/停后台任务 | 无需 | [Todo](./todo) 🚧 |
-| `TodoWrite` | 老 API，2.1.142 起默认关闭 | 无需 | [Todo](./todo) 🚧 |
+| `TaskCreate` / `Get` / `List` / `Update` | v2.1.142+ 的任务清单四件套 | 无需 | [Todo](./todo) |
+| `TaskOutput` / `TaskStop` | 读/停后台任务 | 无需 | [Todo](./todo) |
+| `TodoWrite` | 老 API，2.1.142 起默认关闭 | 无需 | [Todo](./todo) |
 
 ### ⑥ 子代理与通信（3）
 
 | 工具 | 一句话作用 | 权限 | 深入 |
 | --- | --- | --- | --- |
-| `Agent` | 派生一个 subagent 到独立 context 干活 | 无需（子调用逐条判） | [Dispatch Subagent](./dispatch-subagent) 🚧 |
+| `Agent` | 派生一个 subagent 到独立 context 干活 | 无需（子调用逐条判） | [Dispatch Subagent](./dispatch-subagent) |
 | `SendMessage` | 给 agent-team 队友/已完成 subagent 传消息 | 无需 | [Multi-agent 模式](/claude-code/subagents-and-workflows/multi-agent-patterns) 🚧 |
 | `Workflow` | 跑一段编排多 subagent 的确定性脚本 | 需询问 | [Workflow 编排](/claude-code/subagents-and-workflows/workflow-orchestration) 🚧 |
 
@@ -95,15 +95,15 @@ verifiedWith:
 
 | 工具 | 一句话作用 | 权限 | 深入 |
 | --- | --- | --- | --- |
-| `EnterWorktree` | 新建或切入一个 git worktree | 需询问 | [Worktree](../advanced/worktree) 🚧 |
-| `ExitWorktree` | 退回原目录（保留或删除 worktree） | 无需 | [Worktree](../advanced/worktree) 🚧 |
+| `EnterWorktree` | 新建或切入一个 git worktree | 需询问 | [Worktree](../advanced/worktree) |
+| `ExitWorktree` | 退回原目录（保留或删除 worktree） | 无需 | [Worktree](../advanced/worktree) |
 
 ### ⑨ 调度与后台（4）
 
 | 工具 | 一句话作用 | 权限 | 深入 |
 | --- | --- | --- | --- |
-| `CronCreate` / `List` / `Delete` | 会话内一次性或周期任务 | 无需 | [自动化](../advanced/automation) 🚧 |
-| `ScheduleWakeup` | 自适应 `/loop` 的下次触发（Claude 自调） | 无需 | [自动化](../advanced/automation) 🚧 |
+| `CronCreate` / `List` / `Delete` | 会话内一次性或周期任务 | 无需 | [自动化](../advanced/automation) |
+| `ScheduleWakeup` | 自适应 `/loop` 的下次触发（Claude 自调） | 无需 | [自动化](../advanced/automation) |
 
 ### ⑩ 其他常见（4）
 
@@ -157,11 +157,11 @@ MCP 相关：`ListMcpResourcesTool` / `ReadMcpResourceTool` / `ToolSearch` / `Wa
 
 ## 下一步
 
-- 学 Shell 场景与安全边界 → [Bash 执行命令](./shell) 🚧
-- 学如何让 Claude 派生 subagent 干重活 → [Dispatch Subagent](./dispatch-subagent) 🚧
+- 学 Shell 场景与安全边界 → [Bash 执行命令](./shell)
+- 学如何让 Claude 派生 subagent 干重活 → [Dispatch Subagent](./dispatch-subagent)
 
 ## 如果你想
 
 - 精细控制某个工具在项目里的可用范围 → [权限系统](../basics/permissions)
-- 用 MCP 扩出更多工具 → [什么是 MCP](../mcp/what-is-mcp) 🚧
-- 把工具能力打包给别人复用 → [什么是 Skill](/claude-code/skills/what-is-a-skill) 🚧
+- 用 MCP 扩出更多工具 → [什么是 MCP](../mcp/what-is-mcp)
+- 把工具能力打包给别人复用 → [什么是 Skill](/claude-code/skills/what-is-a-skill)
