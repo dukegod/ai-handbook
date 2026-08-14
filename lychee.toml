@@ -81,6 +81,8 @@ exclude = [
     "^https?://platform\\.openai\\.com",
     # chat.lmsys.org 网络层屏蔽（154.83.x.x 网段本地与 CI 均不可达，lmarena.ai 同段）
     "^https?://chat\\.lmsys\\.org",
+    # itjuzi.com 反爬 412（带浏览器 UA 亦拒绝）
+    "^https?://(www\\.)?itjuzi\\.com",
 ]
 
 # 缓存（加速重复运行）
