@@ -1,0 +1,18 @@
+ai-trends/product-updates/chatgpt.md
+  h_a427b9af6cd304 51,53
+ai-trends/product-updates/china.md
+  h_a427b9af6cd304 10-11,14,34,36,38-47,64,66,68,70,74,76
+ai-trends/product-updates/claude.md
+  h_a427b9af6cd304 46,50,52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b5102b914f07ec18e0dc26ee090c59bfa071f8ad",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
