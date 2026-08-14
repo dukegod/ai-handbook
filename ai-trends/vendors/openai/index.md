@@ -4,7 +4,7 @@ description: GPT-5.6 系列（Sol / Terra / Luna / Cyber）——技术架构、
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-13
+lastUpdated: 2026-08-14
 verifiedWith:
   sources:
     - name: OpenAI 官方定价
@@ -39,9 +39,9 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 
 **MoE 路径（推测）** —— GPT-5 系列采用 MoE 架构，具体专家数未公开。相比 Anthropic 的 dense 路线，MoE 让 OpenAI 在相同推理成本下堆更大参数量。
 
-**o-series 推理模型** —— OpenAI 的核心差异化。o1/o3 用 RLVR（Reinforcement Learning with Verifiable Rewards）训练：数学题答案对错、代码题单测通过率，完全可程序验证。**“多花时间想 = 准确率提升”** 是 o-series 的核心理念。o4-mini 等后续型号仍在定价表中。
+**o-series 推理模型** —— OpenAI 的核心差异化。o1/o3 用 RLVR（Reinforcement Learning with Verifiable Rewards）训练：数学题答案对错、代码题单测通过率，完全可程序验证。**"多花时间想 = 准确率提升"** 是 o-series 的核心理念。o4-mini 等后续型号仍在定价表中。
 
-**开源动态（GPT-OSS）** —— OpenAI 已进入“闭源 + 开源”双轨，开源型号以官方发布为准（具体尺寸与许可请查 OpenAI 官方开源仓库）。
+**开源动态（GPT-OSS）** —— OpenAI 已进入"闭源 + 开源"双轨，开源型号以官方发布为准（具体尺寸与许可请查 OpenAI 官方开源仓库）。
 
 ## 四、核心能力
 
@@ -93,9 +93,39 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 - 极简单轮问答（杀鸡用牛刀）
 - 国内直接使用（需走 Azure 或代理）
 
+## 八、最新动态（2026-08）
+
+**三层产品线跟踪**：
+
+- **产品层 — ChatGPT**：面向终端用户的对话产品，功能更新频繁（工具调用、多模态、Agent 能力）
+- **模型层 — GPT 系列 / o 系列**：
+  - **GPT 系列**：通用对话与生成，主打综合能力（GPT-4、GPT-4o 等）
+  - **o 系列**：推理模型，回答前「思考」更久，擅长数学、编程、逻辑（o1、o3 等）
+- **开发者层 — Platform API**：模型 API、助手 API、微调、批处理端点。价格与限额变化对工程师最直接
+
+> 关键认知：2024 年起 OpenAI 把「快速应答」与「慢速推理」分成两条模型线，o 系列确立了**推理时计算（inference-time compute）**路线——这也影响了后来的整个行业，包括 [DeepSeek-R1](/ai-trends/cn-vendors/)。
+
+**已核实的历史锚点**：
+
+| 时间 | 事件 | 意义 |
+| --- | --- | --- |
+| 2022-11 | ChatGPT 发布 | 对话式 AI 进入大众视野 |
+| 2023-03 | GPT-4 发布 | 多模态（图像输入）与更强推理 |
+| 2024-05 | GPT-4o 发布 | 实时语音对话；免费开放 |
+| 2024-09 | o1 发布 | 推理时计算路线确立，推理模型品类诞生 |
+| 2026-07 | GPT-5.6 Sol 推出 | 旗舰推理模型，主打编码 / 研究 / 科学 / 网络安全 |
+
+> ⚠️ 锚点截至 2026-08 已核实；更新的动态以 [OpenAI Blog](https://openai.com/blog) 为准。注意：GPT-5 系列 2026 年已迭代到 5.6，引用旧版本数字时需注明版本号。
+
+**如何跟踪**：
+
+1. **官方源**：[OpenAI Blog](https://openai.com/blog)（产品与模型）、[Platform docs](https://platform.openai.com/docs)（API 变化）、[Status](https://status.openai.com)（服务可用性）
+2. **关注信号**：模型降价 / 提价、上下文长度变化、新端点、功能从「实验室」转「正式」
+3. **中文二手**：机器之心、量子位聚合快，但价格等数字以官方为准
+
 ## 关键洞察
 
-- **o 系列是推理标杆** —— RLVR 训练让“想得更久 = 答得更准”成为现实
+- **o 系列是推理标杆** —— RLVR 训练让"想得更久 = 答得更准"成为现实
 - **GPT-5.6 Sol 是性价比旗舰** —— 比 GPT-4o 时代大幅降价，编码与知识工作接近前沿
 - **Function Calling 是行业标准** —— Claude / Kimi / Qwen 都兼容 OpenAI 格式
 - **Azure 是企业护城河** —— 与 Microsoft 365 / Copilot 深度绑定

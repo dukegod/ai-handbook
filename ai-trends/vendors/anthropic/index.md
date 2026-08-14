@@ -4,7 +4,7 @@ description: Opus 5 / Sonnet 5 / Haiku 4.5 / Fable 5——技术架构、Constit
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-11
+lastUpdated: 2026-08-14
 verifiedWith:
   sources:
     - name: Anthropic 模型总览
@@ -36,7 +36,7 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 | **Fable 5** | 长 Agent 专精 | 1M | adaptive thinking（强制） | 长任务 / 长 Agent / 大仓库 |
 | **Mythos 5** | 安全专精 | 1M | — | 网络安全 / 生物（limited availability） |
 
-> **产品线逻辑**：4 个主流型号覆盖“质量/速度/成本”三角 + Fable 5 是“长 Agent”专属赛道，**Fable 5 不是 Opus 的替代**，是补位；Mythos 5 未 GA，仅限安全与基础设施供应商。
+> **产品线逻辑**：4 个主流型号覆盖"质量/速度/成本"三角 + Fable 5 是"长 Agent"专属赛道，**Fable 5 不是 Opus 的替代**，是补位；Mythos 5 未 GA，仅限安全与基础设施供应商。
 
 ## 三、技术架构
 
@@ -44,7 +44,7 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 
 **Constitutional AI（RLAIF）** —— Anthropic 主推的训练方法：用 AI 而非人类做偏好标注，先用"宪法"原则（helpful / harmless / honest）让模型自评，再用 RLAIF 训练。**核心差异**：和 OpenAI 的 RLHF / DeepSeek 的 GRPO 路线不同，Constitutional AI 把"价值观"显式编码进训练流程——更适合做安全可控的助手。
 
-**长上下文实现** —— Opus 5 / Sonnet 5 / Fable 5 均为 1M 上下文（官方默认），Haiku 4.5 为 200K。技术细节未完全公开，1M 的“needle in haystack”检索准确率领先业界。底层用 RoPE 位置插值 + 滑动窗口混合。
+**长上下文实现** —— Opus 5 / Sonnet 5 / Fable 5 均为 1M 上下文（官方默认），Haiku 4.5 为 200K。技术细节未完全公开，1M 的"needle in haystack"检索准确率领先业界。底层用 RoPE 位置插值 + 滑动窗口混合。
 
 ## 四、核心能力
 
@@ -81,7 +81,7 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 | Fable 5 | $10 / MTok | $50 / MTok | $1 / MTok | 全系最贵 |
 | Mythos 5 | $10 / MTok | $50 / MTok | $1 / MTok | limited availability |
 
-**价格梯度**：Haiku 4.5 < Sonnet 5 < Opus 5 < Fable 5 = Mythos 5。**Fable 5 是全系最贵**（是 Opus 5 的两倍价），定位“长 Agent 专家”；Opus 5 是“接近 Fable 智能的半价平替”。
+**价格梯度**：Haiku 4.5 < Sonnet 5 < Opus 5 < Fable 5 = Mythos 5。**Fable 5 是全系最贵**（是 Opus 5 的两倍价），定位"长 Agent 专家"；Opus 5 是"接近 Fable 智能的半价平替"。
 
 **Prompt Caching 是 Anthropic 的差异化**——缓存写入 1.25x、读取 0.1x，长 prompt + 多轮对话场景可省可观成本（具体折扣以官方定价页为准）。
 
@@ -98,12 +98,26 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 - 国内合规（需走 Bedrock / Vertex 海外，或等国内合作）
 - 极简单轮问答（杀鸡用牛刀，Haiku 也贵）
 
+## 八、最新动态（2026-08）
+
+**三条跟踪线**：
+
+- **模型线**：Claude 家族发布与定价。核心看「哪个模型在哪个价位，能力定位是什么」
+- **工具线**：Claude Code（CLI）、Claude Agent SDK、Claude.ai 产品功能。对开发者，这条线比模型线更常变化
+- **协议线**：MCP（Model Context Protocol）的演进。MCP 已开源为开放标准，生态变化影响所有工具
+
+**如何跟踪**：
+
+1. **官方源**：[Anthropic News](https://www.anthropic.com/news)、[Claude 模型总览](https://platform.claude.com/docs/en/about-claude/models/overview)、[Claude Code docs](https://code.claude.com/docs)
+2. **更新节奏**：模型大版本约半年一更；Claude Code 几乎每周迭代
+3. **判断原则**：模型更新看「价格 / 能力 / 上下文」三要素；工具更新看「对现有工作流的破坏性」——破坏性变更优先跟进
+
 ## 关键洞察
 
-- **dense 路径在 2026 是少数派**——但 Anthropic 靠“行为稳定 + 安全可控”差异化
+- **dense 路径在 2026 是少数派**——但 Anthropic 靠"行为稳定 + 安全可控"差异化
 - **Agent 是核心壁垒**——Computer Use / Agent SDK / Skills / Hooks 是别的厂商没整合好的
 - **Prompt Caching 是价格利器**——长 prompt 场景必开
-- **Fable 5 是补位不是替代**——专门做“长 Agent”赛道；Opus 5 是性价比首选
+- **Fable 5 是补位不是替代**——专门做"长 Agent"赛道；Opus 5 是性价比首选
 
 ## 参考
 
@@ -120,3 +134,9 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 - 看 OpenAI 路线对比 → [OpenAI · GPT 全系](./openai)
 - 看技术架构对比 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 选型决策 → [模型选型决策树](/reference/model-selection-guide)
+
+## 如果你想
+
+- 选模型 → [模型选择](/claude-code/basics/model-selection)
+- 了解 Fable 5 → [Fable 5 深度解读](/claude-capabilities/models/fable)
+- 对比七家厂商 → [7 厂商横向对比](/reference/model-comparison)
