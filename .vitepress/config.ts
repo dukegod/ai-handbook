@@ -46,6 +46,7 @@ export default withMermaid(defineConfig({
       { text: 'Claude', link: '/claude-code/', activeMatch: '/claude-code/' },
       { text: 'AI 技术', link: '/ai-core/', activeMatch: '/ai-core/' },
       { text: 'AI Coding', link: '/ai-coding/', activeMatch: '/ai-coding/' },
+      { text: '产品动向', link: '/ai-trends/', activeMatch: '/ai-trends/' },
       { text: 'LLM 全景', link: '/llm-landscape/', activeMatch: '/llm-landscape/' },
       { text: 'Cookbook', link: '/cookbook/', activeMatch: '/cookbook/' },
       { text: '参考', link: '/reference/', activeMatch: '/reference/' },
