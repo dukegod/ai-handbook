@@ -1,0 +1,40 @@
+.vitepress/config.ts
+  h_a427b9af6cd304 361-372
+ai-trends/cn-vendors/baidu.md
+  h_a427b9af6cd304 1-67
+ai-trends/cn-vendors/deepseek.md
+  h_a427b9af6cd304 1-66
+ai-trends/cn-vendors/doubao.md
+  h_a427b9af6cd304 1-65
+ai-trends/cn-vendors/index.md
+  h_a427b9af6cd304 2-3,21,23,27,29,31-38,40,42,44,50,57,65,67,73-74,79
+ai-trends/cn-vendors/tencent.md
+  h_a427b9af6cd304 1-67
+ai-trends/cn-vendors/xiaomi.md
+  h_a427b9af6cd304 1-65
+ai-trends/product-updates/chatgpt.md
+  h_a427b9af6cd304 39,80
+ai-trends/product-updates/claude.md
+  h_a427b9af6cd304 75
+ai-trends/product-updates/monthly.md
+  h_a427b9af6cd304 110
+ai-trends/research-highlights/papers.md
+  h_a427b9af6cd304 66
+ai-trends/vendors/grok.md
+  h_a427b9af6cd304 102
+ai-trends/vendors/index.md
+  h_a427b9af6cd304 22
+ai-trends/vendors/minimax.md
+  h_a427b9af6cd304 101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "2c120eb2330cf4492ff5930ccf326ad98f156dc6",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
