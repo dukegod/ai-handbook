@@ -48,6 +48,11 @@ features:
     link: /llm-landscape/
     linkText: 查看全景 →
   - icon: 🧪
+    title: Claude 能力
+    details: Claude 模型全系（Opus 5 / Sonnet 5 / Haiku 4.5 / Fable 5）、API / SDK / MCP 协议、提示工程与 Agent 能力全景。
+    link: /claude-capabilities/
+    linkText: 了解能力 →
+  - icon: ⚙️
     title: Claude 深度
     details: Claude Code CLI 精通 + Claude API/SDK/MCP 全能力——最完整的 Claude 中文资料。
     link: /claude-code/

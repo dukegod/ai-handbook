@@ -23,7 +23,7 @@ export default withMermaid(defineConfig({
   metaChunk: true,
 
   // 仓库根级元文档，不作为 wiki 页面
-  srcExclude: ['README.md', 'CLAUDE.md'],
+  srcExclude: ['README.md', 'CLAUDE.md', 'AGENTS.md'],
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
