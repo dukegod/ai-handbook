@@ -1,4 +1,4 @@
-# CLAUDE.md — Claude Handbook 项目上下文
+# AI Handbook 项目上下文
 
 > 这份文件是 Claude Code 每次会话自动加载的项目级记忆。目标是让任何一次新会话进来都能立刻理解项目定位、约束、常见坑与"下一步该做什么"。
 >
@@ -6,12 +6,12 @@
 
 ## 项目定位
 
-**AI Handbook** 是一份面向中文读者、长期维护的 AI 全栈知识库，覆盖五个方向：
+**AI Handbook** 是一份面向中文读者、长期维护的 **AI 全栈知识库**，覆盖五个方向：
 
 1. **AI 核心技术** —— Transformer / 注意力 / 预训练 / RLHF / MoE / 多模态
 2. **AI Coding 落地** —— 工具横评 / 团队工作流 / 常见模式 / 企业部署
 3. **产品动向** —— 月度速报 / 论文速递 / 开源推荐 / 行业趋势
-4. **模型与厂商** —— 厂商档案、横向对比与选型决策
+4. **模型与厂商** —— 国外厂商（Anthropic / OpenAI / xAI）+ 国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen），横向对比与选型决策
 5. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力
 
 当前版本 **v0.2**：Claude 专项 107 篇 published，正在扩展为 AI 全栈知识体系。按 [contributing/roadmap.md](./contributing/roadmap.md) 推进。
@@ -50,7 +50,16 @@ ai-coding/          AI Coding 落地（tools / workflows / patterns / enterprise
 ai-trends/          产品动向
 ├── product-updates/   月度速报
 ├── vendors/           国外厂商（Anthropic / OpenAI / xAI）
+│   └── anthropic/     Anthropic · Claude 全系（含动态）
+│   └── openai/        OpenAI · GPT 全系（含动态）
+│   └── grok/          xAI · Grok 全系
 ├── cn-vendors/        国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen）
+│   └── deepseek/      DeepSeek
+│   └── doubao/        字节豆包
+│   └── moonshot/      Moonshot · Kimi 全系
+│   └── minimax/       MiniMax 全系
+│   └── zhipu/         Zhipu · 智谱 GLM 全系
+│   └── qwen/          Qwen · 阿里通义千问全系
 ├── research-highlights/ 技术速递
 └── industry/          行业观察
 claude-code/        Claude Code CLI 精通（9 个子章，共 48 页 + index）
@@ -66,10 +75,11 @@ contributing/       写作规范五件套（本文重要参考）
 
 完整规范见 [contributing/style-guide.md](./contributing/style-guide.md)。以下是**必须坚守的最少约束**：
 
-**术语（三者禁止混用）**
-- `Anthropic` = 公司
-- `Claude` = 模型
-- `Claude Code` = CLI 工具
+**术语规范**
+- `Anthropic` = 公司，`Claude` = 模型，`Claude Code` = CLI 工具（三者禁止混用）
+- `OpenAI` = 公司，`GPT` = 通用模型系列，`o 系列` = 推理模型
+- `xAI` = 公司，`Grok` = 模型
+- 国内厂商同理：公司名 ≠ 模型名
 
 术语表见 [contributing/glossary.md](./contributing/glossary.md)。新术语先补表，再写正文。
 
@@ -82,7 +92,7 @@ audience: beginner | intermediate | advanced
 difficulty: 🟢 | 🟡 | 🔴
 status: planned | draft | published
 lastUpdated: YYYY-MM-DD
-verifiedWith:              # published 时必填
+verifiedWith:              # published 时必填（Claude 相关页面）
   claudeCode: 2.x.x
   model: claude-opus-4-8
   sdk: '...'
@@ -164,7 +174,7 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 
 ## 内容边界（不做什么）
 
-- **不重复 Anthropic 官方 API schema 全表** → 只写"为什么用 / 何时用 / 踩坑"
+- **不重复官方 API schema 全表** → 只写"为什么用 / 何时用 / 踩坑"
 - **不做纯翻译搬运** → 中文站的差异化在场景化案例、踩坑记录、中文语境技巧
 - **Cookbook 案例入选门槛**：别处查不到 + 近 90 天可复现 + 有踩坑 + 有边界
 - **每篇 ≤ 1500 汉字**，超过就拆
@@ -187,3 +197,6 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 - [contributing/roadmap.md](./contributing/roadmap.md) — 分阶段路线图
 - [.vitepress/config.ts](./.vitepress/config.ts) — sidebar 唯一真相源
 - [Anthropic 官方文档](https://docs.claude.com/)
+- [OpenAI 官方文档](https://platform.openai.com/docs)
+- [AI 核心技术](/ai-core/) — Transformer / 注意力 / 预训练等基础知识
+- [AI Coding 落地](/ai-coding/) — 工具横评与工作流
