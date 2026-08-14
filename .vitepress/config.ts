@@ -44,6 +44,7 @@ export default withMermaid(defineConfig({
     nav: [
       { text: '入门', link: '/getting-started/', activeMatch: '/getting-started/' },
       { text: 'Claude', link: '/claude-code/', activeMatch: '/claude-code/' },
+      { text: 'Claude 能力', link: '/claude-capabilities/', activeMatch: '/claude-capabilities/' },
       { text: 'AI 技术', link: '/ai-core/', activeMatch: '/ai-core/' },
       { text: 'AI Coding', link: '/ai-coding/', activeMatch: '/ai-coding/' },
       { text: '产品动向', link: '/ai-trends/', activeMatch: '/ai-trends/' },
