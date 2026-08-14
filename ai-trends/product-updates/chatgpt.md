@@ -67,7 +67,7 @@ verifiedWith:
 | 开发者工具 | Platform API | Claude Code / Agent SDK |
 | 编码场景定位 | 通用平台 | 开发者优先 |
 
-选型对比见 [LLM 全景](/llm-landscape/)。
+选型对比见 [5 厂商横向对比](/reference/model-comparison)。
 
 ## 参考
 
@@ -82,6 +82,6 @@ verifiedWith:
 
 ## 如果你想
 
-- 对比模型选型 → [LLM 全景](/llm-landscape/)
+- 对比模型选型 → [5 厂商横向对比](/reference/model-comparison)
 - 理解推理时计算 → [AI 核心技术](/ai-core/)
 - 落地到编码工作流 → [AI Coding 落地](/ai-coding/)

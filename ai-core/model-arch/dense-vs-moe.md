@@ -144,7 +144,7 @@ MoE 在推理效率上有优势，但路由调优复杂，训练不稳定。Dens
 
 - [Switch Transformer](https://arxiv.org/abs/2101.03961)（2021）
 - [DeepSeek-V3](https://arxiv.org/abs/2412.19437)（2024）
-- [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -153,5 +153,5 @@ MoE 在推理效率上有优势，但路由调优复杂，训练不稳定。Dens
 
 ## 如果你想
 
-- 看各家模型的架构选择 → [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- 看各家模型的架构选择 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 了解推理优化 → [推理优化](../training/inference-optimization)

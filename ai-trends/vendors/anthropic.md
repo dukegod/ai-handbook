@@ -110,7 +110,7 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 - [Anthropic 平台文档](https://platform.claude.com/docs/en/intro)
 - [Claude 定价](https://platform.claude.com/docs/en/about-claude/pricing)
 - [Claude 产品总览](https://claude.com/product/overview)
-- [架构对比：dense vs MoE / 长上下文 / RL 训练](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - [Claude 模型 · claude-capabilities](/claude-capabilities/models/overview)
 - [Claude Code 精通](/claude-code/)
 - [architecture review](/contributing/architecture-review-2026-08-10)
@@ -118,5 +118,5 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 ## 下一步
 
 - 看 OpenAI 路线对比 → [OpenAI · GPT 全系](./openai)
-- 看技术架构对比 → [技术架构总览](./architecture)
-- 选型决策 → [选型决策树](./selection-guide)
+- 看技术架构对比 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
+- 选型决策 → [模型选型决策树](/reference/model-selection-guide)

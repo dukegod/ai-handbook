@@ -103,7 +103,7 @@ Transformer 不擅长精确数值计算、实时推理、超长序列（>1M）�
 
 - [Attention Is All You Need](https://arxiv.org/abs/1706.03762)（2017）
 - [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)（2023）
-- [技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -112,6 +112,6 @@ Transformer 不擅长精确数值计算、实时推理、超长序列（>1M）�
 
 ## 如果你想
 
-- 看各家模型的架构选择 → [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- 看各家模型的架构选择 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 了解 Dense vs MoE → [Dense vs MoE](../model-arch/dense-vs-moe)
 - 动手实操 → [AI Coding 落地](/ai-coding/)

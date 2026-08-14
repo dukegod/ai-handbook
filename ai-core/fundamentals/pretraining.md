@@ -118,7 +118,7 @@ LoRA：y = Wx + BAx
 
 - [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)（2021）
 - [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)（2020）
-- [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -127,5 +127,5 @@ LoRA：y = Wx + BAx
 
 ## 如果你想
 
-- 看各家模型的微调方案 → [LLM 全景 · 选型决策树](/llm-landscape/selection-guide)
+- 看各家模型的微调方案 → [模型选型决策树](/reference/model-selection-guide)
 - 动手微调 → [Cookbook](/cookbook/)

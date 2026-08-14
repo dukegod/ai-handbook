@@ -113,12 +113,12 @@ verifiedWith:
 
 - [HELM: Holistic Evaluation of Language Models](https://crfm.stanford.edu/helm/)
 - [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness)
-- [LLM 全景 · 5 厂商横向对比](/llm-landscape/comparison)
+- [5 厂商横向对比](/reference/model-comparison)
 
 ## 下一步
 
-- 看各家模型的基准表现 → [LLM 全景 · 5 厂商横向对比](/llm-landscape/comparison)
-- 选型决策 → [LLM 全景 · 选型决策树](/llm-landscape/selection-guide)
+- 看各家模型的基准表现 → [5 厂商横向对比](/reference/model-comparison)
+- 选型决策 → [模型选型决策树](/reference/model-selection-guide)
 
 ## 如果你想
 

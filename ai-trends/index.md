@@ -20,6 +20,7 @@ lastUpdated: 2026-08-13
 ## 章节地图
 
 **产品动态** — Claude / ChatGPT / 国内厂商的月度更新速报  
+**厂商档案** — Anthropic / OpenAI / Moonshot / 智谱 / 通义千问的长期档案  
 **技术速递** — 重要论文解读、开源项目推荐  
 **行业观察** — 行业趋势分析、投融资动态
 
@@ -40,4 +41,4 @@ lastUpdated: 2026-08-13
 ## 如果你想
 
 - 选工具 → [AI Coding · 工具全景](/ai-coding/tools/overview)
-- 选模型 → [LLM 全景](/llm-landscape/)
+- 看厂商档案 → [厂商档案](/ai-trends/vendors/)

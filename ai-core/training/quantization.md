@@ -129,7 +129,7 @@ INT4 量化会损失 1-3% 的基准分数。需要在显存和质量间权衡。
 
 - [GPTQ: Accurate Post-Training Quantization](https://arxiv.org/abs/2210.17323)（2022）
 - [AWQ: Activation-aware Weight Quantization](https://arxiv.org/abs/2306.00978)（2023）
-- [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -138,5 +138,5 @@ INT4 量化会损失 1-3% 的基准分数。需要在显存和质量间权衡。
 
 ## 如果你想
 
-- 看各家模型的量化方案 → [LLM 全景 · 5 厂商横向对比](/llm-landscape/comparison)
-- 端侧部署 Qwen → [Qwen · 阿里通义千问全系](/llm-landscape/qwen)
+- 看各家模型的量化方案 → [5 厂商横向对比](/reference/model-comparison)
+- 端侧部署 Qwen → [Qwen · 阿里通义千问全系](/ai-trends/vendors/qwen)

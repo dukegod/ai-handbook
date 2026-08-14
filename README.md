@@ -39,7 +39,8 @@ pnpm preview      # 本地预览构建产物
 │   └── industry/                 行业趋势 / 投融资
 ├── claude-code/                Claude Code CLI 精通（深度专项）
 ├── claude-capabilities/        Claude 全能力（API / SDK / MCP / Agentic）
-├── llm-landscape/              LLM 厂商全景（5 厂商对比）
+├── ai-trends/vendors/          厂商档案（5 厂商对比）
+├── reference/                  速查手册（含模型横向对比与选型决策树）
 ├── cookbook/                    实战案例
 ├── reference/                   速查手册
 ├── examples/                    示例仓库

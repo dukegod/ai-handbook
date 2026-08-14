@@ -48,7 +48,6 @@ export default withMermaid(defineConfig({
       { text: 'AI 技术', link: '/ai-core/', activeMatch: '/ai-core/' },
       { text: 'AI Coding', link: '/ai-coding/', activeMatch: '/ai-coding/' },
       { text: '产品动向', link: '/ai-trends/', activeMatch: '/ai-trends/' },
-      { text: 'LLM 全景', link: '/llm-landscape/', activeMatch: '/llm-landscape/' },
       { text: 'Cookbook', link: '/cookbook/', activeMatch: '/cookbook/' },
       { text: '参考', link: '/reference/', activeMatch: '/reference/' },
       { text: '贡献', link: '/contributing/style-guide', activeMatch: '/contributing/' },
@@ -282,26 +281,6 @@ export default withMermaid(defineConfig({
       ],
 
       // ----------------------------------------------------------------------
-      // LLM landscape
-      // ----------------------------------------------------------------------
-      '/llm-landscape/': [
-        {
-          text: 'LLM landscape',
-          items: [
-            { text: '总览', link: '/llm-landscape/' },
-            { text: '技术架构总览', link: '/llm-landscape/architecture' },
-            { text: 'Anthropic · Claude 全系', link: '/llm-landscape/anthropic' },
-            { text: 'OpenAI · GPT 全系', link: '/llm-landscape/openai' },
-            { text: 'Moonshot · Kimi 全系', link: '/llm-landscape/moonshot' },
-            { text: 'Zhipu · 智谱 GLM 全系', link: '/llm-landscape/zhipu' },
-            { text: 'Qwen · 阿里通义千问全系', link: '/llm-landscape/qwen' },
-            { text: '5 厂商横向对比', link: '/llm-landscape/comparison' },
-            { text: '选型决策树', link: '/llm-landscape/selection-guide' },
-          ],
-        },
-      ],
-
-      // ----------------------------------------------------------------------
       // AI 核心技术
       // ----------------------------------------------------------------------
       '/ai-core/': [
@@ -323,6 +302,7 @@ export default withMermaid(defineConfig({
           text: '模型架构',
           collapsed: true,
           items: [
+            { text: '跨厂商架构路线', link: '/ai-core/model-arch/architecture-landscape' },
             { text: 'Dense vs MoE', link: '/ai-core/model-arch/dense-vs-moe' },
             { text: '长上下文技术', link: '/ai-core/model-arch/long-context' },
             { text: '多模态架构', link: '/ai-core/model-arch/multimodal' },
@@ -363,6 +343,18 @@ export default withMermaid(defineConfig({
             { text: 'Claude 动态', link: '/ai-trends/product-updates/claude' },
             { text: 'ChatGPT 动态', link: '/ai-trends/product-updates/chatgpt' },
             { text: '国内厂商动态', link: '/ai-trends/product-updates/china' },
+          ],
+        },
+        {
+          text: '厂商档案',
+          collapsed: true,
+          items: [
+            { text: '总览', link: '/ai-trends/vendors/' },
+            { text: 'Anthropic · Claude 全系', link: '/ai-trends/vendors/anthropic' },
+            { text: 'OpenAI · GPT 全系', link: '/ai-trends/vendors/openai' },
+            { text: 'Moonshot · Kimi 全系', link: '/ai-trends/vendors/moonshot' },
+            { text: 'Zhipu · 智谱 GLM 全系', link: '/ai-trends/vendors/zhipu' },
+            { text: 'Qwen · 阿里通义千问全系', link: '/ai-trends/vendors/qwen' },
           ],
         },
         {
@@ -460,6 +452,8 @@ export default withMermaid(defineConfig({
             { text: 'CLI Flags', link: '/reference/cli-flags' },
             { text: P('环境变量'), link: '/reference/env-vars' },
             { text: P('模型 ID 与定价'), link: '/reference/model-ids' },
+            { text: '5 厂商横向对比', link: '/reference/model-comparison' },
+            { text: '模型选型决策树', link: '/reference/model-selection-guide' },
             { text: '术语表（速查）', link: '/reference/glossary' },
           ],
         },

@@ -56,4 +56,4 @@ flowchart LR
 ## 如果你想
 
 - 看实战案例 → [Cookbook](/cookbook/)
-- 选模型 → [LLM 全景](/llm-landscape/)
+- 选模型 → [模型选型决策树](/reference/model-selection-guide)

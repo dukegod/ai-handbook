@@ -1,5 +1,5 @@
 ---
-title: 技术架构总览
+title: 跨厂商架构路线
 description: 5 家主流大模型的技术路线——dense vs MoE / 长上下文实现 / RL 训练方法 / 推理优化
 audience: advanced
 difficulty: 🔴
@@ -24,9 +24,9 @@ verifiedWith:
       accessedAt: 2026-08-11
 ---
 
-# 技术架构总览
+# 跨厂商架构路线
 
-> 跨 5 家厂商的 4 大技术路线总览——架构师视角，不展开训练细节。
+> 跨 5 家厂商的 4 大技术路线总览——这一页负责厂商路线地图，具体机制见 Dense vs MoE、长上下文技术和多模态架构。
 
 ## 一句话总览
 
@@ -149,9 +149,9 @@ MoE 的**工程红利**：相同训练成本下参数总量可以做得更大；
 
 ## 参考
 
-- [5 厂商架构详解](./anthropic) · [openai](./openai) · [moonshot](./moonshot) · [zhipu](./zhipu) · [qwen](./qwen)
-- [横向对比表](./comparison) —— 8 维度量化对比
-- [选型决策树](./selection-guide) —— 架构选择映射到业务场景
+- [5 厂商档案](/ai-trends/vendors/) · [Anthropic](/ai-trends/vendors/anthropic) · [OpenAI](/ai-trends/vendors/openai) · [Moonshot](/ai-trends/vendors/moonshot) · [Zhipu](/ai-trends/vendors/zhipu) · [Qwen](/ai-trends/vendors/qwen)
+- [横向对比表](/reference/model-comparison) —— 8 维度量化对比
+- [模型选型决策树](/reference/model-selection-guide) —— 架构选择映射到业务场景
 - [Anthropic · Constitutional AI](https://www.anthropic.com/research/constitutional-ai)
 - [DeepSeek · GRPO 论文](https://arxiv.org/abs/2402.03300)
 - [Moonshot · Kimi K2 技术报告](https://moonshotai.github.io/Kimi-K2/)
@@ -160,5 +160,5 @@ MoE 的**工程红利**：相同训练成本下参数总量可以做得更大；
 
 ## 下一步
 
-- 看具体厂商细节 → [Anthropic · Claude 全系](./anthropic)
-- 把架构选型映射到业务 → [选型决策树](./selection-guide)
+- 看具体厂商细节 → [厂商档案](/ai-trends/vendors/)
+- 把架构选型映射到业务 → [模型选型决策树](/reference/model-selection-guide)

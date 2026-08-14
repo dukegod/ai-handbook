@@ -350,7 +350,7 @@ v0.3.3 段 12 篇正文全部 published。**v0.3 整段（46 篇）全部收官*
 
 **commit `47dfeba`（LLM landscape 骨架）**：
 
-- 顶级新目录 `llm-landscape/`（9 篇 stub）
+- 厂商档案并入 `ai-trends/vendors/`，模型横向对比与选型决策树并入 `reference/`
 - 5 厂商：Anthropic / OpenAI / Moonshot / Zhipu / Qwen
 - 配套：architecture / comparison / selection-guide
 - sidebar 顶级加 "LLM landscape" 段
@@ -359,7 +359,7 @@ v0.3.3 段 12 篇正文全部 published。**v0.3 整段（46 篇）全部收官*
 
 - roadmap.md lastUpdated 升级 + v0.4.1/4.2/4.3 子段
 - claude-code/index.md + cookbook/index.md 残留 🚧 清理
-- llm-landscape/index.md 入口段升级
+- `ai-trends/vendors/index.md` 厂商档案入口段升级
 
 ### v0.4+ · 剩余路线（v0.5+ 候选）
 
@@ -369,7 +369,7 @@ v0.3.3 段 12 篇正文全部 published。**v0.3 整段（46 篇）全部收官*
 - 破坏性更新回溯与"迁移指南"专题
 - 中文语境专项：中文提示词技巧 / 中文代码注释 / 繁简处理
 - awesome-claude 4 篇新主题（superpower / sdd / sdd-workflow / product-pipeline）—— 暂缓（与现有已覆盖）
-- v0.5 阶段 1：llm-landscape 9 篇 stub 填实（先做 architecture 总览 + Anthropic 1 篇试水）
+- v0.5 阶段 1：厂商档案与模型选型页填实（先做跨厂商架构路线 + Anthropic 1 篇试水）
 - v0.5 阶段 2：claude-code/tools/ 8 个工具页补全（核心使用入口，最高 ROI）
 - v0.5 阶段 3：claude-code/ecosystem/ 4 个 IDE 集成（VS Code / JetBrains / Neovim / 企业部署）
 - v0.5 阶段 4：reference/ 4 段速查（基于已 published 内容做"提炼"段）

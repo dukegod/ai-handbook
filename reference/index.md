@@ -22,6 +22,8 @@ lastUpdated: 2026-07-23
 | [环境变量](./env-vars) 🚧 | `ANTHROPIC_API_KEY`、`CLAUDE_CODE_*` 系列 |
 | [settings.json Schema](/claude-code/customization/settings) | 用户级 / 项目级 settings.json 字段全表 |
 | [模型 ID 与定价](./model-ids) 🚧 | 全部 Claude 模型的 ID、context 长度、$/1M token |
+| [5 厂商横向对比](./model-comparison) | Claude / GPT / Kimi / GLM / Qwen 的能力、价格、部署对比 |
+| [模型选型决策树](./model-selection-guide) | 按场景、中文要求、长文档、编码、推理和预算选模型 |
 | [术语表](./glossary) | 中英双语术语锁定；与 [contributing/glossary](/contributing/glossary) 内容相同 |
 
 ## 更新频率
@@ -41,4 +43,5 @@ Claude 生态月度级更新，速查表尤其容易过时。每篇速查表顶�
 ## 如果你想
 
 - 查 Claude 模型 → [模型 ID 与定价](./model-ids) 🚧
+- 选通用大模型 → [模型选型决策树](./model-selection-guide)
 - 查 Claude Code 配置 → [定制与扩展 · Settings 配置文件](/claude-code/customization/settings)

@@ -141,7 +141,7 @@ INT8 量化（精度层）
 
 - [vLLM](https://github.com/vllm-project/vllm)
 - [Speculative Decoding](https://arxiv.org/abs/2211.17192)（2022）
-- [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -150,5 +150,5 @@ INT8 量化（精度层）
 
 ## 如果你想
 
-- 看各家模型的推理优化 → [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- 看各家模型的推理优化 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 了解注意力机制 → [注意力机制](../fundamentals/attention)

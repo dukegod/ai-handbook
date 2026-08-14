@@ -118,14 +118,14 @@ verifiedWith:
 - [MMLU: Massive Multitask Language Understanding](https://arxiv.org/abs/2009.03300)（2020）
 - [HumanEval: Evaluating Large Language Models Trained on Code](https://arxiv.org/abs/2107.03374)（2021）
 - [Chatbot Arena](https://chat.lmsys.org/)
-- [LLM 全景 · 5 厂商横向对比](/llm-landscape/comparison)
+- [5 厂商横向对比](/reference/model-comparison)
 
 ## 下一步
 
 - 了解评估方法论 → [评估方法论](./methodology)
-- 看各家模型的基准表现 → [LLM 全景 · 5 厂商横向对比](/llm-landscape/comparison)
+- 看各家模型的基准表现 → [5 厂商横向对比](/reference/model-comparison)
 
 ## 如果你想
 
-- 选型决策 → [LLM 全景 · 选型决策树](/llm-landscape/selection-guide)
+- 选型决策 → [模型选型决策树](/reference/model-selection-guide)
 - 了解 AI 评估实践 → [Claude 能力 · 推理能力](/claude-capabilities/core/reasoning)

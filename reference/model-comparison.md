@@ -141,11 +141,11 @@ verifiedWith:
 
 ## 参考
 
-- [技术架构总览](./architecture) — 4 大技术路线详解
-- [5 厂商详情](./anthropic) · [openai](./openai) · [moonshot](./moonshot) · [zhipu](./zhipu) · [qwen](./qwen)
-- [选型决策树](./selection-guide) — 按 6 维度选型
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape) — 4 大技术路线详解
+- [5 厂商详情](/ai-trends/vendors/) · [Anthropic](/ai-trends/vendors/anthropic) · [OpenAI](/ai-trends/vendors/openai) · [Moonshot](/ai-trends/vendors/moonshot) · [Zhipu](/ai-trends/vendors/zhipu) · [Qwen](/ai-trends/vendors/qwen)
+- [模型选型决策树](./model-selection-guide) — 按 6 维度选型
 
 ## 下一步
 
-- 用决策表选型 → [选型决策树](./selection-guide)
-- 深入某家厂商 → [Anthropic](./anthropic) / [OpenAI](./openai) / [Moonshot](./moonshot) / [Zhipu](./zhipu) / [Qwen](./qwen)
+- 用决策表选型 → [模型选型决策树](./model-selection-guide)
+- 深入某家厂商 → [Anthropic](/ai-trends/vendors/anthropic) / [OpenAI](/ai-trends/vendors/openai) / [Moonshot](/ai-trends/vendors/moonshot) / [Zhipu](/ai-trends/vendors/zhipu) / [Qwen](/ai-trends/vendors/qwen)

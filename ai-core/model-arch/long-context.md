@@ -124,7 +124,7 @@ KV Cache 大小 = 2 × 层数 × 头数 × 头维度 × 序列长度 × batch_si
 
 - [RoPE: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864)（2021）
 - [YaRN: Efficient Context Window Extension](https://arxiv.org/abs/2309.00071)（2023）
-- [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -133,5 +133,5 @@ KV Cache 大小 = 2 × 层数 × 头数 × 头维度 × 序列长度 × batch_si
 
 ## 如果你想
 
-- 看各家模型的上下文选择 → [LLM 全景 · 5 厂商横向对比](/llm-landscape/comparison)
+- 看各家模型的上下文选择 → [5 厂商横向对比](/reference/model-comparison)
 - 了解注意力机制 → [注意力机制](../fundamentals/attention)

@@ -43,10 +43,10 @@ features:
     link: /ai-trends/
     linkText: 追踪动态 →
   - icon: 🔍
-    title: LLM 全景
-    details: Anthropic / OpenAI / Moonshot / 智谱 / 通义千问五大厂商技术架构与选型对比。
-    link: /llm-landscape/
-    linkText: 查看全景 →
+    title: 模型选型
+    details: Anthropic / OpenAI / Moonshot / 智谱 / 通义千问五大厂商横向对比与选型决策。
+    link: /reference/model-selection-guide
+    linkText: 开始选型 →
   - icon: 🧪
     title: Claude 能力
     details: Claude 模型全系（Opus 5 / Sonnet 5 / Haiku 4.5 / Fable 5）、API / SDK / MCP 协议、提示工程与 Agent 能力全景。
@@ -78,7 +78,7 @@ features:
 1. **AI 核心技术** —— Transformer 原理、模型架构、训练方法、评估基准，理解 AI 的底层逻辑
 2. **AI Coding 落地** —— 工具横评、团队工作流、常见模式、企业部署，把 AI 真正用起来
 3. **产品动向** —— 月度速报、论文速递、开源推荐，保持对 AI 生态的持续跟踪
-4. **LLM 全景** —— 五大厂商技术架构与选型对比，做出更好的技术决策
+4. **模型与厂商** —— 厂商档案、横向对比与选型决策，做出更好的技术选择
 5. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力（已有 100+ 篇 published）
 
 ## 内容分层
@@ -86,7 +86,7 @@ features:
 | 层级 | 定位 | 典型目录 |
 |------|------|---------|
 | **概念层** | 科普级，讲清"是什么/为什么" | ai-core/fundamentals, ai-trends |
-| **技术层** | 有代码片段，讲清"怎么实现" | ai-core/model-arch, llm-landscape |
+| **技术层** | 有代码片段，讲清"怎么实现" | ai-core/model-arch, ai-core/training |
 | **落地层** | 可运行代码 + 踩坑记录 + 边界条件 | claude-code, ai-coding, cookbook |
 
 ## 当前状态

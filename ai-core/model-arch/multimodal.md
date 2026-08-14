@@ -126,7 +126,7 @@ verifiedWith:
 
 - [LLaVA: Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)（2023）
 - [Qwen-VL: A Versatile Vision-Language Model](https://arxiv.org/abs/2308.12966)（2023）
-- [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -135,5 +135,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 看各家模型的多模态能力 → [LLM 全景 · 5 厂商横向对比](/llm-landscape/comparison)
+- 看各家模型的多模态能力 → [5 厂商横向对比](/reference/model-comparison)
 - 用 Claude 处理图片 → [Claude 能力 · 视觉能力](/claude-capabilities/core/vision)

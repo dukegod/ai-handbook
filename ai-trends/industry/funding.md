@@ -97,5 +97,5 @@ verifiedWith:
 ## 如果你想
 
 - 追踪开源生态 → [开源项目推荐](/ai-trends/research-highlights/open-source)
-- 了解厂商格局 → [LLM 全景](/llm-landscape/)
+- 了解厂商格局 → [厂商档案](/ai-trends/vendors/)
 - 看落地案例 → [Cookbook](/cookbook/)

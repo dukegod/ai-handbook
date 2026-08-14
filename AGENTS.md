@@ -11,7 +11,7 @@
 1. **AI 核心技术** —— Transformer / 注意力 / 预训练 / RLHF / MoE / 多模态
 2. **AI Coding 落地** —— 工具横评 / 团队工作流 / 常见模式 / 企业部署
 3. **产品动向** —— 月度速报 / 论文速递 / 开源推荐 / 行业趋势
-4. **LLM 全景** —— 五大厂商技术架构与选型对比
+4. **模型与厂商** —— 厂商档案、横向对比与选型决策
 5. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力
 
 当前版本 **v0.2**：Claude 专项 107 篇 published，正在扩展为 AI 全栈知识体系。按 [contributing/roadmap.md](./contributing/roadmap.md) 推进。
@@ -50,7 +50,8 @@ ai-coding/          AI Coding 落地（tools / workflows / patterns / enterprise
 ai-trends/          产品动向（product-updates / research-highlights / industry）
 claude-code/        Claude Code CLI 精通（9 个子章，共 48 页 + index）
 claude-capabilities/ Claude 能力全景（8 个子章，共 47 页 + index）
-llm-landscape/      LLM 厂商全景（5 厂商对比）
+ai-trends/vendors/  厂商档案（Anthropic / OpenAI / Moonshot / Zhipu / Qwen）
+reference/          速查手册（含模型横向对比与选型决策树）
 cookbook/           实战案例
 reference/          速查手册
 contributing/       写作规范五件套（本文重要参考）

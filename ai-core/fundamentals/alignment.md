@@ -122,7 +122,7 @@ RLHF/DPO 的效果取决于偏好数据质量。垃圾数据 → 垃圾模型。
 - [InstructGPT](https://arxiv.org/abs/2203.02155)（2022）
 - [DPO: Direct Preference Optimization](https://arxiv.org/abs/2305.18290)（2023）
 - [Constitutional AI](https://www.anthropic.com/research/constitutional-ai)
-- [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -131,5 +131,5 @@ RLHF/DPO 的效果取决于偏好数据质量。垃圾数据 → 垃圾模型。
 
 ## 如果你想
 
-- 看各家模型的对齐方法 → [LLM 全景 · Anthropic](/llm-landscape/anthropic)
+- 看各家模型的对齐方法 → [厂商档案 · Anthropic](/ai-trends/vendors/anthropic)
 - 了解提示工程 → [Claude 能力 · 提示工程](/claude-capabilities/prompting/best-practices)

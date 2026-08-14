@@ -114,7 +114,7 @@ verifiedWith:
 
 - [RedPajama](https://www.together.ai/blog/redpajama-data-v2)
 - [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)（2020）
-- [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
@@ -123,5 +123,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 看各家模型的训练数据 → [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- 看各家模型的训练数据 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 了解预训练流程 → [预训练与微调](../fundamentals/pretraining)

@@ -89,5 +89,5 @@ verifiedWith:
 ## 如果你想
 
 - 私有化部署 → [AI Coding · 企业部署](/ai-coding/enterprise/deployment)
-- 对比五大厂商 → [LLM 全景](/llm-landscape/)
+- 对比五大厂商 → [5 厂商横向对比](/reference/model-comparison)
 - 评估开源模型 → [开源项目推荐](/ai-trends/research-highlights/open-source)

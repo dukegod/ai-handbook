@@ -34,17 +34,17 @@ flowchart TD
 ## 分组概览
 
 **基础原理** — Transformer 架构、注意力机制、预训练与微调、RLHF 与对齐  
-**模型架构** — Dense vs MoE 路由、长上下文实现、多模态架构  
+**模型架构** — 跨厂商架构路线、Dense vs MoE 路由、长上下文实现、多模态架构  
 **训练与优化** — 数据工程、推理优化、量化与蒸馏  
 **评估方法** — 基准测试体系、评估方法论
 
 ## 下一步
 
 - 从原理开始 → [Transformer 架构](/ai-core/fundamentals/transformer)
-- 直接看对比 → [LLM 全景](/llm-landscape/)
+- 直接看架构路线 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 动手实操 → [AI Coding 落地](/ai-coding/)
 
 ## 如果你想
 
-- 选模型 → [LLM 全景 · 选型决策树](/llm-landscape/selection-guide)
+- 选模型 → [模型选型决策树](/reference/model-selection-guide)
 - 看产品动态 → [AI 产品动向](/ai-trends/)

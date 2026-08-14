@@ -108,10 +108,10 @@ Qwen（通义千问）由阿里达摩院 2023 年推出，现属阿里云通义�
 - [Qwen 官方博客](https://qwenlm.github.io/blog/)
 - [DashScope 平台](https://dashscope.aliyun.com/)
 - [Qwen GitHub](https://github.com/QwenLM/Qwen)
-- [技术架构总览](./architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - [Anthropic Claude 对比](./anthropic)
 
 ## 下一步
 
-- 看横向对比表 → [5 厂商横向对比](./comparison)
-- 选型决策 → [选型决策树](./selection-guide)
+- 看横向对比表 → [5 厂商横向对比](/reference/model-comparison)
+- 选型决策 → [模型选型决策树](/reference/model-selection-guide)

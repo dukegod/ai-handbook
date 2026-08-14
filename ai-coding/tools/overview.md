@@ -140,7 +140,7 @@ AI Coding 工具是"辅助"，不是"替代"。核心设计、架构决策仍需
 - [Claude Code 官方文档](https://code.claude.com/docs)
 - [Cursor 官方文档](https://docs.cursor.com)
 - [GitHub Copilot 文档](https://docs.github.com/copilot)
-- [LLM 全景 · 选型决策树](/llm-landscape/selection-guide)
+- [模型选型决策树](/reference/model-selection-guide)
 
 ## 下一步
 
@@ -150,5 +150,5 @@ AI Coding 工具是"辅助"，不是"替代"。核心设计、架构决策仍需
 
 ## 如果你想
 
-- 选模型 → [LLM 全景 · 选型决策树](/llm-landscape/selection-guide)
+- 选模型 → [模型选型决策树](/reference/model-selection-guide)
 - 看实战案例 → [Cookbook](/cookbook/)

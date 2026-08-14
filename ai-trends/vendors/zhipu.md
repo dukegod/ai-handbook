@@ -102,11 +102,11 @@ verifiedWith:
 
 - [智谱 BigModel 开放平台](https://open.bigmodel.cn/)
 - [GLM-4 技术报告](https://github.com/THUDM/GLM-4)
-- [技术架构总览](./architecture)
+- [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - [Anthropic Claude 对比](./anthropic)
 
 ## 下一步
 
 - 看另一家开源路线 → [Qwen · 阿里通义千问全系](./qwen)
-- 看横向对比表 → [5 厂商横向对比](./comparison)
-- 选型决策 → [选型决策树](./selection-guide)
+- 看横向对比表 → [5 厂商横向对比](/reference/model-comparison)
+- 选型决策 → [模型选型决策树](/reference/model-selection-guide)

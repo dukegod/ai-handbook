@@ -124,5 +124,5 @@ Flash Attention 只是优化显存和速度，注意力计算结果与传统方�
 
 ## 如果你想
 
-- 看各家模型的注意力选择 → [LLM 全景 · 技术架构总览](/llm-landscape/architecture)
+- 看各家模型的注意力选择 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 了解推理优化 → [推理优化](../training/inference-optimization)
