@@ -62,9 +62,8 @@ ai-trends/          产品动向
 │   └── qwen/          Qwen · 阿里通义千问全系
 ├── research-highlights/ 技术速递
 └── industry/          行业观察
-claude-code/        Claude Code CLI 精通（9 个子章，共 48 页 + index）
-claude-capabilities/ Claude 能力全景（8 个子章，共 47 页 + index）
-reference/          速查手册（含模型横向对比与选型决策树）
+claude-code/        Claude Code CLI 精通（9 个子章 + reference 速查手册）
+claude-capabilities/ Claude 能力全景（8 个子章，含模型 ID 速查）
 cookbook/           实战案例
 contributing/       写作规范五件套（本文重要参考）
 ```

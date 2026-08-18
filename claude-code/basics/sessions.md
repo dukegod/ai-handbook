@@ -29,7 +29,7 @@ verifiedWith:
 
 ## 前置
 
-- 装好 Claude Code、跑过 [第一次对话](/getting-started/first-conversation)
+- 装好 Claude Code、跑过 [第一次对话](/claude-code/getting-started/first-conversation)
 
 ## 一、Session 是什么
 
@@ -126,7 +126,7 @@ $ claude --continue --fork-session
 - **`/compact [instructions]`** — 用摘要替换历史，可指定 focus（如 `/compact focus on API changes`）
 - **`/context`** — 显示当前哪些内容在占 context
 
-深入 auto-compact 见 [心智模型 · 上下文用完了怎么办](/getting-started/mental-model#上下文用完了怎么办auto-compact)。
+深入 auto-compact 见 [心智模型 · 上下文用完了怎么办](/claude-code/getting-started/mental-model#上下文用完了怎么办auto-compact)。
 
 ## 七、导出会话
 
@@ -193,7 +193,7 @@ Auto-compact 会砍掉最老的工具输出和摘要化老对话——**长期�
 
 ## 如果你想
 
-- 深入 Auto-compact 机制 → [心智模型 · 上下文用完了怎么办](/getting-started/mental-model#上下文用完了怎么办auto-compact)
+- 深入 Auto-compact 机制 → [心智模型 · 上下文用完了怎么办](/claude-code/getting-started/mental-model#上下文用完了怎么办auto-compact)
 - 并行多会话 → [Worktree 隔离](/claude-code/advanced/worktree)
 - Headless 脚本化调用 → [Headless / CI 模式](/claude-code/advanced/headless)
 - 查所有会话内 slash 命令 → [定制与扩展 · Slash Commands](/claude-code/customization/slash-commands)

@@ -127,5 +127,5 @@ LoRA：y = Wx + BAx
 
 ## 如果你想
 
-- 看各家模型的微调方案 → [模型选型决策树](/reference/model-selection-guide)
+- 看各家模型的微调方案 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 - 动手微调 → [Cookbook](/cookbook/)

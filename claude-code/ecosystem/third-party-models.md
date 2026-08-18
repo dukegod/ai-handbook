@@ -32,7 +32,7 @@ verifiedWith:
 
 ## 前置知识
 
-- 已装好 Claude Code（[安装与认证](/getting-started/installation)）
+- 已装好 Claude Code（[安装与认证](/claude-code/getting-started/installation)）
 - 拥有目标模型厂商的 API Key（[MiniMax](https://platform.minimaxi.com/) / [智谱 BigModel](https://bigmodel.cn/) / [DeepSeek](https://platform.deepseek.com/) / [Moonshot](https://platform.moonshot.cn/) 等）
 
 ## 两种方式速览
@@ -201,11 +201,11 @@ Claude Code 版本迭代快，非官方接入没有兼容承诺。升级 Claude 
 
 ## 下一步
 
-- 回 [安装与认证](/getting-started/installation) 继续入门主线
-- 想理解 Claude Code 上下文机制 → [心智模型](/getting-started/mental-model)
+- 回 [安装与认证](/claude-code/getting-started/installation) 继续入门主线
+- 想理解 Claude Code 上下文机制 → [心智模型](/claude-code/getting-started/mental-model)
 
 ## 如果你想
 
-- 用官方 Claude 模型 → [安装与认证 · 方式 A/B](/getting-started/installation#第-3-步完成认证)
-- 深入模型选型 → [模型选择](/claude-code/basics/model-selection) / [模型 ID 与定价](/reference/model-ids)
+- 用官方 Claude 模型 → [安装与认证 · 方式 A/B](/claude-code/getting-started/installation#第-3-步完成认证)
+- 深入模型选型 → [模型选择](/claude-code/basics/model-selection) / [模型 ID 与定价](/claude-capabilities/models/model-ids)
 - 长期把配置提交到项目共享 → [Settings 配置文件](/claude-code/customization/settings)

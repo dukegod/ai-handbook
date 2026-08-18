@@ -95,6 +95,6 @@ verifiedWith:
 
 ## 如果你想
 
-- 选模型 → [模型选型决策树](/reference/model-selection-guide)
+- 选模型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 - 企业部署 → [AI Coding · 企业部署](/ai-coding/enterprise/deployment)
 - 看真实案例 → [Cookbook](/cookbook/)

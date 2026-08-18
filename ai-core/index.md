@@ -46,5 +46,5 @@ flowchart TD
 
 ## 如果你想
 
-- 选模型 → [模型选型决策树](/reference/model-selection-guide)
+- 选模型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 - 看产品动态 → [AI 产品动向](/ai-trends/)

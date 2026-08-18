@@ -96,10 +96,10 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 - [Kimi 开放平台](https://platform.moonshot.cn/docs)
 - [Kimi K2 技术报告](https://moonshotai.github.io/Kimi-K2/)
 - [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
-- [Anthropic Claude 对比](./anthropic)
+- [Anthropic Claude 对比](/ai-trends/vendors/anthropic/)
 
 ## 下一步
 
-- 看国内另一家路线 → [Zhipu · 智谱 GLM 全系](./zhipu)
-- 看横向对比表 → [5 厂商横向对比](/reference/model-comparison)
-- 选型决策 → [模型选型决策树](/reference/model-selection-guide)
+- 看国内另一家路线 → [Zhipu · 智谱 GLM 全系](../zhipu/)
+- 看横向对比表 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 选型决策 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)

@@ -58,7 +58,7 @@ DeepSeek 是中国开源大模型的技术品牌担当：**训练成本低 + 开
 ## 下一步
 
 - 看总览 → [国内厂商](/ai-trends/cn-vendors/)
-- 对比七家 → [7 厂商横向对比](/reference/model-comparison)
+- 对比七家 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
 
 ## 如果你想
 

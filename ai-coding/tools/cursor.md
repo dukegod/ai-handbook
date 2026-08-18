@@ -104,12 +104,63 @@ Cursor 支持多种模型：
 - 复杂 Agent 任务（Claude Code 更强）
 - 预算有限（Copilot/Trae 更便宜）
 
+## 规范与配置：.cursor/rules + AGENTS.md 双轨
+
+Cursor 有两套规则文件机制，了解它才能和 Claude Code / Codex / Trae 团队协作：
+
+### 规则文件加载链
+
+```
+~/.cursor/rules/              # 全局（用户级偏好）
+├── 项目根/.cursor/rules/     # 项目级（团队共享，✅ 提交到 Git）
+│   ├── always.md             # 始终生效
+│   ├── *.md (glob)           # 按 glob 匹配生效
+│   └── *.md (description)    # 按 AI 智能判断生效
+├── 项目根/AGENTS.md          # 跨工具兼容（兼容读取）
+└── 子目录/.cursor/rules/     # 目录级
+```
+
+### 路径作用域
+
+Cursor 的 `.cursor/rules/` 支持 4 种生效方式：
+
+| 方式 | 文件 | 生效条件 |
+|------|------|---------|
+| **始终生效** | `always.md` | 所有会话 |
+| **Glob 匹配** | `*.md`（文件名含 glob） | 文件路径匹配时 |
+| **智能判断** | `*.md`（description 字段） | AI 判断相关时 |
+| **手动触发** | `*.md`（用户选择） | 用户手动 @引用 |
+
+```
+.cursor/rules/
+├── always.md              # 始终生效（如"用中文回复"）
+├── react-components.md    # glob: 匹配 src/components/**
+└── api-conventions.md     # description: AI 智能判断
+```
+
+### 与 Claude Code / Codex / Trae 的兼容
+
+| 场景 | 解法 |
+|------|------|
+| Codex 用户也要读 Cursor 的规则 | 把通用规范放 `AGENTS.md`，Codex 原生支持 |
+| Claude Code 用户也要读 Cursor 的规则 | 把通用规范放 `AGENTS.md`，Claude Code 新版同时读取 |
+| Trae 用户也要读 Cursor 的规则 | 把通用规范放 `AGENTS.md`，Trae 原生支持 |
+| Cursor 专属配置（glob 规则） | 留在 `.cursor/rules/`，其他工具忽略 |
+
+### Cursor 用户的跨工具最佳实践
+
+- **通用规范写 AGENTS.md**：跨工具兼容的铁律、构建命令、代码风格
+- **.cursor/rules/ 放 Cursor 专属**：glob 路径规则、AI 智能判断规则
+- **避免在 .cursor/rules/ 写全局铁律**：Codex / Trae 不认这个路径
+- **AGENTS.md 尽量短**：建议 ≤200 行，避免上下文膨胀
+
 ## 最佳实践
 
 1. **用 @引用上下文**：@file、@function、@doc 让 AI 理解更多上下文
 2. **选对模型**：简单任务用 Haiku，复杂任务用 Opus
 3. **用 Composer 多文件编辑**：比逐个文件修改更高效
 4. **配置 .cursorignore**：排除不需要索引的文件
+5. **与 Codex / Claude Code 团队协作**：通用规范写 AGENTS.md
 
 ## 参考
 

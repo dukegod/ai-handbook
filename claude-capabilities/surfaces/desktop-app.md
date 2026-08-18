@@ -103,13 +103,13 @@ Mac / Win 同时改同一个 project → 冲突。**单设备活跃**。
 
 - [claude.ai/download](https://claude.ai/download)
 - [Claude.ai](/claude-capabilities/surfaces/claude-ai)
-- [Claude Code 入门](/getting-started/what-is-claude-code)
+- [Claude Code 入门](/claude-code/getting-started/what-is-claude-code)
 
 ## 下一步
 
 - 浏览器版 → [Web](/claude-capabilities/surfaces/web-app)
 - 移动端 → [Mobile](/claude-capabilities/surfaces/mobile)
-- 切到 Claude Code → [Claude Code 入门](/getting-started/what-is-claude-code)
+- 切到 Claude Code → [Claude Code 入门](/claude-code/getting-started/what-is-claude-code)
 
 ## 如果你想
 

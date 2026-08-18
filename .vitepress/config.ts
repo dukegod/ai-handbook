@@ -42,31 +42,36 @@ export default withMermaid(defineConfig({
     siteTitle: 'AI Handbook',
 
     nav: [
-      { text: '入门', link: '/getting-started/', activeMatch: '/getting-started/' },
-      { text: 'Claude', link: '/claude-code/', activeMatch: '/claude-code/' },
-      { text: 'Claude 能力', link: '/claude-capabilities/', activeMatch: '/claude-capabilities/' },
-      { text: 'AI 技术', link: '/ai-core/', activeMatch: '/ai-core/' },
+      { text: 'AI 入门', link: '/getting-started/', activeMatch: '/getting-started/' },
+      { text: 'AI 核心技术', link: '/ai-core/', activeMatch: '/ai-core/' },
       { text: 'AI Coding', link: '/ai-coding/', activeMatch: '/ai-coding/' },
       { text: '产品动向', link: '/ai-trends/', activeMatch: '/ai-trends/' },
-      { text: 'Cookbook', link: '/cookbook/', activeMatch: '/cookbook/' },
-      { text: '参考', link: '/reference/', activeMatch: '/reference/' },
+      {
+        text: 'Claude',
+        items: [
+          { text: 'Claude 能力全景', link: '/claude-capabilities/', activeMatch: '/claude-capabilities/' },
+          { text: 'Claude Code 精通', link: '/claude-code/', activeMatch: '/claude-code/' },
+          { text: 'Cookbook 实战', link: '/cookbook/', activeMatch: '/cookbook/' },
+        ],
+      },
       { text: '贡献', link: '/contributing/style-guide', activeMatch: '/contributing/' },
     ],
 
     sidebar: {
       // ----------------------------------------------------------------------
-      // 入门
+      // AI 入门
       // ----------------------------------------------------------------------
       '/getting-started/': [
         {
-          text: '入门',
+          text: 'AI 入门',
           items: [
             { text: '总览', link: '/getting-started/' },
-            { text: '什么是 Claude Code', link: '/getting-started/what-is-claude-code' },
-            { text: '安装与认证', link: '/getting-started/installation' },
-            { text: '第一次对话', link: '/getting-started/first-conversation' },
-            { text: '心智模型', link: '/getting-started/mental-model' },
-            { text: '对比 Cursor / Copilot / Codex CLI', link: '/getting-started/comparisons' },
+            { text: '什么是 AI', link: '/getting-started/what-is-ai' },
+            { text: '什么是大语言模型', link: '/getting-started/what-is-llm' },
+            { text: '能力与边界', link: '/getting-started/capabilities-and-limits' },
+            { text: '主流 AI 产品全景', link: '/getting-started/ai-tools-landscape' },
+            { text: '如何选择 AI 工具', link: '/getting-started/choosing-ai-tool' },
+            { text: '提示词入门', link: '/getting-started/prompting-basics' },
           ],
         },
       ],
@@ -78,6 +83,17 @@ export default withMermaid(defineConfig({
         {
           text: 'Claude Code',
           items: [{ text: '总览', link: '/claude-code/' }],
+        },
+        {
+          text: '快速上手',
+          collapsed: false,
+          items: [
+            { text: '什么是 Claude Code', link: '/claude-code/getting-started/what-is-claude-code' },
+            { text: '安装与认证', link: '/claude-code/getting-started/installation' },
+            { text: '第一次对话', link: '/claude-code/getting-started/first-conversation' },
+            { text: '心智模型', link: '/claude-code/getting-started/mental-model' },
+            { text: '对比 Cursor / Copilot / Codex CLI', link: '/claude-code/getting-started/comparisons' },
+          ],
         },
         {
           text: '基础',
@@ -174,6 +190,14 @@ export default withMermaid(defineConfig({
             { text: '接入非 Claude 模型（国内主流方案）', link: '/claude-code/ecosystem/third-party-models' },
           ],
         },
+        {
+          text: '速查手册',
+          collapsed: true,
+          items: [
+            { text: 'CLI Flags', link: '/claude-code/reference/cli-flags' },
+            { text: P('环境变量'), link: '/claude-code/reference/env-vars' },
+          ],
+        },
       ],
 
       // ----------------------------------------------------------------------
@@ -189,11 +213,6 @@ export default withMermaid(defineConfig({
           collapsed: false,
           items: [
             { text: '模型概览', link: '/claude-capabilities/models/overview' },
-            { text: 'Opus 5', link: '/claude-capabilities/models/opus' },
-            { text: 'Sonnet 5', link: '/claude-capabilities/models/sonnet' },
-            { text: 'Haiku 4.5', link: '/claude-capabilities/models/haiku' },
-            { text: 'Fable 5', link: '/claude-capabilities/models/fable' },
-            { text: '模型选型', link: '/claude-capabilities/models/choosing-model' },
           ],
         },
         {
@@ -343,6 +362,14 @@ export default withMermaid(defineConfig({
           ],
         },
         {
+          text: '模型选型',
+          collapsed: true,
+          items: [
+            { text: '7 厂商横向对比', link: '/ai-trends/model-selection/model-comparison' },
+            { text: '模型选型决策树', link: '/ai-trends/model-selection/model-selection-guide' },
+          ],
+        },
+        {
           text: '国外厂商',
           collapsed: true,
           items: [
@@ -396,10 +423,25 @@ export default withMermaid(defineConfig({
           collapsed: false,
           items: [
             { text: P('AI Coding 工具全景'), link: '/ai-coding/tools/overview' },
+          ],
+        },
+        {
+          text: '📦 产品',
+          collapsed: false,
+          items: [
             { text: P('Claude Code 深度评测'), link: '/ai-coding/tools/claude-code' },
             { text: P('Cursor 深度评测'), link: '/ai-coding/tools/cursor' },
             { text: P('GitHub Copilot 评测'), link: '/ai-coding/tools/copilot' },
-            { text: P('Codex CLI / Trae 评测'), link: '/ai-coding/tools/others' },
+            { text: P('Codex CLI 深度评测'), link: '/ai-coding/tools/codex-cli' },
+            { text: P('Trae 深度评测'), link: '/ai-coding/tools/trae' },
+          ],
+        },
+        {
+          text: '🔧 框架',
+          collapsed: false,
+          items: [
+            { text: P('PI-agent 深度评测'), link: '/ai-coding/tools/pi-agent' },
+            { text: P('DeepSeek Harness 深度评测'), link: '/ai-coding/tools/deepseek-harness' },
           ],
         },
         {
@@ -450,24 +492,6 @@ export default withMermaid(defineConfig({
       ],
 
       // ----------------------------------------------------------------------
-      // 参考
-      // ----------------------------------------------------------------------
-      '/reference/': [
-        {
-          text: '速查手册',
-          items: [
-            { text: '总览', link: '/reference/' },
-            { text: 'CLI Flags', link: '/reference/cli-flags' },
-            { text: P('环境变量'), link: '/reference/env-vars' },
-            { text: P('模型 ID 与定价'), link: '/reference/model-ids' },
-            { text: '5 厂商横向对比', link: '/reference/model-comparison' },
-            { text: '模型选型决策树', link: '/reference/model-selection-guide' },
-            { text: '术语表（速查）', link: '/reference/glossary' },
-          ],
-        },
-      ],
-
-      // ----------------------------------------------------------------------
       // 贡献
       // ----------------------------------------------------------------------
       '/contributing/': [
@@ -479,6 +503,7 @@ export default withMermaid(defineConfig({
             { text: '概念文模板', link: '/contributing/template-concept' },
             { text: '操作文模板', link: '/contributing/template-howto' },
             { text: 'Published 门槛自检', link: '/contributing/checklist-published' },
+            { text: '死链检查', link: '/contributing/link-checking' },
             { text: '架构 review', link: '/contributing/architecture-review-2026-08-10' },
             { text: '路线图', link: '/contributing/roadmap' },
           ],

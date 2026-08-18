@@ -30,7 +30,7 @@ verifiedWith:
 ## 前置
 
 - 装好 Claude Code
-- 已读 [心智模型 · 上下文里有什么](/getting-started/mental-model#三上下文里有什么) 建立对「每次会话开头加载什么」的直觉
+- 已读 [心智模型 · 上下文里有什么](/claude-code/getting-started/mental-model#三上下文里有什么) 建立对「每次会话开头加载什么」的直觉
 
 ## 一、CLAUDE.md 是什么
 

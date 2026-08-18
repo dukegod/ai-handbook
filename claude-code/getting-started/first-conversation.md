@@ -168,7 +168,7 @@ Claude Code 会记住你的选择，之后在该工具上反复失败。改法�
 
 ## 如果你想
 
-- 查所有 CLI Flag → [参考 · CLI Flags](/reference/cli-flags)
+- 查所有 CLI Flag → [参考 · CLI Flags](/claude-code/reference/cli-flags)
 - 查所有 Slash Commands → [定制与扩展 · Slash Commands](/claude-code/customization/slash-commands)
 - 用 Plan Mode 探索复杂改动 → [Plan Mode](/claude-code/basics/plan-mode)
 - 看一个真实的端到端案例 → [Cookbook · 第一个真实任务](/cookbook/first-real-task)

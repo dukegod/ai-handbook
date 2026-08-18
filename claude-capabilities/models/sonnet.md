@@ -222,4 +222,4 @@ msg = client.messages.create(
 
 - sub-agent 编排省钱模式 → [Subagent 与工作流编排](/claude-code/subagents-and-workflows/workflow-orchestration)
 - 详细成本与 token 优化 → [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
-- 选型决策树 → [模型选型（API 视角）](./choosing-model)
+- 选型决策树 → [模型概览 · 选型决策指南](./overview#五选型决策指南)

@@ -199,4 +199,4 @@ for block in response.content:
 
 - 提示工程更系统 → [深度提示工程 · 思维链](/claude-capabilities/prompting/chain-of-thought)
 - 成本与推理深度权衡 → [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
-- 模型族选型 → [模型选型（API 视角）](/claude-capabilities/models/choosing-model)
+- 模型族选型 → [模型概览 · 选型决策指南](/claude-capabilities/models/overview#五选型决策指南)

@@ -34,15 +34,16 @@ pnpm preview      # 本地预览构建产物
 │   ├── patterns/                 重构 / 测试 / 文档生成模式
 │   └── enterprise/               部署 / 安全 / 成本控制
 ├── ai-trends/                  AI 产品动向
-│   ├── product-updates/          月度速报 / Claude / ChatGPT / 国内厂商
+│   ├── product-updates/          月度速报
+│   ├── model-selection/          7 厂商横向对比 / 模型选型决策树
+│   ├── vendors/                  国外厂商（Anthropic / OpenAI / xAI）
+│   ├── cn-vendors/               国内厂商（DeepSeek / 豆包 / Moonshot / MiniMax / Zhipu / Qwen）
 │   ├── research-highlights/      论文速递 / 开源推荐
 │   └── industry/                 行业趋势 / 投融资
 ├── claude-code/                Claude Code CLI 精通（深度专项）
+│   └── reference/                速查手册（CLI Flags / 环境变量）
 ├── claude-capabilities/        Claude 全能力（API / SDK / MCP / Agentic）
-├── ai-trends/vendors/          厂商档案（5 厂商对比）
-├── reference/                  速查手册（含模型横向对比与选型决策树）
 ├── cookbook/                    实战案例
-├── reference/                   速查手册
 ├── examples/                    示例仓库
 ├── scripts/                     工具脚本
 └── contributing/                写作规范与路线图

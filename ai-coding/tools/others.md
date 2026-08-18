@@ -77,6 +77,8 @@ verifiedWith:
 
 | 工具 | 厂商 | 特点 | 状态 |
 |------|------|------|------|
+| **PI-agent** | Earendil | 极简 Agent 框架、15+ 模型、MIT 开源 | 活跃 |
+| **DeepSeek Harness** | DeepSeek | 插件一切、Cordis 内核、144k Star、MIT 开源 | 开发者预览 |
 | **Windsurf** | Codeium | AI-native IDE | 公测 |
 | **Aider** | 开源 | CLI + Git 集成 | 活跃 |
 | **Continue** | 开源 | IDE 插件 + 多模型 | 活跃 |

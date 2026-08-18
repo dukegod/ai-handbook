@@ -29,7 +29,7 @@ verifiedWith:
 
 ## 前置
 
-- 装好 Claude Code、跑过 [第一次对话](/getting-started/first-conversation)
+- 装好 Claude Code、跑过 [第一次对话](/claude-code/getting-started/first-conversation)
 
 ## 一、三档规则：deny → ask → allow
 

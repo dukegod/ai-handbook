@@ -45,7 +45,7 @@ ln -s "$(pwd)/examples/check-page" ~/.claude/skills/check-page
 在 Claude Code 对话里说：
 
 ```text
-帮我检查一下 getting-started/installation.md
+帮我检查一下 claude-code/getting-started/installation.md
 ```
 
 或
@@ -61,7 +61,7 @@ Skill 会调 `scripts/check_page.py` 对指定文件跑一遍，把命中问题�
 在仓库根手动跑：
 
 ```bash
-python3 examples/check-page/scripts/check_page.py getting-started/what-is-claude-code.md
+python3 examples/check-page/scripts/check_page.py claude-code/getting-started/what-is-claude-code.md
 # 预期：未发现问题（或少量合法紧贴的提示）
 
 python3 examples/check-page/scripts/check_page.py claude-code/advanced/memory.md

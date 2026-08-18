@@ -241,4 +241,4 @@ msg = client.messages.create(
 
 - RAG 实战 → [深度提示工程 · 检索模板](/claude-capabilities/prompting/templates)
 - 成本控制 → [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
-- 跨 provider 差异 → [模型选型 · 规模](/claude-capabilities/models/choosing-model#六按规模poc--小流量--大流量)
+- 跨 provider 差异 → [模型概览 · 按规模](/claude-capabilities/models/overview#按规模)

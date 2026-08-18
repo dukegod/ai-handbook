@@ -56,11 +56,11 @@ lastUpdated: 2026-08-11
 
 **A. 入门（5 篇 · 全部初稿完成 ✅ · **全部已过 published 门槛 ✅**）**
 
-- [x] [/getting-started/what-is-claude-code](/getting-started/what-is-claude-code) · 836 汉字 · **published 2026-07-28**
-- [x] [/getting-started/installation](/getting-started/installation) · 774 汉字 · **published 2026-07-28**
-- [x] [/getting-started/first-conversation](/getting-started/first-conversation) · 1070 汉字 · **published 2026-07-28**
-- [x] [/getting-started/mental-model](/getting-started/mental-model) · 1415 汉字 · **published 2026-07-28**
-- [x] [/getting-started/comparisons](/getting-started/comparisons) · 1098 汉字 · **published 2026-07-28**
+- [x] [/claude-code/getting-started/what-is-claude-code](/claude-code/getting-started/what-is-claude-code) · 836 汉字 · **published 2026-07-28**
+- [x] [/claude-code/getting-started/installation](/claude-code/getting-started/installation) · 774 汉字 · **published 2026-07-28**
+- [x] [/claude-code/getting-started/first-conversation](/claude-code/getting-started/first-conversation) · 1070 汉字 · **published 2026-07-28**
+- [x] [/claude-code/getting-started/mental-model](/claude-code/getting-started/mental-model) · 1415 汉字 · **published 2026-07-28**
+- [x] [/claude-code/getting-started/comparisons](/claude-code/getting-started/comparisons) · 1098 汉字 · **published 2026-07-28**
 
 **B. Claude Code 基础（9 篇 · 全部初稿完成 ✅ · **全部已过 published 门槛 ✅**）**
 
@@ -79,12 +79,12 @@ lastUpdated: 2026-08-11
 **C. 一个亮点与两个参考（3 篇 · 全部初稿完成 ✅ · **全部已过 published 门槛 ✅**）**
 
 - [x] [/claude-code/skills/what-is-a-skill](/claude-code/skills/what-is-a-skill) · 1259 汉字 · **published 2026-07-28**
-- [x] [/reference/cli-flags](/reference/cli-flags) · 1095 汉字 · **published 2026-07-28**
+- [x] [/claude-code/reference/cli-flags](/claude-code/reference/cli-flags) · 1095 汉字 · **published 2026-07-28**
 - [x] [/cookbook/first-real-task](/cookbook/first-real-task) · 1207 汉字 · **published 2026-07-28**
 
 **D. 元维护（1 篇 · 初稿完成 ✅ · **已过 published 门槛 ✅**）**
 
-- [x] [/reference/glossary](/reference/glossary) · **published 2026-07-28** — 通过 VitePress include 复用 [contributing/glossary](./glossary) 作单一真相源
+- [x] [/contributing/glossary](/contributing/glossary) · **published 2026-07-28** — 通过 VitePress include 复用 [contributing/glossary](./glossary) 作单一真相源
 
 **E. 视觉与体验（5 项 · 全部完成 ✅）**
 
@@ -350,7 +350,7 @@ v0.3.3 段 12 篇正文全部 published。**v0.3 整段（46 篇）全部收官*
 
 **commit `47dfeba`（LLM landscape 骨架）**：
 
-- 厂商档案并入 `ai-trends/vendors/`，模型横向对比与选型决策树并入 `reference/`
+- 厂商档案并入 `ai-trends/vendors/`，模型横向对比与选型决策树并入 `ai-trends/model-selection/`
 - 5 厂商：Anthropic / OpenAI / Moonshot / Zhipu / Qwen
 - 配套：architecture / comparison / selection-guide
 - sidebar 顶级加 "LLM landscape" 段
@@ -372,7 +372,7 @@ v0.3.3 段 12 篇正文全部 published。**v0.3 整段（46 篇）全部收官*
 - v0.5 阶段 1：厂商档案与模型选型页填实（先做跨厂商架构路线 + Anthropic 1 篇试水）
 - v0.5 阶段 2：claude-code/tools/ 8 个工具页补全（核心使用入口，最高 ROI）
 - v0.5 阶段 3：claude-code/ecosystem/ 4 个 IDE 集成（VS Code / JetBrains / Neovim / 企业部署）
-- v0.5 阶段 4：reference/ 4 段速查（基于已 published 内容做"提炼"段）
+- v0.5 阶段 4：速查手册 4 段速查（基于已 published 内容做"提炼"段）
 - v0.5 阶段 5：cookbook/ 3 个 stub 扩写
 - v0.5 阶段 6：跨工具工程化方案文档（multi-tool-strategy.md）—— Codex/Claude Code/Cursor/Trae 兼容
 - v0.5 阶段 7：每月 lastUpdated 巡检 + changelog 体系
@@ -423,5 +423,5 @@ v0.3.3 段 12 篇正文全部 published。**v0.3 整段（46 篇）全部收官*
 
 ## 下一步
 
-- 开始写 v0.1 第一篇 → [/getting-started/what-is-claude-code](/getting-started/what-is-claude-code)
+- 开始写 v0.1 第一篇 → [/claude-code/getting-started/what-is-claude-code](/claude-code/getting-started/what-is-claude-code)
 - 校准写作模板 → [概念文模板](./template-concept) / [操作文模板](./template-howto)

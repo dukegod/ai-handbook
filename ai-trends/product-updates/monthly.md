@@ -106,7 +106,7 @@ verifiedWith:
 
 ## 下一步
 
-- 只盯一家厂商 → [Claude 动态](/ai-trends/product-updates/claude) 或 [ChatGPT 动态](/ai-trends/product-updates/chatgpt)
+- 只盯一家厂商 → [Claude 动态](/ai-trends/vendors/anthropic/) 或 [ChatGPT 动态](/ai-trends/vendors/openai/)
 - 看国内厂商 → [国内厂商](/ai-trends/cn-vendors/)
 
 ## 如果你想

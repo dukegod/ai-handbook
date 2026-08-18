@@ -209,7 +209,7 @@ pnpm build 2>&1 | grep -iE '(warn|error|dead)'
 
 ## 下一步
 
-- 拿一篇 draft 试跑本清单 → 从 [/getting-started/what-is-claude-code](/getting-started/what-is-claude-code) 开始
+- 拿一篇 draft 试跑本清单 → 从 [/claude-code/getting-started/what-is-claude-code](/claude-code/getting-started/what-is-claude-code) 开始
 - 遇到不清楚的规范 → 回 [style-guide.md](./style-guide)
 
 ## 如果你想

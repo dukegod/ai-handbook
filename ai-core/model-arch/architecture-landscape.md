@@ -151,9 +151,9 @@ MoE 的**工程红利**：相同训练成本下参数总量可以做得更大；
 
 ## 参考
 
-- [5 厂商档案](/ai-trends/vendors/) · [Anthropic](/ai-trends/vendors/anthropic) · [OpenAI](/ai-trends/vendors/openai) · [Moonshot](/ai-trends/vendors/moonshot) · [Zhipu](/ai-trends/vendors/zhipu) · [Qwen](/ai-trends/vendors/qwen)
-- [横向对比表](/reference/model-comparison) —— 8 维度量化对比
-- [模型选型决策树](/reference/model-selection-guide) —— 架构选择映射到业务场景
+- [5 厂商档案](/ai-trends/vendors/) · [Anthropic](/ai-trends/vendors/anthropic/) · [OpenAI](/ai-trends/vendors/openai/) · [Moonshot](/ai-trends/cn-vendors/moonshot/) · [Zhipu](/ai-trends/cn-vendors/zhipu/) · [Qwen](/ai-trends/cn-vendors/qwen/)
+- [横向对比表](/ai-trends/model-selection/model-comparison) —— 8 维度量化对比
+- [模型选型决策树](/ai-trends/model-selection/model-selection-guide) —— 架构选择映射到业务场景
 - [Anthropic · Constitutional AI](https://www.anthropic.com/research/constitutional-ai)
 - [DeepSeek · GRPO 论文](https://arxiv.org/abs/2402.03300)
 - [Moonshot · Kimi K2 技术报告](https://moonshotai.github.io/Kimi-K2/)
@@ -163,4 +163,4 @@ MoE 的**工程红利**：相同训练成本下参数总量可以做得更大；
 ## 下一步
 
 - 看具体厂商细节 → [厂商档案](/ai-trends/vendors/)
-- 把架构选型映射到业务 → [模型选型决策树](/reference/model-selection-guide)
+- 把架构选型映射到业务 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)

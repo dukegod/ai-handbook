@@ -56,4 +56,4 @@ flowchart LR
 ## 如果你想
 
 - 看实战案例 → [Cookbook](/cookbook/)
-- 选模型 → [模型选型决策树](/reference/model-selection-guide)
+- 选模型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)

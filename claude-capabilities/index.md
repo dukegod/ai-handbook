@@ -54,7 +54,7 @@ flowchart TD
 
 | 目标 | 从这里开始 |
 | --- | --- |
-| 选模型 | [模型概览](./models/overview) → [模型选型](./models/choosing-model) |
+| 选模型 | [模型概览](./models/overview)（含多维度选型指南） |
 | 用 HTTP 调用 Claude | [Messages API](./api/messages) |
 | 写 Agent 应用 | [Agent SDK](./sdk/agent-sdk) |
 | 降本 | [Prompt Caching](./api/prompt-caching) + [Message Batches](./api/message-batches) |
@@ -71,5 +71,5 @@ flowchart TD
 
 ## 如果你想
 
-- 查模型 ID 和定价 → [参考 · 模型 ID](/reference/model-ids) 🚧
+- 查模型 ID 和定价 → [参考 · 模型 ID](/claude-capabilities/models/model-ids) 🚧
 - 查术语中英对照 → [术语表](/contributing/glossary)

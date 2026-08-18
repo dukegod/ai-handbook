@@ -138,5 +138,5 @@ INT4 量化会损失 1-3% 的基准分数。需要在显存和质量间权衡。
 
 ## 如果你想
 
-- 看各家模型的量化方案 → [5 厂商横向对比](/reference/model-comparison)
-- 端侧部署 Qwen → [Qwen · 阿里通义千问全系](/ai-trends/vendors/qwen)
+- 看各家模型的量化方案 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 端侧部署 Qwen → [Qwen · 阿里通义千问全系](/ai-trends/cn-vendors/qwen/)

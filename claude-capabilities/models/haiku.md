@@ -209,7 +209,7 @@ Haiku 4.5 max output 是 **64k**。设 128k 会被静默 clamp 到 64k，且 bil
 ## 下一步
 
 - 长链 agent 专家 → [Fable 5](./fable)
-- API 视角选型决策 → [模型选型](./choosing-model)
+- API 视角选型决策 → [模型概览 · 选型决策指南](./overview#五选型决策指南)
 - Batch API 详解 → [Message Batches API](/claude-capabilities/api/message-batches)
 
 ## 如果你想

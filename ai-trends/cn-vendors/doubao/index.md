@@ -57,9 +57,9 @@ verifiedWith:
 ## 下一步
 
 - 看总览 → [国内厂商](/ai-trends/cn-vendors/)
-- 对比七家 → [7 厂商横向对比](/reference/model-comparison)
+- 对比七家 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
 
 ## 如果你想
 
-- 看闭源对手 → [百度文心](/ai-trends/cn-vendors/baidu) / [腾讯混元](/ai-trends/cn-vendors/tencent)
+- 看闭源对手 → [百度文心](/ai-trends/cn-vendors/) / [腾讯混元](/ai-trends/cn-vendors/)
 - 企业部署 → [AI Coding · 企业部署](/ai-coding/enterprise/deployment)

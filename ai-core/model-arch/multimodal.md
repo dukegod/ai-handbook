@@ -135,5 +135,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 看各家模型的多模态能力 → [5 厂商横向对比](/reference/model-comparison)
+- 看各家模型的多模态能力 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 用 Claude 处理图片 → [Claude 能力 · 视觉能力](/claude-capabilities/core/vision)

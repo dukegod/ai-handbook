@@ -28,8 +28,8 @@ verifiedWith:
 
 ## 前置
 
-- 装好 Claude Code、跑过 [第一次对话](/getting-started/first-conversation)
-- 理解 [心智模型 · 上下文里有什么](/getting-started/mental-model#三上下文里有什么)（每 turn 重发全上下文）
+- 装好 Claude Code、跑过 [第一次对话](/claude-code/getting-started/first-conversation)
+- 理解 [心智模型 · 上下文里有什么](/claude-code/getting-started/mental-model#三上下文里有什么)（每 turn 重发全上下文）
 
 ## 一、计费模型
 

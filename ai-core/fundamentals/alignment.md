@@ -131,5 +131,5 @@ RLHF/DPO 的效果取决于偏好数据质量。垃圾数据 → 垃圾模型。
 
 ## 如果你想
 
-- 看各家模型的对齐方法 → [厂商档案 · Anthropic](/ai-trends/vendors/anthropic)
+- 看各家模型的对齐方法 → [厂商档案 · Anthropic](/ai-trends/vendors/anthropic/)
 - 了解提示工程 → [Claude 能力 · 提示工程](/claude-capabilities/prompting/best-practices)

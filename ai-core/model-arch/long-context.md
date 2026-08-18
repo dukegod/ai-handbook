@@ -133,5 +133,5 @@ KV Cache 大小 = 2 × 层数 × 头数 × 头维度 × 序列长度 × batch_si
 
 ## 如果你想
 
-- 看各家模型的上下文选择 → [5 厂商横向对比](/reference/model-comparison)
+- 看各家模型的上下文选择 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 了解注意力机制 → [注意力机制](../fundamentals/attention)

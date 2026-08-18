@@ -134,11 +134,11 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 
 - [OpenAI 平台文档](https://platform.openai.com/docs)
 - [OpenAI 定价](https://openai.com/pricing)
-- [Anthropic Claude 对比](./anthropic)
+- [Anthropic Claude 对比](../anthropic/)
 - [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 
 ## 下一步
 
-- 看国内厂商路线 → [Moonshot · Kimi 全系](./moonshot)
-- 看横向对比表 → [5 厂商横向对比](/reference/model-comparison)
-- 选型决策 → [模型选型决策树](/reference/model-selection-guide)
+- 看国内厂商路线 → [Moonshot · Kimi 全系](/ai-trends/cn-vendors/moonshot/)
+- 看横向对比表 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 选型决策 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)

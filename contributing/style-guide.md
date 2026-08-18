@@ -179,7 +179,7 @@ flowchart LR
 
 ## 如果你想
 
-- 深入了解 Claude Code 内部工作机制 → [心智模型](/getting-started/mental-model)
+- 深入了解 Claude Code 内部工作机制 → [心智模型](/claude-code/getting-started/mental-model)
 - 学习如何写第一个 Skill → [写你的第一个 Skill](/claude-code/skills/custom-skill)
 - 处理成本问题 → [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
 ```
@@ -193,7 +193,7 @@ flowchart LR
 - **不重复 Anthropic 官方 API schema 全表**：只写「为什么用 / 何时用 / 踩坑」，schema 用链接指向官方文档
 - **不做翻译搬运**：官方英文文档 SEO 极强，中文站的差异化竞争在于「场景化案例 + 踩坑记录 + 中文语境技巧」
 - **不写「教程博客」**：Cookbook 案例必须是**别处查不到的场景**且**近 90 天内可复现**
-- **不硬编码 model id**：一律引用 [reference/model-ids.md](../reference/model-ids.md) 的变量，避免模型改名导致全站失效
+- **不硬编码 model id**：一律引用 [model-ids.md](../claude-capabilities/models/model-ids.md) 的变量，避免模型改名导致全站失效
 
 ## 九、法律与署名
 

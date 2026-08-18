@@ -8,7 +8,7 @@ lastUpdated: 2026-08-13
 verifiedWith:
   sources:
     - name: 5 厂商横向对比
-      url: /reference/model-comparison
+      url: /ai-trends/model-selection/model-comparison
       accessedAt: 2026-08-13
 ---
 
@@ -158,10 +158,10 @@ flowchart TD
 
 - [5 厂商横向对比](./model-comparison) — 8 维度量化对比
 - [跨厂商架构路线](/ai-core/model-arch/architecture-landscape) — 4 大技术路线详解
-- [5 厂商详情](/ai-trends/vendors/) · [Anthropic](/ai-trends/vendors/anthropic) · [OpenAI](/ai-trends/vendors/openai) · [Moonshot](/ai-trends/vendors/moonshot) · [Zhipu](/ai-trends/vendors/zhipu) · [Qwen](/ai-trends/vendors/qwen)
+- [5 厂商详情](/ai-trends/vendors/) · [Anthropic](/ai-trends/vendors/anthropic/) · [OpenAI](/ai-trends/vendors/openai/) · [Moonshot](/ai-trends/cn-vendors/moonshot/) · [Zhipu](/ai-trends/cn-vendors/zhipu/) · [Qwen](/ai-trends/cn-vendors/qwen/)
 
 ## 下一步
 
 - 选完型想接 SDK → [Claude Code SDK](/claude-capabilities/sdk/claude-code-sdk)
 - 看部署案例 → [Cookbook](/cookbook/)
-- 深入某家厂商 → [Anthropic](/ai-trends/vendors/anthropic) / [OpenAI](/ai-trends/vendors/openai) / [Moonshot](/ai-trends/vendors/moonshot) / [Zhipu](/ai-trends/vendors/zhipu) / [Qwen](/ai-trends/vendors/qwen)
+- 深入某家厂商 → [Anthropic](/ai-trends/vendors/anthropic/) / [OpenAI](/ai-trends/vendors/openai/) / [Moonshot](/ai-trends/cn-vendors/moonshot/) / [Zhipu](/ai-trends/cn-vendors/zhipu/) / [Qwen](/ai-trends/cn-vendors/qwen/)

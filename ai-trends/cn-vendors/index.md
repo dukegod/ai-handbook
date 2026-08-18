@@ -28,16 +28,13 @@ verifiedWith:
 
 | 阵营 | 厂商 | 代表模型（2026 年） | 档案 |
 | --- | --- | --- | --- |
-| 开源 | DeepSeek | V4（V4-Flash / V4-Pro） | [DeepSeek](./deepseek) |
-| 开源 | 小米 | MiMo-V2-Pro / Omni | [小米 MiMo](./xiaomi) |
-| 开源 | 阿里 | Qwen3.5 / Qwen3.8-Max | [厂商档案 · Qwen](/ai-trends/vendors/qwen) |
-| 开源 | 月之暗面 | Kimi K2.5 / K3 | [厂商档案 · Kimi](/ai-trends/vendors/moonshot) |
-| 开源 | 智谱 | GLM-5.2 | [厂商档案 · GLM](/ai-trends/vendors/zhipu) |
-| 闭源 | 字节 | 豆包 / Seed 2.0 | [字节豆包](./doubao) |
-| 闭源 | 百度 | 文心 5.0 | [百度文心](./baidu) |
-| 闭源 | 腾讯 | 混元 2.0 | [腾讯混元](./tencent) |
+| 开源 | DeepSeek | V4（V4-Flash / V4-Pro） | [DeepSeek](./deepseek/) |
+| 开源 | 阿里 | Qwen3.5 / Qwen3.8-Max | [厂商档案 · Qwen](/ai-trends/cn-vendors/qwen/) |
+| 开源 | 月之暗面 | Kimi K2.5 / K3 | [厂商档案 · Kimi](/ai-trends/cn-vendors/moonshot/) |
+| 开源 | 智谱 | GLM-5.2 | [厂商档案 · GLM](/ai-trends/cn-vendors/zhipu/) |
+| 闭源 | 字节 | 豆包 / Seed 2.0 | [字节豆包](./doubao/) |
 
-> 格局要点：**豆包是消费入口的赢家（2025-08 起反超 DeepSeek），Qwen / DeepSeek 是开源生态的赢家**——两者不是同一批公司。另有 MiniMax（M2.7，[厂商档案](/ai-trends/vendors/minimax)）、StepFun（Step-3.5-Flash）等持续迭代。
+> 格局要点：**豆包是消费入口的赢家（2025-08 起反超 DeepSeek），Qwen / DeepSeek 是开源生态的赢家**——两者不是同一批公司。另有 MiniMax（M2.7，[厂商档案](/ai-trends/cn-vendors/minimax/)）、StepFun（Step-3.5-Flash）等持续迭代。
 
 ## 两条主线
 
@@ -76,12 +73,11 @@ verifiedWith:
 
 ## 下一步
 
-- 逐家深入 → [DeepSeek](./deepseek) / [字节豆包](./doubao) / [百度文心](./baidu) / [腾讯混元](./tencent) / [小米 MiMo](./xiaomi)
-- 看海外巨头 → [ChatGPT 动态](/ai-trends/product-updates/chatgpt) / [Claude 动态](/ai-trends/product-updates/claude)
+- 看海外巨头 → [ChatGPT 动态](/ai-trends/vendors/openai/) / [Claude 动态](/ai-trends/vendors/anthropic/)
 - 按月汇总 → [月度产品速报](/ai-trends/product-updates/monthly)
 
 ## 如果你想
 
 - 私有化部署 → [AI Coding · 企业部署](/ai-coding/enterprise/deployment)
-- 对比七家厂商 → [7 厂商横向对比](/reference/model-comparison)
+- 对比七家厂商 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 评估开源模型 → [开源项目推荐](/ai-trends/research-highlights/open-source)

@@ -131,7 +131,7 @@ Claude Code  →  Anthropic 提供的 CLI 工具（同 API）
 - [Claude.ai 官方](https://claude.ai)
 - [模型家族总览](/claude-capabilities/models/overview)
 - [Artifacts](/claude-capabilities/surfaces/artifacts)
-- [Claude Code 入门](/getting-started/what-is-claude-code)
+- [Claude Code 入门](/claude-code/getting-started/what-is-claude-code)
 
 ## 下一步
 

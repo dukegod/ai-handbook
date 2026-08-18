@@ -45,7 +45,7 @@ features:
   - icon: 🔍
     title: 模型选型
     details: Anthropic / OpenAI / Moonshot / 智谱 / 通义千问五大厂商横向对比与选型决策。
-    link: /reference/model-selection-guide
+    link: /ai-trends/model-selection/model-selection-guide
     linkText: 开始选型 →
   - icon: 🧪
     title: Claude 能力

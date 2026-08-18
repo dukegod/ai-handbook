@@ -286,5 +286,5 @@ Zero Data Retention 模式下，URL 图片**仍会**被 Anthropic 下载存储�
 ## 如果你想
 
 - 图片安全 / 隐私 → [Anthropic Acceptable Use Policy](https://www.anthropic.com/legal/aup)
-- ZDR 模式 → [模型选型 · 数据驻留](/claude-capabilities/models/choosing-model#五按数据驻留zdr-环境选型)
+- ZDR 模式 → [模型概览 · 按数据驻留](/claude-capabilities/models/overview#按数据驻留zdr)
 - PDF 文本提取替代 → [Long Context · PDF 策略](/claude-capabilities/core/long-context)

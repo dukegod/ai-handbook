@@ -29,7 +29,7 @@ verifiedWith:
 开始前请确保：
 
 - [ ] 装好 Claude Code v2.1.x：`claude --version`
-- [ ] 已经跑通过 [第一次对话](/getting-started/first-conversation) —— 至少能启动、能授权工具
+- [ ] 已经跑通过 [第一次对话](/claude-code/getting-started/first-conversation) —— 至少能启动、能授权工具
 - [ ] 手上有一个 git 仓库（任意语言），里面有**一个还没测试的小函数**（20–80 行）
 - [ ] 项目能本地跑测试（`pnpm test` / `npm test` / `pytest` / `go test ./...` 任一）
 

@@ -61,7 +61,7 @@ flowchart TD
 
 **如果你想马上产出一次真实成果：**
 
-1. 装好 Claude Code（[入门 · 安装](/getting-started/installation)）
+1. 装好 Claude Code（[入门 · 安装](/claude-code/getting-started/installation)）
 2. 读 [CLAUDE.md 项目记忆](./basics/claude-md)，给你的项目写一份
 3. 读 [权限系统](./basics/permissions)，把权限调到刚好舒适
 4. 读 [Plan Mode](./basics/plan-mode)，学会先规划再落地

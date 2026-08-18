@@ -108,12 +108,55 @@ $20-200/月，比 Copilot ($10/月) 贵。
 - IDE 用户（Cursor 更自然）
 - 预算有限（Copilot/Trae 更便宜）
 
+## 规范与配置：规则文件加载机制
+
+Claude Code 的配置体系分三层，了解它才能和 Codex/Cursor/Trae 团队协作：
+
+### 规则文件加载链
+
+```
+~/.claude/CLAUDE.md          # 全局（用户级偏好）
+├── 项目根/CLAUDE.md          # 项目级（团队共享，✅ 提交到 Git）
+├── 项目根/CLAUDE.local.md    # 项目级（个人覆盖，❌ 不提交）
+├── 子目录/CLAUDE.md          # 目录级（子目录专属规则）
+└── AGENTS.md                 # 跨工具兼容（新版同时读取）
+```
+
+**加载顺序**：全局 → 项目 → 子目录，逐级合并。`CLAUDE.md` 优先于 `AGENTS.md`。
+
+### 路径作用域
+
+Claude Code 通过**子目录 CLAUDE.md** 实现路径作用域：
+
+```
+src/pages/CLAUDE.md     # 仅 pages 相关文件被涉及时生效
+src/common/CLAUDE.md    # 仅 common 相关文件被涉及时生效
+```
+
+早期版本用 `.claude/rules/*.md` 的 `---paths:` frontmatter，但这是 Claude 专属语法，Codex/Cursor 不认。**推荐用子目录 CLAUDE.md 替代**。
+
+### 与 Codex/Cursor/Trae 的兼容
+
+| 场景 | 解法 |
+|------|------|
+| Codex 用户也要读 Claude 的规则 | 把通用规范放 `AGENTS.md`，Codex 原生支持 |
+| Cursor 用户也要读 Claude 的规则 | 把通用规范放 `AGENTS.md`，Cursor 兼容读取 |
+| Trae 用户也要读 Claude 的规则 | 把通用规范放 `AGENTS.md`，Trae 原生支持 |
+| Claude 专属配置（hooks/skills/MCP） | 留在 `CLAUDE.md` 或 `.claude/` 目录，其他工具忽略 |
+
+### CLAUDE.md vs AGENTS.md：怎么选
+
+- **CLAUDE.md**：Claude 专属深度配置（hooks、skills、MCP、superpower 映射）
+- **AGENTS.md**：跨工具通用规范（构建命令、代码风格、目录结构、铁律）
+- **推荐做法**：通用规范写 `AGENTS.md`，CLAUDE.md 薄引用 + 补充 Claude 专属内容
+
 ## 最佳实践
 
 1. **用 CLAUDE.md 项目记忆**：把项目规范、常见命令写进去
 2. **用 MCP 连接外部工具**：GitHub、数据库、API
 3. **用 Skills 复用工作流**：代码审查、文档生成
 4. **用 Subagent 并行处理**：大任务拆成小任务
+5. **与 Codex/Cursor 团队协作**：通用规范写 AGENTS.md，CLAUDE.md 只放 Claude 专属
 
 ## 参考
 
