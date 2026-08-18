@@ -1,0 +1,247 @@
+ai-trends/research-highlights/open-source.md
+  s_dfc0db47a709dc::t_f4453552886f47 98
+ai-core/model-arch/architecture-landscape.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 154
+  s_dfc0db47a709dc::t_f4453552886f47 155-156,166
+claude-code/getting-started/first-conversation.md
+  s_dfc0db47a709dc::t_508d99faf10ad8 171
+ai-coding/tools/cursor.md
+  s_ba5811d922dbc0::t_ce8d0a29ea2425 107-156,163
+ai-coding/tools/copilot.md
+  s_ba5811d922dbc0::t_65a31919e70017 108-144,151
+ai-trends/cn-vendors/index.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 31-35,37,76
+  s_dfc0db47a709dc::t_f4453552886f47 82
+ai-core/index.md
+  s_dfc0db47a709dc::t_f4453552886f47 49
+ai-coding/tools/overview.md
+  s_ba5811d922dbc0::t_e003efd7733fdb 92-105
+  s_ba5811d922dbc0::t_a50e8e1e1c9856 130
+  s_ba5811d922dbc0::t_6acc28a58f2ecc 229
+  s_ba5811d922dbc0::t_ea29c9499c2398 167
+  s_ba5811d922dbc0::t_0231cc5e94bd96 7,19-21,50
+  s_ba5811d922dbc0::t_f910703ffa7106 187
+  s_dfc0db47a709dc::t_f4453552886f47 223,235
+  s_ba5811d922dbc0::t_16000b1af7423a 55
+  s_ba5811d922dbc0::t_0923dda8e14876 140,147-149,158-159
+  s_ba5811d922dbc0::t_abb0db7928d4f8 186
+  s_ba5811d922dbc0::t_832495a18e8c65 3,22-24,29,31,35-36,41,51
+  s_ba5811d922dbc0::t_23b86a52b3d8c3 129
+  s_ba5811d922dbc0::t_56547e6497bfe6 108-118
+  s_ba5811d922dbc0::t_5c0bd09ffa244c 230
+  s_ba5811d922dbc0::t_74e8548c16294d 161-166,168-185,188-206,216
+  s_ba5811d922dbc0::t_cc4a8eae5ff6aa 160
+getting-started/what-is-llm.md
+  s_dfc0db47a709dc::t_586234d565ad93 1-68
+README.md
+  s_dfc0db47a709dc::t_a0cd843891a5fc 37-40,44
+claude-capabilities/surfaces/claude-ai.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 134
+claude-code/basics/sessions.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 32,129,196
+ai-coding/tools/deepseek-harness.md
+  s_ba5811d922dbc0::t_5e341c4e617253 1-209
+ai-trends/vendors/anthropic/index.md
+  s_dfc0db47a709dc::t_f4453552886f47 136,142
+  s_dfc0db47a709dc::t_7e1fc8585be560 134
+ai-trends/product-updates/monthly.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 109
+claude-capabilities/core/reasoning.md
+  s_ba5811d922dbc0::t_6ca7f25d134089 202
+ai-trends/vendors/openai/index.md
+  s_dfc0db47a709dc::t_a39dd859599c14 142
+  s_dfc0db47a709dc::t_f4453552886f47 143-144
+  s_dfc0db47a709dc::t_7e1fc8585be560 137
+claude-code/reference/env-vars.md
+  s_dfc0db47a709dc::t_c9fc5d0e34a508 2-3,5-6,10,12,14,16,18,20,22,24,28
+.vitepress/config.ts
+  s_ba5811d922dbc0::t_66cfa1f9855385 443
+  s_dfc0db47a709dc::t_cd3297b9131bc7 365-367,370-371
+  s_ba5811d922dbc0::t_04cf17e7c972c7 444
+  s_dfc0db47a709dc::t_40954b6393d52f 193-200
+  s_dfc0db47a709dc::t_022737af5ac510 88-97
+  s_ba5811d922dbc0::t_203a78316b9348 364,426-431,437-442
+  s_dfc0db47a709dc::t_bd76e41fec6ee5 45-46
+  s_56ccebc16824d2::t_4c24269878fddd 435-436
+  s_dfc0db47a709dc::t_646ace8b9c8f90 506
+  s_dfc0db47a709dc::t_934bc1a5a6bd48 54
+  s_dfc0db47a709dc::t_968d1ed34fe295 62,66,69-74
+  s_dfc0db47a709dc::t_6696157fe2a92a 87
+  s_dfc0db47a709dc::t_97d4466c93b1fd 368-369
+  s_dfc0db47a709dc::t_fad19e9af3f750 49-53,55-56
+claude-code/getting-started/mental-model.md
+  s_dfc0db47a709dc::t_508d99faf10ad8 1-188
+claude-code/basics/claude-md.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 33
+ai-core/eval/methodology.md
+  s_dfc0db47a709dc::t_f4453552886f47 116,120-121
+contributing/checklist-published.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 212
+ai-core/model-arch/multimodal.md
+  s_dfc0db47a709dc::t_f4453552886f47 138
+ai-core/eval/benchmarks.md
+  s_dfc0db47a709dc::t_f4453552886f47 121,126,130
+claude-code/reference/cli-flags.md
+  s_dfc0db47a709dc::t_c9fc5d0e34a508 1-200
+ai-trends/vendors/index.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 22
+  s_dfc0db47a709dc::t_f4453552886f47 38-39
+  s_dfc0db47a709dc::t_a39dd859599c14 28-34
+claude-code/basics/cost-and-tokens.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 31-32
+claude-code/index.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 64
+ai-coding/tools/claude-code.md
+  s_ba5811d922dbc0::t_50f1b1bd7cfcb5 111-152,159
+ai-coding/index.md
+  s_dfc0db47a709dc::t_f4453552886f47 59
+cookbook/first-real-task.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 32
+contributing/roadmap.md
+  s_dfc0db47a709dc::t_c9fc5d0e34a508 87
+  s_dfc0db47a709dc::t_6783a2e401c167 353,375
+  s_dfc0db47a709dc::t_1240d3a3f3e273 82
+  s_dfc0db47a709dc::t_971d6a7c23fad5 59-63,426
+ai-coding/tools/trae.md
+  s_ba5811d922dbc0::t_2fde9a64767f4d 26,33
+  s_ba5811d922dbc0::t_1989e7c767d998 41-105,111
+  s_56ccebc16824d2::t_91491a421171c8 1-25,27-32,34-40,106-110,112-135
+index.md
+  s_dfc0db47a709dc::t_f4453552886f47 48
+claude-capabilities/models/model-ids.md
+  s_dfc0db47a709dc::t_c9fc5d0e34a508 1-28
+ai-core/training/quantization.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 142
+  s_dfc0db47a709dc::t_f4453552886f47 141
+ai-trends/cn-vendors/deepseek/index.md
+  s_dfc0db47a709dc::t_f4453552886f47 61
+getting-started/choosing-ai-tool.md
+  s_dfc0db47a709dc::t_170cbf7e429c70 1-76
+claude-capabilities/surfaces/desktop-app.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 106,112
+ai-core/fundamentals/alignment.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 134
+ai-coding/tools/codex-cli.md
+  s_ba5811d922dbc0::t_2e25f4936da73c 41-83,89
+  s_56ccebc16824d2::t_f523c4f2e37989 1-31,33-38,40,84-88,90-112
+  s_ba5811d922dbc0::t_20f62e8dbe4ab1 32,39
+contributing/style-guide.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 182
+  s_dfc0db47a709dc::t_1b6c09842f6baa 196
+examples/check-page/README.md
+  s_dfc0db47a709dc::t_246fbbdcb9e077 48
+  s_dfc0db47a709dc::t_cb57e077f13e01 64
+claude-capabilities/models/overview.md
+  s_ba5811d922dbc0::t_e1461e074bd7f1 102,104-115,117-198,200,202,204,206-210
+  s_ba5811d922dbc0::t_0c425e11625f9e 231-238,251-257
+  s_ba5811d922dbc0::t_87ab810df0fd94 52
+  s_ba5811d922dbc0::t_928e1f1beaf542 271-272,276-277
+  s_ba5811d922dbc0::t_4192720da1d3be 261-266
+  s_ba5811d922dbc0::t_3d47e73a9a5ac4 3,7,14-16,21,23,30
+  s_ba5811d922dbc0::t_e48f263ec50381 258
+ai-core/model-arch/long-context.md
+  s_dfc0db47a709dc::t_f4453552886f47 136
+claude-capabilities/core/long-context.md
+  s_ba5811d922dbc0::t_fdbe903a4b5c5d 244
+ai-trends/cn-vendors/qwen/index.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 112
+  s_dfc0db47a709dc::t_f4453552886f47 116-117
+claude-code/basics/permissions.md
+  s_dfc0db47a709dc::t_971d6a7c23fad5 32
+ai-trends/cn-vendors/minimax/index.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 99-100
+  s_dfc0db47a709dc::t_f4453552886f47 93-94
+claude-code/getting-started/what-is-claude-code.md
+  s_dfc0db47a709dc::t_508d99faf10ad8 1-138
+getting-started/ai-tools-landscape.md
+  s_dfc0db47a709dc::t_46bb9e73dd249d 1-79
+ai-coding/tools/pi-agent.md
+  s_ba5811d922dbc0::t_2b8f468fed8555 1-2,4-12,19-22,24,26-27,36,38,60-61,63-70,164,182-207,209-244,247,261-275,277,279,281,283,285,287,289,301,304-334,341-345,347-348,391,443-446,449,451-454,456-461
+  s_ba5811d922dbc0::t_067ba59ad6af1c 3,13-18,23,25,28-35,37,39-59,62,71-163,165-181,208,245-246,248-260,276,278,280,282,284,286,288,290-300,302-303,335-340,346,349-390,392-442,447-448,450,455
+claude-code/getting-started/installation.md
+  s_dfc0db47a709dc::t_508d99faf10ad8 1-210
+ai-trends/vendors/grok/index.md
+  s_dfc0db47a709dc::t_f4453552886f47 94-95
+  s_dfc0db47a709dc::t_8eb122e603db4a 100-101
+claude-capabilities/models/sonnet.md
+  s_ba5811d922dbc0::t_b6a761459b5cb4 225
+ai-trends/model-selection/model-selection-guide.md
+  s_dfc0db47a709dc::t_9369534331ed00 11
+  s_dfc0db47a709dc::t_8eb122e603db4a 161-167
+ai-core/fundamentals/pretraining.md
+  s_dfc0db47a709dc::t_f4453552886f47 130
+ai-trends/cn-vendors/zhipu/index.md
+  s_dfc0db47a709dc::t_8eb122e603db4a 106
+  s_dfc0db47a709dc::t_a39dd859599c14 110
+  s_dfc0db47a709dc::t_f4453552886f47 111-112
+claude-capabilities/index.md
+  s_ba5811d922dbc0::t_296a9b158ef405 57
+  s_dfc0db47a709dc::t_c9fc5d0e34a508 74
+claude-code/ecosystem/third-party-models.md
+  s_dfc0db47a709dc::t_c9fc5d0e34a508 210
+  s_dfc0db47a709dc::t_971d6a7c23fad5 35,204-205,209
+getting-started/prompting-basics.md
+  s_dfc0db47a709dc::t_c0a6f85dde9240 1-78
+claude-capabilities/core/vision.md
+  s_ba5811d922dbc0::t_a207480ae415d0 289
+getting-started/index.md
+  s_dfc0db47a709dc::t_181765f50422f7 61
+  s_dfc0db47a709dc::t_1a326ad674166e 2-3,7,10,12,16-20,26-30,33-34,37,43-48,54-56,60,62
+claude-capabilities/models/fable.md
+  s_ba5811d922dbc0::t_e901100b8c20df 203
+ai-trends/cn-vendors/doubao/index.md
+  s_dfc0db47a709dc::t_f4453552886f47 60
+  s_dfc0db47a709dc::t_8eb122e603db4a 64
+ai-coding/tools/others.md
+  s_ba5811d922dbc0::t_a3f4606bfa02ff 81
+  s_ba5811d922dbc0::t_37f9c26797c71b 80
+AGENTS.md
+  s_dfc0db47a709dc::t_7470ced4a068f9 65-66
+claude-capabilities/models/haiku.md
+  s_ba5811d922dbc0::t_a1b2174a377d67 212
+getting-started/what-is-ai.md
+  s_dfc0db47a709dc::t_c8757f860ff39c 1-61
+ai-trends/model-selection/model-comparison.md
+  s_dfc0db47a709dc::t_f4453552886f47 1-167,169-173
+  s_dfc0db47a709dc::t_8eb122e603db4a 168,174
+ai-trends/cn-vendors/moonshot/index.md
+  s_dfc0db47a709dc::t_f4453552886f47 104-105
+  s_dfc0db47a709dc::t_8eb122e603db4a 99
+  s_dfc0db47a709dc::t_66a158d1a9d1df 103
+getting-started/capabilities-and-limits.md
+  s_dfc0db47a709dc::t_1e0f9104eaf6bb 1-74
+claude-code/getting-started/comparisons.md
+  s_dfc0db47a709dc::t_508d99faf10ad8 1-122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "98c73ae5f76574a31783c029ae105b2bd34e421f",
+  "prompts": {},
+  "sessions": {
+    "s_56ccebc16824d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "87b2d047-3e91-4974-bcbb-d9c8d404b838",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    },
+    "s_ba5811d922dbc0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "31f76091-803e-4aa4-af55-55e85ad3f4c6",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    },
+    "s_dfc0db47a709dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4aac5de1-499e-441f-a331-5d06e9360bba",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
