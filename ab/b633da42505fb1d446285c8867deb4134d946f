@@ -1,0 +1,29 @@
+ai-trends/model-selection/model-comparison.md
+  s_ba5811d922dbc0::t_e2a5bb1806119b 53,55-71,73
+  s_ba5811d922dbc0::t_820414dbb98ff6 46
+  s_ba5811d922dbc0::t_aa6bba215ef6fa 171-172
+  s_ba5811d922dbc0::t_4cc20fc2b34f46 84
+ai-coding/tools/pi-agent.md
+  s_ba5811d922dbc0::t_ff5f81b86980ff 373,375-390,393-395,397-399,401-407,410
+  s_ba5811d922dbc0::t_250bf07b21ccea 411
+ai-trends/cn-vendors/zhipu/index.md
+  s_ba5811d922dbc0::t_a99479c1e35bb6 28-38
+ai-trends/cn-vendors/deepseek/index.md
+  s_ba5811d922dbc0::t_90c3c58412094a 28-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "abb633da42505fb1d446285c8867deb4134d946f",
+  "prompts": {},
+  "sessions": {
+    "s_ba5811d922dbc0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "31f76091-803e-4aa4-af55-55e85ad3f4c6",
+        "model": "mimo-v2.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
