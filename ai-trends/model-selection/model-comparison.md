@@ -43,26 +43,34 @@ verifiedWith:
 | **xAI** | Grok 4.6 | — | — | Grok 4.20-reasoning | ❌ |
 | **Moonshot** | Kimi K3 | Kimi K2.5 | — | K3（总是推理） | K2.5 / K3 开源 |
 | **MiniMax** | M2.7 | M2.5 | — | M2.7（agentic） | 部分 |
-| **Zhipu** | GLM-5.2 | GLM-5.1 | GLM-4-Air | GLM-Z1 | GLM-5 全尺寸 |
+| **Zhipu** | GLM-5.3 / GLM-5.2 | GLM-5.1 | GLM-4-Air | GLM-Z1 | GLM-5 全尺寸 |
 | **Qwen** | Qwen3.8-Max | Qwen3.5 | 开源小尺寸 | — | 全尺寸 + 全模态 |
 
 **结论**：OpenAI 推理最强（o-series），Qwen 开源最彻底，Anthropic Agent 最强，MiniMax 性价比最激进。
 
 ## 二、性能基准对比（旗舰模型）
 
-> ⚠️ 具体分数以各厂商官方发布为准（Anthropic / OpenAI 发布博客、中文厂商技术报告），下表只保留**定性结论**，不收录未经核实的数字。
+> 数据来源：[Artificial Analysis Intelligence Score](https://artificialanalysis.ai/leaderboards/models)（2026-08）。AA 分数是综合智能评分，涵盖推理、编码、数学、指令遵循等多维度。
 
-| 厂商 | 英文基准（MMLU 等） | 中文基准（C-Eval 等） | 编码基准 |
-|------|------|------|------|
-| Anthropic | 领先 | — | 领先（Opus 5 / Sonnet 5） |
-| OpenAI | 领先 | — | 领先（GPT-5.6 Sol / o 系列） |
-| xAI | 中上 | — | 长上下文编码（Grok 4.6） |
-| Moonshot | — | 领先 | 长上下文编码强（Kimi K3） |
-| MiniMax | 中上 | — | Agentic 基准（SWE-Pro 56.22%） |
-| Zhipu | 中上 | 领先 | Agentic Coding 主推（GLM-5.2） |
-| Qwen | 中上 | 领先 | 开源编码强（Qwen3.5） |
+| 厂商 | 旗舰模型 | AA 智能分 | 价格/任务 | 速度 (tok/s) |
+|------|---------|----------|----------|-------------|
+| **Anthropic** | Claude Opus 5 (max) | **63** | $2.34 | 53 |
+| **xAI** | Grok 4.6 (high) | **61** | $0.84 | 58 |
+| **OpenAI** | GPT-5.6 Sol (max) | **61** | $1.23 | 65 |
+| **Moonshot** | Kimi K3 (max) | **60** | $0.84 | 38 |
+| **Zhipu** | GLM-5.3 (max) | **60** | $0.68 | 85 |
+| **Qwen** | Qwen3.8-Max | **58** | $1.13 | 44 |
+| **DeepSeek** | V4-Pro-0813 (max) | **53** | $0.25 | 74 |
+| **MiniMax** | M2.7 | — | $0.30 | — |
 
-**结论**：英文基准 Claude/GPT 领先，中文基准 Kimi/Qwen/GLM 领先。**没有全能冠军，只有场景冠军**。
+**关键发现——后训练 Scaling 是当前最大杠杆**：
+
+- **GLM-5.3 vs 5.2**：同基座，纯靠后训练从 53 → 60（+7 分），追平 Kimi K3
+- **V4-Pro-0813 vs V4-Pro**：同代后训练迭代，AA 从 45 → 53（+8 分）
+- **开源已逼近闭源**：GLM-5.3 / Kimi K3（60 分）距 Claude Opus 5（63 分）仅差 3 分
+- **价格优势巨大**：GLM-5.3（$0.68/任务）是 Claude Opus 5（$2.34/任务）的 1/3.4
+
+**结论**：前训练拼参数的红利已基本吃完，**下一战场是 RL 基建 + 任务合成**。用同一个基座（5.2 / Qwen3.8-Max / Kimi K3），今天就能通过后训练复现顶级编程/Agent 能力。
 
 ## 三、上下文窗口对比
 
@@ -73,7 +81,7 @@ verifiedWith:
 | xAI | 500K（Grok 4.6） | 1M（4.20-reasoning） | 长上下文 + 推理模式 |
 | Moonshot | 1M（K3） | 1M（K3） | LongRoPE 风格 |
 | MiniMax | 205K（M2.7） | 205K | — |
-| Zhipu | 200K（GLM-5.2） | 200K | RoPE 插值 |
+| Zhipu | 1M（GLM-5.3） / 200K（GLM-5.2） | 1M | RoPE 插值 |
 | Qwen | 1M | 1M | RoPE 插值 + 滑动窗口 |
 
 **结论**：Claude / Kimi / Qwen 的 1M 是当前主流上限，xAI Grok 4.20 推理线 1M。**长文档选 Claude/Kimi/Qwen/xAI**。
@@ -160,7 +168,8 @@ verifiedWith:
 | **企业合规（海外）** | Claude (Bedrock) | GPT (Azure) | 云厂商集成 |
 | **企业合规（国内）** | Qwen (阿里云) | GLM (智谱云) | 国产化 + 私有化 |
 | **多模态** | Qwen3.5 / MiniMax | GPT-5.6 Vision | 全模态最完整 |
-| **极低成本** | MiniMax M2.7 | GLM-5.1 | $0.3/M input 全场最低 |
+| **极低成本** | MiniMax M2.7 | DeepSeek V4-Pro | $0.25-$0.30/任务 |
+| **性价比旗舰** | GLM-5.3 | Kimi K3 | AA 60 分 + $0.68/任务 |
 
 ## 参考
 

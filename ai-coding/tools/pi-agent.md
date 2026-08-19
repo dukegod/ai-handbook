@@ -370,20 +370,44 @@ src/common/AGENTS.md    # 仅 common 相关文件被涉及时生效
 
 **经验法则**：优先用 DeepSeek V4 Flash——pi 的缓存优化在 DeepSeek 上效果最好（99.93% 命中率），成本是 Claude 的 1/10。
 
-### 2. 渐进式扩展
+### 2. 渐进式扩展——Top 10 推荐
 
-先用内置能力跑通基础流程，缺什么装什么扩展：
+先用内置能力跑通基础流程，按优先级逐步安装扩展：
+
+| 优先级 | 扩展 | 功能 | 安装 | 为什么需要 |
+|--------|------|------|------|-----------|
+| **P0** | **Plan Mode** | 任务拆解 + 分步执行 | `pi install plan-mode` | 复杂任务必备，避免一步到位的幻觉 |
+| **P0** | **Sub-agents** | 派生子代理并行处理 | `pi install sub-agents` | 大任务拆分、并行执行的核心能力 |
+| **P1** | **Permission Gates** | 自定义确认/审批流 | `pi install permission-gate` | 生产环境安全兜底，防止误操作 |
+| **P1** | **Path Protection** | 保护指定文件不被修改 | `pi install protected-paths` | 守住配置文件、lock 文件等敏感路径 |
+| **P1** | **MCP Integration** | 接入 Model Context Protocol | `pi install mcp-extension` | 连接 GitHub、数据库、API 等外部工具 |
+| **P2** | **Custom Compaction** | 自定义上下文压缩策略 | `pi install compaction` | 长会话防上下文溢出，可选 topic-based / code-aware 摘要 |
+| **P2** | **Sandboxing** | 沙箱隔离执行 | `pi install sandbox` | 不信任的代码在隔离环境运行 |
+| **P2** | **SSH Execution** | 远程命令执行 | `pi install ssh` | 远程服务器部署、跨机器操作 |
+| **P3** | **RAG / Memory** | 检索增强生成 + 长期记忆 | 自建扩展 | 项目知识库、历史决策记忆 |
+| **P3** | **Dynamic Context** | 每轮注入动态上下文 | 自建扩展 | 根据文件变化、git 状态自动注入相关信息 |
+
+**安装顺序建议**：
 
 ```bash
-# 基础：直接 pi 启动
-pi
+# 第一步：核心能力（Day 1）
+pi install plan-mode
+pi install sub-agents
 
-# 需要 MCP？装扩展
-pi install @some-org/mcp-extension
+# 第二步：安全兜底（Week 1）
+pi install permission-gate
+pi install protected-paths
 
-# 需要 Plan Mode？装扩展
-pi install @some-org/plan-mode
+# 第三步：外部连接（Week 2）
+pi install mcp-extension
+
+# 第四步：进阶优化（按需）
+pi install compaction
+pi install sandbox
+pi install ssh
 ```
+
+**经验法则**：P0 是"没它基本不能用"，P1 是"生产环境必须有"，P2 是"提升体验"，P3 是"深度定制"。先装 P0 跑通，再按需叠加。
 
 ### 3. 用 SYSTEM.md 控制系统提示
 
