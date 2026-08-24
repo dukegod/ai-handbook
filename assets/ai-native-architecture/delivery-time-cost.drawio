@@ -1,0 +1,76 @@
+<mxfile host="65bd71144e">
+    <diagram id="aYIEvVOQ7hLIRD93iq-q" name="Page-1">
+        <mxGraphModel dx="1218" dy="641" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="500" math="0" shadow="0" adaptiveColors="auto">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="研发的时间是有限的：把「流通成本」放进交付流程，看 AI 提效了哪些环节" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#BDBDBD;fontColor=#37474F;fontSize=16;fontStyle=1;arcSize=8;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="24" width="1120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="banner" value="AI 重点提效环节" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE7F6;strokeColor=#B39DDB;fontColor=#4527A0;fontSize=13;fontStyle=1;arcSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="98" width="800" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="b1" value="需求评审 · 技术方案&#xa;15%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#455A64;fontSize=12;fontStyle=1;arcSize=6;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="190" width="150" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="b2" value="开发&#xa;50%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#81C784;fontColor=#1B5E20;fontSize=15;fontStyle=1;arcSize=4;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="190" width="500" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="b3" value="联调&#xa;15%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#81C784;fontColor=#1B5E20;fontSize=13;fontStyle=1;arcSize=6;" parent="1" vertex="1">
+                    <mxGeometry x="730" y="190" width="150" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="b4" value="自测&#xa;5%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#81C784;fontColor=#1B5E20;fontSize=11;fontStyle=1;arcSize=8;" parent="1" vertex="1">
+                    <mxGeometry x="880" y="190" width="50" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="b5" value="测试修bug&#xa;10%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#81C784;fontColor=#1B5E20;fontSize=11;fontStyle=1;arcSize=6;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="190" width="100" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="b6" value="上线&amp;灰度&#xa;5%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;fontColor=#455A64;fontSize=10;fontStyle=1;arcSize=8;" parent="1" vertex="1">
+                    <mxGeometry x="1030" y="190" width="72" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="ar1" style="html=1;endArrow=block;dashed=1;strokeColor=#B39DDB;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="480" y="130" as="sourcePoint"/>
+                        <mxPoint x="480" y="188" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ar2" style="html=1;endArrow=block;dashed=1;strokeColor=#B39DDB;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="805" y="130" as="sourcePoint"/>
+                        <mxPoint x="805" y="188" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ar3" style="html=1;endArrow=block;dashed=1;strokeColor=#B39DDB;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="905" y="130" as="sourcePoint"/>
+                        <mxPoint x="905" y="188" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ar4" style="html=1;endArrow=block;dashed=1;strokeColor=#B39DDB;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="980" y="130" as="sourcePoint"/>
+                        <mxPoint x="980" y="188" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="brace" value="↑ 研发真正用于「写代码 / 交付」的时间 ≈ 50%，另一半都是「流通成本」" style="text;html=1;align=center;fontColor=#2E7D32;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="270" width="500" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="sw1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#81C784;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="324" width="26" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="lg1" value="AI 重点提效环节（开发 · 联调 · 自测 · 测试修bug，合计约 80%）" style="text;html=1;align=left;fontColor=#37474F;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="114" y="322" width="460" height="22" as="geometry"/>
+                </mxCell>
+                <mxCell id="sw2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#B0BEC5;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="324" width="26" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="lg2" value="流通成本：需求评审 / 技术方案 / 上线&amp;灰度（人主导、AI 辅助有限）" style="text;html=1;align=left;fontColor=#37474F;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="634" y="322" width="480" height="22" as="geometry"/>
+                </mxCell>
+                <mxCell id="insight" value="传统交付里，研发真正用于「开发交付」的时间只有约 50%，另一半被需求、方案、联调、自测、测试上线等「流通成本」消耗。&#xa;AI 的杠杆，正是攻坚其中可被加速的环节（绿色：开发 · 联调 · 自测 · 测试修bug，约 80%）—— 实测新增模块开发效率提升 30%~50%，把研发从重复执行中解放出来。" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=14;spacingRight=14;fillColor=#FFF8E1;strokeColor=#FFD54F;fontColor=#5D4037;fontSize=13;arcSize=6;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="364" width="1000" height="86" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

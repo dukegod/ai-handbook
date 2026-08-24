@@ -1,0 +1,91 @@
+<mxfile host="65bd71144e">
+    <diagram id="XVmSi_k5iln6OyRj0xId" name="Page-1">
+        <mxGraphModel dx="2247" dy="1363" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0" adaptiveColors="auto">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="AI-coding 质量保证 · 解决思路" style="text;html=1;fontSize=22;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="20" width="600" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="subtitle" value="指标定义「测够没」 · 矩阵定义「测什么」 · Hybrid 定义「谁来测、何时测」" style="text;html=1;fontSize=13;align=center;fontColor=#6B7280;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="60" width="800" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="problem" value="问题：AI 产出是概率性的，肉眼 review 无法稳定拦截幻觉 API / 漏分支" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="100" width="540" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="dev" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="220" width="420" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="devTitle" value="开发阶段 · gstack Agentic QA（动）" style="text;html=1;fontSize=15;fontStyle=1;align=center;fontColor=#1D4ED8;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="230" width="380" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="dev1" value="/qa：真实浏览器像真人一样动态探索" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2563EB;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="268" width="380" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="dev2" value="AI 能力调试 → 自动修复 → 代码改动" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2563EB;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="314" width="380" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="dev3" value="自动生成 regression test（截图取证）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2563EB;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="360" width="380" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="devNote" value="适应 AI 非确定性 · 新功能 / 探索性测试" style="text;html=1;fontSize=11;align=center;fontColor=#1D4ED8;fontStyle=2;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="408" width="380" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="prod" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="220" width="420" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="prodTitle" value="生产 / CI 阶段 · Playwright 护栏（静）" style="text;html=1;fontSize=15;fontStyle=1;align=center;fontColor=#15803D;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="230" width="380" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="prod1" value="静态确定性用例 · 零 flake · 版本一致" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16A34A;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="268" width="380" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="prod2" value="合并门禁：单测全过 + 改动页 E2E 全过" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16A34A;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="314" width="380" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="prod3" value="22 页 Smoke 全量回归网（就近放页面 e2e/）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16A34A;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="360" width="380" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="prodNote" value="回归保护 · 测过即稳定" style="text;html=1;fontSize=11;align=center;fontColor=#15803D;fontStyle=2;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="408" width="380" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="base" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=2;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="540" width="980" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="baseTitle" value="统一标准底座 —— 定义「测什么、测到什么程度」，两个阶段共用同一把尺子" style="text;html=1;fontSize=15;fontStyle=1;align=center;fontColor=#92400E;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="550" width="940" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="base1" value="单测覆盖率四指标&#xa;&#xa;Branches = 回归保险网&#xa;Functions = 死代码雷达&#xa;Lines / Statements = 广度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#CA8A04;fontSize=12;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="590" width="296" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="base2" value="E2E 场景矩阵 P0 / P1 / P2&#xa;&#xa;P0 五场景每页必测&#xa;P1 业务强推 · P2 视情况&#xa;＋「不该写 E2E」负面清单" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#CA8A04;fontSize=12;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="402" y="590" width="296" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="base3" value="信号纪律 ＋ 零配置强制&#xa;&#xa;真假失败强制区分（真 bug 禁过滤）&#xa;path-rule 自动注入 · TDD skill 强制&#xa;team mode 版本一致" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#CA8A04;fontSize=12;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="714" y="590" width="296" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="result" value="结果：概率性产出 → 收敛为稳定交付（测过即稳定，回归 Bug 显著下降）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#4F46E5;strokeWidth=2;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="770" width="540" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="eP" value="" style="html=1;strokeColor=#DC2626;strokeWidth=2;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="problem" target="dev" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" value="生成的回归用例纳入 CI 套件" style="html=1;strokeColor=#2563EB;strokeWidth=2;fontSize=12;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" parent="1" source="dev" target="prod" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" value="回归失败反馈 → /qa 复测修复" style="html=1;strokeColor=#16A34A;strokeWidth=2;dashed=1;fontSize=12;labelBackgroundColor=#ffffff;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;" parent="1" source="prod" target="dev" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eb1" value="" style="html=1;strokeColor=#CA8A04;strokeWidth=2;exitX=0.21;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="base" target="dev" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eb2" value="" style="html=1;strokeColor=#CA8A04;strokeWidth=2;exitX=0.79;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="base" target="prod" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="er" value="" style="html=1;strokeColor=#4F46E5;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="base" target="result" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -367,6 +367,8 @@ export default withMermaid(defineConfig({
           items: [
             { text: '7 厂商横向对比', link: '/ai-trends/model-selection/model-comparison' },
             { text: '模型选型决策树', link: '/ai-trends/model-selection/model-selection-guide' },
+            { text: '视频生成模型对比', link: '/ai-trends/model-selection/video-model-comparison' },
+            { text: '图片生成模型对比', link: '/ai-trends/model-selection/image-model-comparison' },
           ],
         },
         {
@@ -469,6 +471,18 @@ export default withMermaid(defineConfig({
             { text: P('企业部署指南'), link: '/ai-coding/enterprise/deployment' },
             { text: P('安全与合规'), link: '/ai-coding/enterprise/security' },
             { text: P('成本控制'), link: '/ai-coding/enterprise/cost' },
+          ],
+        },
+        {
+          text: 'AI Native 架构',
+          collapsed: true,
+          items: [
+            { text: '架构总览', link: '/ai-coding/architecture/' },
+            { text: '设计理念：人机分工', link: '/ai-coding/architecture/design-philosophy' },
+            { text: '三层架构与模块模板', link: '/ai-coding/architecture/three-layer-architecture' },
+            { text: '资产飞轮机制', link: '/ai-coding/architecture/asset-flywheel' },
+            { text: 'TDD 质量保障', link: '/ai-coding/architecture/tdd-quality' },
+            { text: '迁移路径', link: '/ai-coding/architecture/migration-guide' },
           ],
         },
       ],

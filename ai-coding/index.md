@@ -24,9 +24,11 @@ flowchart LR
   A[工具横评<br/>Claude Code / Cursor / Copilot] --> B[团队工作流<br/>CI/CD / Code Review]
   B --> C[常见模式<br/>重构 / 测试 / 文档]
   C --> D[企业落地<br/>部署 / 安全 / 成本]
+  D --> E[AI Native 架构<br/>设计理念 / 资产飞轮]
 
   style A fill:#f4d5c5,stroke:#c96442
   style D fill:#e8d4f4,stroke:#8b5cf6
+  style E fill:#e3f2fd,stroke:#1976d2
 ```
 
 ## 分组概览
@@ -34,7 +36,8 @@ flowchart LR
 **工具横评** — Claude Code / Cursor / GitHub Copilot / Codex CLI / Trae 深度对比  
 **团队工作流** — 团队 AI 工作流设计、CI/CD 集成、Code Review 自动化  
 **常见模式** — 代码重构、测试生成、文档生成的最佳实践  
-**企业落地** — 部署方案、安全合规、成本控制
+**企业落地** — 部署方案、安全合规、成本控制  
+**AI Native 架构** — 设计理念、三层架构、资产飞轮、TDD 质量保障、迁移路径
 
 ## 从哪里开始
 
@@ -46,6 +49,7 @@ flowchart LR
 | 已在用 Claude Code | [Claude Code 深度评测](/ai-coding/tools/claude-code) |
 | 想引入团队 | [团队 AI 工作流](/ai-coding/workflows/team) |
 | 企业级部署 | [企业部署指南](/ai-coding/enterprise/deployment) |
+| 想理解 AI Native | [AI Native 架构](/ai-coding/architecture/) |
 
 ## 下一步
 
