@@ -1,0 +1,68 @@
+assets/ai-native-architecture/ai-native-architecture-clean.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-68
+assets/ai-native-architecture/ai-coding-qa-solution.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-91
+ai-trends/model-selection/video-model-comparison.md
+  s_5c2e60379a9c5e::t_dc8bc494af6c4e 159
+  s_5c2e60379a9c5e::t_37fa07ae32e739 119-120
+  s_5c2e60379a9c5e::t_3d221c3ed2113b 62-63
+  s_5c2e60379a9c5e::t_3a762e6f4659c0 1-61,64-118,121-142,144-158,160-208,210-218
+  s_5c2e60379a9c5e::t_c39e77b03e4a5e 143
+  s_5c2e60379a9c5e::t_5195f8350adf4f 209
+ai-coding/architecture/design-philosophy.md
+  s_5c2e60379a9c5e::t_d9f94cf0221f46 1-31,36-65,70-80,105-106,111-175
+  s_5c2e60379a9c5e::t_d90bcdc74fa738 32-35
+  s_5c2e60379a9c5e::t_765bc57f0156b8 66-69
+  s_5c2e60379a9c5e::t_0b6f60699400ce 81-104
+  s_5c2e60379a9c5e::t_57601458a9f52a 107-110
+ai-coding/architecture/asset-flywheel.md
+  s_5c2e60379a9c5e::t_4f0f94d9b910a5 1-103
+ai-coding/architecture/three-layer-architecture.md
+  s_5c2e60379a9c5e::t_33f84e2ced8254 1-181
+ai-coding/architecture/tdd-quality.md
+  s_5c2e60379a9c5e::t_cc530cd7b4d375 1-214
+.vitepress/config.ts
+  s_5c2e60379a9c5e::t_cd121d9f1627a5 476-487
+  s_5c2e60379a9c5e::t_93dd41756fbf67 371
+  s_5c2e60379a9c5e::t_1708a07c549678 370
+assets/ai-native-architecture/ai-native-pipeline.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-118
+ai-coding/index.md
+  s_5c2e60379a9c5e::t_6366938f7aa264 27,31
+  s_5c2e60379a9c5e::t_0a528f888c7a98 52
+  s_5c2e60379a9c5e::t_45cc99a404779c 39-40
+assets/ai-native-architecture/claude-core-mechanism.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-23
+assets/ai-native-architecture/delivery-time-cost.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-76
+assets/ai-native-architecture/ai-native-architecture-slim.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-28
+assets/ai-native-architecture/traditional-vs-ainative.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-33
+assets/ai-native-architecture/ai-native-pipeline-blocks.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-208
+assets/ai-native-architecture/ai-native-architecture.drawio
+  s_5c2e60379a9c5e::t_f8e22d68a78776 1-35
+ai-trends/model-selection/image-model-comparison.md
+  s_5c2e60379a9c5e::t_4437b98ae373e2 1-291
+ai-coding/architecture/index.md
+  s_5c2e60379a9c5e::t_d98dd3301bc30e 1-69
+ai-coding/architecture/migration-guide.md
+  s_5c2e60379a9c5e::t_ae24be65a3ef63 1-168
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "b12b3526ee635d10570a2528632ac9cac12fd771",
+  "prompts": {},
+  "sessions": {
+    "s_5c2e60379a9c5e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1637f1a0-6ff5-40bc-a9d5-aec8f637d01e",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
