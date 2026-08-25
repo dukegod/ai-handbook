@@ -1,0 +1,21 @@
+.vitepress/config.ts
+  s_820b66f73a12f4::t_b63bb57ef6eda2 15,21,31
+.github/workflows/deploy-pages.yml
+  s_820b66f73a12f4::t_b63bb57ef6eda2 1-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "84b77cee7edfcfe75841b8998f0981ec6f8c7f94",
+  "prompts": {},
+  "sessions": {
+    "s_820b66f73a12f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03715-3af9-7a53-9273-aba0087ec827",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
