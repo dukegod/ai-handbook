@@ -18,14 +18,15 @@
 
 - **读者定位**：零基础 → 进阶全覆盖
 - **协作模式**：个人主导
-- **仓库**：`git@coding.jd.com:sz-fe/claude-wiki.git`（默认分支 `main`）
+- **仓库**：`git@github.com:dukegod/ai-handbook.git`（默认分支 `main`）
+- **线上站点**：[https://dukegod.github.io/ai-handbook/](https://dukegod.github.io/ai-handbook/)
 - **本站与 Anthropic 无官方关联**
 
 ## 技术栈
 
 - Node.js ≥ 20（本机 24），pnpm 10.28.1
 - VitePress 1.6.4
-- Mermaid 11.16 via `vitepress-plugin-mermaid` 2.0
+- Mermaid 11.17 via `vitepress-plugin-mermaid` 2.0
 - 无 TypeScript 检查、无 lint 工具（v0.4+ 再加）
 
 ## 常用命令
@@ -38,6 +39,35 @@ pnpm preview        # 预览构建产物
 ```
 
 停 dev / preview：`pkill -f 'vitepress'`。
+
+## GitHub Pages 部署
+
+已接入 GitHub Pages，当前线上地址：
+
+- [https://dukegod.github.io/ai-handbook/](https://dukegod.github.io/ai-handbook/)
+
+部署机制：
+
+- GitHub Pages 发布来源是 `GitHub Actions`。
+- Workflow 文件：`.github/workflows/deploy-pages.yml`。
+- 推送到 `main` 自动触发；也可在 GitHub Actions 页面手动运行 `Deploy GitHub Pages`。
+- Workflow 安装依赖后执行 `pnpm build`，发布 `.vitepress/dist/`。
+- GitHub 项目站点挂在 `/ai-handbook/` 子路径下，因此 CI 设置 `VITEPRESS_BASE=/ai-handbook/`。
+- `.vitepress/config.ts` 通过 `process.env.VITEPRESS_BASE ?? '/'` 设置 `base`，所以本地开发仍是根路径 `/`，不要把 `base` 写死成 `/ai-handbook/`。
+
+GitHub Pages 费用与可见性：
+
+- GitHub Free 可为公开仓库发布 Pages。
+- 私有仓库发布 Pages 需要支持私有 Pages 的付费计划。
+- 本仓库为了使用免费 Pages，已改为公开仓库。
+
+部署排障记录：
+
+- `pnpm-lock.yaml` 不能锁到公司内网 registry（例如 `registry.m.jd.com`），否则 GitHub runner 无法下载依赖。
+- 如果 Actions 在 `Install dependencies` 卡住或报 socket timeout，先检查 `pnpm-lock.yaml` 是否包含内网 tarball。
+- 处理方式：用公网 npm registry 重新生成 lockfile，并确保 workflow 里安装步骤显式使用 `--registry=https://registry.npmjs.org/`。
+- Workflow 里的 `node-version` 当前为 `20`；GitHub Actions 可能提示 Node 20 deprecation warning，但当前不影响部署。
+- 现有 `.github/workflows/lychee.yml` 死链检查可能失败，它和 Pages 部署是独立 workflow，不阻塞发布。
 
 ## 目录地图
 
@@ -144,6 +174,18 @@ DevTools 里典型现象：Sources 面板能看到 `mermaid.core` 的 chunk 尝�
 
 如果误删 `.npmrc` 后 dev / build 页面变空白，恢复 `.npmrc` 再 `CI=true pnpm install`（`CI=true` 避免 pnpm 因 TTY 交互中止 modules 重建）。
 
+**GitHub Pages 构建不能依赖内网 npm registry**
+
+GitHub Actions runner 访问不到公司内网 registry。`pnpm-lock.yaml` 里如果出现内网 tarball URL，会导致 Pages workflow 在安装依赖阶段超时或失败。
+
+修复：用公网 npm registry 重新生成 lockfile，并保留 `.github/workflows/deploy-pages.yml` 里的：
+
+```bash
+pnpm install --frozen-lockfile --registry=https://registry.npmjs.org/
+```
+
+不要把 `.vitepress/config.ts` 的 `base` 写死。线上通过 `VITEPRESS_BASE=/ai-handbook/` 注入，本地默认 `/`。
+
 **页面底部 `最后更新` 需要 git commit 后才显示**
 
 VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所有页面底部时间会为空——正常行为。
@@ -185,7 +227,8 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 - [x] 新模块骨架：ai-core（12 stub）+ ai-coding（14 stub）+ ai-trends（8 stub）
 - [ ] 填充 ai-coding/tools/ 横评（最高 ROI）
 - [ ] 填充 ai-core/fundamentals/ 基础原理
-- [ ] 后续：GitHub Pages 部署、i18n、Algolia 搜索
+- [x] GitHub Pages 部署
+- [ ] 后续：i18n、Algolia 搜索
 
 ## 关键参考
 

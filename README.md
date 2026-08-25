@@ -15,6 +15,21 @@ pnpm build        # 生成静态站点到 .vitepress/dist/
 pnpm preview      # 本地预览构建产物
 ```
 
+## GitHub Pages 部署
+
+线上地址：[https://dukegod.github.io/ai-handbook/](https://dukegod.github.io/ai-handbook/)
+
+本项目通过 GitHub Actions 自动部署到 GitHub Pages：
+
+- 推送到 `main` 后，`.github/workflows/deploy-pages.yml` 会自动运行。
+- Workflow 使用 pnpm 安装依赖，执行 `pnpm build`，并发布 `.vitepress/dist/`。
+- GitHub Pages 的发布来源是 `GitHub Actions`，不是 `gh-pages` 分支。
+- 项目站点路径是 `/ai-handbook/`，CI 通过 `VITEPRESS_BASE=/ai-handbook/` 注入；本地开发仍使用 `/`。
+
+如果需要手动重新发布，可以在 GitHub 仓库的 `Actions` 页面运行 `Deploy GitHub Pages` workflow。
+
+注意：GitHub Free 的 Pages 对公开仓库可用；私有仓库需要支持私有 Pages 的付费计划。本仓库当前为公开仓库。
+
 ## 目录结构
 
 ```
