@@ -12,11 +12,13 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 // 占位页面用 🚧 标注；已发布内容不加标注。
 // 后续每篇上线后，把对应条目的 🚧 去掉即可。
 const P = (text: string) => `${text} 🚧`
+const base = process.env.VITEPRESS_BASE ?? '/'
 
 export default withMermaid(defineConfig({
   lang: 'zh-CN',
   title: 'AI Handbook',
   description: 'AI 知识体系、技术核心、产品动向与 Coding 落地（中文）',
+  base,
 
   cleanUrls: true,
   lastUpdated: true,
@@ -26,7 +28,7 @@ export default withMermaid(defineConfig({
   srcExclude: ['README.md', 'CLAUDE.md', 'AGENTS.md'],
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
     ['meta', { name: 'theme-color', content: '#c96442' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'zh_CN' }],
