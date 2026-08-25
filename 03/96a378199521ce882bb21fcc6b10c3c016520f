@@ -1,0 +1,19 @@
+.github/workflows/deploy-pages.yml
+  s_820b66f73a12f4::t_119153d350f4c0 40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "0396a378199521ce882bb21fcc6b10c3c016520f",
+  "prompts": {},
+  "sessions": {
+    "s_820b66f73a12f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03715-3af9-7a53-9273-aba0087ec827",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
