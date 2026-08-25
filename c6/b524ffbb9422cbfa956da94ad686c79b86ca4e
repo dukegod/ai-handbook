@@ -1,0 +1,21 @@
+AGENTS.md
+  s_820b66f73a12f4::t_da45242c21a27f 21-22,29,43-71,177-188,230-231
+README.md
+  s_820b66f73a12f4::t_b392f6a9f72f16 18-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "c6b524ffbb9422cbfa956da94ad686c79b86ca4e",
+  "prompts": {},
+  "sessions": {
+    "s_820b66f73a12f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03715-3af9-7a53-9273-aba0087ec827",
+        "model": "gpt-5.5"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
