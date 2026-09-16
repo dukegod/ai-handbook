@@ -590,7 +590,7 @@ export default withMermaid(defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/anthropics/claude-code' },
+      { icon: 'github', link: 'https://github.com/dukegod/ai-handbook' },
     ],
 
     footer: {
