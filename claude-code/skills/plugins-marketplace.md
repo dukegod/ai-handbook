@@ -84,7 +84,7 @@ hello-team/
   "name": "hello-team",
   "description": "团队专用问候流水线",
   "version": "1.0.0",
-  "author": { "name": "SZ-FE Team" }
+  "author": { "name": "Your Team" }
 }
 ```
 
@@ -116,8 +116,8 @@ my-marketplace/
 
 ```json
 {
-  "name": "sz-fe-plugins",
-  "owner": { "name": "SZ-FE Team", "email": "sz-fe@example.com" },
+  "name": "team-plugins",
+  "owner": { "name": "Your Team", "email": "team@example.com" },
   "plugins": [
     {
       "name": "hello-team",
@@ -186,10 +186,10 @@ my-marketplace/
 ```json
 {
   "extraKnownMarketplaces": {
-    "sz-fe-plugins": {
+    "team-plugins": {
       "source": {
         "source": "github",
-        "repo": "sz-fe/claude-plugins"
+        "repo": "your-org/team-plugins"
       }
     }
   }

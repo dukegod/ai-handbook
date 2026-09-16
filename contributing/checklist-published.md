@@ -152,7 +152,7 @@ grep -oP '[一-鿿]' <本文.md> | wc -l
 grep -nE '(sk-ant-|/Users/|@jd\.com|coding\.jd\.com/[a-z]+/[a-z-]+)' <本文.md>
 ```
 
-例外：`coding.jd.com/sz-fe/claude-wiki` 是本站仓库 URL，允许出现；`docs.claude.com`、`code.claude.com` 等公开域名不算敏感。
+例外：`github.com/dukegod/ai-handbook` 是本站仓库 URL，允许出现；`docs.claude.com`、`code.claude.com` 等公开域名不算敏感。
 
 #### 10. 外链可访问 + 官方文档注日期
 
@@ -189,7 +189,7 @@ done < /tmp/links.txt
 **判据**：`pnpm build` 输出无 `error` / `warn` / `dead link`。
 
 ```bash
-cd /Users/liuhui15/jd-projects/sz-fe/claude-wiki
+cd /Users/liuhui15/github-projects/ai-handbook
 rm -rf .vitepress/cache .vitepress/dist    # 清缓存，避免误报绿
 pnpm build 2>&1 | grep -iE '(warn|error|dead)'
 # 期望：无输出（除了 vite 常规 chunk-size 提示，那个可忽略）

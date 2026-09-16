@@ -334,7 +334,7 @@ v0.3.3 段 12 篇正文全部 published。**v0.3 整段（46 篇）全部收官*
 
 - lychee 0.24 schema 升级（verbose 字符串 / accept 数组 / root_dir / fallback_extensions）
 - 3 处 `messages-batches` URL 拼错修复
-- ~20 类 false positive 排除（coding.jd.com / logo/hero/favicon / docs.claude.com 迁移中 / npmjs 反爬 / claude.ai 403 / aws timeout / platform 废弃 API 路径等）
+- ~20 类 false positive 排除（logo/hero/favicon / docs.claude.com 迁移中 / npmjs 反爬 / claude.ai 403 / aws timeout / platform 废弃 API 路径等）
 - `failMode: warning` → `error`
 - check-links.sh 用 `--files-from` 避 0.24.2 CLI 多 glob bug
 - `contributing/link-checking.md` 升级（5 场景 + 调试段 + 已知限制）
@@ -380,7 +380,7 @@ v0.3.3 段 12 篇正文全部 published。**v0.3 整段（46 篇）全部收官*
 **工程层：**
 
 - Algolia DocSearch（或 pagefind 保留本地搜索能力）
-- CI 部署：GitHub Actions / coding.jd.com Pages
+- CI 部署：GitHub Actions / GitHub Pages
 - 术语 lint（vale.sh + 自定义词典）
 - 版本切换（Claude Code v1 / v2 文档共存，若需）
 - SEO 优化：中文标题 + 英文关键词副标题

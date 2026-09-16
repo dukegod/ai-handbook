@@ -139,8 +139,8 @@ verifiedWith:
     "github": true
   },
   "extraKnownMarketplaces": {
-    "sz-fe-plugins": {
-      "source": { "source": "github", "repo": "sz-fe/claude-plugins" }
+    "team-plugins": {
+      "source": { "source": "github", "repo": "your-org/team-plugins" }
     }
   },
   "disableBundledSkills": true,

@@ -227,4 +227,4 @@ tools: Read, Edit, Write, Bash
 | `tester` | Read, Grep, Glob, Bash | 写单测 + 跑测试 + 报覆盖率 |
 | `security-guard` | Read, Grep, Glob | 安全审计（SQL 注入 / XSS / 密钥泄露） |
 
-**完整 frontmatter + body 模板**见 [awesome-claude/agents.md](https://coding.jd.com/sz-fe/sz-2024/docs/awesome-claude/agents.md)（含 `autoSpawn: true` 配置 / 工具最小化 / 层级协作等 9 条 2026 优化技巧）。
+**完整 frontmatter + body 模板**见 [Anthropic Docs · Subagents](https://code.claude.com/docs/en/subagents)（含 `autoSpawn: true` 配置 / 工具最小化 / 层级协作等 9 条 2026 优化技巧）。

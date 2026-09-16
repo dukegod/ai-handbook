@@ -63,8 +63,8 @@ GitHub Pages 费用与可见性：
 
 部署排障记录：
 
-- `pnpm-lock.yaml` 不能锁到公司内网 registry（例如 `registry.m.jd.com`），否则 GitHub runner 无法下载依赖。
-- 如果 Actions 在 `Install dependencies` 卡住或报 socket timeout，先检查 `pnpm-lock.yaml` 是否包含内网 tarball。
+- `pnpm-lock.yaml` 不能锁到私有 registry（例如 `registry.mycompany.example`），否则 GitHub runner 无法下载依赖。
+- 如果 Actions 在 `Install dependencies` 卡住或报 socket timeout，先检查 `pnpm-lock.yaml` 是否包含私有 tarball。
 - 处理方式：用公网 npm registry 重新生成 lockfile，并确保 workflow 里安装步骤显式使用 `--registry=https://registry.npmjs.org/`。
 - Workflow 里的 `node-version` 当前为 `20`；GitHub Actions 可能提示 Node 20 deprecation warning，但当前不影响部署。
 - 现有 `.github/workflows/lychee.yml` 死链检查可能失败，它和 Pages 部署是独立 workflow，不阻塞发布。
@@ -174,9 +174,9 @@ DevTools 里典型现象：Sources 面板能看到 `mermaid.core` 的 chunk 尝�
 
 如果误删 `.npmrc` 后 dev / build 页面变空白，恢复 `.npmrc` 再 `CI=true pnpm install`（`CI=true` 避免 pnpm 因 TTY 交互中止 modules 重建）。
 
-**GitHub Pages 构建不能依赖内网 npm registry**
+**GitHub Pages 构建不能依赖私有 npm registry**
 
-GitHub Actions runner 访问不到公司内网 registry。`pnpm-lock.yaml` 里如果出现内网 tarball URL，会导致 Pages workflow 在安装依赖阶段超时或失败。
+GitHub Actions runner 访问不到私有 registry。`pnpm-lock.yaml` 里如果出现私有 tarball URL，会导致 Pages workflow 在安装依赖阶段超时或失败。
 
 修复：用公网 npm registry 重新生成 lockfile，并保留 `.github/workflows/deploy-pages.yml` 里的：
 

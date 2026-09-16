@@ -113,7 +113,6 @@ fallback_extensions = ["md", "html"]
 exclude = [
     "^http://localhost",          # 本地 dev
     "^mailto:",                    # 邮箱
-    "^https?://coding\\.jd\\.com", # 公司内 Git（CI runner 访问不到）
     "^https?://(www\\.)?claude\\.ai",  # 拒绝 lychee 爬虫
     "^https?://aws\\.amazon\\.com/bedrock",  # 超时
     "logo\\.svg$",                 # VitePress public 资源
@@ -193,9 +192,9 @@ lychee 输出：
 
 **修复**：把 `^https?://(www\\.)?npmjs\\.com/package/` 和 `^https?://(www\\.)?claude\\.ai` 加到 `exclude`。
 
-## 七、CODING 平移（公司内 Git）
+## 七、平台迁移说明
 
-本仓库用 **coding.jd.com**（不是 GitHub），需要平移 lychee workflow：
+本仓库当前托管在 **GitHub**（`github.com/dukegod/ai-handbook`），如需迁移到其他平台（Gitea / GitLab 自建等），平移 lychee workflow：
 
 ```yaml
 # coding 流水线（.coding/pipeline.yml 风格）
@@ -213,7 +212,7 @@ steps:
         --no-progress
 ```
 
-**v0.4.2 升级**：CI 阶段 `failMode: error`——平移到 CODING 时也保持 error，不要回退到 warning。
+**v0.4.2 升级**：CI 阶段 `failMode: error`——平移到其他平台时也保持 error，不要回退到 warning。
 
 ## 八、5 个常见坑
 
@@ -301,6 +300,6 @@ pnpm check-links
 ## 如果你想
 
 - 实战场景细节 → [5 个实战场景](#六5-个实战场景)
-- CODING 平台平移 → [CODING 平移](#七coding-平移公司内-git)
+- 平台迁移说明 → [平台迁移说明](#七平台迁移说明)
 - 已知限制与 workaround → [已知限制](#九已知限制v042-阶段)
 - 死链事故复盘 → [为什么需要](#一为什么需要)

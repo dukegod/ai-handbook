@@ -25,7 +25,7 @@ retry_wait_time = 2
 max_redirects = 5
 
 # User-Agent
-user_agent = "Mozilla/5.0 (compatible; claude-handbook-link-checker/1.0; +https://coding.jd.com/sz-fe/claude-wiki)"
+user_agent = "Mozilla/5.0 (compatible; claude-handbook-link-checker/1.0; +https://github.com/dukegod/ai-handbook)"
 
 # 排除路径（正则字符串）—— 不检查生成产物
 exclude_path = [
@@ -45,8 +45,6 @@ exclude = [
     "^https://localhost",
     # mailto 链接
     "^mailto:",
-    # 公司内 Git（CI runner 访问不到，false positive）
-    "^https?://coding\\.jd\\.com",
     # VitePress public 资源（public/ 下的 svg 由 VitePress 映射到 /，lychee 不知道映射）
     "logo\\.svg$",
     "hero\\.svg$",

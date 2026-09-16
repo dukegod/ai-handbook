@@ -14,7 +14,7 @@ lastUpdated: 2026-07-23
 本站定位是一份**中文语境下、可长期维护的、有观点的**学习资料。规范存在的目的不是束缚表达，而是让读者在任何一页都能得到一致的阅读体验，也让我未来回看老文档时能一眼看出「这篇过时了没有」。
 
 ::: tip 用 Claude Code 参与本项目？
-根目录的 [CLAUDE.md](https://coding.jd.com/sz-fe/claude-wiki/blob/main/CLAUDE.md) 会被 Claude Code 每次会话自动加载。它是本规范的**红线摘要**，聚焦"下一步该做什么"与"已知坑"，与本文互补。
+根目录的 [CLAUDE.md](https://github.com/dukegod/ai-handbook/blob/main/CLAUDE.md) 会被 Claude Code 每次会话自动加载。它是本规范的**红线摘要**，聚焦"下一步该做什么"与"已知坑"，与本文互补。
 :::
 
 ## 目录

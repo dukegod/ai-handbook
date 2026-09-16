@@ -208,7 +208,7 @@ CLAUDE.md 是**建议不是硬约束**。排查：
 
 ## 本项目的 CLAUDE.md（活样本）
 
-Claude Handbook 自己在根目录维护 [CLAUDE.md](https://coding.jd.com/sz-fe/claude-wiki/blob/main/CLAUDE.md)——一个真实项目的 CLAUDE.md 长什么样，直接看这个即可。它遵循本页的所有建议：< 200 行、分组清晰、术语约束、已知坑、当前阶段任务。
+Claude Handbook 自己在根目录维护 [CLAUDE.md](https://github.com/dukegod/ai-handbook/blob/main/CLAUDE.md)——一个真实项目的 CLAUDE.md 长什么样，直接看这个即可。它遵循本页的所有建议：< 200 行、分组清晰、术语约束、已知坑、当前阶段任务。
 
 ## 参考
 
