@@ -1,0 +1,59 @@
+ai-trends/model-selection/model-selection-guide.md
+  s_b930aed68f7560::t_0afc9ca212bacf 94
+.gitignore
+  h_a427b9af6cd304 11
+claude-code/basics/claude-md.md
+  s_b930aed68f7560::t_634e1677c25e17 211
+claude-code/customization/settings.md
+  s_b930aed68f7560::t_d7d3443287a644 142-143
+claude-code/subagents-and-workflows/agent-types.md
+  s_b930aed68f7560::t_4b460e80ba15fd 230
+contributing/checklist-published.md
+  s_b930aed68f7560::t_dac3e57b39da3a 192
+  s_b930aed68f7560::t_d5e4f395e39e4b 155
+contributing/style-guide.md
+  s_b930aed68f7560::t_6dc1c8ed284755 17
+contributing/link-checking.md
+  s_b930aed68f7560::t_2f5dfe9ca773cb 215
+  s_b930aed68f7560::t_e602d9e502a07b 197
+  s_b930aed68f7560::t_4f8526bd372297 303
+  s_b930aed68f7560::t_7199ba59653073 195
+.github/workflows/lychee.yml
+  s_b930aed68f7560::t_650149c22489c8 7
+  s_b930aed68f7560::t_2354c608109a89 6
+AGENTS.md
+  s_b930aed68f7560::t_68c60263ca1b79 66-67
+  s_b930aed68f7560::t_4e7ca007b84316 177,179
+claude-code/skills/plugins-marketplace.md
+  s_b930aed68f7560::t_78b8b840263d8d 87
+  s_b930aed68f7560::t_8b0ad6638feedb 119-120
+  s_b930aed68f7560::t_bb6439d84f43cd 189,192
+claude-code/customization/hooks.md
+  s_b930aed68f7560::t_46c26abd9fdb68 366
+lychee.toml
+  s_b930aed68f7560::t_a1e6b9ee5c62e3 28
+contributing/roadmap.md
+  s_b930aed68f7560::t_fdf42a3d0e0a11 383
+  s_b930aed68f7560::t_ad182835c597ef 337
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5add9619f415962687880293452f531e29f45b4c",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_b930aed68f7560": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c55cf348-7184-4850-be24-9c5bbf15f050",
+        "model": "MiniMax-M3"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
