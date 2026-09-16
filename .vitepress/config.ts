@@ -4,7 +4,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 // ============================================================================
 // Claude Handbook — VitePress 配置
 //
-// 目录结构见 /Users/liuhui15/jd-projects/sz-fe/claude-wiki/README.md
+// 目录结构见 /Users/liuhui15/github-projects/ai-handbook/AGENTS.md
 // 写作规范见 contributing/style-guide.md
 // 路线图见 contributing/roadmap.md
 // ============================================================================
@@ -37,6 +37,23 @@ export default withMermaid(defineConfig({
 
   markdown: {
     lineNumbers: true,
+  },
+
+  // 强制 esbuild 预打包 mermaid 的 CJS 子依赖，避免 dev 阶段
+  // 「does not provide an export named 'default'」报错（fastdom / dayjs 等）。
+  // 参见 https://github.com/emersonbottero/vitepress-plugin-mermaid/issues/33
+  vite: {
+    optimizeDeps: {
+      include: [
+        'mermaid',
+        'fastdom',
+        'dayjs',
+        '@braintree/sanitize-url',
+        'dagre',
+        'd3',
+        'elkjs',
+      ],
+    },
   },
 
   themeConfig: {
@@ -543,9 +560,8 @@ export default withMermaid(defineConfig({
     },
 
     editLink: {
-      // 内网 coding.jd.com 路径；后续镜像到 GitHub 时可改
-      pattern: 'https://coding.jd.com/sz-fe/claude-wiki/edit/main/:path',
-      text: '在 Coding 上编辑此页',
+      pattern: 'https://github.com/dukegod/ai-handbook/edit/main/:path',
+      text: '在 GitHub 上编辑此页',
     },
 
     search: {
