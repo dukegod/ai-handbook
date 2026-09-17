@@ -1,0 +1,19 @@
+.vitepress/config.ts
+  s_55905e93f8401d::t_c451fcaf310da0 76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "83d5675ba679a542ead807bd47da2e904bd115f1",
+  "prompts": {},
+  "sessions": {
+    "s_55905e93f8401d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22f0d269-4b14-40c7-876e-e466c7bc2977",
+        "model": "MiniMax-M3"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
