@@ -214,5 +214,5 @@ Sora / Runway 仍是效果第一梯队，但 **MiniMax H3（33B）** 已经把�
 ## 如果你想
 
 - 学习 Claude Code → [Claude Code 精通](/claude-code/)
-- AI Native 架构 → [AI Native 架构](/ai-coding/architecture/)
+- AI Native 架构 → [AI Harness 工程](/ai-harness/)
 - AI Coding 工具 → [AI Coding 工具全景](/ai-coding/tools/overview)

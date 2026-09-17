@@ -4,7 +4,7 @@ description: 如何让工程结构对 AI 友好——三层架构、模块 5 件
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-19
+lastUpdated: 2026-09-17
 ---
 
 # 三层架构与模块模板

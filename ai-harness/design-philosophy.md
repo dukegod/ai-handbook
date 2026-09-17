@@ -4,7 +4,7 @@ description: AI Native 的核心理念——人负责架构设计和验收，AI 
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-08-19
+lastUpdated: 2026-09-17
 ---
 
 # 设计理念：人机分工

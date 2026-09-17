@@ -65,6 +65,7 @@ export default withMermaid(defineConfig({
       { text: 'AI 核心技术', link: '/ai-core/', activeMatch: '/ai-core/' },
       { text: 'AI Coding', link: '/ai-coding/', activeMatch: '/ai-coding/' },
       { text: '产品动向', link: '/ai-trends/', activeMatch: '/ai-trends/' },
+      { text: 'AI Harness 工程', link: '/ai-harness/', activeMatch: '/ai-harness/' },
       {
         text: 'Claude',
         items: [
@@ -492,18 +493,6 @@ export default withMermaid(defineConfig({
             { text: P('成本控制'), link: '/ai-coding/enterprise/cost' },
           ],
         },
-        {
-          text: 'AI Native 架构',
-          collapsed: true,
-          items: [
-            { text: '架构总览', link: '/ai-coding/architecture/' },
-            { text: '设计理念：人机分工', link: '/ai-coding/architecture/design-philosophy' },
-            { text: '三层架构与模块模板', link: '/ai-coding/architecture/three-layer-architecture' },
-            { text: '资产飞轮机制', link: '/ai-coding/architecture/asset-flywheel' },
-            { text: 'TDD 质量保障', link: '/ai-coding/architecture/tdd-quality' },
-            { text: '迁移路径', link: '/ai-coding/architecture/migration-guide' },
-          ],
-        },
       ],
 
       // ----------------------------------------------------------------------
@@ -520,6 +509,29 @@ export default withMermaid(defineConfig({
             { text: P('用 Claude Code 重构老项目'), link: '/cookbook/refactor-legacy-project' },
             { text: P('数据分析工作流'), link: '/cookbook/data-analysis-workflow' },
             { text: P('多 Agent 研究流水线'), link: '/cookbook/multi-agent-research' },
+          ],
+        },
+      ],
+
+      // ----------------------------------------------------------------------
+      // AI Harness 工程
+      // ----------------------------------------------------------------------
+      '/ai-harness/': [
+        {
+          text: 'AI Harness 工程',
+          items: [
+            { text: '总览', link: '/ai-harness/' },
+          ],
+        },
+        {
+          text: '方法论',
+          collapsed: false,
+          items: [
+            { text: '设计理念：人机分工', link: '/ai-harness/design-philosophy' },
+            { text: '三层架构与模块模板', link: '/ai-harness/three-layer-architecture' },
+            { text: '资产飞轮机制', link: '/ai-harness/asset-flywheel' },
+            { text: 'TDD 质量保障', link: '/ai-harness/tdd-quality' },
+            { text: '迁移路径', link: '/ai-harness/migration-guide' },
           ],
         },
       ],
