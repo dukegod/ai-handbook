@@ -4,7 +4,7 @@ description: 如何把经验沉淀为可复用资产——Specs、Rules、Skills
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-19
+lastUpdated: 2026-09-17
 ---
 
 # 资产飞轮机制

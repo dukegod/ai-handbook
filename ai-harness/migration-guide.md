@@ -4,7 +4,7 @@ description: 如何从现有项目迁移到 AI Native——半天版/一周版/�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-19
+lastUpdated: 2026-09-17
 ---
 
 # 迁移路径

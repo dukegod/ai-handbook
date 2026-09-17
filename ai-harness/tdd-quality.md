@@ -4,7 +4,7 @@ description: 如何用 TDD 收敛 AI 的概率性产出——RED→GREEN→REFAC
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-19
+lastUpdated: 2026-09-17
 ---
 
 # TDD 质量保障

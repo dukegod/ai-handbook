@@ -62,6 +62,11 @@ features:
     details: 写 Skill、写 MCP Server、重构老项目、数据分析、多 Agent 编排——可复现的实战配方。
     link: /cookbook/
     linkText: 翻阅 Cookbook →
+  - icon: 🧬
+    title: AI Harness 工程
+    details: AI 为默认执行者的研发范式——设计理念、三层架构、资产飞轮、TDD 质量保障与迁移路径的方法论合集。
+    link: /ai-harness/
+    linkText: 进入 Harness →
   - icon: 🛠
     title: 参与共建
     details: 想贡献一篇？先看写作规范与术语表，用统一的模板把你的经验沉淀到这里。
@@ -73,13 +78,14 @@ features:
 
 **AI Handbook** 是一份**面向中文读者**、**长期维护**、**有观点**的 AI 全栈知识库。
 
-它覆盖五个方向：
+它覆盖六个方向：
 
 1. **AI 核心技术** —— Transformer 原理、模型架构、训练方法、评估基准，理解 AI 的底层逻辑
 2. **AI Coding 落地** —— 工具横评、团队工作流、常见模式、企业部署，把 AI 真正用起来
-3. **产品动向** —— 月度速报、论文速递、开源推荐，保持对 AI 生态的持续跟踪
-4. **模型与厂商** —— 厂商档案、横向对比与选型决策，做出更好的技术选择
-5. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力（已有 100+ 篇 published）
+3. **AI Harness 工程** —— AI 为默认执行者的研发范式：设计理念、三层架构、资产飞轮、TDD 质量、迁移路径（方法论合集）
+4. **产品动向** —— 月度速报、论文速递、开源推荐，保持对 AI 生态的持续跟踪
+5. **模型与厂商** —— 厂商档案、横向对比与选型决策，做出更好的技术选择
+6. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力（已有 100+ 篇 published）
 
 ## 内容分层
 
