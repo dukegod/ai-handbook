@@ -1,0 +1,54 @@
+ai-harness/asset-flywheel.md
+  s_55905e93f8401d::t_acf8145b596952 7
+  s_55905e93f8401d::t_ef8b7a4744c5fa 1-6,8-103
+ai-harness/design-philosophy.md
+  s_55905e93f8401d::t_acf8145b596952 7
+  s_55905e93f8401d::t_ef8b7a4744c5fa 1-6,8-175
+ai-harness/migration-guide.md
+  s_55905e93f8401d::t_acf8145b596952 7
+  s_55905e93f8401d::t_ef8b7a4744c5fa 1-6,8-168
+ai-harness/index.md
+  s_55905e93f8401d::t_da4b46982e52c6 33,35-37,41-45
+  s_55905e93f8401d::t_7c1f034f761bc6 1-32,34,38-40,46-51
+ai-harness/tdd-quality.md
+  s_55905e93f8401d::t_ef8b7a4744c5fa 1-6,8-214
+  s_55905e93f8401d::t_acf8145b596952 7
+ai-coding/index.md
+  s_55905e93f8401d::t_476cef11533c8d 37-39,51
+ai-harness/three-layer-architecture.md
+  s_55905e93f8401d::t_ef8b7a4744c5fa 1-6,8-181
+  s_55905e93f8401d::t_acf8145b596952 7
+ai-trends/model-selection/image-model-comparison.md
+  s_55905e93f8401d::t_b0d8f2f14a0eac 290
+.vitepress/config.ts
+  s_55905e93f8401d::t_4716666d6a2db3 68
+  s_55905e93f8401d::t_09d0b507075f6c 516-525,537-538
+  s_55905e93f8401d::t_2e00bb4c0b7d37 526-536
+index.md
+  s_55905e93f8401d::t_192a558dc6c706 81,85-88
+  s_55905e93f8401d::t_898556800fb716 65-69
+AGENTS.md
+  s_55905e93f8401d::t_273e28150e56e0 240
+  s_55905e93f8401d::t_09df987c461829 9,13-16
+  s_55905e93f8401d::t_9ba95dc0b1925c 238-239,241
+  s_55905e93f8401d::t_d8003c23eaff7c 98-104,109
+  s_55905e93f8401d::t_a2912ddb45b0e2 110
+ai-trends/model-selection/video-model-comparison.md
+  s_55905e93f8401d::t_d1a83000eb7f98 217
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ff1a6c8ac0e3aeea70febb804975737325596fab",
+  "prompts": {},
+  "sessions": {
+    "s_55905e93f8401d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22f0d269-4b14-40c7-876e-e466c7bc2977",
+        "model": "MiniMax-M3"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
