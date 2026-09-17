@@ -64,7 +64,6 @@ export default withMermaid(defineConfig({
       { text: 'AI 入门', link: '/getting-started/', activeMatch: '/getting-started/' },
       { text: 'AI 核心技术', link: '/ai-core/', activeMatch: '/ai-core/' },
       { text: 'AI Coding', link: '/ai-coding/', activeMatch: '/ai-coding/' },
-      { text: '产品动向', link: '/ai-trends/', activeMatch: '/ai-trends/' },
       { text: 'AI Harness 工程', link: '/ai-harness/', activeMatch: '/ai-harness/' },
       {
         text: 'Claude',
@@ -74,6 +73,7 @@ export default withMermaid(defineConfig({
           { text: 'Cookbook 实战', link: '/cookbook/', activeMatch: '/cookbook/' },
         ],
       },
+      { text: '产品动向', link: '/ai-trends/', activeMatch: '/ai-trends/' },
       { text: '贡献', link: '/contributing/style-guide', activeMatch: '/contributing/' },
     ],
 
