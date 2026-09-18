@@ -53,7 +53,7 @@ lastUpdated: 2026-08-14
 **普通用户**：ChatGPT（功能全）或豆包（国内免费），先用起来再说
 **写作者 / 分析师**：Claude（长文与深度分析强）
 **开发者**：Claude Code + 按需接各厂商 API
-**企业**：优先考虑数据合规（Azure / Bedrock / 私有化），见 [企业落地](/ai-coding/enterprise/deployment)
+**企业**：优先考虑数据合规（Azure / Bedrock / 私有化）
 
 > ⚠️ 市场变化很快——本页是 2026-08 快照，最新动态见 [产品动向](/ai-trends/) 月度速报。
 

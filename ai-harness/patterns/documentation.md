@@ -155,4 +155,3 @@ AI 生成的文档可能只是"能读"，不一定"有用"。关注文档质量�
 ## 如果你想
 
 - 学习 Claude Code → [Claude Code 精通](/claude-code/)
-- 企业部署 → [企业部署指南](../enterprise/deployment)

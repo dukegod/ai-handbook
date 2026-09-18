@@ -456,6 +456,7 @@ export default withMermaid(defineConfig({
             { text: P('GitHub Copilot 评测'), link: '/ai-coding/tools/copilot' },
             { text: P('Codex CLI 深度评测'), link: '/ai-coding/tools/codex-cli' },
             { text: P('Trae 深度评测'), link: '/ai-coding/tools/trae' },
+            { text: P('腾讯 CodeBuddy 深度评测'), link: '/ai-coding/tools/codebuddy' },
           ],
         },
         {
@@ -467,30 +468,10 @@ export default withMermaid(defineConfig({
           ],
         },
         {
-          text: '团队工作流',
-          collapsed: true,
+          text: '🆕 桌面 AI 智能体',
+          collapsed: false,
           items: [
-            { text: P('团队 AI 工作流'), link: '/ai-coding/workflows/team' },
-            { text: P('CI/CD 集成'), link: '/ai-coding/workflows/ci-cd' },
-            { text: P('Code Review 自动化'), link: '/ai-coding/workflows/code-review' },
-          ],
-        },
-        {
-          text: '常见模式',
-          collapsed: true,
-          items: [
-            { text: P('代码重构模式'), link: '/ai-coding/patterns/refactor' },
-            { text: P('测试生成模式'), link: '/ai-coding/patterns/testing' },
-            { text: P('文档生成模式'), link: '/ai-coding/patterns/documentation' },
-          ],
-        },
-        {
-          text: '企业落地',
-          collapsed: true,
-          items: [
-            { text: P('企业部署指南'), link: '/ai-coding/enterprise/deployment' },
-            { text: P('安全与合规'), link: '/ai-coding/enterprise/security' },
-            { text: P('成本控制'), link: '/ai-coding/enterprise/cost' },
+            { text: P('腾讯 WorkBuddy 深度评测'), link: '/ai-coding/tools/workbuddy' },
           ],
         },
       ],
@@ -532,6 +513,26 @@ export default withMermaid(defineConfig({
             { text: '资产飞轮机制', link: '/ai-harness/asset-flywheel' },
             { text: 'TDD 质量保障', link: '/ai-harness/tdd-quality' },
             { text: '迁移路径', link: '/ai-harness/migration-guide' },
+          ],
+        },
+        {
+          text: '团队工作量',
+          collapsed: true,
+          items: [
+            { text: '分组总览', link: '/ai-harness/workflows/' },
+            { text: P('团队 AI 工作流'), link: '/ai-harness/workflows/team' },
+            { text: P('CI/CD 集成'), link: '/ai-harness/workflows/ci-cd' },
+            { text: P('Code Review 自动化'), link: '/ai-harness/workflows/code-review' },
+          ],
+        },
+        {
+          text: '常见模式',
+          collapsed: true,
+          items: [
+            { text: '分组总览', link: '/ai-harness/patterns/' },
+            { text: P('代码重构模式'), link: '/ai-harness/patterns/refactor' },
+            { text: P('测试生成模式'), link: '/ai-harness/patterns/testing' },
+            { text: P('文档生成模式'), link: '/ai-harness/patterns/documentation' },
           ],
         },
       ],

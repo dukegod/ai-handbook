@@ -24,7 +24,7 @@ lastUpdated: 2026-08-13
 
 ### 第 1 步：选型
 
-根据团队情况选工具（参考 [AI Coding 工具全景](../tools/overview)）。
+根据团队情况选工具（参考 [AI Coding 工具全景](/ai-coding/tools/overview)）。
 
 ### 第 2 步：统一规范
 
@@ -133,7 +133,7 @@ AI 生成的代码也需要审查。AI 可能生成有 bug 的代码。
 ## 参考
 
 - [Claude Code 精通](/claude-code/)
-- [AI Coding 工具全景](../tools/overview)
+- [AI Coding 工具全景](/ai-coding/tools/overview)
 
 ## 下一步
 
@@ -142,5 +142,4 @@ AI 生成的代码也需要审查。AI 可能生成有 bug 的代码。
 
 ## 如果你想
 
-- 企业部署 → [企业部署指南](../enterprise/deployment)
-- 安全合规 → [安全与合规](../enterprise/security)
+

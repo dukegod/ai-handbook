@@ -167,8 +167,7 @@ src/common/CLAUDE.md    # 仅 common 相关文件被涉及时生效
 ## 下一步
 
 - 深入 Cursor → [Cursor 深度评测](./cursor)
-- 团队引入 → [团队 AI 工作流](../workflows/team)
-- 企业部署 → [企业部署指南](../enterprise/deployment)
+- 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
 ## 如果你想
 

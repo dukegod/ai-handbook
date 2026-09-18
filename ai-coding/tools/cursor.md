@@ -170,9 +170,7 @@ Cursor 的 `.cursor/rules/` 支持 4 种生效方式：
 ## 下一步
 
 - 深入 Copilot → [GitHub Copilot 评测](./copilot)
-- 团队引入 → [团队 AI 工作流](../workflows/team)
-
-## 如果你想
+- 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
 - 对比 Claude Code → [Claude Code 深度评测](./claude-code)
 - 选型决策 → [AI Coding 工具全景](./overview)
