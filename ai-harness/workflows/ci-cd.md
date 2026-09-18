@@ -146,9 +146,7 @@ CI 中频繁调用 API 可能成本高。限制触发条件。
 ## 下一步
 
 - Code Review 自动化 → [Code Review 自动化](./code-review)
-- 企业部署 → [企业部署指南](../enterprise/deployment)
 
 ## 如果你想
 
 - 学习 Claude Code → [Claude Code 精通](/claude-code/)
-- 安全合规 → [安全与合规](../enterprise/security)

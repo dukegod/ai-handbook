@@ -73,4 +73,3 @@ lastUpdated: 2026-08-14
 ## 如果你想
 
 - 深度对比厂商 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
-- 看企业部署方案 → [企业部署指南](/ai-coding/enterprise/deployment)

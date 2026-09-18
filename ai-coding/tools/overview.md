@@ -228,9 +228,7 @@ AI Coding 工具是"辅助"，不是"替代"。核心设计、架构决策仍需
 - 深入 Cursor → [Cursor 深度评测](./cursor)
 - 深入 PI-agent → [PI-agent 深度评测](./pi-agent)
 - 深入 DeepSeek Harness → [DeepSeek Harness 深度评测](./deepseek-harness)
-- 团队引入 → [团队 AI 工作流](../workflows/team)
-
-## 如果你想
+- 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
 - 选模型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 - 看实战案例 → [Cookbook](/cookbook/)

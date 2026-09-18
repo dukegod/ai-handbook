@@ -9,8 +9,8 @@
 **AI Handbook** 是一份面向中文读者、长期维护的 **AI 全栈知识库**，覆盖六个方向：
 
 1. **AI 核心技术** —— Transformer / 注意力 / 预训练 / RLHF / MoE / 多模态
-2. **AI Coding 落地** —— 工具横评 / 团队工作流 / 常见模式 / 企业部署
-3. **AI Harness 工程** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 迁移路径（公开方法论合集，与内部 Foundation Kit `pipeline-architecture-wiki` 互补）
+2. **AI Coding 落地** —— AI 编程工具横评（选工具 / 用工具）
+3. **AI Harness 工程** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 团队工作量 / 常见模式 / 迁移路径（公开方法论合集，与内部 Foundation Kit `pipeline-architecture-wiki` 互补）
 4. **产品动向** —— 月度速报 / 论文速递 / 开源推荐 / 行业趋势
 5. **模型与厂商** —— 国外厂商（Anthropic / OpenAI / xAI）+ 国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen），横向对比与选型决策
 6. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力
@@ -77,7 +77,7 @@ GitHub Pages 费用与可见性：
 index.md            首页（layout: home）
 getting-started/    AI 入门（通用 AI 概念 + 工具选型）
 ai-core/            AI 核心技术（fundamentals / model-arch / training / eval）
-ai-coding/          AI Coding 落地（tools / workflows / patterns / enterprise）
+ai-coding/          AI Coding 落地（tools）
 ai-trends/          产品动向
 ├── product-updates/   月度速报
 ├── vendors/           国外厂商（Anthropic / OpenAI / xAI）
@@ -95,18 +95,20 @@ ai-trends/          产品动向
 └── industry/          行业观察
 claude-code/        Claude Code CLI 精通（9 个子章 + reference 速查手册）
 claude-capabilities/ Claude 能力全景（8 个子章，含模型 ID 速查）
-ai-harness/         AI Harness 工程（公开方法论；与内部 Foundation Kit 互补）
-├── index.md                 # 总览 + 与 Foundation Kit 关系
-├── design-philosophy.md     # 设计理念：人机分工
-├── three-layer-architecture.md # 三层架构与模块模板
-├── asset-flywheel.md        # 资产飞轮机制
-├── tdd-quality.md           # TDD 质量保障
-└── migration-guide.md        # 迁移路径
+ai-harness/         AI Harness 工程（公开方法论 + 团队工作量 + 常见模式；与内部 Foundation Kit 互补）
+├── index.md                 # 总览 + 与 Foundation Kit 关系 + 内容三层结构
+├── design-philosophy.md     # 设计理念：人机分工（方法论）
+├── three-layer-architecture.md # 三层架构与模块模板（方法论）
+├── asset-flywheel.md        # 资产飞轮机制（方法论）
+├── tdd-quality.md           # TDD 质量保障（方法论）
+├── migration-guide.md        # 迁移路径（方法论）
+├── workflows/               # 团队工作量（3 篇 + 1 index）
+└── patterns/                # 常见模式（3 篇 + 1 index）
 cookbook/           实战案例
 contributing/       写作规范五件套（本文重要参考）
 ```
 
-> **项目间关系**：`ai-harness/` 是公开方法论层；内部 Kit `pipeline-architecture-wiki`（`git@coding.jd.com:sz-fe/pipeline-architecture-wiki.git`）维护通用方法论副本 + 京东特定实践 + Skill 工程化 + 模板。阶段 1 ✅：建立 ai-handbook 顶级导航；阶段 2 ✅：迁移 `/ai-coding/architecture/` 5 篇已 published 方法论到 `/ai-harness/` + 删除旧子章；阶段 3：协调 wiki 侧清理通用方法论，仅留京东特定。
+> **项目间关系**：`ai-harness/` 是公开方法论层；内部 Kit `pipeline-architecture-wiki`（`git@coding.jd.com:sz-fe/pipeline-architecture-wiki.git`）维护通用方法论副本 + 京东特定实践 + Skill 工程化 + 模板。阶段 1 ✅：建立 ai-handbook 顶级导航；阶段 2 ✅：迁移 `/ai-coding/architecture/` 5 篇已 published 方法论到 `/ai-harness/` + 删除旧子章；阶段 3 ✅：迁移 `/ai-coding/workflows/` + `/ai-coding/patterns/` 6 篇到 `/ai-harness/workflows/` + `/ai-harness/patterns/`；阶段 4：协调 wiki 侧清理通用方法论，仅留京东特定。
 
 任何一次结构调整必须**同步改** [.vitepress/config.ts](./.vitepress/config.ts) 里对应的 `sidebar` 数组，否则新页面显示不出来。
 
@@ -238,7 +240,8 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 - [x] GitHub Pages 部署
 - [x] 阶段 1：建立 AI Harness 工程顶级导航 + 首页 feature 卡 + AGENTS.md 关系说明
 - [x] 阶段 2：迁移 `/ai-coding/architecture/` → `/ai-harness/`，建立完整 sidebar
-- [ ] 阶段 3：协调 wiki 侧清理通用方法论，仅留京东特定实践
+- [x] 阶段 3：迁移 `/ai-coding/workflows/` + `/ai-coding/patterns/` → `/ai-harness/workflows/` + `/ai-harness/patterns/`，建立团队工作量与常见模式两个分组（v0.5）
+- [ ] 阶段 4：协调 wiki 侧清理通用方法论，仅留京东特定实践
 - [ ] 填充 ai-coding/tools/ 横评（最高 ROI）
 - [ ] 填充 ai-core/fundamentals/ 基础原理
 - [ ] 后续：i18n、Algolia 搜索

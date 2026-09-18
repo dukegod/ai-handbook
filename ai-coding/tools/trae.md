@@ -126,8 +126,7 @@ Trae 的技能文件（`.trae/skills/`）与规则不同——**按需加载**�
 
 ## 下一步
 
-- 团队引入 → [团队 AI 工作流](../workflows/team)
-- 企业部署 → [企业部署指南](../enterprise/deployment)
+- 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
 ## 如果你想
 

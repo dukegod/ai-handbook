@@ -23,7 +23,7 @@ lastUpdated: 2026-09-17
 阅读本篇需要你先了解：
 
 - [设计理念：人机分工](./design-philosophy)
-- [测试生成模式](/ai-coding/patterns/testing)
+- [测试生成模式](/ai-harness/patterns/testing)
 
 ## 一、TDD 在 AI Native 中的角色
 

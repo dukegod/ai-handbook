@@ -42,8 +42,6 @@ verifiedWith:
 
 - 权重可下载，可私有化部署，可控成本
 - 适合：企业私有化、数据敏感场景、二次开发
-- 部署选型见 [AI Coding · 企业部署](/ai-coding/enterprise/deployment)
-
 **闭源线**（豆包、文心、混元）：
 
 - API 调用，免运维，迭代由厂商推进
@@ -78,6 +76,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 私有化部署 → [AI Coding · 企业部署](/ai-coding/enterprise/deployment)
 - 对比七家厂商 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 评估开源模型 → [开源项目推荐](/ai-trends/research-highlights/open-source)

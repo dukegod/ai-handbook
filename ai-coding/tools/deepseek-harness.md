@@ -201,9 +201,7 @@ src/common/AGENTS.md    # 仅 common 相关文件被涉及时生效
 
 - 对比 PI-agent → [PI-agent 深度评测](./pi-agent)
 - 对比 Claude Code → [Claude Code 深度评测](./claude-code)
-- 团队引入 → [团队 AI 工作流](../workflows/team)
-
-## 如果你想
+- 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
 - 对比主流工具 → [AI Coding 工具全景](./overview)
 - 选型决策 → [AI Coding 工具全景](./overview)

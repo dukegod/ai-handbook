@@ -44,10 +44,7 @@ pnpm preview      # 本地预览构建产物
 │   ├── training/                 数据工程 / 推理优化 / 量化蒸馏
 │   └── eval/                     基准测试 / 评估方法论
 ├── ai-coding/                  AI Coding 落地
-│   ├── tools/                    工具横评（Claude Code / Cursor / Copilot）
-│   ├── workflows/                团队工作流 / CI/CD / Code Review
-│   ├── patterns/                 重构 / 测试 / 文档生成模式
-│   └── enterprise/               部署 / 安全 / 成本控制
+│   └── tools/                    工具横评（Claude Code / Cursor / Copilot）
 ├── ai-trends/                  AI 产品动向
 │   ├── product-updates/          月度速报
 │   ├── model-selection/          7 厂商横向对比 / 模型选型决策树

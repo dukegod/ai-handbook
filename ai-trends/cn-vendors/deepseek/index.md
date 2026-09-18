@@ -66,4 +66,3 @@ DeepSeek 是中国开源大模型的技术品牌担当：**训练成本低 + 开
 ## 如果你想
 
 - 看开源生态 → [开源项目推荐](/ai-trends/research-highlights/open-source)
-- 私有化部署 → [AI Coding · 企业部署](/ai-coding/enterprise/deployment)

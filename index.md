@@ -34,7 +34,7 @@ features:
     linkText: 探索技术核心 →
   - icon: ⚡
     title: AI Coding 落地
-    details: Claude Code / Cursor / Copilot 横评，团队工作流、CI/CD 集成、企业落地实战。
+    details: Claude Code / Cursor / Copilot 工具横评——选工具、看评测、形成选型决策。
     link: /ai-coding/
     linkText: 落地实战 →
   - icon: 📡
@@ -64,7 +64,7 @@ features:
     linkText: 翻阅 Cookbook →
   - icon: 🧬
     title: AI Harness 工程
-    details: AI 为默认执行者的研发范式——设计理念、三层架构、资产飞轮、TDD 质量保障与迁移路径的方法论合集。
+    details: AI 为默认执行者的研发范式——设计理念、三层架构、资产飞轮、TDD 质量、团队工作量与常见模式的方法论合集。
     link: /ai-harness/
     linkText: 进入 Harness →
   - icon: 🛠
@@ -81,8 +81,8 @@ features:
 它覆盖六个方向：
 
 1. **AI 核心技术** —— Transformer 原理、模型架构、训练方法、评估基准，理解 AI 的底层逻辑
-2. **AI Coding 落地** —— 工具横评、团队工作流、常见模式、企业部署，把 AI 真正用起来
-3. **AI Harness 工程** —— AI 为默认执行者的研发范式：设计理念、三层架构、资产飞轮、TDD 质量、迁移路径（方法论合集）
+2. **AI Coding 落地** —— AI 编程工具横评，选工具、看评测
+3. **AI Harness 工程** —— AI 为默认执行者的研发范式：设计理念、三层架构、资产飞轮、TDD 质量、团队工作量与常见模式（方法论合集）
 4. **产品动向** —— 月度速报、论文速递、开源推荐，保持对 AI 生态的持续跟踪
 5. **模型与厂商** —— 厂商档案、横向对比与选型决策，做出更好的技术选择
 6. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力（已有 100+ 篇 published）
