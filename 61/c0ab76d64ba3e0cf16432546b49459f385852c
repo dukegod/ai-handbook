@@ -1,0 +1,14 @@
+ai-coding/tools/openclaw.md
+  h_a427b9af6cd304 1-291
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "61c0ab76d64ba3e0cf16432546b49459f385852c",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
