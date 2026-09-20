@@ -1,0 +1,21 @@
+AGENTS.md
+  s_a290d53950a209::t_69a5fda98c2daa 12,80,260
+index.md
+  s_a290d53950a209::t_7a498bb7867b77 21,36-37,84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "85f59885a044c21ca141e07c1df6ac59adaa1d63",
+  "prompts": {},
+  "sessions": {
+    "s_a290d53950a209": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0bc9e-4b41-7ed3-8c90-0b3718d646d3",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
