@@ -12,7 +12,7 @@ verifiedWith:
 
 # Claude Code 深度评测
 
-> **TL;DR**：Agent 能力最强的 AI Coding 工具——MCP 生态、Subagent、Skills 让它不只写代码，还能"做事"。
+> **TL;DR**：Agent 能力最强的 AI 工具——MCP 生态、Subagent、Skills 让它不只写代码，还能"做事"。
 
 ⏱ 预计阅读时间：7 分钟
 
@@ -162,7 +162,7 @@ src/common/CLAUDE.md    # 仅 common 相关文件被涉及时生效
 
 - [Claude Code 官方文档](https://code.claude.com/docs)
 - [Claude Code 精通](/claude-code/)
-- [AI Coding 工具全景](./overview)
+- [AI 工具全景](./overview)
 
 ## 下一步
 

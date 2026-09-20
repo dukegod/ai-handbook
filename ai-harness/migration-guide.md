@@ -165,4 +165,4 @@ lastUpdated: 2026-09-17
 
 - 建立质量保障 → [TDD 质量保障](./tdd-quality)
 - 了解资产沉淀 → [资产飞轮机制](./asset-flywheel)
-- 看工具对比 → [AI Coding 工具全景](/ai-coding/tools/overview)
+- 看工具对比 → [AI 工具全景](/ai-coding/tools/overview)

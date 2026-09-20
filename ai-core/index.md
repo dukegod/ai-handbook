@@ -17,7 +17,7 @@ lastUpdated: 2026-08-13
 - 需要选型（Dense vs MoE、长上下文方案）的技术决策者
 - 对 AI 训练流程好奇的从业者
 
-如果你只想用 AI 工具，[AI Coding 落地](/ai-coding/) 更适合你。
+如果你只想用 AI 工具，[AI 工具](/ai-coding/) 更适合你。
 
 ## 章节地图
 
@@ -42,7 +42,7 @@ flowchart TD
 
 - 从原理开始 → [Transformer 架构](/ai-core/fundamentals/transformer)
 - 直接看架构路线 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
-- 动手实操 → [AI Coding 落地](/ai-coding/)
+- 动手实操 → [AI 工具](/ai-coding/)
 
 ## 如果你想
 

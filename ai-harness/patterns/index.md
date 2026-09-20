@@ -36,5 +36,5 @@ lastUpdated: 2026-09-17
 
 ## 如果你想
 
-- 看工具横评 → [AI Coding 落地](/ai-coding/tools/overview)
+- 看工具横评 → [AI 工具](/ai-coding/tools/overview)
 - 看实战 → [Cookbook](/cookbook/)

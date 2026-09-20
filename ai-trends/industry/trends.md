@@ -83,6 +83,6 @@ flowchart LR
 
 ## 如果你想
 
-- 落地 Agent 工作流 → [AI Coding 落地](/ai-coding/)
+- 落地 Agent 工作流 → [AI 工具](/ai-coding/)
 - 理解 MCP → [MCP 是什么](/claude-code/mcp/what-is-mcp)
 - 评估技术风险 → [AI 核心技术](/ai-core/)

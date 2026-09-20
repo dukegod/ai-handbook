@@ -97,7 +97,7 @@ verifiedWith:
 
 - [OpenAI Codex](https://openai.com/index/codex/)
 - [Trae 官网](https://trae.ai)
-- [AI Coding 工具全景](./overview)
+- [AI 工具全景](./overview)
 
 ## 下一步
 
@@ -105,5 +105,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 对比主流工具 → [AI Coding 工具全景](./overview)
-- 选型决策 → [AI Coding 工具全景](./overview)
+- 对比主流工具 → [AI 工具全景](./overview)
+- 选型决策 → [AI 工具全景](./overview)

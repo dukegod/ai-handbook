@@ -43,7 +43,7 @@ pnpm preview      # 本地预览构建产物
 │   ├── model-arch/               Dense vs MoE / 长上下文 / 多模态
 │   ├── training/                 数据工程 / 推理优化 / 量化蒸馏
 │   └── eval/                     基准测试 / 评估方法论
-├── ai-coding/                  AI Coding 落地
+├── ai-coding/                  AI 工具
 │   └── tools/                    工具横评（Claude Code / Cursor / Copilot）
 ├── ai-trends/                  AI 产品动向
 │   ├── product-updates/          月度速报

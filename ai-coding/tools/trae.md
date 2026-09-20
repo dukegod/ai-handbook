@@ -122,7 +122,7 @@ Trae 的技能文件（`.trae/skills/`）与规则不同——**按需加载**�
 ## 参考
 
 - [Trae 官网](https://trae.ai)
-- [AI Coding 工具全景](./overview)
+- [AI 工具全景](./overview)
 
 ## 下一步
 
@@ -130,5 +130,5 @@ Trae 的技能文件（`.trae/skills/`）与规则不同——**按需加载**�
 
 ## 如果你想
 
-- 对比主流工具 → [AI Coding 工具全景](./overview)
-- 选型决策 → [AI Coding 工具全景](./overview)
+- 对比主流工具 → [AI 工具全景](./overview)
+- 选型决策 → [AI 工具全景](./overview)

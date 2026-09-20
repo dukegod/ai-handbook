@@ -63,7 +63,7 @@ export default withMermaid(defineConfig({
     nav: [
       { text: 'AI 入门', link: '/getting-started/', activeMatch: '/getting-started/' },
       { text: 'AI 核心技术', link: '/ai-core/', activeMatch: '/ai-core/' },
-      { text: 'AI Coding', link: '/ai-coding/', activeMatch: '/ai-coding/' },
+      { text: 'AI 工具', link: '/ai-coding/', activeMatch: '/ai-coding/' },
       { text: 'AI Harness 工程', link: '/ai-harness/', activeMatch: '/ai-harness/' },
       {
         text: 'Claude',
@@ -433,18 +433,18 @@ export default withMermaid(defineConfig({
       ],
 
       // ----------------------------------------------------------------------
-      // AI Coding 落地
+      // AI 工具
       // ----------------------------------------------------------------------
       '/ai-coding/': [
         {
-          text: 'AI Coding 落地',
+          text: 'AI 工具',
           items: [{ text: '总览', link: '/ai-coding/' }],
         },
         {
           text: '工具横评',
           collapsed: false,
           items: [
-            { text: P('AI Coding 工具全景'), link: '/ai-coding/tools/overview' },
+            { text: P('AI 工具全景'), link: '/ai-coding/tools/overview' },
           ],
         },
         {
@@ -457,6 +457,7 @@ export default withMermaid(defineConfig({
             { text: P('Codex CLI 深度评测'), link: '/ai-coding/tools/codex-cli' },
             { text: P('Trae 深度评测'), link: '/ai-coding/tools/trae' },
             { text: P('腾讯 CodeBuddy 深度评测'), link: '/ai-coding/tools/codebuddy' },
+            { text: P('OpenClaw 深度评测'), link: '/ai-coding/tools/openclaw' },
           ],
         },
         {

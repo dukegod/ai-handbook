@@ -1,6 +1,6 @@
 ---
 title: 腾讯 CodeBuddy 深度评测
-description: 腾讯云代码助手——专做编程的 3 形态 AI Coding 工具(插件/IDE/CLI),中文+国产化合规
+description: 腾讯云代码助手——专做编程的 3 形态 AI 工具(插件/IDE/CLI),中文+国产化合规
 audience: intermediate
 difficulty: 🟡
 status: draft
@@ -76,7 +76,7 @@ verifiedWith:
 
 - [腾讯云 CodeBuddy 产品概述](https://cloud.tencent.com/document/api/1081/104237)(访问于 2026-09-17)
 - [CodeBuddy Agent SDK 文档](https://cloud.tencent.com/document/product/1831/137023)(访问于 2026-09-17)
-- [AI Coding 工具全景](./overview)
+- [AI 工具全景](./overview)
 
 ## 下一步
 
@@ -85,5 +85,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 对比主流 AI Coding 工具 → [工具全景](./overview)
+- 对比主流 AI 工具 → [工具全景](./overview)
 - 模型路由策略 → [多模型协作](/ai-trends/model-selection/model-selection-guide)

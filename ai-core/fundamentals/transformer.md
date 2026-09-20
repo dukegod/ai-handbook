@@ -114,4 +114,4 @@ Transformer 不擅长精确数值计算、实时推理、超长序列（>1M）�
 
 - 看各家模型的架构选择 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 了解 Dense vs MoE → [Dense vs MoE](../model-arch/dense-vs-moe)
-- 动手实操 → [AI Coding 落地](/ai-coding/)
+- 动手实操 → [AI 工具](/ai-coding/)

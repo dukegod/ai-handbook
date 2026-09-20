@@ -99,7 +99,7 @@ verifiedWith:
 
 - [腾讯云 WorkBuddy 产品概述](https://www.codebuddy.cn/docs/enterprise/)(访问于 2026-09-17)
 - [WorkBuddy 国际版文档](https://www.workbuddy.ai/docs/workbuddy/Quickstart)(访问于 2026-09-17)
-- [AI Coding 工具全景](./overview)
+- [AI 工具全景](./overview)
 
 ## 下一步
 
@@ -108,5 +108,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 对比主流 AI Coding 工具 → [工具全景](./overview)
+- 对比主流 AI 工具 → [工具全景](./overview)
 - 看落地模式 → [AI Harness 工程](/ai-harness/)

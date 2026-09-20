@@ -211,4 +211,4 @@ test('search history persists across page reload', async () => {
 
 - 理解设计理念 → [设计理念：人机分工](./design-philosophy)
 - 改造架构 → [三层架构与模块模板](./three-layer-architecture)
-- 看工具对比 → [AI Coding 工具全景](/ai-coding/tools/overview)
+- 看工具对比 → [AI 工具全景](/ai-coding/tools/overview)

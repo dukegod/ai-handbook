@@ -1,6 +1,6 @@
 ---
-title: AI Coding 工具全景
-description: Claude Code / Cursor / Copilot / Codex / Trae / PI-agent / DeepSeek Harness 横向对比——形态、能力、价格、适用场景
+title: AI 工具全景
+description: Claude Code / Cursor / Copilot / Codex / Trae / PI-agent / DeepSeek Harness / OpenClaw 横向对比——形态、能力、价格、适用场景
 audience: beginner
 difficulty: 🟢
 status: published
@@ -24,31 +24,32 @@ verifiedWith:
       accessedAt: 2026-08-17
 ---
 
-# AI Coding 工具全景
+# AI 工具全景
 
-> **TL;DR**：7 大工具、3 种形态——CLI（Claude Code / Codex）、IDE（Cursor / Trae）、插件（Copilot）、框架（PI-agent / DeepSeek Harness）。选型看你的工作流偏好。
+> **TL;DR**：8 大工具、4 种形态——CLI（Claude Code / Codex）、IDE（Cursor / Trae）、插件（Copilot）、框架（PI-agent / DeepSeek Harness）、多平台 Agent（OpenClaw）。选型看你的工作流偏好。
 
 ⏱ 预计阅读时间：8 分钟
 
 ## 你能在这里学到
 
-- 7 大 AI Coding 工具的核心差异
+- 8 大 AI 工具的核心差异
 - 产品 vs 框架的本质区别
-- CLI vs IDE vs 插件三种形态的优劣
+- CLI vs IDE vs 插件 / 框架 / 多平台 Agent 四种形态的优劣
 - 价格、能力、适用场景的横向对比
 - 如何根据团队情况选型
 
-## 7 大工具速查
+## 8 大工具速查
 
 | 工具 | 厂商 | 形态 | 定价 | 核心特色 |
 |------|------|------|------|----------|
 | **Claude Code** | Anthropic | CLI | $20-200/月 | Agent 能力最强、MCP 生态 |
 | **Cursor** | Cursor Inc. | IDE | $20-40/月 | AI-native IDE、多模型支持 |
-| **GitHub Copilot** | Microsoft/GitHub | 插件 | $10-39/月 | 生态最大、VS Code 集成最深 |
+| **GitHub Copilot** | Microsoft/GitHub | 插件 | $10-19/月 | 生态最大、VS Code 集成最深 |
 | **Codex CLI** | OpenAI | CLI | 按 token | 推理能力最强 |
 | **Trae** | 字节跳动 | IDE | 免费 | 中文优化、免费 |
 | **PI-agent** | Earendil | CLI 框架 | 免费 MIT | 极简框架、15+ 模型、极致扩展 |
-| **DeepSeek Harness** | DeepSeek | Agent 框架 | 免费 MIT | 插件一切、Cordis 内核、144k Star |
+| **DeepSeek Harness** | DeepSeek | Agent 框架 | 免费 MIT | 插件一切、Cordis 内核 |
+| **OpenClaw** | Steinberger | 多平台 Agent | 免费 MIT + LLM token | self-hosted、跨 10+ 聊天平台、Heartbeat 主动触发 |
 
 ## 三种形态
 
@@ -103,19 +104,37 @@ verifiedWith:
 - 缺乏开箱即用体验
 - 生态成熟度参差不齐
 
+### 多平台 Agent 形态（OpenClaw）
+
+**优势**：
+- 自托管：数据完全本地
+- 跨 10+ 聊天平台（WhatsApp / Telegram / Discord / Slack / Signal / iMessage / Matrix / Email）
+- Heartbeat 主动触发：可定时巡检 / 自动处理后台任务
+- 基于 pi-agent-core 内核 + 完整工具生态
+- 8 层工具策略 + Docker 沙箱，安全模型最工程化
+
+**劣势**：
+- 需要自托管 VPS（$3-5/月）
+- 安全配置复杂度高，新手慎入
+- 不专注 IDE 集成，编码体验不如 Cursor / Claude Code
+- 仍依赖第三方 LLM API key
+
 ## 能力对比
 
-| 能力 | Claude Code | Cursor | Copilot | Codex CLI | Trae | PI-agent | DeepSeek Harness |
-|------|-------------|--------|---------|-----------|------|----------|-----------------|
-| **代码补全** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **对话式编程** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Agent 能力** | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐（需扩展） | ⭐⭐⭐（插件） |
-| **MCP 生态** | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐ | ⭐ | ⭐（扩展可选） | ⭐（插件可选） |
-| **多模型支持** | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐⭐ | ⭐⭐⭐（15+） | ⭐⭐（插件扩展） |
-| **CI/CD 集成** | ⭐⭐⭐ | ⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐ | ⭐⭐ | ⭐⭐ |
-| **中文优化** | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
-| **可扩展性** | ⭐⭐ | ⭐⭐ | ⭐ | ⭐ | ⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| **可观测性** | ⭐⭐ | ⭐ | ⭐ | ⭐ | ⭐ | ⭐ | ⭐⭐⭐⭐ |
+| 能力 | Claude Code | Cursor | Copilot | Codex CLI | Trae | PI-agent | DeepSeek Harness | OpenClaw |
+|------|-------------|--------|---------|-----------|------|----------|-----------------|----------|
+| **代码补全** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅（技能驱动） |
+| **对话式编程** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Agent 能力** | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐（需扩展） | ⭐⭐⭐（插件） | ⭐⭐⭐⭐ |
+| **MCP 生态** | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐ | ⭐ | ⭐（扩展可选） | ⭐（插件可选） | ⭐⭐⭐ |
+| **多模型支持** | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐⭐ | ⭐⭐⭐（15+） | ⭐⭐（插件扩展） | ⭐⭐⭐⭐ |
+| **CI/CD 集成** | ⭐⭐⭐ | ⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ |
+| **中文优化** | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
+| **可扩展性** | ⭐⭐ | ⭐⭐ | ⭐ | ⭐ | ⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| **可观测性** | ⭐⭐ | ⭐ | ⭐ | ⭐ | ⭐ | ⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐（事件日志） |
+| **跨聊天平台** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ⭐⭐ | ⭐⭐⭐⭐⭐（10+） |
+| **主动触发** | ⭐（hooks） | ⭐ | ⭐ | ⭐ | ⭐ | ⭐⭐（扩展） | ⭐⭐⭐ | ⭐⭐⭐⭐⭐（Heartbeat） |
+| **数据归属** | 云端 | 云端 | 云端 | 云端 | 云端 | 本地 | 本地 | 本地（self-hosted） |
 
 ## 价格对比
 
@@ -128,6 +147,7 @@ verifiedWith:
 | Trae | 免费 | — | — |
 | PI-agent | 免费 MIT | — | — |
 | DeepSeek Harness | 免费 MIT | — | — |
+| OpenClaw | 免费 MIT + VPS $3-5/月 + LLM token | — | — |
 
 ## 选型决策树
 
@@ -138,13 +158,14 @@ flowchart TD
     B -->|IDE 优先| D{多模型？}
     B -->|最低成本| E[Copilot / Trae]
     B -->|极致定制| J{需要完整运行时？}
-    
+    B -->|跨聊天平台 / 自托管| M[OpenClaw]
+
     C -->|最强| F[Claude Code]
     C -->|推理优先| G[Codex CLI]
-    
+
     D -->|是| H[Cursor]
     D -->|否| I[Trae]
-    
+
     J -->|轻量框架| K[PI-agent]
     J -->|深度可观测| L[DeepSeek Harness]
 ```
@@ -157,10 +178,11 @@ flowchart TD
 - **中文场景 + 预算有限** → Trae
 - **高级用户 + 极简定制** → PI-agent
 - **需要深度可观测性** → DeepSeek Harness
+- **跨聊天平台 / 数据本地化 / 主动定时任务** → OpenClaw
 
 ## 跨工具规范：AGENTS.md 标准
 
-团队内多人使用不同 AI Coding 工具时，**规则文件不兼容**是最大痛点。行业已收敛到一套标准：
+团队内多人使用不同 AI 工具时，**规则文件不兼容**是最大痛点。行业已收敛到一套标准：
 
 ### AGENTS.md 标准
 
@@ -185,6 +207,7 @@ flowchart TD
 | **Copilot** | `.github/copilot-instructions.md` | — | ⚠️ 有限 |
 | **PI-agent** | `AGENTS.md` + `SYSTEM.md` | 子目录 AGENTS.md | ✅ 原生支持 |
 | **DeepSeek Harness** | `AGENTS.md` + Cordis 插件 | 子目录 AGENTS.md | ✅ 原生支持 |
+| **OpenClaw** | `AGENTS.md` + 技能系统 | 子目录 AGENTS.md | ✅ 原生支持（基于 pi-agent-core） |
 
 ### 多工具团队的最佳实践
 
@@ -209,7 +232,7 @@ repo/
 
 **工具不是万能**
 
-AI Coding 工具是"辅助"，不是"替代"。核心设计、架构决策仍需人工。
+AI 工具是"辅助"，不是"替代"。核心设计、架构决策仍需人工。
 
 **多工具混用**
 
@@ -228,6 +251,7 @@ AI Coding 工具是"辅助"，不是"替代"。核心设计、架构决策仍需
 - 深入 Cursor → [Cursor 深度评测](./cursor)
 - 深入 PI-agent → [PI-agent 深度评测](./pi-agent)
 - 深入 DeepSeek Harness → [DeepSeek Harness 深度评测](./deepseek-harness)
+- 深入 OpenClaw → [OpenClaw 深度评测](./openclaw)
 - 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
 - 选模型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)

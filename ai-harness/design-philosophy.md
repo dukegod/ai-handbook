@@ -170,6 +170,6 @@ AI 负责：在明确边界内执行编码、测试、文档、评审等任务
 
 ## 如果你想
 
-- 看工具对比 → [AI Coding 工具全景](/ai-coding/tools/overview)
+- 看工具对比 → [AI 工具全景](/ai-coding/tools/overview)
 - 学习 Claude Code → [Claude Code 精通](/claude-code/)
 - 团队工作流 → [团队 AI 工作流](/ai-harness/workflows/team)

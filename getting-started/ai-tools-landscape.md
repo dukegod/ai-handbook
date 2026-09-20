@@ -75,5 +75,5 @@ lastUpdated: 2026-08-14
 
 ## 如果你想
 
-- 开始用 AI 编程 → [AI Coding 落地](/ai-coding/)
+- 开始用 AI 编程 → [AI 工具](/ai-coding/)
 - 跟踪产品更新 → [月度产品速报](/ai-trends/product-updates/monthly)

@@ -99,7 +99,7 @@ src/common/AGENTS.md    # 仅 common 相关文件被涉及时生效
 ## 参考
 
 - [OpenAI Codex](https://openai.com/index/codex/)
-- [AI Coding 工具全景](./overview)
+- [AI 工具全景](./overview)
 
 ## 下一步
 
@@ -107,5 +107,5 @@ src/common/AGENTS.md    # 仅 common 相关文件被涉及时生效
 
 ## 如果你想
 
-- 对比主流工具 → [AI Coding 工具全景](./overview)
-- 选型决策 → [AI Coding 工具全景](./overview)
+- 对比主流工具 → [AI 工具全景](./overview)
+- 选型决策 → [AI 工具全景](./overview)

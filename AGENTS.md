@@ -9,7 +9,7 @@
 **AI Handbook** 是一份面向中文读者、长期维护的 **AI 全栈知识库**，覆盖六个方向：
 
 1. **AI 核心技术** —— Transformer / 注意力 / 预训练 / RLHF / MoE / 多模态
-2. **AI Coding 落地** —— AI 编程工具横评（选工具 / 用工具）
+2. **AI 工具** —— AI 工具横评（CLI / IDE / 插件 / 框架 / 多平台 Agent 5 种形态）
 3. **AI Harness 工程** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 团队工作量 / 常见模式 / 迁移路径（公开方法论合集，与内部 Foundation Kit `pipeline-architecture-wiki` 互补）
 4. **产品动向** —— 月度速报 / 论文速递 / 开源推荐 / 行业趋势
 5. **模型与厂商** —— 国外厂商（Anthropic / OpenAI / xAI）+ 国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen），横向对比与选型决策
@@ -77,7 +77,7 @@ GitHub Pages 费用与可见性：
 index.md            首页（layout: home）
 getting-started/    AI 入门（通用 AI 概念 + 工具选型）
 ai-core/            AI 核心技术（fundamentals / model-arch / training / eval）
-ai-coding/          AI Coding 落地（tools）
+ai-coding/          AI 工具（tools）
 ai-trends/          产品动向
 ├── product-updates/   月度速报
 ├── vendors/           国外厂商（Anthropic / OpenAI / xAI）
@@ -257,4 +257,4 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 - [Anthropic 官方文档](https://docs.claude.com/)
 - [OpenAI 官方文档](https://platform.openai.com/docs)
 - [AI 核心技术](/ai-core/) — Transformer / 注意力 / 预训练等基础知识
-- [AI Coding 落地](/ai-coding/) — 工具横评与工作流
+- [AI 工具](/ai-coding/) — 工具横评与工作流

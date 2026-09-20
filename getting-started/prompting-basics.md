@@ -69,7 +69,7 @@ lastUpdated: 2026-08-14
 
 ## 下一步
 
-- 完成本章！→ 去 [AI 核心技术](/ai-core/) 或 [AI Coding 落地](/ai-coding/) 深入
+- 完成本章！→ 去 [AI 核心技术](/ai-core/) 或 [AI 工具](/ai-coding/) 深入
 - 用 Claude 时 → [Claude 能力全景](/claude-capabilities/)
 
 ## 如果你想

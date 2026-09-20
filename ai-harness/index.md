@@ -64,6 +64,6 @@ lastUpdated: 2026-09-17
 
 ## 如果你想
 
-- 看 AI Coding 工具对比 → [AI Coding 落地](/ai-coding/tools/overview)
+- 看 AI 工具对比 → [AI 工具](/ai-coding/tools/overview)
 - 学习 Claude Code → [Claude Code 精通](/claude-code/)
 - 看实战 → [Cookbook](/cookbook/)

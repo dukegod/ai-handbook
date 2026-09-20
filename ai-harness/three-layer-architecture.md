@@ -178,4 +178,4 @@ good case: 拆分为 FilterBar / MetricCards / TrendChart / PivotTable / DataExp
 
 - 理解设计理念 → [设计理念：人机分工](./design-philosophy)
 - 迁移到 AI Native → [迁移路径](./migration-guide)
-- 看工具对比 → [AI Coding 工具全景](/ai-coding/tools/overview)
+- 看工具对比 → [AI 工具全景](/ai-coding/tools/overview)

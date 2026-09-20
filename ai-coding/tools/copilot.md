@@ -153,7 +153,7 @@ Copilot 原生**不支持路径作用域**——`copilot-instructions.md` 是全
 ## 参考
 
 - [GitHub Copilot 文档](https://docs.github.com/copilot)
-- [AI Coding 工具全景](./overview)
+- [AI 工具全景](./overview)
 
 ## 下一步
 
@@ -161,4 +161,4 @@ Copilot 原生**不支持路径作用域**——`copilot-instructions.md` 是全
 - 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
 - 对比 Claude Code → [Claude Code 深度评测](./claude-code)
-- 选型决策 → [AI Coding 工具全景](./overview)
+- 选型决策 → [AI 工具全景](./overview)

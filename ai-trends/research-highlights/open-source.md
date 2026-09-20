@@ -63,7 +63,7 @@ verifiedWith:
 | --- | --- | --- |
 | RAGFlow | 文档级 RAG | 企业知识库问答 |
 
-> 详细对比见 [AI Coding · 工具全景](/ai-coding/tools/overview)。
+> 详细对比见 [AI 工具 · 工具全景](/ai-coding/tools/overview)。
 
 ## 三、demo 陷阱检查清单
 
@@ -91,7 +91,7 @@ verifiedWith:
 ## 下一步
 
 - 看论文追前沿 → [重要论文速递](/ai-trends/research-highlights/papers)
-- 落地到团队工作流 → [AI Coding 落地](/ai-coding/)
+- 落地到团队工作流 → [AI 工具](/ai-coding/)
 
 ## 如果你想
 

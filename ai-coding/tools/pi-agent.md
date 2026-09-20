@@ -470,7 +470,7 @@ pi
 - [pi.dev 官网](https://pi.dev)
 - [GitHub 仓库](https://github.com/badlogic/pi-mono)（4 万 Star）
 - [DeepSeek 官方中文文档](https://github.com/deepseek-ai/awesome-deepseek-agent/blob/main/docs/pi_mono.zh-CN.md)
-- [AI Coding 工具全景](./overview)
+- [AI 工具全景](./overview)
 - [DeepSeek Harness 深度评测](./deepseek-harness)
 
 ## 下一步
@@ -479,5 +479,5 @@ pi
 - 对比 DeepSeek Harness → [DeepSeek Harness 深度评测](./deepseek-harness)
 - 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
-- 对比主流工具 → [AI Coding 工具全景](./overview)
-- 选型决策 → [AI Coding 工具全景](./overview)
+- 对比主流工具 → [AI 工具全景](./overview)
+- 选型决策 → [AI 工具全景](./overview)

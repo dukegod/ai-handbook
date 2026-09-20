@@ -66,7 +66,7 @@ lastUpdated: 2026-08-14
 ## 下一步
 
 - 接着读 → [主流 AI 产品全景](./ai-tools-landscape)
-- 想安全地用于编程 → [AI Coding 落地](/ai-coding/)
+- 想安全地用于编程 → [AI 工具](/ai-coding/)
 
 ## 如果你想
 

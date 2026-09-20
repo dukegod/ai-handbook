@@ -36,9 +36,9 @@ lastUpdated: 2026-08-13
 
 - 看最新动态 → [月度产品速报](/ai-trends/product-updates/monthly)
 - 深入技术 → [AI 核心技术](/ai-core/)
-- 落地实践 → [AI Coding 落地](/ai-coding/)
+- 落地实践 → [AI 工具](/ai-coding/)
 
 ## 如果你想
 
-- 选工具 → [AI Coding · 工具全景](/ai-coding/tools/overview)
+- 选工具 → [AI 工具 · 工具全景](/ai-coding/tools/overview)
 - 看厂商档案 → [厂商档案](/ai-trends/vendors/)

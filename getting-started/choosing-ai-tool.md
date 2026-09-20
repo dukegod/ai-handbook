@@ -68,7 +68,7 @@ lastUpdated: 2026-08-14
 ## 下一步
 
 - 接着读 → [提示词入门](./prompting-basics)
-- 确定了工具 → 去对应章节深入（[Claude](/claude-capabilities/) / [AI Coding](/ai-coding/)）
+- 确定了工具 → 去对应章节深入（[Claude](/claude-capabilities/) / [AI 工具](/ai-coding/)）
 
 ## 如果你想
 

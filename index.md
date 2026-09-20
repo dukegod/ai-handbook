@@ -18,7 +18,7 @@ hero:
       text: 完整大纲
       link: /contributing/roadmap
     - theme: alt
-      text: AI Coding 实战
+      text: AI 工具实战
       link: /ai-coding/
 
 features:
@@ -33,8 +33,8 @@ features:
     link: /ai-core/
     linkText: 探索技术核心 →
   - icon: ⚡
-    title: AI Coding 落地
-    details: Claude Code / Cursor / Copilot 工具横评——选工具、看评测、形成选型决策。
+    title: AI 工具
+    details: Claude Code / Cursor / Copilot / OpenClaw 工具横评——5 种形态、8 大工具、选型决策。
     link: /ai-coding/
     linkText: 落地实战 →
   - icon: 📡
@@ -81,7 +81,7 @@ features:
 它覆盖六个方向：
 
 1. **AI 核心技术** —— Transformer 原理、模型架构、训练方法、评估基准，理解 AI 的底层逻辑
-2. **AI Coding 落地** —— AI 编程工具横评，选工具、看评测
+2. **AI 工具** —— AI 工具横评（CLI / IDE / 插件 / 框架 / 多平台 Agent 5 种形态）
 3. **AI Harness 工程** —— AI 为默认执行者的研发范式：设计理念、三层架构、资产飞轮、TDD 质量、团队工作量与常见模式（方法论合集）
 4. **产品动向** —— 月度速报、论文速递、开源推荐，保持对 AI 生态的持续跟踪
 5. **模型与厂商** —— 厂商档案、横向对比与选型决策，做出更好的技术选择

@@ -52,7 +52,7 @@ flowchart LR
 读完本章后：
 
 - **想知道底层原理** → [AI 核心技术](/ai-core/)
-- **想在编程中落地** → [AI Coding 落地](/ai-coding/)
+- **想在编程中落地** → [AI 工具](/ai-coding/)
 - **想跟踪行业动态** → [AI 产品动向](/ai-trends/)
 
 ## 如果你想
