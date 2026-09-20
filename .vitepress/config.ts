@@ -54,6 +54,11 @@ export default withMermaid(defineConfig({
         'elkjs',
       ],
     },
+    // vitepress-plugin-sidebar-toggle 默认 external 化 SSR，
+    // 加 noExternal 让 SSR 时也走 Vite 转译，避免报 undefined exports。
+    ssr: {
+      noExternal: ['vitepress-plugin-sidebar-toggle'],
+    },
   },
 
   themeConfig: {
@@ -106,7 +111,7 @@ export default withMermaid(defineConfig({
         },
         {
           text: '快速上手',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '什么是 Claude Code', link: '/claude-code/getting-started/what-is-claude-code' },
             { text: '安装与认证', link: '/claude-code/getting-started/installation' },
@@ -117,7 +122,7 @@ export default withMermaid(defineConfig({
         },
         {
           text: '基础',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '会话 Session', link: '/claude-code/basics/sessions' },
             { text: '上下文窗口', link: '/claude-code/basics/context-window' },
@@ -230,7 +235,7 @@ export default withMermaid(defineConfig({
         },
         {
           text: '模型家族',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '模型概览', link: '/claude-capabilities/models/overview' },
           ],
@@ -329,7 +334,7 @@ export default withMermaid(defineConfig({
         },
         {
           text: '基础原理',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: 'Transformer 架构', link: '/ai-core/fundamentals/transformer' },
             { text: '注意力机制', link: '/ai-core/fundamentals/attention' },
@@ -376,7 +381,7 @@ export default withMermaid(defineConfig({
         },
         {
           text: '产品动态',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '月度产品速报', link: '/ai-trends/product-updates/monthly' },
           ],
@@ -442,14 +447,14 @@ export default withMermaid(defineConfig({
         },
         {
           text: '工具横评',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: P('AI 工具全景'), link: '/ai-coding/tools/overview' },
           ],
         },
         {
           text: '📦 产品',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: P('Claude Code 深度评测'), link: '/ai-coding/tools/claude-code' },
             { text: P('Cursor 深度评测'), link: '/ai-coding/tools/cursor' },
@@ -462,7 +467,7 @@ export default withMermaid(defineConfig({
         },
         {
           text: '🔧 框架',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: P('PI-agent 深度评测'), link: '/ai-coding/tools/pi-agent' },
             { text: P('DeepSeek Harness 深度评测'), link: '/ai-coding/tools/deepseek-harness' },
@@ -470,7 +475,7 @@ export default withMermaid(defineConfig({
         },
         {
           text: '🆕 桌面 AI 智能体',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: P('腾讯 WorkBuddy 深度评测'), link: '/ai-coding/tools/workbuddy' },
           ],
@@ -507,7 +512,7 @@ export default withMermaid(defineConfig({
         },
         {
           text: '方法论',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '设计理念：人机分工', link: '/ai-harness/design-philosophy' },
             { text: '三层架构与模块模板', link: '/ai-harness/three-layer-architecture' },

@@ -1,6 +1,6 @@
 ---
 title: OpenClaw 深度评测
-description: Peter Steinberger 出品的 self-hosted AI agent——基于 pi-agent-core 内核 + 多平台 Gateway + 145k stars 爆款
+description: Peter Steinberger 出品的 self-hosted AI agent——基于 pi-agent-core 内核 + 多平台 Gateway + v2026.8.1 (2.0) 升级
 audience: intermediate
 difficulty: 🟡
 status: draft
@@ -22,11 +22,20 @@ verifiedWith:
     - name: BestHub · Why Pi Powers OpenClaw
       url: https://www.besthub.dev/articles/why-pi-s-minimalist-architecture-powers-openclaw-s-ai-coding-agent-34de9e6565d8
       accessedAt: 2026-09-20
+    - name: OpenClaw 官方博客 · OpenClaw 2.0 (v2026.8.1)
+      url: https://openclaw.ai/blog/openclaw-2-accidentally/
+      accessedAt: 2026-09-20
+    - name: OpenClaw Wiki · OpenClaw 2.0 What's New
+      url: https://openclawwiki.com/posts/openclaw-2-0-whats-new
+      accessedAt: 2026-09-20
+    - name: Meta AI Labs · OpenClaw 2.0 技术解读
+      url: https://metaailabs.com/openclaw-releases-openclaw-2-0-guided-model-setup-575-ms-control-ui-startup-and-one-trust-boundary-per-gateway
+      accessedAt: 2026-09-20
 ---
 
 # OpenClaw 深度评测
 
-> **TL;DR**：奥地利工程师 Peter Steinberger 打造的 self-hosted AI agent——把极简的 pi-agent-core 包成"全能管家外壳"，三个月冲 145k stars。
+> **TL;DR**：奥地利工程师 Peter Steinberger 打造的 self-hosted AI agent——把极简的 pi-agent-core 包成"全能管家外壳"，三个月冲 145k stars。2026-08 释出 v2.0 (v2026.8.1)，从"个人助理"升级到"团队可协作的多人 agent"。
 
 ⏱ 预计阅读时间：8 分钟
 
@@ -46,8 +55,10 @@ verifiedWith:
 |------|------|
 | **身份** | 奥地利软件工程师 |
 | **代表作** | **PSPDFKit** —— 全球 PDF SDK 龙头，被多家上市公司收购（2018） |
-| **当前状态** | 独立开发者、专注 OpenClaw 全职开发 |
+| **当前状态** | **2026-02 加入 OpenAI**；项目由独立团队继续维护 |
 | **风格** | 个人项目驱动、scrappy、社区为先 |
+
+> **重要变更**：2026-02 后 Steinberger 已加入 OpenAI 不再全职开发；项目由独立团队接管，v2.0 (v2026.8.1) 是团队接手后的首个重大版本。
 
 ### 三个月三次更名
 
@@ -171,14 +182,103 @@ OpenClaw 区别于 ChatGPT/Claude Code 等"被动响应"产品的最大不同—
 | **ClawCon 线下聚会** | 2026-02-04 | Frontier Tower SF，社区已成型 |
 | **Moltbook 衍生项目** | 2026-01 | Matt Schlicht（Octane AI 联创）用 OpenClaw 搭 AI agent 社交网络 |
 | **基于 pi-agent-core** | 持续 | 复用 Mario Zechner 的极简引擎 |
+| **v2026.8.1 (2.0) 史上最大版本** | 2026-08-31 | 16,000+ PRs / 933 贡献者 / 7 周开发周期 |
 
 | 维度 | 数据 |
 |------|------|
-| **GitHub stars** | 145k+（截至 2026-02） |
+| **GitHub stars** | 145k+（截至 2026-02，2.0 后未公开新数） |
 | **Forks** | 20k+ |
-| **贡献者** | 300+ |
+| **贡献者** | 300+（v2.0 单版本就 933 贡献者） |
+| **最新稳定版** | **v2026.8.1（2026-08-31）** |
 | **协议** | MIT |
 | **托管成本** | $3-5/月（基础 VPS） |
+
+## OpenClaw 2.0 升级要点（v2026.8.1）
+
+2026-08-31 释出的 v2026.8.1 是项目史上最大版本：**16,000+ PRs / 933 贡献者 / 7 周开发**。从"个人助理"升级为"团队可协作的多人 agent"。
+
+### 1. 浏览器 app 重做为一等公民
+
+之前 Control UI 是"设置面板"，现在是"对话主界面"——和 ChatGPT/Claude 一样打开直接进入会话。
+
+| 指标 | 1.x | 2.0 |
+|------|------|------|
+| 启动时间 | ~1.6s | **575 ms** |
+| JS 请求数 | 140 | **45** |
+| 测试条件 | mocked Gateway + 50ms HTTP/1.1 | 同 |
+
+新能力：docked panel 增加 Workspace 文件编辑器 + git Changes 面板（PR/CI 状态）+ 浏览器面板（元素检查 / 截图标注）+ 全屏 web terminal。
+
+### 2. Shared cloud sessions：OpenClaw 走向多人协作
+
+**这是 2.0 最重要的产品定位变化**——从"一人一助理"变成"小团队共享一助理"。
+
+| 用例 | 场景 |
+|------|------|
+| **Handoff** | 早班开启研究任务，下午同事接手，agent 上下文完整保留 |
+| **Pair debugging** | 两人同时观察 agent 实时执行 |
+| **小团队运维** | 3-5 人共用一个 assistant 部署，不用各跑各的 |
+
+权限边界：owner / admin 可设置 read / suggest / draft work / participate 四档。**注意**：文档明确说"这不是租户隔离、不是安全边界"——多租户产品场景仍不适用。
+
+### 3. Guided setup 把"安装难"砍掉
+
+1.x 时代新人最大的劝退点——一上来就要面对一堆配置。2.0 反过来：
+
+```
+检测本机已有 →
+  ChatGPT / Claude / Codex 已登录？ → 直接复用
+  本地 Ollama / LM Studio 模型？ → 直接检测
+  环境变量已有 API key？ → 直接读取
+  都没有？→ GPT-5.6（OpenAI 默认）/ Gemma 4（本地默认）
+```
+
+新 OpenAI 安装默认 GPT-5.6；本地 RAM-gated 默认 Gemma 4；llama.cpp 默认上下文提到 64K；node-llama-cpp 被托管 llama-server 取代。
+
+### 4. 安全加固（回应 2026 上半年的安全事件）
+
+2026 上半年 Immersive Labs / Bitsight 报告了暴露实例泄露 API key 和聊天记录的事件，2.0 的安全加固直接回应这类问题：
+
+| 层 | 改动 |
+|-----|------|
+| **Runtime** | Gateway 处理 untrusted input 加固 |
+| **Plugins + Skills** | 三方代码加载机制收紧 |
+| **Secret handling** | 凭证从 agent 上下文隔离；新增 proxy 模式：受保护 secret 只发到 approved HTTPS 目的地，未绑定目的地 fail closed |
+
+其他安全增强：
+- `openclaw security audit` 命令：检查 inbound access / tool blast radius / network exposure / browser control / plugin allowlist
+- **Permission modes**：sandboxing 章节正式产品化（之前是扩展默认行为，现在是 UI 选项）
+- **2026 crowdsourced prompt injection arena**（272K 攻击 / 41 场景）：Claude Opus 4.5 = 0.5%，Sonnet 4.5 = 1.0%，Haiku 4.5 = 1.3%，Gemini 2.5 Pro = 8.5%。但 adaptive human attacker 仍 >80% 成功——所以工具策略 + exec approvals + sandboxing 仍是硬性兜底
+
+### 5. Memory / Skills / Automations 工作流三件套
+
+| 模块 | 升级 |
+|------|------|
+| **Memory** | 真正的 backbone：相关私人会话可召回；新 memory engine 从旧 QMD store 迁移；忘记派生记忆不抹原会话 |
+| **Skills** | create → validate → install → review 全链路 + 自学习模式（agent 可把"被纠正的经验"转成 skill 提案） |
+| **Automations** | 统一命名替代 cron（agent / UI / CLI / docs 一致）；分离"是否运行了"、"结果是否送达"、"请求是否完成" |
+
+### 6. 关键 Breaking Change（升级前必看）
+
+| 改动 | 影响 | 处理 |
+|------|------|------|
+| **Sessions 迁 SQLite** | 文件存储 → SQLite 存储 | 必须 `openclaw backup sqlite` 备份后再升级；旧版本无法读新格式 |
+| **OpenProse 插件 + `/prose` 命令移除** | 用过的人不能继续用 | `.prose` 源文件保留，需走 Agent Skill migration path |
+| **codex/* 和 openai-codex/* 路由统一到 openai/* ** | provider config / stored sessions / automations 都涉及 | `openclaw doctor --fix` 自动迁移 |
+| **5 个 plugin SDK subpath 弃用** | 仅影响三方插件作者 | 截止 2026-09-01；普通用户无感 |
+
+**升级建议**（来自官方与社区）：
+- ✅ 依赖会话稳定性 / 看重安全改进 / 等团队功能的——立刻升
+- ⏸️ 重度定制的生产实例 + 三方插件——等一个 patch 让插件作者先适配
+
+### 7. 生态格局变化
+
+- **2026-02**：Steinberger 加入 OpenAI，项目由独立团队继续
+- **2026-08-31**：独立团队交出首个重大版本 v2026.8.1（16,000+ PRs 的工作量证明团队承接能力）
+
+> **判断**：项目不再是"一人项目"，但 scrappy 风格延续——独立团队节奏未失，仍是"AI 管家外壳"路线最有希望的选手。
+
+## 能力横评
 
 ## 能力横评
 
@@ -274,6 +374,9 @@ API 仍在快速迭代，企业级生产案例少。
 - [OpenClaw 官网](https://openclaw.ai)（访问于 2026-09-20）
 - [OpenClaw GitHub 仓库](https://github.com/openclaw/openclaw)（访问于 2026-09-20）
 - [OpenClaw Docs](https://docs.openclaw.ai)（访问于 2026-09-20）
+- [OpenClaw 官方博客 · OpenClaw 2.0 (v2026.8.1)](https://openclaw.ai/blog/openclaw-2-accidentally/)（访问于 2026-09-20）
+- [OpenClaw Wiki · OpenClaw 2.0 What's New](https://openclawwiki.com/posts/openclaw-2-0-whats-new)（访问于 2026-09-20）
+- [Meta AI Labs · OpenClaw 2.0 技术解读](https://metaailabs.com/openclaw-releases-openclaw-2-0-guided-model-setup-575-ms-control-ui-startup-and-one-trust-boundary-per-gateway)（访问于 2026-09-20）
 - [ChatterGo · OpenClaw Deep Dive](https://www.chattergo.ai/blog/openclaw-deep-dive-architecture-agent-loop/) — v2026.1.30 源码分析
 - [BestHub · Why Pi Powers OpenClaw](https://www.besthub.dev/articles/why-pi-s-minimalist-architecture-powers-openclaw-s-ai-coding-agent-34de9e6565d8)
 - [PI-agent 深度评测](./pi-agent) — 内核引擎
