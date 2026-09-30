@@ -250,6 +250,7 @@ AI 工具是"辅助"，不是"替代"。核心设计、架构决策仍需人工�
 - 深入 Claude Code → [Claude Code 深度评测](./claude-code)
 - 深入 Cursor → [Cursor 深度评测](./cursor)
 - 深入 PI-agent → [PI-agent 深度评测](./pi-agent)
+- Pi 配置入门 → [Pi 配置文件详解（入门 → 进阶）](./pi-coding-agent/configuration)
 - 深入 DeepSeek Harness → [DeepSeek Harness 深度评测](./deepseek-harness)
 - 深入 OpenClaw → [OpenClaw 深度评测](./openclaw)
 - 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)

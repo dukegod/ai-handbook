@@ -475,6 +475,8 @@ pi
 
 ## 下一步
 
+- 学会改 Pi 配置 → [Pi 配置文件详解（入门 → 进阶）](./pi-coding-agent/configuration)
+- 看 Pi 整体学习路径 → [Pi Coding Agent 总览](./pi-coding-agent/)
 - 对比 Claude Code → [Claude Code 深度评测](./claude-code)
 - 对比 DeepSeek Harness → [DeepSeek Harness 深度评测](./deepseek-harness)
 - 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)

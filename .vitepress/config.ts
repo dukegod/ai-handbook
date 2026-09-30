@@ -380,13 +380,6 @@ export default withMermaid(defineConfig({
           items: [{ text: '总览', link: '/ai-trends/' }],
         },
         {
-          text: '产品动态',
-          collapsed: true,
-          items: [
-            { text: '月度产品速报', link: '/ai-trends/product-updates/monthly' },
-          ],
-        },
-        {
           text: '模型选型',
           collapsed: true,
           items: [
@@ -470,6 +463,10 @@ export default withMermaid(defineConfig({
           collapsed: true,
           items: [
             { text: P('PI-agent 深度评测'), link: '/ai-coding/tools/pi-agent' },
+            { text: 'Pi Coding Agent 总览', link: '/ai-coding/tools/pi-coding-agent/' },
+            { text: 'Pi 配置文件详解（入门 → 进阶）', link: '/ai-coding/tools/pi-coding-agent/configuration' },
+            { text: 'Pi 进阶资源加载（扩展 / Skills / 包）', link: '/ai-coding/tools/pi-coding-agent/resources' },
+            { text: 'Pi + Jev + DeepSeek 实战（危险命令拦截）', link: '/ai-coding/tools/pi-coding-agent/jev-harness' },
             { text: P('DeepSeek Harness 深度评测'), link: '/ai-coding/tools/deepseek-harness' },
           ],
         },
