@@ -1,0 +1,19 @@
+docs/superpowers/plans/2026-09-22-handbook-improvement.md
+  s_3e1f567e4de4e5::t_92f42f83db4fc4 1-88
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4acae0fce6775261ac014e505433e1a5c4749ec2",
+  "prompts": {},
+  "sessions": {
+    "s_3e1f567e4de4e5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c6ea-424b-7cd0-ba1e-209811b6dea0",
+        "model": "unknown"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
