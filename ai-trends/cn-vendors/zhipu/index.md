@@ -169,7 +169,7 @@ verifiedWith:
 ## 下一步
 
 - 看另一家开源路线 → [Qwen · 阿里通义千问全系](../qwen/)
-- 看横向对比表 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 看横向对比表 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 选型决策 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 
 ## 如果你想

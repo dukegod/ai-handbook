@@ -160,7 +160,7 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 ## 下一步
 
 - 看国内另一家路线 → [Zhipu · 智谱 GLM 全系](../zhipu/)
-- 看横向对比表 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 看横向对比表 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 选型决策 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 
 ## 如果你想

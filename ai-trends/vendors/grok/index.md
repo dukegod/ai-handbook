@@ -164,7 +164,7 @@ xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化�
 
 ## 下一步
 
-- 横向对比 7 家 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 横向对比 7 家 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 按场景选型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 - 看技术路线 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 

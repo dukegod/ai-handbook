@@ -191,7 +191,7 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 ## 下一步
 
 - 看国内厂商路线 → [Moonshot · Kimi 全系](/ai-trends/cn-vendors/moonshot/)
-- 看横向对比表 → [5 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 看横向对比表 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 选型决策 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 
 ## 如果你想
