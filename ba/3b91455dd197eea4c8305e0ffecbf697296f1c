@@ -1,0 +1,28 @@
+AGENTS.md
+  h_a427b9af6cd304 14,83-84
+ai-trends/industry/funding.md
+  h_a427b9af6cd304 75
+getting-started/ai-tools-landscape.md
+  h_a427b9af6cd304 79
+ai-trends/vendors/index.md
+  h_a427b9af6cd304 7,12,22-24
+ai-trends/index.md
+  h_a427b9af6cd304 3,7,22-23,26-27,32,38
+ai-trends/cn-vendors/index.md
+  h_a427b9af6cd304 75
+ai-trends/industry/trends.md
+  h_a427b9af6cd304 81
+index.md
+  h_a427b9af6cd304 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ba3b91455dd197eea4c8305e0ffecbf697296f1c",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
