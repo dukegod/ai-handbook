@@ -1,0 +1,30 @@
+getting-started/what-is-ai.md
+  s_390b77191c5e18::t_c61c30ec7bf886 7-21,30,33-34,36,38,40,42,44,50,52,54,58-60,64-67
+getting-started/what-is-llm.md
+  s_390b77191c5e18::t_c61c30ec7bf886 7-24,29,31,33,35,37,39,43,45,49,51,53,59-61,68-70,74-78
+contributing/glossary.md
+  s_390b77191c5e18::t_c61c30ec7bf886 3,7-19,32-52,138
+ai-core/fundamentals/alignment.md
+  s_390b77191c5e18::t_fc9642ce1f078e 7,12,15,17-24,29,35,38,50,52,54,56,60,62,64,66,68,70,72-73,75,77,79,83,87-88,97,101-109,123,127-131
+  s_390b77191c5e18::t_cf65e61352b014 44,46,89,91
+ai-core/fundamentals/pretraining.md
+  s_390b77191c5e18::t_cf65e61352b014 88
+  s_390b77191c5e18::t_4778683f56e283 7,12-27,32,43,45,47,51-53,61,63,65,80-82,86,90,97-103,113,118,124-125,131-132,134,140-145
+  s_390b77191c5e18::t_ee1e91c399094e 59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7df3c3e7b95f8b903c3f2b18778b7b743a1f752a",
+  "prompts": {},
+  "sessions": {
+    "s_390b77191c5e18": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f106-32e1-7f73-b2ef-4718e8851596",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
