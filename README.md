@@ -46,7 +46,6 @@ pnpm preview      # 本地预览构建产物
 ├── ai-coding/                  AI 工具
 │   └── tools/                    工具横评（Claude Code / Cursor / Copilot）
 ├── ai-trends/                  AI 产品动向
-│   ├── product-updates/          月度速报
 │   ├── model-selection/          7 厂商横向对比 / 模型选型决策树
 │   ├── vendors/                  国外厂商（Anthropic / OpenAI / xAI）
 │   ├── cn-vendors/               国内厂商（DeepSeek / 豆包 / Moonshot / MiniMax / Zhipu / Qwen）

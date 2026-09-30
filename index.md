@@ -39,7 +39,7 @@ features:
     linkText: 落地实战 →
   - icon: 📡
     title: 产品动向
-    details: 月度产品速报、重要论文速递、开源项目推荐、行业趋势跟踪。
+    details: 厂商产品动态、重要论文速递、开源项目推荐、行业趋势跟踪。
     link: /ai-trends/
     linkText: 追踪动态 →
   - icon: 🔍

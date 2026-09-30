@@ -11,7 +11,7 @@
 1. **AI 核心技术** —— Transformer / 注意力 / 预训练 / RLHF / MoE / 多模态
 2. **AI 工具** —— AI 工具横评（CLI / IDE / 插件 / 框架 / 多平台 Agent 5 种形态）
 3. **AI Harness 工程** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 团队工作量 / 常见模式 / 迁移路径（公开方法论合集，与内部 Foundation Kit `pipeline-architecture-wiki` 互补）
-4. **产品动向** —— 月度速报 / 论文速递 / 开源推荐 / 行业趋势
+4. **产品动向** —— 厂商档案（含各产品最新动态）/ 论文速递 / 开源推荐 / 行业趋势
 5. **模型与厂商** —— 国外厂商（Anthropic / OpenAI / xAI）+ 国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen），横向对比与选型决策
 6. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力
 
@@ -79,10 +79,9 @@ getting-started/    AI 入门（通用 AI 概念 + 工具选型）
 ai-core/            AI 核心技术（fundamentals / model-arch / training / eval）
 ai-coding/          AI 工具（tools）
 ai-trends/          产品动向
-├── product-updates/   月度速报
 ├── vendors/           国外厂商（Anthropic / OpenAI / xAI）
-│   └── anthropic/     Anthropic · Claude 全系（含动态）
-│   └── openai/        OpenAI · GPT 全系（含动态）
+│   └── anthropic/     Anthropic · Claude 全系（含最新动态章节）
+│   └── openai/        OpenAI · GPT 全系（含最新动态章节）
 │   └── grok/          xAI · Grok 全系
 ├── cn-vendors/        国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen）
 │   └── deepseek/      DeepSeek

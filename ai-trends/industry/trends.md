@@ -78,7 +78,7 @@ flowchart LR
 
 ## 下一步
 
-- 看具体厂商动态 → [月度产品速报](/ai-trends/product-updates/monthly)
+- 看具体厂商动态 → [厂商档案](/ai-trends/vendors/) / [国内厂商](/ai-trends/cn-vendors/)
 - 看资本信号 → [投融资动态](/ai-trends/industry/funding)
 
 ## 如果你想

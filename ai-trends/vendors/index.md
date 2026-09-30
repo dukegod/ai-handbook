@@ -4,12 +4,12 @@ description: Anthropic / OpenAI / xAI / Moonshot / MiniMax / 智谱 / 通义千�
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-08-14
+lastUpdated: 2026-09-30
 ---
 
 # 厂商档案
 
-> 长期档案看这里，最新变化看 [产品动态](/ai-trends/product-updates/monthly)。
+> 长期档案和最新变化都在这里——每份档案末尾的「最新动态（YYYY-MM）」章节记录该厂商近期的产品变化。
 
 ## 这一组写什么
 
@@ -19,7 +19,9 @@ lastUpdated: 2026-08-14
 - 核心模型、技术路线、部署方式和价格结构是什么
 - 适合什么场景，不适合什么场景
 
-如果你只想知道最近发布了什么，看 [Claude 动态](/ai-trends/vendors/anthropic/)、[ChatGPT 动态](/ai-trends/vendors/openai/) 和 [国内厂商](/ai-trends/cn-vendors/)。
+每份档案统一包含：公司简介 → 模型矩阵 → 技术架构 → 核心能力 → 部署形态 → 价格 → 适合/不适合场景 → **最新动态（YYYY-MM）** → 关键洞察 → 参考。动态跟着产品走，读完档案就知道这家最近变了什么。
+
+如果你只想知道最近发布了什么，直接看对应档案的「最新动态」章节：[Claude 动态](/ai-trends/vendors/anthropic/)、[ChatGPT 动态](/ai-trends/vendors/openai/) 和 [国内厂商](/ai-trends/cn-vendors/)。
 
 ## 厂商列表
 

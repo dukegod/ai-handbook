@@ -72,7 +72,7 @@ verifiedWith:
 ## 下一步
 
 - 看海外巨头 → [ChatGPT 动态](/ai-trends/vendors/openai/) / [Claude 动态](/ai-trends/vendors/anthropic/)
-- 按月汇总 → [月度产品速报](/ai-trends/product-updates/monthly)
+- 看某家近期变化 → 该厂商档案的「最新动态」章节
 
 ## 如果你想
 
