@@ -1,0 +1,28 @@
+ai-trends/cn-vendors/minimax/index.md
+  h_a427b9af6cd304 142
+ai-trends/cn-vendors/moonshot/index.md
+  h_a427b9af6cd304 163
+ai-trends/cn-vendors/qwen/index.md
+  h_a427b9af6cd304 114,163
+ai-trends/cn-vendors/zhipu/index.md
+  h_a427b9af6cd304 172
+ai-trends/model-selection/model-comparison.md
+  h_a427b9af6cd304 3,7,12,15,18,21,24,27,30,41-47,49-51,55-57,59,72-73,75,83-89,91,97-105,107,113-114,116-119,121,127-133,135,144,146,149,156,158,169,171-173,176-180,185,192-197
+ai-trends/model-selection/model-selection-guide.md
+  h_a427b9af6cd304 7,10,12,25-27,30,35-36,39-40,45-47,49,56-57,64-65,71-73,79-85,92,94,102,110,126,128,154-156,163,165,171-177
+ai-trends/vendors/grok/index.md
+  h_a427b9af6cd304 167
+ai-trends/vendors/openai/index.md
+  h_a427b9af6cd304 194
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4f19852a629c127f5e1f5b6e5b66f828f2eff49c",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
