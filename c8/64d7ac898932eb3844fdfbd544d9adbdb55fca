@@ -1,0 +1,29 @@
+ai-coding/tools/overview.md
+  s_11a8492297ab01::t_32b8b971b7e428 253
+ai-coding/tools/pi-agent.md
+  s_11a8492297ab01::t_1e304fa683d769 478-479
+ai-coding/tools/pi-coding-agent/configuration.md
+  s_11a8492297ab01::t_739e690e1778f6 1-583
+ai-coding/tools/pi-coding-agent/index.md
+  s_11a8492297ab01::t_e078c032ff0b73 1-153
+ai-coding/tools/pi-coding-agent/jev-harness.md
+  s_11a8492297ab01::t_9c1c74bd20e8aa 1-946
+ai-coding/tools/pi-coding-agent/resources.md
+  s_11a8492297ab01::t_4fc27f53f42e66 1-800
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c864d7ac898932eb3844fdfbd544d9adbdb55fca",
+  "prompts": {},
+  "sessions": {
+    "s_11a8492297ab01": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a0c6e0-edc3-76c9-b90b-311e86e074bc",
+        "model": "unknown"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
