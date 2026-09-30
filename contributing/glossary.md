@@ -1,10 +1,22 @@
 ---
 title: 术语表
-description: Claude Handbook 中英双语术语锁定表；每篇文档的术语必须与本表对齐
+description: AI Handbook 中英双语术语锁定表；每篇文档的术语必须与本表对齐
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-07-23
+lastUpdated: 2026-09-30
+verifiedWith:
+  scope: '本次核对 AI 基础与训练术语；原有产品条目未重新核验'
+  sources:
+    - name: InstructGPT
+      url: https://arxiv.org/abs/2203.02155
+      accessedAt: 2026-09-30
+    - name: DPO
+      url: https://arxiv.org/abs/2305.18290
+      accessedAt: 2026-09-30
+    - name: DeepSeekMath
+      url: https://arxiv.org/abs/2402.03300
+      accessedAt: 2026-09-30
 ---
 
 # 术语表
@@ -16,6 +28,27 @@ lastUpdated: 2026-07-23
 - **首选写法**：正文里推荐的固定表达
 - **中文括注**：仅在术语首次出现时使用，用于向新读者建立映射；后续文中直接用英文
 - **禁止**：多种译法混用（比如「技能 / Skill」在同一篇里同时出现）
+
+## AI 基础与训练
+
+| 首选写法 | 一句话定义与边界 |
+| --- | --- |
+| **LLM（大语言模型）** | 从大规模语言数据中学习的模型；模型与聊天产品分开称呼 |
+| **Token（词元）** | 模型处理文本的基本单位，不一定等于一个字或单词 |
+| **预训练（Pre-training）** | 在大规模数据上学习通用表征、知识和能力 |
+| **后训练（Post-training）** | 预训练后的能力与行为适配，可包含 SFT、偏好优化和强化学习 |
+| **SFT（监督微调）** | 用示范数据适配模型；不只改变格式，也可能学习知识 |
+| **Scaling Law（缩放定律）** | 规模与性能的经验关系；需要考虑参数、数据与计算的配比 |
+| **LoRA（低秩适配）** | 冻结基座权重，训练低秩增量参数 |
+| **QLoRA** | 结合量化基座与 LoRA，降低微调的显存需求 |
+| **RLHF（人类反馈强化学习）** | 用人类反馈形成奖励，指导强化学习 |
+| **RLAIF（AI 反馈强化学习）** | 用 AI 反馈形成奖励；仍依赖人类设计的原则与评估 |
+| **DPO（直接偏好优化）** | 直接用偏好数据优化模型，不单独训练显式奖励模型 |
+| **RLVR（可验证奖励强化学习）** | 用答案校验、测试等可验证结果提供奖励 |
+| **PPO（近端策略优化）** | 强化学习策略优化算法，可用于 RLHF 等训练流程 |
+| **GRPO（组相对策略优化）** | 利用同一问题多份回答的相对奖励优化策略 |
+
+这些方法描述不同维度，并非依次替代的技术世代。详见 [预训练与微调](/ai-core/fundamentals/pretraining) 和 [RLHF 与对齐](/ai-core/fundamentals/alignment)。
 
 ## Claude 与 Anthropic 家族
 
@@ -102,6 +135,7 @@ lastUpdated: 2026-07-23
 
 ## 参考
 
+- [InstructGPT](https://arxiv.org/abs/2203.02155)、[DPO](https://arxiv.org/abs/2305.18290)、[DeepSeekMath](https://arxiv.org/abs/2402.03300)（训练术语；访问于 2026-09-30）
 - [Anthropic 官方文档 · Model overview](https://docs.claude.com/en/docs/about-claude/models/overview)（访问于 2026-07-23）
 - [Anthropic 官方术语](https://docs.claude.com/)（访问于 2026-07-23）
 
