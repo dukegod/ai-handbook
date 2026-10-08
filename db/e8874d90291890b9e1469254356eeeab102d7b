@@ -1,0 +1,43 @@
+getting-started/prompting-basics.md
+  s_390b77191c5e18::t_32ff159108f76a 7,72-73
+getting-started/tool-calling.md
+  s_390b77191c5e18::t_621239e29e1ad0 1-19,23-63,65-83,85-96,98-106
+  s_390b77191c5e18::t_87342341e1cf1a 64
+  s_390b77191c5e18::t_eddf205763f46f 20-22,84,97
+.vitepress/config.ts
+  s_390b77191c5e18::t_32ff159108f76a 102-111
+getting-started/index.md
+  s_390b77191c5e18::t_32ff159108f76a 3,7,12,19,21,23,40,51-72,77
+contributing/glossary.md
+  s_390b77191c5e18::t_5237508a377aac 20-28,33,37-39
+  s_390b77191c5e18::t_2f25e4f11c83a5 9,60-81
+ai-core/index.md
+  s_390b77191c5e18::t_32ff159108f76a 7,20
+getting-started/agents-and-workflows.md
+  s_390b77191c5e18::t_621239e29e1ad0 1-98
+getting-started/evaluating-ai.md
+  s_390b77191c5e18::t_b17aadac7db339 1-38,40-93
+  s_390b77191c5e18::t_36fd06f2536da6 39
+getting-started/tokens-context-memory.md
+  s_390b77191c5e18::t_b17aadac7db339 1-49,51-95
+  s_390b77191c5e18::t_36fd06f2536da6 50
+getting-started/rag-and-knowledge-bases.md
+  s_390b77191c5e18::t_bf4fb50ba09129 16
+  s_390b77191c5e18::t_1926270b0c5b93 1-15,17-103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dbe8874d90291890b9e1469254356eeeab102d7b",
+  "prompts": {},
+  "sessions": {
+    "s_390b77191c5e18": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f106-32e1-7f73-b2ef-4718e8851596",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
