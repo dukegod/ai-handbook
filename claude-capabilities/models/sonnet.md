@@ -1,21 +1,39 @@
 ---
 title: Sonnet 5
-description: '主力日常模型；Model ID `claude-sonnet-5`；1M context；定位 "really good generalist"；introductory pricing $2/$10'
+description: '上一代主力日常模型；Model ID `claude-sonnet-5`；1M context；$2 / $10 已是标准价，当前主力已换代为 Sonnet 5.5'
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-06
+lastUpdated: 2026-10-08
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-sonnet-5
+  claudeCode: 2.1.284
+  model: claude-sonnet-5-5
   modelOverview: 'https://platform.claude.com/docs/en/about-claude/models/overview'
   pricing: 'https://platform.claude.com/docs/en/about-claude/pricing'
-  accessedAt: 2026-08-06
+  deprecations: 'https://platform.claude.com/docs/en/about-claude/model-deprecations'
+  accessedAt: 2026-10-08
 ---
 
 # Sonnet 5
 
-> **TL;DR**：Sonnet 5 = 「really good generalist」——`claude-sonnet-5`，1M context，**$3 / $15 per 1M token**（introductory pricing $2/$10 截至 2026-08-31）。日常 80% 编程与对话的首选，把 cache_control 用对、用 Haiku 4.5 混搭是省钱关键。
+> ⚠️ **本页讲的是上一代 Sonnet 5**。当前主力已换代为 **Sonnet 5.5**（`claude-sonnet-5-5`，2026-09-28 发布）。Sonnet 5 仍可调用，状态 Active，退役承诺不早于 2027-06-30。
+
+> **TL;DR**：Sonnet 5 = 「really good generalist」——`claude-sonnet-5`，1M context，**$2 / $10 per 1M token**。日常 80% 编程与对话的首选，把 cache_control 用对、用 Haiku 混搭是省钱关键。
+
+**Sonnet 5.5 与 Sonnet 5 的关键差异**（[Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview) 与 [Pricing](https://platform.claude.com/docs/en/about-claude/pricing)，访问于 2026-10-08）：
+
+| | Sonnet 5.5（当前） | Sonnet 5（上一代） |
+| --- | --- | --- |
+| Model ID | `claude-sonnet-5-5` | `claude-sonnet-5` |
+| 输入 / 输出 | $2 / $10 | $2 / $10（**已是标准价**） |
+| 缓存读 | **$0.10（0.05x）** | $0.20（0.1x） |
+| Context / Max output | 1M / 128k | 1M / 128k |
+| 相对延迟 | Fast | Fast |
+| 默认 effort | `high` | — |
+| 关掉前置思考 | `thinking: {"type": "between_tools"}`（`high` 及以下 effort） | — |
+| `tool_choice: any / tool` | ❌ 400 | 支持 |
+
+> ⚠️ **价格陷阱已解除**：Sonnet 5 上线时的 $2 / $10 原是「introductory pricing，截至 2026-08-31」。官方定价页脚注明确写着——**该价格已转为标准价**，原定 2026-09-01 上调到 $3 / $15 **不会发生**。仓库此前把「9 月起实际多花 50%」写成常见坑，**该结论现已作废**。
 
 ⏱ 预计阅读时间：5 分钟
 
@@ -68,12 +86,15 @@ export CLAUDE_CODE_AUTO_COMPACT_WINDOW=800000   # 提前到 800k 触发
 
 ## 三、Introductory Pricing（限时折扣）
 
-Sonnet 5 上线时有 **introductory pricing $2 / $10**（输入/输出 per 1M token），截至 **2026-08-31**——之后回到标准价 $3 / $15。
+> ⚠️ **本节内容已过时，结论反转**：Sonnet 5 上线时的 **introductory pricing $2 / $10** 截至 **2026-08-31** 到期，但官方定价页明确说明该价格**已转为标准价**，原定 2026-09-01 上调到 $3 / $15 **不会发生**。所以「回到 $3 / $15」这一步**不存在**。
 
-| 阶段 | 输入 $/1M | 输出 $/1M | 节省 |
-| --- | :---: | :---: | --- |
-| Introductory（截至 2026-08-31） | **$2** | **$10** | 33% off |
-| 标准 | $3 | $15 | — |
+| 阶段 | 输入 $/1M | 输出 $/1M |
+| --- | :---: | :---: |
+| Introductory（截至 2026-08-31） | $2 | $10 |
+| **标准价（当前）** | **$2** | **$10** |
+| ~~原计划 2026-09-01 上调~~ | ~~$3~~ | ~~$15~~ **不执行** |
+
+**缓存读另有一处变化**：Sonnet 5.5 的 prompt cache 读取价在 **2026-10-07 从 $0.20 降到 $0.10 / MTok**（0.05x 取代 0.1x），写侧与其他价格不变。Sonnet 5 本身仍是 $0.20。
 
 **生产环境用法**：
 
@@ -87,7 +108,7 @@ import os
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5")
 ```
 
-**注意**：introductory pricing 在 Bedrock / Vertex 等第三方 provider 上**不一定同步**——跨云部署前看各 provider 自己的 pricing 页。
+**注意**：定价在 Bedrock / Vertex 等第三方 provider 上**不一定同步**——跨云部署前看各 provider 自己的 pricing 页。
 
 ## 四、Prompt Caching 命中率优化
 
@@ -163,6 +184,8 @@ msg = client.messages.create(
 | **Sonnet 5 主 + Haiku 4.5 sub** | **$0.15** |
 | 全 Haiku 4.5 | $0.08（但质量塌方） |
 
+> ⚠️ 上表是 **Sonnet 5 + Haiku 4.5** 组合的成本（页面主题是上一代）。新项目请按 **Sonnet 5.5 + Haiku 5.5** 配比——Haiku 5.5 的单 token 输入价是 Haiku 4.5 的 1/10，sub-agent 这条线的账单结构已经完全不同。见 [Haiku 5.5](./haiku)。
+
 详见 [Subagent 与工作流编排](/claude-code/subagents-and-workflows/workflow-orchestration)。
 
 ## 六、何时该升 / 降
@@ -187,9 +210,9 @@ msg = client.messages.create(
 
 见 [第二节](#二1m-context-是默认)。Anthropic API 上 1M 是默认；`[1m]` 后缀是 Sonnet 4.5 时代产物。
 
-**Introductory pricing 在 2026-08-31 后悄悄贵 50%**
+**Introductory pricing 涨价（该坑已不存在）**
 
-代码里写死的成本估算（$2/$10）9 月起会**实际多花 50%**。成本监控要把"过期回调"列入告警。
+原以为 2026-09-01 起从 $2 / $10 涨到 $3 / $15。官方定价页脚注确认**涨价不执行**，$2 / $10 已是标准价。代码里的成本估算不需要按 50% 上调。
 
 **Sub-agent 全用 Sonnet 5 拼成本**
 
@@ -205,17 +228,18 @@ msg = client.messages.create(
 
 ## 参考
 
-- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-08-06）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-10-08）
+- [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-10-08）
 - [Anthropic Docs · Prompt Caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)（访问于 2026-08-06）
-- [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-08-06）
-- [Opus 5 对照](./opus)
-- [Haiku 4.5 对照](./haiku)
+- [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-10-08）
+- [Opus 5.5 对照](./opus)
+- [Haiku 5.5 对照](./haiku)
 - [模型家族总览](/claude-capabilities/models/overview)
 
 ## 下一步
 
-- 批量 / 延迟敏感 → [Haiku 4.5](./haiku)
-- 长链 agent 专家 → [Fable 5](./fable)
+- 批量 / 延迟敏感 → [Haiku 5.5](./haiku)
+- 长链 agent 专家 → [Fable 5.1](./fable)
 - Prompt caching 详解 → [Prompt Caching API](/claude-capabilities/api/prompt-caching)
 
 ## 如果你想

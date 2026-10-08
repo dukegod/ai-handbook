@@ -4,18 +4,21 @@ description: GPT-6 Astra / GPT-6.1 Sol / GPT-6 Luna——推理模型路线、�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-08
 verifiedWith:
   sources:
     - name: OpenAI 官方定价
       url: https://developers.openai.com/api/docs/pricing
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: GPT-6 Astra 模型页
       url: https://developers.openai.com/api/docs/models/gpt-6-astra
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: OpenAI API changelog
       url: https://developers.openai.com/api/docs/changelog
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
+    - name: OpenAI 模型目录
+      url: https://developers.openai.com/api/docs/models
+      accessedAt: 2026-10-08
 ---
 
 # OpenAI · GPT 全系
@@ -26,7 +29,7 @@ verifiedWith:
 
 OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资方 Microsoft（累计 $130 亿+）。商业模式：闭源 API + ChatGPT 订阅 + Azure OpenAI 企业部署。2026 年首次开源 GPT-OSS 20B/120B，标志策略转向。
 
-## 二、模型矩阵（截至 2026-09）
+## 二、模型矩阵（截至 2026-10）
 
 | 模型 | 定位 | 价格（input / output） | 主要场景 |
 |------|------|--------|----------|
@@ -41,6 +44,8 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 > **产品线逻辑**：主线已从 GPT-5.6 切到 **GPT-6**——Astra 打旗舰、6.1 Sol 打性价比主力、Sol / Luna 覆盖编码与高并发。Cyber 走 Daybreak 安全线（分 **Daybreak Blue** 通用模型档与 **Daybreak Red** 专用 Cyber 模型档，均需审批）。o 系列仍在定价表里，但官方已在模型目录注明 o3「被 GPT-5 取代」、o4-mini「被 GPT-5 Mini 取代」——**o 系列是存量与深研场景，不是新项目主线**。
 
 > ⚠️ **上下文已到 1M**：GPT-6 Astra 上下文窗口 **1,050,000 token**（最大输入 922,000，最大输出 128,000）。计价按 **272K** 切长短档，不是按 1M 切。
+
+> 📌 **10 月无型号变动**。模型目录（访问于 2026-10-08）里 GPT-6 家族仍是四个型号：`gpt-6-astra` / `gpt-6.1-sol` / `gpt-6-sol` / `gpt-6-luna`，**10 月的新动作全在 ChatGPT 端与平台端，不在模型矩阵**。更老的 `gpt-5.5` / `gpt-5.4` / `gpt-5.2` / `gpt-5.1` 仍在定价表里可调用，属于存量而非新线。
 
 ## 三、技术架构
 
@@ -82,7 +87,9 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 
 **云厂商采购路径在变多** —— 除 Azure OpenAI 外，**2026-06 起 OpenAI 模型也上了 Amazon Bedrock**（走 OpenAI 兼容的 Responses API 端点，支持模型随 Region 变化）。选型时"能不能走既有云合同"正在变成一个实际的决策维度。
 
-## 六、价格（截至 2026-09，官方定价）
+## 六、价格（截至 2026-10，官方定价）
+
+> ✅ **2026-10 全表复核无调价**。下表每一行（input / cached / cache write / output）均与 2026-10-08 抓取的官方定价页逐项核对一致，10 月没有任何型号提价或降价。GPT-6 家族四档价格自 2026-09 发布以来未动。
 
 短上下文 = ≤272K 输入 token；长上下文 = >272K 输入 token。
 
@@ -111,9 +118,13 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 | Fast | 2x | 2026-07-30 起取代原 Priority Processing |
 | Ultrafast | 6x | 仅 `gpt-6-astra`，2026-09-29 新增 |
 
-**缓存写入是独立计价项**（基准 input 的 1.25x），别只按"缓存读便宜"估算总账。另注意：区域处理（data residency）端点与 FedRAMP 端点均加价 10%。
+**缓存写入是独立计价项**（基准 input 的 1.25x），别只按"缓存读便宜"估算总账。另注意：区域处理（data residency）端点与 FedRAMP 端点均加价 10%（适用于 2026-03-05 及之后发布的型号）。
 
 **GPT-5.6 Sol 的促销价有明确期限**——官方写明促销定价**至少持续到 2026-11-21**。引用这个价格时必须带上期限，否则跨月会失真。
+
+> ⚠️ **"档位"有两个，别混**：上表是**处理档位（service tier）**，决定价格倍率与延迟；官方另有**用量档位（usage tier）**，决定速率限制。2026-10-06 用量档位从五档**简化为 Build / Launch / Grow 三档**，按累计 credit 采购额自动升级，与价格倍率无关。
+
+> 📌 **10 月新增计费项：GPT-Rosalind**。`gpt-rosalind-research`（生命科学推理）走 trusted-access 计划开放，**2026-10-05 起开始计费**，$5 / $0.50 / $25 per MTok，且**不适用缓存写入计价**。
 
 ## 七、适合场景 / 不适合场景
 
@@ -128,7 +139,7 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 - 极简单轮问答（杀鸡用牛刀）
 - 国内直接使用（需走 Azure 或代理）
 
-## 八、最新动态（2026-09）
+## 八、最新动态（2026-10）
 
 **三层产品线跟踪**：
 
@@ -152,8 +163,28 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 | 2026-09-03 | **GPT-6 Astra 发布** | 新旗舰，$10 / $50，1.05M 上下文 |
 | 2026-09-22 | **GPT-6 Sol / Luna 发布** | 主力与轻量档，$2/$10 与 $0.10/$0.50 |
 | 2026-09-29 | **GPT-6.1 Sol 发布** | 近 Astra 性能、$2 / $10，**GPT-6 家族三周内连发三个型号** |
+| 2026-10-07 | **GPT-6 与 Intelligent UI 在 ChatGPT 上线** | GPT-6 从 API 走向全体 ChatGPT 用户，见下表 |
 
-**2026-09 同期的重要平台变更**（均见 [changelog](https://developers.openai.com/api/docs/changelog)）：
+**2026-10 的事件**（日期与内容取自官方 [changelog](https://developers.openai.com/api/docs/changelog)，访问于 2026-10-08）：
+
+| 日期 | 事件 | 影响 |
+| --- | --- | --- |
+| 2026-10-07 | **GPT-6 与 Intelligent UI 在 ChatGPT 上线** | Plus / Pro / Business / Enterprise 用 **GPT-6 Sol**，Free / Go 用 **GPT-6 Luna**（次日 10-08 起扩展）；Enterprise 取决于管理员设置 |
+| 2026-10-07 | `chat-latest` 快照更新 | API 侧同步指向 ChatGPT 付费档的最新模型，官方同时建议生产环境直接用 GPT-6 家族 |
+| 2026-10-06 | **Decisions API 公测**，首发 `gpt-6-luna` | 把文本 / 图片转成结构化答案，官方称比 Responses API 快 10x |
+| 2026-10-06 | 用量档位从五档简化为 **Build / Launch / Grow** | 按累计 credit 采购额自动升级，只影响速率限制 |
+| 2026-10-05 | 组织设置内新增 **HIPAA 合规**开通流程 | 符合条件的管理员可签署 BAA 并为组织启用 |
+| 2026-10-05 | **GPT-Rosalind 开始计费** | `gpt-rosalind-research` 从 GA 转入计费，$5 / $0.50 / $25 |
+
+**GPT-6 在 ChatGPT 的三个例外**（易踩坑）：
+
+- **Pro 的推理选项仍走 GPT-6 Astra，且不支持 Intelligent UI**——想要 Intelligent UI 就不能选 Pro 推理档
+- **ChatGPT Work 与 Codex 所用模型本次不变**，跟随 GPT-6 的只有通用对话面
+- Intelligent UI 覆盖 Instant 到 Extra High 推理档，不是全档位通吃
+
+> ⚠️ **官方基准数字尚无独立验证**。GPT-6 Instant 在联网检索任务中首次响应比 GPT-5.6 Instant 快 44%、Extra High 起步速度≈GPT-5.6 Medium 而最终得分更高——这些均来自官方自述，**不要当成独立测评结论引用**。
+
+**2026-09 的重要平台变更**（均见 [changelog](https://developers.openai.com/api/docs/changelog)）：
 
 | 日期 | 事件 | 影响 |
 | --- | --- | --- |
@@ -165,7 +196,9 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 | 2026-08-26 | **Assistants API 关停** | 必须迁到 Responses / Conversations API |
 | 2026-08-21 | GPT-5.6 Sol 降价 | input −20%、output −33%（促销价至 2026-11-21） |
 
-> ⚠️ 锚点截至 2026-09-30 已核实。**引用价格务必带版本号 + 日期**：GPT-5.6 Sol 的 $4 / $20 是有期限的促销价，GPT-6 Astra 又是全系最贵——两代"旗舰"的价格关系在两个月内反转过一次。
+> ⚠️ 锚点截至 2026-10-08 已核实。**引用价格务必带版本号 + 日期**：GPT-5.6 Sol 的 $4 / $20 是有期限的促销价，GPT-6 Astra 又是全系最贵——两代"旗舰"的价格关系在两个月内反转过一次。
+>
+> ⚠️ 10 月的 ChatGPT 侧细节（GPT-6 Sol / Luna 分档、Intelligent UI 范围、Pro 例外）依据官方 release notes 与 OpenAI Research 页，其中 **10-07 的"ChatGPT 已切换到 GPT-6"一事另由 API changelog 当日 `chat-latest` 条目独立佐证**。Help Center 的 ChatGPT release notes 页面本轮返回 Cloudflare 人机校验、未能直接抓取，故上表 ChatGPT 行未逐条回链到该页。
 
 **如何跟踪**：
 
@@ -183,8 +216,9 @@ OpenAI 2015 年成立，从非营利转型为"利润上限"结构。核心投资
 ## 参考
 
 - [OpenAI 平台文档](https://platform.openai.com/docs)
-- [OpenAI API changelog](https://developers.openai.com/api/docs/changelog)（访问于 2026-09-30）
-- [OpenAI 定价](https://developers.openai.com/api/docs/pricing)
+- [OpenAI API changelog](https://developers.openai.com/api/docs/changelog)（访问于 2026-10-08）
+- [OpenAI 定价](https://developers.openai.com/api/docs/pricing)（访问于 2026-10-08）
+- [OpenAI 模型目录](https://developers.openai.com/api/docs/models)（访问于 2026-10-08）
 - [Anthropic Claude 对比](../anthropic/)
 - [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 

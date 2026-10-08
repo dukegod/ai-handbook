@@ -4,18 +4,21 @@ description: Grok 4.7 / Grok 4.20-reasoning——X 生态整合、500K+ 上下�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-08
 verifiedWith:
   sources:
     - name: xAI 模型文档
       url: https://docs.x.ai/developers/models
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: xAI 定价
       url: https://docs.x.ai/developers/pricing
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: xAI release notes
       url: https://docs.x.ai/developers/release-notes
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
+    - name: xAI 官方新闻列表
+      url: https://x.ai/news
+      accessedAt: 2026-10-08
 ---
 
 # xAI · Grok 全系
@@ -26,7 +29,7 @@ verifiedWith:
 
 xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化是 **X（原 Twitter）生态整合**——Grok 原生接入 X 的实时信息，支持 Web Search / X Search 工具，训练与推理依赖自建 Colossus 超算集群。商业模式：闭源 API + X 订阅（Premium 用户内置 Grok）+ 企业部署。
 
-## 二、模型矩阵（截至 2026-09）
+## 二、模型矩阵（截至 2026-10）
 
 | 模型 | 定位 | 上下文 | 主要场景 |
 | --- | --- | --- | --- |
@@ -42,6 +45,8 @@ xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化�
 > **产品线逻辑**：**Grok 4.7 是 2026-09 的前沿主力**（与 4.6 同价、同 500K 上下文），4.20 三兄弟走深度推理 / 多 agent 线（1M 上下文但单价更低），另有图像 / 视频 / 语音专用模型（`grok-imagine-*` / `grok-voice-*`）。4.7 仍**没有文本输出长度上限**。
 >
 > ⚠️ **版本号容易看错**：4.20 排在 4.7 之后，但它是**不同产品线**（深度推理 / 1M 上下文），不是"更新的 4.7"。日常主力选 4.7，要 1M 上下文 + 深度推理才选 4.20。
+
+> 📌 **10 月无新模型、无调价**。官方 release notes、定价页与模型目录在 2026-10-08 复核后与 9 月底一致：**Grok 4.7 仍是前沿主力**，下表型号与价格一字未改。x.ai 官方新闻列表最近一条模型公告是 2026-09-21 的 Grok 4.7，10 月无模型发布。
 
 ## 三、技术架构
 
@@ -78,7 +83,9 @@ xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化�
 
 **xAI 现在有三条产品面**——API 给开发者，**Grok Build** 对标 Claude Code 打编码工作流，**Grok Bot** 做常驻型 agent。这三条是 2026 年新增的，"xAI 只是聊天 API 厂商"的印象已经过时。
 
-## 六、价格（截至 2026-09，官方定价）
+## 六、价格（截至 2026-10，官方定价）
+
+> ✅ **2026-10 全表复核无调价**。下表逐行与 2026-10-08 抓取的官方定价页核对一致，10 月没有任何型号的上下文或单价变化。
 
 短上下文 = prompt < 200K；长上下文 = prompt ≥ 200K（达阈值后**整个请求**按高档计费）。
 
@@ -98,7 +105,7 @@ xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化�
 - **1M 上下文反而更便宜**——4.20 线（1M）单价只有 4.7（500K）的 6 折。要长上下文 + 省钱，4.20 比 4.7 更划算。
 - **4.7 和 4.6 同价**——新旗舰没涨价，升级是纯能力收益。
 
-**其他计价维度**：Batch API 对 4.3 / 4.20 三个变体给 8 折（4.7 / 4.6 / 4.5 **无折扣**）；Priority Processing 为 2x；**美国区域端点 `us.api.x.ai` 为 1.1x**（Grok 4.7 因此是 $2.20 / $0.55 / $6.60）。图像 $0.02–$0.05 / 张，视频 $0.05–$0.08 / 秒。
+**其他计价维度**：Batch API 对 4.3 / 4.20 三个变体给 8 折（4.7 / 4.6 / 4.5 / **Grok Build 0.1** 无折扣，官方口径是"未列出的型号一律无折扣"）；Priority Processing 为 2x；**美国区域端点 `us.api.x.ai` 为 1.1x**（Grok 4.7 因此是 $2.20 / $0.55 / $6.60，且该端点**目前只提供 4.7 与 4.6**）。图像 $0.02–$0.05 / 张，视频 **$0.02–$0.08 / 秒**（`grok-imagine-video-1.5-lite` $0.020 最便宜，`grok-imagine-video` $0.050，`grok-imagine-video-1.5` $0.080）。
 
 **Grok 4.7 Fast 不在公共 API 上**——它是同一个 4.7 模型跑更快的基础设施，价格 2x（长上下文档 1.5x），**仅在 Cursor 与 Grok Build 内可用**，通过那边的套餐计费。
 
@@ -116,7 +123,14 @@ xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化�
 - 数据敏感企业（实时搜索会外发上下文）
 - 严格预算控制（工具按条目计费，agent 自主决定调用次数）
 
-## 八、最新动态（2026-09）
+## 八、最新动态（2026-10）
+
+**10 月唯一一条官方动态是退役，不是发布**（[release notes](https://docs.x.ai/developers/release-notes)，访问于 2026-10-08）：
+
+| 时间 | 事件 | 影响 |
+| --- | --- | --- |
+| 2026-10-02 | **`grok-voice-transcribe-1.0` 到达生命终结** | 请求自动路由到 `grok-voice-transcribe-2.0`，**同价**且准确率更高，无需改代码 |
+| 2026-10 | （无新模型 / 无调价） | 模型目录、定价页与 9 月底完全一致 |
 
 **三条跟踪线**：
 
@@ -144,6 +158,8 @@ xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化�
 2. **更新节奏**：旗舰模型 2026 年基本月更（4.5 → 4.6 → 4.7），工具线（Build / Bot / Imagine）变化更频繁
 3. **判断原则**：模型更新看「上下文 / 定价 / 是否退役」；工具更新看「是否影响成本模型」——xAI 的工具是按调用条目计费的，能力增强往往同时抬高账单
 
+> ⚠️ 本页锚点截至 **2026-10-08** 已复核：模型矩阵、价格表、区域端点倍率均与官方源一致，10 月无变动。**但 10 月打破了自己的月更节奏**——唯一动态是一条语音模型退役公告。旗舰模型已连续一个多月没动，别把"xAI 基本月更"当成可依赖的规律。
+
 > 📌 一个观察项：xAI 文档站现以 **SpaceXAI** 名义发布，自述为 "Official SpaceXAI (xAI) developer documentation"（见 [llms.txt](https://docs.x.ai/llms.txt)）。API 域名与 slug 仍是 `api.x.ai` / `grok-*`，但品牌表述已变，引用文档时注意区分。
 
 ## 关键洞察
@@ -156,10 +172,10 @@ xAI 由 Elon Musk 于 2023 年创立，总部旧金山湾区。核心差异化�
 
 ## 参考
 
-- [xAI 模型文档](https://docs.x.ai/developers/models)（访问于 2026-09-30）
-- [xAI 定价](https://docs.x.ai/developers/pricing)（访问于 2026-09-30）
-- [xAI release notes](https://docs.x.ai/developers/release-notes)（访问于 2026-09-30）
-- [Grok 4.7 发布公告](https://x.ai/news/grok-4-7)
+- [xAI 模型文档](https://docs.x.ai/developers/models)（访问于 2026-10-08）
+- [xAI 定价](https://docs.x.ai/developers/pricing)（访问于 2026-10-08）
+- [xAI release notes](https://docs.x.ai/developers/release-notes)（访问于 2026-10-08）
+- [Grok 4.7 发布公告](https://x.ai/news/grok-4-7)（2026-09-21）
 - [Grok 4.20 model card](https://data.x.ai/2026-04-07-grok-4-20-model-card.pdf)
 
 ## 下一步

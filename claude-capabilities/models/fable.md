@@ -1,22 +1,41 @@
 ---
 title: Fable 5
-description: '长链 agent 专家；Model ID `claude-fable-5`；1M context；定位 "the specialist"；adaptive thinking 强制开启'
+description: '长链 agent 专家；Model ID `claude-fable-5`；1M context；当前版本已换代为 Fable 5.1'
 audience: advanced
 difficulty: 🔴
 status: published
-lastUpdated: 2026-08-06
+lastUpdated: 2026-10-08
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-fable-5
+  claudeCode: 2.1.257
+  model: claude-fable-5-1
   modelOverview: 'https://platform.claude.com/docs/en/about-claude/models/overview'
   modelConfig: 'https://code.claude.com/docs/en/model-config'
+  deprecations: 'https://platform.claude.com/docs/en/about-claude/model-deprecations'
   choosingBlog: 'https://claude.com/blog/claude-model-and-effort-level-in-claude-code'
-  accessedAt: 2026-08-06
+  accessedAt: 2026-10-08
 ---
 
 # Fable 5
 
+> ⚠️ **本页讲的是上一代 Fable 5**。当前版本已换代为 **Fable 5.1**（`claude-fable-5-1`，2026-09-01 发布）。两者规格与定价完全一致（$10 / $50、1M context、128k output、adaptive thinking 总是开），差别主要在 thinking block 的兼容性与可读位置。Fable 5 状态 Active，退役承诺不早于 2027-06-09。
+
 > **TL;DR**：Fable 5 = 「the specialist」——`claude-fable-5`，1M context，**$10 / $50 per 1M token**（最贵）。**长链多步 agent** 场景的顶级专家；adaptive thinking **强制开启且不能关**；新 tokenizer 同样文本比 Opus 4.6 前多 ~30% token；Cybersecurity / Biology 触发 automatic fallback。
+
+**Fable 5.1 与 Fable 5 的差异**（[Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，访问于 2026-10-08）：
+
+| | Fable 5.1（当前） | Fable 5（上一代） |
+| --- | --- | --- |
+| Model ID | `claude-fable-5-1` | `claude-fable-5` |
+| 输入 / 输出 | $10 / $50 | $10 / $50 |
+| 缓存读 | $0.25（0.025x） | $1（0.1x） |
+| Context / Max output | 1M / 128k | 1M / 128k |
+| 思考 | Adaptive，总是开；默认 effort `high` | Adaptive，总是开 |
+| thinking block 兼容 | 只接受本模型或**更新**模型产生的 | — |
+| 退役承诺 | 不早于 2027-09-01 | 不早于 2027-06-09 |
+
+**缓存读差价是这一代最容易被忽略的收益**：Fable 5.1 的缓存读取价是 Fable 5 的 **1/4**。长链 agent 场景 prompt 高度重复，缓存命中率一高，价差就直接体现在账单上。
+
+**Claude Code 侧**：不设 `ANTHROPIC_DEFAULT_FABLE_MODEL` 时，`fable` alias 解析到 **Fable 5.1**（仅 Claude apps gateway 会话解析到 Fable 5）。Fable 5.1 需要 Claude Code **v2.1.257+**。两者都不是任何计划或 provider 上的默认模型，必须显式 `/model fable`。
 
 ⏱ 预计阅读时间：6 分钟
 
@@ -65,22 +84,27 @@ thinking={"type": "enabled", "budget_tokens": 4096}    # 错
 
 | 模型 | thinking 行为 |
 | --- | --- |
-| **Fable 5** | **Adaptive，强制开，不能关，不能显式调** |
-| Opus 5 | Adaptive，总开（不能显式关） |
-| Sonnet 5 | Adaptive，总开 |
+| **Fable 5.1 / Fable 5** | **Adaptive，强制开，不能关，不能显式调** |
+| Opus 5.5 / Opus 5 | Adaptive，总开（不能显式关） |
+| Sonnet 5.5 | Adaptive；`high` 及以下 effort 可用 `between_tools` 关掉前置思考 |
+| Haiku 5.5 | Adaptive，默认开，默认 effort `medium` |
 | Haiku 4.5 | Legacy `budget_tokens` 显式控制 |
+
+> `tool_choice` 的 `any` / `tool` 在 Fable 5.1 / 5 上返回 400；要保证工具入参符合 schema，用 strict tool use 或 structured outputs。
 
 详见 [Extended Thinking 详解](/claude-capabilities/core/extended-thinking)。
 
 ## 三、Cybersecurity / Biology Fallback（关键使用限制）
 
-Fable 5 走 safety classifier——遇到以下场景会**自动 fallback**到 Opus 系列：
+Fable 5 / Fable 5.1 都走 safety classifier——遇到网络安全与生物相关请求会**自动 fallback** 到其他模型。官方在 [Claude Code · Model configuration](https://code.claude.com/docs/en/model-config) 中确认了这一行为（"Requests that a Fable model's safety classifiers flag, most often in cybersecurity and biology domains, trigger automatic model fallback"）。
 
 | 触发场景 | Fallback 目标 |
 | --- | --- |
-| **Cybersecurity**（渗透测试、漏洞利用代码） | Opus 4.8 |
-| **Biology**（基因工程、病原体相关） | Opus 5 |
-| CTF（Capture The Flag 比赛） | Opus 4.8 |
+| **Cybersecurity**（渗透测试、漏洞利用代码） | ⚠️ 未复核 |
+| **Biology**（基因工程、病原体相关） | ⚠️ 未复核 |
+| CTF（Capture The Flag 比赛） | ⚠️ 未复核 |
+
+> ⚠️ 截至 2026-10-08 未从可访问的官方源复核**具体的 fallback 目标版本号**。本轮只确认了"会 fallback"这件事本身，上表沿用仓库既有记录。判断实际跑了哪个模型，请读响应里的实际模型字段，不要靠这张表推断。
 
 **这是预期路由，不是账号问题**——Anthropic 出厂设计就是如此。
 
@@ -184,7 +208,7 @@ Fable 5 不支持 legacy extended thinking——传 `budget_tokens` 会被忽略
 
 **Zero data retention 启用后 Fable 5 报 403**
 
-Fable 5 当前**不支持** ZDR。ZDR 环境下只可用 Opus 5 / Sonnet 5 / Haiku 4.5。
+Fable 5 与 Fable 5.1 都要求 **30 天数据留存**，在 ZDR 环境下不可用（除非 Anthropic 特别授权）。ZDR 环境下改用 Opus 5.5 / Sonnet 5.5 / Haiku 5.5。
 
 **没申请 trusted access 就让 Fable 5 跑 CTF 题目**
 
@@ -192,11 +216,11 @@ Fable 5 当前**不支持** ZDR。ZDR 环境下只可用 Opus 5 / Sonnet 5 / Hai
 
 ## 参考
 
-- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-08-06）
-- [Anthropic Docs · Model configuration · Work with Fable 5](https://code.claude.com/docs/en/model-config#work-with-fable-5)（访问于 2026-08-06）
-- [Anthropic Blog · Choosing a Claude model and effort level in Claude Code](https://claude.com/blog/claude-model-and-effort-level-in-claude-code)（访问于 2026-08-06）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-10-08）
+- [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-10-08）
+- [Anthropic Docs · Model configuration · Work with Fable](https://code.claude.com/docs/en/model-config)（访问于 2026-10-08）
 - [模型家族总览](/claude-capabilities/models/overview)
-- [Opus 5 对照](./opus)
+- [Opus 5.5 对照](./opus)
 
 ## 下一步
 
@@ -207,5 +231,5 @@ Fable 5 当前**不支持** ZDR。ZDR 环境下只可用 Opus 5 / Sonnet 5 / Hai
 ## 如果你想
 
 - Cybersecurity / Biology 场景企业接入 → 联系 Anthropic 客户团队申请 trusted access
-- Zero data retention 兼容模型 → [Opus 5](./opus) / [Sonnet 5](./sonnet) / [Haiku 4.5](./haiku)
+- Zero data retention 兼容模型 → [Opus 5.5](./opus) / [Sonnet 5.5](./sonnet) / [Haiku 5.5](./haiku)
 - 成本计算 → [成本与 Token 管理](/claude-code/basics/cost-and-tokens)

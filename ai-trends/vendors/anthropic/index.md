@@ -1,21 +1,27 @@
 ---
 title: Anthropic · Claude 全系
-description: Opus 5.5 / Sonnet 5.5 / Haiku 4.5 / Fable 5.1——技术架构、Constitutional AI 训练、能力与部署
+description: Opus 5.5 / Sonnet 5.5 / Haiku 5.5 / Fable 5.1——技术架构、Constitutional AI 训练、能力与部署
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-08
 verifiedWith:
   sources:
     - name: Anthropic 模型总览
       url: https://platform.claude.com/docs/en/about-claude/models/overview
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: Claude 定价文档
       url: https://platform.claude.com/docs/en/about-claude/pricing
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: Claude Platform release notes
       url: https://platform.claude.com/docs/en/release-notes/overview
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
+    - name: Claude 模型退役与生命周期
+      url: https://platform.claude.com/docs/en/about-claude/model-deprecations
+      accessedAt: 2026-10-08
+    - name: Claude Haiku 5.5 模型页
+      url: https://platform.claude.com/docs/en/models/haiku-5-5/overview
+      accessedAt: 2026-10-08
 ---
 
 # Anthropic · Claude 全系
@@ -26,19 +32,20 @@ verifiedWith:
 
 Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei 兄妹创办的 AI 安全公司，总部旧金山。核心定位是**"安全 + 可解释 + 可控"**——研发路径上不卷规模上限，专注**可调度的工程化 AI**。商业模式 100% 闭源、按 token 计费 API + 订阅制产品（Claude.ai）+ Claude Code 终端 + 企业部署（AWS Bedrock / GCP Vertex）。
 
-## 二、模型矩阵（截至 2026-09）
+## 二、模型矩阵（截至 2026-10）
 
 | 模型 | 定位 | 上下文 | 思考模式 | 发布 | 主要场景 |
 | --- | --- | --- | --- | --- | --- |
 | **Fable 5.1** | 长 Agent 专精 | 1M | adaptive thinking（始终开启） | 2026-09-01 | 长任务 / 长 Agent / 大仓库 |
 | **Opus 5.5** | 旗舰推理 | 1M | adaptive thinking（始终开启） | 2026-09-22 | 复杂推理 / 编码 / Agent |
 | **Sonnet 5.5** | 主力 | 1M | adaptive thinking | 2026-09-28 | 编码 / 通用对话 / 工具调用 |
-| **Haiku 4.5** | 轻量 | 200K | extended thinking | 2025-10-15 | 高并发 / 实时 / 成本敏感 |
+| **Haiku 5.5** | 高并发 / 延迟敏感 | 1M | adaptive thinking | 2026-10-07 | 分类 / 提取 / 路由 / subagent |
+| **Haiku 4.5** | 上一代轻量档 | 200K | extended thinking | 2025-10-15 | 存量负载（仍可调用） |
 | **Mythos 5.1** | 安全专精 | 1M | — | 2026-09-01 | 网络安全 / 生物（limited availability） |
 
 > **产品线逻辑**：4 个主流型号覆盖"质量/速度/成本"三角 + Fable 5.1 是"长 Agent"专属赛道，**Fable 5.1 不是 Opus 的替代**，是补位。官方选型指引是：绝大多数负载从 **Opus 5.5** 起步；当 Opus 5.5 提高 effort 后仍不够，再上 **Fable 5.1**。Mythos 5.1 未 GA，仅限 Project Glasswing 邀请制。
 
-> ⚠️ **2026-09 换代提醒**：Opus 5 / Sonnet 5 / Fable 5 已全部退居 legacy 档（仍可调用），主力位由 5.5 / 5.1 系列接替。Haiku 4.5 是**当前唯一未换代的型号**。
+> ⚠️ **2026-10 换代提醒**：**Haiku 5.5 已于 2026-10-07 发布**，接替 Haiku 4.5 的主力位——四条主流线（Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）现已全部换代完毕。Haiku 4.5 在官方 [Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations) 页上仍是 **Active**（未标 Deprecated），退役承诺仍为「不早于 2026-10-15」——本轮复核该日期**未发生变更**。
 
 ## 三、技术架构
 
@@ -46,14 +53,14 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 
 **Constitutional AI（RLAIF）** —— Anthropic 主推的训练方法：用 AI 而非人类做偏好标注，先用"宪法"原则（helpful / harmless / honest）让模型自评，再用 RLAIF 训练。**核心差异**：和 OpenAI 的 RLHF / DeepSeek 的 GRPO 路线不同，Constitutional AI 把"价值观"显式编码进训练流程——更适合做安全可控的助手。
 
-**长上下文实现** —— Fable 5.1 / Opus 5.5 / Sonnet 5.5 均为 1M 上下文（官方默认），Haiku 4.5 为 200K。1M 上下文在 4.6 及之后的模型上**按标准价计费**（官方举例：90 万 token 的请求与 9 千 token 的请求单价相同）。具体位置编码方案未公开；官方唯一披露的工程细节是**分词器换代**——Claude 4.7 及之后的模型与 Mythos Preview 换用新分词器，同样文本约多出 30% token（Sonnet 4.6 及更早沿用旧分词器）。
+**长上下文实现** —— Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5 均为 1M 上下文，Haiku 4.5 为 200K。1M 上下文在 4.6 及之后的模型上**按标准价计费**（官方举例：90 万 token 的请求与 9 千 token 的请求单价相同）——**唯一例外是 Haiku 5.5**：它按 prompt 长度分档，prompt 超过 10 万 token 走更贵的一档（详见第六节）。具体位置编码方案未公开；官方唯一披露的工程细节是**分词器换代**——Claude 4.7 及之后的模型与 Mythos Preview 换用新分词器，同样文本约多出 30% token（Sonnet 4.6 及更早沿用旧分词器）。
 
 ## 四、核心能力
 
 | 能力 | 描述 | 落地 |
 | --- | --- | --- |
 | **Tool Use** | 函数调用 / JSON Schema 校验 | Messages API 原生 |
-| **Prompt Caching** | 5 分钟 + 1 小时双档缓存 | 读 0.1x（Fable 5.1 / Mythos 5.1 为 0.025x、Opus 5.5 为 0.05x） |
+| **Prompt Caching** | 5 分钟 + 1 小时双档缓存 | 读 0.1x（Fable 5.1 / Mythos 5.1 为 0.025x、Opus 5.5 与 Sonnet 5.5 为 0.05x） |
 | **Computer Use** | 截图 + 操作 GUI（鼠标键盘） | `computer_toolset_20260801` 已 GA（2026-08-19） |
 | **Browser Use** | 应用自托管浏览器内驱动 | `browser_toolset_20260801`（2026-08-19 新增） |
 | **Agent SDK** | 多 agent 编排 / Subagent 派生 | Claude Code / SDK 同源 |
@@ -78,19 +85,23 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 
 **云厂商是企业部署的多条腿**——大客户不直接接 Anthropic，走云厂商 marketplace 计费 + 私有 VPC。两条计费口径要分清：**Bedrock / Vertex 是云厂商自己开票**；**Claude Platform on AWS / Claude in Microsoft Foundry 是 Anthropic 定价后折算成 CCU（$0.01 / CCU）由云厂商转收**。
 
-## 六、价格（截至 2026-09，官方定价）
+## 六、价格（截至 2026-10，官方定价）
 
 | 模型 | Input | Output | 缓存读 | 备注 |
 | --- | --- | --- | --- | --- |
-| Haiku 4.5 | $1 / MTok | $5 / MTok | $0.10 / MTok | 轻量档；2026-10-15 起最早退役 |
-| Sonnet 5.5 | $2 / MTok | $10 / MTok | $0.20 / MTok | 速度与智能的最佳组合 |
+| Haiku 5.5（prompt ≤ 100k） | $0.10 / MTok | $0.50 / MTok | $0.01 / MTok | 全系最便宜；2026-10-07 发布 |
+| Haiku 5.5（prompt > 100k） | $0.50 / MTok | $2.50 / MTok | $0.05 / MTok | **按 prompt 长度分档**，这是它区别于其他型号的地方 |
+| Haiku 4.5 | $1 / MTok | $5 / MTok | $0.10 / MTok | 上一代；仍为 Active，不早于 2026-10-15 退役 |
+| Sonnet 5.5 | $2 / MTok | $10 / MTok | $0.10 / MTok | 2026-10-07 起缓存读从 $0.20 降到 $0.10 |
 | Opus 5.5 | $4 / MTok | $20 / MTok | $0.20 / MTok | 比 Opus 5 降 20% |
 | Fable 5.1 | $10 / MTok | $50 / MTok | $0.25 / MTok | 全系最贵；缓存读 0.025x |
 | Mythos 5.1 | $10 / MTok | $50 / MTok | $0.25 / MTok | limited availability（Project Glasswing） |
 
-**价格梯度**：Haiku 4.5 < Sonnet 5.5 < Opus 5.5 < Fable 5.1 = Mythos 5.1。**Fable 5.1 是全系最贵**（是 Opus 5.5 的 2.5 倍价），定位"长 Agent 专家"；Opus 5.5 是"性价比旗舰"。
+**价格梯度**：Haiku 5.5 < Haiku 4.5 < Sonnet 5.5 < Opus 5.5 < Fable 5.1 = Mythos 5.1。**Fable 5.1 是全系最贵**（是 Opus 5.5 的 2.5 倍价），定位"长 Agent 专家"；Opus 5.5 是"性价比旗舰"。
 
-**缓存折扣已不再统一**——读取命中价按模型分档：一般模型 0.1x、Opus 5.5 为 0.05x、Fable 5.1 与 Mythos 5.1 为 **0.025x**（读一次只要基准 input 的 2.5%）。写入侧是 5 分钟档 1.25x、1 小时档 2x。**长 prompt + 多轮对话场景必开缓存**（具体折扣以官方定价页为准）。
+> ⚠️ **Haiku 5.5 是唯一按 prompt 长度分档计费的型号**——同样 1M 上下文窗口，官方对 > 10 万 token 的 prompt 收 5 倍价（输入 $0.50 vs $0.10）。批处理同样分档：≤ 100k 为 $0.05 / $0.25，> 100k 为 $0.25 / $1.25。做超长上下文摘要时别默认按短 prompt 的价估预算。
+
+**缓存折扣已不再统一**——读取命中价按模型分档：一般模型 0.1x（**Haiku 5.5 / Haiku 4.5 属此类**）、Opus 5.5 与 Sonnet 5.5 为 0.05x、Fable 5.1 与 Mythos 5.1 为 **0.025x**（读一次只要基准 input 的 2.5%）。写入侧是 5 分钟档 1.25x、1 小时档 2x。**长 prompt + 多轮对话场景必开缓存**（具体折扣以官方定价页为准）。
 
 **其他计价维度**：Batch API 一律 5 折；`inference_geo: "us"` 数据驻留为 1.1x；Fast mode（research preview）Opus 5.5 为 $8 / $40、Opus 5 与 Opus 4.8 为 $10 / $50，且不与 Batch 叠加。
 
@@ -103,11 +114,11 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 - 重视安全可控（Constitutional AI 路线）
 
 **不适合**：
-- 超低成本场景（Haiku 4.5 仍比 Qwen / GLM 同尺寸贵）
+- 超低成本场景（Haiku 5.5 起价已降到 $0.10 / MTok，但仍比 Qwen / GLM 同尺寸贵）
 - 国内合规（需走 Bedrock / Vertex 等海外渠道，或等国内合作）
 - 极简单轮问答（杀鸡用牛刀，Haiku 也贵）
 
-## 八、最新动态（2026-09）
+## 八、最新动态（2026-10）
 
 **三条跟踪线**：
 
@@ -115,11 +126,25 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 - **工具线**：Claude Code（CLI）、Claude Agent SDK、Claude.ai 产品功能。对开发者，这条线比模型线更常变化
 - **协议线**：MCP（Model Context Protocol）的演进。MCP 已开源为开放标准，生态变化影响所有工具
 
-**本轮核实的 2026-09 事件**（均见 [Claude Platform release notes](https://platform.claude.com/docs/en/release-notes/overview)）：
+**本轮核实的 2026-10 事件**（均见 [Claude Platform release notes](https://platform.claude.com/docs/en/release-notes/overview)）：
 
 | 日期 | 事件 | 影响 |
 | --- | --- | --- |
-| 2026-09-28 | 发布 **Claude Sonnet 5.5**（`claude-sonnet-5-5`），$2 / $10 | 主力位换代；`thinking: "disabled"` 失效，强制 `tool_choice` 返回 400 |
+| 2026-10-08 | Compliance API 的 chat 端点可返回「统一 Claude 体验」的对话（Enterprise 组织 beta） | 审计链路要跟着扩 |
+| 2026-10-07 | 发布 **Claude Haiku 5.5**（`claude-haiku-5-5`） | 四条主流线全部换代完毕；1M context / 128k output / adaptive thinking（默认 effort `medium`）/ 延迟最快档 |
+| 2026-10-07 | **Sonnet 5.5 缓存读降价**：$0.20 → $0.10 / MTok（0.05x 取代 0.1x） | 写侧与其他价格不变；长 prompt 场景成本直接减半 |
+| 2026-10-07 | Max / Team 计划新增每月 API 额度 | 订阅用户可把额度打到 API 侧 |
+| 2026-10-07 | Python / TypeScript SDK 新增 browser use 与 computer use 工具集的 beta 类 | 工具循环交给 SDK 跑 |
+| 2026-10-06 | Models API 新增 `capabilities.server_tools` | 可编程判断某模型是否接受 web search / code execution |
+| 2026-10-05 | Models API 新增 `capabilities.thinking.types.disabled` | 可编程判断某模型是否接受 `thinking: {"type":"disabled"}` |
+| 2026-10-01 | Dreams（research preview）支持 Opus 5.5 / Fable 5.1 / Sonnet 5.5 | — |
+
+**上一轮核实的 2026-09 事件**：
+
+| 日期 | 事件 | 影响 |
+| --- | --- | --- |
+| 2026-09-30 | **Claude Sonnet 4.5 正式进入 Deprecated** | 2026-11-30 退役，官方推荐迁移到 Sonnet 5.5 |
+| 2026-09-28 | 发布 **Claude Sonnet 5.5**（`claude-sonnet-5-5`），$2 / $10 | 主力位换代；强制 `tool_choice` 返回 400 |
 | 2026-09-22 | 发布 **Claude Opus 5.5**（`claude-opus-5-5`），$4 / $20 | 旗舰降价 20%；思考不可关闭，深度改由 `effort` 控制（默认 `medium`） |
 | 2026-09-22 | Fast mode（research preview）开放给 Opus 5.5 | $8 / $40 |
 | 2026-09-14 | 会话按需压缩（compaction on demand）进 beta | 长会话可主动折叠，保留近期轮次原文 |
@@ -128,28 +153,31 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 | 2026-08-19 | Computer Use 转正、新增 Browser Use、Files API / Skills 转正 | 一批 beta header 可以摘掉了 |
 | 2026-08-10 | Sonnet 5 的 $2 / $10 转正价，原定 9-01 涨到 $3 / $15 **不执行** | 主力价长期锁定 |
 
-> ⚠️ **2026-09 最值得注意的迁移风险**：新一代 5.5 / 5.1 都是**思考不可关闭**的，`thinking: {"type": "disabled"}` 与 `"enabled"` 一律返回 400，`tool_choice` 的 `any` / `tool` 也返回 400。从 Opus 5 / Sonnet 5 升上来的代码需要按迁移指南改写。
+> ⚠️ **换代伴随的迁移风险**：**Opus 5.5 / Fable 5.1 / Mythos 5.1 的思考完全不可关闭**——`thinking: {"type": "disabled"}` 与 `{"type": "enabled", ...}` 一律返回 400，只能省略 `thinking` 字段、改用 `effort` 控深度。**Sonnet 5.5 是个例外**：它支持 `thinking: {"type": "between_tools"}` 关掉「前置思考」，但仅限 `high` 及以下 effort。`tool_choice` 的 `any` / `tool` 在 Opus 5.5 / Fable 5.1 / Sonnet 5.5 上同样返回 400。另外 **Haiku 4.5 的代码搬到 Haiku 5.5 会直接坏**——`budget_tokens` 形式的手动 extended thinking 返 400，且新分词器让同样文本多约 30% token。
 
 **如何跟踪**：
 
-1. **官方源**：[Anthropic News](https://www.anthropic.com/news)、[Claude 模型总览](https://platform.claude.com/docs/en/about-claude/models/overview)、[Claude Platform release notes](https://platform.claude.com/docs/en/release-notes/overview)、[Claude Code docs](https://code.claude.com/docs)
-2. **更新节奏**：模型大版本约半年一更，但 2026-09 一个月内连发三个（5.1 / 5.5 / 5.5）——换代节奏在加快；Claude Code 几乎每周迭代
-3. **判断原则**：模型更新看「价格 / 能力 / 上下文」三要素；工具更新看「对现有工作流的破坏性」——破坏性变更（如思考不可关闭）优先跟进
+1. **官方源**：[Anthropic News](https://www.anthropic.com/news)、[Claude 模型总览](https://platform.claude.com/docs/en/about-claude/models/overview)、[Claude Platform release notes](https://platform.claude.com/docs/en/release-notes/overview)、[模型退役页](https://platform.claude.com/docs/en/about-claude/model-deprecations)、[Claude Code docs](https://code.claude.com/docs)
+2. **更新节奏**：模型大版本约半年一更，但 2026-09 至 10 月两个月内连发四个（5.1 / 5.5 / 5.5 / 5.5）——换代节奏在加快；Claude Code 几乎每周迭代
+3. **判断原则**：模型更新看「价格 / 能力 / 上下文」三要素；工具更新看「对现有工作流的破坏性」——破坏性变更（如思考不可关闭、Haiku 的 `budget_tokens` 失效）优先跟进
 
 ## 关键洞察
 
 - **dense 路径在 2026 是少数派**——但 Anthropic 靠"行为稳定 + 安全可控"差异化
 - **Agent 是核心壁垒**——Computer Use / Browser Use / Agent SDK / Skills / Hooks 是别的厂商没整合好的
-- **缓存折扣是价格利器**——长 prompt 场景必开，且新一代把读取打到 0.025x
+- **缓存折扣是价格利器**——长 prompt 场景必开，且新一代把读取打到 0.025x；Sonnet 5.5 在 10-07 又降到 0.05x
 - **Fable 5.1 是补位不是替代**——专门做"长 Agent"赛道；Opus 5.5 是性价比首选
-- **换代在加速，破坏性变更在变多**——2026-09 一个月发三个型号，思考不可关闭是新的迁移门槛
+- **换代在加速，破坏性变更在变多**——思考不可关闭、Haiku 换分词器，都是新的迁移门槛
+- **定价开始分维度**——Haiku 5.5 按 prompt 长度分档，说明"单一 MTok 单价"这个假设本身在松动
 
 ## 参考
 
 - [Anthropic 平台文档](https://platform.claude.com/docs/en/intro)
 - [Claude 定价](https://platform.claude.com/docs/en/about-claude/pricing)
-- [Claude Platform release notes](https://platform.claude.com/docs/en/release-notes/overview)（访问于 2026-09-30）
+- [Claude Platform release notes](https://platform.claude.com/docs/en/release-notes/overview)（访问于 2026-10-08）
+- [Claude 模型退役与生命周期](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-10-08）
 - [Claude 产品总览](https://claude.com/product/overview)
+
 - [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - [Claude 模型 · claude-capabilities](/claude-capabilities/models/overview)
 - [Claude Code 精通](/claude-code/)

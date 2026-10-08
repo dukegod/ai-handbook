@@ -4,18 +4,24 @@ description: 'GLM-5.3 / GLM-5.3-Flash / GLM-5.2——清华系、1M 上下文、
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-08
 verifiedWith:
   sources:
     - name: 智谱开放平台 API 定价
       url: https://docs.bigmodel.cn/cn/guide/start/pricing
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: GLM-5.3 官方文档
       url: https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: 智谱模型与产品发布记录
       url: https://docs.bigmodel.cn/cn/update/new-releases
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
+    - name: GLM-5.3 官方模型卡（zai-org Hugging Face）
+      url: https://huggingface.co/zai-org/GLM-5.3
+      accessedAt: 2026-10-08
+    - name: GLM-5.3-Flash 官方模型卡（zai-org Hugging Face）
+      url: https://huggingface.co/zai-org/GLM-5.3-Flash
+      accessedAt: 2026-10-08
 ---
 
 # Zhipu · 智谱 GLM 全系
@@ -26,7 +32,7 @@ verifiedWith:
 
 智谱 AI 由清华大学唐杰教授团队 2019 年孵化，总部北京。核心定位是**「学术 + 开源 + Agent」**——从 GLM-130B 开源起步，逐步商业化。商业模式：BigModel API + 企业 MaaS + 开源权重。是国内最早做大模型商业化的公司之一。
 
-## 二、模型矩阵（截至 2026-09）
+## 二、模型矩阵（截至 2026-10）
 
 | 模型 | 定位 | 上下文 | 思考模式 | 主要场景 |
 |------|------|--------|----------|----------|
@@ -90,7 +96,9 @@ verifiedWith:
 
 **全尺寸开源是智谱优势** —— GLM 系列从 GLM-4 起全尺寸开放（Apache 2.0），是国内开源最彻底的大模型厂商。`GLM-4.7-Flash` 更是**完全免费**。
 
-## 六、价格（截至 2026-09，官方定价，单位：元 / 百万 Tokens）
+**开源权重已核实到 5.3 一代**（`zai-org` Hugging Face 组织页，访问于 2026-10-08）：`GLM-5.3`（许可名 `glm-5.3`）、`GLM-5.3-Flash`（**MIT**）、`GLM-5.3-Flash-BF16`、`GLM-5.2`、`GLM-5` 均已放出。`GLM-5.3-Flash` 官方模型卡确认其为 GLM-5 系列**首个原生多模态模型**，并说明它**从新训练的基座出发**、架构与训练配方围绕能力与效率重新设计——这与 `GLM-5.3`（文本）复用 `GLM-5.2` 基座、只做后训练的做法是两条不同路径。
+
+## 六、价格（截至 2026-10，官方定价，单位：元 / 百万 Tokens）
 
 | 模型 | 上下文 | 输入 | 输出 | 缓存命中 |
 |------|--------|------|------|----------|
@@ -123,7 +131,7 @@ verifiedWith:
 - 极简单轮问答（`GLM-5.3` 强制常开思考，简单任务成本偏高——此时应改用免费档 `GLM-4.7-Flash`）
 - 需要 2M 级超长上下文的场景（`GLM-5.3` 为 1M）
 
-## 八、最新动态（2026-09）
+## 八、最新动态（2026-10）
 
 **三条跟踪线**：
 
@@ -137,7 +145,11 @@ verifiedWith:
 2. **更新节奏**：旗舰约 2-3 个月一更（`GLM-5` 2026-02 → `5.1` 2026-04 → `5.2` 2026-06 → `5.3` 2026-08）
 3. **判断原则**：智谱的换代**常常不动基座**——看到「小版本号 + 官方强调后训练」时，应预期能力涨、参数不变、价格不变，而不是重新做架构选型
 
-**截至 2026-09 的具体动态**（均据官方源）：
+**截至 2026-10-08 的具体动态**（均据官方源）：
+
+> 📌 **本轮核实结论：2026-09-30 ~ 2026-10-08 之间官方无新模型发布、无调价**。智谱「模型与产品发布记录」页最新公告仍是 2026-08-26 的 `GLM-5.3-Flash`；旗舰模型定价表（`GLM-5.3` / `-Flash` / `-FlashX` / `GLM-5.2` / `GLM-4.7-Flash`）与上一轮逐项一致。
+
+- **开源权重补齐** —— `GLM-5.3`（`glm-5.3` 许可）与 `GLM-5.3-Flash`（MIT）权重已在 `zai-org` 组织页放出，`GLM-5.3-Flash` 另有 BF16 版本
 
 - **2026-08-19 `GLM-5.3` 上线** —— 官方明确「与 `GLM-5.2` 使用相同的基础模型，所有提升均来自后训练」；内部 Z.ai Code Bench 较 `5.2` 提升 50%
 - **2026-08-26 `GLM-5.3-Flash` 上线** —— 原生多模态，可「主动观察界面、渲染与交互反馈并持续迭代」；**线性 + 稀疏注意力混合架构，总参 320B / 激活 18B**；场景从 Coding 扩展到 Office 文档与金融研究工作流
@@ -159,9 +171,11 @@ verifiedWith:
 
 ## 参考
 
-- [智谱模型与产品发布记录](https://docs.bigmodel.cn/cn/update/new-releases)（访问于 2026-09-30）
-- [智谱 API 定价](https://docs.bigmodel.cn/cn/guide/start/pricing)（访问于 2026-09-30）
-- [GLM-5.3 官方文档](https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3)（访问于 2026-09-30）
+- [智谱模型与产品发布记录](https://docs.bigmodel.cn/cn/update/new-releases)（访问于 2026-10-08）
+- [智谱 API 定价](https://docs.bigmodel.cn/cn/guide/start/pricing)（访问于 2026-10-08）
+- [GLM-5.3 官方文档](https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3)（访问于 2026-10-08）
+- [GLM-5.3 官方模型卡（zai-org Hugging Face）](https://huggingface.co/zai-org/GLM-5.3)（访问于 2026-10-08，许可名 `glm-5.3`）
+- [GLM-5.3-Flash 官方模型卡（zai-org Hugging Face）](https://huggingface.co/zai-org/GLM-5.3-Flash)（访问于 2026-10-08，MIT）
 - [智谱 BigModel 开放平台](https://open.bigmodel.cn/)
 - [GLM-4 技术报告](https://github.com/THUDM/GLM-4)
 - [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)

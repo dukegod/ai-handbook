@@ -4,45 +4,53 @@ description: 开源降本标杆——V4-Pro / V4.1-Flash、R1 推理模型、技
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-08
 verifiedWith:
   sources:
     - name: DeepSeek 官方
       url: https://api-docs.deepseek.com
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: DeepSeek 官方模型与定价
       url: https://api-docs.deepseek.com/quick_start/pricing
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: DeepSeek 官方 Change Log
       url: https://api-docs.deepseek.com/updates
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: DeepSeek-R1 发布
       url: https://api-docs.deepseek.com/news/news250120
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
+    - name: deepseek-ai 官方 Hugging Face 组织页
+      url: https://huggingface.co/deepseek-ai
+      accessedAt: 2026-10-08
+    - name: DeepSeek-V4.1-Flash 官方模型卡（含技术报告）
+      url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+      accessedAt: 2026-10-08
 ---
 
 # DeepSeek
 
-> **TL;DR**：开源界的「降本标杆」——V3 / R1 证明低成本也能训出前沿模型，2026 年已迭代到 V4-Pro / V4.1-Flash 双档（1M 上下文 + 峰谷定价）。
+> **TL;DR**：开源界的「降本标杆」——V3 / R1 证明低成本也能训出前沿模型，2026 年已迭代到 V4-Pro / V4.1-Flash 双档（1M 上下文 + 峰谷定价 + 最大输出 384K）。
 
 ## 一、定位
 
 DeepSeek 是中国开源大模型的技术品牌担当：**训练成本低 + 开放权重 + 开放蒸馏（MIT）**。它改变了整个行业对「开源推理模型能不能打」的预期。
 
-## 二、模型线（截至 2026-09）
+## 二、模型线（截至 2026-10）
 
-官方在售 API 模型只有两档（模型名 `deepseek-v4-pro` 与 `deepseek-flash`）：
+官方在售 API 模型只有两档（模型名 `deepseek-v4-pro` 与 `deepseek-flash`），**两档上下文均为 1M、最大输出均为 384K**（官方定价页，访问于 2026-10-08）：
 
 | 模型 | 时间 | 定位 | 官方上下文 | AA 智能分（第三方） |
 | --- | --- | --- | --- | --- |
-| **V4.1-Flash** | 2026-09-10 发布 | 轻量快速档，**唯一支持视觉**（原生多模态） | 1M | — |
-| **V4-Pro-0813** | 2026-08-13 GA | 当前旗舰（后训练迭代） | 1M | **53** |
+| **V4.1-Flash** | 2026-09-10 发布 | 轻量快速档，**唯一支持视觉**（原生多模态） | 1M / 最大输出 384K | — |
+| **V4-Pro-0813** | 2026-08-13 GA | 当前旗舰（后训练迭代） | 1M / 最大输出 384K | **53** |
 | **V4-Pro**（1.6T） | 2026-04-24 上线 API | 旗舰，已被 0813 取代 | 1M | 45 |
 | **V4-Flash** | 2026-07-31 | **已退役**，请求转发到 V4.1-Flash | — | 52 |
 | **R1** | 2025-01-20 | 开源推理模型，对标 o1 系列 | — | — |
 | **V3** | 2024-12-26 | 降本里程碑（十分之一训练成本） | — | — |
 
-> ⚠️ 「AA 智能分」与「1.6T 参数」为第三方口径，本次（2026-09-30）未从官方源复核，仅作参考。上下文长度、模型版本、定价与基准分均取自官方页。
+> ⚠️ 「AA 智能分」与「V4-Pro 的 1.6T 参数」为第三方 / 模型卡口径，本次（2026-10-08）未在 API 文档站复核，仅作参考。上下文长度、最大输出、模型版本、定价与基准分均取自官方页。
+
+**两档的接口能力完全对齐**（官方定价页）：JSON 输出、Tool Calls、Responses API、Anthropic API、Chat Prefix Completion（Beta）均支持；FIM Completion（Beta）仅非思考模式；**差异只有一条——Vision 仅 Flash 档支持**。
 
 **官方定价**（美元 / 每百万 token，格式为「谷时 / 峰时」）：
 
@@ -60,7 +68,8 @@ DeepSeek 是中国开源大模型的技术品牌担当：**训练成本低 + 开
 - **V3（2024-12-26）**：训练成本约为同代闭源的十分之一——「降本」信号，引发全球对训练效率的讨论
 - **R1（2025-01-20）**：开源推理模型，MIT 许可，API 输出可用于微调和蒸馏——「推理平民化」
 - **V4（2026-04-24）**：V4-Pro 与 V4-Flash 上线 API，同时提供 OpenAI 与 Anthropic 两种接口格式；旧模型名 `deepseek-chat` / `deepseek-reasoner` 于 2026-07-24 停用
-- **V4.1-Flash（2026-09-10）**：新架构家族中最小的一档，原生多模态，随发布整体降价
+- **V4.1-Flash（2026-09-10）**：新架构家族中最小的一档，原生多模态，随发布整体降价；**同日官方在 Hugging Face 放出 MIT 许可权重与《DeepSeek_V41_Tech_Report.pdf》**
+- **V4 系列权重全面 MIT 开放**：`V4-Flash-0731`（2026-07-31）、`V4-Pro-0813`（2026-08-13）、`V4-Flash-Vision-Exp`（2026-08-31）、`V4.1-Flash`（2026-09-10）均在 `deepseek-ai` 组织页以 MIT 发布（访问于 2026-10-08）
 
 ## 四、特点
 
@@ -74,25 +83,29 @@ DeepSeek 是中国开源大模型的技术品牌担当：**训练成本低 + 开
 
 **不适合**：需要完整商业生态支持（客服、部署、合规套件）的企业——DeepSeek 重模型轻服务。
 
-## 六、最新动态（2026-09）
+## 六、最新动态（2026-10）
 
 **三条跟踪线**：
 
 - **模型线**：V4 家族双档（V4-Pro 旗舰 / V4.1-Flash 轻量）。核心看「哪一档是当前旗舰、是否支持视觉、上下文长度」
 - **价格线**：峰谷定价 + 随发布降价。核心看「输出单价」——输出通常是成本的真实大头
-- **生态线**：DeepSeek Harness 与各家 Agent 框架的官方适配（Claude Code、Codex、OpenCode 等）
+- **生态线**：DeepSeek Harness 与各家 Agent 框架的官方适配（Claude Code、Codex、OpenCode、OpenClaw、WorkBuddy 等）
 
 **如何跟踪**：
 
-1. **官方源**：[Change Log](https://api-docs.deepseek.com/updates)（版本与降价的第一手来源）、[模型与定价](https://api-docs.deepseek.com/quick_start/pricing)
+1. **官方源**：[Change Log](https://api-docs.deepseek.com/updates)（版本与降价的第一手来源）、[模型与定价](https://api-docs.deepseek.com/quick_start/pricing)、[Hugging Face 组织页](https://huggingface.co/deepseek-ai)（开源权重与模型卡的第一手来源）
 2. **更新节奏**：2026 年迭代明显加密——04-24 上线 V4、07-31 V4-Flash、08-13 V4-Pro GA、08-21 视觉实验版、09-10 V4.1-Flash，基本月级
 3. **判断原则**：只信 Change Log。媒体报道的「即将发布」在 DeepSeek 这条线上基本等于不准
 
-**截至 2026-09-30 的具体动态**：
+**截至 2026-10-08 的具体动态**：
+
+> 📌 **本轮核实结论：2026-09-30 ~ 2026-10-08 之间官方 API 侧无新模型发布、无降价**。Change Log 最新条目仍是 2026-09-10 的 V4.1-Flash，定价页价格与上一轮完全一致。以下为已确证的历史条目。
 
 | 日期 | 事件 | 意义 |
 | --- | --- | --- |
+| 2026-10-01 | **V4.1-Flash Hugging Face 仓库更新**（新增 chat template） | 权重侧维护动作，API 侧无变化 |
 | 2026-09-10 | **DeepSeek-V4.1-Flash 发布** | 新架构家族最小一档，**原生多模态**；实测 GPQA Diamond 90.9、Terminal-Bench 2.1 90.6、DeepSWE v1.1 74.2、Codeforces 3471 |
+| 2026-09-10 | **V4.1-Flash 权重 + 技术报告开源**（MIT） | 官方 HF 仓库同日上线；模型卡披露 552B 骨干参数、prefill 激活 8B / decode 16B、45T tokens 预训练、1M 上下文 |
 | 2026-09-10 | **V4-Flash / V4-Flash-Vision-Exp 退役** | 旧模型名 `deepseek-v4-flash`、`deepseek-v4-flash-vision-exp` 暂时转发到 V4.1-Flash |
 | 2026-09-10 | **V4-Pro 明确继续服务** | 官方声明 2026-09-14 后 V4-Pro API 继续提供，计费方式不变 |
 | 2026-09-10 | **随 V4.1-Flash 整体降价** | 见上表官方定价 |
@@ -103,14 +116,16 @@ DeepSeek 是中国开源大模型的技术品牌担当：**训练成本低 + 开
 
 > 📌 **怎么用这条线**：V4-Pro 与 V4.1-Flash 的输出价差约 3.3 倍，但轻量档已经能吃下视觉与多数 Agent 任务。**默认从 V4.1-Flash 起步，确有必要再上 V4-Pro**，是当前性价比最高的组合。V4-Pro 不支持视觉，需要多模态时只能走 V4.1-Flash。
 
-> ⚠️ **开源注意**：截至 2026-09-30，本次核实范围为 **DeepSeek 官方 API 文档站**。官方 Change Log 只记录 API 侧版本，**未在该站列出 V4 系列权重的开源发布**。若要做私有化部署，权重许可需另行到官方渠道确认，不要假设 API 可用即代表权重开放。
+> ✅ **开源已确证（2026-10-08 更正上一轮结论）**：上一轮只核实了官方 API 文档站，Change Log 确实只记录 API 侧版本，因此当时标注「未列出 V4 系列权重的开源发布」。**本轮补充核实 Hugging Face 官方组织页后可以确认：`V4-Flash-0731`、`V4-Pro-0813`、`V4-Flash-Vision-Exp`、`V4.1-Flash` 的权重均已在 `deepseek-ai` 组织下以 MIT 许可发布，V4.1-Flash 还附带技术报告 PDF。** 私有化部署可直接取官方权重。
 
 ## 参考
 
-- [DeepSeek 官方 API 文档](https://api-docs.deepseek.com)（访问于 2026-09-30）
-- [DeepSeek 官方 Change Log](https://api-docs.deepseek.com/updates)（访问于 2026-09-30）
-- [DeepSeek 官方模型与定价](https://api-docs.deepseek.com/quick_start/pricing)（访问于 2026-09-30）
-- [R1 发布公告](https://api-docs.deepseek.com/news/news250120)（访问于 2026-09-30）
+- [DeepSeek 官方 API 文档](https://api-docs.deepseek.com)（访问于 2026-10-08）
+- [DeepSeek 官方 Change Log](https://api-docs.deepseek.com/updates)（访问于 2026-10-08）
+- [DeepSeek 官方模型与定价](https://api-docs.deepseek.com/quick_start/pricing)（访问于 2026-10-08）
+- [R1 发布公告](https://api-docs.deepseek.com/news/news250120)（访问于 2026-10-08）
+- [deepseek-ai 官方 Hugging Face 组织页](https://huggingface.co/deepseek-ai)（访问于 2026-10-08）
+- [DeepSeek-V4.1-Flash 官方模型卡](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash)（访问于 2026-10-08，MIT）
 
 ## 下一步
 

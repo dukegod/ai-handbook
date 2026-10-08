@@ -4,18 +4,24 @@ description: Kimi K3 / K2.7 Code / K2.6——2.8T MoE 架构、1M 长上下文�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-08
 verifiedWith:
   sources:
     - name: Kimi 开放平台 · 官方定价
       url: https://platform.moonshot.cn/docs/pricing/chat
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: Kimi 开放平台 · 平台新功能发布记录
       url: https://platform.moonshot.cn/docs/changelog/index
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
     - name: Kimi K3 官方模型文档
       url: https://platform.moonshot.cn/docs/guide/kimi-k3-quickstart
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
+    - name: Kimi K3 官方模型卡（moonshotai Hugging Face）
+      url: https://huggingface.co/moonshotai/Kimi-K3
+      accessedAt: 2026-10-08
+    - name: Kimi K3 官方 GitHub 仓库（附技术报告 PDF）
+      url: https://github.com/MoonshotAI/Kimi-K3
+      accessedAt: 2026-10-08
 ---
 
 # Moonshot · Kimi 全系
@@ -28,7 +34,7 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 
 ## 二、模型矩阵
 
-官方定价页当前只列四个在售模型名（截至 2026-09-30）：
+官方定价页当前只列四个在售模型名（截至 2026-10-08，价格与上一轮逐项一致）：
 
 | 模型 | 时间 | 定位 | 上下文 | 思考模式 | 主要场景 |
 |------|------|--------|----------|----------|
@@ -46,7 +52,7 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 
 > ⚠️ 旧版 K2 系列的「384 专家 / 激活 8」为历史口径，K2 已于 2026-05 下线，且该数字本次未从官方文档复核。
 
-**KDA 混合线性注意力** —— K3 基于 **KDA（Kimi Delta Attention）混合线性注意力 + 注意力残差（Attention Residuals）** 构建，这是与 K2 最大的架构差异，目标是让信息在更长序列和更深模型中流动更顺畅。K3 官方技术报告截至 2026-09-30 尚未随模型页公布。
+**KDA 混合线性注意力** —— K3 基于 **KDA（Kimi Delta Attention）混合线性注意力 + 注意力残差（Attention Residuals）** 构建，这是与 K2 最大的架构差异，目标是让信息在更长序列和更深模型中流动更顺畅。**K3 技术报告已随官方 GitHub 仓库发布**（`MoonshotAI/Kimi-K3` 下的 `k3_tech_report.pdf`，访问于 2026-10-08）；但开放平台模型页仍写「更多细节将随技术报告一同公布」，即报告与文档页尚未完全同步。
 
 **1M 长上下文** —— 当前旗舰 K3 为 100 万 token。K2-0905 曾扩到 2M token（当时是 7 家厂商中最长），但**该档位随 K2 全系于 2026-05 下线**，目前无法调用。
 
@@ -79,7 +85,7 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 
 > ⚠️ 调用 K3 有门槛：开放平台需**累计充值最低 10 元**才解锁；新用户注册赠送的 15 元代金券**不可用于 K3**。
 
-## 六、价格（截至 2026-09，官方定价，人民币）
+## 六、价格（截至 2026-10，官方定价，人民币）
 
 官方以**人民币**计价，单位为每 100 万 tokens：
 
@@ -110,7 +116,7 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 - 极低成本场景（K3 输出价远高于国产同档位）
 - 海外部署（Kimi API 主要面向国内）
 
-## 八、最新动态（2026-09）
+## 八、最新动态（2026-10）
 
 **三条跟踪线**：
 
@@ -124,10 +130,13 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 2. **更新节奏**：Kimi 是国产厂商里 changelog 维护最规范的，**按月归档、带日期标签**，排查问题直接翻
 3. **判断原则**：先看「下线」再看「上线」。国内厂商里 Kimi 的旧模型退役最激进，生产环境务必锁死 `model` 名并订阅 changelog
 
-**截至 2026-09-30 的具体动态**：
+**截至 2026-10-08 的具体动态**：
+
+> 📌 **本轮核实结论：2026-09-30 ~ 2026-10-08 之间 changelog 无新条目**。官方发布记录最新仍是 2026 年 9 月的分组，定价页四个模型的价格与上下文逐项未变（K3 ¥2 / ¥20 / ¥100、262,144 token 档位均一致）。
 
 | 时间 | 事件 | 意义 |
 | --- | --- | --- |
+| 2026-10 | **Kimi K3 技术报告 PDF 已在官方 GitHub 仓库发布** | `MoonshotAI/Kimi-K3` 含 `k3_tech_report.pdf`；开放平台模型页措辞尚未同步 |
 | 2026-09 | **Kimi 托管智能体（Hosted Agents）Beta 上线** | 基于 Kimi Durable Harness 的 7×24 全托管 Agent 运行环境，沙箱 / 会话 / 失败恢复 / 超时重试全托管；支持控制台、API、`hakimi` 三种用法；多智能体编排、技能与凭据库、跨会话持久记忆。**Beta 当前面向国内企业认证用户** |
 | 2026-09 | **联网搜索 API** | `/v1/tools/search` 与 `/v1/tools/search_pro`，返回结构化结果，可自行编排搜索逻辑 |
 | 2026-09 | **计费方式调整** | 账户消耗按现金、代金券各 50% 扣除；一类用尽后全额从另一类扣 |
@@ -149,9 +158,11 @@ Moonshot AI（月之暗面）2023 年由清华系创业者杨植麟创办，总�
 
 ## 参考
 
-- [Kimi 开放平台 · 官方定价](https://platform.moonshot.cn/docs/pricing/chat)（访问于 2026-09-30）
-- [Kimi 开放平台 · 平台新功能发布记录](https://platform.moonshot.cn/docs/changelog/index)（访问于 2026-09-30）
-- [Kimi K3 官方模型文档](https://platform.moonshot.cn/docs/guide/kimi-k3-quickstart)（访问于 2026-09-30）
+- [Kimi 开放平台 · 官方定价](https://platform.moonshot.cn/docs/pricing/chat)（访问于 2026-10-08）
+- [Kimi 开放平台 · 平台新功能发布记录](https://platform.moonshot.cn/docs/changelog/index)（访问于 2026-10-08）
+- [Kimi K3 官方模型文档](https://platform.moonshot.cn/docs/guide/kimi-k3-quickstart)（访问于 2026-10-08）
+- [Kimi K3 官方模型卡（moonshotai Hugging Face）](https://huggingface.co/moonshotai/Kimi-K3)（访问于 2026-10-08，许可名 `kimi-k3`）
+- [Kimi K3 官方 GitHub 仓库](https://github.com/MoonshotAI/Kimi-K3)（访问于 2026-10-08，含技术报告 PDF）
 - [Kimi 开放平台文档首页](https://platform.moonshot.cn/docs)
 - [Kimi K2 技术报告](https://moonshotai.github.io/Kimi-K2/)（历史，K2 已下线）
 - [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)

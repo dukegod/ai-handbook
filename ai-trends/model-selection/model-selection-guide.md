@@ -4,12 +4,12 @@ description: 按场景 / 中文要求 / 长文档 / 编码 / 推理 / 预算 6 �
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-08
 verifiedWith:
   sources:
     - name: 7 厂商横向对比
       url: /ai-trends/model-selection/model-comparison
-      accessedAt: 2026-09-30
+      accessedAt: 2026-10-08
 ---
 
 # 选型决策树
@@ -36,7 +36,7 @@ flowchart TD
     J -->|不敏感| L[Claude Sonnet 5.5]
 ```
 
-> ⚠️ **2026-09 换代提示**：OpenAI 主线已从 GPT-5.6 切到 GPT-6（推理靠 `effort` 档位，o 系列已让位）；**Kimi K2.5 / K2 全系已下线**（2026-08 起调用返回 404）；MiniMax 主力是 `M3`。详细换代与下线清单见 [7 厂商横向对比](./model-comparison)。
+> ⚠️ **2026-10 换代提示**：**Claude Haiku 5.5 已于 2026-10-07 发布**（$0.10 / $0.50，1M 上下文，首个带 `effort` 的 Haiku），轻量档与 GPT-6 Luna 同价；OpenAI 主线仍是 GPT-6（推理靠 `effort` 档位，o 系列已让位）；**Grok 5 至今未发布**，xAI 旗舰仍是 Grok 4.7；**Kimi K2.5 / K2 全系已下线**（2026-08 起调用返回 404）；MiniMax 主力是 `M3`。详细换代与下线清单见 [7 厂商横向对比](./model-comparison)。
 
 ### 维度 1：场景
 
@@ -44,6 +44,7 @@ flowchart TD
 |------|------|------|
 | 通用对话 | Claude Sonnet 5.5 / GPT-6.1 Sol | 性价比高，中英文都好 |
 | 编码 + Agent | Claude Sonnet 5.5 | Tool Use + Agent 最完整 |
+| 高并发 / 分类 / 子 agent | Claude Haiku 5.5 / GPT-6 Luna | 同为 $0.10 / $0.50；Haiku 5.5 首个支持 `effort` |
 | 数学/代码推理 | GPT-6 Astra（`effort` 档）/ GLM-5.3 | 推理时计算；GLM-5.3 思考常开不可关 |
 | 长文档分析 | Kimi K3 / Qwen3.8-Max | 1M 上下文 |
 | 多模态 | Qwen3.8-Omni / MiniMax `M3` | 全模态最完整 |
@@ -76,8 +77,8 @@ flowchart TD
 
 | 预算 | 首选 | 备注 |
 |------|------|------|
-| 极低 | MiniMax `M3` / GLM-4.7-Flash | `M3` $0.30/MTok input；GLM-4.7-Flash 免费 |
-| 低 | GPT-6 Luna（$0.10/MTok）/ Qwen 开源自部署 | 开源自部署免费 |
+| 极低 | Claude Haiku 5.5 / GPT-6 Luna（$0.10/MTok） | 两者 input/output 完全同价；Haiku 5.5 官方定位高并发成本敏感任务 |
+| 低 | MiniMax `M3` / GLM-4.7-Flash / Qwen 开源自部署 | `M3` $0.30/MTok input；GLM-4.7-Flash 免费 |
 | 中 | Claude Sonnet 5.5 / GPT-6.1 Sol / Grok 4.7 | $2/MTok input |
 | 高 | Claude Opus 5.5 | $4/MTok input |
 | 顶 | Claude Fable 5.1 / GPT-6 Astra | $10/MTok input，全系最贵 |
@@ -151,12 +152,14 @@ flowchart TD
 **示例路由**：
 
 ```
-用户请求 → 简单分类？ → Qwen 开源（自部署，免费）
-         → 需要推理？ → Claude Opus 5.5（$4/MTok）
-         → 长文档？  → Kimi K3（¥20/MTok 输入，人民币）
+用户请求 → 简单分类/摘要/压缩？ → Claude Haiku 5.5（$0.10/MTok，1M 上下文）
+         → 需要推理？           → Claude Opus 5.5（$4/MTok，effort 按需降档）
+         → 长文档？             → Kimi K3（¥20/MTok 输入，人民币）
 ```
 
 **收益**：平均成本降低 60-80%，同时保持质量。
+
+**2026-10 补充**：`effort` 档位是新增的一层路由维度。同一个 Opus 5.5，把 effort 从 `max` 降到 `high` 可显著降本（代价是智能分下降），比直接换模型更划算——**路由时先调 effort，再换模型**。
 
 ## 参考
 
@@ -174,4 +177,4 @@ flowchart TD
 
 - 看量化对比数据 → [7 厂商横向对比](./model-comparison)
 - 看技术路线差异 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
-- 看某家厂商的完整档案与 2026-09 动态 → [国内厂商](/ai-trends/cn-vendors/) / [国外厂商](/ai-trends/vendors/)
+- 看某家厂商的完整档案与 2026-10 动态 → [国内厂商](/ai-trends/cn-vendors/) / [国外厂商](/ai-trends/vendors/)
