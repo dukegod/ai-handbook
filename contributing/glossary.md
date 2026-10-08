@@ -6,7 +6,7 @@ difficulty: 🟢
 status: published
 lastUpdated: 2026-09-30
 verifiedWith:
-  scope: '本次核对 AI 基础与训练术语；原有产品条目未重新核验'
+  scope: '本次核对 AI 基础、训练与应用术语；原有产品条目未重新核验'
   sources:
     - name: InstructGPT
       url: https://arxiv.org/abs/2203.02155
@@ -17,17 +17,26 @@ verifiedWith:
     - name: DeepSeekMath
       url: https://arxiv.org/abs/2402.03300
       accessedAt: 2026-09-30
+    - name: RAG
+      url: https://arxiv.org/abs/2005.11401
+      accessedAt: 2026-09-30
+    - name: LangChain Memory overview
+      url: https://docs.langchain.com/oss/python/concepts/memory
+      accessedAt: 2026-09-30
+    - name: LangGraph Workflows and agents
+      url: https://docs.langchain.com/oss/python/langgraph/workflows-agents
+      accessedAt: 2026-09-30
 ---
 
 # 术语表
 
-> 中英双语锁定表。写作时若遇到本表未收录的术语，先补录到这里，再写正文。
+> 中英双语术语表。新术语先补表，再写正文。
 
 ## 阅读方式
 
-- **首选写法**：正文里推荐的固定表达
-- **中文括注**：仅在术语首次出现时使用，用于向新读者建立映射；后续文中直接用英文
-- **禁止**：多种译法混用（比如「技能 / Skill」在同一篇里同时出现）
+- **首选写法**：正文统一表达
+- **中文括注**：首次出现时解释，后续保持一致
+- **避免**：同一术语多种译法混用
 
 ## AI 基础与训练
 
@@ -48,7 +57,28 @@ verifiedWith:
 | **PPO（近端策略优化）** | 强化学习策略优化算法，可用于 RLHF 等训练流程 |
 | **GRPO（组相对策略优化）** | 利用同一问题多份回答的相对奖励优化策略 |
 
-这些方法描述不同维度，并非依次替代的技术世代。详见 [预训练与微调](/ai-core/fundamentals/pretraining) 和 [RLHF 与对齐](/ai-core/fundamentals/alignment)。
+这些方法并非技术世代的替代关系，见 [预训练与微调](/ai-core/fundamentals/pretraining) 和 [RLHF 与对齐](/ai-core/fundamentals/alignment)。
+
+## AI 应用
+
+| 首选写法 | 定义 |
+| --- | --- |
+| **Prompt（提示词）** | 给模型的任务要求与资料 |
+| **Context（上下文）** | 本次调用可用的信息 |
+| **Context Window（上下文窗口）** | 单次处理的长度上限，通常以 token 计数 |
+| **Memory（记忆）** | 保存并取回会话或跨会话信息的应用机制 |
+| **工具调用（Tool Calling / Function Calling）** | 模型请求调用工具，由运行程序实际执行 |
+| **工具结果（Tool Result）** | 工具返回的数据，不自动成为指令 |
+| **Agent（智能体）** | 由模型动态选择步骤与工具的系统 |
+| **Workflow（工作流）** | 预设步骤与分支的执行流程 |
+| **RAG（检索增强生成）** | 先检索资料，再据此生成答案 |
+| **Embedding（嵌入）** | 将内容表示为数值向量 |
+| **向量检索** | 按向量相似度查找候选内容 |
+| **分块（Chunking）** | 将资料拆成可检索片段 |
+| **重排（Reranking）** | 对检索候选重新评估相关性并排序 |
+| **评估（Evaluation）** | 按预定标准检验系统表现 |
+
+按 [应用主线](/getting-started/#理解-ai-应用) 阅读。Claude Code 用法见 [上下文](/claude-code/basics/context-window)、[记忆](/claude-code/advanced/memory) 与 [工作流](/claude-code/subagents-and-workflows/workflow-orchestration)。
 
 ## Claude 与 Anthropic 家族
 
@@ -72,7 +102,6 @@ verifiedWith:
 | 首选写法 | 一句话定义 | 相关章节 |
 | --- | --- | --- |
 | **Session（会话）** | 一次 Claude Code 交互过程，含完整上下文与工具调用历史 | [/claude-code/basics/sessions](/claude-code/basics/sessions) |
-| **Context（上下文）** | Claude 单次调用能看见的 token 总量；含系统提示、历史、工具结果 | [/claude-code/basics/context-window](/claude-code/basics/context-window) |
 | **CLAUDE.md** | 项目/用户/企业级的持久化上下文文件，Claude Code 每次自动加载 | [/claude-code/basics/claude-md](/claude-code/basics/claude-md) |
 | **Permission（权限）** | Claude Code 对工具调用的准入策略；分 `allow / deny / ask` | [/claude-code/basics/permissions](/claude-code/basics/permissions) |
 | **Plan Mode** | 只读探索 + 计划审批模式；退出时才开始写文件 | [/claude-code/basics/plan-mode](/claude-code/basics/plan-mode) |
@@ -81,9 +110,7 @@ verifiedWith:
 | **Skill（技能）** | 声明式扩展；含 SKILL.md 与触发描述，Claude 根据 description 自动选用 | [/claude-code/skills/what-is-a-skill](/claude-code/skills/what-is-a-skill) |
 | **Hook** | 在特定生命周期事件（工具前/后/停止/提交）自动执行的脚本 | [/claude-code/customization/hooks](/claude-code/customization/hooks) |
 | **Subagent（子代理）** | 通过 Task 工具派生的独立 Agent；有自己的上下文与工具集 | [/claude-code/subagents-and-workflows/what-is-a-subagent](/claude-code/subagents-and-workflows/what-is-a-subagent) |
-| **Workflow** | 用 JavaScript 编排多个 Subagent 的确定性脚本 | [/claude-code/subagents-and-workflows/workflow-orchestration](/claude-code/subagents-and-workflows/workflow-orchestration) |
 | **Worktree** | Git 的多工作树能力；Claude Code 用它实现隔离改动 | [/claude-code/advanced/worktree](/claude-code/advanced/worktree) |
-| **Memory（记忆）** | Claude Code 的持久化事实文件；不同于 CLAUDE.md，更细粒度 | [/claude-code/advanced/memory](/claude-code/advanced/memory) |
 | **Headless / 非交互模式** | 用 `claude -p` 一次性输入输出，不进入 REPL | [/claude-code/advanced/headless](/claude-code/advanced/headless) |
 
 ## MCP 生态

@@ -4,7 +4,7 @@ description: 通用提示技巧——不绑定任何厂商，从"能用"到"好�
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-08-14
+lastUpdated: 2026-09-30
 ---
 
 # 提示词入门
@@ -69,7 +69,8 @@ lastUpdated: 2026-08-14
 
 ## 下一步
 
-- 完成本章！→ 去 [AI 核心技术](/ai-core/) 或 [AI 工具](/ai-coding/) 深入
+- 继续理解 AI 应用 → [Token、上下文与记忆](./tokens-context-memory)
+- 深入模型原理或编程工具 → [AI 核心技术](/ai-core/) / [AI 工具](/ai-coding/)
 - 用 Claude 时 → [Claude 能力全景](/claude-capabilities/)
 
 ## 如果你想

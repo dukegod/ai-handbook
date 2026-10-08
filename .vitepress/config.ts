@@ -99,6 +99,16 @@ export default withMermaid(defineConfig({
             { text: '提示词入门', link: '/getting-started/prompting-basics' },
           ],
         },
+        {
+          text: '理解 AI 应用',
+          items: [
+            { text: 'Token、上下文与记忆', link: '/getting-started/tokens-context-memory' },
+            { text: '工具调用', link: '/getting-started/tool-calling' },
+            { text: 'RAG 与知识库', link: '/getting-started/rag-and-knowledge-bases' },
+            { text: 'Agent 与 Workflow', link: '/getting-started/agents-and-workflows' },
+            { text: '如何判断 AI 应用是否有效', link: '/getting-started/evaluating-ai' },
+          ],
+        },
       ],
 
       // ----------------------------------------------------------------------

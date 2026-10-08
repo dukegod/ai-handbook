@@ -4,7 +4,7 @@ description: Transformer 架构、注意力机制、预训练微调、RLHF、模
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-13
+lastUpdated: 2026-09-30
 ---
 
 # AI 核心技术
@@ -17,7 +17,7 @@ lastUpdated: 2026-08-13
 - 需要选型（Dense vs MoE、长上下文方案）的技术决策者
 - 对 AI 训练流程好奇的从业者
 
-如果你只想用 AI 工具，[AI 工具](/ai-coding/) 更适合你。
+如果你想先理解上下文、工具、RAG 和 Agent 如何组成应用，先读 [AI 入门的应用路线](/getting-started/#理解-ai-应用)。只想挑选编程工具，可去 [AI 工具](/ai-coding/)。
 
 ## 章节地图
 
