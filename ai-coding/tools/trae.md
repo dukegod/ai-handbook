@@ -1,29 +1,67 @@
 ---
 title: Trae 深度评测
-description: 字节跳动 Trae 评测——免费的中文 AI 编程 IDE
+description: 字节跳动 Trae 评测——TRAE IDE 与 TRAE Work 双产品线、免费的中文 AI 编程工具
 audience: intermediate
 difficulty: 🟡
-status: draft
-lastUpdated: 2026-08-17
+status: published
+lastUpdated: 2026-10-10
 verifiedWith:
   sources:
     - name: Trae 官网
       url: https://trae.ai
       accessedAt: 2026-08-17
+    - name: Introducing TRAE Work（TRAE 官方博客）
+      url: https://www.trae.ai/blog/trae_work_0609
+      accessedAt: 2026-10-10
+    - name: Introducing The New SOLO（TRAE 官方博客）
+      url: https://www.trae.ai/blog/new_solo_beta_0331
+      accessedAt: 2026-10-10
+    - name: TRAE 产品矩阵（TRAE 官方文档）
+      url: https://docs.trae.cn/ide_trae-overview
+      accessedAt: 2026-10-10
 ---
 
 # Trae 深度评测
 
-> **TL;DR**：免费使用，中文场景优化，适合预算有限的中文开发团队。
+> **TL;DR**：免费、中文场景优化。**产品线已经分裂成 TRAE IDE 和 TRAE Work 两个独立产品**——不是融合，是从内嵌 SOLO 拆出来再改名。
 
-⏱ 预计阅读时间：3 分钟
+⏱ 预计阅读时间：4 分钟
+
+## 产品形态：两个产品，不是一个
+
+这是本页最需要更新的一条认知。官方博客原话：
+
+> TRAE IDE goes deep into software engineering. TRAE Work goes wide across professional work. **Two products. One shared mission.**
+
+时间线：
+
+| 时间 | 事件 |
+|------|------|
+| 2026-03-31 | 独立 SOLO 上线 beta（Desktop + Web），从 IDE 拆出 |
+| 2026-06-09 | SOLO 正式改名 **TRAE Work**，扩展到 Desktop / Web / Mobile |
+
+**为什么拆**：社区反馈内嵌在 IDE 里的 SOLO「能力阉割、上限不高」，大改动最终还是要人工接手。独立后才拿到全自动化能力的上限。
+
+**为什么改名**：官方说用户开始把它带进预料外的场景——写产品文档、分析数据集、做调研报告，**The work had outgrown the name**。
+
+### 产品矩阵
+
+| 产品 | 定位 | 特点 |
+|------|------|------|
+| **TRAE IDE** | 面向开发者的 AI 原生 IDE | 保留编辑器 / 终端 / 调试 / Git；IDE 模式 + SOLO 模式双模 |
+| **TRAE Work** | AI 工作助手 | Desktop / Web / Mobile 三端；Work / Code / Design 三模式 |
+| **TRAE Plugin** | VS Code / JetBrains 插件 | 零迁移成本接入现有 IDE |
+| **TRAE CLI** | 终端 Code Agent | 可脚本化，支持非交互模式嵌入 CI/CD |
+| **TRAE 企业版** | 团队治理 | 席位管理、用量限额、企业知识库、OpenAPI |
+
+> 📌 官方文档在不同时期对 TRAE Work 的模式命名不一致（早期博客称 Code Mode + MTC Mode，最新博客称 Work / Code / Design）。这里以最新博客为准。形态的完整分析见 → [Agent 工作台的产品形态与设计取舍](./agent-workspace)
 
 ## 核心特点
 
 - **字节跳动出品**：中文场景优化
 - **免费使用**：无订阅费用
-- **AI-native IDE**：基于 VS Code
 - **AGENTS.md + CLAUDE.md 双支持**：跨工具兼容性好
+- **三端同步**：手机下发任务、电脑执行
 
 ## 优势
 
@@ -31,12 +69,13 @@ verifiedWith:
 - 中文提示词效果好
 - IDE 体验完整
 - 4 层规则加载体系，灵活度高
+- TRAE Work 的移动端在同类里较早落地
 
 ## 劣势
 
-- Agent 能力较弱
 - 国际化支持有限
-- 生态不如 Cursor/Copilot
+- 生态不如 Cursor / Copilot
+- IDE 模式的 Agent 能力弱于独立 Work（原 SOLO 内嵌版的已知问题）
 
 ## 规范与配置：4 层规则加载体系
 
@@ -107,28 +146,23 @@ Trae 的技能文件（`.trae/skills/`）与规则不同——**按需加载**�
 
 - 中文开发团队
 - 预算有限
-- 简单代码补全需求
+- 简单代码补全需求（TRAE IDE）
+- 文档 / 数据 / 调研类任务（TRAE Work）
 - 与 Claude Code / Codex 团队协作（AGENTS.md 通吃）
-
-## 选型建议
-
-| 需求 | 推荐 |
-|------|------|
-| 免费 + 中文 | Trae |
-| 推理最强 | Codex CLI |
-| CLI + Git 集成 | Aider |
-| IDE + 多模型 | Continue |
 
 ## 参考
 
 - [Trae 官网](https://trae.ai)
+- [Introducing TRAE Work](https://www.trae.ai/blog/trae_work_0609)
+- [Agent 工作台的产品形态与设计取舍](./agent-workspace)
 - [AI 工具全景](./overview)
 
 ## 下一步
 
+- 看形态收敛逻辑 → [Agent 工作台的产品形态与设计取舍](./agent-workspace)
 - 团队引入 → [团队 AI 工作流](/ai-harness/workflows/team)
 
 ## 如果你想
 
 - 对比主流工具 → [AI 工具全景](./overview)
-- 选型决策 → [AI 工具全景](./overview)
+- 看跨角色协作 → [跨角色交付](./cross-role-delivery)

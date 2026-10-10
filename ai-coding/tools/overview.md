@@ -4,7 +4,7 @@ description: Claude Code / Cursor / Copilot / Codex / Trae / PI-agent / DeepSeek
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-08-17
+lastUpdated: 2026-10-10
 verifiedWith:
   sources:
     - name: Claude Code 官方文档
@@ -22,11 +22,21 @@ verifiedWith:
     - name: DeepSeek Harness 官网
       url: https://www.deepseek.com/harness/en/
       accessedAt: 2026-08-17
+    - name: TRAE 官方博客 · Introducing TRAE Work
+      url: https://www.trae.ai/blog/trae_work_0609
+      accessedAt: 2026-10-10
+    - name: Cursor 官方博客 · Meet the new Cursor
+      url: https://cursor.com/blog/cursor-3
+      accessedAt: 2026-10-10
 ---
 
 # AI 工具全景
 
-> **TL;DR**：8 大工具、4 种形态——CLI（Claude Code / Codex）、IDE（Cursor / Trae）、插件（Copilot）、框架（PI-agent / DeepSeek Harness）、多平台 Agent（OpenClaw）。选型看你的工作流偏好。
+> **TL;DR**：8 大工具、5 种形态——CLI（Claude Code / Codex）、IDE（Cursor / Trae）、插件（Copilot）、框架（PI-agent / DeepSeek Harness）、多平台 Agent（OpenClaw）。选型看你的工作流偏好。
+
+> ⚠️ **DeepSeek Harness 的分类需要修正**：它原本是纯框架，但**现在已有官方桌面端 + Web UI**（macOS / Windows），定位变成「Agent 运行时 + 可用产品」。详见 → [DeepSeek Harness 深度评测](./deepseek-harness)
+
+> ⚠️ **这套形态分类正在失效**。2026 年下半年，TRAE / Cursor 3 / Codex / MiniMax Code / Claude Cowork 五家已经收敛到同一个骨架——**一个 harness、四个出口、两种模式**。各家产品的边界正在重划，单看"这是 CLI 还是 IDE"已经判断不了能力。形态对比请先读 → [Agent 工作台的产品形态与设计取舍](./agent-workspace)
 
 ⏱ 预计阅读时间：8 分钟
 
@@ -48,10 +58,10 @@ verifiedWith:
 | **Codex CLI** | OpenAI | CLI | 按 token | 推理能力最强 |
 | **Trae** | 字节跳动 | IDE | 免费 | 中文优化、免费 |
 | **PI-agent** | Earendil | CLI 框架 | 免费 MIT | 极简框架、15+ 模型、极致扩展 |
-| **DeepSeek Harness** | DeepSeek | Agent 框架 | 免费 MIT | 插件一切、Cordis 内核 |
+| **DeepSeek Harness** | DeepSeek | Agent 运行时 + 产品 | 免费 MIT | 插件一切、Cordis 内核、有桌面端 |
 | **OpenClaw** | Steinberger | 多平台 Agent | 免费 MIT + LLM token | self-hosted、跨 10+ 聊天平台、Heartbeat 主动触发 |
 
-## 三种形态
+## 五种形态
 
 ### CLI 形态（Claude Code / Codex CLI / PI-agent）
 
@@ -247,6 +257,8 @@ AI 工具是"辅助"，不是"替代"。核心设计、架构决策仍需人工�
 
 ## 下一步
 
+- 先看形态怎么收敛的 → [Agent 工作台的产品形态与设计取舍](./agent-workspace)
+- 看产品/业务/研发能否合流 → [跨角色交付](./cross-role-delivery)
 - 深入 Claude Code → [Claude Code 深度评测](./claude-code)
 - 深入 Cursor → [Cursor 深度评测](./cursor)
 - 深入 PI-agent → [PI-agent 深度评测](./pi-agent)
