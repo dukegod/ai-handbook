@@ -1,0 +1,22 @@
+ai-coding/tools/agent-workspace.md
+  h_a427b9af6cd304 1-198
+ai-coding/tools/cross-role-delivery.md
+  h_a427b9af6cd304 1-147
+ai-coding/tools/cursor.md
+  h_a427b9af6cd304 7,13-18,23,29-32,34,36,38,40,42,44,46,48-49,51,53-56,58,60,62,64,66-68,74-75,77-78,81-82,88,90-91,95-97,145-149,154-155,160,164-166,168
+ai-coding/tools/overview.md
+  h_a427b9af6cd304 7,25-30,35-39,61,64,260-261
+ai-coding/tools/trae.md
+  h_a427b9af6cd304 3,6-7,13-21,26,28-57,64,72,77-78,149-150,156-157,162,168
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2d1e47b1c7d9a6dd90c985e3fa2d6580b47f6335",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
