@@ -102,6 +102,8 @@ verifiedWith:
 
 ### 框架形态（PI-agent / DeepSeek Harness）
 
+> ⚠️ **这一类内部并不统一**。PI-agent 是纯框架（内核只有 4 个工具，能力全靠扩展）；DeepSeek Harness **已有官方桌面端 + Web UI**，定位是「运行时 + 可用产品」。四家主流开源 harness 的内核设计对比见 → [四个开源 Harness 对比](./open-harness-comparison)
+
 **优势**：
 - 极致可扩展（插件/扩展系统）
 - 不绑定特定模型或 IDE

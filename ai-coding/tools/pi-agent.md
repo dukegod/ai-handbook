@@ -56,6 +56,7 @@ Mario 的核心能力是**"造抽象层"**——libGDX 把 Java 跨平台，Robo
 | 2026 年 4 月 | DeepSeek V4 发布，pi 是第一个吃螃蟹的 harness |
 | 2026 年 6 月 | v0.71.1，4 万 stars |
 | 2026 年 8 月 | DeepSeek Harness 开源后，pi 仍是"模型无关"的中立 agent 框架 |
+| 2026 年 10 月 | 四家主流开源 harness 的内核设计对比见 [四个开源 Harness 对比](./open-harness-comparison) |
 
 ## 核心定位：框架，不是产品
 
@@ -253,7 +254,7 @@ Agent 工作时可以实时干预：
 
 | 维度 | 数据 |
 |------|------|
-| **GitHub stars** | ~4 万 |
+| **GitHub stars** | ~4 万（2026-06 记录，**2026-10-08 未复核**） |
 | **更新频率** | 高（每周多次 commit） |
 | **Issue 响应** | 通常 1-3 天 |
 | **协议** | MIT（核心） |

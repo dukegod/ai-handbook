@@ -180,6 +180,8 @@ Intel Mac 明确标注「暂不支持」，需 Apple 芯片。
 
 ## 与 PI-agent 对比
 
+> 📌 四家主流开源 harness（Pi / DeepSeek Harness / Codex CLI / OpenCode）的内核设计对比见 → [四个开源 Harness 对比](./open-harness-comparison)
+
 | 维度 | DeepSeek Harness | PI-agent |
 |------|-----------------|----------|
 | **内核** | Cordis（插件管理） | 自研扩展系统 |

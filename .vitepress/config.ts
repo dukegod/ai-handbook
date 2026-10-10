@@ -455,6 +455,7 @@ export default withMermaid(defineConfig({
             { text: 'AI 工具全景', link: '/ai-coding/tools/overview' },
             { text: 'Agent 工作台的产品形态与设计取舍', link: '/ai-coding/tools/agent-workspace' },
             { text: '跨角色交付：产品、业务、研发', link: '/ai-coding/tools/cross-role-delivery' },
+            { text: '四个开源 Harness 对比', link: '/ai-coding/tools/open-harness-comparison' },
           ],
         },
         {
