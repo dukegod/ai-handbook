@@ -1,0 +1,23 @@
+ai-coding/index.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 7,33,42-43,47,57
+.vitepress/config.ts
+  s_390b77191c5e18::t_c6f9f9c502be84 455-457,464-466,468,482,513,517,538-540,548
+  s_390b77191c5e18::t_54e3b0915aa7fe 72
+  s_390b77191c5e18::t_a5e402e9b36439 549-550
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6e90751989535de41c77f925ea00062058e16b48",
+  "prompts": {},
+  "sessions": {
+    "s_390b77191c5e18": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f106-32e1-7f73-b2ef-4718e8851596",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
