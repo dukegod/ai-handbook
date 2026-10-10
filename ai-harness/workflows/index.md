@@ -1,10 +1,10 @@
 ---
 title: 团队工作量方法
-description: 把 AI Harness 落地到团队——多人协作、AI 与 CI/CD 集成、自动化 Code Review
+description: 把 AI Native 落地到团队——多人协作、AI 与 CI/CD 集成、自动化 Code Review
 audience: intermediate
 difficulty: 🟡
 status: planned
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-09
 ---
 
 # 团队工作量方法

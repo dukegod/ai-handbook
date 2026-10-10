@@ -4,7 +4,7 @@ description: Peter Steinberger 出品的 self-hosted AI agent——基于 pi-age
 audience: intermediate
 difficulty: 🟡
 status: draft
-lastUpdated: 2026-09-20
+lastUpdated: 2026-10-09
 verifiedWith:
   sources:
     - name: OpenClaw 官网
@@ -390,5 +390,5 @@ API 仍在快速迭代，企业级生产案例少。
 ## 如果你想
 
 - 看 OpenClaw 与 Hermes（同类项目）对比 → 待补充
-- 理解外壳 vs 内核的工程权衡 → [AI Harness 工程](/ai-harness/)
+- 理解外壳 vs 内核的工程权衡 → [AI Native](/ai-harness/)
 - 立刻用起来 → [OpenClaw 官方 Quickstart](https://docs.openclaw.ai/quickstart)

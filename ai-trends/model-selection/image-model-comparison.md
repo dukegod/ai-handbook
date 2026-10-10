@@ -4,7 +4,7 @@ description: 主流 AI 图片生成模型全景——Midjourney / DALL-E / Image
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-08
+lastUpdated: 2026-10-09
 verifiedWith:
   sources:
     - name: OpenAI API Changelog
@@ -334,5 +334,5 @@ Black Forest Labs(前 Stability AI 核心团队)已成为**开源图像模型第
 ## 如果你想
 
 - 学习 Claude Code → [Claude Code 精通](/claude-code/)
-- AI Native 架构 → [AI Harness 工程](/ai-harness/)
+- AI Native 架构 → [AI Native](/ai-harness/)
 - AI 工具 → [AI 工具全景](/ai-coding/tools/overview)

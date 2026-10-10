@@ -4,12 +4,12 @@ description: AI 辅助代码重构、测试生成、文档生成的模式与边�
 audience: intermediate
 difficulty: 🟡
 status: planned
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-09
 ---
 
 # 常见模式方法
 
-> 把 AI Harness 落到「写代码动作」上的三个最常见场景——重构、测试、文档。
+> 把 AI Native 落到「写代码动作」上的三个最常见场景——重构、测试、文档。
 
 ## 在这个分组里你能看到
 

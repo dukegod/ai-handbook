@@ -4,7 +4,7 @@ description: 主流 AI 视频生成模型全景——Runway / Kling / Pika / Vid
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-08
+lastUpdated: 2026-10-09
 verifiedWith:
   sources:
     - name: OpenAI API 废弃说明
@@ -248,5 +248,5 @@ Runway **Gen-4.5** 仍是效果第一梯队，但 **MiniMax H3（33B）** 已经
 ## 如果你想
 
 - 学习 Claude Code → [Claude Code 精通](/claude-code/)
-- AI Native 架构 → [AI Harness 工程](/ai-harness/)
+- AI Native 架构 → [AI Native](/ai-harness/)
 - AI 工具 → [AI 工具全景](/ai-coding/tools/overview)

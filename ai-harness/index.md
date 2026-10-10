@@ -1,15 +1,15 @@
 ---
-title: AI Harness 工程
+title: AI Native
 description: AI Native 研发范式——设计理念、三层架构、资产飞轮、TDD 质量、团队工作量与常见模式
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-09
 ---
 
-# AI Harness 工程
+# AI Native
 
-> **TL;DR**：AI Harness 工程是把 AI 设为默认执行者的研发范式——设计理念、架构方法论、资产飞轮、质量保障、团队工作量、常见模式的方法论合集。
+> **TL;DR**：AI Native 是把 AI 设为默认执行者的研发范式——设计理念、架构方法论、资产飞轮、质量保障、团队工作量、常见模式的方法论合集。
 
 ## 你能在这里学到
 
@@ -19,7 +19,7 @@ lastUpdated: 2026-09-17
 - 如何用 TDD 收敛 AI 的概率性产出
 - 如何把 AI 工具嵌入团队工作流（多人协作、CI/CD、自动化 Code Review）
 - AI 辅助三类常见编码动作——重构、测试、文档——的模式与边界
-- 如何从现有项目分阶段迁移到 AI Harness 工程
+- 如何从现有项目分阶段迁移到 AI Native
 
 ## 与 Foundation Kit 的关系
 

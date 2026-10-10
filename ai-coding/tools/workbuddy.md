@@ -4,7 +4,7 @@ description: 腾讯 WorkBuddy——带 Coding Mode 的桌面 AI 智能体(不是
 audience: intermediate
 difficulty: 🟡
 status: draft
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-09
 verifiedWith:
   sources:
     - name: WorkBuddy 产品概述
@@ -109,4 +109,4 @@ verifiedWith:
 ## 如果你想
 
 - 对比主流 AI 工具 → [工具全景](./overview)
-- 看落地模式 → [AI Harness 工程](/ai-harness/)
+- 看落地模式 → [AI Native](/ai-harness/)

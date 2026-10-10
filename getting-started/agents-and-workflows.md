@@ -4,7 +4,7 @@ description: '用团队文档助手区分预设工作流和动态 Agent，理解
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-09
 verifiedWith:
   scope: '概念依据官方资料核对；团队文档助手为虚构示例，未运行实验'
   sources:
@@ -95,4 +95,4 @@ flowchart TD
 ## 如果你想
 
 - 看外部动作如何执行 → [工具调用](./tool-calling)
-- 深入研发任务的组织方式 → [AI Harness 工程](/ai-harness/)
+- 深入研发任务的组织方式 → [AI Native](/ai-harness/)
