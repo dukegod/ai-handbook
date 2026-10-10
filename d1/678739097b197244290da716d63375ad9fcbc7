@@ -1,0 +1,22 @@
+.vitepress/config.ts
+  h_a427b9af6cd304 458
+ai-coding/tools/deepseek-harness.md
+  h_a427b9af6cd304 183-184
+ai-coding/tools/open-harness-comparison.md
+  h_a427b9af6cd304 1-233
+ai-coding/tools/overview.md
+  h_a427b9af6cd304 105-106
+ai-coding/tools/pi-agent.md
+  h_a427b9af6cd304 59,257
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d1678739097b197244290da716d63375ad9fcbc7",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
