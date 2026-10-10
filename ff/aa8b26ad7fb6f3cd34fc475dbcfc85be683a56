@@ -1,0 +1,38 @@
+index.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 66,69,85
+ai-trends/model-selection/video-model-comparison.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 7,251
+ai-harness/index.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 2,7,10,12,22
+ai-coding/tools/workbuddy.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 7,112
+getting-started/agents-and-workflows.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 7,98
+ai-harness/workflows/index.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 3,7
+ai-harness/patterns/index.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 7,12
+ai-trends/model-selection/image-model-comparison.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 7,337
+AGENTS.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 13,97
+  s_390b77191c5e18::t_00f0d9a5b2010a 240
+ai-coding/tools/openclaw.md
+  s_390b77191c5e18::t_54e3b0915aa7fe 7,393
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ffaa8b26ad7fb6f3cd34fc475dbcfc85be683a56",
+  "prompts": {},
+  "sessions": {
+    "s_390b77191c5e18": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f106-32e1-7f73-b2ef-4718e8851596",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
