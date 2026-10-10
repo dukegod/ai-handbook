@@ -4,7 +4,7 @@ description: AI 工具横评——CLI / IDE / 插件 / 框架 / 多平台 Agent 
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-20
+lastUpdated: 2026-10-09
 ---
 
 # AI 工具
@@ -30,7 +30,7 @@ flowchart LR
 
 **工具横评** — Claude Code / Cursor / GitHub Copilot / Codex CLI / Trae / PI-agent / DeepSeek Harness / OpenClaw 的深度对比
 
-> AI Native 工程方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 迁移路径）与团队工作量、常见模式，已迁出到顶级导航 [AI Harness 工程](/ai-harness/)。
+> AI Native 工程方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 迁移路径）与团队工作量、常见模式，已迁出到顶级导航 [AI Native](/ai-harness/)。
 
 ## 从哪里开始
 
@@ -39,10 +39,12 @@ flowchart LR
 | 场景 | 从这里开始 |
 |------|-----------|
 | 还没选工具 | [AI 工具全景](/ai-coding/tools/overview) |
+| 想知道 2026 年的产品形态长什么样 | [Agent 工作台的产品形态与设计取舍](/ai-coding/tools/agent-workspace) |
+| 想让产品/业务/研发在同一平台协作 | [跨角色交付](/ai-coding/tools/cross-role-delivery) |
 | 已在用 Claude Code | [Claude Code 深度评测](/ai-coding/tools/claude-code) |
 | 想把 AI 嵌入团队流水线 | [团队 AI 工作流](/ai-harness/workflows/team) |
 | 想了解 AI 辅助编码模式 | [代码重构模式](/ai-harness/patterns/refactor) |
-| 想理解 AI Harness 工程 | [AI Harness 工程](/ai-harness/) |
+| 想理解 AI Native | [AI Native](/ai-harness/) |
 
 ## 下一步
 
@@ -52,6 +54,6 @@ flowchart LR
 
 ## 如果你想
 
-- 看团队工作量与编码模式 → [AI Harness 工程](/ai-harness/)
+- 看团队工作量与编码模式 → [AI Native](/ai-harness/)
 - 看实战案例 → [Cookbook](/cookbook/)
 - 选模型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)

@@ -69,7 +69,7 @@ export default withMermaid(defineConfig({
       { text: 'AI 入门', link: '/getting-started/', activeMatch: '/getting-started/' },
       { text: 'AI 核心技术', link: '/ai-core/', activeMatch: '/ai-core/' },
       { text: 'AI 工具', link: '/ai-coding/', activeMatch: '/ai-coding/' },
-      { text: 'AI Harness 工程', link: '/ai-harness/', activeMatch: '/ai-harness/' },
+      { text: 'AI Native', link: '/ai-harness/', activeMatch: '/ai-harness/' },
       {
         text: 'Claude',
         items: [
@@ -452,18 +452,20 @@ export default withMermaid(defineConfig({
           text: '工具横评',
           collapsed: true,
           items: [
-            { text: P('AI 工具全景'), link: '/ai-coding/tools/overview' },
+            { text: 'AI 工具全景', link: '/ai-coding/tools/overview' },
+            { text: 'Agent 工作台的产品形态与设计取舍', link: '/ai-coding/tools/agent-workspace' },
+            { text: '跨角色交付：产品、业务、研发', link: '/ai-coding/tools/cross-role-delivery' },
           ],
         },
         {
           text: '📦 产品',
           collapsed: true,
           items: [
-            { text: P('Claude Code 深度评测'), link: '/ai-coding/tools/claude-code' },
-            { text: P('Cursor 深度评测'), link: '/ai-coding/tools/cursor' },
-            { text: P('GitHub Copilot 评测'), link: '/ai-coding/tools/copilot' },
+            { text: 'Claude Code 深度评测', link: '/ai-coding/tools/claude-code' },
+            { text: 'Cursor 深度评测', link: '/ai-coding/tools/cursor' },
+            { text: 'GitHub Copilot 评测', link: '/ai-coding/tools/copilot' },
             { text: P('Codex CLI 深度评测'), link: '/ai-coding/tools/codex-cli' },
-            { text: P('Trae 深度评测'), link: '/ai-coding/tools/trae' },
+            { text: 'Trae 深度评测', link: '/ai-coding/tools/trae' },
             { text: P('腾讯 CodeBuddy 深度评测'), link: '/ai-coding/tools/codebuddy' },
             { text: P('OpenClaw 深度评测'), link: '/ai-coding/tools/openclaw' },
           ],
@@ -477,7 +479,7 @@ export default withMermaid(defineConfig({
             { text: 'Pi 配置文件详解（入门 → 进阶）', link: '/ai-coding/tools/pi-coding-agent/configuration' },
             { text: 'Pi 进阶资源加载（扩展 / Skills / 包）', link: '/ai-coding/tools/pi-coding-agent/resources' },
             { text: 'Pi + Jev + DeepSeek 实战（危险命令拦截）', link: '/ai-coding/tools/pi-coding-agent/jev-harness' },
-            { text: P('DeepSeek Harness 深度评测'), link: '/ai-coding/tools/deepseek-harness' },
+            { text: 'DeepSeek Harness 深度评测', link: '/ai-coding/tools/deepseek-harness' },
           ],
         },
         {
@@ -508,11 +510,11 @@ export default withMermaid(defineConfig({
       ],
 
       // ----------------------------------------------------------------------
-      // AI Harness 工程
+      // AI Native
       // ----------------------------------------------------------------------
       '/ai-harness/': [
         {
-          text: 'AI Harness 工程',
+          text: 'AI Native',
           items: [
             { text: '总览', link: '/ai-harness/' },
           ],
@@ -533,9 +535,9 @@ export default withMermaid(defineConfig({
           collapsed: true,
           items: [
             { text: '分组总览', link: '/ai-harness/workflows/' },
-            { text: P('团队 AI 工作流'), link: '/ai-harness/workflows/team' },
-            { text: P('CI/CD 集成'), link: '/ai-harness/workflows/ci-cd' },
-            { text: P('Code Review 自动化'), link: '/ai-harness/workflows/code-review' },
+            { text: '团队 AI 工作流', link: '/ai-harness/workflows/team' },
+            { text: 'CI/CD 集成', link: '/ai-harness/workflows/ci-cd' },
+            { text: 'Code Review 自动化', link: '/ai-harness/workflows/code-review' },
           ],
         },
         {
@@ -543,9 +545,9 @@ export default withMermaid(defineConfig({
           collapsed: true,
           items: [
             { text: '分组总览', link: '/ai-harness/patterns/' },
-            { text: P('代码重构模式'), link: '/ai-harness/patterns/refactor' },
-            { text: P('测试生成模式'), link: '/ai-harness/patterns/testing' },
-            { text: P('文档生成模式'), link: '/ai-harness/patterns/documentation' },
+            { text: '代码重构模式', link: '/ai-harness/patterns/refactor' },
+            { text: '测试生成模式', link: '/ai-harness/patterns/testing' },
+            { text: '文档生成模式', link: '/ai-harness/patterns/documentation' },
           ],
         },
       ],
