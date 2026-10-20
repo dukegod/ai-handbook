@@ -1,0 +1,31 @@
+.npmrc
+  s_7e530bd5bbc28a::t_0015ab92c6ca73 10-12
+ai-trends/industry/a2a-protocol.md
+  s_09915c483c4868::t_92c3f1d04e5e75 1-465
+pnpm-lock.yaml
+  s_7e530bd5bbc28a::t_c83544abf1653c 155,159,163,167,171,175,179,183,187,191,195,199,203,207,211,215,219,223,227,231,235,239,243,259,265,269,272,275,278,281,284,287,290,293,296,299,302,305,308,311,314,317,320,323,326,329,332,335,338,341,482,491,495,499,503,507,511,515,519,523,527,531,535,539,543,547,551,555,559,563,567,826,849,906,1066,1110,1177
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8fe0e086d578136f5012b8affd632cda5280b45b",
+  "prompts": {},
+  "sessions": {
+    "s_09915c483c4868": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13904-91af-7f70-9491-5c2ac875bcc2",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    },
+    "s_7e530bd5bbc28a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1574a-8b08-7c80-b589-7df83cdc2e13",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
