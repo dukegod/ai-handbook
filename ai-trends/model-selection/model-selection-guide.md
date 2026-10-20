@@ -7,7 +7,7 @@ status: published
 lastUpdated: 2026-10-08
 verifiedWith:
   sources:
-    - name: 7 厂商横向对比
+    - name: 8 厂商横向对比
       url: /ai-trends/model-selection/model-comparison
       accessedAt: 2026-10-08
 ---
@@ -36,7 +36,7 @@ flowchart TD
     J -->|不敏感| L[Claude Sonnet 5.5]
 ```
 
-> ⚠️ **2026-10 换代提示**：**Claude Haiku 5.5 已于 2026-10-07 发布**（$0.10 / $0.50，1M 上下文，首个带 `effort` 的 Haiku），轻量档与 GPT-6 Luna 同价；OpenAI 主线仍是 GPT-6（推理靠 `effort` 档位，o 系列已让位）；**Grok 5 至今未发布**，xAI 旗舰仍是 Grok 4.7；**Kimi K2.5 / K2 全系已下线**（2026-08 起调用返回 404）；MiniMax 主力是 `M3`。详细换代与下线清单见 [7 厂商横向对比](./model-comparison)。
+> ⚠️ **2026-10 换代提示**：**Claude Haiku 5.5 已于 2026-10-07 发布**（$0.10 / $0.50，1M 上下文，首个带 `effort` 的 Haiku），轻量档与 GPT-6 Luna 同价；OpenAI 主线仍是 GPT-6（推理靠 `effort` 档位，o 系列已让位）；**Grok 5 至今未发布**，xAI 旗舰仍是 Grok 4.7；**Kimi K2.5 / K2 全系已下线**（2026-08 起调用返回 404）；MiniMax 主力是 `M3`。详细换代与下线清单见 [8 厂商横向对比](./model-comparison)。
 
 ### 维度 1：场景
 
@@ -83,7 +83,7 @@ flowchart TD
 | 高 | Claude Opus 5.5 | $4/MTok input |
 | 顶 | Claude Fable 5.1 / GPT-6 Astra | $10/MTok input，全系最贵 |
 
-> ⚠️ **币种**：Moonshot（Kimi）、Zhipu（GLM）、Qwen 官方定价为**人民币**，其余为美元，跨厂商比价先统一币种。完整价格见 [7 厂商横向对比](./model-comparison) 第四节。
+> ⚠️ **币种**：Moonshot（Kimi）、Zhipu（GLM）、Qwen 官方定价为**人民币**，其余为美元，跨厂商比价先统一币种。完整价格见 [8 厂商横向对比](./model-comparison) 第四节。
 
 ### 维度 6：部署
 
@@ -163,7 +163,7 @@ flowchart TD
 
 ## 参考
 
-- [7 厂商横向对比](./model-comparison) — 8 维度量化对比
+- [8 厂商横向对比](./model-comparison) — 8 维度量化对比
 - [跨厂商架构路线](/ai-core/model-arch/architecture-landscape) — 4 大技术路线详解
 - [7 厂商详情](/ai-trends/vendors/) · [Anthropic](/ai-trends/vendors/anthropic/) · [OpenAI](/ai-trends/vendors/openai/) · [xAI](/ai-trends/vendors/grok/) · [Moonshot](/ai-trends/cn-vendors/moonshot/) · [MiniMax](/ai-trends/cn-vendors/minimax/) · [Zhipu](/ai-trends/cn-vendors/zhipu/) · [Qwen](/ai-trends/cn-vendors/qwen/)
 
@@ -175,6 +175,6 @@ flowchart TD
 
 ## 如果你想
 
-- 看量化对比数据 → [7 厂商横向对比](./model-comparison)
+- 看量化对比数据 → [8 厂商横向对比](./model-comparison)
 - 看技术路线差异 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)
 - 看某家厂商的完整档案与 2026-10 动态 → [国内厂商](/ai-trends/cn-vendors/) / [国外厂商](/ai-trends/vendors/)

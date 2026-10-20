@@ -4,7 +4,7 @@ description: ChatGPT / Claude / Gemini / 豆包 / Kimi / DeepSeek……一张地
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-08-14
+lastUpdated: 2026-10-14
 ---
 
 # 主流 AI 产品全景
@@ -17,13 +17,15 @@ lastUpdated: 2026-08-14
 | --- | --- | --- | --- |
 | **ChatGPT** | OpenAI | 用户基数最大、功能最全（联网 / 图像 / 语音） | 大众用户、通用问答 |
 | **Claude** | Anthropic | 长文本、写作与编程能力强、安全可控 | 写作 / 分析 / 编程 |
-| **Gemini** | Google | 与 Google 生态（搜索 / Gmail / Docs）深度整合 | Google 用户 |
+| **Gemini** | Google | 与 Google 生态深度整合；独立 App 月活已破 10 亿（2026-08） | Google 用户、长文档、超长输出 |
 | **豆包** | 字节跳动 | 免费、响应快、国内可用 | 国内日常使用 |
 | **Kimi** | 月之暗面 | 长文档分析（1M+ 上下文） | 论文 / 合同 / 长文档 |
 | **DeepSeek** | 深度求索 | 开源、极低成本、推理强 | 开发 / 性价比 |
 | **通义千问** | 阿里 | 国内生态完整、多模态 | 阿里系用户 |
 
-> 各家能力与价格详细对比 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+> 各家能力与价格详细对比 → [8 厂商横向对比](/ai-trends/model-selection/model-comparison)
+
+> 📌 **Gemini 速写（2026-10-14 核实）**：旗舰 **Gemini 4 Argon** 于 09-30 发布、10-14 全量 GA，是**在售模型里唯一把最大输出做到 1M token** 的（此前全系 64K），DeepSWE v1.1 77.9% 为业界 SOTA。消费端则在 2026-08-11 官宣独立 App **MAU 破 10 亿**（不含 Search AI Mode 的 10 亿+），63% 用户走语音。
 
 ## 二、开发者工具
 
@@ -42,9 +44,10 @@ lastUpdated: 2026-08-14
 
 | 类别 | 代表产品 |
 | --- | --- |
-| 文生图 | Midjourney / DALL·E / 即梦 / Stable Diffusion |
-| 文生视频 | Sora / 可灵 / 即梦 / Veo |
-| 语音 | ElevenLabs / 豆包语音 / 火山引擎 |
+| 文生图 | Midjourney / DALL·E / 即梦 / Stable Diffusion / Nano Banana（Google） |
+| 文生视频 | Sora / 可灵 / 即梦 / Veo / Gemini Omni Flash |
+| 语音 | ElevenLabs / 豆包语音 / 火山引擎 / Gemini Live |
+| 音乐 | Suno / Lyria 3 Pro（Google） |
 | 办公 | Notion AI / WPS AI / 飞书智能伙伴 / Copilot |
 | 设计 | Figma AI / Canva AI / 稿定 AI |
 
@@ -53,20 +56,22 @@ lastUpdated: 2026-08-14
 **普通用户**：ChatGPT（功能全）或豆包（国内免费），先用起来再说
 **写作者 / 分析师**：Claude（长文与深度分析强）
 **开发者**：Claude Code + 按需接各厂商 API
+**Google 生态内做事**：Gemini（Search / Gmail / Docs / Maps 原生打通，App 内 10 亿月活）
 **企业**：优先考虑数据合规（Azure / Bedrock / 私有化）
 
-> ⚠️ 市场变化很快——本页是 2026-08 快照，最新动态见 [产品动向](/ai-trends/) 月度速报。
+> ⚠️ 市场变化很快——本页是 2026-10 快照，最新动态见 [产品动向](/ai-trends/) 月度速报。
 
 ## 关键洞察
 
 - **别在"选工具"上花太多时间**——主流产品差距在缩小，先选一个顺手用起来
 - **消费级与开发级是两条线**——对话助手体验 ≠ API 能力
 - **国产与海外各有场景**——合规、价格、语言各有利弊
+- **生态绑定有时比模型强弱更重要**——如果你本来就活在 Google 或阿里生态里，接管成本可能比性能差距更决定体验
 
 ## 参考
 
 - [国外厂商档案](/ai-trends/vendors/) · [国内厂商档案](/ai-trends/cn-vendors/)
-- [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- [8 厂商横向对比](/ai-trends/model-selection/model-comparison)
 
 ## 下一步
 

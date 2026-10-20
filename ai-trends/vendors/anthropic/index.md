@@ -193,4 +193,4 @@ Anthropic 是 2021 年由前 OpenAI 核心成员 Dario Amodei 与 Daniela Amodei
 
 - 选模型 → [模型选择](/claude-code/basics/model-selection)
 - 了解 Fable 5 → [Fable 5 深度解读](/claude-capabilities/models/fable)
-- 对比七家厂商 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 对比八家厂商 → [8 厂商横向对比](/ai-trends/model-selection/model-comparison)

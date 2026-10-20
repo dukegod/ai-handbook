@@ -76,5 +76,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 对比七家厂商 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 对比八家厂商 → [8 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 评估开源模型 → [开源项目推荐](/ai-trends/research-highlights/open-source)

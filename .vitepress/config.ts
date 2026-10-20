@@ -393,7 +393,7 @@ export default withMermaid(defineConfig({
           text: '模型选型',
           collapsed: true,
           items: [
-            { text: '7 厂商横向对比', link: '/ai-trends/model-selection/model-comparison' },
+            { text: '8 厂商横向对比', link: '/ai-trends/model-selection/model-comparison' },
             { text: '模型选型决策树', link: '/ai-trends/model-selection/model-selection-guide' },
             { text: '视频生成模型对比', link: '/ai-trends/model-selection/video-model-comparison' },
             { text: '图片生成模型对比', link: '/ai-trends/model-selection/image-model-comparison' },
@@ -436,6 +436,7 @@ export default withMermaid(defineConfig({
           items: [
             { text: '行业趋势', link: '/ai-trends/industry/trends' },
             { text: '投融资动态', link: '/ai-trends/industry/funding' },
+            { text: 'A2A 协议行业深度调研', link: '/ai-trends/industry/a2a-protocol' },
           ],
         },
       ],

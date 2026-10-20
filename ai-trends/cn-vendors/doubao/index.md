@@ -133,7 +133,7 @@ verifiedWith:
 ## 下一步
 
 - 看总览 → [国内厂商](/ai-trends/cn-vendors/)
-- 对比七家 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 对比八家 → [8 厂商横向对比](/ai-trends/model-selection/model-comparison)
 
 ## 如果你想
 

@@ -190,7 +190,7 @@ Qwen（通义千问）由阿里达摩院 2023 年推出，现属阿里云通义�
 
 ## 下一步
 
-- 看横向对比表 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 看横向对比表 → [8 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 选型决策 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 
 ## 如果你想

@@ -37,6 +37,6 @@ lastUpdated: 2026-09-30
 
 ## 如果你想
 
-- 横向比较七家 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 横向比较七家 → [8 厂商横向对比](/ai-trends/model-selection/model-comparison)
 - 按场景选模型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)
 - 理解背后的技术路线 → [跨厂商架构路线](/ai-core/model-arch/architecture-landscape)

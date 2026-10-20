@@ -1,10 +1,10 @@
 ---
 title: 图片生成模型对比
-description: 主流 AI 图片生成模型全景——Midjourney / DALL-E / Imagen / Firefly / Ideogram / 即梦 / Flux / SD / HunyuanImage / CogView 对比与选型
+description: 主流 AI 图片生成模型全景——Midjourney / DALL-E / Nano Banana / Firefly / Ideogram / 即梦 / Flux / SD / HunyuanImage / CogView 对比与选型
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-09
+lastUpdated: 2026-10-14
 verifiedWith:
   sources:
     - name: OpenAI API Changelog
@@ -76,7 +76,7 @@ verifiedWith:
 |------|------|----------|--------|------|------|
 | **Midjourney V8.2** | Midjourney | V8.2(2026-07-24) | 2K(HD) | 美学质量第一梯队、艺术风格丰富 | ❌ |
 | **GPT-Image 2.5** | OpenAI | Sunburst / Flare(2026-09-08) | 高保真 | ChatGPT/API 集成、多轮迭代、文字排版强 | ❌ |
-| **Imagen 4** | Google DeepMind | Imagen 4(2025) | 2K+ | Gemini/Vertex 集成、细节保真 | ❌ |
+| **Nano Banana 2.1** | Google DeepMind | 2.1（2026-10 Gemini API 在售） | 高保真 | Gemini / Vertex 原生集成，API 端点 `gemini-nano-banana-2.1`，另有 Pro / Lite 档 | ❌ |
 | **Firefly Image 4** | Adobe | 2025 | 商用友好 | 训练数据合规、PS/AI 深度集成 | ❌ |
 | **Ideogram 3.0** | Ideogram | 3.0(2025) | 高保真 | **文字排版最强**、Logo/海报专精 | ❌ |
 | **Recraft V3** | Recraft | V3(2025) | 高保真 | 设计场景专精、SVG 输出、品牌一致性 | ❌ |
@@ -85,6 +85,8 @@ verifiedWith:
 
 - **Midjourney 默认版本已从 V7 变成 V8.2**(2026-07-24 起为默认)。V8.1 于 2026-04-14 发布、2026-06-10 至 07-23 担任默认,首次提供 2048px 的 HD 出图(SD 转 HD 需 1.3 分钟 GPU 时间,SD 为 0.8)。V7 是 2025-04-03 发布、2026-06-09 卸任默认。V8.2 引入 Edit Model,取代 Omni Reference、Character Reference 与 Retexture。另有专攻东方/动漫风格的 **Niji 7**(2026-01-09)。
 - **OpenAI 图片线在 6 周内换代**。2026-04-21 发布 **GPT-Image 2**(灵活尺寸、高保真输入、token 计费、Batch 5 折);2026-09-08 发布 **GPT-Image 2.5 Sunburst / Flare**,同时支持图像生成与编辑,新增 `xhigh` 与 `max` 质量档,沿用 GPT-Image 2 的 token 费率——官方定位是 **Sunburst 偏编辑精度、Flare 偏日常高质量快速出图**。
+
+> 📌 **Google 图片线已从 Imagen 迁到 Nano Banana（2026-10-14 核实）**：Gemini API 在售的图像端点是 `gemini-nano-banana-2.1` / `2`（别名 `gemini-3.1-flash-image`）/ `Pro`（`gemini-3-pro-image`）/ `Lite`（`gemini-3.1-flash-lite-image`）。**Imagen 4 仍是 2025 年版本**，选型时按 Nano Banana 记。另注意 Gemini 4 Argon 本身**不做图像生成**（输出仅文本），图像要走 Nano Banana 独立端点。
 
 > ⚠️ 截至 2026-10-08,`DALL·E 2` 与 `DALL·E 3` 已于 2026-05-12 从 OpenAI API 下线,官方推荐迁移到 `gpt-image-2` / `gpt-image-1` / `gpt-image-1-mini`。同期 `gpt-image-1` 已进入废弃流程(2026-10-23 移除),`gpt-image-1-mini`、`gpt-image-1.5`、`chatgpt-image-latest` 将于 2026-12-01 移除,官方指定替代均为 `gpt-image-2.5-sunburst` 或 `gpt-image-2.5-flare`。**再用 DALL·E 或只盯 GPT-Image-1 做选型会踩空。**
 

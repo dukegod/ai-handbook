@@ -4,7 +4,7 @@ description: 按场景选 AI——对话 / 写作 / 编程 / 研究 / 企业，�
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-08-14
+lastUpdated: 2026-10-14
 ---
 
 # 如何选择 AI 工具
@@ -21,14 +21,16 @@ lastUpdated: 2026-08-14
 
 | 场景 | 首选 | 备选 | 注意 |
 | --- | --- | --- | --- |
-| 日常问答 / 闲聊 | 豆包（免费）或 ChatGPT | Gemini | 白嫖优先 |
+| 日常问答 / 闲聊 | 豆包（免费）或 ChatGPT | Gemini | 白嫖优先；Gemini 独立 App 已 10 亿月活 |
 | 写作 / 深度分析 | Claude | ChatGPT | 长文与逻辑选 Claude |
-| 长文档（论文 / 合同） | Kimi | Gemini | 1M 上下文优势 |
+| 长文档（论文 / 合同） | Kimi | Gemini / Claude | 1M 上下文优势 |
+| 超长输出 / 长报告生成 | Gemini 4 Argon | Claude | Argon 是唯一在售 1M 输出上限的模型 |
+| Google 生态内做事 | Gemini | — | Search / Gmail / Docs / Maps 原生打通 |
 | 编程 | Claude Code / Cursor | Copilot | 深度工程选 Claude Code |
 | 数学 / 逻辑推理 | o 系列 / DeepSeek R1 | GLM-Z1 | 推理模型，慢但准 |
 | 图片 / 视频生成 | 即梦 / Midjourney | 可灵 / Sora | 按风格选 |
 | 企业 / 合规 | Azure / Bedrock / 私有化 | 国产 MaaS | 数据安全优先 |
-| 低预算批量调用 | DeepSeek / MiniMax / Qwen | GLM | 成本敏感选开源 |
+| 低预算批量调用 | DeepSeek / MiniMax / Qwen | GLM / Gemini Flash-Lite | 成本敏感选开源；Gemini 3.1 Flash-Lite $0.25/$1.50 |
 
 ## 三、三个常见误区
 
@@ -63,7 +65,7 @@ lastUpdated: 2026-08-14
 ## 参考
 
 - [模型选型决策树](/ai-trends/model-selection/model-selection-guide) — 6 维度量化决策
-- [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- [8 厂商横向对比](/ai-trends/model-selection/model-comparison)
 
 ## 下一步
 
@@ -72,4 +74,4 @@ lastUpdated: 2026-08-14
 
 ## 如果你想
 
-- 深度对比厂商 → [7 厂商横向对比](/ai-trends/model-selection/model-comparison)
+- 深度对比厂商 → [8 厂商横向对比](/ai-trends/model-selection/model-comparison)
