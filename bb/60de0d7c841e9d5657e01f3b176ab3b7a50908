@@ -1,0 +1,31 @@
+ai-coding/tools/pi-coding-agent/configuration.md
+  s_e36106252ea183::t_0b2d937de912bc 9
+  s_e36106252ea183::t_4531dfa48892ed 7,334,349-350,495
+AGENTS.md
+  s_e36106252ea183::t_0b2d937de912bc 101
+  s_e36106252ea183::t_c402a33cff7fcd 13,100,113,120,256
+contributing/checklist-published.md
+  s_e36106252ea183::t_0b2d937de912bc 9
+  s_e36106252ea183::t_beff7c089b7d93 7,146,153,193
+.vitepress/config.ts
+  s_e36106252ea183::t_b69dc6265047df 536-543
+  s_e36106252ea183::t_d5c910a087c7f9 7,544-545
+ai-harness/index.md
+  s_e36106252ea183::t_b38c7be1a771d0 24,26,49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bb60de0d7c841e9d5657e01f3b176ab3b7a50908",
+  "prompts": {},
+  "sessions": {
+    "s_e36106252ea183": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17752-c29f-7702-bc43-400c89753ff4",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
