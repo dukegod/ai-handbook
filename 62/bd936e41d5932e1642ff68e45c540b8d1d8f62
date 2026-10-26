@@ -1,0 +1,43 @@
+ai-harness/ai-delivery/index.md
+  s_e36106252ea183::t_d1b3c428d14071 85
+  s_e36106252ea183::t_96c81cb33e14d3 10-40
+  s_e36106252ea183::t_aae33c971f525e 1-9,41-84,86
+public/diagrams/ai-delivery/architecture.drawio
+  s_e36106252ea183::t_dd677bf9bea8a5 1
+  s_e36106252ea183::t_ecbcd855125f11 2
+work/ai-delivery-diagrams/generate.py
+  s_e36106252ea183::t_dd677bf9bea8a5 1-5,7-11,18-59
+  s_e36106252ea183::t_a9b7239c3e1476 6,12-17
+public/diagrams/ai-delivery/delivery-flow.drawio
+  s_e36106252ea183::t_dd677bf9bea8a5 1
+  s_e36106252ea183::t_dd93e8a2d022b1 2
+ai-harness/ai-delivery/process-model.md
+  s_e36106252ea183::t_96c81cb33e14d3 10-36
+  s_e36106252ea183::t_6ca0550a416c31 1-9,37-83
+.vitepress/config.ts
+  s_e36106252ea183::t_13823c6b71566d 28-29,525-534
+ai-harness/ai-delivery/evidence-and-evolution.md
+  s_e36106252ea183::t_be4fbb2899fdda 1-72
+ai-harness/ai-delivery/human-ai-collaboration.md
+  s_e36106252ea183::t_7d3cf98ef160c3 1-68
+ai-harness/index.md
+  s_e36106252ea183::t_8a380ba3171796 7,41-46
+contributing/glossary.md
+  s_e36106252ea183::t_c3e91a50be4d0d 7,9,41-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "62bd936e41d5932e1642ff68e45c540b8d1d8f62",
+  "prompts": {},
+  "sessions": {
+    "s_e36106252ea183": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17752-c29f-7702-bc43-400c89753ff4",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
