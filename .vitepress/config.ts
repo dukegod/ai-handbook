@@ -25,7 +25,8 @@ export default withMermaid(defineConfig({
   metaChunk: true,
 
   // 仓库根级元文档，不作为 wiki 页面
-  srcExclude: ['README.md', 'CLAUDE.md', 'AGENTS.md'],
+  // ai-trends/github-weekly/ 是每周自动生成的 GitHub 周报（Obsidian 归档），体量随周增长，不进站点构建
+  srcExclude: ['README.md', 'CLAUDE.md', 'AGENTS.md', 'ai-trends/github-weekly/**'],
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
@@ -519,6 +520,16 @@ export default withMermaid(defineConfig({
           text: 'AI Native',
           items: [
             { text: '总览', link: '/ai-harness/' },
+          ],
+        },
+        {
+          text: 'AI 自交付理论（草案）',
+          collapsed: true,
+          items: [
+            { text: '总览与概念边界', link: '/ai-harness/ai-delivery/' },
+            { text: '交付过程模型', link: '/ai-harness/ai-delivery/process-model' },
+            { text: '人机分工与协作', link: '/ai-harness/ai-delivery/human-ai-collaboration' },
+            { text: '证据、知识与演进', link: '/ai-harness/ai-delivery/evidence-and-evolution' },
           ],
         },
         {

@@ -4,7 +4,7 @@ description: Agent2Agent 协议截至 2026-10 的规范现状、治理归属、�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-19
+lastUpdated: 2026-10-22
 verifiedWith:
   sources:
     - name: A2A Protocol Specification（官方规范一手来源）
@@ -16,6 +16,15 @@ verifiedWith:
     - name: Agentic Commerce Protocol（AP2）
       url: https://agenticcommerceprotocol.info/standards/ap2
       accessedAt: 2026-10-19
+    - name: 'Introducing A2UI: An open project for agent-driven interfaces（Google Developers Blog）'
+      url: https://developers.googleblog.com/en/introducing-a2ui-an-open-project-for-agent-driven-interfaces/
+      accessedAt: 2026-10-22
+    - name: A2UI 官方文档站
+      url: https://a2ui.org/
+      accessedAt: 2026-10-22
+    - name: a2ui-project/a2ui GitHub 仓库
+      url: https://github.com/a2ui-project/a2ui
+      accessedAt: 2026-10-22
 ---
 
 # A2A 协议行业深度调研
@@ -29,7 +38,7 @@ verifiedWith:
 - A2A 的规范现状：核心对象、五状态任务机、v1.0 的破坏性变更到底改了什么
 - 治理与时间线：从 Google 项目到 Agentic AI Foundation（AAIF）的完整脉络
 - 采纳的真实分布：哪些厂商真做了、哪些只是挂名，以及开发者层的采纳空白
-- 竞品全景：MCP / ANP / ACP / AG-UI / AP2 / A2A-T / ACT 各自占哪一层，为什么是叠加不是替代
+- 竞品全景：MCP / ANP / ACP / AG-UI / A2UI / AP2 / A2A-T / ACT 各自占哪一层，为什么是叠加不是替代
 - 能力缺口与安全风险：Agent Card 信任链、人审语义、不透明执行
 - 企业侧落地的分层策略与常见工期预期的现实评估
 
@@ -88,7 +97,7 @@ A2A 的协议覆盖面不足以独立支撑一套多 Agent 体系（详见第七
 
 A2A 是一个**应用层协议**，跑在已有的 Web 技术栈上（HTTP / JSON-RPC 2.0 / SSE / Webhook / TLS）。它没有重造传输，这是它能快速落地的原因——一个 Agent 协议如果自己造一套可靠传输，等于退回 1980 年重写 TCP。
 
-> [!info] 官方规范一手核对（2026-10-19 访问 https://a2a-protocol.org/latest/specification/）
+> [!info] 官方规范一手核对（2026-10-19 访问 [A2A Protocol Specification](https://a2a-protocol.org/latest/specification/)）
 > 许可 Apache-2.0，版权方 The Linux Foundation；官方 SDK 覆盖 **Python / Go / Java / JavaScript / .NET / Rust** 六种语言；发现地址为 `.well-known/agent-card.json`；版本协商走 HTTP Header `A2A-Version`（格式 `Major.Minor`，不支持时返回 `VersionNotSupportedError`）；扩展协商走 `A2A-Extensions`（逗号分隔的扩展 URI）。
 
 ### 2.1 五个核心对象
@@ -226,36 +235,71 @@ A2A-T 的设计动机值得一提：Fierce Network 提出的「**混沌智能体
 
 ```
 ┌─────────────────────────────────────────────┐
-│  前端交互层    AG-UI（CopilotKit）             │  agent ↔ UI 流式
+│  前端交互层    AG-UI（CopilotKit）          │  agent ↔ UI 流式
+│                A2UI（Google）               │  agent → 声明式 UI
 ├─────────────────────────────────────────────┤
-│  协作层        A2A ★                          │  agent ↔ agent 任务委派
-│                A2A-T（电信域）/ AHA（跨端）    │  垂直域变体
+│  协作层    A2A ★                            │  agent ↔ agent 任务委派
+│                A2A-T（电信域）/ AHA（跨端） │  垂直域变体
 ├─────────────────────────────────────────────┤
-│  身份层        ANP / APASS                    │  跨组织去中心化身份
+│  身份层    ANP / APASS                      │  跨组织去中心化身份
 ├─────────────────────────────────────────────┤
-│  能力层        MCP ★                         │  agent ↔ 工具/数据
+│  能力层    MCP ★                            │  agent ↔ 工具/数据
 ├─────────────────────────────────────────────┤
-│  支付层        AP2 / ACT                      │  agent ↔ 交易
+│  支付层    AP2 / ACT                        │  agent ↔ 交易
 └─────────────────────────────────────────────┘
 ```
 
-### 5.1 五协议对照
+### 5.1 六协议对照
 
-| 维度 | MCP | A2A | ANP | ACP | AG-UI |
-| --- | --- | --- | --- | --- | --- |
-| 发起方 | Anthropic | Google | ANP Working Group（社区） | IBM / BeeAI | CopilotKit |
-| 时间 | 2024-11 | 2025-04 | 2025 | 2025 | 2025 |
-| 核心目标 | agent ↔ 工具 | agent ↔ agent 任务委派 | 跨组织去中心化身份 | 带状态的多 agent 协作 | agent ↔ 前端流式 |
-| 传输 | stdio / Streamable HTTP | HTTP + JSON-RPC 2.0 | HTTP / P2P + JSON-LD | HTTP + JSON | HTTP/SSE、WebSocket |
-| 发现 | server manifest | Agent Card | DID 解析 | agent descriptor | 嵌入，无独立发现 |
-| 治理 | Linux Foundation | Linux Foundation（AAIF） | 社区 | **已并入 A2A** | 社区 |
+| 维度 | MCP | A2A | ANP | ACP | AG-UI | A2UI |
+| --- | --- | --- | --- | --- | --- | --- |
+| 发起方 | Anthropic | Google | ANP Working Group（社区） | IBM / BeeAI | CopilotKit | Google（现由 a2ui-project 组织托管） |
+| 时间 | 2024-11 | 2025-04 | 2025 | 2025 | 2025 | 2025-09 建仓，2025-12 公开 |
+| 核心目标 | agent ↔ 工具 | agent ↔ agent 任务委派 | 跨组织去中心化身份 | 带状态的多 agent 协作 | agent ↔ 前端流式 | agent → 声明式 UI 描述 |
+| 传输 | stdio / Streamable HTTP | HTTP + JSON-RPC 2.0 | HTTP / P2P + JSON-LD | HTTP + JSON | HTTP/SSE、WebSocket | 传输无关（A2A / AG-UI / REST） |
+| 发现 | server manifest | Agent Card | DID 解析 | agent descriptor | 嵌入，无独立发现 | 嵌入，无独立发现 |
+| 治理 | Linux Foundation | Linux Foundation（AAIF） | 社区 | **已并入 A2A** | 社区 | **a2ui-project 组织，未进基金会** |
 
 > [!note] MCP 传输的一个易错点
 > MCP 早期有独立的「HTTP+SSE」传输（客户端单向收 SSE），现行 spec 已被 **Streamable HTTP** 取代——单次 POST + 可选请求作用域内的 SSE 流。说「MCP 用 SSE 传输」不准确，SSE 只是回传增量结果的一种承载方式。[来源: 我在理解智能体通信协议时，发现了 MCP 的关键作用 | 51CTO | 2026]
 
 **ACP 的合并是这段历史里最重要的一条**：IBM 放弃自有协议并把工程师送进 A2A 的 TSC，等于承认「Agent 通信协议」这个位置只有一个。剩下的是**分层**，不是**竞争**。
 
-### 5.2 支付层：AP2 与 ACT
+### 5.2 UI 表达层：A2UI —— 另一个「Google 出品」
+
+> [!info] 一手核对（2026-10-22 访问 a2ui.org 与 GitHub API）
+> 官方称其为 **A2UI（Agent-to-UI）**，2025-12-15 由 Google Developers Blog 公开宣布。仓库现托管在独立组织 [`a2ui-project/a2ui`](https://github.com/a2ui-project/a2ui)（`google/A2UI` 旧地址 301 跳转至此），Apache-2.0，star 数 16,774（2026-10-22）。规范目录含 `v0_8` / `v0_9` / `v0_9_1` / `v1_0` 四代，**当前稳定版 v0.9.1，v1.0 为 release candidate**。
+
+A2UI 解决的层次和 AG-UI 不同，这点最容易混淆：
+
+| | **AG-UI**（CopilotKit） | **A2UI**（Google） |
+| --- | --- | --- |
+| 解决什么 | agent ↔ 前端的**实时事件流**（谁在思考、调了什么工具） | agent → 前端的**UI 描述**（界面长什么样） |
+| 载荷形态 | 事件流（SSE / WebSocket） | 声明式 JSON 组件树 + 数据模型 |
+| 安全模型 | 事件流本身 | 声明式数据而非可执行代码，客户端持有可信组件目录，agent 只能请求目录内组件 |
+| 生态位 | 事实标准，治理仍由 CopilotKit 主导 | 官方称与 AG-UI 互补，CopilotKit 创始人称 AG-UI 已完整支持 A2UI 规范 |
+
+**A2UI 的核心设计取舍**：agent 不发 HTML/JS，而是发一棵抽象组件树（`type: 'text-field'`、`Button`、`DateTimeInput` 等）加一份数据模型，由客户端映射到自己的原生控件（Lit / Angular / React / Flutter / SwiftUI）。官方称之为「safe like data, but expressive like code」——**安全像数据，表现力像代码**。
+
+**传输层现状**（官方 Transports 页）：
+
+| 传输 | 状态 | 场景 |
+| --- | --- | --- |
+| **A2A** | ✅ Stable | 多 agent 系统、企业网格 |
+| **AG-UI** | ✅ Stable | 全栈 React / Vue / Angular 应用 |
+| REST API | 📋 Planned | 简单 HTTP 端点 |
+| WebSockets / SSE | 💡 Proposed | 实时双向、流式 |
+
+**对 A2A 最直接的相关性**：A2UI 官方带有 **A2A 扩展规范**（`specification/v1_0/extensions/a2a/`），定义如何把 A2UI 消息映射进 A2A 消息，含 Agent Card 元数据与**双向数据模型同步**。也就是说，A2UI 不是 A2A 的竞品，而是 A2A 之上的一层 UI 表达约定——**A2A 委派任务，A2UI 决定委派结果长什么样**。
+
+**生产落地**：Google Opal（AI mini-app 平台）、Gemini Enterprise（企业审批流、数据录入表单）、Flutter GenUI SDK（底层即用 A2UI）、AI Powered Google（公司内部标准化 agent UI 交换）。[来源: Introducing A2UI: An open project for agent-driven interfaces | Google Developers Blog | 2025-12-15；A2UI 官方文档站 a2ui.org（访问于 2026-10-22）]
+
+> [!warning] 治理归属是这个协议最值得警惕的一点
+> A2UI 仓库 2026-03 已从 `google/` 组织迁到独立的 `a2ui-project` 组织，但**没有进入 Linux Foundation / AAIF**——AAIF 当前托管的项目是 MCP、goose、AGENTS.md、agentgateway、A2A，A2UI 不在其中。对比 AG-UI（CopilotKit 主导，社区治理）可以看到：**两个 UI 层协议都没有「法定标准」的治理地位，一个由单一公司主导，一个由 Google 牵头但未托付中立基金会。** 这与 A2A 主动捐给 Linux Foundation 的路径形成鲜明反差。
+
+**当前成熟度**：官方自述为「early stage public preview」，明确提示规范仍在演进、会有 breaking change，v1.0 的门槛是「足够多的 renderer 迁移完成并吸收反馈」。
+
+### 5.3 支付层：AP2 与 ACT
 
 | 协议 | 发起方 | 治理 | 关键设计 |
 | --- | --- | --- | --- |
@@ -264,7 +308,7 @@ A2A-T 的设计动机值得一提：Fierce Network 提出的「**混沌智能体
 
 AP2 移交 FIDO 是个信号：**支付协议必须脱离单一厂商，否则跨网络就走不通。**
 
-### 5.3 一句话结论
+### 5.4 一句话结论
 
 > MCP 标准化 agent 怎么用工具，A2A 标准化 agent 怎么把活派给另一个 agent，ANP 标准化不同组织的 agent 在没有共享 broker 的情况下怎么互认身份。
 > **三者会同时跑，按需分层叠加。** 你几乎不会「选一个协议而不是另一个」。[来源: How to Choose Between MCP, A2A, and ANP | Atlan | 2026]
@@ -427,6 +471,8 @@ A2A 里唯一的人审钩子是任务状态 `input-required`。但规范只定�
 | 7 | AGNTCY Agent Directory（基于 OASF）在发现层的实际使用率 | 查 Cisco 侧项目状态 |
 | 8 | 国内厂商（支付宝 / 华为）与开源 A2A 的**协议级**兼容程度 | 需读 AHA / A2A-T 规范原文 |
 | 9 | A2A 与 MCP 在 AAIF 同门治理后的边界演变 | 持续跟踪 TSC 会议记录 |
+| 10 | **A2UI 是否会进入 Linux Foundation / AAIF**（当前托管于 a2ui-project 独立组织，未进基金会） | 跟踪 a2ui-project 组织公告与 AAIF 项目列表变动 |
+| 11 | A2UI v1.0 规范定稿时间与 breaking change 策略 | 跟踪 `specification/v1_0` 目录变更与 release notes |
 
 ---
 
@@ -438,6 +484,9 @@ A2A 里唯一的人审钩子是任务状态 `input-required`。但规范只定�
 - [A2A Protocol 官方文档站](https://a2a-protocol.org/)（访问于 2026-10-19）
 - [a2aproject/A2A GitHub 仓库](https://github.com/a2aproject/A2A)（访问于 2026-10-19）
 - [What is the Agent Payments Protocol (AP2)?](https://agenticcommerceprotocol.info/standards/ap2)（访问于 2026-10-19）
+- [Introducing A2UI: An open project for agent-driven interfaces](https://developers.googleblog.com/en/introducing-a2ui-an-open-project-for-agent-driven-interfaces/) | Google Developers Blog | 2025-12-15（访问于 2026-10-22）
+- [A2UI 官方文档站](https://a2ui.org/)（访问于 2026-10-22）—— 含 Transports / Roadmap / A2A 扩展规范
+- [a2ui-project/a2ui GitHub 仓库](https://github.com/a2ui-project/a2ui)（访问于 2026-10-22）—— 规范原文、v1.0 候选版与 A2A 扩展目录
 
 **二手分析与对照**
 

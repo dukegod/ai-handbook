@@ -91,7 +91,10 @@ ai-trends/          产品动向
 │   └── zhipu/         Zhipu · 智谱 GLM 全系
 │   └── qwen/          Qwen · 阿里通义千问全系
 ├── research-highlights/ 技术速递
-└── industry/          行业观察
+├── industry/          行业观察
+└── github-weekly/     GitHub 周报（每周一 12:00 自动生成，Obsidian 归档）
+    ├── index.md           按周倒序的历史周报索引
+    └── <ISO周次>/         index.md = 榜单全表 + 本周判断；<repo>.md = 重点仓库深读
 claude-code/        Claude Code CLI 精通（9 个子章 + reference 速查手册）
 claude-capabilities/ Claude 能力全景（8 个子章，含模型 ID 速查）
 ai-harness/         AI Native（公开方法论 + 团队工作量 + 常见模式；与内部 Foundation Kit 互补）
@@ -108,6 +111,16 @@ contributing/       写作规范五件套（本文重要参考）
 ```
 
 > **项目间关系**：`ai-harness/` 是公开方法论层；内部 Kit `pipeline-architecture-wiki`（`git@coding.jd.com:sz-fe/pipeline-architecture-wiki.git`）维护通用方法论副本 + 京东特定实践 + Skill 工程化 + 模板。阶段 1 ✅：建立 ai-handbook 顶级导航；阶段 2 ✅：迁移 `/ai-coding/architecture/` 5 篇已 published 方法论到 `/ai-harness/` + 删除旧子章；阶段 3 ✅：迁移 `/ai-coding/workflows/` + `/ai-coding/patterns/` 6 篇到 `/ai-harness/workflows/` + `/ai-harness/patterns/`；阶段 4：协调 wiki 侧清理通用方法论，仅留京东特定。
+
+## GitHub 周报（自动生成）
+
+`ai-trends/github-weekly/` 由**定时任务每周一 12:00（Asia/Shanghai）自动生成**，覆盖刚结束的那一周。
+
+- 数据源：GitHub Trending 官方口径（`since=weekly` / `since=monthly`）+ GitHub Search API 找新仓库
+- 采集脚本：`/Users/liuhui15/.minimax/agents/mavis/scripts/gh_weekly.py`（`bundle` 子命令出全量数据）
+- 产出：每周一个目录，含 `index.md`（榜单全表 + 本周判断）+ 8~10 篇重点仓库深读（AI 方向优先）
+- **该目录已加入 `.vitepress/config.ts` 的 `srcExclude`**：周报只做 Obsidian 归档，不进站点构建，也不加 sidebar 条目
+- **人工修改周报前先确认是不是定时任务刚写的**；重跑会覆盖同名文件
 
 任何一次结构调整必须**同步改** [.vitepress/config.ts](./.vitepress/config.ts) 里对应的 `sidebar` 数组，否则新页面显示不出来。
 
