@@ -4,8 +4,9 @@ description: 把一篇 draft 升到 published 时逐项要过的具体动作、�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-11
+lastUpdated: 2026-10-26
 verifiedWith:
+  scope: '2026-10-26 仅清理敏感引用；技术验证版本与来源日期沿用原记录'
   claudeCode: 2.1.220
   officialDocs: 'https://vitepress.dev/'
   accessedAt: 2026-08-11
@@ -142,14 +143,14 @@ grep -oP '[一-鿿]' <本文.md> | wc -l
 **判据**：
 
 - API key 用 `sk-ant-****` 而不是完整值
-- 内部路径（`/Users/liuhui15/...`、`~/.jd-corp/...`）替换为 `<user>` 或 `<project-root>`
+- 内部路径（含真实用户名的绝对路径、组织专属配置目录）替换为 `<user>` 或 `<project-root>`
 - 真实同事名字 / 邮箱 / 内网 URL 全部脱敏
 
 具体操作：
 
 ```bash
 # 常见敏感串扫描
-grep -nE '(sk-ant-|/Users/|@jd\.com|coding\.jd\.com/[a-z]+/[a-z-]+)' <本文.md>
+grep -nE '(sk-ant-|/Users/|/home/|https?://[^ /]*\.(internal|corp))' <本文.md>
 ```
 
 例外：`github.com/dukegod/ai-handbook` 是本站仓库 URL，允许出现；`docs.claude.com`、`code.claude.com` 等公开域名不算敏感。
@@ -189,7 +190,7 @@ done < /tmp/links.txt
 **判据**：`pnpm build` 输出无 `error` / `warn` / `dead link`。
 
 ```bash
-cd /Users/liuhui15/github-projects/ai-handbook
+cd /path/to/ai-handbook
 rm -rf .vitepress/cache .vitepress/dist    # 清缓存，避免误报绿
 pnpm build 2>&1 | grep -iE '(warn|error|dead)'
 # 期望：无输出（除了 vite 常规 chunk-size 提示，那个可忽略）

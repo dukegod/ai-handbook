@@ -10,7 +10,7 @@
 
 1. **AI 核心技术** —— Transformer / 注意力 / 预训练 / RLHF / MoE / 多模态
 2. **AI 工具** —— AI 工具横评（CLI / IDE / 插件 / 框架 / 多平台 Agent 5 种形态）
-3. **AI Native** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 团队工作量 / 常见模式 / 迁移路径（公开方法论合集，与内部 Foundation Kit `pipeline-architecture-wiki` 互补）
+3. **AI Native** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 团队工作量 / 常见模式 / 迁移路径（公开方法论合集）
 4. **产品动向** —— 厂商档案（含各产品最新动态）/ 论文速递 / 开源推荐 / 行业趋势
 5. **模型与厂商** —— 国外厂商（Anthropic / OpenAI / xAI）+ 国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen），横向对比与选型决策
 6. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力
@@ -97,8 +97,8 @@ ai-trends/          产品动向
     └── <ISO周次>/         index.md = 榜单全表 + 本周判断；<repo>.md = 重点仓库深读
 claude-code/        Claude Code CLI 精通（9 个子章 + reference 速查手册）
 claude-capabilities/ Claude 能力全景（8 个子章，含模型 ID 速查）
-ai-harness/         AI Native（公开方法论 + 团队工作量 + 常见模式；与内部 Foundation Kit 互补）
-├── index.md                 # 总览 + 与 Foundation Kit 关系 + 内容三层结构
+ai-harness/         AI Native（公开方法论 + 团队工作量 + 常见模式）
+├── index.md                 # 总览 + 公开内容边界 + 内容三层结构
 ├── design-philosophy.md     # 设计理念：人机分工（方法论）
 ├── three-layer-architecture.md # 三层架构与模块模板（方法论）
 ├── asset-flywheel.md        # 资产飞轮机制（方法论）
@@ -110,14 +110,14 @@ cookbook/           实战案例
 contributing/       写作规范五件套（本文重要参考）
 ```
 
-> **项目间关系**：`ai-harness/` 是公开方法论层；内部 Kit `pipeline-architecture-wiki`（`git@coding.jd.com:sz-fe/pipeline-architecture-wiki.git`）维护通用方法论副本 + 京东特定实践 + Skill 工程化 + 模板。阶段 1 ✅：建立 ai-handbook 顶级导航；阶段 2 ✅：迁移 `/ai-coding/architecture/` 5 篇已 published 方法论到 `/ai-harness/` + 删除旧子章；阶段 3 ✅：迁移 `/ai-coding/workflows/` + `/ai-coding/patterns/` 6 篇到 `/ai-harness/workflows/` + `/ai-harness/patterns/`；阶段 4：协调 wiki 侧清理通用方法论，仅留京东特定。
+> **公开内容边界**：`ai-harness/` 维护通用方法论。组织内部业务规则、私有组件绑定、仓库地址和环境配置不得写入公开文档。已完成方法论、团队工作流与常见模式的归并。
 
 ## GitHub 周报（自动生成）
 
 `ai-trends/github-weekly/` 由**定时任务每周一 12:00（Asia/Shanghai）自动生成**，覆盖刚结束的那一周。
 
 - 数据源：GitHub Trending 官方口径（`since=weekly` / `since=monthly`）+ GitHub Search API 找新仓库
-- 采集脚本：`/Users/liuhui15/.minimax/agents/mavis/scripts/gh_weekly.py`（`bundle` 子命令出全量数据）
+- 采集脚本：外部维护的 `gh_weekly.py`（`bundle` 子命令出全量数据）
 - 产出：每周一个目录，含 `index.md`（榜单全表 + 本周判断）+ 8~10 篇重点仓库深读（AI 方向优先）
 - **该目录已加入 `.vitepress/config.ts` 的 `srcExclude`**：周报只做 Obsidian 归档，不进站点构建，也不加 sidebar 条目
 - **人工修改周报前先确认是不是定时任务刚写的**；重跑会覆盖同名文件
@@ -253,7 +253,7 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 - [x] 阶段 1：建立 AI Native 顶级导航 + 首页 feature 卡 + AGENTS.md 关系说明
 - [x] 阶段 2：迁移 `/ai-coding/architecture/` → `/ai-harness/`，建立完整 sidebar
 - [x] 阶段 3：迁移 `/ai-coding/workflows/` + `/ai-coding/patterns/` → `/ai-harness/workflows/` + `/ai-harness/patterns/`，建立团队工作量与常见模式两个分组（v0.5）
-- [ ] 阶段 4：协调 wiki 侧清理通用方法论，仅留京东特定实践
+- [ ] 后续：完善通用方法论，持续检查公开内容边界
 - [ ] 填充 ai-coding/tools/ 横评（最高 ROI）
 - [ ] 填充 ai-core/fundamentals/ 基础原理
 - [ ] 后续：i18n、Algolia 搜索

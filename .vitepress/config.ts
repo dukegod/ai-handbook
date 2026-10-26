@@ -4,7 +4,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 // ============================================================================
 // Claude Handbook — VitePress 配置
 //
-// 目录结构见 /Users/liuhui15/github-projects/ai-handbook/AGENTS.md
+// 目录结构见 AGENTS.md
 // 写作规范见 contributing/style-guide.md
 // 路线图见 contributing/roadmap.md
 // ============================================================================
@@ -523,16 +523,6 @@ export default withMermaid(defineConfig({
           ],
         },
         {
-          text: 'AI 自交付理论（草案）',
-          collapsed: true,
-          items: [
-            { text: '总览与概念边界', link: '/ai-harness/ai-delivery/' },
-            { text: '交付过程模型', link: '/ai-harness/ai-delivery/process-model' },
-            { text: '人机分工与协作', link: '/ai-harness/ai-delivery/human-ai-collaboration' },
-            { text: '证据、知识与演进', link: '/ai-harness/ai-delivery/evidence-and-evolution' },
-          ],
-        },
-        {
           text: '方法论',
           collapsed: true,
           items: [
@@ -541,6 +531,16 @@ export default withMermaid(defineConfig({
             { text: '资产飞轮机制', link: '/ai-harness/asset-flywheel' },
             { text: 'TDD 质量保障', link: '/ai-harness/tdd-quality' },
             { text: '迁移路径', link: '/ai-harness/migration-guide' },
+          ],
+        },
+        {
+          text: 'AI 自交付理论（草案）',
+          collapsed: true,
+          items: [
+            { text: '总览与概念边界', link: '/ai-harness/ai-delivery/' },
+            { text: '交付过程模型', link: '/ai-harness/ai-delivery/process-model' },
+            { text: '人机分工与协作', link: '/ai-harness/ai-delivery/human-ai-collaboration' },
+            { text: '证据、知识与演进', link: '/ai-harness/ai-delivery/evidence-and-evolution' },
           ],
         },
         {

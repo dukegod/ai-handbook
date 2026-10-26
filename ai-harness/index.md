@@ -21,14 +21,9 @@ lastUpdated: 2026-10-26
 - AI 辅助三类常见编码动作——重构、测试、文档——的模式与边界
 - 如何从现有项目分阶段迁移到 AI Native
 
-## 与 Foundation Kit 的关系
+## 内容边界
 
-| 仓库 | 定位 | 内容 |
-|------|------|------|
-| **本仓库（ai-handbook/ai-harness）** | 公开方法论 | 通用 AI Native 工程原理、模式、迁移路径 |
-| [pipeline-architecture-wiki](https://coding.jd.com/sz-fe/pipeline-architecture-wiki)（内部） | Foundation Kit | 通用方法论 + 京东内部特定实践、Skill 工程化、模板 |
-
-通用方法论在此维护。**京东特定的业务实践、组件库绑定、Skill 落地模板留在内部 Foundation Kit**。
+本模块维护通用 AI Native 原理、模式与迁移路径。组织内部业务规则、私有组件绑定、内部仓库地址和环境配置不属于公开知识库内容。
 
 ## 内容结构
 
@@ -51,7 +46,7 @@ lastUpdated: 2026-10-26
 - **阶段 1**（已完成）：建立顶级导航、首页 feature 卡、AGENTS.md 关系说明
 - **阶段 2**（已完成）：将 `/ai-coding/architecture/` 下的 5 篇方法论迁移到本目录，清理旧路径
 - **阶段 3**（已完成）：将 `/ai-coding/workflows/` 和 `/ai-coding/patterns/` 迁入本目录，作为团队工作量和常见模式两个分组
-- **阶段 4**（规划中）：在 wiki 侧清理通用方法论，仅保留京东特定实践
+- **后续维护**：完善通用方法论，持续检查公开内容与组织内部信息的边界
 
 ## 下一步
 

@@ -4,8 +4,9 @@ description: 'Pi settings.json 全字段、auth.json 多 provider、trust.json �
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-22
+lastUpdated: 2026-10-26
 verifiedWith:
+  scope: '2026-10-26 仅清理敏感引用；技术验证版本与来源日期沿用原记录'
   piVersion: 0.86.1
   sources:
     - name: Pi 设置文档（settings.md）
@@ -330,7 +331,7 @@ LLM provider 的 prompt cache 会**在闲置一段时间后失效**，下次请�
 Pi 启动时如果检测到当前目录有 `.pi/settings.json`、`.pi` 资源或项目级 `.agents/skills`，**会问你要不要信任**：
 
 ```
-Project /Users/you/jd-projects/scm-gyl contains project-local settings.
+Project /Users/you/projects/example-app contains project-local settings.
 Trust this project? [y/N]
 ```
 
@@ -345,8 +346,8 @@ Trust this project? [y/N]
 
 ```json
 {
-  "/Users/liuhui15/jd-projects/open-projects": true,
-  "/Users/liuhui15/jd-projects/sz-fe": true
+  "/Users/you/projects/example-app": true,
+  "/Users/you/projects/example-library": true
 }
 ```
 
@@ -491,7 +492,7 @@ Pi 启动时会自动 `npm install` 项目级 `.pi/settings.json` 里声明的�
 
 **坑 3：trust.json 加了目录但还是问**
 
-`trust.json` key 是**目录绝对路径**，不是项目内的子路径。加 `/Users/you/jd-projects/scm-gyl`，不是 `/Users/you/jd-projects/scm-gyl/src`。
+`trust.json` key 是**目录绝对路径**，不是项目内的子路径。加 `/Users/you/projects/example-app`，不是 `/Users/you/projects/example-app/src`。
 
 **坑 4：cache warming 一直在跑**
 
