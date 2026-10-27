@@ -1,0 +1,60 @@
+ai-harness/ai-delivery/evidence-and-evolution.md
+  s_e36106252ea183::t_3de46028e45696 7,67,71
+  s_e36106252ea183::t_85bb29952d6f54 72
+ai-harness/three-layer-architecture.md
+  s_e36106252ea183::t_ac7d6f68e88ab7 25,179
+index.md
+  s_e36106252ea183::t_3de46028e45696 66-67,69,85
+AGENTS.md
+  s_e36106252ea183::t_3de46028e45696 13,100-110,115,258
+ai-harness/design-philosophy.md
+  s_e36106252ea183::t_ac7d6f68e88ab7 2,7,10
+ai-harness/ai-delivery/index.md
+  s_e36106252ea183::t_3de46028e45696 7,28,48-51,90-91
+ai-harness/index.md
+  s_e36106252ea183::t_62a3e59b0de6b1 2-3,10,12-16,20-22,24,26,28,30,32,34,36,38-43,45,47,49,51-53,55,57,59-61,63,67-68
+ai-harness/asset-flywheel.md
+  s_e36106252ea183::t_ac7d6f68e88ab7 25,100
+ai-harness/tdd-quality.md
+  s_e36106252ea183::t_ac7d6f68e88ab7 25,211
+ai-coding/index.md
+  s_e36106252ea183::t_3de46028e45696 33,47,57
+ai-harness/agent-platform/architecture.md
+  s_e36106252ea183::t_62a3e59b0de6b1 1-68
+ai-harness/patterns/index.md
+  s_e36106252ea183::t_62a3e59b0de6b1 2-3,6,10,12,14,16-18,20,22,24,26-52,56,60-61
+contributing/glossary.md
+  s_e36106252ea183::t_62a3e59b0de6b1 7,9,41-49
+  s_e36106252ea183::t_ebc10018404946 50
+ai-harness/ai-native.md
+  s_e36106252ea183::t_62a3e59b0de6b1 1-33,35-62
+  s_e36106252ea183::t_ac7d6f68e88ab7 34
+ai-harness/agent-platform/index.md
+  s_e36106252ea183::t_62a3e59b0de6b1 1-65
+ai-harness/workflows/index.md
+  s_e36106252ea183::t_62a3e59b0de6b1 2-3,6,10,12,14,16-18,20,22,24,26-38,42,46-47
+.vitepress/config.ts
+  s_e36106252ea183::t_ac7d6f68e88ab7 555
+  s_e36106252ea183::t_c73452744d5361 582
+  s_e36106252ea183::t_3de46028e45696 82,533,537-542,544-547,551,554,559-568,572,585-586
+public/diagrams/ai-engineering/overview.drawio
+  s_e36106252ea183::t_840d6f130b35e7 1-2
+work/ai-engineering/generate.py
+  s_e36106252ea183::t_47ecce87e58d2d 1-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8e9602576982dabf94168844d1809e1cf0214c9f",
+  "prompts": {},
+  "sessions": {
+    "s_e36106252ea183": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17752-c29f-7702-bc43-400c89753ff4",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
