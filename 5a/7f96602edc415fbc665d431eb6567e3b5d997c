@@ -1,0 +1,39 @@
+.vitepress/config.ts
+  s_e36106252ea183::t_cfcbbb964ab1b6 1,18-26,38,443-450
+AGENTS.md
+  s_e36106252ea183::t_1e6b1e09556ae6 13,95,121
+ai-coding/index.md
+  s_e36106252ea183::t_90c0ccde2ed67e 7,33
+ai-harness/asset-flywheel.md
+  s_e36106252ea183::t_5c12cb7fdcd11b 7
+ai-harness/index.md
+  s_e36106252ea183::t_af4e568f6e7328 7,25,31
+ai-harness/patterns/index.md
+  s_e36106252ea183::t_4c3348a66a9112 7,30
+ai-harness/tdd-quality.md
+  s_e36106252ea183::t_624a35d0715dad 7
+ai-harness/three-layer-architecture.md
+  s_e36106252ea183::t_bf8005c431babd 7
+ai-harness/workflows/index.md
+  s_e36106252ea183::t_deda5f401a61de 7,30
+ai-trends/github-weekly/index.md
+  s_e36106252ea183::t_d1a1ae7dd3e228 2,7,10,21-26,52
+ai-trends/index.md
+  s_e36106252ea183::t_336d8e94918ed7 7,24,34,40-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5a7f96602edc415fbc665d431eb6567e3b5d997c",
+  "prompts": {},
+  "sessions": {
+    "s_e36106252ea183": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17752-c29f-7702-bc43-400c89753ff4",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
