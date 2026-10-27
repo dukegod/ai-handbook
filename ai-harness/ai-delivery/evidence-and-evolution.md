@@ -4,7 +4,7 @@ description: 验收证据的有效性、知识适用边界与效果假设
 audience: intermediate
 difficulty: 🟡
 status: draft
-lastUpdated: 2026-10-26
+lastUpdated: 2026-10-27
 ---
 
 # AI 自交付：证据、知识与演进
@@ -64,9 +64,11 @@ lastUpdated: 2026-10-26
 
 ## 下一步
 
-- 结合证据边界重新审视定义 → [总览与概念边界](./)
+- 继续了解承载与治理 → [AI 研发 Agent 平台](../agent-platform/)
 
 ## 如果你想
+
+- 结合证据边界重新审视定义 → [总览与概念边界](./)
 
 - 了解可复用资产的整体思路 → [资产飞轮机制](../asset-flywheel)
 - 理解验证在工程中的作用 → [TDD 质量保障](../tdd-quality)

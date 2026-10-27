@@ -22,7 +22,7 @@ lastUpdated: 2026-10-27
 
 阅读本篇需要你先了解：
 
-- [设计理念：人机分工](./design-philosophy)
+- [设计理念](./design-philosophy)
 
 ## 一、三层架构
 
@@ -176,5 +176,5 @@ good case: 拆分为 FilterBar / MetricCards / TrendChart / PivotTable / DataExp
 
 ## 如果你想
 
-- 理解设计理念 → [设计理念：人机分工](./design-philosophy)
+- 理解设计理念 → [设计理念](./design-philosophy)
 - 看工具对比 → [AI 工具全景](/ai-coding/tools/overview)

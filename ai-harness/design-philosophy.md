@@ -1,13 +1,13 @@
 ---
-title: 设计理念：人机分工
+title: 设计理念
 description: AI Native 的核心理念——人负责架构设计和验收，AI 负责执行
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-27
 ---
 
-# 设计理念：人机分工
+# 设计理念
 
 > **TL;DR**：AI Native 不是让 AI 接管一切，而是把研发改造成适合 AI 稳定执行的链路。
 

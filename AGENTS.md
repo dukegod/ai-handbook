@@ -10,7 +10,7 @@
 
 1. **AI 核心技术** —— Transformer / 注意力 / 预训练 / RLHF / MoE / 多模态
 2. **AI 工具** —— AI 工具横评（CLI / IDE / 插件 / 框架 / 多平台 Agent 5 种形态）
-3. **AI Native** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 团队工作量 / 常见模式（公开方法论合集）
+3. **AI 研发体系** —— AI coding → AI Native → AI 自交付 → AI 研发 Agent 平台（概念与方法；阅读路径不等于成熟度等级）
 4. **产品动向** —— 厂商档案（含各产品最新动态）/ 论文速递 / 开源推荐 / 行业趋势
 5. **模型与厂商** —— 国外厂商（Anthropic / OpenAI / xAI）+ 国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen），横向对比与选型决策
 6. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力
@@ -97,19 +97,22 @@ ai-trends/          产品动向
     └── <ISO周次>/         index.md = 榜单全表 + 本周判断；<repo>.md = 重点仓库深读
 claude-code/        Claude Code CLI 精通（9 个子章 + reference 速查手册）
 claude-capabilities/ Claude 能力全景（8 个子章，含模型 ID 速查）
-ai-harness/         AI Native（公开方法论 + 团队工作量 + 常见模式）
-├── index.md                 # 总览 + 公开内容边界 + 内容三层结构
-├── design-philosophy.md     # 设计理念：人机分工（方法论）
-├── three-layer-architecture.md # 三层架构与模块模板（方法论）
-├── asset-flywheel.md        # 资产飞轮机制（方法论）
-├── tdd-quality.md           # TDD 质量保障（方法论）
-├── workflows/               # 团队工作量（3 篇 + 1 index）
-└── patterns/                # 常见模式（3 篇 + 1 index）
+ai-harness/         AI 研发体系（保留原有 URL）
+├── index.md                 # 四条主线总览与关系图
+├── patterns/                # 01 AI coding：编码任务、重构、测试、文档
+├── ai-native.md             # 02 AI Native：研发体系设计
+├── design-philosophy.md     # 人机分工
+├── three-layer-architecture.md # 三层代码架构
+├── asset-flywheel.md        # 知识与资产
+├── tdd-quality.md           # 质量机制
+├── workflows/               # AI Native 下的团队协作
+├── ai-delivery/             # 03 AI 自交付：责任与证据闭环（草案）
+└── agent-platform/          # 04 AI 研发 Agent 平台：承载与治理（草案）
 cookbook/           实战案例
 contributing/       写作规范五件套（本文重要参考）
 ```
 
-> **公开内容边界**：`ai-harness/` 维护通用方法论。组织内部业务规则、私有组件绑定、仓库地址和环境配置不得写入公开文档。已完成方法论、团队工作流与常见模式的归并。
+> **公开内容边界**：`ai-harness/` 维护通用方法论。组织内部业务规则、私有组件绑定、仓库地址和环境配置不得写入公开文档。按编码任务、研发体系、交付闭环、平台承载组织阅读。AI Native 是其中一条主线；平台不是更高成熟度的证明。具体产品横评仍在 `ai-coding/tools/`。
 
 ## GitHub 周报（自动生成）
 
@@ -252,6 +255,7 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 - [x] 阶段 1：建立 AI Native 顶级导航 + 首页 feature 卡 + AGENTS.md 关系说明
 - [x] 阶段 2：迁移 `/ai-coding/architecture/` → `/ai-harness/`，建立完整 sidebar
 - [x] 阶段 3：迁移 `/ai-coding/workflows/` + `/ai-coding/patterns/` → `/ai-harness/workflows/` + `/ai-harness/patterns/`，建立团队工作量与常见模式两个分组（v0.5）
+- [x] 重组为 AI 研发体系：四条主线、总关系图与平台理论草案，保留既有文章地址
 - [ ] 后续：完善通用方法论，持续检查公开内容边界
 - [ ] 填充 ai-coding/tools/ 横评（最高 ROI）
 - [ ] 填充 ai-core/fundamentals/ 基础原理

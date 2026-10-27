@@ -4,7 +4,7 @@ description: AI 自交付的工作定义、完成边界与理论主张的性质
 audience: intermediate
 difficulty: 🟡
 status: draft
-lastUpdated: 2026-10-26
+lastUpdated: 2026-10-27
 ---
 
 <script setup>
@@ -25,7 +25,7 @@ import { withBase } from 'vitepress'
 
 ## 前置知识
 
-- [设计理念：人机分工](../design-philosophy)
+- [AI Native：研发体系设计](../ai-native)
 
 ## 整体架构：先看全貌
 
@@ -44,6 +44,10 @@ import { withBase } from 'vitepress'
 本专题将 **AI 自交付** 定义为：AI 在明确的目标、验收和有效授权范围内，持续完成方案、实现、验证与修正，提供可审阅的交付结果；具备发布授权时可继续推进发布，遇到必须由人决定的问题时提交具体待审材料。
 
 这是本站提出的概念框架与规范性模型草案，不是行业统一定义，也不是已获实证支持的普遍理论。适用对象是能够表达目标、界定责任并观察结果的交付活动；目标模糊或结果难以观察时，需要保留探索与不确定性。
+
+## 在研发体系中的位置
+
+AI coding 关注编码任务，AI Native 关注持续研发条件；本专题进一步讨论目标到结果的交付责任。平台负责承载这些工作，并不因提供统一界面就具备自交付能力。
 
 ## 与相邻概念的关系
 
@@ -83,4 +87,5 @@ import { withBase } from 'vitepress'
 ## 如果你想
 
 - 查阅本专题约定术语 → [术语表](/contributing/glossary#ai-自交付-专题约定)
-- 回到整体方法论 → [AI Native](../)
+- 回到整体路径 → [AI 研发体系](../)
+- 了解交付过程如何被承载 → [AI 研发 Agent 平台](../agent-platform/)

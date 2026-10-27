@@ -30,7 +30,7 @@ flowchart LR
 
 **工具横评** — Claude Code / Cursor / GitHub Copilot / Codex CLI / Trae / PI-agent / DeepSeek Harness / OpenClaw 的深度对比
 
-> AI Native 工程方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量）与团队工作量、常见模式，已迁出到顶级导航 [AI Native](/ai-harness/)。
+> 本章保留产品横评与选型。编码方法、研发组织、交付闭环与平台理论统一在 [AI 研发体系](/ai-harness/) 中阅读。
 
 ## 从哪里开始
 
@@ -44,7 +44,7 @@ flowchart LR
 | 已在用 Claude Code | [Claude Code 深度评测](/ai-coding/tools/claude-code) |
 | 想把 AI 嵌入团队流水线 | [团队 AI 工作流](/ai-harness/workflows/team) |
 | 想了解 AI 辅助编码模式 | [代码重构模式](/ai-harness/patterns/refactor) |
-| 想理解 AI Native | [AI Native](/ai-harness/) |
+| 想理解 AI Native | [研发体系设计](/ai-harness/ai-native) |
 
 ## 下一步
 
@@ -54,6 +54,6 @@ flowchart LR
 
 ## 如果你想
 
-- 看团队工作量与编码模式 → [AI Native](/ai-harness/)
+- 看研发方法与交付理论 → [AI 研发体系](/ai-harness/)
 - 看实战案例 → [Cookbook](/cookbook/)
 - 选模型 → [模型选型决策树](/ai-trends/model-selection/model-selection-guide)

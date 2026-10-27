@@ -79,7 +79,7 @@ export default withMermaid(defineConfig({
       { text: 'AI 入门', link: '/getting-started/', activeMatch: '/getting-started/' },
       { text: 'AI 核心技术', link: '/ai-core/', activeMatch: '/ai-core/' },
       { text: 'AI 工具', link: '/ai-coding/', activeMatch: '/ai-coding/' },
-      { text: 'AI Native', link: '/ai-harness/', activeMatch: '/ai-harness/' },
+      { text: 'AI 研发体系', link: '/ai-harness/', activeMatch: '/ai-harness/' },
       {
         text: 'Claude',
         items: [
@@ -530,27 +530,46 @@ export default withMermaid(defineConfig({
       ],
 
       // ----------------------------------------------------------------------
-      // AI Native
+      // AI 研发体系
       // ----------------------------------------------------------------------
       '/ai-harness/': [
         {
-          text: 'AI Native',
+          text: 'AI 研发体系',
+          items: [{ text: '总览与阅读路径', link: '/ai-harness/' }],
+        },
+        {
+          text: '01 · AI coding',
+          collapsed: false,
           items: [
-            { text: '总览', link: '/ai-harness/' },
+            { text: '编码任务与方法', link: '/ai-harness/patterns/' },
+            { text: '代码重构模式', link: '/ai-harness/patterns/refactor' },
+            { text: '测试生成模式', link: '/ai-harness/patterns/testing' },
+            { text: '文档生成模式', link: '/ai-harness/patterns/documentation' },
           ],
         },
         {
-          text: '方法论',
+          text: '02 · AI Native',
           collapsed: true,
           items: [
-            { text: '设计理念：人机分工', link: '/ai-harness/design-philosophy' },
+            { text: '研发体系设计', link: '/ai-harness/ai-native' },
+            { text: '设计理念', link: '/ai-harness/design-philosophy' },
             { text: '三层架构与模块模板', link: '/ai-harness/three-layer-architecture' },
             { text: '资产飞轮机制', link: '/ai-harness/asset-flywheel' },
             { text: 'TDD 质量保障', link: '/ai-harness/tdd-quality' },
+            {
+              text: '团队协作',
+              collapsed: true,
+              items: [
+                { text: '团队协作总览', link: '/ai-harness/workflows/' },
+                { text: '团队 AI 工作流', link: '/ai-harness/workflows/team' },
+                { text: 'CI/CD 集成', link: '/ai-harness/workflows/ci-cd' },
+                { text: 'Code Review 自动化', link: '/ai-harness/workflows/code-review' },
+              ],
+            },
           ],
         },
         {
-          text: 'AI 自交付理论（草案）',
+          text: '03 · AI 自交付（草案）',
           collapsed: true,
           items: [
             { text: '总览与概念边界', link: '/ai-harness/ai-delivery/' },
@@ -560,23 +579,11 @@ export default withMermaid(defineConfig({
           ],
         },
         {
-          text: '团队工作量',
+          text: '04 · AI 研发 Agent 平台',
           collapsed: true,
           items: [
-            { text: '分组总览', link: '/ai-harness/workflows/' },
-            { text: '团队 AI 工作流', link: '/ai-harness/workflows/team' },
-            { text: 'CI/CD 集成', link: '/ai-harness/workflows/ci-cd' },
-            { text: 'Code Review 自动化', link: '/ai-harness/workflows/code-review' },
-          ],
-        },
-        {
-          text: '常见模式',
-          collapsed: true,
-          items: [
-            { text: '分组总览', link: '/ai-harness/patterns/' },
-            { text: '代码重构模式', link: '/ai-harness/patterns/refactor' },
-            { text: '测试生成模式', link: '/ai-harness/patterns/testing' },
-            { text: '文档生成模式', link: '/ai-harness/patterns/documentation' },
+            { text: '平台定位与边界', link: '/ai-harness/agent-platform/' },
+            { text: '平台能力架构', link: '/ai-harness/agent-platform/architecture' },
           ],
         },
       ],
