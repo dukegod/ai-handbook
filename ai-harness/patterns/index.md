@@ -4,7 +4,7 @@ description: AI 辅助代码重构、测试生成、文档生成的模式与边�
 audience: intermediate
 difficulty: 🟡
 status: planned
-lastUpdated: 2026-10-09
+lastUpdated: 2026-10-27
 ---
 
 # 常见模式方法
@@ -27,7 +27,7 @@ lastUpdated: 2026-10-09
 
 ## 上承方法论，下接落地
 
-这 3 篇是上层 5 篇方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 迁移路径）在「常见编码模式」维度的具体落地。
+这 3 篇是上层 4 篇方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量）在「常见编码模式」维度的具体落地。
 
 ## 下一步
 

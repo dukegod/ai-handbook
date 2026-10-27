@@ -4,7 +4,7 @@ description: 如何把经验沉淀为可复用资产——Specs、Rules、Skills
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-27
 ---
 
 # 资产飞轮机制
@@ -94,7 +94,6 @@ flowchart LR
 ## 下一步
 
 - 建立质量保障 → [TDD 质量保障](./tdd-quality)
-- 了解迁移路径 → [迁移路径](./migration-guide)
 
 ## 如果你想
 

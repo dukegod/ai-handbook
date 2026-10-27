@@ -4,7 +4,7 @@ description: 如何让工程结构对 AI 友好——三层架构、模块 5 件
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-27
 ---
 
 # 三层架构与模块模板
@@ -177,5 +177,4 @@ good case: 拆分为 FilterBar / MetricCards / TrendChart / PivotTable / DataExp
 ## 如果你想
 
 - 理解设计理念 → [设计理念：人机分工](./design-philosophy)
-- 迁移到 AI Native → [迁移路径](./migration-guide)
 - 看工具对比 → [AI 工具全景](/ai-coding/tools/overview)

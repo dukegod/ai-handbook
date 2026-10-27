@@ -1,3 +1,4 @@
+import { existsSync, readdirSync } from 'node:fs'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
@@ -14,6 +15,15 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 const P = (text: string) => `${text} 🚧`
 const base = process.env.VITEPRESS_BASE ?? '/'
 
+// 周报按目录名倒序生成菜单，新一期无需手工添加侧栏。
+const weeklyRoot = new URL('../ai-trends/github-weekly/', import.meta.url)
+const weeklyItems = readdirSync(weeklyRoot, { withFileTypes: true })
+  .filter(entry => entry.isDirectory() && /^\d{4}-W\d{2}$/.test(entry.name)
+    && existsSync(new URL(`${entry.name}/index.md`, weeklyRoot)))
+  .map(entry => entry.name)
+  .sort((a, b) => b.localeCompare(a))
+  .map(week => ({ text: `${week} 周报`, link: `/ai-trends/github-weekly/${week}/` }))
+
 export default withMermaid(defineConfig({
   lang: 'zh-CN',
   title: 'AI Handbook',
@@ -25,8 +35,7 @@ export default withMermaid(defineConfig({
   metaChunk: true,
 
   // 仓库根级元文档，不作为 wiki 页面
-  // ai-trends/github-weekly/ 是每周自动生成的 GitHub 周报（Obsidian 归档），体量随周增长，不进站点构建
-  srcExclude: ['README.md', 'CLAUDE.md', 'AGENTS.md', 'ai-trends/github-weekly/**'],
+  srcExclude: ['README.md', 'CLAUDE.md', 'AGENTS.md'],
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
@@ -432,6 +441,14 @@ export default withMermaid(defineConfig({
           ],
         },
         {
+          text: 'GitHub AI 动向',
+          collapsed: false,
+          items: [
+            { text: '周报总览', link: '/ai-trends/github-weekly/' },
+            ...weeklyItems,
+          ],
+        },
+        {
           text: '行业观察',
           collapsed: true,
           items: [
@@ -530,7 +547,6 @@ export default withMermaid(defineConfig({
             { text: '三层架构与模块模板', link: '/ai-harness/three-layer-architecture' },
             { text: '资产飞轮机制', link: '/ai-harness/asset-flywheel' },
             { text: 'TDD 质量保障', link: '/ai-harness/tdd-quality' },
-            { text: '迁移路径', link: '/ai-harness/migration-guide' },
           ],
         },
         {

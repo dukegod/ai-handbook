@@ -10,7 +10,7 @@
 
 1. **AI 核心技术** —— Transformer / 注意力 / 预训练 / RLHF / MoE / 多模态
 2. **AI 工具** —— AI 工具横评（CLI / IDE / 插件 / 框架 / 多平台 Agent 5 种形态）
-3. **AI Native** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 团队工作量 / 常见模式 / 迁移路径（公开方法论合集）
+3. **AI Native** —— AI 为默认执行者的研发范式：设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 团队工作量 / 常见模式（公开方法论合集）
 4. **产品动向** —— 厂商档案（含各产品最新动态）/ 论文速递 / 开源推荐 / 行业趋势
 5. **模型与厂商** —— 国外厂商（Anthropic / OpenAI / xAI）+ 国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen），横向对比与选型决策
 6. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力
@@ -92,7 +92,7 @@ ai-trends/          产品动向
 │   └── qwen/          Qwen · 阿里通义千问全系
 ├── research-highlights/ 技术速递
 ├── industry/          行业观察
-└── github-weekly/     GitHub 周报（每周一 12:00 自动生成，Obsidian 归档）
+└── github-weekly/     GitHub AI 动向（周报与仓库深读，参与站点构建）
     ├── index.md           按周倒序的历史周报索引
     └── <ISO周次>/         index.md = 榜单全表 + 本周判断；<repo>.md = 重点仓库深读
 claude-code/        Claude Code CLI 精通（9 个子章 + reference 速查手册）
@@ -103,7 +103,6 @@ ai-harness/         AI Native（公开方法论 + 团队工作量 + 常见模式
 ├── three-layer-architecture.md # 三层架构与模块模板（方法论）
 ├── asset-flywheel.md        # 资产飞轮机制（方法论）
 ├── tdd-quality.md           # TDD 质量保障（方法论）
-├── migration-guide.md        # 迁移路径（方法论）
 ├── workflows/               # 团队工作量（3 篇 + 1 index）
 └── patterns/                # 常见模式（3 篇 + 1 index）
 cookbook/           实战案例
@@ -119,7 +118,7 @@ contributing/       写作规范五件套（本文重要参考）
 - 数据源：GitHub Trending 官方口径（`since=weekly` / `since=monthly`）+ GitHub Search API 找新仓库
 - 采集脚本：外部维护的 `gh_weekly.py`（`bundle` 子命令出全量数据）
 - 产出：每周一个目录，含 `index.md`（榜单全表 + 本周判断）+ 8~10 篇重点仓库深读（AI 方向优先）
-- **该目录已加入 `.vitepress/config.ts` 的 `srcExclude`**：周报只做 Obsidian 归档，不进站点构建，也不加 sidebar 条目
+- **该目录参与站点构建**：产品动向下的「GitHub AI 动向」提供总览，侧栏自动按周目录倒序列出含 `index.md` 的周报；仓库深读从各期周报进入。新增周报需更新总览索引并通过构建，不要再加入 `srcExclude`。
 - **人工修改周报前先确认是不是定时任务刚写的**；重跑会覆盖同名文件
 
 任何一次结构调整必须**同步改** [.vitepress/config.ts](./.vitepress/config.ts) 里对应的 `sidebar` 数组，否则新页面显示不出来。

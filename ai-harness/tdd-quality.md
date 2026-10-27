@@ -4,7 +4,7 @@ description: 如何用 TDD 收敛 AI 的概率性产出——RED→GREEN→REFAC
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-09-17
+lastUpdated: 2026-10-27
 ---
 
 # TDD 质量保障
@@ -205,7 +205,6 @@ test('search history persists across page reload', async () => {
 ## 下一步
 
 - 了解资产沉淀 → [资产飞轮机制](./asset-flywheel)
-- 迁移到 AI Native → [迁移路径](./migration-guide)
 
 ## 如果你想
 

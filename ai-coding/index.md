@@ -4,7 +4,7 @@ description: AI 工具横评——CLI / IDE / 插件 / 框架 / 多平台 Agent 
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-09
+lastUpdated: 2026-10-27
 ---
 
 # AI 工具
@@ -30,7 +30,7 @@ flowchart LR
 
 **工具横评** — Claude Code / Cursor / GitHub Copilot / Codex CLI / Trae / PI-agent / DeepSeek Harness / OpenClaw 的深度对比
 
-> AI Native 工程方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 迁移路径）与团队工作量、常见模式，已迁出到顶级导航 [AI Native](/ai-harness/)。
+> AI Native 工程方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量）与团队工作量、常见模式，已迁出到顶级导航 [AI Native](/ai-harness/)。
 
 ## 从哪里开始
 

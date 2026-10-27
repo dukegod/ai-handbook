@@ -4,7 +4,7 @@ description: 把 AI Native 落地到团队——多人协作、AI 与 CI/CD 集�
 audience: intermediate
 difficulty: 🟡
 status: planned
-lastUpdated: 2026-10-09
+lastUpdated: 2026-10-27
 ---
 
 # 团队工作量方法
@@ -27,13 +27,12 @@ lastUpdated: 2026-10-09
 
 ## 上承方法论，下接团队
 
-这 3 篇是上层 5 篇方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量 / 迁移路径）在「团队工作量」维度的具体落地。读完建议回到方法论对照看。
+这 3 篇是上层 4 篇方法论（设计理念 / 三层架构 / 资产飞轮 / TDD 质量）在「团队工作量」维度的具体落地。读完建议回到方法论对照看。
 
 ## 下一步
 
 - 理解理念 → [设计理念：人机分工](/ai-harness/design-philosophy)
 - 改造架构 → [三层架构与模块模板](/ai-harness/three-layer-architecture)
-- 学完上线 → [迁移路径](/ai-harness/migration-guide)
 
 ## 如果你想
 

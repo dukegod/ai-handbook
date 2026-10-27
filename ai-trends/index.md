@@ -4,7 +4,7 @@ description: 厂商产品动态、重要论文速递、开源项目推荐、行�
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-09-30
+lastUpdated: 2026-10-27
 ---
 
 # AI 产品动向
@@ -21,6 +21,7 @@ lastUpdated: 2026-09-30
 
 **厂商档案** — Anthropic / OpenAI / Moenshot / 智谱 / 通义千问的长期档案，各含「最新动态」章节
 **技术速递** — 重要论文解读、开源项目推荐
+**GitHub AI 动向** — [每周榜单与仓库深读](./github-weekly/)，跟踪 AI Agent、开发工具、模型与工程基础设施
 **行业观察** — 行业趋势分析、投融资动态
 
 > 产品动态不再单独成章，改为**在各厂商档案内维护「最新动态（YYYY-MM）」章节**——动态跟着产品走，读完档案就知道这家最近变了什么。
@@ -30,10 +31,13 @@ lastUpdated: 2026-09-30
 | 类型 | 频率 | 说明 |
 |------|------|------|
 | 厂商动态 | 随产品发布 | 写进对应厂商档案的「最新动态」章节 |
+| GitHub AI 动向 | 每周 | 榜单变化、AI 相关仓库深读与技术趋势观察 |
 | 论文速递 | 双周 | 筛选值得关注的研究成果 |
 | 行业观察 | 季度 | 趋势分析与深度解读 |
 
 ## 下一步
+
+- 跟踪开源 AI 技术 → [GitHub AI 动向](./github-weekly/)
 
 - 看厂商最新动态 → [厂商档案](/ai-trends/vendors/) / [国内厂商](/ai-trends/cn-vendors/)
 - 深入技术 → [AI 核心技术](/ai-core/)
