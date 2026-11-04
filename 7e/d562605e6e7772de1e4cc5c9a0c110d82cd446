@@ -1,0 +1,36 @@
+ai-trends/github-weekly/2026-W45/anthropic-skills.md
+  h_a427b9af6cd304 1-67
+ai-trends/github-weekly/2026-W45/claude-mem.md
+  h_a427b9af6cd304 1-68
+ai-trends/github-weekly/2026-W45/claude-seo.md
+  h_a427b9af6cd304 1-66
+ai-trends/github-weekly/2026-W45/cursor-plugins.md
+  h_a427b9af6cd304 1-58
+ai-trends/github-weekly/2026-W45/deepinfer.md
+  h_a427b9af6cd304 1-62
+ai-trends/github-weekly/2026-W45/dsh-superagent.md
+  h_a427b9af6cd304 1-61
+ai-trends/github-weekly/2026-W45/hallmark.md
+  h_a427b9af6cd304 1-64
+ai-trends/github-weekly/2026-W45/index.md
+  h_a427b9af6cd304 1-141
+ai-trends/github-weekly/2026-W45/superpowers.md
+  h_a427b9af6cd304 1-64
+ai-trends/github-weekly/2026-W45/thinkrail.md
+  h_a427b9af6cd304 1-54
+ai-trends/github-weekly/2026-W45/vercel-skills.md
+  h_a427b9af6cd304 1-84
+ai-trends/github-weekly/index.md
+  h_a427b9af6cd304 7,34,44,59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7ed562605e6e7772de1e4cc5c9a0c110d82cd446",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
