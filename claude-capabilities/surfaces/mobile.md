@@ -4,11 +4,11 @@ description: iOS / Android Claude App——语音输入 / 移动端优化 / 5 �
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-04
 verifiedWith:
   claudeCode: 2.1.220
   model: claude-opus-5
-  ios: 'https://apps.apple.com/us/app/claude/id6443841246'
+  ios: 'https://apps.apple.com/app/id6443841246'
   android: 'https://play.google.com/store/apps/details?id=com.anthropic.claude'
   accessedAt: 2026-08-07
 ---
@@ -28,7 +28,7 @@ verifiedWith:
 | **iPadOS** | 同 iOS App | 触屏 + 键盘优化 |
 
 下载：
-- [iOS](https://apps.apple.com/us/app/claude/id6443841246)
+- [iOS](https://apps.apple.com/app/id6443841246)
 - [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude)
 
 ## 二、5 个核心能力
@@ -131,7 +131,7 @@ Mac / iPhone / iPad / Android 共享：
 
 ## 参考
 
-- [Claude iOS App](https://apps.apple.com/us/app/claude/id6443841246)
+- [Claude iOS App](https://apps.apple.com/app/id6443841246)
 - [Claude Android App](https://play.google.com/store/apps/details?id=com.anthropic.claude)
 - [Claude.ai](/claude-capabilities/surfaces/claude-ai)
 - [桌面应用](/claude-capabilities/surfaces/desktop-app)

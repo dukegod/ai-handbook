@@ -28,15 +28,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 缓存 lychee 运行结果（加速重复运行）
+      # 缓存 key 带上 lychee.toml 的 hash——配置一改（尤其是新增 exclude）就换缓存命名空间。
+      # 否则会复用上一轮的结论：lychee 把 ERROR 也缓存并回放（CI 日志里的 "Error (cached)"），
+      # 已经修好的外站仍会按旧结论报错。
       - name: Cache Lychee Results
         uses: actions/cache@v4
         with:
           path: .lycheecache
-          key: lychee-${{ github.ref }}-${{ github.sha }}
+          key: lychee-${{ github.ref }}-${{ github.sha }}-${{ hashFiles('lychee.toml') }}
           restore-keys: |
+            lychee-${{ github.ref }}-${{ hashFiles('lychee.toml') }}-
             lychee-${{ github.ref }}-
-            lychee-
 
       # v0.4.3 修复——inputs 必须走 --files-from，不能用 CLI glob。
       # lychee 0.24 把 CLI 位置参数当正则解析，"**/*.md" 配 "!**/..." 这组 glob 会直接报

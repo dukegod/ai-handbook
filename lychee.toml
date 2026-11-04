@@ -87,6 +87,18 @@ exclude = [
     # cursor.com/cloud 页面本身 200 可达，但 lychee 的 HTTP/2 客户端握手失败
     # （"HTTP/2 protocol error"，本地连跑 3/3 稳定复现，非偶发网络抖动）
     "^https://cursor\\.com/cloud",
+    # midjourney 官网与文档站拒绝非浏览器请求（403），本地与 CI 一致
+    "^https?://(www\\.)?midjourney\\.com",
+    "^https?://docs\\.midjourney\\.com",
+    # Apple App Store 按 edge IP / 地区返回不同结果——GitHub runner 上 404，
+    # 本地 curl 与 lychee UA 均 200。链接本身有效，不适合做可达性校验
+    "^https?://apps\\.apple\\.com",
+    # platform.deepseek.com 返回 202 / 429（挑战页 + 限流），
+    # 状态码随访问频率变化，不代表链接失效
+    "^https?://platform\\.deepseek\\.com",
+    # www.cnii.com.cn 服务端未下发完整中间证书链，
+    # runner 与本机 curl 均报 "unable to get local issuer certificate"（站点自身问题）
+    "^https?://(www\\.)?cnii\\.com\\.cn",
 ]
 
 # 缓存（加速重复运行）

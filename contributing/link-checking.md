@@ -128,6 +128,9 @@ exclude = [
     "favicon\\.ico$",
     "/diagrams/",                  # VitePress public/diagrams/ 映射到站点根
     "^https://cursor\\.com/cloud", # 页面 200，但 lychee 的 HTTP/2 客户端握手失败
+    "^https?://(www\\.)?midjourney\\.com",  # 拒绝非浏览器请求（403）
+    "^https?://apps\\.apple\\.com",  # App Store 按 edge IP 返回不同结果（CI 上 404）
+    "^https?://platform\\.deepseek\\.com",  # 挑战页 + 限流（202 / 429）
     "^https?://docs\\.claude\\.com/en/docs/",  # 平台迁移中
     "^https?://code\\.claude\\.com/docs/en/commit$",  # 文档已迁
     "^https?://(www\\.)?npmjs\\.com/package/",  # npmjs 反爬
@@ -272,6 +275,12 @@ scripts/.lychee-out
 **中文锚点不被检查**——VitePress 用自己的 slug 算法（"一、Session 是什么" → `#一session-是什么`），lychee 用 GFM 算法（可能 → `#1-session-是什么`），**两者不一致**。`include_fragments` 在 v0.4.2 暂不开启，避免 false positive。
 
 **VitePress 内部资源**——`/logo.svg` / `/hero.svg` / `/favicon.svg` 在 VitePress 解析时映射到 `public/*.svg`，`/diagrams/*.png` 同理映射到 `public/diagrams/`（文件实际存在、线上 200 可达），lychee 不知道这层映射，需手动 `exclude`（`lychee.toml` 里已含 `/diagrams/` 规则）。
+
+**本地 0 error ≠ CI 0 error**——本地跑通不代表 CI 会过，三类环境差异会漏出本地看不到的错误：
+
+- **TLS 信任库不同**：GitHub runner（Ubuntu）的根证书集与 macOS 不同，`www.cnii.com.cn` 这类没下发完整中间证书链的站点在 runner 上报 `UnknownIssuer`，本地 curl 同样失败但 lychee（rustls + webpki-roots）能过。
+- **出口 IP 不同**：同一个 URL 在 GitHub runner 的 IP 上和本地拿到的响应可以完全不同——`apps.apple.com` 在 runner 上 404、本地 200。
+- **缓存会掩盖差异**：`.lycheecache` 会把上一次的结论直接复用，本地"绿"可能只是读到旧缓存。**排查 CI 报错时用 `--cache=false` 重跑一遍本地**，才能拿到真实基线。
 
 **平台迁移中**——`docs.claude.com` 全部 URL 暂 exclude，等 platform.claude.com 上对应页面 200 后再清 exclude。
 
