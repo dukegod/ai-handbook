@@ -363,7 +363,7 @@ PostToolUse 跑 `prettier --write .` 是最常见反模式——整项目 diff �
 
 `type: "prompt"` hook 起轻量 LLM 调用跑这段 prompt，exit code 决定是否阻断 stop。配合 lint 硬校验脚本形成「质量闭环」——Claude 不能轻易把没跑测试的代码说成完成。
 
-> 实战参考：[ai-handbook 自身的 `.claude/` 配置](https://github.com/dukegod/ai-handbook/tree/main/.claude)——链接检查 / 死链扫描 / sidebar 同步都是 hook 驱动的。
+> 实战参考：[ai-handbook 自身的 git hook](https://github.com/dukegod/ai-handbook/blob/main/scripts/hooks/pre-commit)——`scripts/install-hooks.sh` 在 `pnpm install` 时把它装进 `.git/hooks/`（本仓用它做提交前 `CLAUDE.md` → `AGENTS.md` 同步）；死链检查走独立的 `scripts/check-links.sh` 与 `.github/workflows/lychee.yml`。
 
 ## 常见坑
 

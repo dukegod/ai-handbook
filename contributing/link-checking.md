@@ -84,7 +84,14 @@ lychee --config lychee.toml --root-dir "$(pwd)" "claude-code/basics/claude-md.md
 
 push 到 `main` / `content/**` / `fix/**` / `infra/**` 分支 + 每个 PR → GitHub Action 自动跑。
 
-**v0.4.2 升级**：`failMode: error`（v0.4.1 阶段用 warning 让 PR 不卡发版，v0.4.2 升级为 error 死链 = merge block）。
+**v0.4.2 升级**：`fail: true`（v0.4.1 阶段用 warning 让 PR 不卡发版，v0.4.2 升级为 error 死链 = merge block）。
+
+**v0.4.3 修复**——这个 workflow 从 2026-09-18 起每次运行都是 **0 job 失败**，两个原因叠在一起：
+
+1. `restore-keys` 里写的是 <span v-pre>`${{.github.ref}}`</span>——大括号后少了一个空格。GitHub 的表达式解析器不接受大括号后紧跟 `.`，**整个 workflow 连 YAML 都载入不了**——Actions 列表里它的名字会退化成文件路径 `.github/workflows/lychee.yml` 而不是 YAML 里的 `name:`。用 [actionlint](https://github.com/rhysd/actionlint) 一跑就能复现。
+2. inputs 当时还在用 CLI glob（`"**/*.md"` 配 `"!**/..."`）。lychee 0.24 把 CLI 位置参数当正则解析，这组 glob 会直接报 `recursive wildcards must form a single path component` 然后退出。
+
+本地 `scripts/check-links.sh` 早就改成 `--files-from`，CI 当时没跟上。**现在 CI 与本地脚本都用 `--files-from`，文件清单逻辑要保持一致，改一处必须同时改两处。**
 
 ## 五、配置速查（`lychee.toml`）
 
@@ -119,6 +126,8 @@ exclude = [
     "hero\\.svg$",
     "favicon\\.svg$",
     "favicon\\.ico$",
+    "/diagrams/",                  # VitePress public/diagrams/ 映射到站点根
+    "^https://cursor\\.com/cloud", # 页面 200，但 lychee 的 HTTP/2 客户端握手失败
     "^https?://docs\\.claude\\.com/en/docs/",  # 平台迁移中
     "^https?://code\\.claude\\.com/docs/en/commit$",  # 文档已迁
     "^https?://(www\\.)?npmjs\\.com/package/",  # npmjs 反爬
@@ -244,7 +253,7 @@ lychee --files-from /tmp/files.txt
 lychee 输出：Cannot resolve root-relative link '/claude-code/xxx': provide a root dir
 ```
 
-**v0.4.2 解法**：所有调用都加 `--root-dir "$(pwd)"`（本地）或 `--root-dir $&#123;&#123; github.workspace &#125;&#125;`（CI）。
+**v0.4.2 解法**：所有调用都加 `--root-dir "$(pwd)"`（本地）或 <span v-pre>`--root-dir ${{ github.workspace }}`</span>（CI）。
 
 **4. `.lycheecache` 误提交**
 
@@ -262,7 +271,7 @@ scripts/.lychee-out
 
 **中文锚点不被检查**——VitePress 用自己的 slug 算法（"一、Session 是什么" → `#一session-是什么`），lychee 用 GFM 算法（可能 → `#1-session-是什么`），**两者不一致**。`include_fragments` 在 v0.4.2 暂不开启，避免 false positive。
 
-**VitePress 内部资源**——`/logo.svg` / `/hero.svg` / `/favicon.svg` 在 VitePress 解析时映射到 `public/*.svg`，lychee 不知道映射，需手动 `exclude`。
+**VitePress 内部资源**——`/logo.svg` / `/hero.svg` / `/favicon.svg` 在 VitePress 解析时映射到 `public/*.svg`，`/diagrams/*.png` 同理映射到 `public/diagrams/`（文件实际存在、线上 200 可达），lychee 不知道这层映射，需手动 `exclude`（`lychee.toml` 里已含 `/diagrams/` 规则）。
 
 **平台迁移中**——`docs.claude.com` 全部 URL 暂 exclude，等 platform.claude.com 上对应页面 200 后再清 exclude。
 

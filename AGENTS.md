@@ -68,7 +68,8 @@ GitHub Pages 费用与可见性：
 - 如果 Actions 在 `Install dependencies` 卡住或报 socket timeout，先检查 `pnpm-lock.yaml` 是否包含私有 tarball。
 - 处理方式：用公网 npm registry 重新生成 lockfile，并确保 workflow 里安装步骤显式使用 `--registry=https://registry.npmjs.org/`。
 - Workflow 里的 `node-version` 当前为 `20`；GitHub Actions 可能提示 Node 20 deprecation warning，但当前不影响部署。
-- 现有 `.github/workflows/lychee.yml` 死链检查可能失败，它和 Pages 部署是独立 workflow，不阻塞发布。
+- `.github/workflows/lychee.yml` 死链检查与 Pages 部署是两个独立 workflow，互不阻塞。v0.4.3 起 lychee CI 已修好（此前 `restore-keys` 里 `${{.github.ref}}` 缺空格导致 workflow 解析失败、每次 0 job；inputs 也已从 CLI glob 改回 `--files-from`）。**改 lychee 的文件清单逻辑时，`scripts/check-links.sh` 与 CI workflow 两处要一起改。**
+- **Vue 会把 Markdown 里的双大括号当模板插值**（仅影响参与站点构建的 .md；`AGENTS.md` / `CLAUDE.md` / `README.md` 在 `srcExclude` 里，不受影响）：GitHub Actions 表达式写进行内代码时要用 `<span v-pre>` 包住。否则裸写会让 VitePress 构建报错——大括号后紧跟 `.` 报 "Error parsing JavaScript expression"，单独的大括号报 "Interpolation end sign was not found"。**写 HTML 实体 `&#123;` 也不行**：行内代码里 markdown-it 会把 `&` 再转义成 `&amp;`，页面上会显示字面量 `&#123;` 而不是 `{`。
 
 ## 目录地图
 

@@ -50,6 +50,9 @@ exclude = [
     "hero\\.svg$",
     "favicon\\.svg$",
     "favicon\\.ico$",
+    # 同理：public/diagrams/ 下的 png 与 drawio 由 VitePress 映射到站点根 /diagrams/，
+    # 文件实际存在（public/diagrams/），线上 200 可达，只是 lychee 的 --root-dir 找不到
+    "/diagrams/",
     # claude.ai 拒绝 lychee 爬虫（403）
     "^https?://(www\\.)?claude\\.ai",
     # aws.amazon.com 超时严重
@@ -81,6 +84,9 @@ exclude = [
     "^https?://chat\\.lmsys\\.org",
     # itjuzi.com 反爬 412（带浏览器 UA 亦拒绝）
     "^https?://(www\\.)?itjuzi\\.com",
+    # cursor.com/cloud 页面本身 200 可达，但 lychee 的 HTTP/2 客户端握手失败
+    # （"HTTP/2 protocol error"，本地连跑 3/3 稳定复现，非偶发网络抖动）
+    "^https://cursor\\.com/cloud",
 ]
 
 # 缓存（加速重复运行）

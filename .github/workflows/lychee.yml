@@ -1,10 +1,10 @@
 # .github/workflows/lychee.yml —— CI 死链检查
 # v0.4.1 引入
 # v0.4.2 升级——适配 lychee 0.24 schema（root_dir 解析 root-relative 链接）
-# v0.4.2 升级——failMode: error（v0.4.1 阶段用 warning 让 PR 不卡）
+# v0.4.3 修复——workflow 自身的两处缺陷（详见下方注释）
 # 触发：每个 push + 每个 PR
 # 平台说明：本仓库托管在 GitHub 公共仓（github.com/dukegod/ai-handbook）。
-#          如需平移到其他平台（Gitea / GitLab 自建等），复用此 workflow 即可（语法几乎一致）。
+#          如需平移到其他平台（Gitee / GitLab 自建等），复用此 workflow 即可（语法几乎一致）。
 
 name: Lychee Link Check
 
@@ -35,25 +35,37 @@ jobs:
           path: .lycheecache
           key: lychee-${{ github.ref }}-${{ github.sha }}
           restore-keys: |
-            lychee-${{.github.ref}}-
+            lychee-${{ github.ref }}-
             lychee-
+
+      # v0.4.3 修复——inputs 必须走 --files-from，不能用 CLI glob。
+      # lychee 0.24 把 CLI 位置参数当正则解析，"**/*.md" 配 "!**/..." 这组 glob 会直接报
+      # "recursive wildcards must form a single path component" 然后退出。
+      # 本地 scripts/check-links.sh 早就改成 --files-from，CI 这边当时没跟上，
+      # 于是这个 workflow 自 2026-09-18 起每次运行都是 0 job 失败（连 job 都没建起来）。
+      # 文件清单逻辑与 scripts/check-links.sh 保持一致，两处要一起改。
+      - name: Build markdown file list
+        run: |
+          find "$(pwd)" \
+            -name "*.md" \
+            -not -path "*/node_modules/*" \
+            -not -path "*/.vitepress/*" \
+            -not -path "*/.lycheecache/*" \
+            -not -path "*/scripts/.lychee-out/*" \
+            -not -path "*/public/*" \
+            -not -path "*/assets/*" \
+            > .lychee-files.txt
+          echo "扫描 $(wc -l < .lychee-files.txt) 个 .md 文件"
 
       - name: Run Lychee
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          # v0.4.2 升级：加 --root-dir 解析 VitePress root-relative 链接
-          # v0.4.2 升级：failMode=error（v0.4.1 阶段用 warning 让 PR 不卡）
+          # --root-dir 让 lychee 能解析 VitePress 的 root-relative 链接
+          # （VitePress public/ → 站点根的映射 lychee 不认识，需在 lychee.toml 里 exclude）
           args: >-
             --config lychee.toml
             --root-dir ${{ github.workspace }}
-            "**/*.md"
-            "!**/node_modules/**"
-            "!**/.vitepress/**"
-            "!**/public/**"
-            "!**/assets/**"
-          failMode: error
-          output: detailed
+            --files-from .lychee-files.txt
+          fail: true
           jobSummary: true
-
-      # v0.4.2 阶段 failMode 已设 error，无需额外 step

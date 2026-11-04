@@ -46,3 +46,4 @@ examples/**/.mypy_cache/
 examples/**/.ruff_cache/
 scripts/.lychee-out
 .lycheecache
+.lychee-files.txt
