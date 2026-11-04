@@ -1,0 +1,20 @@
+.github/workflows/lychee.yml
+  h_a427b9af6cd304 31-33,38,40
+claude-capabilities/surfaces/mobile.md
+  h_a427b9af6cd304 7,11,31,134
+contributing/link-checking.md
+  h_a427b9af6cd304 131-133,279-284
+lychee.toml
+  h_a427b9af6cd304 90-101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d21563aad8647a70d8b0788ddde65394355253ef",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
