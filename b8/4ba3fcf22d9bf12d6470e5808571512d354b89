@@ -1,0 +1,19 @@
+contributing/link-checking.md
+  s_8363204c030b99::t_6f5a7d39f28819 87-94,129-130,256,274
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b84ba3fcf22d9bf12d6470e5808571512d354b89",
+  "prompts": {},
+  "sessions": {
+    "s_8363204c030b99": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a181d8-5d61-7663-bbe3-fc09d041fafd",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
