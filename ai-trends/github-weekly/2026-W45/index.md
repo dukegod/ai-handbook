@@ -35,7 +35,7 @@ lastUpdated: 2026-11-02
 | 12 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | +5,336 | 107,949 | JavaScript | 给编码 Agent 装审美 |
 | 13 | [anthropics/skills](https://github.com/anthropics/skills) | +2,600 | 186,426 | Python | 官方 skills 仓库兼规范源 |
 | 14 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | +6,299 | 294,896 | JavaScript | harness 性能优化系统 |
-| 15 | [YuJunZhiXue/dsh-purge](https://github.com/YuJunZhiXue/dsh-purge) | +6,644 | 15,521 | JavaScript | DSH 红队工具 |
+| 15 | YuJunZhiXue/dsh-purge | +6,644 | 15,521 | JavaScript | DSH 红队工具 |
 | 16 | [ghostty-org/ghostty](https://github.com/ghostty-org/ghostty) | +589 | 63,208 | Zig | 终端模拟器（唯一非 AI） |
 
 ## 二、本月热榜 TOP（GitHub Trending `since=monthly`，按本月涨星降序）
@@ -72,7 +72,7 @@ lastUpdated: 2026-11-02
 | 2 | [Nutlope/hallmark](https://github.com/Nutlope/hallmark) | +11,566 | **25.7%** | 新项目爆发 |
 | 3 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | +10,069 | 17.8% | 降温 33% |
 | 4 | [pingdotgg/t3code](https://github.com/pingdotgg/t3code) | +6,926 | 18.0% | 环比 +291% |
-| 5 | [YuJunZhiXue/dsh-purge](https://github.com/YuJunZhiXue/dsh-purge) | +6,644 | **42.8%** | 新项目爆发 |
+| 5 | YuJunZhiXue/dsh-purge | +6,644 | **42.8%** | 新项目爆发 |
 | 6 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | +6,299 | 2.1% | 持续吸量 |
 | 7 | [obra/superpowers](https://github.com/obra/superpowers) | +5,896 | 1.9% | 持续吸量 |
 | 8 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | +5,852 | 5.3% | 持续吸量 |
