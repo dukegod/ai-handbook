@@ -1,0 +1,36 @@
+ai-trends/github-weekly/2026-W45/index.md
+  h_a427b9af6cd304 38,75
+ai-trends/github-weekly/2026-W46/agent-browser.md
+  h_a427b9af6cd304 1-86
+ai-trends/github-weekly/2026-W46/auto-ontology.md
+  h_a427b9af6cd304 1-64
+ai-trends/github-weekly/2026-W46/game-studios.md
+  h_a427b9af6cd304 1-76
+ai-trends/github-weekly/2026-W46/index.md
+  h_a427b9af6cd304 1-136
+ai-trends/github-weekly/2026-W46/interface-skills.md
+  h_a427b9af6cd304 1-77
+ai-trends/github-weekly/2026-W46/mattpocock-skills.md
+  h_a427b9af6cd304 1-72
+ai-trends/github-weekly/2026-W46/openmausbot.md
+  h_a427b9af6cd304 1-74
+ai-trends/github-weekly/2026-W46/spec-kit.md
+  h_a427b9af6cd304 1-88
+ai-trends/github-weekly/2026-W46/t3code.md
+  h_a427b9af6cd304 1-59
+ai-trends/github-weekly/2026-W46/worktrunk.md
+  h_a427b9af6cd304 1-68
+ai-trends/github-weekly/index.md
+  h_a427b9af6cd304 34,44,60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "82bc82965a6c189f75cfb1d506dc8cc61a8e6ddf",
+  "prompts": {},
+  "humans": {
+    "h_a427b9af6cd304": {
+      "author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
