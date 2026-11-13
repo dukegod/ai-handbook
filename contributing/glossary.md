@@ -4,9 +4,9 @@ description: AI Handbook 中英双语术语锁定表；每篇文档的术语必�
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-10-27
+lastUpdated: 2026-11-13
 verifiedWith:
-  scope: '2026-10-27 补充 AI 研发体系的约定定义，仅作概念一致性核对；以下来源日期沿用原记录，产品条目未重新核验'
+  scope: '2026-11-13 重核模型条目（当前四型号 + 上一代 + alias 与快照的区别），来源为 Anthropic 官方 Models overview / Model deprecations / Model configuration；其余条目沿用原记录'
   sources:
     - name: InstructGPT
       url: https://arxiv.org/abs/2203.02155
@@ -112,12 +112,18 @@ verifiedWith:
 | **Claude.ai** | 网页/桌面/移动端聊天产品 | 与 Claude Code 是不同产品 |
 | **Claude Agent SDK** | 用于构建自定义 Agent 的 SDK | 不同于 Anthropic SDK（HTTP 客户端） |
 | **Claude Code SDK** | 从代码中程序化调用 Claude Code 的 SDK | 与 Claude Agent SDK 不同 |
-| **Opus 5** | 最新最强推理模型；ID `claude-opus-5` | Claude Code v2.1.219+ 默认 `opus` 别名 |
-| **Opus 4.8** | 上一代推理模型；ID `claude-opus-4-8` | 已被 Opus 5 取代，仍可用；别写 `Opus4.8` |
-| **Sonnet 5** | 平衡型；ID `claude-sonnet-5` | |
-| **Haiku 4.5** | 快速轻量；ID `claude-haiku-4-5-20251001` | |
-| **Fable 5** | ID `claude-fable-5`；专精长时运行 agent | 详见 [路线图](/contributing/roadmap) 风险项 |
-| **Mythos 5** | Project Glasswing 新模型；`claude-mythos-5` | limited availability，未 GA |
+| **Fable 5.2** | 最新 Fable；ID `claude-fable-5-2`；长时运行 agent 专家 | 需 Claude Code v2.1.321+；非任何 provider 的默认模型 |
+| **Fable 5.1** | 上一代 Fable；ID `claude-fable-5-1` | 已被 Fable 5.2 取代，仍可用 |
+| **Fable 5** | 初代 Fable；ID `claude-fable-5` | 已被 Fable 5.1 取代，仍可用 |
+| **Opus 5.5** | 当前旗舰推理模型；ID `claude-opus-5-5` | Claude Code v2.1.280+ 起 `opus` 别名解析到它 |
+| **Opus 5** | 上一代旗舰推理模型；ID `claude-opus-5` | 已被 Opus 5.5 取代，仍可用；别写 `Opus4.8` |
+| **Opus 4.8** | 更早一代推理模型；ID `claude-opus-4-8` | 仍可用 |
+| **Sonnet 5.5** | 当前平衡型主力；ID `claude-sonnet-5-5` | Claude Code v2.1.284+ 起 `sonnet` 别名解析到它 |
+| **Sonnet 5** | 上一代平衡型；ID `claude-sonnet-5` | 已被 Sonnet 5.5 取代，仍可用 |
+| **Haiku 5.5** | 快速轻量；ID `claude-haiku-5-5` | 唯一按 prompt 长度分档计价 |
+| **Haiku 4.5** | 上一代快速轻量；ID `claude-haiku-4-5-20251001` | 已被 Haiku 5.5 取代，仍可用 |
+| **Mythos 5** | Project Glasswing 模型；`claude-mythos-5` | limited availability，未 GA |
+| **alias 与快照的区别** | 4.6 世代之前 `claude-sonnet-4-5` 是便利 alias；4.6 世代起 dateless ID 本身就是 pinned 快照 | 要固定版本必须写完整 ID |
 
 ## Claude Code 核心概念
 

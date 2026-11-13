@@ -23,7 +23,7 @@ lastUpdated: 2026-08-11
 
 ```mermaid
 flowchart TD
-  A[模型家族<br/>Opus 5 / Sonnet 5 / Haiku 4.5 / Fable 5] --> B[核心能力<br/>推理 / 思考 / 代码 / 视觉 / 长上下文 / 工具使用]
+  A[模型家族<br/>Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5] --> B[核心能力<br/>推理 / 思考 / 代码 / 视觉 / 长上下文 / 工具使用]
   B --> C[深度提示工程<br/>System / CoT / Few-shot / Prefill / XML]
   C --> D[API<br/>Messages / Tool Use / Streaming / Structured Outputs / Caching / Batches / Files]
   D --> E[SDK<br/>Python / TS / Agent SDK / Tool Runner / Managed Agents]
@@ -39,7 +39,7 @@ flowchart TD
 
 ## 分组概览
 
-**模型家族** — 四条产品线（Opus 5 / Sonnet 5 / Haiku 4.5 / Fable 5）的定位、能力上限与选型建议  
+**模型家族** — 四条产品线（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）的定位、能力上限与选型建议  
 **核心能力** — 推理、Extended Thinking、代码、视觉、长上下文、工具使用六大原生能力  
 **深度提示工程** — 系统提示 / 思维链 / Few-shot / Prefill / XML 标签等深入提示技巧  
 **API** — HTTP 层：Messages / Tool Use / Streaming / Structured Outputs / Prompt Caching / Message Batches / Files / Token Counting / Admin  
@@ -71,5 +71,5 @@ flowchart TD
 
 ## 如果你想
 
-- 查模型 ID 和定价 → [参考 · 模型 ID](/claude-capabilities/models/model-ids) 🚧
+- 查模型 ID 和定价 → [参考 · 模型 ID 与定价](/claude-capabilities/models/model-ids)
 - 查术语中英对照 → [术语表](/contributing/glossary)

@@ -1,23 +1,24 @@
 ---
 title: 模型选择
-description: Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5 的官方定位、pricing、context window、effort levels 与选型决策树
+description: Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5 的官方定位、pricing、context window、effort levels 与选型决策树
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-08
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.293
+  scope: '2026-11-13 复核型号表、alias 解析与最低版本要求；effort 档位名称沿用 2026-10-08 的记录'
+  claudeCode: 2.1.319
   model: claude-opus-5-5
   modelConfig: 'https://code.claude.com/docs/en/model-config'
   modelOverview: 'https://platform.claude.com/docs/en/about-claude/models/overview'
   deprecations: 'https://platform.claude.com/docs/en/about-claude/model-deprecations'
   choosingBlog: 'https://claude.com/blog/claude-model-and-effort-level-in-claude-code'
-  accessedAt: 2026-10-08
+  accessedAt: 2026-11-13
 ---
 
 # 模型选择
 
-> **TL;DR**：Claude Code 当前支持 4 条产品线——**Fable 5.1**（长链条 agent 专家）/ **Opus 5.5**（长跑 agentic 编码）/ **Sonnet 5.5**（速度与智能的平衡）/ **Haiku 5.5**（高并发、延迟敏感）。用 `/model` 切换。选型核心判断：**「缺知识」就升 tier，「没努力」就升 effort**。
+> **TL;DR**：Claude Code 当前支持 4 条产品线——**Fable 5.2**（长链条 agent 专家）/ **Opus 5.5**（长跑 agentic 编码）/ **Sonnet 5.5**（速度与智能的平衡）/ **Haiku 5.5**（高并发、延迟敏感）。用 `/model` 切换。选型核心判断：**「缺知识」就升 tier，「没努力」就升 effort**。
 
 ⏱ 预计阅读时间：10 分钟
 
@@ -37,24 +38,24 @@ verifiedWith:
 
 ## 一、4 条产品线速览
 
-**当前活跃模型**（引 [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview) 访问于 2026-10-08）：
+**当前活跃模型**（引 [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview) 访问于 2026-11-13）：
 
 | 模型 | 官方定位 | Model ID | Pricing（$/1M token 输入/输出） | Context | Max Output | 相对延迟 | 默认 effort |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Fable 5.1** | For demanding reasoning and long-horizon agentic work | `claude-fable-5-1` | **$10 / $50** | 1M | 128k | Slower | `high` |
+| **Fable 5.2** | For demanding reasoning and long-horizon agentic work | `claude-fable-5-2` | **$8 / $40** | 1M | 128k | Slower | `high` |
 | **Opus 5.5** | For long-running agentic coding and knowledge work | `claude-opus-5-5` | $4 / $20 | 1M | 128k | Moderate | `medium` |
 | **Sonnet 5.5** | The best combination of speed and intelligence | `claude-sonnet-5-5` | $2 / $10 | 1M | 128k | Fast | `high` |
 | **Haiku 5.5** | For high-volume, latency-sensitive tasks such as classification, extraction, and routing | `claude-haiku-5-5` | **from $0.10 / $0.50** | 1M | 128k | Fastest | `medium` |
 
 **能力差异**：
 
-- **Fable 5.1**：Adaptive thinking **总是开启且不能关**；缓存读 0.025x（$0.25 / MTok，全系最便宜的长上下文读价）；要求 30 天数据留存
+- **Fable 5.2**：Adaptive thinking **总是开启且不能关**；缓存读 0.025x（$0.20 / MTok）；要求 30 天数据留存
 - **Opus 5.5**：Adaptive thinking **总是开启且不能关**；缓存读 0.05x（$0.20 / MTok）
 - **Sonnet 5.5**：Adaptive thinking；`high` 及以下 effort 可用 `thinking: {"type": "between_tools"}` 关掉前置思考；缓存读 0.05x（2026-10-07 从 $0.20 降下来）
 - **Haiku 5.5**：Adaptive thinking 默认开；**唯一按 prompt 长度分档计价**——prompt > 100k token 时输入输出各跳 5 倍
 - 四者的 legacy `budget_tokens` extended thinking **一律不被接受**（4.6 世代起已废弃）
 
-> ⚠️ 上一代（Opus 5 / Sonnet 5 / Fable 5 / Haiku 4.5）仍可调用，状态 Active。本页聚焦当前四型号。
+> ⚠️ 上一代（Opus 5 / Sonnet 5 / Fable 5.1 / Fable 5 / Haiku 4.5）仍可调用，状态 Active。本页聚焦当前四型号。
 
 ## 二、Anthropic 的比喻式定位
 
@@ -74,7 +75,7 @@ verifiedWith:
 ```text
 /model sonnet     # 换 Sonnet 5.5
 /model opus       # 换 Opus 5.5
-/model fable      # 换 Fable 5.1（需 v2.1.257+）
+/model fable      # 换 Fable 5.2（需 v2.1.321+）
 /model haiku      # 换 Haiku 5.5（需 v2.1.293+）
 /model default    # 恢复账号默认
 /model best       # 有 Fable 就用 Fable，否则最新 Opus
@@ -98,7 +99,7 @@ $ claude --model sonnet
 
 ### Alias 在不同 provider 上解析不同（重要）
 
-引 [Claude Code · Model configuration](https://code.claude.com/docs/en/model-config)（访问于 2026-10-08）：
+引 [Claude Code · Model configuration](https://code.claude.com/docs/en/model-config)（访问于 2026-11-13）：
 
 | Provider | `opus` | `sonnet` | `haiku` |
 | --- | --- | --- | --- |
@@ -114,7 +115,8 @@ $ claude --model sonnet
 | v2.1.293 | `haiku` 在 Anthropic API 上解析到 **Haiku 5.5** |
 | v2.1.284 | `sonnet` 在 Anthropic API 上解析到 **Sonnet 5.5** |
 | v2.1.280 | `opus` 在 Anthropic API、Claude Platform on AWS、Bedrock、Google Cloud 上解析到 **Opus 5.5** |
-| v2.1.257 | `fable` 解析到 **Fable 5.1**（Claude apps gateway 会话除外） |
+| v2.1.321 | `fable` 解析到 **Fable 5.2**（Claude apps gateway 会话除外） |
+| v2.1.257 | `claude-fable-5-1` 可用（需 Claude Code v2.1.257+） |
 
 想 pin 具体版本用 4 个环境变量：
 
@@ -122,7 +124,7 @@ $ claude --model sonnet
 export ANTHROPIC_DEFAULT_OPUS_MODEL=claude-opus-5-5
 export ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-5-5
 export ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-haiku-5-5
-export ANTHROPIC_DEFAULT_FABLE_MODEL=claude-fable-5-1
+export ANTHROPIC_DEFAULT_FABLE_MODEL=claude-fable-5-2
 ```
 
 > `ANTHROPIC_SMALL_FAST_MODEL` 已被 `ANTHROPIC_DEFAULT_HAIKU_MODEL` 取代并标记为 deprecated。
@@ -148,7 +150,7 @@ Effort level 控制模型在一次请求上做**多少总工作**（读多少文
 - Effort 尺度**每个模型独立校准**——`high` 在不同模型上不代表同一水平
 - 你的 prompt 里加 `ultrathink` 关键词可以**单次**触发深度推理（不改会话 effort）
 
-> ⚠️ 本节档位名称沿用仓库既有记录，2026-10-08 本轮未单独抓取 Effort 文档页复核。**本轮已核实的是 API 侧的默认 effort**（引 [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)）：Fable 5.1 与 Sonnet 5.5 是 `high`，Opus 5.5 与 Haiku 5.5 是 `medium`。CLI 侧默认档以 `/model` 与 `/effort` 实际显示为准。
+> ⚠️ 本节档位名称沿用仓库既有记录，2026-10-08 本轮未单独抓取 Effort 文档页复核。**本轮已核实的是 API 侧的默认 effort**（引 [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)）：Fable 5.2 与 Sonnet 5.5 是 `high`，Opus 5.5 与 Haiku 5.5 是 `medium`。CLI 侧默认档以 `/model` 与 `/effort` 实际显示为准。
 
 ## 五、决策规则：缺知识 vs 没努力
 
@@ -165,7 +167,7 @@ Anthropic 官方给出的核心判断问题（原话）：
         │
         ├─ 大方向对但漏了细节 → 升 effort（high → xhigh → max）
         │
-        └─ 长链条多步任务，Opus 也慢 → Fable 5
+        └─ 长链条多步任务，Opus 也慢 → Fable 5.2
 ```
 
 - **知识不够** → 升 tier：问题微妙、陌生领域、架构决策；小模型即使给足上下文仍自信地错
@@ -173,7 +175,7 @@ Anthropic 官方给出的核心判断问题（原话）：
 
 **成本反直觉**：**用 Sonnet 反复迭代**可能比 **Opus 少步数直接搞定** 更贵——大模型少步数反而总成本可能更低。
 
-## 六、Fable 5 特别使用建议
+## 六、Fable 特别使用建议
 
 引 [Claude Code 官方 model config · Work with Fable](https://code.claude.com/docs/en/model-config)：
 
@@ -186,8 +188,8 @@ Anthropic 官方给出的核心判断问题（原话）：
 
 - **不是默认模型**——任何账号类型、任何 provider 都要 `/model fable` 显式启用
 - **Cybersecurity / biology 触发 automatic fallback**（⚠️ 具体 fallback 目标版本本轮未复核）——这是预期路由，不是账号问题
-- **Zero data retention 环境下不可用**——Fable 5 / Fable 5.1 都要求 30 天数据留存
-- **Fable 5.1 需要 Claude Code v2.1.257+**；`fable` alias 默认解析到 Fable 5.1（Claude apps gateway 会话除外，那里用 `/model claude-fable-5-1`）
+- **Zero data retention 环境下不可用**——Fable 全系（5.2 / 5.1 / 5）都要求 30 天数据留存
+- **Fable 5.2 需要 Claude Code v2.1.321+**（Fable 5.1 需 v2.1.257+）；`fable` alias 默认解析到 Fable 5.2（Claude apps gateway 会话除外，那里用 `/model claude-fable-5-2`）
 
 ## 七、Prompt Caching 与模型
 
@@ -233,9 +235,9 @@ export DISABLE_PROMPT_CACHING_HAIKU=1
 
 ## 参考
 
-- [Anthropic Docs · Model configuration](https://code.claude.com/docs/en/model-config)（访问于 2026-10-08）
-- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-10-08）
-- [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-10-08）
+- [Anthropic Docs · Model configuration](https://code.claude.com/docs/en/model-config)（访问于 2026-11-13）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
+- [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-11-13）
 - [Anthropic Docs · Effort](https://platform.claude.com/docs/en/build-with-claude/effort)（访问于 2026-07-28）
 - [Anthropic Blog · Choosing a Claude model and effort level in Claude Code](https://claude.com/blog/claude-model-and-effort-level-in-claude-code)（访问于 2026-10-08，正文未复核）
 
@@ -246,6 +248,6 @@ export DISABLE_PROMPT_CACHING_HAIKU=1
 ## 如果你想
 
 - 深入 Claude 模型全景 → [Claude 能力 · 模型概览](/claude-capabilities/models/overview)
-- 深入 Fable → [Fable 5](/claude-capabilities/models/fable)
+- 深入 Fable → [Fable 5.2](/claude-capabilities/models/fable)
 - 学 Extended Thinking → [Extended Thinking](/claude-capabilities/core/extended-thinking)
 - 学 Prompt Caching → [Prompt Caching](/claude-capabilities/api/prompt-caching)

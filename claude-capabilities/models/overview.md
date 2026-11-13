@@ -1,12 +1,13 @@
 ---
 title: 模型概览
-description: 'API/SDK 视角的 Claude 模型家族地图与多维度选型指南：Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5'
+description: 'API/SDK 视角的 Claude 模型家族地图与多维度选型指南：Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5'
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-08
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.293
+  scope: '2026-11-13 复核模型 ID、定价、生命周期与 alias 解析；本机 Claude Code 为 2.1.319，低于 Fable 5.2 所需的 v2.1.321，故未在本机实跑 5.2'
+  claudeCode: 2.1.319
   model: claude-opus-5-5
   modelOverview: 'https://platform.claude.com/docs/en/about-claude/models/overview'
   modelConfig: 'https://code.claude.com/docs/en/model-config'
@@ -14,12 +15,12 @@ verifiedWith:
   pricing: 'https://platform.claude.com/docs/en/about-claude/pricing'
   deprecations: 'https://platform.claude.com/docs/en/about-claude/model-deprecations'
   effortDocs: 'https://platform.claude.com/docs/en/build-with-claude/effort'
-  accessedAt: 2026-10-08
+  accessedAt: 2026-11-13
 ---
 
 # 模型概览
 
-> **TL;DR**：Claude 当前活跃 4 条产品线——**Fable 5.1**（高难推理与长程 agent）/ **Opus 5.5**（长跑 agentic 编码与知识工作）/ **Sonnet 5.5**（速度与智能的最佳平衡）/ **Haiku 5.5**（高并发、延迟敏感的分类/提取/路由）。本页是 API/SDK 视角的全貌与多维度选型指南。
+> **TL;DR**：Claude 当前活跃 4 条产品线——**Fable 5.2**（高难推理与长程 agent）/ **Opus 5.5**（长跑 agentic 编码与知识工作）/ **Sonnet 5.5**（速度与智能的最佳平衡）/ **Haiku 5.5**（高并发、延迟敏感的分类/提取/路由）。本页是 API/SDK 视角的全貌与多维度选型指南。
 
 ⏱ 预计阅读时间：8 分钟
 
@@ -35,7 +36,7 @@ verifiedWith:
 
 ```mermaid
 flowchart TD
-  Fable[Fable 5.1<br/>claude-fable-5-1<br/>1M · 128k out<br/>$10/$50]
+  Fable[Fable 5.2<br/>claude-fable-5-2<br/>1M · 128k out<br/>$8/$40]
   Opus[Opus 5.5<br/>claude-opus-5-5<br/>1M · 128k out<br/>$4/$20]
   Sonnet[Sonnet 5.5<br/>claude-sonnet-5-5<br/>1M · 128k out<br/>$2/$10]
   Haiku[Haiku 5.5<br/>claude-haiku-5-5<br/>1M · 128k out<br/>from $0.10/$0.50]
@@ -54,11 +55,11 @@ flowchart TD
 
 ## 二、当前活跃 4 条产品线（API 视角速查）
 
-数据来自 [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-10-08）。
+数据来自 [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）。
 
 | 模型 | Model ID | Context | Max output | 思考 | 默认 effort | Pricing（输入/输出 $ / 1M tok） | 何时用 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Fable 5.1** | `claude-fable-5-1` | 1M | 128k | Adaptive（**总是开**） | `high` | **$10 / $50** | 高难推理、长程 agent；Opus 5.5 提高 effort 后仍不够时 |
+| **Fable 5.2** | `claude-fable-5-2` | 1M | 128k | Adaptive（**总是开**） | `high` | **$8 / $40** | 高难推理、长程 agent；Opus 5.5 提高 effort 后仍不够时 |
 | **Opus 5.5** | `claude-opus-5-5` | 1M | 128k | Adaptive（**总是开**） | `medium` | $4 / $20 | 长跑 agentic 编码与知识工作；**多数负载的默认起点** |
 | **Sonnet 5.5** | `claude-sonnet-5-5` | 1M | 128k | Adaptive | `high` | $2 / $10 | 速度与智能的最佳组合；日常主力 |
 | **Haiku 5.5** | `claude-haiku-5-5` | 1M | 128k | Adaptive | `medium` | **from $0.10 / $0.50** | 高并发、延迟敏感：分类、提取、路由、subagent |
@@ -67,14 +68,14 @@ flowchart TD
 
 | 模型 | Description |
 | --- | --- |
-| Fable 5.1 | For demanding reasoning and long-horizon agentic work |
+| Fable 5.2 | For demanding reasoning and long-horizon agentic work |
 | Opus 5.5 | For long-running agentic coding and knowledge work |
 | Sonnet 5.5 | The best combination of speed and intelligence |
 | Haiku 5.5 | For high-volume, latency-sensitive tasks such as classification, extraction, and routing |
 
 > ⚠️ **Haiku 5.5 是唯一按 prompt 长度分档计费的型号**：prompt ≤ 100k token 时 $0.10 / $0.50，> 100k 时跳到 $0.50 / $2.50。它是 1M 上下文，但**不在**「长上下文按标准价计费」的豁免名单里（唯一豁免的就是它自己）。缓存读分别为 $0.01 与 $0.05。
 
-> ⚠️ **迁移风险**：`thinking: {"type": "disabled"}` 与 `{"type": "enabled", ...}` 在 **Opus 5.5 / Fable 5.1** 上一律返回 400——只能省略 `thinking` 字段、改用 `effort`。**Sonnet 5.5 是例外**：它接受 `thinking: {"type": "between_tools"}` 关掉前置思考，但仅限 `high` 及以下 effort。`tool_choice` 的 `any` / `tool` 在三者上都返回 400。
+> ⚠️ **迁移风险**：`thinking: {"type": "disabled"}` 与 `{"type": "enabled", ...}` 在 **Opus 5.5 / Fable 5.2** 上一律返回 400——只能省略 `thinking` 字段、改用 `effort`。**Sonnet 5.5 是例外**：它接受 `thinking: {"type": "between_tools"}` 关掉前置思考，但仅限 `high` 及以下 effort。`tool_choice` 的 `any` / `tool` 在三者上都返回 400。
 
 **调用方式**（以 Python SDK 为例）：
 
@@ -84,7 +85,7 @@ client = anthropic.Anthropic()
 
 # 任选其一
 msg = client.messages.create(
-    model="claude-sonnet-5-5",        # 或 claude-opus-5-5 / claude-fable-5-1 / claude-haiku-5-5
+    model="claude-sonnet-5-5",        # 或 claude-opus-5-5 / claude-fable-5-2 / claude-haiku-5-5
     max_tokens=1024,
     messages=[{"role": "user", "content": "..."}],
 )
@@ -103,7 +104,7 @@ msg = client.messages.create(
 
 ## 四、API 能力矩阵（哪些模型支持什么）
 
-| 能力 | Fable 5.1 | Opus 5.5 | Sonnet 5.5 | Haiku 5.5 |
+| 能力 | Fable 5.2 | Opus 5.5 | Sonnet 5.5 | Haiku 5.5 |
 | --- | :---: | :---: | :---: | :---: |
 | **Adaptive thinking** | ✅ 总是开 | ✅ 总是开 | ✅ | ✅ |
 | **Extended thinking（`budget_tokens`）** | ❌ | ❌ | ❌ | ❌ |
@@ -117,7 +118,7 @@ msg = client.messages.create(
 
 > **Extended thinking 一行值得展开**：官方口径是 legacy `thinking.type: "enabled"` + `budget_tokens` 在 Claude Opus 4.6 / Sonnet 4.6 上**已废弃**，在**更晚的模型上一律不接受**——Haiku 5.5 换代的 breaking change 正是这一条（Haiku 4.5 的代码直接搬过去会 400）。
 >
-> **Batch 300k 输出一行为空是有原因的**：官方点名支持该 beta 的模型是 Opus 5.5 / Opus 5 / Sonnet 5.5 / Sonnet 5 / Haiku 5.5 / Opus 4.8 / 4.7 / 4.6 / Sonnet 4.6，**Fable 5.1 不在其中**。
+> **Batch 300k 输出一行为空是有原因的**：官方点名支持该 beta 的模型是 Opus 5.5 / Opus 5 / Sonnet 5.5 / Sonnet 5 / Haiku 5.5 / Opus 4.8 / 4.7 / 4.6 / Sonnet 4.6，**Fable 5.2 不在其中**。
 
 > 详细 API 字段与请求结构见 v0.3.2 段的 API 9 篇（[Messages API](/claude-capabilities/api/messages) 等）。
 
@@ -141,15 +142,15 @@ msg = client.messages.create(
 
 | 任务类型 | 首选 | 次选 | 不推荐 |
 |---------|------|------|--------|
-| 短对话（< 5 步） | Sonnet 5.5 | Haiku 5.5 | Opus 5.5、Fable 5.1（杀鸡用牛刀） |
-| 日常编程（80% 场景） | **Sonnet 5.5** | Opus 5.5 | Fable 5.1 |
+| 短对话（< 5 步） | Sonnet 5.5 | Haiku 5.5 | Opus 5.5、Fable 5.2（杀鸡用牛刀） |
+| 日常编程（80% 场景） | **Sonnet 5.5** | Opus 5.5 | Fable 5.2 |
 | 复杂编程（陌生代码 / 重构） | Opus 5.5 | Sonnet 5.5 + 多轮迭代 | Haiku 5.5 |
 | 长链 agent（10+ 步） | Opus 5.5 | Sonnet 5.5 | Haiku 5.5 |
-| 超长链 agent（30+ 步） | **Fable 5.1** | Opus 5.5（提高 effort 后仍不够再上 Fable） | Sonnet 5.5、Haiku 5.5 |
-| 批量任务（> 1 万条） | Haiku 5.5 + Batch API | Haiku 5.5 online | Opus 5.5 / Fable 5.1（贵） |
-| 分类 / 提取 / 格式化 / 路由 | Haiku 5.5 | Sonnet 5.5 | Opus 5.5、Fable 5.1 |
+| 超长链 agent（30+ 步） | **Fable 5.2** | Opus 5.5（提高 effort 后仍不够再上 Fable） | Sonnet 5.5、Haiku 5.5 |
+| 批量任务（> 1 万条） | Haiku 5.5 + Batch API | Haiku 5.5 online | Opus 5.5 / Fable 5.2（贵） |
+| 分类 / 提取 / 格式化 / 路由 | Haiku 5.5 | Sonnet 5.5 | Opus 5.5、Fable 5.2 |
 | Vision（图 / PDF） | Sonnet 5.5 | Opus 5.5 | — |
-| 实时语音 / 视频流 | Haiku 5.5 streaming | Sonnet 5.5 | Opus 5.5、Fable 5.1（延迟） |
+| 实时语音 / 视频流 | Haiku 5.5 streaming | Sonnet 5.5 | Opus 5.5、Fable 5.2（延迟） |
 
 ### 按成本预算——月度 token 估算
 
@@ -188,7 +189,7 @@ msg = client.messages.create(
 | **Fastest** | Haiku 5.5 |
 | **Fast** | Sonnet 5.5 |
 | **Moderate** | Opus 5.5 |
-| **Slower** | Fable 5.1 |
+| **Slower** | Fable 5.2 |
 
 实际延迟取决于 prompt 长度、输出长度与 thinking effort。
 
@@ -199,9 +200,9 @@ msg = client.messages.create(
 | Opus 5.5 | ✅ |
 | Sonnet 5.5 | ✅ |
 | Haiku 5.5 | ✅ |
-| **Fable 5.1** | ❌ 强制 30 天数据留存 |
+| **Fable 5.2** | ❌ 强制 30 天数据留存 |
 
-Fable 5 / Fable 5.1 / Mythos 5 / Mythos 5.1 都要求 30 天数据留存，ZDR 环境下不可用（除非 Anthropic 特别授权）——需要长链 agent 能力时 fallback 到 Opus 5.5。
+Fable 5.2 / 5.1 / 5 与 Mythos 5.2 / 5.1 / 5 都要求 30 天数据留存，ZDR 环境下不可用（除非 Anthropic 特别授权）——需要长链 agent 能力时 fallback 到 Opus 5.5。
 
 ### 按规模
 
@@ -225,7 +226,7 @@ Fable 5 / Fable 5.1 / Mythos 5 / Mythos 5.1 都要求 30 天数据留存，ZDR �
   │
   └─ 长链多步 agent ────────────── Opus 5.5 起步
                                     │
-                                    ├─ 提 effort 仍不够 ── Fable 5.1
+                                    ├─ 提 effort 仍不够 ── Fable 5.2
                                     │
                                     ├─ ZDR？────────────── 改 Opus 5.5（Fable 不支持）
                                     │
@@ -236,10 +237,11 @@ Fable 5 / Fable 5.1 / Mythos 5 / Mythos 5.1 都要求 30 天数据留存，ZDR �
 
 ## 六、Legacy 模型索引
 
-以下型号**仍可调用**，但不推荐用于新项目。状态取自 [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-10-08）：
+以下型号**仍可调用**，但不推荐用于新项目。状态取自 [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-11-13）：
 
 | Model ID | 当前状态 | 退役承诺 |
 | --- | --- | --- |
+| `claude-fable-5-1` | Active | 不早于 2027-09-01 |
 | `claude-fable-5` | Active | 不早于 2027-06-09 |
 | `claude-opus-5` | Active | 不早于 2027-07-24 |
 | `claude-opus-4-8` | Active | 不早于 2027-05-28 |
@@ -253,17 +255,17 @@ Fable 5 / Fable 5.1 / Mythos 5 / Mythos 5.1 都要求 30 天数据留存，ZDR �
 | `claude-mythos-preview` | Deprecated（2026-06-09） | 待定 |
 | `claude-opus-4-1-20250805` / `claude-opus-4-20250514` / `claude-sonnet-4-20250514` / `claude-3-7-sonnet-20250219` / `claude-3-5-haiku-20241022` / `claude-3-haiku-20240307` | Retired | 已下线 |
 
-**注意术语的两套口径**：官方 [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview) 把 Fable 5 / Opus 5 / Opus 4.8 / Sonnet 5 / Haiku 4.5 等归入「Legacy models (still available)」小节；而 [Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations) 的状态列至今仍把它们标为 **Active**。两页口径不一致，**判断"能不能用"看 deprecations 页，判断"该不该用"看 models overview 页**。
+**注意术语的两套口径**：官方 [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview) 把 Fable 5.1 / Fable 5 / Opus 5 / Opus 4.8 / Sonnet 5 / Haiku 4.5 等归入「Legacy models (still available)」小节；而 [Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations) 的状态列至今仍把它们标为 **Active**。两页口径不一致，**判断"能不能用"看 deprecations 页，判断"该不该用"看 models overview 页**。
 
 **Haiku 4.5 的现状**（本轮重点核实）：它**没有**被标 Deprecated，退役承诺仍是「不早于 2026-10-15」——Haiku 5.5 发布**没有**顺延或提前这个日期，也没有把它打进 legacy 档。
 
-**迁移建议**：`opus` / `sonnet` / `haiku` / `fable` alias 在 Anthropic API 上**已自动解析为最新版本**——老代码无需改 Model ID；想 pin 老版本用 `ANTHROPIC_DEFAULT_OPUS_MODEL=claude-opus-5` 这类环境变量（见 [Claude Code · 模型选择 · Alias 在不同 provider 上](/claude-code/basics/model-selection#alias-在不同-provider-上解析不同-重要)）。
+**迁移建议**：`opus` / `sonnet` / `haiku` / `fable` alias 在 **Anthropic API** 上自动解析为最新版本（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）——老代码无需改 Model ID；想 pin 具体版本用 `ANTHROPIC_DEFAULT_OPUS_MODEL=claude-opus-5-5` 这类环境变量。**跨 provider 不成立**：Bedrock / Foundry 上的 `sonnet` 仍解析到 4.5 代，`opus` 在 Foundry 上还是 Opus 4.6。完整 provider 对照表见 [模型 ID 与定价 · alias 怎么解析](./model-ids#alias-怎么解析)。
 
 ## 常见坑
 
 **「最贵 = 最好」**
 
-Fable 5.1 适合长链 agent，但日常对话用它是浪费。选型核心是**任务复杂度匹配**，不是价格高低。
+Fable 5.2 适合长链 agent，但日常对话用它是浪费。选型核心是**任务复杂度匹配**，不是价格高低。
 
 **只盯单价忽略步数**
 
@@ -295,10 +297,10 @@ Prompt Caching 不命中时反而增加 metadata 开销（首请求 + 5% token �
 
 ## 参考
 
-- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-10-08）
-- [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-10-08）
-- [Anthropic Docs · Model configuration](https://code.claude.com/docs/en/model-config)（访问于 2026-10-08）
-- [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-10-08）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
+- [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-11-13）
+- [Anthropic Docs · Model configuration](https://code.claude.com/docs/en/model-config)（访问于 2026-11-13）
+- [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-11-13）
 - [Anthropic Docs · Effort](https://platform.claude.com/docs/en/build-with-claude/effort)（访问于 2026-10-08）
 - [Anthropic Docs · Claude Haiku 5.5](https://platform.claude.com/docs/en/models/haiku-5-5/overview)（访问于 2026-10-08）
 - [Anthropic Docs · Data residency / ZDR](https://platform.claude.com/docs/en/build-with-claude/data-residency)（访问于 2026-08-17）
@@ -306,6 +308,7 @@ Prompt Caching 不命中时反而增加 metadata 开销（首请求 + 5% token �
 
 ## 下一步
 
+- 查确切 Model ID 与价格 → [模型 ID 与定价](./model-ids)
 - 切到 API 视角调用细节 → [Messages API](/claude-capabilities/api/messages)
 - CLI 视角选型 → [Claude Code · 模型选择](/claude-code/basics/model-selection)
 

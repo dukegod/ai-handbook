@@ -15,7 +15,7 @@
 5. **模型与厂商** —— 国外厂商（Anthropic / OpenAI / xAI）+ 国内厂商（DeepSeek / 字节豆包 / Moonshot / MiniMax / Zhipu / Qwen），横向对比与选型决策
 6. **Claude 深度** —— Claude Code CLI 精通 + Claude API/SDK/MCP 全能力
 
-当前版本 **v0.2**：Claude 专项 107 篇 published，正在扩展为 AI 全栈知识体系。按 [contributing/roadmap.md](./contributing/roadmap.md) 推进。
+当前版本 **v0.2**：Claude 专项 98 篇 published，正在扩展为 AI 全栈知识体系。按 [contributing/roadmap.md](./contributing/roadmap.md) 推进。
 
 - **读者定位**：零基础 → 进阶全覆盖
 - **协作模式**：个人主导
@@ -97,7 +97,8 @@ ai-trends/          产品动向
     ├── index.md           按周倒序的历史周报索引
     └── <ISO周次>/         index.md = 榜单全表 + 本周判断；<repo>.md = 重点仓库深读
 claude-code/        Claude Code CLI 精通（9 个子章 + reference 速查手册）
-claude-capabilities/ Claude 能力全景（8 个子章，含模型 ID 速查）
+claude-capabilities/ Claude 能力全景（8 个子章，含模型 ID 与定价速查）
+├── models/            模型家族（model-ids 速查 / overview 选型 / fable / haiku；opus.md 与 sonnet.md 仍是上一代归档页）
 ai-harness/         AI 研发体系（保留原有 URL）
 ├── index.md                 # 四条主线总览与关系图
 ├── patterns/                # 01 AI coding：编码任务、重构、测试、文档
@@ -221,24 +222,41 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 
 看 [.vitepress/config.ts](./.vitepress/config.ts) 顶部：`const P = (text) => \`${text} 🚧\``。占位页用 `P('xxx')` 包裹，发布后改为 `'xxx'` 直接字符串。
 
-## Fable 5 定位（已核实）
+## 模型阵容快照（已核实 · 2026-11-13）
 
-已在 [claude-code/basics/model-selection.md](./claude-code/basics/model-selection.md) 撰写时核实（2026-07-24），基于三个 Anthropic 官方一手来源：
+最新一次复核是在 `model-ids.md` / `fable.md` / `model-selection.md` 更新时做的（2026-11-13），基于四个 Anthropic 官方一手来源：
 
-- [code.claude.com/model-config](https://code.claude.com/docs/en/model-config#work-with-fable-5)
+- [code.claude.com/model-config](https://code.claude.com/docs/en/model-config)
 - [platform.claude.com/models/overview](https://platform.claude.com/docs/en/about-claude/models/overview)
-- [claude.com/blog · Choosing a Claude model](https://claude.com/blog/claude-model-and-effort-level-in-claude-code)
+- [platform.claude.com/model-deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)
+- [platform.claude.com/pricing](https://platform.claude.com/docs/en/about-claude/pricing)
 
-**关键事实**（写 [claude-capabilities/models/fable.md](./claude-capabilities/models/fable.md) 时直接引用）：
+**当前四型号**：
 
-- `claude-fable-5`，"Next-generation intelligence for long-running agents"
-- 2026-06-09 GA；Claude API / Bedrock / Vertex / Foundry 都支持
-- Pricing：**$10 / $50 per MTok**（比 Opus 5 贵 2 倍）
-- Context 1M，Max output 128k，adaptive thinking **always on**
+| 模型 | Model ID | 输入/输出（$/MTok） | 缓存读 | Claude Code 最低版本 |
+| --- | --- | --- | --- | --- |
+| Fable 5.2 | `claude-fable-5-2` | $8 / $40 | $0.20 | v2.1.321 |
+| Opus 5.5 | `claude-opus-5-5` | $4 / $20 | $0.20 | v2.1.280 |
+| Sonnet 5.5 | `claude-sonnet-5-5` | $2 / $10 | $0.10 | v2.1.284 |
+| Haiku 5.5 | `claude-haiku-5-5` | $0.10 / $0.50 | $0.01 | v2.1.293 |
+
+全部 1M context / 128k max output。Haiku 5.5 是**唯一按 prompt 长度分档计费**的型号（> 100k token 输入输出各跳 5 倍）。
+
+**关键事实**：
+
 - 官方比喻：**Fable = the specialist**（顶级专家），Opus = expert，Sonnet = generalist
-- Claude Code 特殊行为：**不是默认**，需 `/model fable`；cybersecurity/biology 触发 fallback 到 Opus 5/4.8；zero data retention 环境不可用；需 v2.1.170+
+- Claude Code 侧 `fable` / `opus` / `sonnet` / `haiku` 是**真 alias**，解析结果**随 provider 变**（Bedrock 上 `sonnet` 仍是 4.5 代，Foundry 上 `opus` 是 4.6）；4.6 世代起 dateless Model ID **本身就是 pinned 快照**，不是 alias
+- **Fable 不是任何计划或 provider 的默认模型**，需 `/model fable`；cybersecurity / biology 触发自动 fallback；zero data retention 环境不可用
+- Mythos 系列（`claude-mythos-5-2` / `5-1` / `5`）状态 Active 但属**受限可用**，需 Anthropic 验证计划认证
+
+**⚠️ 两个易踩的时效雷区**：
+
+- **`claude-sonnet-4-5-20250929` 于 2026-11-30 退役** → 迁移到 `claude-sonnet-5-5`；`claude-opus-4-5-20251101` 的退役承诺是「不早于 2026-11-24」
+- **API version `2026-10-21` 起 `temperature` / `top_p` / `top_k` 被移除**（传了返回 400）——涉及 `claude-capabilities/api/*` 的 9 篇还没跟这一条
 
 **不要**再写「定位待核实」——若发现新信息，直接更新引用来源与日期。
+
+> 详细的完整生命周期表与 alias 解析规则见 [claude-capabilities/models/model-ids.md](./claude-capabilities/models/model-ids.md)。
 
 ## 内容边界（不做什么）
 
@@ -249,7 +267,7 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 
 ## 当前阶段的关键任务
 
-- [x] Claude 专项 107 篇 published（v0.1 ~ v0.4.3）
+- [x] Claude 专项 98 篇 published（v0.1 ~ v0.4.3）
 - [x] 项目重命名为 AI Handbook，扩展为 AI 全栈知识体系（v0.2）
 - [x] 新模块骨架：ai-core（12 stub）+ ai-coding（14 stub）+ ai-trends（8 stub）
 - [x] GitHub Pages 部署

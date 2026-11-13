@@ -4,20 +4,21 @@ description: 多约束下的 Claude 模型选型决策——任务 / 成本 / �
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-08
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.293
+  scope: '2026-11-13 复核四型号口径与生命周期；成本示意沿用 2026-10-08 的量级估算'
+  claudeCode: 2.1.319
   model: claude-sonnet-5-5
   modelOverview: 'https://platform.claude.com/docs/en/about-claude/models/overview'
   pricing: 'https://platform.claude.com/docs/en/about-claude/pricing'
   deprecations: 'https://platform.claude.com/docs/en/about-claude/model-deprecations'
   effortDocs: 'https://platform.claude.com/docs/en/build-with-claude/effort'
-  accessedAt: 2026-10-08
+  accessedAt: 2026-11-13
 ---
 
 # 模型选型（API 视角）
 
-> **TL;DR**：选型不是"哪个模型最聪明"，而是**多约束下的最优解**——任务类型、成本预算、延迟要求、数据驻留、规模。v0.1 的 [CLI 视角选型](/claude-code/basics/model-selection) 讲「缺知识 vs 没努力」；本页讲 **API/SDK 视角**的多约束决策。数据截至 2026-10-08，对应当前四型号 Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5。
+> **TL;DR**：选型不是"哪个模型最聪明"，而是**多约束下的最优解**——任务类型、成本预算、延迟要求、数据驻留、规模。v0.1 的 [CLI 视角选型](/claude-code/basics/model-selection) 讲「缺知识 vs 没努力」；本页讲 **API/SDK 视角**的多约束决策。数据截至 2026-11-13，对应当前四型号 Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5。
 
 ⏱ 预计阅读时间：6 分钟
 
@@ -49,18 +50,18 @@ verifiedWith:
 
 | 任务类型 | 首选 | 次选 | 不推荐 |
 | --- | --- | --- | --- |
-| 短对话（< 5 步） | [Sonnet 5.5](./sonnet) | [Haiku 5.5](./haiku) | Opus 5.5、Fable 5.1（杀鸡用牛刀） |
-| 日常编程（80% 场景） | [Sonnet 5.5](./sonnet) | Opus 5.5 | Fable 5.1 |
+| 短对话（< 5 步） | [Sonnet 5.5](./sonnet) | [Haiku 5.5](./haiku) | Opus 5.5、Fable 5.2（杀鸡用牛刀） |
+| 日常编程（80% 场景） | [Sonnet 5.5](./sonnet) | Opus 5.5 | Fable 5.2 |
 | 复杂编程（陌生代码 / 重构） | [Opus 5.5](./opus) | Sonnet 5.5 + 多轮迭代 | Haiku 5.5 |
 | 长链 agent（10+ 步） | [Opus 5.5](./opus) | [Sonnet 5.5](./sonnet) | Haiku 5.5 |
-| 超长链 agent（30+ 步） | **[Fable 5.1](./fable)** | Opus 5.5（提 effort 后仍不够再上 Fable） | Sonnet 5.5、Haiku 5.5 |
-| 批量任务（> 1 万条） | [Haiku 5.5 + Batch](./haiku#四批量任务实战) | Haiku 5.5 online | Opus 5.5 / Fable 5.1（贵） |
-| 分类 / 提取 / 格式化 / 路由 | [Haiku 5.5](./haiku) | Sonnet 5.5 | Opus 5.5、Fable 5.1 |
+| 超长链 agent（30+ 步） | **[Fable 5.2](./fable)** | Opus 5.5（提 effort 后仍不够再上 Fable） | Sonnet 5.5、Haiku 5.5 |
+| 批量任务（> 1 万条） | [Haiku 5.5 + Batch](./haiku#四批量任务实战) | Haiku 5.5 online | Opus 5.5 / Fable 5.2（贵） |
+| 分类 / 提取 / 格式化 / 路由 | [Haiku 5.5](./haiku) | Sonnet 5.5 | Opus 5.5、Fable 5.2 |
 | Vision（图 / PDF） | Sonnet 5.5 | Opus 5.5 | — |
-| Cybersecurity / Biology | ⚠️ 见 fallback 提示 | Fable 5.1（需 trusted access） | — |
-| 实时语音 / 视频流 | [Haiku 5.5](./haiku) | Sonnet 5.5 | Opus 5.5、Fable 5.1（延迟） |
+| Cybersecurity / Biology | ⚠️ 见 fallback 提示 | Fable 5.2（需 trusted access） | — |
+| 实时语音 / 视频流 | [Haiku 5.5](./haiku) | Sonnet 5.5 | Opus 5.5、Fable 5.2（延迟） |
 
-> ⚠️ Cybersecurity / Biology 行：Fable 的 safety classifier 会触发自动 fallback（[Fable 5.1 · 第三节](./fable#三cybersecurity--biology-fallback关键使用限制)），但**具体 fallback 到哪个版本本轮未复核**——实际以响应中的模型字段为准。
+> ⚠️ Cybersecurity / Biology 行：Fable 的 safety classifier 会触发自动 fallback（[Fable 5.2 · 第三节](./fable#三cybersecurity--biology-fallback关键使用限制)），但**具体 fallback 到哪个版本本轮未复核**——实际以响应中的模型字段为准。
 
 ## 三、按成本预算——月度 token 估算
 
@@ -79,7 +80,7 @@ verifiedWith:
 每人每天 20 万输入 + 5 万输出 × 5 人 × 30 天
 = 3000 万输入 + 750 万输出（按 Sonnet 5.5）
 = $60 + $75 = $135/月
-+ 偶尔 Opus 5.5 / Fable 5.1 处理重任务
++ 偶尔 Opus 5.5 / Fable 5.2 处理重任务
 = 仍在预算内
 ```
 
@@ -103,7 +104,7 @@ verifiedWith:
 | **Fastest** | 实时语音、typing effect、streaming first token | [Haiku 5.5](./haiku) |
 | **Fast** | 聊天 UI、agent 单步响应 | Sonnet 5.5 |
 | **Moderate** | 用户提交后等结果、研究任务 | Opus 5.5 |
-| **Slower** | 多步 agent 综合、长文档生成 | Fable 5.1 |
+| **Slower** | 多步 agent 综合、长文档生成 | Fable 5.2 |
 | **< 24h** | 离线批处理 | **Batch API**（50% off） |
 
 **延迟是相对值，不是绝对值**：官方只公布 [Comparative latency](https://platform.claude.com/docs/en/about-claude/models/overview) 四档（Fastest / Fast / Moderate / Slower），并明确说明"实际延迟取决于 prompt 长度、输出长度与 thinking effort"。官方**未公布**各档的毫秒数基准——不要拿社区经验值当 SLA 承诺。
@@ -117,7 +118,7 @@ verifiedWith:
 | Opus 5.5 | ✅ |
 | Sonnet 5.5 | ✅ |
 | Haiku 5.5 | ✅ |
-| **Fable 5.1 / Fable 5** | ❌ **强制 30 天数据留存** |
+| **Fable 5.2 / 5.1 / 5** | ❌ **强制 30 天数据留存** |
 
 **ZDR 环境决策**：
 
@@ -132,7 +133,7 @@ client.messages.create(model="claude-sonnet-5-5", ...)
 client.messages.create(model="claude-haiku-5-5", ...)
 
 # ❌ 403
-client.messages.create(model="claude-fable-5-1", ...)
+client.messages.create(model="claude-fable-5-2", ...)
 ```
 
 详见 [Anthropic Docs · Data residency](https://platform.claude.com/docs/en/build-with-claude/data-residency)。
@@ -178,7 +179,7 @@ client.messages.create(model="claude-fable-5-1", ...)
   │
   └─ 长链多步 agent ────────────── Opus 5.5 起步
                                     │
-                                    ├─ 提 effort 仍不够 ── Fable 5.1
+                                    ├─ 提 effort 仍不够 ── Fable 5.2
                                     │
                                     ├─ ZDR？────────────── 改 Opus 5.5（Fable 不支持）
                                     │
@@ -201,7 +202,7 @@ client.messages.create(model="claude-fable-5-1", ...)
 
 **「最贵 = 最好」**
 
-Fable 5.1 适合长链 agent，但日常对话用它是浪费。选型核心是**任务复杂度匹配**，不是价格高低。
+Fable 5.2 适合长链 agent，但日常对话用它是浪费。选型核心是**任务复杂度匹配**，不是价格高低。
 
 **只盯单价忽略步数**
 
@@ -223,7 +224,7 @@ Batch 是 24h SLA，**不能**用于实时场景。误用会让用户等 24h。
 
 Prompt Caching 不命中时反而增加 metadata 开销（首请求 + 5% token 写费）。先跑 1000 个真实请求估算命中率，< 30% 别上。
 
-**Fable 5.1 在 ZDR 环境调用**
+**Fable 5.2 在 ZDR 环境调用**
 
 直接 403，浪费重试 budget。ZDR 启用前先确认业务能接受 Fable 不可用。
 
@@ -233,9 +234,9 @@ Prompt Caching 不命中时反而增加 metadata 开销（首请求 + 5% token �
 
 ## 参考
 
-- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-10-08）
-- [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-10-08）
-- [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-10-08）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
+- [Anthropic Docs · Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-11-13）
+- [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-11-13）
 - [Anthropic Docs · Effort](https://platform.claude.com/docs/en/build-with-claude/effort)（访问于 2026-10-08）
 - [Anthropic Docs · Message Batches API](https://platform.claude.com/docs/en/api/messages/batches)（访问于 2026-08-06）
 - [Anthropic Docs · Data residency / ZDR](https://platform.claude.com/docs/en/build-with-claude/data-residency)（访问于 2026-08-17）
@@ -244,7 +245,7 @@ Prompt Caching 不命中时反而增加 metadata 开销（首请求 + 5% token �
 ## 下一步
 
 - 模型家族全貌 → [模型概览](/claude-capabilities/models/overview)
-- 切到具体模型详解 → [Opus 5.5](./opus) / [Sonnet 5.5](./sonnet) / [Haiku 5.5](./haiku) / [Fable 5.1](./fable)
+- 切到具体模型详解 → [Opus 5.5](./opus) / [Sonnet 5.5](./sonnet) / [Haiku 5.5](./haiku) / [Fable 5.2](./fable)
 - 提示技巧 → [深度提示工程](/claude-capabilities/prompting/best-practices)
 
 ## 如果你想

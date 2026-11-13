@@ -258,6 +258,12 @@ export default withMermaid(defineConfig({
           collapsed: true,
           items: [
             { text: '模型概览', link: '/claude-capabilities/models/overview' },
+            { text: '模型 ID 与定价', link: '/claude-capabilities/models/model-ids' },
+            { text: '模型选型（API 视角）', link: '/claude-capabilities/models/choosing-model' },
+            { text: 'Fable 5.2', link: '/claude-capabilities/models/fable' },
+            { text: 'Haiku 5.5', link: '/claude-capabilities/models/haiku' },
+            { text: 'Opus 5（上一代）', link: '/claude-capabilities/models/opus' },
+            { text: 'Sonnet 5（上一代）', link: '/claude-capabilities/models/sonnet' },
           ],
         },
         {
