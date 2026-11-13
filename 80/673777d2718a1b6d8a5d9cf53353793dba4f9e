@@ -1,0 +1,123 @@
+claude-capabilities/models/haiku.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 207
+claude-capabilities/prompting/best-practices.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 64,134
+claude-capabilities/models/sonnet.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 51,193,211,249
+contributing/link-checking.md
+  s_8aef4ac63b7dec::t_a999367eb32327 275
+  s_8aef4ac63b7dec::t_ed85683acbb4f9 3,7,324
+  s_8aef4ac63b7dec::t_61d883eab20a35 287-323
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 162,351-353,357-360
+claude-code/basics/sessions.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 50,129,196
+claude-capabilities/core/extended-thinking.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 170,224-226,236
+claude-code/skills/custom-skill.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 117,228
+claude-capabilities/models/fable.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 234
+package.json
+  s_8aef4ac63b7dec::t_e4e69b16e87127 13
+claude-capabilities/prompting/few-shot.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 286-288,298
+claude-code/basics/context-window.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 53,149
+claude-code/basics/model-selection.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 196
+claude-code/getting-started/comparisons.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 60,102
+claude-code/getting-started/first-conversation.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 149
+claude-capabilities/core/vision.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 218,276,289
+claude-capabilities/surfaces/claude-in-slack.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 151
+claude-capabilities/models/choosing-model.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 31,58,64
+.github/workflows/lychee.yml
+  s_8aef4ac63b7dec::t_d25081891ec041 43-50
+claude-capabilities/surfaces/web-app.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 33,128
+claude-capabilities/core/long-context.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 229
+scripts/check-links.sh
+  s_8aef4ac63b7dec::t_a8e0d38e665272 40-51
+claude-capabilities/surfaces/claude-ai.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 144
+claude-capabilities/core/coding.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 263-264
+claude-capabilities/mcp-protocol/server-authoring.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 58,189,206
+claude-code/basics/cost-and-tokens.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 32,129,150
+claude-capabilities/core/reasoning.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 146,178,189,202
+claude-capabilities/models/opus.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 104,124,162
+claude-capabilities/core/tool-use.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 350
+claude-capabilities/sdk/python-sdk.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 231,307-308
+claude-capabilities/sdk/agent-sdk.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 178
+claude-capabilities/sdk/overview.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 109-110,168
+claude-capabilities/mcp-protocol/protocol-spec.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 114
+claude-code/tools/search.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 164
+claude-capabilities/mcp-protocol/client-implementation.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 78,145
+.gitignore
+  s_8aef4ac63b7dec::t_39063d38c14903 47-48
+claude-capabilities/surfaces/mobile.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 148
+claude-capabilities/sdk/managed-agents.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 148
+claude-code/skills/writing-triggers.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 191,200
+AGENTS.md
+  s_8aef4ac63b7dec::t_24606b951c2850 291
+  s_8aef4ac63b7dec::t_e6d43a60f85e8c 50-51
+  s_8aef4ac63b7dec::t_0bafc4713742bb 191-214
+claude-capabilities/prompting/templates.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 71,183
+claude-capabilities/surfaces/desktop-app.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 116
+claude-code/customization/hooks.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 343
+claude-capabilities/sdk/typescript-sdk.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 271
+claude-capabilities/prompting/system-prompts.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 49,251,294-295
+claude-capabilities/prompting/prefill-and-xml.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 27,93,319,337,350-352
+claude-code/basics/claude-md.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 33,175
+claude-code/ecosystem/third-party-models.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 209
+claude-capabilities/prompting/chain-of-thought.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 49,99,115,197,203,237,243,245
+scripts/check-anchors.py
+  s_8aef4ac63b7dec::t_416655a463e2dc 1-198,200-225
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 199
+claude-capabilities/agentic/safety.md
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 242-243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "80673777d2718a1b6d8a5d9cf53353793dba4f9e",
+  "prompts": {},
+  "sessions": {
+    "s_8aef4ac63b7dec": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36d1dab3-a85b-4125-8690-0d80af329bc4",
+        "model": "MiniMax-M3"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
