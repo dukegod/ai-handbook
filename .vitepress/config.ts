@@ -47,6 +47,25 @@ export default withMermaid(defineConfig({
 
   markdown: {
     lineNumbers: true,
+
+    // Vue 会把 `{{ }}` 当模板插值。VitePress 1.6 默认**不给代码块加 v-pre**
+    // （实测：全站 dist 里 v-pre 计数为 0），于是代码块里的 `{{role}}`、
+    // YAML 里的 `${{ secrets.X }}` 在页面上会被求值成空白——`${{ secrets.X }}`
+    // 还会因为 `secrets` 未定义而抛运行时错误。
+    //
+    // 给所有代码块补 v-pre：代码块内容本就是静态文本，不需要编译。
+    // 代价是「代码块里演示 Vue 插值」这种用法会失效——本站没有这种内容。
+    //
+    // 2026-11-13 引入。注意：必须包 `md.renderer.rules.fence`——
+    // 代码块在 markdown-it 里是 `fence` token，不是 `html` token，
+    // 所以 core.ruler 里遍历 html token 是碰不到 <pre> 的（试过，无效）。
+    config: (md) => {
+      const origFence = md.renderer.rules.fence!
+      md.renderer.rules.fence = (...args: any[]) => {
+        const html = origFence(...args)
+        return html.replace('<pre', '<pre v-pre')
+      }
+    },
   },
 
   // 强制 esbuild 预打包 mermaid 的 CJS 子依赖，避免 dev 阶段
@@ -262,8 +281,8 @@ export default withMermaid(defineConfig({
             { text: '模型选型（API 视角）', link: '/claude-capabilities/models/choosing-model' },
             { text: 'Fable 5.2', link: '/claude-capabilities/models/fable' },
             { text: 'Haiku 5.5', link: '/claude-capabilities/models/haiku' },
-            { text: 'Opus 5（上一代）', link: '/claude-capabilities/models/opus' },
-            { text: 'Sonnet 5（上一代）', link: '/claude-capabilities/models/sonnet' },
+            { text: 'Opus 5.5', link: '/claude-capabilities/models/opus' },
+            { text: 'Sonnet 5.5', link: '/claude-capabilities/models/sonnet' },
           ],
         },
         {

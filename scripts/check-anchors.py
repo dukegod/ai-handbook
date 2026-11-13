@@ -115,10 +115,16 @@ def heading_slugs(md: Path) -> list:
 
 
 def resolve(md: Path, base: str):
-    """把链接里的路径部分解析成站点内的页面 key；解析不出来返回 None"""
+    """把链接里的路径部分解析成站点内的页面 key；解析不出来返回 None
+
+    同时返回 (key, needs_trailing_slash)：目标页是 index.md 时，URL 必须带尾斜杠，
+    否则 VitePress 的死链检查会判定为 dead（其它目录型链接都带尾斜杠）。
+    """
     if base.startswith("/"):
         key = base
+        needs_slash = False
     else:
+        needs_slash = False
         target = (md.parent / base).resolve()
         candidates = [target]
         if target.suffix == "":
@@ -129,14 +135,15 @@ def resolve(md: Path, base: str):
                 try:
                     rel = "/" + str(c.relative_to(ROOT))
                 except ValueError:
-                    return None
+                    return None, False
                 break
         if rel is None:
-            return None
+            return None, False
         key = rel[:-3] if rel.endswith(".md") else rel
     if key.endswith("/index"):
         key = key[: -len("/index")]
-    return key
+        needs_slash = True
+    return key, needs_slash
 
 
 def norm(s: str) -> str:
