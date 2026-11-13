@@ -1,0 +1,21 @@
+AGENTS.md
+  s_8aef4ac63b7dec::t_84c621f0d69a16 7-16
+scripts/hooks/pre-commit
+  s_8aef4ac63b7dec::t_c8af117ac94545 2-10,13-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ccce68ed3e6f18f3cd5dd4861cd7848706087675",
+  "prompts": {},
+  "sessions": {
+    "s_8aef4ac63b7dec": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36d1dab3-a85b-4125-8690-0d80af329bc4",
+        "model": "MiniMax-M3"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
