@@ -4,10 +4,11 @@ description: 实战模式——给示例让 Claude 模仿；示例数量 / 选�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 复核了示例数量 / 选择 / 位置 / 反例 / 多样性的口径（对照官方 Prompting best practices）与缓存前缀顺序；示例代码与 3 类实战模式沿用 2026-08-07 的记录，未在本机重跑'
   claudeCode: 2.1.220
-  model: claude-opus-5
+  model: claude-opus-5-5
   promptEngineering: 'https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/multishot-prompting'
   accessedAt: 2026-08-07
 ---
@@ -76,7 +77,7 @@ verifiedWith:
 > 5 shot：边际收益递减 + token 成本高
 ```
 
-**实战经验**：**3-5 个示例**最有效——少于 3 个模式不全、多于 5 个模式重复。
+**实战经验**：**3-5 个示例**最有效——少于 3 个模式不全、多于 5 个模式重复。官方口径同样是 3-5 个，并建议**让 Claude 自己评估示例的相关性和多样性**，或基于已有示例再补几个。
 
 ### 决策 2：示例选择
 
@@ -116,7 +117,8 @@ messages = [
 ```
 
 **实战**：
-- **示例放 user 消息**（不用 system）——避免污染 system cache
+- **示例放 user 消息**（不用 system）——system 只放跨任务不变的规则；缓存前缀顺序是 `tools` → `system` → `messages`，system 稳定才复用得上缓存
+- **用 `<example>` 标签包住每个示例**（多个套 `<examples>`）——官方推荐，让 Claude 把示例和指令区分开
 - **当前任务紧跟示例**——避免"远隔效应"
 
 ### 决策 4：是否给反例
@@ -279,10 +281,17 @@ messages = [{
 复杂推理用 CoT
 ```
 
+**当前型号的补充**：四型号默认开启**自适应思考**（Opus 5.5 / Fable 5.2 更是**总是开**）——别再在 prompt 里写「先一步步想再答」，官方建议改用 `effort` 调节思考量；这类推理要求在 Sonnet 5.5 / Opus 5.5 上甚至可能被拒。
+
 ## 参考
 
 - [Anthropic Docs · Multishot prompting](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/multishot-prompting)（访问于 2026-08-07）
 - [Anthropic Docs · Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)（访问于 2026-08-07）
+- [Anthropic Docs · Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)（访问于 2026-11-13）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
+- [Anthropic Docs · Prompt Caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)（访问于 2026-11-13）
+- [模型 ID 与定价](/claude-capabilities/models/model-ids)（访问于 2026-11-13）
+- [Prompt Caching API](/claude-capabilities/api/prompt-caching)（访问于 2026-11-13）
 - [最佳实践 · 原则 2](/claude-capabilities/prompting/best-practices#原则-2-给示例-few-shot)
 - [System Prompt 设计 · 5 模式](/claude-capabilities/prompting/system-prompts#二、5-个设计模式)
 - [思维链 · 4 变体](/claude-capabilities/prompting/chain-of-thought#二、4-种-cot-变体)

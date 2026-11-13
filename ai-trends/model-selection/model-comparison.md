@@ -4,12 +4,22 @@ description: Claude / GPT / Gemini / Grok / Kimi / MiniMax / GLM / Qwen 八家�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-10-14
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 只复核 Anthropic 一栏（型号与 Model ID、定价、缓存价与倍率、context、思考与 effort）；其余 7 厂商数据沿用上次核对结果，未重新抓取。示例未在本机重跑'
   sources:
     - name: Anthropic 定价
       url: https://platform.claude.com/docs/en/about-claude/pricing
-      accessedAt: 2026-10-08
+      accessedAt: 2026-11-13
+    - name: Anthropic 模型总览
+      url: https://platform.claude.com/docs/en/about-claude/models/overview
+      accessedAt: 2026-11-13
+    - name: Anthropic 模型退役与生命周期
+      url: https://platform.claude.com/docs/en/about-claude/model-deprecations
+      accessedAt: 2026-11-13
+    - name: Claude Code 模型配置
+      url: https://code.claude.com/docs/en/model-config
+      accessedAt: 2026-11-13
     - name: Claude Haiku 5.5 发布博客
       url: https://www.anthropic.com/claude-haiku-5-5
       accessedAt: 2026-10-08
@@ -53,7 +63,7 @@ verifiedWith:
 
 | 厂商 | 旗舰 | 中端 | 轻量 | 推理模型 | 开源 |
 |------|------|------|------|----------|------|
-| **Anthropic** | Opus 5.5 | Sonnet 5.5 | **Haiku 5.5**（$0.10 / $0.50） | Fable 5.1 / Mythos 5.1（思考不可关） | ❌ |
+| **Anthropic** | Opus 5.5 | Sonnet 5.5 | **Haiku 5.5**（$0.10 / $0.50） | Fable 5.2 / Mythos 5.2（思考总是开；Mythos 受限可用） | ❌ |
 | **OpenAI** | GPT-6 Astra | GPT-6.1 Sol | GPT-6 Luna | GPT-6 `reasoning.effort`（o 系列已让位） | 开源双轨（GPT-OSS） |
 | **Google** | **Gemini 4 Argon**（1M 输出） | Gemini 3.1 Pro（Preview） | Gemini 3.8 Flash / 3.1 Flash-Lite | Argon 内置 `thinking` 三档（low / medium / high） | ❌（另有独立开源线 Gemma） |
 | **xAI** | Grok 4.7 | — | — | Grok 4.20-reasoning（1M） | ❌ |
@@ -62,25 +72,25 @@ verifiedWith:
 | **Zhipu** | GLM-5.3 | GLM-5.3-Flash（原生多模态） | GLM-4.7-Flash（免费） | GLM-5.3（思考常开，三档 `effort`） | GLM-4 起全尺寸（Apache 2.0） |
 | **Qwen** | Qwen3.8-Max（快照 `-0902`） | Qwen3.7-Plus | Qwen3.8-Flash | Qwen3.8-Max（思考模式） | 全尺寸 + 全模态 |
 
-> ⚠️ **2026-10 换代与下线**：**Gemini 4 Argon 于 2026-09-30 发布、10-13 进 Gemini App、10-14 全量 GA**（$2 / $10），是**在售模型里唯一把最大输出做到 1M token** 的（此前 Gemini 全系 64K，一次放大 15 倍）；首发期结束回到 $4 / $20，截止日未公布。**Claude Haiku 5.5 于 2026-10-07 发布**（$0.10 / $0.50，1M 上下文，首个支持 `effort` 档位的 Haiku），Anthropic 全系完成 5.x 换代；同日 Sonnet 5.5 缓存读降价 50%（$0.20 → $0.10 / MTok）。OpenAI 主线仍为 GPT-6（5.6 系列为上一代，Sol 促销价至少到 2026-11-21）；xAI **Grok 5 截至 2026-10-08 未发布**，现行旗舰仍是 9-21 发布的 Grok 4.7（$2 / $6）；**Moonshot 的 K2.5 与 K2 全系已下线**（2026-08 起调用返回 404）；MiniMax 的 M2.7 已归入 Legacy；Qwen 旗舰未换代，但主版本会静默漂移，生产应显式钉 `-0902` 快照。
+> ⚠️ **2026-10 / 11 换代与下线**：**Gemini 4 Argon 于 2026-09-30 发布、10-13 进 Gemini App、10-14 全量 GA**（$2 / $10），是**在售模型里唯一把最大输出做到 1M token** 的（此前 Gemini 全系 64K，一次放大 15 倍）；首发期结束回到 $4 / $20，截止日未公布。**Claude Fable 5.2 于 2026-11-09 发布并降价 20%**（$10/$50 → $8/$40，缓存读 $0.25 → $0.20），Anthropic 顶配不再与 GPT-6 Astra 并列最贵；**Claude Haiku 5.5 于 2026-10-07 发布**（$0.10 / $0.50，1M 上下文，首个支持 `effort` 档位的 Haiku），同日 Sonnet 5.5 缓存读降价 50%（$0.20 → $0.10 / MTok）。OpenAI 主线仍为 GPT-6（5.6 系列为上一代，Sol 促销价至少到 2026-11-21）；xAI **Grok 5 截至 2026-10-08 未发布**，现行旗舰仍是 9-21 发布的 Grok 4.7（$2 / $6）；**Moonshot 的 K2.5 与 K2 全系已下线**（2026-08 起调用返回 404）；MiniMax 的 M2.7 已归入 Legacy；Qwen 旗舰未换代，但主版本会静默漂移，生产应显式钉 `-0902` 快照。
 
-**结论**：OpenAI 推理最强（GPT-6 的 `effort` 档位，o 系列已让位），Google 卡位长输出（Argon 的 1M 输出上限业界唯一），Qwen 开源最彻底，Anthropic Agent 最强 + 轻量档刚被 Haiku 5.5 拉到 $0.10 档（与 GPT-6 Luna 同价），MiniMax 性价比最激进。
+**结论**：OpenAI 推理最强（GPT-6 的 `effort` 档位，o 系列已让位），Google 卡位长输出（Argon 的 1M 输出上限业界唯一），Qwen 开源最彻底，Anthropic Agent 最强 + 轻量档 Haiku 5.5 与 GPT-6 Luna 同为 $0.10、顶配 Fable 5.2 降到 $8，MiniMax 性价比最激进。
 
 ## 二、性能基准对比（旗舰模型）
 
-> 数据来源：**Artificial Analysis Intelligence Index**（**2026-10-03 口径**）。该指数是综合智能评分，涵盖推理、编码、数学、指令遵循等多维度标准化评测。
+> 数据来源：**Artificial Analysis Intelligence Index**（**2026-10-03 口径**），综合智能评分，涵盖推理、编码、数学与指令遵循。
 >
-> ⚠️ **采集方式说明**：本次未能直接抓取 [artificialanalysis.ai](https://artificialanalysis.ai/leaderboards/models) 原站，下表数值取自 4 个独立聚合站的转录（[BenchmarkList](https://benchmarklist.com/benchmarks/artificial_analysis_intelligence_index)、[Ctrl+Alt+Debrief](https://ctrlaltdebrief.com/tools/benchmarks/intelligence_index)、[ModelGrep](https://modelgrep.com/best/smartest/prism-ml)、[DataLearner](https://www.datalearner.com/leaderboards)），四源在 1 位小数口径上**完全一致**，可信度较高。
+> ⚠️ **采集方式**：未能直接抓取 [artificialanalysis.ai](https://artificialanalysis.ai/leaderboards/models) 原站，数值取自 4 个独立聚合站的转录（[BenchmarkList](https://benchmarklist.com/benchmarks/artificial_analysis_intelligence_index)、[Ctrl+Alt+Debrief](https://ctrlaltdebrief.com/tools/benchmarks/intelligence_index)、[ModelGrep](https://modelgrep.com/best/smartest/prism-ml)、[DataLearner](https://www.datalearner.com/leaderboards)），1 位小数口径四源**完全一致**。
 >
-> ⚠️ **本表只保留智能分**。上一版表里的「价格/任务」与「速度」两列已删除——不同聚合站对同一型号的 tok/s 报数相差 2 倍以上（如 Claude Opus 5.5 有 103 与 270 两种口径），属于不可靠数据。价格请以**各家官方定价**为准，见本篇第四节。
+> ⚠️ **本表只保留智能分**：上一版的「价格/任务」与「速度」两列已删——聚合站对同一型号的 tok/s 报数相差 2 倍以上（Opus 5.5 有 103 与 270 两种口径）。价格以**各家官方定价**为准，见第四节。
 >
-> ⚠️ **Gemini 4 Argon 的分数有时点差**：AA 口径为 2026-10-03，而 Argon 当日仍处 Fairwind 受控放量阶段（10-14 才全量 GA），该分数反映的是受限环境下的表现。
+> ⚠️ **Argon 分数有时点差**：AA 口径为 2026-10-03，Argon 当日仍处 Fairwind 受控放量阶段（10-14 全量 GA），分数反映受限环境。
 
 | 厂商 | 旗舰模型（2026-10 口径） | AA 智能指数 | 强度分档（max / 最高档） |
 |------|---------|----------|------|
 | **Anthropic** | Claude Opus 5.5 | **57.6** | 全场第一 |
 | **Anthropic** | Claude Sonnet 5.5 | **56.0** | 输入价仅 Opus 的一半 |
-| **Anthropic** | Claude Fable 5.1 | **53.4** | 最贵，$10 / $50 |
+| **Anthropic** | Claude Fable 5.1（AA 快照时为最新代） | **53.4** | 现已让位 Fable 5.2（$8 / $40） |
 | **OpenAI** | GPT-6 Astra | **52.7** | 全场最贵，$10 / $50 |
 | **Google** | Gemini 4 Argon | **52.6** | 10-14 全量 GA，$2 / $10；唯一 1M 输出上限 |
 | **OpenAI** | GPT-6.1 Sol | **51.8** | 近 Astra 性能、$2 / $10 |
@@ -107,7 +117,7 @@ verifiedWith:
 
 | 厂商 | 默认 | 最大 | 长上下文技术 |
 |------|------|------|-------------|
-| Anthropic | 1M（Opus 5.5 / Sonnet 5.5 / Fable 5.1 / Haiku 5.5） | 1M | 位置编码未公开；4.7 及之后换用新分词器（同文本约多 30% token）；Haiku 5.5 首次把轻量档拉到 1M |
+| Anthropic | 1M（Opus 5.5 / Sonnet 5.5 / Fable 5.2 / Haiku 5.5） | 1M | 位置编码未公开；4.7 及之后换用新分词器（同文本约多 30% token）；Haiku 5.5 首次把轻量档拉到 1M；1M 窗口按标准价计费，仅 Haiku 5.5 超 100K prompt 加价 |
 | OpenAI | 1,050,000（GPT-6 Astra） | 最大输入 922K / 最大输出 128K | >272K 输入切长上下文档计价（input ×2、output ×1.5） |
 | Google | 1,048,576（Gemini 4 Argon，输入输出**统一**上限） | 输出默认 64K / **长解码可放到 1M** | 输入与输出共享同一 1,048,576 预算；Argon 是业界首个把**输出**做到 1M 的在售模型（此前全系 64K）；仅隐式缓存，不支持显式缓存 |
 | xAI | 500K（Grok 4.7 / 4.6） | 1M（4.20 三变体） | `reasoning_effort` 四档 + 长会话压缩 |
@@ -122,7 +132,7 @@ verifiedWith:
 
 | 厂商 | Input | Output | 缓存读 | 备注 |
 |------|-------|--------|--------|------|
-| Anthropic | $4（Opus 5.5） | $20 | $0.20 | Fable 5.1 $10/$50；**Haiku 5.5 $0.10/$0.50**（2026-10-07 发布）；Sonnet 5.5 缓存读 10-07 降至 $0.10 |
+| Anthropic | $4（Opus 5.5） | $20 | $0.20 | Fable 5.2 $8/$40（较 Fable 5.1 的 $10/$50 降 20%）；**Haiku 5.5 $0.10/$0.50**（2026-10-07 发布）；Sonnet 5.5 缓存读 10-07 降至 $0.10；缓存读倍率 Fable 5.2 ×0.025、Opus 5.5 / Sonnet 5.5 ×0.05、Haiku 5.5 ×0.10 |
 | OpenAI | $10（GPT-6 Astra） | $50 | $1.00 | 缓存写 $12.50 另计；6.1 Sol $2/$10；Luna $0.10/$0.50 |
 | Google | $2（Gemini 4 Argon，**推广期**） | $10 | $0.10 | **推广期结束回到 $4 / $20**，截止日未公布；3.1 Pro $2/$12；3.8 Flash $0.75/$3.75；3.1 Flash-Lite $0.25/$1.50；Argon 仅隐式缓存，无显式缓存档 |
 | xAI | $2（Grok 4.7） | $6 | $0.50 | ≥200K prompt 时 $4/$12；4.20 线 1M 反而更便宜（$1.25/$2.50） |
@@ -131,13 +141,13 @@ verifiedWith:
 | Zhipu | ¥8（GLM-5.3，人民币） | ¥28 | ¥2 | 5.2 同价；5.3-Flash 仅 ¥0.8/¥2.8 |
 | Qwen | ¥12（Qwen3.8-Max） | ¥36 | ¥1.5 | 原价，不含优惠；新加坡地域 ¥14.988/¥44.965 |
 
-> ⚠️ **币种不统一**：Moonshot（Kimi）、Zhipu（GLM）、Qwen 官方定价均为**人民币**，Anthropic / OpenAI / Google / xAI / MiniMax 为**美元**。跨厂商比价必须先统一币种，不能直接比大小。K3 输出价 ¥100/MTok 约为 GLM-5.3（¥28）的 3.6 倍、Qwen3.8-Max（¥36）的 2.8 倍。
+> ⚠️ **币种不统一**：Moonshot（Kimi）、Zhipu（GLM）、Qwen 官方定价均为**人民币**，Anthropic / OpenAI / Google / xAI / MiniMax 为**美元**。跨厂商比价必须先统一币种。K3 输出价 ¥100/MTok 约为 GLM-5.3（¥28）的 3.6 倍、Qwen3.8-Max（¥36）的 2.8 倍。
 
-**结论**：按美元口径 Haiku 5.5（$0.10 / $0.50）与 GPT-6 Luna 同价并列最低、GPT-6 Astra 最贵（$10 / $50 高于上一代 GPT-5.6 Sol 的 $4 / $20）；**成本敏感选 Haiku 5.5 或 GPT-6 Luna，质量优先选 Claude Opus 5.5 或 GPT-6.1 Sol（$2 / $10）**。
+**结论**：按美元口径 Haiku 5.5（$0.10 / $0.50）与 GPT-6 Luna 同价并列最低；**最贵的一档只剩 GPT-6 Astra 一家**（$10 / $50，高于上一代 GPT-5.6 Sol 的 $4 / $20）——Anthropic 顶配 Fable 5.2 降到 $8 / $40 后不再与之并列；**成本敏感选 Haiku 5.5 或 GPT-6 Luna，质量优先选 Claude Opus 5.5 或 GPT-6.1 Sol（$2 / $10）**。
 
 > ⚠️ **Gemini 4 Argon 现在是「促销价」，别当常态预算**：$2 / $10 是推广期定价，Google 只说会涨回 $4 / $20，**没给截止日**。做成本预估时应按 $4 / $20 起算，否则调价上线那天账单会直接翻倍。同理，Argon 的长解码按 **output** 计费——一次跑满 1M 输出在推广期就是 $10 量级，**长程 agent 场景必须设输出上限**。
 
-> ⚠️ **长 prompt 加价门槛两家不一样**：Anthropic 在 **prompt > 100K** 时 Haiku 5.5 跳到 $0.50 / $2.50（5 倍）；OpenAI 在 **输入 > 272K** 时切长上下文档计价。也就是说同一笔长上下文负载，在 Anthropic 侧更早触发加价——**做长上下文成本预估时不能套用别家的阈值**。
+> ⚠️ **长 prompt 加价门槛两家不一样**：Anthropic 在 **prompt > 100K** 时 Haiku 5.5 跳到 $0.50 / $2.50（5 倍）；OpenAI 在 **输入 > 272K** 时切长上下文档计价。即同一笔长上下文负载在 Anthropic 侧更早触发加价——**不能套用别家的阈值**。
 
 ## 五、部署方式对比
 
@@ -217,7 +227,7 @@ verifiedWith:
 | **高并发子 agent** | Claude Haiku 5.5 | GPT-6 Luna | Haiku 5.5 首个支持 `effort`，官方明确定位 subagent / compaction / 分类场景 |
 | **性价比旗舰** | GLM-5.3 / GLM-5.3-Flash | MiniMax `M3` | 5.3-Flash 输入 ¥0.8/MTok（1M 上下文 + 原生多模态） |
 
-> ⚠️ 表内「极低成本」「性价比旗舰」两行按官方 API 标价，币种不同（Anthropic / OpenAI / Google / xAI / MiniMax / DeepSeek 为美元，Moonshot / Zhipu 为人民币），跨厂商比价前先统一币种。AA 基准分见第二节，为 2026-10-03 第三方转录口径。**Gemini 4 Argon 的 $2 / $10 是推广期价，长期预算按 $4 / $20 起算。**
+> ⚠️ 表内「极低成本」「性价比旗舰」两行按官方 API 标价，币种不同（美元：Anthropic / OpenAI / Google / xAI / MiniMax / DeepSeek；人民币：Moonshot / Zhipu），跨厂商比价前先统一币种。AA 基准分见第二节（2026-10-03 第三方转录口径）。
 
 ## 参考
 
@@ -225,7 +235,7 @@ verifiedWith:
 - [厂商档案索引](/ai-trends/vendors/)（国外）/ [国内厂商](/ai-trends/cn-vendors/) · [Anthropic](/ai-trends/vendors/anthropic/) · [OpenAI](/ai-trends/vendors/openai/) · [xAI](/ai-trends/vendors/grok/) · [Moonshot](/ai-trends/cn-vendors/moonshot/) · [MiniMax](/ai-trends/cn-vendors/minimax/) · [Zhipu](/ai-trends/cn-vendors/zhipu/) · [Qwen](/ai-trends/cn-vendors/qwen/) · [DeepSeek](/ai-trends/cn-vendors/deepseek/)
 - [模型选型决策树](./model-selection-guide) — 按 6 维度选型
 
-> ⚠️ **Google 目前没有独立厂商档案页**：本篇收录了 Google 的模型 / 价格 / 部署 / Agent 数据，但详细档案尚未建立，暂只能引用官方 [Gemini API 模型卡](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon) 与 [Gemini App Release Notes](https://gemini.google/release-notes)。
+> ⚠️ **Google 目前没有独立厂商档案页**：详细档案尚未建立，暂只能引用官方 [Gemini API 模型卡](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon) 与 [Gemini App Release Notes](https://gemini.google/release-notes)。
 
 ## 下一步
 

@@ -4,11 +4,12 @@ description: Anthropic 官方 prompting 指南要点——8 条核心原则 + �
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 订正模型 ID 与长 context / 缓存命中价口径（当前四型号均 1M；缓存读命中价 Sonnet 5.5 / Opus 5.5 为 5%、Fable 5.2 为 2.5%、Haiku 5.5 为 10%）；prompting 参考链接更新到 platform.claude.com 现行地址并核对可达；8 条原则与实战示例沿用 2026-08-07 的记录，示例未在本机重跑'
   claudeCode: 2.1.220
-  model: claude-opus-5
-  promptEngineering: 'https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview'
+  model: claude-opus-5-5
+  promptEngineering: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices'
   promptLibrary: 'https://docs.claude.com/en/prompt-library/library'
   accessedAt: 2026-08-07
 ---
@@ -30,7 +31,7 @@ verifiedWith:
 
 ## 一、Anthropic 官方 8 条核心原则
 
-参考 [Anthropic Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)（访问于 2026-08-07）：
+参考 [Anthropic Docs · Prompting Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)（访问于 2026-11-13）：
 
 ### 原则 1：清晰直接
 
@@ -112,14 +113,16 @@ system = "你是资深代码审查员，有 15 年 Python 经验，重点看边�
 
 ### 原则 7：长 context 善用
 
-Claude 1M context 装得下——**别让信息散落**，集中放：
+Claude 当前四型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）**都是 1M context**，装得下——**别让信息散落**，集中放：
 
 ```text
 # 项目背景（2000 字）+ 代码（5000 字）+ 任务（100 字）
 # 全部放在一个 prompt 里，不要分多次丢
 ```
 
-详见 [长上下文](/claude-capabilities/core/long-context)。
+⚠️ 唯一例外是 **Haiku 5.5 按 prompt 长度分档**：单次请求的 prompt 超过 10 万 token，输入 $0.50 / 输出 $2.50（各跳 5 倍）——长 prompt 别默认用 Haiku。
+
+详见 [长上下文](/claude-capabilities/core/long-context) 与 [模型 ID 与定价](/claude-capabilities/models/model-ids)。
 
 ### 原则 8：写完验证
 
@@ -157,6 +160,8 @@ Claude 1M context 装得下——**别让信息散落**，集中放：
 | **放哪** | API `system` 字段 | API `messages` 数组 |
 | **cache 友好** | ✅ 适合 `cache_control` | ❌ 一般不 cache |
 | **典型内容** | 角色、风格、规则、约束 | 任务描述、输入数据、问题 |
+
+cache 命中后输入价降到基础价的 **5%**（Sonnet 5.5 / Opus 5.5），Fable 5.2 是 **2.5%**，Haiku 5.5 是 **10%**——长 system 必上 cache。详见 [Prompt Caching API](/claude-capabilities/api/prompt-caching)。
 
 **实战分法**：
 
@@ -250,7 +255,8 @@ messages = [{"role": "user", "content": "..."}]
 
 ## 参考
 
-- [Anthropic Docs · Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)（访问于 2026-08-07）
+- [Anthropic Docs · Prompting Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)（访问于 2026-11-13）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
 - [Anthropic Prompt Library](https://docs.claude.com/en/prompt-library/library)（访问于 2026-08-07）
 - [Anthropic Docs · Chain prompts](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/chain-prompts)（访问于 2026-08-07）
 - [推理能力 · 何时让 Claude 想](/claude-capabilities/core/reasoning)

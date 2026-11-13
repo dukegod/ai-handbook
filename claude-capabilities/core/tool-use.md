@@ -4,12 +4,16 @@ description: API 视角的 tool_use 协议；tool block 结构、input_schema、
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-06
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 订正模型 ID、tool_choice 型号限制与 JSON Schema 子集口径：当前四型号为 claude-fable-5-2 / claude-opus-5-5 / claude-sonnet-5-5 / claude-haiku-5-5；any / tool 在 Opus 5.5 / Sonnet 5.5 / Fable 5.2 上一律返回 400（Haiku 5.5 与上一代仍支持）；JSON Schema 支持范围——local $ref / $defs / definitions 在 strict tool use 与结构化输出下均支持，external $ref、allOf 带 $ref、递归 schema 不支持，数值与字符串约束在 strict 路径下不支持，非 strict 路径官方未公布子集限制；CLI 相关断言沿用 2026-08 的记录（当时基于 Claude Code 2.1.220），示例未在本机重跑'
   claudeCode: 2.1.220
-  model: claude-opus-5
+  model: claude-opus-5-5
   toolUse: 'https://platform.claude.com/docs/en/build-with-claude/tool-use'
-  accessedAt: 2026-08-06
+  defineTools: 'https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools'
+  structuredOutputs: 'https://platform.claude.com/docs/en/build-with-claude/structured-outputs'
+  models: 'https://platform.claude.com/docs/en/about-claude/models/overview'
+  accessedAt: 2026-11-13
 ---
 
 # 工具使用
@@ -23,11 +27,11 @@ verifiedWith:
 - tool_use block 结构（`type` / `id` / `name` / `input`）
 - input_schema 怎么写（JSON Schema 子集）
 - 多步 tool call 循环（最常见的 agent 模式）
-- tool_choice 控制（auto / any / tool / none）
+- tool_choice 控制（auto / any / tool / none）与当前型号的限制
 - 流式 tool use（streaming + tool calls）
 - 错误处理（tool_result is_error、retry 策略）
-- 4 模型 tool use 能力对比
-- 5 个常见坑（schema 错、循环失控、错误处理、token 爆炸）
+- 当前 4 型号 tool use 能力对比
+- 5 个常见坑（description 模糊、循环失控、is_error 缺失、strict `$ref` 边界、工具粒度）
 
 ## 一、Tool Use Block 结构
 
@@ -91,14 +95,21 @@ tools = [
 
 **`description` 至关重要**——Claude 决定调哪个工具**全靠 description**。模糊的 description 会让 Claude 永不调用或乱调。
 
-**JSON Schema 支持的字段**（子集）：
-- 类型：`string` / `integer` / `number` / `boolean` / `array` / `object` / `null`
-- 修饰：`enum` / `default` / `minimum` / `maximum` / `minLength` / `maxLength` / `pattern`
-- 数组：`items` / `minItems` / `maxItems`
-- 对象：`properties` / `required` / `additionalProperties`
-- 组合：`anyOf` / `oneOf` / `allOf`
+**JSON Schema 支持的字段**——**先分清两条路径**：
 
-**不支持**：`$ref` / `$defs` / `if/then/else` 等高级 JSON Schema 特性。
+**① 普通 tool use（没写 `strict: true`）**：官方只要求「一个 JSON Schema 对象」，没公布细到关键字的子集限制。`minimum` / `maximum` / `minLength` / `maxLength` / `pattern` 这类约束**官方没说不能用**，但也不保证被服务端强制执行——它更多是给模型看的提示。`$ref` / `$defs` 同理：官方没有在普通路径上宣布禁用，只是也没有「一定生效」的承诺。
+
+**② strict tool use / 结构化输出**（工具加 `strict: true`，或走 `output_config.format`）：官方明确划了一个子集，**strict tool use 与结构化输出共用同一套限制**。官方列出的支持项：
+
+- 类型：`object` / `array` / `string` / `integer` / `number` / `boolean` / `null`
+- 修饰：`enum`（只支持字符串 / 数字 / 布尔 / null）/ `const` / `default`
+- 组合：`anyOf` / `allOf`（**`allOf` 里不能带 `$ref`**）
+- 引用：`$ref` / `$defs` / `definitions`（**只支持本地引用**）
+- 对象：`properties` / `required` / `additionalProperties`（**必须写成 `false`**）
+- 数组：`items` / `minItems`（**只支持 0 和 1**）
+- 字符串 `format`：`date-time` / `time` / `date` / `duration` / `email` / `hostname` / `uri` / `ipv4` / `ipv6` / `uuid`
+
+这条路径下**不支持**：递归 schema、`enum` 里放复杂类型、external `$ref`、数值约束（`minimum` / `maximum` / `multipleOf`）、字符串约束（`minLength` / `maxLength`）、除 `minItems` 0/1 之外的数组约束、`additionalProperties` 不是 `false`。用了会返回 **400**。
 
 ## 三、多步 Tool Call 循环（Agent 核心）
 
@@ -125,7 +136,7 @@ def run_agent(user_query: str) -> str:
 
     for turn in range(MAX_TURNS):
         msg = client.messages.create(
-            model="claude-sonnet-5",
+            model="claude-sonnet-5-5",
             max_tokens=4096,
             tools=TOOLS,
             messages=messages,
@@ -173,17 +184,32 @@ def run_agent(user_query: str) -> str:
 
 `tool_choice` 控制 Claude 调工具的策略：
 
-| 值 | 行为 | 适用 |
+| 值 | 行为 | 当前主力型号 |
 | --- | --- | --- |
-| `auto`（默认） | Claude 自己决定调不调、调哪个 | 一般 agent |
-| `any` | **必须**调一个工具（但 Claude 选哪个） | 强制走工具 |
-| `tool` + `{name: "X"}` | **必须**调指定工具 X | 已知只调一个 |
-| `none` | **禁止**调工具 | 纯对话 |
+| `auto`（默认） | Claude 自己决定调不调、调哪个 | ✅ 支持 |
+| `any` | **必须**调一个工具（但 Claude 选哪个） | ❌ 400 |
+| `tool` + `{name: "X"}` | **必须**调指定工具 X | ❌ 400 |
+| `none` | **禁止**调工具 | ✅ 支持 |
+
+> ⚠️ **型号限制**：`any` / `tool` 在 **Opus 5.5 / Sonnet 5.5 / Fable 5.2** 上一律返回 **400**——官方只给 `auto` / `none` 两个出口。**Haiku 5.5 与上一代型号（如 `claude-opus-5`）仍支持强制调用**。手动开 extended thinking（`thinking: {type: "enabled"}`）时同样禁用强制调用。
+
+**主力型号上的正确写法**——`auto` + prompt 指令；想保证入参符合 schema 就给工具加 `strict: true`：
 
 ```python
-# 强制 Claude 调 search_issues
 msg = client.messages.create(
-    model="claude-sonnet-5",
+    model="claude-sonnet-5-5",
+    max_tokens=2048,
+    tools=TOOLS,
+    tool_choice={"type": "auto"},
+    messages=[{"role": "user", "content": "查最近 5 个 open issue，必须调用 search_issues 工具"}],
+)
+```
+
+**上一代型号仍可强制调用**：
+
+```python
+msg = client.messages.create(
+    model="claude-opus-5",
     max_tokens=2048,
     tools=TOOLS,
     tool_choice={"type": "tool", "name": "search_issues"},   # 强制
@@ -192,15 +218,15 @@ msg = client.messages.create(
 ```
 
 **实战用法**：
-- `auto`：默认
-- `any`：路由层（先调分类器、再调专门 agent）
-- `tool`：UI 强制流程（点"查 JIRA"按钮一定走 search_issues）
+- `auto`：主力型号的默认解法——靠 prompt 指令引导
+- `any` / `tool`：只在支持强制调用的型号上用（Haiku 5.5、上一代）
+- `none`：纯对话轮次，顺手把工具关掉省 token
 
 ## 五、流式 Tool Use
 
 ```python
 with client.messages.stream(
-    model="claude-sonnet-5",
+    model="claude-sonnet-5-5",
     max_tokens=4096,
     tools=TOOLS,
     messages=[...],
@@ -227,14 +253,16 @@ with client.messages.stream(
 
 ## 六、4 模型 Tool Use 能力
 
-| 模型 | tool_use 支持 | max tools | input_schema 严格度 |
+| 模型 | tool_use 支持 | 强制调用（any / tool） | input_schema 严格度 |
 | --- | :---: | :---: | --- |
-| **Opus 5** | ✅ | 100+ | 严格 |
-| **Sonnet 5** | ✅ | 100+ | 严格 |
-| **Fable 5** | ✅ | 100+ | 严格 |
-| **Haiku 4.5** | ✅ | 50 | 较严格（少量边界宽松） |
+| **Opus 5.5** | ✅ | ❌ 400 | 严格 |
+| **Sonnet 5.5** | ✅ | ❌ 400 | 严格 |
+| **Fable 5.2** | ✅ | ❌ 400 | 严格 |
+| **Haiku 5.5** | ✅ | ✅ 支持 | 严格 |
 
-**实战**：4 模型在 tool use 上能力**接近**——但 Opus 5 / Sonnet 5 在**多步 tool 编排**上更稳（不会循环、不会忘 schema）。
+**实战**：4 型号在 tool use 上能力**接近**——差别主要在**多步编排的稳定性**：Opus 5.5 更可能发现缺参并追问，Sonnet 5.5 更倾向自行补一个合理值（官方明确说这点不保证）。
+
+> 官方当前**没有公布**单次请求的工具数量上限——旧版文档里的「max tools」数字已查无出处，这里不再列。工具太多会稀释选择准确率，按下面第 5 个坑拆细更实际。
 
 ## 七、错误处理
 
@@ -271,7 +299,7 @@ tool_results.append({
 ├─────────────────────────────────┤
 │ 原语层：tool_use / tool_result  │  ← 本页
 ├─────────────────────────────────┤
-│ 模型层：Opus 5 / Sonnet 5 ...   │
+│ 模型层：Opus 5.5 / Sonnet 5.5   │
 └─────────────────────────────────┘
 ```
 
@@ -312,21 +340,35 @@ for turn in range(MAX_TURNS):
 
 工具失败时仍传 `is_error=False` → Claude 以为成功了，继续用错的数据。**永远标记错误**。
 
-**4. 工具 schema 用 `$ref`**
+**4. strict 模式下 `$ref` 的三条边界**
 
-Claude API 不支持 JSON Schema 高级特性：
+**本地 `$ref` 是支持的**——`$defs` / `definitions` 都能引，不必把定义展开重写。但有三条硬边界（strict tool use 与结构化输出共用）：
 
 ```python
-# ❌ 不支持
-"properties": {
-    "user": {"$ref": "#/definitions/User"}
-}
+# ❌ external $ref：引用外部文件，不支持
+{"$ref": "https://example.com/user.json"}
 
-# ✅ 展开定义
-"properties": {
-    "user": {"type": "object", "properties": {...}}
+# ❌ 递归 schema：自己引用自己，不支持
+{"$defs": {"node": {"properties": {"next": {"$ref": "#/$defs/node"}}}}}
+
+# ✅ 本地 $ref + $defs：官方示例的结构
+{
+  "type": "object",
+  "properties": {"contact": {"$ref": "#/$defs/contact"}},
+  "required": ["contact"],
+  "additionalProperties": False,
+  "$defs": {
+    "contact": {
+      "type": "object",
+      "properties": {"email": {"type": "string", "format": "email"}},
+      "required": ["email"],
+      "additionalProperties": False,
+    }
+  }
 }
 ```
+
+第三条边界：**`allOf` 里带 `$ref` 不支持**——组合与引用别混用，把引用直接放进 `properties` 或 `$defs` 里。
 
 **5. 一个工具塞太多功能**
 
@@ -342,8 +384,12 @@ Claude API 不支持 JSON Schema 高级特性：
 
 ## 参考
 
-- [Anthropic Docs · Tool use](https://platform.claude.com/docs/en/build-with-claude/tool-use)（访问于 2026-08-06）
+- [Anthropic Docs · Tool use](https://platform.claude.com/docs/en/build-with-claude/tool-use)（访问于 2026-11-13）
+- [Anthropic Docs · Define tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools)（访问于 2026-11-13）
+- [Anthropic Docs · Structured Outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)（访问于 2026-11-13）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
 - [Anthropic Docs · Messages API](https://platform.claude.com/docs/en/api/messages)（访问于 2026-08-06）
+- [Tool Use API · 协议层](/claude-capabilities/api/tool-use)
 - [Claude Code · 工具总览](/claude-code/tools/overview)
 - [Claude Code · 什么是 MCP](/claude-code/mcp/what-is-mcp)
 - [MCP 协议规范](/claude-capabilities/mcp-protocol/protocol-spec)

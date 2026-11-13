@@ -4,10 +4,11 @@ description: 12 个实战模板速查——code review / 数据提取 / 文档�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 复核了模板正文与当前四型号的适配（自适应思考默认开启、分类 / 抽取类的选型与定价）；12 个模板正文沿用 2026-08-07 的记录，未在本机重跑'
   claudeCode: 2.1.220
-  model: claude-opus-5
+  model: claude-opus-5-5
   promptLibrary: 'https://docs.claude.com/en/prompt-library/library'
   accessedAt: 2026-08-07
 ---
@@ -30,6 +31,7 @@ verifiedWith:
 - `{placeholder}` 标记需替换的内容
 - `[可选内容]` 用方括号表示可选
 - `// 注释` 标在 prompt 外（用 `# Claude:` 系统提示区分）
+- 当前四型号默认开启**自适应思考**（Opus 5.5 / Fable 5.2 更是**总是开**）——**别在模板里写「请一步步推理并把思考过程写出来」**，官方建议改用 `effort` 调节思考量；这类推理要求在 Sonnet 5.5 / Opus 5.5 上还可能被拒
 
 复制后**删注释行**——否则 Claude 会把它们当 prompt 解读。
 
@@ -69,6 +71,8 @@ verifiedWith:
 ```
 
 详见 [Few-shot · 模式 2](/claude-capabilities/prompting/few-shot#模式-2-数据提取) + [结构化输出](/claude-capabilities/api/structured-outputs)。
+
+**实战**：分类 / 抽取 / 路由这类高频短任务用 `claude-haiku-5-5` 最省（$0.10 / $0.50 每 MTok），复杂分析再上 `claude-opus-5-5`（$4 / $20）——价格见 [模型 ID 与定价](/claude-capabilities/models/model-ids)。
 
 ## 3. 文档总结
 
@@ -290,6 +294,9 @@ v4: 多次使用后形成"自家模板库"
 
 - [Anthropic Prompt Library](https://docs.claude.com/en/prompt-library/library)（访问于 2026-08-07）
 - [Anthropic Docs · Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)（访问于 2026-08-07）
+- [Anthropic Docs · Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)（访问于 2026-11-13）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
+- [模型 ID 与定价](/claude-capabilities/models/model-ids)（访问于 2026-11-13）
 - [最佳实践](/claude-capabilities/prompting/best-practices)
 - [System Prompt 设计](/claude-capabilities/prompting/system-prompts)
 - [Few-shot 示例](/claude-capabilities/prompting/few-shot)

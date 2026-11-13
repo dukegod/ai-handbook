@@ -163,9 +163,9 @@ result = client.messages.batches.retrieve(batch.id)
 ## 六、何时不该用 Haiku
 
 1. **复杂多步 agent 规划**——主 agent 别用它
-2. **架构决策 / 根因分析**——深度推理不够，走 [Opus 5.5](./opus) 或 [Fable 5.1](./fable)
+2. **架构决策 / 根因分析**——深度推理不够，走 [Opus 5.5](./opus) 或 [Fable 5.2](./fable)
 3. **超长文档摘要**——1M context 够用，但要按第三节确认 prompt 落在哪一档，否则成本可能翻 5 倍
-4. **需要 Fable 5.1 那种长程自主能力**——Haiku 做不了长链专家活
+4. **需要 Fable 5.2 那种长程自主能力**——Haiku 做不了长链专家活
 
 ## 七、常见坑
 
@@ -203,7 +203,7 @@ result = client.messages.batches.retrieve(batch.id)
 
 ## 下一步
 
-- 长链 agent 专家 → [Fable 5.1](./fable)
+- 长链 agent 专家 → [Fable 5.2](./fable)
 - API 视角选型决策 → [模型概览 · 选型决策指南](./overview#五、选型决策指南)
 - Batch API 详解 → [Message Batches API](/claude-capabilities/api/message-batches)
 

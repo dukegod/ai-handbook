@@ -4,18 +4,23 @@ description: Claude 的推理特性与提示技巧；何时该显式让 Claude "
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-06
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 订正 Extended Thinking / effort 口径（官方 thinking / effort / extended-thinking 文档同日复核）：当前 4 型号全部走 adaptive，thinking.enabled / budget_tokens 一律 400，思考深度由 output_config.effort 控；CLI 相关断言沿用 2026-08 的记录（当时基于 Claude Code 2.1.220），示例未在本机重跑'
   claudeCode: 2.1.220
-  model: claude-opus-5
+  model: claude-opus-5-5
   promptEngineering: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/chain-prompts'
   extendedThinking: 'https://platform.claude.com/docs/en/build-with-claude/extended-thinking'
+  thinking: 'https://platform.claude.com/docs/en/build-with-claude/thinking'
+  effort: 'https://platform.claude.com/docs/en/build-with-claude/effort'
   accessedAt: 2026-08-06
 ---
 
 # 推理能力
 
 > **TL;DR**：Claude 默认会做"内部推理"（chain-of-thought），**不需要**显式 prompt 也能给好答案；但**复杂任务**（多步决策、规划、debug）显式让 Claude "think step by step" 能让准确率提升 10-30%。本文讲**何时**该显式触发 + 提示技巧，机制本身见 [Extended Thinking](/claude-capabilities/core/extended-thinking)。
+>
+> **当前 4 型号的 thinking 都是 adaptive**——想让 Claude 多想一点，先升 effort，别急着加 `thinking` 参数。
 
 ⏱ 预计阅读时间：5 分钟
 
@@ -117,31 +122,33 @@ Claude 在生成每个 token 前都会做"内部推理"——这是模型架构�
 
 ## 四、与 Extended Thinking 的关系
 
-**Extended Thinking 是显式 thinking 的"重型版"**——通过 API 参数 `thinking={"type": "enabled", "budget_tokens": N}` 让模型在响应前**强制**做 N token 预算的"思考"。
+**Extended Thinking 是显式 thinking 的"重型版"**——模型在响应前先做一段独立思考。当前 4 型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）**全部走 adaptive**：模型自己决定想多深，你用 `output_config: {"effort": ...}` 控深度。legacy 的 `thinking={"type": "enabled", "budget_tokens": N}` 只对 4.6 之前的上一代型号有效，在当前型号上一律 **400**。
 
 | 维度 | 普通 prompt thinking | Extended Thinking |
 | --- | --- | --- |
-| **触发方式** | prompt 里写 "think step by step" | API 参数 `thinking` |
+| **触发方式** | prompt 里写 "think step by step" | API 参数 `thinking` / `output_config.effort` |
 | **思考可见性** | 写在响应正文里 | 单独 `thinking` block，可关闭返回 |
-| **Token 预算** | 受 max_tokens 限制 | 显式 `budget_tokens` |
-| **模型支持** | 全部 | **仅 Haiku 4.5**（Opus 5 / Sonnet 5 / Fable 5 走 adaptive） |
-| **适用场景** | 中等复杂 | 长链推理、需要思考预算控制 |
+| **Token 预算** | 受 max_tokens 限制 | effort 控深度（上一代是显式 `budget_tokens`） |
+| **模型支持** | 全部 | 当前 4 型号全走 adaptive；`budget_tokens` 只在 4.6 之前有效 |
+| **适用场景** | 中等复杂 | 长链推理、需要精确控制思考深度 |
 
 详见 [Extended Thinking 详解](/claude-capabilities/core/extended-thinking)。
 
 ## 五、与 Effort Level 的关系
 
-**Effort 是请求级的"努力程度"**——控制模型在一次请求上做**多少总工作**（读多少文件、用多少工具、检查前推进多少步骤），不只是"思考多少"。
+**Effort 是请求级的"努力程度"**——控制模型在一次请求上做**多少总工作**（读多少文件、用多少工具、检查前推进多少步骤），不只是"思考多少"。当前 4 型号的 thinking 都是 adaptive，**effort 就是控制思考深度的旋钮**。
 
-5 档 effort level（API 视角暂无直接参数，CLI 走 `/effort`）：
+**API 侧**用 `output_config: {"effort": "..."}`（5 档），**CLI 侧**走 `/effort`：
 
 | Level | 含义 |
 | --- | --- |
-| `low` | 短、有限定、延迟敏感 |
-| `medium` | 成本敏感 |
-| `high`（默认） | 平衡，多数编程任务最优 |
+| `low` | 最短、最省、延迟敏感 |
+| `medium` | 成本敏感（**Opus 5.5 / Haiku 5.5 的默认档**） |
+| `high` | 平衡，多数编程任务最优（**Fable 5.2 / Sonnet 5.5 的默认档**） |
 | `xhigh` | 更深推理，token 更贵 |
 | `max` | 极难任务；有 overthinking 风险 |
+
+> 省略 `effort` 就等于用该型号的默认档——**不同型号默认不同**（Fable 5.2 / Sonnet 5.5 是 `high`，Opus 5.5 / Haiku 5.5 是 `medium`），换型号后别照抄旧参数。
 
 详见 [CLI 视角 · Effort levels](/claude-code/basics/model-selection#四、effort-levels-与-effort)。
 
@@ -157,7 +164,7 @@ Claude 在生成每个 token 前都会做"内部推理"——这是模型架构�
 
 **显式 thinking 输出到用户面前**
 
-如果用 Extended Thinking API，`thinking` block 是**思考痕迹**——把它返回给用户会泄露推理细节。**生产环境应该 filter**：
+当前型号 `display` 默认是 `omitted`——思考摘要**根本不会回传**；一旦你显式开 `display: "summarized"`，就得自己负责过滤：
 
 ```python
 # 显式隐藏 thinking
@@ -175,19 +182,22 @@ for block in response.content:
 
 **混淆"推理"和"知识"**
 
-- **知识不够** → 升 tier（Sonnet → Opus）—— 详见 [模型选型 · 缺知识 vs 没努力](/claude-code/basics/model-selection#五、决策规则-缺知识-vs-没努力)
+- **知识不够** → 升 tier（Sonnet 5.5 → Opus 5.5）—— 详见 [模型选型 · 缺知识 vs 没努力](/claude-code/basics/model-selection#五、决策规则-缺知识-vs-没努力)
 - **努力不够** → 升 effort 或加显式 thinking
 
 加 thinking 解决不了"知识不够"——比如"2024 年欧冠冠军是谁"，加再多的 "think step by step" 也不知道答案。
 
 ## 参考
 
-- [Anthropic Docs · Extended Thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking)（访问于 2026-08-06）
+- [Anthropic Docs · Thinking](https://platform.claude.com/docs/en/build-with-claude/thinking)（访问于 2026-11-13）
+- [Anthropic Docs · Effort](https://platform.claude.com/docs/en/build-with-claude/effort)（访问于 2026-11-13）
+- [Anthropic Docs · Extended Thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking)（访问于 2026-11-13）
 - [Anthropic Docs · Chain prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/chain-prompts)（访问于 2026-08-06）
 - [Anthropic Docs · Prompt engineering overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)（访问于 2026-08-06）
 - [Extended Thinking 详解](/claude-capabilities/core/extended-thinking)
+- [模型 ID 与定价](/claude-capabilities/models/model-ids)
 - [模型选型 · 缺知识 vs 没努力](/claude-code/basics/model-selection#五、决策规则-缺知识-vs-没努力)
-- [Opus 5 详解](/claude-capabilities/models/opus)
+- [Opus 5.5 详解](/claude-capabilities/models/opus)
 
 ## 下一步
 

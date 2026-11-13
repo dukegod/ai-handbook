@@ -4,32 +4,36 @@ description: API 视角的代码生成能力；SWE-bench / HumanEval 实测对�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-06
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 订正模型 ID 与定价口径（当前型号 Sonnet 5.5 / Opus 5.5 / Fable 5.2 / Haiku 5.5，官方 models overview 与 pricing 同日复核）；第一节 benchmark 数字仍是 2026-08-06 对上一代型号的实测，未在本机重跑；CLI 相关断言沿用 2026-08 的记录（当时基于 Claude Code 2.1.220）'
   claudeCode: 2.1.220
-  model: claude-opus-5
+  model: claude-opus-5-5
   sweBench: 'https://www.swebench.com/'
-  anthropicBlog: 'https://www.anthropic.com/news/claude-sonnet-4-5'
+  modelOverview: 'https://platform.claude.com/docs/en/about-claude/models/overview'
+  pricing: 'https://platform.claude.com/docs/en/about-claude/pricing'
   accessedAt: 2026-08-06
 ---
 
 # 代码能力
 
-> **TL;DR**：Claude 5 代（Sonnet 5 / Opus 5 / Fable 5）在 SWE-bench Verified 上达到 **80%+** 准确率——接近资深工程师水平。Sonnet 5 应付 80% 编程任务，Opus 5 处理陌生代码与多文件重构，Fable 5 处理超长链代码 agent 任务。
+> **TL;DR**：当前主力是 **Sonnet 5.5 / Opus 5.5 / Fable 5.2**——Sonnet 5.5 应付 80% 的编程场景，Opus 5.5 处理陌生代码与多文件重构，Fable 5.2 处理超长链代码 agent 任务。**第一节的 benchmark 数字是 2026-08 对上一代型号的实测**，用来理解档位差距，别直接套到当前型号上。
 
 ⏱ 预计阅读时间：5 分钟
 
 ## 你能在这里学到
 
-- 4 模型在 SWE-bench / HumanEval 实测中的差异
+- 上一代 4 模型在 SWE-bench / HumanEval 实测中的差异（看档位差距用）
 - API 视角的工具使用模式（tool_use 实现 Read / Edit / Bash）
-- 4 类代码任务的模型选型（生成 / 审查 / 重构 / 测试）
-- 何时 Sonnet 5 够用、何时升 Opus 5
+- 当前 4 型号的代码任务选型（生成 / 审查 / 重构 / 测试）
+- 何时 Sonnet 5.5 够用、何时升 Opus 5.5
 - 5 个常见代码生成坑（幻觉 API、不存在的库、过时版本等）
 
 ## 一、Benchmark 实测对比
 
 参考 [SWE-bench Verified](https://www.swebench.com/) 公开数据（访问于 2026-08-06）：
+
+> ⚠️ **下表是上一代型号的实测**（Sonnet 5 / Opus 5 / Fable 5 / Haiku 4.5）——本轮只订正了模型 ID 与定价口径，**当前型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）的公开 benchmark 数字未复核**。当前怎么选直接看 [模型概览 · 选型决策指南](/claude-capabilities/models/overview#五、选型决策指南)。
 
 | Benchmark | 测什么 | Sonnet 5 | Opus 5 | Fable 5 | Haiku 4.5 |
 | --- | --- | :---: | :---: | :---: | :---: |
@@ -41,11 +45,12 @@ verifiedWith:
 
 **读法**：
 
-- **Sonnet 5 已经是"接近资深工程师"**——80%+ 多文件 PR 修复对资深工程师是平均线
+- **Sonnet 5 已接近"资深工程师"的档位**——但多文件 PR 修复仍是最难的那一档，Opus 5 / Fable 5 在这里拉开差距
 - **Opus 5 / Fable 5 在多文件、长链任务上显著更强**——但**单函数生成**差距小（95% vs 98% 实际应用区别不大）
-- **Haiku 4.5 在 HumanEval 上 88%**——够日常用，但**别让它做陌生代码库 debug**
+- **Haiku 4.5 在 HumanEval 上 88%**——上一代水平够日常用，但**别让它做陌生代码库 debug**
+- **当前型号怎么排**：日常编程 Sonnet 5.5、复杂重构 Opus 5.5、超长链 agent Fable 5.2（[选型决策指南](/claude-capabilities/models/overview#五、选型决策指南)）
 
-**反直觉**：**HumanEval 95% vs 98% 在生产中区别不大**——单函数生成早就"够用"。真正难的是 SWE-bench 那类**多文件、跨上下文、长链**任务，Opus 5 / Fable 5 优势最大。
+**反直觉**：**HumanEval 92% vs 97% 在生产中区别不大**——单函数生成早就"够用"。真正难的是 SWE-bench 那类**多文件、跨上下文、长链**任务，Opus 5 / Fable 5 优势最大。
 
 ## 二、API 视角的工具使用模式
 
@@ -98,12 +103,14 @@ tools = [
 
 # 一次多步工具调用
 msg = client.messages.create(
-    model="claude-sonnet-5",
+    model="claude-sonnet-5-5",
     max_tokens=8192,
     tools=tools,
     messages=[{"role": "user", "content": "在 src/auth.ts 加一个 JWT 验证函数"}],
 )
 ```
+
+> ⚠️ **当前主力型号不支持强制调工具**：`tool_choice` 的 `any` / `tool` 在 Opus 5.5 / Sonnet 5.5 / Fable 5.2 上一律 **400**，只剩 `auto` / `none` 可用。要保证入参符合 schema，给工具定义加 `strict: true`（见 [Tool Use 协议详解](/claude-capabilities/core/tool-use)）。
 
 **多步 tool call 实战**：
 
@@ -121,7 +128,7 @@ def handle_tool_call(tool_name, tool_input):
 # 主循环
 messages = [{"role": "user", "content": "..."}]
 for _ in range(50):   # 上限 50 步
-    msg = client.messages.create(model="claude-sonnet-5", tools=tools, messages=messages)
+    msg = client.messages.create(model="claude-sonnet-5-5", tools=tools, messages=messages)
     if msg.stop_reason == "end_turn":
         break
     # 处理 tool_use
@@ -144,26 +151,28 @@ for _ in range(50):   # 上限 50 步
 
 | 任务类型 | 首选 | 次选 | 原因 |
 | --- | --- | --- | --- |
-| **单函数生成** | Sonnet 5 | Haiku 4.5（成本敏感） | 简单任务 4 模型差距 < 5% |
-| **单文件修改** | Sonnet 5 | Opus 5 | Sonnet 已够 |
-| **多文件重构** | Opus 5 | Sonnet 5 + 多轮 | Opus 一次到位 |
-| **陌生代码 debug** | Opus 5 | Sonnet 5 | 模式识别 Opus 强 |
-| **大型 PR 审查** | Opus 5 | Sonnet 5 | review 任务 token 多 |
-| **长链代码 agent（30+ 步）** | **Fable 5** | Opus 5 | Fable 步数少成本反而低 |
-| **测试生成** | Sonnet 5 | Haiku 4.5（大量） | 模板化任务 |
-| **代码翻译** | Sonnet 5 | Opus 5（复杂） | 单文件 Sonnet 够 |
+| **单函数生成** | Sonnet 5.5 | Haiku 5.5（成本敏感） | 简单任务各型号差距很小 |
+| **单文件修改** | Sonnet 5.5 | Opus 5.5 | Sonnet 已够 |
+| **多文件重构** | Opus 5.5 | Sonnet 5.5 + 多轮 | Opus 一次到位 |
+| **陌生代码 debug** | Opus 5.5 | Sonnet 5.5 | 模式识别 Opus 强 |
+| **大型 PR 审查** | Opus 5.5 | Sonnet 5.5 | review 任务 token 多 |
+| **长链代码 agent（30+ 步）** | **Fable 5.2** | Opus 5.5 | Fable 步数少成本反而低 |
+| **测试生成** | Sonnet 5.5 | Haiku 5.5（大量） | 模板化任务 |
+| **代码翻译** | Sonnet 5.5 | Opus 5.5（复杂） | 单文件 Sonnet 够 |
 
 ## 四、代码审查 vs 代码生成
 
-**代码生成**：4 模型差距较小（HumanEval 95-97%）——Sonnet 5 性价比最优。
+**代码生成**：各型号差距较小（上一代实测 HumanEval 96-97%）——Sonnet 5.5 性价比最优。
 
-**代码审查**：任务难度**远高于**生成——需要看完整代码、找 bug、给改进建议。Opus 5 / Fable 5 优势明显：
+**代码审查**：任务难度**远高于**生成——需要看完整代码、找 bug、给改进建议。Opus 5.5 / Fable 5.2 优势明显：
 
-| 任务 | Sonnet 5 | Opus 5 |
+| 任务 | Sonnet 5.5 | Opus 5.5 |
 | --- | --- | --- |
 | 看 200 行代码找 bug | ~70% 召回 | ~85% 召回 |
 | 看 5 文件 PR 找问题 | ~50% 召回 | ~80% 召回 |
 | 给改进建议质量 | 良好 | 优秀 |
+
+> 表中召回率是**量级示意**（非官方 benchmark），只说明 Opus 在 review 任务上的档位优势——本轮未对当前型号复核具体数字。
 
 **实战模式**：
 
@@ -171,7 +180,7 @@ for _ in range(50):   # 上限 50 步
 # PR 审查 pipeline
 def review_pr(diff: str) -> dict:
     response = client.messages.create(
-        model="claude-opus-5",          # ← 审查用 Opus
+        model="claude-opus-5-5",          # ← 审查用 Opus
         max_tokens=4096,
         system="你是资深代码审查员。重点找：1. 边界条件 2. 错误处理 3. 性能问题 4. 安全漏洞",
         messages=[{"role": "user", "content": f"审查这个 PR：\n\n{diff}"}],
@@ -181,7 +190,7 @@ def review_pr(diff: str) -> dict:
 
 ## 五、测试生成
 
-**Haiku 4.5 + Batch API 是测试生成的甜区**——模板化任务，便宜优先：
+**Haiku 5.5 + Batch API 是测试生成的甜区**——模板化任务，便宜优先：
 
 ```python
 # 批量为 100 个函数生成测试
@@ -190,7 +199,7 @@ batch = client.messages.batches.create(
         {
             "custom_id": f"test-{i}",
             "params": {
-                "model": "claude-haiku-4-5",
+                "model": "claude-haiku-5-5",
                 "max_tokens": 2048,
                 "messages": [{
                     "role": "user",
@@ -203,13 +212,15 @@ batch = client.messages.batches.create(
 )
 ```
 
-**质量权衡**：
+**成本权衡**：
 
-| 模式 | 成本 | 测试质量 |
+| 模式 | 输入 / 输出（$/MTok） | 适合 |
 | --- | --- | --- |
-| Haiku 4.5 批量 | $0.05 / 100 个 | 覆盖 70% 边界 |
-| Sonnet 5 批量 | $0.15 / 100 个 | 覆盖 85% 边界 |
-| Opus 5 逐个 | $0.50 / 100 个 | 覆盖 95% 边界 |
+| **Haiku 5.5 批量** | $0.05 / $0.25 | 模板化、大批量 |
+| **Sonnet 5.5 批量** | $1 / $5 | 质量优先 |
+| **Opus 5.5 逐个** | $4 / $20 | 疑难用例 |
+
+> **Batch 输入输出一律 5 折**（表里已是折后价）。Haiku 5.5 单次 prompt **> 100k token** 会跳档到 $0.50 / $2.50，再打 5 折——批量任务拉长 prompt 前先量长度。完整价目见 [模型 ID 与定价](/claude-capabilities/models/model-ids)。
 
 ## 六、常见坑
 
@@ -251,22 +262,24 @@ system = [
 ]
 ```
 
-**混用 Sonnet 5 + Opus 5 的代码风格不一致**
+**混用 Sonnet 5.5 + Opus 5.5 的代码风格不一致**
 
-**实战模式**：主任务用 Opus 5 重构 + Sonnet 5 补 boilerplate——但 prompt 强调 "保持与现有代码风格一致"。
+**实战模式**：主任务用 Opus 5.5 重构 + Sonnet 5.5 补 boilerplate——但 prompt 强调 "保持与现有代码风格一致"。
 
 ## 参考
 
 - [SWE-bench](https://www.swebench.com/)（访问于 2026-08-06）
-- [Anthropic Blog · Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)（访问于 2026-08-06）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
+- [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-11-13）
+- [模型 ID 与定价](/claude-capabilities/models/model-ids)
 - [Tool Use 协议详解](/claude-capabilities/core/tool-use)
-- [Opus 5 详解 · 复杂编程场景](/claude-capabilities/models/opus#四、opus-5-vs-sonnet-5-实测选型)
-- [Haiku 4.5 详解 · 批量生成测试](/claude-capabilities/models/haiku#四、批量任务实战)
+- [Opus 5.5 详解 · 复杂编程场景](/claude-capabilities/models/opus#四、opus-5-5-vs-sonnet-5-5-实测选型)
+- [Haiku 5.5 详解 · 批量生成测试](/claude-capabilities/models/haiku#四、批量任务实战)
 - [Subagent 编排](/claude-code/subagents-and-workflows/workflow-orchestration)
 
 ## 下一步
 
-- Tool Use 完整协议 → [工具使用 API 协议](/claude-capabilities/core/tool-use)
+- Tool Use 完整协议 → [工具使用 API 协议](/claude-capabilities/api/tool-use)
 - 长文档代码 review → [长上下文](/claude-capabilities/core/long-context)
 - 视觉理解代码截图 → [Vision 能力](/claude-capabilities/core/vision)
 

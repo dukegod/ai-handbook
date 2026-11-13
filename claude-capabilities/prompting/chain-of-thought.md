@@ -4,10 +4,11 @@ description: 引导逐步推理的 prompt 模式——4 种变体、5 个实战�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 订正当前四型号的 thinking 行为（Opus 5.5 / Fable 5.2 传 thinking 的 disabled / enabled 均返回 400、Sonnet 5.5 接受 between_tools 且限 high 及以下 effort、legacy budget_tokens 已废弃）与 effort 档位口径；4 种 CoT 变体与 5 个实战技巧沿用 2026-08-07 的记录，示例未在本机重跑'
   claudeCode: 2.1.220
-  model: claude-opus-5
+  model: claude-opus-5-5
   cotDocs: 'https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought'
   extendedThinking: 'https://platform.claude.com/docs/en/build-with-claude/extended-thinking'
   accessedAt: 2026-08-07
@@ -180,21 +181,23 @@ messages = [{"role": "user", "content": """
 
 | 维度 | CoT | Extended Thinking |
 | --- | --- | --- |
-| **触发方式** | prompt 写 "step by step" | API 参数 `thinking` |
+| **触发方式** | prompt 写 "step by step" | API 参数 `thinking` / `effort` |
 | **思考可见** | 嵌入 response 文本 | 独立 `thinking` block |
-| **Token 预算** | 受 max_tokens 限制 | 显式 `budget_tokens` |
-| **模型支持** | 全部 | 仅 Haiku 4.5 legacy |
+| **深度控制** | 由 prompt 措辞决定 | 由 `effort` 档位控制 |
+| **模型支持** | 全部型号 | 当前四型号都走 adaptive |
 | **成本** | 计入 response token | 独立计费 |
 
 **反例**：
 
 ```text
-# 在 Opus 5 / Sonnet 5 / Fable 5 上加 Extended Thinking 想"控制思考深度"是错的
-# → 这些模型走 adaptive thinking，CoT 已自动启用
-# → Extended Thinking 仅 Haiku 4.5 有效
+# ❌ 在 Opus 5.5 / Fable 5.2 上显式传 thinking 想"控制思考深度"
+# → disabled 与 enabled 两种写法都返回 400：这两个型号只认"省略 thinking" + effort 档位
+# → Sonnet 5.5 是例外：接受 between_tools（限 high 及以下 effort），用来关掉前置思考
 ```
 
-详见 [Extended Thinking 详解 · 4 模型 2 行为](/claude-capabilities/core/extended-thinking#二、4-模型-2-行为-api-形态对比)。
+**思考深度现在看 `effort`**：当前四型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）默认都带 adaptive thinking，思考深度由 `effort` 档位控制——默认 Fable 5.2 / Sonnet 5.5 是 `high`，Opus 5.5 / Haiku 5.5 是 `medium`。legacy `budget_tokens`（上一代 Haiku 4.5 的写法）自 4.6 世代起已废弃，当前四型号一律不接受。详见 [Anthropic Docs · Effort](https://platform.claude.com/docs/en/build-with-claude/effort)（访问于 2026-11-13）。
+
+**两条路不冲突**：CoT 决定推理**按什么格式**展开，`effort` 决定模型**想多久**——要控制推理格式就写 CoT，要控制思考预算就调 effort。API 侧机制见 [Extended Thinking 详解](/claude-capabilities/core/extended-thinking)。
 
 ## 六、4 个常见坑
 
@@ -239,8 +242,11 @@ messages = [{"role": "user", "content": """
 ## 参考
 
 - [Anthropic Docs · Chain of Thought](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought)（访问于 2026-08-07）
-- [Anthropic Docs · Extended Thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking)（访问于 2026-08-07）
+- [Anthropic Docs · Extended Thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking)（访问于 2026-11-13）
+- [Anthropic Docs · Effort](https://platform.claude.com/docs/en/build-with-claude/effort)（访问于 2026-11-13）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
 - [推理能力 · 5 个模式](/claude-capabilities/core/reasoning#三、5-个让-claude-想清楚再答的-prompt-模式)
+- [模型 ID 与定价](/claude-capabilities/models/model-ids)
 - [Extended Thinking 详解](/claude-capabilities/core/extended-thinking)
 - [最佳实践 · 原则 3](/claude-capabilities/prompting/best-practices#原则-3-让模型想)
 - [System Prompt 设计](/claude-capabilities/prompting/system-prompts)

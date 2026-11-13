@@ -4,12 +4,14 @@ description: 'Claude Code 的计费模型、`/usage` 命令、Prompt Caching TTL
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-07-28
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.215
-  model: claude-opus-4-8
+  scope: '2026-11-13 复核 thinking 配置的逐型号支持矩阵与缓存失效影响；计费模型与 9 条降本策略沿用 2026-07 的记录，示例未在本机重跑'
+  claudeCode: 2.1.319
+  model: claude-opus-5-5
   officialDocs: 'https://code.claude.com/docs/en/costs'
-  accessedAt: 2026-07-28
+  thinkingDocs: 'https://platform.claude.com/docs/en/build-with-claude/thinking'
+  accessedAt: 2026-11-13
 ---
 
 # 成本与 Token 管理
@@ -132,11 +134,17 @@ Claude Code 每 turn 自动打 cache breakpoint——同样的上下文（system
 
 **Thinking token 也是 output token**——默认启用时每次请求可能消耗**数万** token。降低方式：
 
-- `/effort` 或 `/model` 里的 effort level 调低
-- `/config` 里禁用 thinking（Fable 5 除外，它总是启用）
-- 环境变量 `MAX_THINKING_TOKENS=8000`（对 fixed budget 模型）
+- `/effort` 或 `/model` 里的 effort level 调低（**任何型号都有效，优先用这个**）
+- `thinking: {"type": "disabled"}` 关掉——**能不能关取决于型号**：
+  - **Fable 5.2 / Opus 5.5**：直接返回 400，**关不掉**
+  - **Sonnet 5.5**：也返回 400；它的最低档是 `thinking: {"type": "between_tools"}`（只关前置思考），且仅 `high` 及以下 effort 接受
+  - **Haiku 5.5**：`high` 及以下 effort 可用 `disabled`；`xhigh` / `max` 会 400
+  - **Opus 5**（上一代）：`high` 及以下 effort 可用 `disabled`
+- 环境变量 `MAX_THINKING_TOKENS=8000`——**只对 legacy fixed-budget extended thinking 有效**。Opus 5.5 / Sonnet 5.5 / Haiku 5.5 / Fable 5.2 这些 adaptive thinking 型号一律不接受 `budget_tokens`
 
-简单任务不需要深度推理，可以关。
+简单任务不需要深度推理，**先降 effort**；能不能彻底关得看型号。查某型号支持什么，读 Models API 的 `capabilities.thinking.types.disabled.supported` 与 `between_tools.supported`。
+
+> ⚠️ **切换 thinking 配置会让缓存断掉**：在 `adaptive` / `enabled` / `disabled` 之间切换、或改 `budget_tokens`，都会让 cache breakpoint 失效——message 级必 miss，tool 与 system prompt 级看情况。也就是说"调 thinking 省 token"很可能反而**因为缓存重建而更贵**，改完记得重算。
 
 ### 9. 派 Subagent 处理 verbose 输出
 

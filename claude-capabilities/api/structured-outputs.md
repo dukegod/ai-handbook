@@ -1,6 +1,6 @@
 ---
 title: 结构化输出
-description: 强制 JSON / JSON Schema 输出的 3 种方式；tool_use 实现 vs response_format vs Prefill
+description: '强制 JSON / JSON Schema 输出的 3 种方式；tool_use 实现 vs response_format vs Prefill（Prefill 在当前四型号上已返回 400）'
 audience: intermediate
 difficulty: 🟡
 status: published
@@ -16,7 +16,7 @@ verifiedWith:
 
 # 结构化输出
 
-> **TL;DR**：强制 Claude 输出**结构化数据**（JSON / 字段化）有 3 种方式：**tool_use 实现**（最稳，推荐）/ **Prefill**（最简，prompt 层）/ 手动 prompt 引导（最不可靠）。生产**一律用 tool_use**。
+> **TL;DR**：强制 Claude 输出**结构化数据**（JSON / 字段化）有 3 种方式：**tool_use 实现**（最稳，推荐）/ **Prefill**（最简，prompt 层）/ 手动 prompt 引导（最不可靠）。生产**一律用 tool_use**——⚠️ Prefill 自 Claude 4.6 起在当前四型号上已返回 400，不再是可用选项。
 
 ⏱ 预计阅读时间：4 分钟
 
@@ -25,7 +25,7 @@ verifiedWith:
 | 方式 | 可靠性 | 复杂度 | 适用 |
 | --- | :---: | :---: | --- |
 | **tool_use + JSON Schema** | ⭐⭐⭐⭐⭐ | 中 | 生产 / API 集成 |
-| **Prefill `{`** | ⭐⭐⭐⭐ | 低 | 简单 prompt 拼接 |
+| **Prefill `{`** | ⭐⭐⭐⭐ | 低 | 简单 prompt 拼接 —— ⚠️ **当前四型号上已失效，见第三节** |
 | **手动 prompt "请输出 JSON"** | ⭐⭐ | 低 | 临时 demo |
 
 ## 二、tool_use 实现（推荐）
@@ -74,9 +74,12 @@ for block in msg.content:
 
 示例用 `claude-sonnet-5-5`——4.6 世代起 dateless Model ID 本身就是**固定快照**，写进代码即钉死这个版本，不会随时间漂移。完整 ID 表见 [模型 ID 与定价](/claude-capabilities/models/model-ids)。
 
-## 三、Prefill `{`
+## 三、Prefill `{`（当前四型号上已失效）
+
+⚠️ **Prefill 在 Claude 4.6 及之后的模型上返回 400**——也就是当前四型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）**全都不能用**。官方口径：预填最后一条 assistant 回合会被拒；`claude-sonnet-4-5`、`claude-haiku-4-5` 及更早的型号才接受。
 
 ```python
+# ❌ 当前四型号：直接 400
 msg = client.messages.create(
     model="claude-sonnet-5-5",
     max_tokens=512,
@@ -85,10 +88,9 @@ msg = client.messages.create(
         {"role": "assistant", "content": "{"},   # Prefill
     ],
 )
-# Claude 从 { 开始输出 JSON
 ```
 
-详见 [Prefill 与 XML 标签 · 场景 1](/claude-capabilities/prompting/prefill-and-xml#场景-1-强制-json-输出)。
+**要强结构化输出，用第一节的 tool_use 或 structured outputs**（`output_config.format`）——那才是当前型号支持的路径。历史写法与迁移口径见 [Prefill 与 XML 标签](/claude-capabilities/prompting/prefill-and-xml)。
 
 ## 四、手动 prompt 引导（不推荐）
 

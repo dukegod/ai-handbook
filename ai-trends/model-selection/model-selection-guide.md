@@ -4,12 +4,13 @@ description: 按场景 / 中文要求 / 长文档 / 编码 / 推理 / 预算 6 �
 audience: beginner
 difficulty: 🟢
 status: published
-lastUpdated: 2026-10-08
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 只复核 Anthropic 一栏（Fable 5.2 换代与降价、当前型号与 context、跨厂商价格排位）；其余厂商数据沿用上次核对结果，未重新抓取。示例未在本机重跑'
   sources:
     - name: 8 厂商横向对比
       url: /ai-trends/model-selection/model-comparison
-      accessedAt: 2026-10-08
+      accessedAt: 2026-11-13
 ---
 
 # 选型决策树
@@ -36,7 +37,7 @@ flowchart TD
     J -->|不敏感| L[Claude Sonnet 5.5]
 ```
 
-> ⚠️ **2026-10 换代提示**：**Claude Haiku 5.5 已于 2026-10-07 发布**（$0.10 / $0.50，1M 上下文，首个带 `effort` 的 Haiku），轻量档与 GPT-6 Luna 同价；OpenAI 主线仍是 GPT-6（推理靠 `effort` 档位，o 系列已让位）；**Grok 5 至今未发布**，xAI 旗舰仍是 Grok 4.7；**Kimi K2.5 / K2 全系已下线**（2026-08 起调用返回 404）；MiniMax 主力是 `M3`。详细换代与下线清单见 [8 厂商横向对比](./model-comparison)。
+> ⚠️ **2026-10 / 11 换代提示**：**Claude Fable 5.2 于 2026-11-09 发布并降价 20%**（$10/$50 → $8/$40，缓存读 $0.25 → $0.20），Anthropic 顶配不再是 $10 那一档；**Claude Haiku 5.5 已于 2026-10-07 发布**（$0.10 / $0.50，1M 上下文，首个带 `effort` 的 Haiku），轻量档与 GPT-6 Luna 同价；OpenAI 主线仍是 GPT-6（推理靠 `effort` 档位，o 系列已让位）；**Grok 5 截至 2026-10 未发布**，xAI 旗舰仍是 Grok 4.7；**Kimi K2.5 / K2 全系已下线**（2026-08 起调用返回 404）；MiniMax 主力是 `M3`。详细换代与下线清单见 [8 厂商横向对比](./model-comparison)。
 
 ### 维度 1：场景
 
@@ -62,8 +63,8 @@ flowchart TD
 | 长度 | 首选 | 理由 |
 |------|------|------|
 | < 200K | 任意旗舰模型 | 都够用 |
-| 200K - 1M | Claude Fable 5.1 / Kimi K3 / Qwen3.8-Max | 1M 上下文 |
-| > 1M | 暂无（主流旗舰封顶约 1M） | K3 / Fable 5.1 / Qwen3.8-Max 均约 1M，GPT-6 Astra 为 1,050,000 |
+| 200K - 1M | Claude Fable 5.2 / Kimi K3 / Qwen3.8-Max | 1M 上下文 |
+| > 1M | 暂无（主流旗舰封顶约 1M） | K3 / Fable 5.2 / Qwen3.8-Max 均约 1M，GPT-6 Astra 为 1,050,000 |
 
 ### 维度 4：编码能力
 
@@ -81,7 +82,7 @@ flowchart TD
 | 低 | MiniMax `M3` / GLM-4.7-Flash / Qwen 开源自部署 | `M3` $0.30/MTok input；GLM-4.7-Flash 免费 |
 | 中 | Claude Sonnet 5.5 / GPT-6.1 Sol / Grok 4.7 | $2/MTok input |
 | 高 | Claude Opus 5.5 | $4/MTok input |
-| 顶 | Claude Fable 5.1 / GPT-6 Astra | $10/MTok input，全系最贵 |
+| 顶 | GPT-6 Astra / Claude Fable 5.2 | $10/MTok 与 $8/MTok input；Fable 5.2 是 Opus 5.5 的 2 倍价（原 2.5 倍），全厂商最贵仍是 GPT-6 Astra |
 
 > ⚠️ **币种**：Moonshot（Kimi）、Zhipu（GLM）、Qwen 官方定价为**人民币**，其余为美元，跨厂商比价先统一币种。完整价格见 [8 厂商横向对比](./model-comparison) 第四节。
 

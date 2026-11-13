@@ -188,6 +188,8 @@ v0.2.1 新增交付物全部就位：示例仓库（`examples/check-page` + `exa
 - [x] [Fable 5](/claude-capabilities/models/fable) · 854 汉字 · **published 2026-08-06**
 - [x] [选型（API 视角）](/claude-capabilities/models/choosing-model) · 863 汉字 · **published 2026-08-06**
 
+> 以上条目是 **v0.3.1 当时的发布记录**（型号名与字数均为当时口径），链接指向的页面此后随型号换代更新过——Haiku 5.5、Fable 5.2、Opus 5.5、Sonnet 5.5 都是同一 URL。读历史记录看这里，看当前规格进 [模型 ID 与定价](/claude-capabilities/models/model-ids)。
+
 **核心能力 6**（新主题为主，少量与 v0.1/v0.2 已 published 文档通过链接分工）：
 
 - [x] [推理能力](/claude-capabilities/core/reasoning) · 1090 汉字 · **published 2026-08-06**

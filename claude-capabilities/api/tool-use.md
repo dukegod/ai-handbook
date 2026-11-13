@@ -6,11 +6,12 @@ difficulty: 🟡
 status: published
 lastUpdated: 2026-11-13
 verifiedWith:
-  scope: '2026-11-13 复核了模型 ID、tool_choice 四档语义、tool_use / tool_result 字段与 stop_reason 取值；强制调用的型号限制取自官方 Define tools 页；本页代码示例未在本机重跑'
+  scope: '2026-11-13 复核了模型 ID、tool_choice 四档语义、tool_use / tool_result 字段与 stop_reason 取值；强制调用的型号限制取自官方 Define tools 页；本轮订正 JSON Schema 支持范围——local $ref / $defs / definitions 在 strict tool use 与结构化输出下均支持，external $ref、allOf 带 $ref、递归 schema 不支持；本页代码示例未在本机重跑'
   claudeCode: 2.1.319
   model: claude-opus-5-5
   toolUseApi: 'https://platform.claude.com/docs/en/api/messages#tool-use'
   defineTools: 'https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools'
+  structuredOutputs: 'https://platform.claude.com/docs/en/build-with-claude/structured-outputs'
   accessedAt: 2026-11-13
 ---
 
@@ -178,7 +179,9 @@ print(result)
 | `{"type": "tool", "name": "X"}` | 必须调 X |
 | `none` | 禁止调 |
 
-> ⚠️ **型号限制**：当前主力型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5）**不支持强制调用**——`any` 和 `tool` 直接返回 **400**。只有 `auto` / `none` 可用；手动开 extended thinking（`thinking: {type: "enabled"}`）时同样禁用强制调用。
+> ⚠️ **型号限制**：`any` 和 `tool` 返回 **400** 的只有 **Fable 5.2 / Mythos 5.2 / Opus 5.5 / Sonnet 5.5 / Fable 5.1 / Mythos 5.1** 这 6 个型号（[官方 Define tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools)）。**Haiku 5.5 与上一代 Opus 5 仍然支持强制调用**——官方强制调用的示例用的正是 `claude-opus-5`。受限型号上只有 `auto` / `none` 可用；改用 `auto` + prompt 指令，或上 strict tool use 保证入参合法。
+>
+> 另外两点：**手动开 extended thinking（`thinking: {type: "enabled"}`）时强制调用不可用**（但 adaptive thinking 本身不挡强制调用——只是被强制调用时响应直接以 `tool_use` 开头、**没有 thinking 块**）；改 `tool_choice` 会让**已缓存的 message block 失效**（tool 定义与 system prompt 仍命中缓存）。
 
 ```python
 # 强制调 search_issues：需用支持强制调用的型号（如 claude-opus-5）
@@ -198,7 +201,7 @@ msg = client.messages.create(
 )
 ```
 
-想在主力型号上**保证**入参合法，给工具定义加 `strict: true`（同时写 `additionalProperties: false`）——见 [Strict tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use)（访问于 2026-11-13）。
+想在主力型号上**保证**入参合法，给工具定义加 `strict: true`（同时写 `additionalProperties: false`）——见 [Strict tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use)（访问于 2026-11-13）。strict 与结构化输出共用同一套 JSON Schema 限制（含 `$ref` 的三条边界），见下面第 4 个坑。
 
 ## 五、4 个常见坑
 
@@ -214,14 +217,38 @@ Claude 决定调哪个工具**全靠 description**。
 
 工具失败时仍传 `is_error=False` → Claude 以为成功。
 
-**4. JSON Schema 用 `$ref`**
+**4. strict 模式下 `$ref` 的三条边界**
 
-不支持——`input_schema` 用 JSON Schema 子集（详见 [core/tool-use · 4 常见坑](/claude-capabilities/core/tool-use#九、常见坑)）。
+**本地 `$ref` 是支持的**（`$defs` / `definitions` 都能引，不必展开重写定义）。但有三条硬边界：**external `$ref` 不支持**、**递归 schema 不支持**、**`allOf` 里带 `$ref` 不支持**。
+
+```json
+// ❌ external $ref：引用外部文件，不支持
+{"$ref": "https://example.com/user.json"}
+
+// ✅ 本地 $ref + $defs：官方示例的结构
+{
+  "type": "object",
+  "properties": {"contact": {"$ref": "#/$defs/contact"}},
+  "required": ["contact"],
+  "additionalProperties": false,
+  "$defs": {
+    "contact": {
+      "type": "object",
+      "properties": {"email": {"type": "string", "format": "email"}},
+      "required": ["email"],
+      "additionalProperties": false
+    }
+  }
+}
+```
+
+strict 与结构化输出共用的完整支持 / 不支持清单见 [core/tool-use · 9 常见坑](/claude-capabilities/core/tool-use#九、常见坑)。
 
 ## 参考
 
 - [Anthropic Docs · Messages API · Tool use](https://platform.claude.com/docs/en/api/messages#tool-use)（访问于 2026-11-13）
 - [Anthropic Docs · Define tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools)（访问于 2026-11-13）
+- [Anthropic Docs · Structured Outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)（访问于 2026-11-13）
 - [Tool Use 协议 · 多步循环模板](/claude-capabilities/core/tool-use#三、多步-tool-call-循环-agent-核心)
 - [Messages API](/claude-capabilities/api/messages)
 

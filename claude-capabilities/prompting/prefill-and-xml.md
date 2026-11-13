@@ -4,10 +4,11 @@ description: API 视角的两大结构化技巧——XML 标签（5 个实战用
 audience: advanced
 difficulty: 🔴
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
+  scope: '2026-11-13 订正了 Prefill 的型号支持范围（Claude 4.6 世代起最后一条 assistant 预填返回 400）与示例中的模型 ID；XML 用法、4 个限制与 5 个实战场景沿用 2026-08-07 的记录，示例未在本机重跑'
   claudeCode: 2.1.220
-  model: claude-opus-5
+  model: claude-opus-5-5
   xmlTagsDocs: 'https://docs.claude.com/en/docs/build-with-claude/use-xml-tags'
   prefillDocs: 'https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response'
   accessedAt: 2026-08-07
@@ -16,6 +17,10 @@ verifiedWith:
 # Prefill 与 XML 标签
 
 > **TL;DR**：**XML 标签**结构化长 prompt（5 个实战用法），**Prefill** 预填 response 开头强制输出格式（4 个限制）。两者都是"prompt 层结构化"——比纯文本更可控，但都比 Few-shot 抽象。
+>
+> ⚠️ **Prefill 在 Claude 4.6 世代起已不可用**：最后一条 assistant 消息带预填内容（prefill），在 **Claude 4.6 及之后的型号**——Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5——一律返回 **400**：`This model does not support assistant message prefill. The conversation must end with a user message.` 仍接受 Prefill 的只剩 **Sonnet 4.5 / Haiku 4.5 及更早**的型号。
+>
+> 官方给的替代路径：强制 JSON / Schema 用 [结构化输出](/claude-capabilities/api/structured-outputs)（tool_use + JSON Schema）；跳过客套在 system 里写「不要开场白，直接给结论」；续写中断的内容把上文搬进 user 消息。**对话中间的 assistant 消息不受影响**——被拒的只有最后一条预填。
 
 ⏱ 预计阅读时间：5 分钟
 
@@ -141,12 +146,25 @@ prompt = template.replace("{{role}}", "Python 工程师")\
 **预填 assistant 消息的开头**——强制 Claude 从指定位置继续输出。
 
 ```python
+# ❌ 当前四型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）：Prefill 已移除，返回 400
+#    "This model does not support assistant message prefill.
+#     The conversation must end with a user message."
 msg = client.messages.create(
-    model="claude-sonnet-5",
+    model="claude-sonnet-5-5",
     max_tokens=1024,
     messages=[
         {"role": "user", "content": "分析这段代码：..."},
         {"role": "assistant", "content": "{"},   # ← Prefill 预填
+    ],
+)
+
+# ✅ 仍支持 Prefill 的是 4.5 世代及更早（如 claude-haiku-4-5-20251001）
+msg = client.messages.create(
+    model="claude-haiku-4-5-20251001",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "分析这段代码：..."},
+        {"role": "assistant", "content": "{"},
     ],
 )
 # Claude 会在 '{' 后继续输出 JSON
@@ -195,11 +213,14 @@ system = "请用 JSON 输出"
 
 ### 限制 4：仅特定 API 支持
 
-- ✅ Messages API 支持 Prefill
-- ✅ 多轮对话中所有 assistant 消息都可 Prefill
+- ✅ Messages API 支持 Prefill（4.5 世代及更早的型号）
+- ✅ 对话中间的 assistant 消息不受限——被拒的只有最后一条预填
+- ❌ Claude 4.6 世代及之后（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）一律 400
 - ❌ 部分 SDK 默认不暴露 Prefill 字段
 
 ## 五、5 个实战场景
+
+**先看型号边界**：下面 5 个场景的 Prefill 写法只对 **4.5 世代及更早**的型号有效。当前四型号要做同样的事——强制 JSON 用 [结构化输出](/claude-capabilities/api/structured-outputs)（tool_use + JSON Schema），强制 XML 结构用标签 + system 指令，强制章节顺序直接在 prompt 里写明顺序。
 
 ### 场景 1：强制 JSON 输出
 
@@ -280,14 +301,14 @@ messages = [
         </task>
         """,
     },
-    {"role": "assistant", "content": "{"},   # Prefill
+    {"role": "assistant", "content": "{"},   # Prefill（仅 4.5 世代及更早型号）
 ]
 ```
 
 **实战效果**：
 - XML 让 prompt 结构化（Claude 注意力精准）
 - Few-shot 给模式（消除歧义）
-- Prefill 强制 JSON 输出（无需提示词引导）
+- Prefill 强制 JSON 输出（无需提示词引导）——⚠️ 仅 4.5 世代及更早型号；当前型号只留前两条，JSON 交给结构化输出
 
 ## 七、4 个常见坑
 
@@ -334,6 +355,10 @@ messages = [
 
 - [Anthropic Docs · Use XML tags](https://docs.claude.com/en/docs/build-with-claude/use-xml-tags)（访问于 2026-08-07）
 - [Anthropic Docs · Prefill Claude's response](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response)（访问于 2026-08-07）
+- [Anthropic Docs · Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)（访问于 2026-11-13）
+- [Anthropic Docs · Claude Sonnet 5.5 migration guide](https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide)（访问于 2026-11-13）
+- [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
+- [模型 ID 与定价](/claude-capabilities/models/model-ids)（访问于 2026-11-13）
 - [最佳实践 · 原则 4](/claude-capabilities/prompting/best-practices#原则-4-用-xml-标签结构化)
 - [System Prompt 设计](/claude-capabilities/prompting/system-prompts)
 - [Few-shot 示例](/claude-capabilities/prompting/few-shot)

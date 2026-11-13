@@ -229,7 +229,7 @@ system = [{"type": "text", "text": "很短的设定", "cache_control": {"type": 
 
 - [Anthropic Docs · Prompt Caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)（访问于 2026-11-13）
 - [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-11-13）
-- [Sonnet 5 · Prompt Caching 5 错误](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)
+- [Sonnet 5.5 · Prompt Caching 命中率优化](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)
 - [System Prompt 设计](/claude-capabilities/prompting/system-prompts)
 - [Messages API](/claude-capabilities/api/messages)
 - [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
@@ -242,6 +242,6 @@ system = [{"type": "text", "text": "很短的设定", "cache_control": {"type": 
 
 ## 如果你想
 
-- 命中率优化 → [Sonnet 5 · 5 错误](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)
+- 命中率优化 → [Sonnet 5.5 · Prompt Caching 命中率优化](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)
 - 长 context 实战 → [长上下文](/claude-capabilities/core/long-context)
 - 切到 SDK → [Python SDK](/claude-capabilities/sdk/python-sdk)

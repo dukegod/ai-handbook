@@ -4,13 +4,14 @@ description: API 视角的 system prompt 实战——5 个设计模式、5 类�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-opus-5
+  scope: '2026-11-13 复核模型 ID 与缓存命中价倍率；5 个设计模式与模板部分沿用 2026-08-07 的记录，示例未在本机重跑'
+  claudeCode: 2.1.319
+  model: claude-opus-5-5
   systemPromptDocs: 'https://docs.claude.com/en/docs/build-with-claude/system-prompts'
   promptEngineering: 'https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview'
-  accessedAt: 2026-08-07
+  accessedAt: 2026-11-13
 ---
 
 # System Prompt 设计
@@ -34,7 +35,7 @@ verifiedWith:
 
 ```python
 msg = client.messages.create(
-    model="claude-sonnet-5",
+    model="claude-sonnet-5-5",
     system="你是资深 Python 工程师。代码风格遵循 PEP 8。",
     max_tokens=2048,
     messages=[{"role": "user", "content": "写个快速排序"}],
@@ -46,7 +47,7 @@ msg = client.messages.create(
 1. **跨任务不变**——system 改频率低（一次设好，跨多次请求复用）
 2. **适合 cache**——`cache_control` 默认对 system 字段前 4 块生效
 
-详见 [Sonnet 5 · Prompt Caching 5 错误](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)。
+详见 [Sonnet 5.5 · Prompt Caching 命中率优化](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)。
 
 ## 二、5 个设计模式
 
@@ -266,7 +267,7 @@ system = [
 ]
 ```
 
-cache 命中后**输入价格是基础价 10%**——长 system 必上 cache。详见 [Prompt Caching API](/claude-capabilities/api/prompt-caching)。
+cache 命中后输入价格降到基础价的 **5%**（Sonnet 5.5 / Opus 5.5；Fable 5.2 是 2.5%，Haiku 5.5 与上一代型号是 10%）——长 system 必上 cache。详见 [Prompt Caching API](/claude-capabilities/api/prompt-caching)。
 
 **4. 多个 system 块顺序乱**
 
@@ -292,7 +293,7 @@ system_template = [角色块, 规则块, 风格块, 约束块, 上下文块]
 - [Anthropic Docs · System prompts](https://docs.claude.com/en/docs/build-with-claude/system-prompts)（访问于 2026-08-07）
 - [Anthropic Docs · Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)（访问于 2026-08-07）
 - [最佳实践 · System Prompt vs User Prompt](/claude-capabilities/prompting/best-practices#三、system-prompt-vs-user-prompt)
-- [Sonnet 5 · Prompt Caching 5 错误](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)
+- [Sonnet 5.5 · Prompt Caching 命中率优化](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)
 - [Prompt Caching API](/claude-capabilities/api/prompt-caching)
 
 ## 下一步

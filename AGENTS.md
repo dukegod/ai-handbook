@@ -110,7 +110,7 @@ ai-trends/          产品动向
     └── <ISO周次>/         index.md = 榜单全表 + 本周判断；<repo>.md = 重点仓库深读
 claude-code/        Claude Code CLI 精通（9 个子章 + reference 速查手册）
 claude-capabilities/ Claude 能力全景（8 个子章，含模型 ID 与定价速查）
-├── models/            模型家族（model-ids 速查 / overview 选型 / fable / haiku；opus.md 与 sonnet.md 仍是上一代归档页）
+├── models/            模型家族（model-ids 速查 / overview 选型 / fable / haiku / opus / sonnet——后两页 2026-11-13 已改写为 Opus 5.5 / Sonnet 5.5 当前页，上一代内容保留在各页文末档案节）
 ai-harness/         AI 研发体系（保留原有 URL）
 ├── index.md                 # 四条主线总览与关系图
 ├── patterns/                # 01 AI coding：编码任务、重构、测试、文档
