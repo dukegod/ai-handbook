@@ -57,7 +57,7 @@ verifiedWith:
 → **Cursor**。它在 IDE 内做了大量可视化交互（inline diff、`@` 选区共享、Composer 面板）。Claude Code 的 IDE 插件也做，但主要目的是**把 CLI 能力接进 IDE**，不是深度 IDE-native 体验。
 
 ### 场景 C：CLI + Git + 多步 Agent 任务
-→ **Claude Code**。这是它的主战场：[Agent Loop](./mental-model#二agent-loopgather--action--verify) 三阶段、[CLAUDE.md](/claude-code/basics/claude-md) 长期记忆、Skills / MCP / Subagents 扩展生态。Codex CLI 走类似 CLI 路线但仅 OpenAI 主线，扩展点少。
+→ **Claude Code**。这是它的主战场：[Agent Loop](./mental-model#二、agent-loop-gather-→-action-→-verify) 三阶段、[CLAUDE.md](/claude-code/basics/claude-md) 长期记忆、Skills / MCP / Subagents 扩展生态。Codex CLI 走类似 CLI 路线但仅 OpenAI 主线，扩展点少。
 
 ### 例：跨多个文件的重构
 
@@ -99,7 +99,7 @@ Copilot / Cursor 需要你**手动挑要改的文件、逐处审阅**；Claude C
 - **「Claude Code 会取代 IDE」** —— 不会。IDE 插件（VS Code / JetBrains）就是为了不逼你离开 IDE
 - **「Claude Code 只在终端」** —— 已经有 5 个 Surface：Terminal / IDE / Desktop / Web / Mobile，同一份 CLAUDE.md 与 settings 跨 Surface 生效
 - **「Claude Code 只能用 Claude 模型」** —— 官方是的；社区有 [两种方案](/claude-code/ecosystem/third-party-models) 接入 GLM / MiniMax / DeepSeek / Kimi 等
-- **「Agent 就是无脑跑」** —— 有 4 档权限模式与 Checkpoints 兜底，见 [心智模型 · 两个安全网](./mental-model#六两个安全网)
+- **「Agent 就是无脑跑」** —— 有 4 档权限模式与 Checkpoints 兜底，见 [心智模型 · 两个安全网](./mental-model#六、两个安全网)
 
 ## 参考
 

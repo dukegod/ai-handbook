@@ -148,5 +148,5 @@ thread 里有 30 条讨论
 
 ## 如果你想
 
-- 数据安全 → [安全 · 数据外泄](/claude-capabilities/agentic/safety#风险-3数据外泄)
+- 数据安全 → [安全 · 数据外泄](/claude-capabilities/agentic/safety#风险-3-数据外泄)
 - 切到 Claude Code → [Claude Code SDK](/claude-capabilities/sdk/claude-code-sdk)

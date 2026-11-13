@@ -347,7 +347,7 @@ Claude API 不支持 JSON Schema 高级特性：
 - [Claude Code · 工具总览](/claude-code/tools/overview)
 - [Claude Code · 什么是 MCP](/claude-code/mcp/what-is-mcp)
 - [MCP 协议规范](/claude-capabilities/mcp-protocol/protocol-spec)
-- [代码能力 · 工具使用模式](/claude-capabilities/core/coding#二api-视角的工具使用模式)
+- [代码能力 · 工具使用模式](/claude-capabilities/core/coding#二、api-视角的工具使用模式)
 
 ## 下一步
 

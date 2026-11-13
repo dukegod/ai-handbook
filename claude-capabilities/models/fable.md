@@ -231,7 +231,7 @@ Fable 全系都要求 **30 天数据留存**，在 ZDR 环境下不可用（除�
 
 ## 下一步
 
-- API 视角选型决策 → [模型概览 · 选型决策指南](./overview#五选型决策指南)
+- API 视角选型决策 → [模型概览 · 选型决策指南](./overview#五、选型决策指南)
 - 长链 agent 编排 → [Subagent 与工作流编排](/claude-code/subagents-and-workflows/workflow-orchestration)
 - Adaptive thinking 深入 → [Extended Thinking 详解](/claude-capabilities/core/extended-thinking)
 

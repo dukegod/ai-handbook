@@ -113,5 +113,5 @@ Mac / Win 同时改同一个 project → 冲突。**单设备活跃**。
 
 ## 如果你想
 
-- 跨应用问答 → [Claude.ai · 5 模式](/claude-capabilities/surfaces/claude-ai#二5-个实战模式)
+- 跨应用问答 → [Claude.ai · 5 模式](/claude-capabilities/surfaces/claude-ai#二、5-个实战模式)
 - 自动化 → [Claude Code SDK](/claude-capabilities/sdk/claude-code-sdk)

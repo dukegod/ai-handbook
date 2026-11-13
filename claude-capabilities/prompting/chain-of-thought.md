@@ -46,7 +46,7 @@ verifiedWith:
 - 长推理被分解成多个短推理，**每步错率 < 整段错率**
 - 思考过程**对用户可见**——可审查、可调试
 
-详见 [推理能力 · 隐式 CoT vs 显式 thinking](/claude-capabilities/core/reasoning#一claude-推理的两层)。
+详见 [推理能力 · 隐式 CoT vs 显式 thinking](/claude-capabilities/core/reasoning#一、claude-推理-的两层)。
 
 ## 二、4 种 CoT 变体
 
@@ -96,7 +96,7 @@ A:
 [复杂任务]
 ```
 
-**适用**：方案选型、架构决策、debug 多根因。详见 [推理能力 · 模式 2：先想 3 个反例](/claude-capabilities/core/reasoning#模式-2先想-3-个反例)。
+**适用**：方案选型、架构决策、debug 多根因。详见 [推理能力 · 模式 2：先想 3 个反例](/claude-capabilities/core/reasoning#模式-2-先想-3-个反例)。
 
 ## 三、何时该用 CoT
 
@@ -112,7 +112,7 @@ A:
 | **长链 agent 规划** | ✅ | 每步先想清楚再动手 |
 | **高价值决策**（1+ 选 1） | ✅ Self-Consistency | 多次采样取一致 |
 
-详见 [推理能力 · 何时该让 Claude 想](/claude-capabilities/core/reasoning#二何时该让-claude-想--不该让它想)。
+详见 [推理能力 · 何时该让 Claude 想](/claude-capabilities/core/reasoning#二、何时该让-claude-想-不让它想)。
 
 ## 四、5 个实战技巧
 
@@ -194,13 +194,13 @@ messages = [{"role": "user", "content": """
 # → Extended Thinking 仅 Haiku 4.5 有效
 ```
 
-详见 [Extended Thinking 详解 · 4 模型 2 行为](/claude-capabilities/core/extended-thinking#二4-模型-2-行为api-形态对比)。
+详见 [Extended Thinking 详解 · 4 模型 2 行为](/claude-capabilities/core/extended-thinking#二、4-模型-2-行为-api-形态对比)。
 
 ## 六、4 个常见坑
 
 **1. 简单任务用 CoT**
 
-"今天天气怎么样？" + "逐步思考" = 拖慢 + 幻觉。详见 [推理能力 · 反直觉](/claude-capabilities/core/reasoning#二何时该让-claude-想--不该让它想)。
+"今天天气怎么样？" + "逐步思考" = 拖慢 + 幻觉。详见 [推理能力 · 反直觉](/claude-capabilities/core/reasoning#二、何时该让-claude-想-不让它想)。
 
 **2. step 数过多**
 
@@ -234,15 +234,15 @@ messages = [{"role": "user", "content": """
 "想 3 个边界 → 给代码 → 自检 + 跑 [测试用例] 验证"
 ```
 
-详见 [代码能力 · 4 类代码任务](/claude-capabilities/core/coding#三四类代码任务的模型选型)。
+详见 [代码能力 · 4 类代码任务](/claude-capabilities/core/coding#三、4-类代码任务的模型选型)。
 
 ## 参考
 
 - [Anthropic Docs · Chain of Thought](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought)（访问于 2026-08-07）
 - [Anthropic Docs · Extended Thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking)（访问于 2026-08-07）
-- [推理能力 · 5 个模式](/claude-capabilities/core/reasoning#三5-个让-claude-想清楚再答的-prompt-模式)
+- [推理能力 · 5 个模式](/claude-capabilities/core/reasoning#三、5-个让-claude-想清楚再答的-prompt-模式)
 - [Extended Thinking 详解](/claude-capabilities/core/extended-thinking)
-- [最佳实践 · 原则 3](/claude-capabilities/prompting/best-practices#原则-3让模型想)
+- [最佳实践 · 原则 3](/claude-capabilities/prompting/best-practices#原则-3-让模型想)
 - [System Prompt 设计](/claude-capabilities/prompting/system-prompts)
 
 ## 下一步

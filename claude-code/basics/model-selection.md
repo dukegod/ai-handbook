@@ -193,7 +193,7 @@ Anthropic 官方给出的核心判断问题（原话）：
 
 ## 七、Prompt Caching 与模型
 
-Claude Code 自动对每个模型都用 Prompt Caching（见 [成本与 Token 管理 · Prompt Caching](./cost-and-tokens#三prompt-caching-自动生效)）。可按模型关闭：
+Claude Code 自动对每个模型都用 Prompt Caching（见 [成本与 Token 管理 · Prompt Caching](./cost-and-tokens#三、prompt-caching-自动生效)）。可按模型关闭：
 
 ```bash
 export DISABLE_PROMPT_CACHING=1              # 全关

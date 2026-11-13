@@ -145,5 +145,5 @@ Mac / iPhone / iPad / Android 共享：
 
 ## 如果你想
 
-- 团队协作 → [Claude.ai · 模式 4](/claude-capabilities/surfaces/claude-ai#模式-4团队协作)
+- 团队协作 → [Claude.ai · 模式 4](/claude-capabilities/surfaces/claude-ai#模式-4-团队协作)
 - Vision 深入 → [Vision 能力](/claude-capabilities/core/vision)

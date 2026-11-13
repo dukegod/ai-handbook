@@ -37,6 +37,18 @@ find . \
 MD_COUNT=$(wc -l < "$MD_FILELIST" | tr -d ' ')
 echo "扫描 $MD_COUNT 个 .md 文件..."
 
+# 先查站内锚点（fragment）。lychee.toml 里 include_fragments 是关的——
+# 当时把 VitePress 与 GFM 的 slug 算法当成一回事了，实际上不一致：
+# VitePress 的 id 保留「、」，GFM 风格写法丢掉它，于是链接能跳页但不会滚到小节。
+# 本脚本直接从 .md 源码算 slug，不需要先 build。详见 contributing/link-checking.md。
+echo ""
+echo "── 站内锚点检查 ──"
+if ! python3 scripts/check-anchors.py; then
+  echo ""
+  echo "❌ 站内锚点检查失败——上面列出的锚点在 VitePress 里找不到对应 id"
+  exit 1
+fi
+
 # 跑 lychee —— v0.4.2 升级：input 通过 --files-from 列文件
 # CLI 只传 root_dir（必须显式，因为 toml 里 root_dir 在 CI 是 ${{ github.workspace }}）
 lychee \

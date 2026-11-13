@@ -111,7 +111,7 @@ MCP server 可暴露 4 种能力：
 4. 正常通信（tools/list, tools/call, ...）
 ```
 
-详见 [MCP 协议握手详解](/claude-capabilities/mcp-protocol/protocol-spec#三握手协议)。
+详见 [MCP 协议握手详解](/claude-capabilities/mcp-protocol/protocol-spec#三、握手协议)。
 
 ## 四、4 类消息
 

@@ -50,7 +50,7 @@ Claude Code 默认 window = **200,000 tokens**，这个数**不等于「你在�
 - `ENABLE_TOOL_SEARCH=auto`——只有能塞进 window 的 10% 才预加载
 - `ENABLE_TOOL_SEARCH=false`——全预加载（贵但完全无搜索延迟）
 
-会话开始后每一次 **file read / tool call / Claude 的回复**都往 context 里加。所以「开了一天后随手一句话其实带着整天的历史」——[Cost & Tokens · 长会话成本 5 大原因](./cost-and-tokens#五、长会话成本爬升的-5-大原因)展开讲过。
+会话开始后每一次 **file read / tool call / Claude 的回复**都往 context 里加。所以「开了一天后随手一句话其实带着整天的历史」——[Cost & Tokens · 长会话成本 5 大原因](./cost-and-tokens#五、长会话-token-爬升的-5-大原因)展开讲过。
 
 ## 二、1M 是谁的
 
@@ -146,5 +146,5 @@ Path-scoped rules **只有匹配文件被读时才进 context**。auto-compact �
 ## 如果你想
 
 - 看会话生命周期与 `/clear` 全场景 → [Sessions](./sessions)
-- 精细分析长会话成本 → [成本与 Token 管理 § 长会话成本爬升](./cost-and-tokens#五、长会话成本爬升的-5-大原因)
+- 精细分析长会话成本 → [成本与 Token 管理 § 长会话成本爬升](./cost-and-tokens#五、长会话-token-爬升的-5-大原因)
 - 用 subagent 把大读写隔离到子窗口 → [什么是 Subagent](/claude-code/subagents-and-workflows/what-is-a-subagent) 🚧

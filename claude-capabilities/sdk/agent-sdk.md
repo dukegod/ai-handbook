@@ -175,4 +175,4 @@ agent = Agent(checkpoint_interval=10, ...)
 ## 如果你想
 
 - 多 agent 编排模式 → [Subagent 与工作流编排](/claude-code/subagents-and-workflows/workflow-orchestration)
-- 长链 agent 实战 → [Opus 5 vs Sonnet 5 · 选型](/claude-capabilities/models/opus#四opus-5-vs-sonnet-5实测选型)
+- 长链 agent 实战 → [Opus 5 vs Sonnet 5 · 选型](/claude-capabilities/models/opus#四、opus-5-vs-sonnet-5-实测选型)

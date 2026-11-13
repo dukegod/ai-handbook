@@ -28,7 +28,7 @@ verifiedWith:
 - 按场景直接抄的决策表
 - 成本 + 延迟 + 质量三角的实战调优路径
 - 何时该用 [Batch API](/claude-capabilities/api/message-batches) 而不是 online
-- 何时该申请 [Fable 5 trusted access](/claude-capabilities/models/fable#三cybersecurity--biology-fallback关键使用限制)
+- 何时该申请 [Fable 5 trusted access](/claude-capabilities/models/fable#三、cybersecurity-biology-fallback-关键使用限制)
 
 ## 一、5 维选型决策框架
 
@@ -55,13 +55,13 @@ verifiedWith:
 | 复杂编程（陌生代码 / 重构） | [Opus 5.5](./opus) | Sonnet 5.5 + 多轮迭代 | Haiku 5.5 |
 | 长链 agent（10+ 步） | [Opus 5.5](./opus) | [Sonnet 5.5](./sonnet) | Haiku 5.5 |
 | 超长链 agent（30+ 步） | **[Fable 5.2](./fable)** | Opus 5.5（提 effort 后仍不够再上 Fable） | Sonnet 5.5、Haiku 5.5 |
-| 批量任务（> 1 万条） | [Haiku 5.5 + Batch](./haiku#四批量任务实战) | Haiku 5.5 online | Opus 5.5 / Fable 5.2（贵） |
+| 批量任务（> 1 万条） | [Haiku 5.5 + Batch](./haiku#四、批量任务实战) | Haiku 5.5 online | Opus 5.5 / Fable 5.2（贵） |
 | 分类 / 提取 / 格式化 / 路由 | [Haiku 5.5](./haiku) | Sonnet 5.5 | Opus 5.5、Fable 5.2 |
 | Vision（图 / PDF） | Sonnet 5.5 | Opus 5.5 | — |
 | Cybersecurity / Biology | ⚠️ 见 fallback 提示 | Fable 5.2（需 trusted access） | — |
 | 实时语音 / 视频流 | [Haiku 5.5](./haiku) | Sonnet 5.5 | Opus 5.5、Fable 5.2（延迟） |
 
-> ⚠️ Cybersecurity / Biology 行：Fable 的 safety classifier 会触发自动 fallback（[Fable 5.2 · 第三节](./fable#三cybersecurity--biology-fallback关键使用限制)），但**具体 fallback 到哪个版本本轮未复核**——实际以响应中的模型字段为准。
+> ⚠️ Cybersecurity / Biology 行：Fable 的 safety classifier 会触发自动 fallback（[Fable 5.2 · 第三节](./fable#三、cybersecurity-biology-fallback-关键使用限制)），但**具体 fallback 到哪个版本本轮未复核**——实际以响应中的模型字段为准。
 
 ## 三、按成本预算——月度 token 估算
 

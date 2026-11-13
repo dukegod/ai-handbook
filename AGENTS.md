@@ -47,6 +47,8 @@ pnpm install        # 首次或更新依赖
 pnpm dev            # 开发，http://localhost:5173，HMR
 pnpm build          # 生成 .vitepress/dist/
 pnpm preview        # 预览构建产物
+pnpm check-links    # 死链检查（lychee + 站内锚点）
+pnpm check-anchors  # 只查站内锚点（fragment），不需要先 build
 ```
 
 停 dev / preview：`pkill -f 'vitepress'`。
@@ -186,6 +188,30 @@ verifiedWith:              # published 时必填（Claude 相关页面）
 
 **改老页面**：同步改 `lastUpdated` 与 `verifiedWith`；破坏性变更用引用块标注 `> ⚠️ 已废弃（Since Claude Code 2.x）`。
 
+## 站内锚点：VitePress 与 GFM 的 slug 不一致（2026-11-13）
+
+**写站内锚点不能凭 GFM 习惯。** VitePress 的 slugify 先做 **NFKD 规范化**：
+
+| 标题原文 | VitePress 真实 id | GFM 习惯会写成 |
+| --- | --- | --- |
+| `二、最小调用示例` | `二、最小调用示例` | `#二最小调用示例` ❌ |
+| `二、定价：唯一按 prompt 长度分档的型号` | `二、定价-唯一按-prompt-长度分档的型号` | `#二定价唯一按-…` ❌ |
+
+全角冒号 `：`（U+FF1A）被 NFKD 分解成 ASCII `:` 再替换成 `-`；**顿号 `、`（U+3001）没有兼容分解，原样保留**。所以按 GFM 习惯写的锚点，浏览器**能跳页但不会滚动到对应小节**——比死链更难察觉。
+
+2026-11-13 全站查出 **123 个**这类失效锚点并已全部修好（96 个自动 + 14 个「目标标题已改名」需人工判断 + 其余重复项）。lychee 的 `include_fragments` 一直是关的（当时误以为 VitePress 会丢掉「、」），所以这类问题一直没人发现。
+
+**现在有专门的检查器**：
+
+```bash
+pnpm check-anchors                    # 检查，不需要先 build（直接从 .md 算 slug）
+python3 scripts/check-anchors.py --fix # 自动修（仅唯一候选时）
+```
+
+已接入 `scripts/check-links.sh` 与 `.github/workflows/lychee.yml`（两处要一起改）。
+
+**写锚点的规矩**：直接复制目标页标题旁的 `#` 链接（VitePress 自己生成的就是权威写法），别手敲。
+
 ## 已知坑与对策
 
 **YAML frontmatter 里 description 含反引号必须用单引号包裹**
@@ -262,7 +288,7 @@ VitePress 的 `lastUpdated` 从 git history 取。项目还没 commit 之前所�
 **⚠️ 两个易踩的时效雷区**：
 
 - **`claude-sonnet-4-5-20250929` 于 2026-11-30 退役** → 迁移到 `claude-sonnet-5-5`；`claude-opus-4-5-20251101` 的退役承诺是「不早于 2026-11-24」
-- **API version `2026-10-21` 起 `temperature` / `top_p` / `top_k` 被移除**（传了返回 400）——涉及 `claude-capabilities/api/*` 的 9 篇还没跟这一条
+- **API version `2026-10-21` 起 `temperature` / `top_p` / `top_k` 被移除**（传了返回 400，即使传默认值也报错）——`claude-capabilities/api/*` 9 篇已于 2026-11-13 跟上；**新写 API 示例一律不要带这三个参数**
 
 **不要**再写「定位待核实」——若发现新信息，直接更新引用来源与日期。
 

@@ -260,8 +260,8 @@ system = [
 - [SWE-bench](https://www.swebench.com/)（访问于 2026-08-06）
 - [Anthropic Blog · Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)（访问于 2026-08-06）
 - [Tool Use 协议详解](/claude-capabilities/core/tool-use)
-- [Opus 5 详解 · 复杂编程场景](/claude-capabilities/models/opus#四opus-5-vs-sonnet-5实测选型)
-- [Haiku 4.5 详解 · 批量生成测试](/claude-capabilities/models/haiku#四批量任务实战)
+- [Opus 5 详解 · 复杂编程场景](/claude-capabilities/models/opus#四、opus-5-vs-sonnet-5-实测选型)
+- [Haiku 4.5 详解 · 批量生成测试](/claude-capabilities/models/haiku#四、批量任务实战)
 - [Subagent 编排](/claude-code/subagents-and-workflows/workflow-orchestration)
 
 ## 下一步

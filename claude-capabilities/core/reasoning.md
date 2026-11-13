@@ -143,7 +143,7 @@ Claude 在生成每个 token 前都会做"内部推理"——这是模型架构�
 | `xhigh` | 更深推理，token 更贵 |
 | `max` | 极难任务；有 overthinking 风险 |
 
-详见 [CLI 视角 · Effort levels](/claude-code/basics/model-selection#四effort-levels-与-effort)。
+详见 [CLI 视角 · Effort levels](/claude-code/basics/model-selection#四、effort-levels-与-effort)。
 
 ## 六、常见坑
 
@@ -175,7 +175,7 @@ for block in response.content:
 
 **混淆"推理"和"知识"**
 
-- **知识不够** → 升 tier（Sonnet → Opus）—— 详见 [模型选型 · 缺知识 vs 没努力](/claude-code/basics/model-selection#五决策规则缺知识-vs-没努力)
+- **知识不够** → 升 tier（Sonnet → Opus）—— 详见 [模型选型 · 缺知识 vs 没努力](/claude-code/basics/model-selection#五、决策规则-缺知识-vs-没努力)
 - **努力不够** → 升 effort 或加显式 thinking
 
 加 thinking 解决不了"知识不够"——比如"2024 年欧冠冠军是谁"，加再多的 "think step by step" 也不知道答案。
@@ -186,7 +186,7 @@ for block in response.content:
 - [Anthropic Docs · Chain prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/chain-prompts)（访问于 2026-08-06）
 - [Anthropic Docs · Prompt engineering overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)（访问于 2026-08-06）
 - [Extended Thinking 详解](/claude-capabilities/core/extended-thinking)
-- [模型选型 · 缺知识 vs 没努力](/claude-code/basics/model-selection#五决策规则缺知识-vs-没努力)
+- [模型选型 · 缺知识 vs 没努力](/claude-code/basics/model-selection#五、决策规则-缺知识-vs-没努力)
 - [Opus 5 详解](/claude-capabilities/models/opus)
 
 ## 下一步
@@ -199,4 +199,4 @@ for block in response.content:
 
 - 提示工程更系统 → [深度提示工程 · 思维链](/claude-capabilities/prompting/chain-of-thought)
 - 成本与推理深度权衡 → [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
-- 模型族选型 → [模型概览 · 选型决策指南](/claude-capabilities/models/overview#五选型决策指南)
+- 模型族选型 → [模型概览 · 选型决策指南](/claude-capabilities/models/overview#五、选型决策指南)

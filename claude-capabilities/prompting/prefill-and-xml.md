@@ -24,7 +24,7 @@ verifiedWith:
 - XML 标签的本质与 5 个实战用法
 - Prefill 的工作原理 + 4 个限制
 - XML + Prefill 组合实战
-- 与 [最佳实践 · 原则 4](/claude-capabilities/prompting/best-practices#原则-4用-xml-标签结构化) / [System Prompt](/claude-capabilities/prompting/system-prompts) 的分工
+- 与 [最佳实践 · 原则 4](/claude-capabilities/prompting/best-practices#原则-4-用-xml-标签结构化) / [System Prompt](/claude-capabilities/prompting/system-prompts) 的分工
 - 4 个常见坑
 
 ## 一、XML 标签的本质
@@ -90,7 +90,7 @@ verifiedWith:
 </examples>
 ```
 
-详见 [Few-shot · 3 类模式](/claude-capabilities/prompting/few-shot#四3-类实战模式)。
+详见 [Few-shot · 3 类模式](/claude-capabilities/prompting/few-shot#四、3-类实战模式)。
 
 ### 用法 3：嵌套结构（复杂任务）
 
@@ -316,7 +316,7 @@ messages = [
 
 ### 3. Prefill + system 矛盾
 
-见 [限制 2](#限制-2不能与-system-矛盾)。
+见 [限制 2](#限制-2-不能与-system-矛盾)。
 
 ### 4. XML 标签混用大小写
 
@@ -334,7 +334,7 @@ messages = [
 
 - [Anthropic Docs · Use XML tags](https://docs.claude.com/en/docs/build-with-claude/use-xml-tags)（访问于 2026-08-07）
 - [Anthropic Docs · Prefill Claude's response](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response)（访问于 2026-08-07）
-- [最佳实践 · 原则 4](/claude-capabilities/prompting/best-practices#原则-4用-xml-标签结构化)
+- [最佳实践 · 原则 4](/claude-capabilities/prompting/best-practices#原则-4-用-xml-标签结构化)
 - [System Prompt 设计](/claude-capabilities/prompting/system-prompts)
 - [Few-shot 示例](/claude-capabilities/prompting/few-shot)
 - [结构化输出](/claude-capabilities/api/structured-outputs)
@@ -347,6 +347,6 @@ messages = [
 
 ## 如果你想
 
-- 标签化模板 → [5 个实战用法](/claude-capabilities/prompting/prefill-and-xml#二5-个实战用法)
-- Prefill 限制 → [4 个限制](/claude-capabilities/prompting/prefill-and-xml#四4-个限制)
-- 风格转换 → [Few-shot · 模式 3](/claude-capabilities/prompting/few-shot#模式-3转换style-transfer)
+- 标签化模板 → [5 个实战用法](/claude-capabilities/prompting/prefill-and-xml#二、5-个实战用法)
+- Prefill 限制 → [4 个限制](/claude-capabilities/prompting/prefill-and-xml#四、4-个限制)
+- 风格转换 → [Few-shot · 模式 3](/claude-capabilities/prompting/few-shot#模式-3-转换-style-transfer)

@@ -228,7 +228,7 @@ except anthropic.APIConnectionError:
 - `APITimeoutError`：超时
 - `RateLimitError`：429 限流
 
-详见 [Messages API · 错误处理](/claude-capabilities/api/messages#七错误处理)。
+详见 [Messages API · 错误处理](/claude-capabilities/api/messages#七、错误处理)。
 
 ## 五、5 个常见坑
 
@@ -304,6 +304,6 @@ with client.messages.stream(...) as stream:
 
 ## 如果你想
 
-- examples/ 仓库骨架 → [SDK 概览 · 仓库骨架规划](/claude-capabilities/sdk/overview#七examples-仓库骨架)
-- 错误处理细节 → [Messages API · 错误处理](/claude-capabilities/api/messages#七错误处理)
+- examples/ 仓库骨架 → [SDK 概览 · 仓库骨架规划](/claude-capabilities/sdk/overview#七、examples-仓库骨架)
+- 错误处理细节 → [Messages API · 错误处理](/claude-capabilities/api/messages#七、错误处理)
 - 切到 TypeScript → [TypeScript SDK](/claude-capabilities/sdk/typescript-sdk)

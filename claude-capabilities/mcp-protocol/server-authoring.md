@@ -55,7 +55,7 @@ verifiedWith:
 {"name": "delete_user"}
 ```
 
-详见 [MCP 协议规范 · 5 个常见坑](/claude-capabilities/mcp-protocol/protocol-spec#七4-个常见坑)。
+详见 [MCP 协议规范 · 5 个常见坑](/claude-capabilities/mcp-protocol/protocol-spec#七、4-个常见坑)。
 
 ### 准则 2：JSON Schema 严格
 
@@ -186,7 +186,7 @@ def list_data(version: str = "latest"):
         raise ToolError(f"未知 version: {version}")
 ```
 
-详见 [MCP 协议规范 · 版本协商](/claude-capabilities/mcp-protocol/protocol-spec#六协议版本)。
+详见 [MCP 协议规范 · 版本协商](/claude-capabilities/mcp-protocol/protocol-spec#六、协议版本)。
 
 ## 三、测试
 
@@ -203,7 +203,7 @@ async def test_list_terms():
 asyncio.run(test_list_terms())
 ```
 
-详见 [examples/glossary-mcp-server · 自测](/examples/glossary-mcp-server/README#为什么-parser-和-server-分层)。
+详见 [examples/glossary-mcp-server · 自测](/examples/glossary-mcp-server/README#为什么-parser-和-server-分两层)。
 
 ## 四、4 个常见坑
 

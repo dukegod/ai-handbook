@@ -145,4 +145,4 @@ agent = ManagedAgent.create(max_steps=20, cost_alert=10.0, ...)
 ## 如果你想
 
 - 数据敏感 → [Agent SDK](/claude-capabilities/sdk/agent-sdk)
-- 扩缩容模式 → [Managed Agents · 实战场景](#三3-个实战场景)
+- 扩缩容模式 → [Managed Agents · 实战场景](#三、3-个实战场景)

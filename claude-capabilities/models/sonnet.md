@@ -48,7 +48,7 @@ verifiedWith:
 
 ## 一、最小调用示例
 
-API 调用结构与 [Opus 5](./opus#一最小调用示例) **完全相同**——只是 `model` 字段换 ID：
+API 调用结构与 [Opus 5](./opus#一、最小调用示例) **完全相同**——只是 `model` 字段换 ID：
 
 ```python
 import anthropic
@@ -190,7 +190,7 @@ msg = client.messages.create(
 
 ## 六、何时该升 / 降
 
-**该升 Opus 5**（[Opus 5 详解](./opus#四opus-5-vs-sonnet-5实测选型)）：
+**该升 Opus 5**（[Opus 5 详解](./opus#四、opus-5-vs-sonnet-5-实测选型)）：
 - 大型陌生代码 debug
 - 多文件架构重构
 - 长链多步 agent（10+ tool call）
@@ -208,7 +208,7 @@ msg = client.messages.create(
 
 **Sonnet 5 上还写 `sonnet[1m]`**
 
-见 [第二节](#二1m-context-是默认)。Anthropic API 上 1M 是默认；`[1m]` 后缀是 Sonnet 4.5 时代产物。
+见 [第二节](#二、1m-context-是默认)。Anthropic API 上 1M 是默认；`[1m]` 后缀是 Sonnet 4.5 时代产物。
 
 **Introductory pricing 涨价（该坑已不存在）**
 
@@ -246,4 +246,4 @@ msg = client.messages.create(
 
 - sub-agent 编排省钱模式 → [Subagent 与工作流编排](/claude-code/subagents-and-workflows/workflow-orchestration)
 - 详细成本与 token 优化 → [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
-- 选型决策树 → [模型概览 · 选型决策指南](./overview#五选型决策指南)
+- 选型决策树 → [模型概览 · 选型决策指南](./overview#五、选型决策指南)

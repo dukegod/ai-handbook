@@ -215,7 +215,7 @@ msg = client.messages.create(
 | 长 PDF 文档问答 | ✅（用 Opus 5） | 先 PDF 转文本 + text 提问 |
 | 视频内容理解 | ❌ | 先抽帧 + 传图 |
 | 验证码识别 | ⚠️ | Anthropic 禁止 |
-| 隐私敏感图片 | ❌ | 走 [ZDR 模式](#六常见坑) |
+| 隐私敏感图片 | ❌ | 走 [ZDR 模式](#六、常见坑) |
 
 ## 六、常见坑
 
@@ -273,7 +273,7 @@ Zero Data Retention 模式下，URL 图片**仍会**被 Anthropic 下载存储�
 
 - [Anthropic Docs · Vision](https://platform.claude.com/docs/en/build-with-claude/vision)（访问于 2026-08-06）
 - [Anthropic Docs · PDF support](https://platform.claude.com/docs/en/build-with-claude/pdf-support)（访问于 2026-08-06）
-- [Opus 5 详解 · 视觉任务](/claude-capabilities/models/opus#四opus-5-vs-sonnet-5实测选型)
+- [Opus 5 详解 · 视觉任务](/claude-capabilities/models/opus#四、opus-5-vs-sonnet-5-实测选型)
 - [长上下文 · 文档处理策略](/claude-capabilities/core/long-context)
 - [成本与 Token 管理 · 图片 token 计算](/claude-code/basics/cost-and-tokens)
 
@@ -286,5 +286,5 @@ Zero Data Retention 模式下，URL 图片**仍会**被 Anthropic 下载存储�
 ## 如果你想
 
 - 图片安全 / 隐私 → [Anthropic Acceptable Use Policy](https://www.anthropic.com/legal/aup)
-- ZDR 模式 → [模型概览 · 按数据驻留](/claude-capabilities/models/overview#按数据驻留zdr)
+- ZDR 模式 → [模型概览 · 按数据驻留](/claude-capabilities/models/overview#按数据驻留-zdr)
 - PDF 文本提取替代 → [Long Context · PDF 策略](/claude-capabilities/core/long-context)

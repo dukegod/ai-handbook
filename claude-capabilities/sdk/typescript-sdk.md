@@ -268,5 +268,5 @@ const text = msg.content.find((b): b is Anthropic.TextBlock => b.type === "text"
 
 ## 如果你想
 
-- examples/ 仓库骨架 → [SDK 概览](/claude-capabilities/sdk/overview#七examples-仓库骨架)
+- examples/ 仓库骨架 → [SDK 概览](/claude-capabilities/sdk/overview#七、examples-仓库骨架)
 - 切到 Python 对照 → [Python SDK](/claude-capabilities/sdk/python-sdk)

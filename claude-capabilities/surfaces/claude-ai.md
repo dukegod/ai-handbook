@@ -141,5 +141,5 @@ Claude Code  →  Anthropic 提供的 CLI 工具（同 API）
 
 ## 如果你想
 
-- 团队 Workspace → [Claude.ai · 团队协作](#模式-4团队协作)
+- 团队 Workspace → [Claude.ai · 团队协作](#模式-4-团队协作)
 - 深度提示工程 → [深度提示工程](/claude-capabilities/prompting/best-practices)

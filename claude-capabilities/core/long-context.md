@@ -226,7 +226,7 @@ msg = client.messages.create(
 
 - [Anthropic Docs · Context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows)（访问于 2026-08-06）
 - [Anthropic Docs · Prompt Caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)（访问于 2026-08-06）
-- [Sonnet 5 · Prompt Caching 优化 5 错误](/claude-capabilities/models/sonnet#四prompt-caching-命中率优化)
+- [Sonnet 5 · Prompt Caching 优化 5 错误](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)
 - [Opus 5 详解](/claude-capabilities/models/opus)
 - [CLI 视角 · context-window](/claude-code/basics/context-window)
 - [Vision · PDF 处理](/claude-capabilities/core/vision)

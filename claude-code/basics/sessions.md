@@ -47,7 +47,7 @@ verifiedWith:
 | --- | --- |
 | `claude` | 启动新会话（当前目录） |
 | `claude --continue` / `-c` | 恢复**当前目录**最近一次会话 |
-| `claude --resume` / `-r` | 打开交互 [Session picker](#三session-picker) |
+| `claude --resume` / `-r` | 打开交互 [Session picker](#三、session-picker) |
 | `claude --resume <name>` | 直接恢复指定名字的会话 |
 | `claude --from-pr <number>` | Picker 过滤到关联某 PR 的会话 |
 | `/resume`（会话内） | 会话内切到另一个会话 |
@@ -126,7 +126,7 @@ $ claude --continue --fork-session
 - **`/compact [instructions]`** — 用摘要替换历史，可指定 focus（如 `/compact focus on API changes`）
 - **`/context`** — 显示当前哪些内容在占 context
 
-深入 auto-compact 见 [心智模型 · 上下文用完了怎么办](/claude-code/getting-started/mental-model#上下文用完了怎么办auto-compact)。
+深入 auto-compact 见 [心智模型 · 上下文用完了怎么办](/claude-code/getting-started/mental-model#上下文用完了怎么办-auto-compact)。
 
 ## 七、导出会话
 
@@ -193,7 +193,7 @@ Auto-compact 会砍掉最老的工具输出和摘要化老对话——**长期�
 
 ## 如果你想
 
-- 深入 Auto-compact 机制 → [心智模型 · 上下文用完了怎么办](/claude-code/getting-started/mental-model#上下文用完了怎么办auto-compact)
+- 深入 Auto-compact 机制 → [心智模型 · 上下文用完了怎么办](/claude-code/getting-started/mental-model#上下文用完了怎么办-auto-compact)
 - 并行多会话 → [Worktree 隔离](/claude-code/advanced/worktree)
 - Headless 脚本化调用 → [Headless / CI 模式](/claude-code/advanced/headless)
 - 查所有会话内 slash 命令 → [定制与扩展 · Slash Commands](/claude-code/customization/slash-commands)

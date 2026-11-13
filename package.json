@@ -10,6 +10,7 @@
     "build": "vitepress build",
     "preview": "vitepress preview",
     "check-links": "bash scripts/check-links.sh",
+    "check-anchors": "python3 scripts/check-anchors.py",
     "postinstall": "bash scripts/install-hooks.sh"
   },
   "devDependencies": {

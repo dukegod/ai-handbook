@@ -68,7 +68,7 @@ verifiedWith:
 {text}
 ```
 
-详见 [Few-shot · 模式 2](/claude-capabilities/prompting/few-shot#模式-2数据提取) + [结构化输出](/claude-capabilities/api/structured-outputs)。
+详见 [Few-shot · 模式 2](/claude-capabilities/prompting/few-shot#模式-2-数据提取) + [结构化输出](/claude-capabilities/api/structured-outputs)。
 
 ## 3. 文档总结
 
@@ -180,7 +180,7 @@ verifiedWith:
 {code}
 ```
 
-详见 [代码能力 · 测试生成](/claude-capabilities/core/coding#五测试生成)。
+详见 [代码能力 · 测试生成](/claude-capabilities/core/coding#五、测试生成)。
 
 ## 10. 写 Commit Message
 

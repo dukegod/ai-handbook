@@ -340,7 +340,7 @@ PostToolUse 跑 `prettier --write .` 是最常见反模式——整项目 diff �
 | matcher 粗筛 | `settings.json` 的 matcher 字段 | `"Edit\|Write"` 限定到编辑类工具 |
 | 脚本内精筛 | shell 里读 stdin 后判断扩展名 / 路径 | `[[ $FILE == *.ts* ]]` 只对 TS 文件跑 eslint |
 
-更精细——按目录或框架分包——用 [`.claude/rules/`](https://code.claude.com/docs/en/memory#organize-rules-with-claude/rules) 的 **path-scoped 规则**联动 hook：rule 限定范围，hook 只在命中的路径上跑对应检查（[实战示例](/claude-code/basics/claude-md#path-scoped-rules-实战补充)）。
+更精细——按目录或框架分包——用 [`.claude/rules/`](https://code.claude.com/docs/en/memory#organize-rules-with-claude/rules) 的 **path-scoped 规则**联动 hook：rule 限定范围，hook 只在命中的路径上跑对应检查（[实战示例](/claude-code/basics/claude-md#八、path-scoped-rules-实战补充)）。
 
 ### 9.3 Stop hook + prompt hook：自验证模式
 

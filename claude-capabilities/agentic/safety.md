@@ -239,5 +239,5 @@ def deploy_to_production(service: str):
 
 ## 如果你想
 
-- 安全审计 → [Audit Logging](#5审计日志)
-- Trusted Access → [Fable 5 · Cybersecurity fallback](/claude-capabilities/models/fable#三cybersecurity--biology-fallback关键使用限制)
+- 安全审计 → [Audit Logging](#_5-审计日志)
+- Trusted Access → [Fable 5 · Cybersecurity fallback](/claude-capabilities/models/fable#三、cybersecurity-biology-fallback-关键使用限制)

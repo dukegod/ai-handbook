@@ -114,7 +114,7 @@ allowed-tools: 'Bash(git diff:*) Read'
 
 ## 第 5 步：验证命中率
 
-按 [写好触发描述](./writing-triggers#六验证should-trigger--should-not-trigger) 的建议，在 skill 目录里放一份 `TRIGGERS.md`：
+按 [写好触发描述](./writing-triggers#六、验证-should-trigger-should-not-trigger) 的建议，在 skill 目录里放一份 `TRIGGERS.md`：
 
 ```markdown
 ## should-trigger（必须触发）
@@ -225,5 +225,5 @@ Anthropic 官方推荐的迭代模式：**用 Claude A 帮改 description，用 
 ## 如果你想
 
 - 看别人写的 skill 参考 → [内置 Skills 一览](./built-in-skills)
-- 覆盖 bundled 行为 → [内置 Skills · 关闭 / 覆盖](./built-in-skills#五、关闭--覆盖)
+- 覆盖 bundled 行为 → [内置 Skills · 关闭 / 覆盖](./built-in-skills#五、关闭-覆盖)
 - 深入 `!` bash 语法与限制 → [SKILL.md 规范 · 动态注入](./skill-md-spec#五、动态注入-cmd)

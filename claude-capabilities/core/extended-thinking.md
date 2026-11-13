@@ -167,7 +167,7 @@ final_text = "\n".join(
 
 ## 六、与 prompt "think step by step" 的区别
 
-详见 [推理能力 · 关系 Extended Thinking](/claude-capabilities/core/reasoning#四与-extended-thinking-的关系)。核心差异：
+详见 [推理能力 · 关系 Extended Thinking](/claude-capabilities/core/reasoning#四、与-extended-thinking-的关系)。核心差异：
 
 - **prompt "think step by step"**：思考嵌入 response 文本、用户必看见、不能控制预算
 - **Extended Thinking**：思考独立 block、可隐藏、可控预算（仅 Haiku 4.5）
@@ -221,9 +221,9 @@ client.messages.create(model="claude-opus-5", ...)
 - [Anthropic Docs · Extended Thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking)（访问于 2026-08-06）
 - [Anthropic Docs · Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-08-06）
 - [推理能力 · 何时让 Claude 想](/claude-capabilities/core/reasoning)
-- [Haiku 4.5 详解 · Legacy Extended Thinking](/claude-capabilities/models/haiku#三legacy-extended-thinkinghaiku-45-独有)
-- [Fable 5 详解 · Adaptive Thinking 强制开启](/claude-capabilities/models/fable#二adaptive-thinking-强制开启)
-- [Opus 5 详解 · Adaptive Thinking 行为](/claude-capabilities/models/opus#三adaptive-thinkingopus-5-的思考行为)
+- [Haiku 5.5 · 4.5→5.5 三个 breaking change](/claude-capabilities/models/haiku#三、haiku-4-5-→-5-5-三个-breaking-change)
+- [Fable 5 详解 · Adaptive Thinking 强制开启](/claude-capabilities/models/fable#二、adaptive-thinking-强制开启)
+- [Opus 5 详解 · Adaptive Thinking 行为](/claude-capabilities/models/opus#三、adaptive-thinking-opus-5-的-思考-行为)
 
 ## 下一步
 
@@ -233,6 +233,6 @@ client.messages.create(model="claude-opus-5", ...)
 
 ## 如果你想
 
-- 思考 vs effort level 关系 → [CLI 视角 · Effort levels](/claude-code/basics/model-selection#四effort-levels-与-effort)
+- 思考 vs effort level 关系 → [CLI 视角 · Effort levels](/claude-code/basics/model-selection#四、effort-levels-与-effort)
 - 隐藏 thinking 的生产模式 → [代码能力 · 实战模式](/claude-capabilities/core/coding)
 - 提示工程系统化 → [深度提示工程](/claude-capabilities/prompting/chain-of-thought)

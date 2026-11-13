@@ -40,6 +40,14 @@ jobs:
             lychee-${{ github.ref }}-${{ hashFiles('lychee.toml') }}-
             lychee-${{ github.ref }}-
 
+      # 站内锚点（fragment）检查——lychee 的 include_fragments 在 lychee.toml 里是关的，
+      # 因为当时把 VitePress 与 GFM 的 slug 算法当成一回事了。实测二者不一致：
+      # VitePress 的 id 保留「、」，GFM 风格写法丢掉它，于是链接能跳页但不会滚到小节。
+      # 本脚本直接从 .md 源码算 slug，不需要先 build。
+      # 与本地 scripts/check-links.sh 保持一致，两处要一起改。
+      - name: Check internal anchors
+        run: python3 scripts/check-anchors.py
+
       # v0.4.3 修复——inputs 必须走 --files-from，不能用 CLI glob。
       # lychee 0.24 把 CLI 位置参数当正则解析，"**/*.md" 配 "!**/..." 这组 glob 会直接报
       # "recursive wildcards must form a single path component" 然后退出。

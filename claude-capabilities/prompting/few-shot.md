@@ -283,9 +283,9 @@ messages = [{
 
 - [Anthropic Docs · Multishot prompting](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/multishot-prompting)（访问于 2026-08-07）
 - [Anthropic Docs · Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)（访问于 2026-08-07）
-- [最佳实践 · 原则 2](/claude-capabilities/prompting/best-practices#原则-2给示例few-shot)
-- [System Prompt 设计 · 5 模式](/claude-capabilities/prompting/system-prompts#二5-个设计模式)
-- [思维链 · 4 变体](/claude-capabilities/prompting/chain-of-thought#二4-种-cot-变体)
+- [最佳实践 · 原则 2](/claude-capabilities/prompting/best-practices#原则-2-给示例-few-shot)
+- [System Prompt 设计 · 5 模式](/claude-capabilities/prompting/system-prompts#二、5-个设计模式)
+- [思维链 · 4 变体](/claude-capabilities/prompting/chain-of-thought#二、4-种-cot-变体)
 
 ## 下一步
 
@@ -295,6 +295,6 @@ messages = [{
 
 ## 如果你想
 
-- 风格转换实战 → [3 类实战模式](/claude-capabilities/prompting/few-shot#四3-类实战模式)
+- 风格转换实战 → [3 类实战模式](/claude-capabilities/prompting/few-shot#四、3-类实战模式)
 - 数据提取 → [结构化输出](/claude-capabilities/api/structured-outputs)
 - 与 system 规则对比 → [System Prompt 设计](/claude-capabilities/prompting/system-prompts)

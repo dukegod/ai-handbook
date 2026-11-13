@@ -1,10 +1,10 @@
 ---
 title: 死链检查
-description: v0.4.2 工程项——lychee 0.24 schema + 修真 3 处 URL + 排除 ~20 类 false positive；防 sidebar 🚧 漏修 / 内部链接错位 / 外部 404
+description: lychee 0.24 schema + 修真 3 处 URL + 排除 ~20 类 false positive；2026-11-13 补上站内锚点检查（VitePress 与 GFM 的 slug 不一致导致锚点只跳页不滚动）
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-10
+lastUpdated: 2026-11-13
 ---
 
 # 死链检查
@@ -159,7 +159,7 @@ lychee 输出：
        → 提示：sidebar 链到未 published 占位
 ```
 
-**修复**：参考 [v0.3.1 收尾 · sidebar 同步](/contributing/roadmap#v031-收尾修复-2-处)，把 `P('xxx')` 改成 `'xxx'` 直接字符串。
+**修复**：参考 [v0.3.1 收尾 · sidebar 同步](/contributing/roadmap#v0-3-·-claude-能力全景-分-3-段-v0-3-1-已收官-2026-08-06)，把 `P('xxx')` 改成 `'xxx'` 直接字符串。
 
 ### 场景 2：内部链接文件名错位
 
@@ -272,7 +272,7 @@ scripts/.lychee-out
 
 ## 九、已知限制（v0.4.2 阶段）
 
-**中文锚点不被检查**——VitePress 用自己的 slug 算法（"一、Session 是什么" → `#一session-是什么`），lychee 用 GFM 算法（可能 → `#1-session-是什么`），**两者不一致**。`include_fragments` 在 v0.4.2 暂不开启，避免 false positive。
+**中文锚点不被 lychee 检查**——这一条在 2026-11-13 被推翻并解决，见下一节。
 
 **VitePress 内部资源**——`/logo.svg` / `/hero.svg` / `/favicon.svg` 在 VitePress 解析时映射到 `public/*.svg`，`/diagrams/*.png` 同理映射到 `public/diagrams/`（文件实际存在、线上 200 可达），lychee 不知道这层映射，需手动 `exclude`（`lychee.toml` 里已含 `/diagrams/` 规则）。
 
@@ -284,7 +284,44 @@ scripts/.lychee-out
 
 **平台迁移中**——`docs.claude.com` 全部 URL 暂 exclude，等 platform.claude.com 上对应页面 200 后再清 exclude。
 
-## 十、调试
+## 十、站内锚点检查（2026-11-13 新增）
+
+### 为什么 lychee 不够
+
+lychee 的 `include_fragments` 一直是**关闭**的，理由写在这里：「VitePress 用自己的 slug 算法，lychee 用 GFM 算法，两者不一致，避免 false positive」。
+
+**但当时的前提是错的。** VitePress 的真实行为是：
+
+| 标题原文 | VitePress 生成的 id | GFM 习惯会写成 |
+| --- | --- | --- |
+| `二、最小调用示例` | `二、最小调用示例` | `#二最小调用示例` |
+| `二、定价：唯一按 prompt 长度分档的型号` | `二、定价-唯一按-prompt-长度分档的型号` | `#二定价唯一按-prompt-长度分档的型号` |
+
+差异来自 VitePress 的 slugify 做了一步 **NFKD 规范化**：全角冒号 `：`（U+FF1A）会被分解成 ASCII `:` 再按特殊字符替换成 `-`；而顿号 `、`（U+3001）**没有兼容分解，因此原样保留**。
+
+于是按 GFM 习惯写的锚点，浏览器能跳到页面、但**不会滚动到对应小节**——比死链更难察觉。
+
+### 检查器
+
+```bash
+pnpm check-anchors              # 检查，有错 exit 1
+python3 scripts/check-anchors.py --fix   # 自动修（仅唯一候选时）
+```
+
+`scripts/check-anchors.py` 直接从 `.md` 源码算 slug（**不需要先 build**），因此可以进 CI：
+
+- `scripts/check-links.sh` 在跑 lychee 前先跑它
+- `.github/workflows/lychee.yml` 里加了同名 step
+
+**改动这两个地方时要一起改**——和 lychee 文件清单一样的规矩。
+
+### 写锚点的规矩
+
+**不要凭印象写。** 复制目标页标题里的锚点链接最快；或者用 VitePress 自己生成的——页面上每个标题右侧的 `#` 链接就是权威写法。
+
+自动修复只处理「去掉标点后与某个标题完全一致」的情况；**标题被改过名的**（找不到候选）一律只报告，留给人判断，因为那往往意味着该改的是链接文案而不是锚点。
+
+## 十一、调试
 
 ```bash
 # 跑 debug 模式看每个请求详情
@@ -311,13 +348,13 @@ pnpm check-links
 
 ## 下一步
 
-- 切到 CI 部署升级 → [v0.4.2 · CI 部署](/contributing/roadmap#v04-精修与工程化)
-- 切到术语 lint → [v0.4+ · 术语 lint](/contributing/roadmap#v04-精修与工程化)
-- 切到 Algolia 搜索 → [v0.4+ · Algolia 搜索增强](/contributing/roadmap#v04-精修与工程化)
+- 切到 CI 部署升级 → [v0.4.2 · CI 部署](/contributing/roadmap#v0-4-·-精修与工程化)
+- 切到术语 lint → [v0.4+ · 术语 lint](/contributing/roadmap#v0-4-·-精修与工程化)
+- 切到 Algolia 搜索 → [v0.4+ · Algolia 搜索增强](/contributing/roadmap#v0-4-·-精修与工程化)
 
 ## 如果你想
 
-- 实战场景细节 → [5 个实战场景](#六5-个实战场景)
-- 平台迁移说明 → [平台迁移说明](#七平台迁移说明)
-- 已知限制与 workaround → [已知限制](#九已知限制v042-阶段)
-- 死链事故复盘 → [为什么需要](#一为什么需要)
+- 实战场景细节 → [5 个实战场景](#六、5-个实战场景)
+- 平台迁移说明 → [平台迁移说明](#七、平台迁移说明)
+- 已知限制与 workaround → [已知限制](#九、已知限制-v0-4-2-阶段)
+- 死链事故复盘 → [为什么需要](#一、为什么需要)

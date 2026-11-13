@@ -101,7 +101,7 @@ with client.messages.stream(
 | `system` | `str` \| list | — | System prompt；可用缓存（见 [Prompt Caching](/claude-capabilities/api/prompt-caching)） |
 | `temperature` / `top_p` / `top_k` | — | — | **Opus 4.7 及之后模型传非默认值返回 400**，别设 |
 | `thinking` | `dict` | 省略 | Opus 上是 always-on adaptive thinking，显式传 `disabled` / `enabled` 都会 400 |
-| `output_config.effort` | `str` | `medium`（Opus 5.5） | 控思考深度，见 [Effort level](/claude-code/basics/model-selection#四effort-levels-与-effort) |
+| `output_config.effort` | `str` | `medium`（Opus 5.5） | 控思考深度，见 [Effort level](/claude-code/basics/model-selection#四、effort-levels-与-effort) |
 | `tools` | `list[dict]` | — | 工具定义（[Tool Use API 协议](/claude-capabilities/core/tool-use)） |
 | `metadata` | `dict` | — | 自定义追踪字段（user_id / session_id） |
 
@@ -121,7 +121,7 @@ Opus 5（与 Fable 5 / Sonnet 5 同代）走 **adaptive thinking**——模型�
 | **Haiku 5.5** | Adaptive，默认开，默认 effort `medium` |
 | **Haiku 4.5** | **不支持** adaptive；用 legacy extended thinking + `budget_tokens` |
 
-> 想显式控制"想多深"——走 [Effort level](/claude-code/basics/model-selection#四effort-levels-与-effort)。当前 API 上的默认 effort：Opus 5.5 与 Haiku 5.5 是 `medium`，Sonnet 5.5 与 Fable 5.1 是 `high`。
+> 想显式控制"想多深"——走 [Effort level](/claude-code/basics/model-selection#四、effort-levels-与-effort)。当前 API 上的默认 effort：Opus 5.5 与 Haiku 5.5 是 `medium`，Sonnet 5.5 与 Fable 5.1 是 `high`。
 
 ## 四、Opus 5 vs Sonnet 5：实测选型
 
@@ -159,7 +159,7 @@ Opus 5:    $5/M input  × 10 步 × 30k input  =  $1.50
 
 **Model ID 写成 `claude-opus-4-8`**
 
-历史版本 ID，新代码会 404。Opus 5 必须用 `claude-opus-5`；想 pin 老版本显式 `claude-opus-4-8`（见 [概览 · Legacy 模型索引](/claude-capabilities/models/overview#六legacy-模型索引)）。
+历史版本 ID，新代码会 404。Opus 5 必须用 `claude-opus-5`；想 pin 老版本显式 `claude-opus-4-8`（见 [概览 · Legacy 模型索引](/claude-capabilities/models/overview#六、legacy-模型索引)）。
 
 **max_tokens 设了 128000 但实际只输出几千 token**
 

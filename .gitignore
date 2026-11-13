@@ -44,6 +44,8 @@ examples/**/*.egg-info/
 examples/**/.pytest_cache/
 examples/**/.mypy_cache/
 examples/**/.ruff_cache/
+**/__pycache__/
+**/*.pyc
 scripts/.lychee-out
 .lycheecache
 .lychee-files.txt

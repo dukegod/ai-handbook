@@ -29,7 +29,7 @@ verifiedWith:
 ## 前置
 
 - 装好 Claude Code、跑过 [第一次对话](/claude-code/getting-started/first-conversation)
-- 理解 [心智模型 · 上下文里有什么](/claude-code/getting-started/mental-model#三上下文里有什么)（每 turn 重发全上下文）
+- 理解 [心智模型 · 上下文里有什么](/claude-code/getting-started/mental-model#三、上下文里有什么)（每 turn 重发全上下文）
 
 ## 一、计费模型
 
@@ -126,7 +126,7 @@ Claude Code 每 turn 自动打 cache breakpoint——同样的上下文（system
 
 ### 7. CLAUDE.md 精简到 < 200 行
 
-超长 CLAUDE.md 每次会话开头都消耗 token。把详细的 workflow 挪进 skills（按需加载）。见 [CLAUDE.md · 写作建议](./claude-md#七写作建议)。
+超长 CLAUDE.md 每次会话开头都消耗 token。把详细的 workflow 挪进 skills（按需加载）。见 [CLAUDE.md · 写作建议](./claude-md#七、写作建议)。
 
 ### 8. 调整 Extended Thinking
 
@@ -147,7 +147,7 @@ Claude Code 每 turn 自动打 cache breakpoint——同样的上下文（system
 会话开了一天却发现 token 用量惊人？官方点名的 5 个原因：
 
 1. **Long context**：每次消息 Claude Code 都发**完整对话历史**。开了一天后的「一句话」其实带着整天的历史
-2. **Cache miss**：超过 [cache TTL](#三prompt-caching-自动生效) 后第一次消息就 miss，整个上下文重跑
+2. **Cache miss**：超过 [cache TTL](#三、prompt-caching-自动生效) 后第一次消息就 miss，整个上下文重跑
 3. **Scheduled tasks**：定时任务按 interval 触发，每次也发完整上下文
 4. **Agent teammates**：每个活跃 teammate 都在独立消耗 token 直到退出。**agent team 大约用 7x 于标准会话**
 5. **`/compact` 本身也贵**：compact 要读完当前上下文才能摘要——**大 context 的 compact 本身就是大请求**。想彻底重开用 `/clear`（0 成本）

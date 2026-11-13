@@ -106,8 +106,8 @@ pip install claude-agent-sdk
 | **生成应用 + Claude Code 内置能力** | [Claude Code SDK](/claude-capabilities/sdk/claude-code-sdk) | Agent SDK + 自建子 agent |
 | **托管 agent**（不想自建部署） | [Managed Agents](/claude-capabilities/sdk/managed-agents) | Agent SDK + 自建服务 |
 | **隔离 tool 执行**（不可信 code） | [Tool Runner](/claude-capabilities/sdk/tool-runner) | 容器 + 自管沙箱 |
-| **流式 UI**（聊天 / typing） | [Python SDK streaming](/claude-capabilities/sdk/python-sdk#streaming) | [TypeScript SDK streaming](/claude-capabilities/sdk/typescript-sdk#streaming) |
-| **结构化输出**（JSON） | [Python SDK tool_use](/claude-capabilities/sdk/python-sdk#structured-outputs) | [TypeScript SDK tool_use](/claude-capabilities/sdk/typescript-sdk#structured-outputs) |
+| **流式 UI**（聊天 / typing） | [Python SDK streaming](/claude-capabilities/sdk/python-sdk#模式-3-streaming) | [TypeScript SDK streaming](/claude-capabilities/sdk/typescript-sdk#模式-3-streaming) |
+| **结构化输出**（JSON） | [Python SDK tool_use](/claude-capabilities/sdk/python-sdk#模式-4-structured-outputs) | [TypeScript SDK tool_use](/claude-capabilities/sdk/typescript-sdk#模式-4-structured-outputs) |
 
 ## 五、按"团队技术栈"选型
 
@@ -165,7 +165,7 @@ v0.3.2 段需要在 `examples/` 目录起最小可复现仓库：
 | **跑在 Web Worker** | TypeScript SDK 主线程 + worker 通信复杂，可直接 fetch |
 | **Serverless 冷启动敏感** | SDK 初始化开销大（v0.3.2.3 末会补 FAQ） |
 
-详见 [Messages API · curl 实战](/claude-capabilities/api/messages#二3-段完整可运行代码)。
+详见 [Messages API · curl 实战](/claude-capabilities/api/messages#二、3-段完整可运行代码)。
 
 ## 九、5 个常见坑
 

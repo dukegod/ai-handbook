@@ -46,7 +46,7 @@ msg = client.messages.create(
 1. **跨任务不变**——system 改频率低（一次设好，跨多次请求复用）
 2. **适合 cache**——`cache_control` 默认对 system 字段前 4 块生效
 
-详见 [Sonnet 5 · Prompt Caching 5 错误](/claude-capabilities/models/sonnet#四prompt-caching-命中率优化)。
+详见 [Sonnet 5 · Prompt Caching 5 错误](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)。
 
 ## 二、5 个设计模式
 
@@ -248,7 +248,7 @@ Claude 注意力在 system 开头。**前 100 字定调**，后面的"参考材�
 "用 Result<T, E> 模式做错误处理"
 ```
 
-详见 [最佳实践 · 4 个细节](/claude-capabilities/prompting/best-practices#四4-个常被忽略的细节)。
+详见 [最佳实践 · 4 个细节](/claude-capabilities/prompting/best-practices#四、4-个常被忽略的细节)。
 
 **3. system 不 cache**
 
@@ -291,8 +291,8 @@ system_template = [角色块, 规则块, 风格块, 约束块, 上下文块]
 
 - [Anthropic Docs · System prompts](https://docs.claude.com/en/docs/build-with-claude/system-prompts)（访问于 2026-08-07）
 - [Anthropic Docs · Prompt Engineering Overview](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview)（访问于 2026-08-07）
-- [最佳实践 · System Prompt vs User Prompt](/claude-capabilities/prompting/best-practices#三system-prompt-vs-user-prompt)
-- [Sonnet 5 · Prompt Caching 5 错误](/claude-capabilities/models/sonnet#四prompt-caching-命中率优化)
+- [最佳实践 · System Prompt vs User Prompt](/claude-capabilities/prompting/best-practices#三、system-prompt-vs-user-prompt)
+- [Sonnet 5 · Prompt Caching 5 错误](/claude-capabilities/models/sonnet#四、prompt-caching-命中率优化)
 - [Prompt Caching API](/claude-capabilities/api/prompt-caching)
 
 ## 下一步

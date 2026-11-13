@@ -61,7 +61,7 @@ verifiedWith:
 
 ### 原则 3：让模型想
 
-复杂任务显式让 Claude 写推理步骤——可参考 [推理能力 · 5 个模式](/claude-capabilities/core/reasoning#三5-个让-claude-想清楚再答的-prompt-模式)：
+复杂任务显式让 Claude 写推理步骤——可参考 [推理能力 · 5 个模式](/claude-capabilities/core/reasoning#三、5-个让-claude-想清楚再答的-prompt-模式)：
 
 ```text
 请先想清楚 3 个反例再给方案。如果你能找到任何一个，就修订方案。
@@ -131,7 +131,7 @@ Claude 1M context 装得下——**别让信息散落**，集中放：
 "写个排序函数。写完后自己跑 [3, 1, 2] 测试一下，并解释每步为什么这样排。"
 ```
 
-**关键**：模型会**幻觉**执行结果——自己跑一遍，别信总结。详见 [第一个真实任务 · 跑测试、修红](/cookbook/first-real-task#第-5-步跑测试修红)。
+**关键**：模型会**幻觉**执行结果——自己跑一遍，别信总结。详见 [第一个真实任务 · 跑测试、修红](/cookbook/first-real-task#第-5-步-跑测试、修红)。
 
 ## 二、好 prompt vs 坏 prompt 实战对比
 

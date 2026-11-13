@@ -188,7 +188,7 @@ description: 分析 diff … 用户说"改了啥" / "what changed" / "review dif
 - [Anthropic · Writing effective descriptions](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices#writing-effective-descriptions)（访问于 2026-07-29）
 - [Anthropic · Evaluation-driven Skill development](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices#build-evaluations-first)（访问于 2026-07-29）
 - [Claude Code · Skills 文档](https://code.claude.com/docs/en/skills)（访问于 2026-07-29）
-- [SKILL.md 规范 · 字符预算](./skill-md-spec#六yaml-解析细节与常见坑) — 本站 description 截断与 skillListingBudgetFraction 详解
+- [SKILL.md 规范 · 字符预算](./skill-md-spec#六、yaml-解析细节与常见坑) — 本站 description 截断与 skillListingBudgetFraction 详解
 
 ## 下一步
 
@@ -197,6 +197,6 @@ description: 分析 diff … 用户说"改了啥" / "what changed" / "review dif
 
 ## 如果你想
 
-- 从原理层理解为什么 description 是唯一开关 → [什么是 Skill · 两阶段加载](./what-is-a-skill#两阶段加载为什么-skill-便宜)
+- 从原理层理解为什么 description 是唯一开关 → [什么是 Skill · 两阶段加载](./what-is-a-skill#两阶段加载-为什么-skill-便宜)
 - 看别人写的 description → [内置 Skills 一览](./built-in-skills) 🚧
 - 深挖 frontmatter 全字段 → [SKILL.md 规范](./skill-md-spec)

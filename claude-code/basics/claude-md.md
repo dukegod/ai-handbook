@@ -30,7 +30,7 @@ verifiedWith:
 ## 前置
 
 - 装好 Claude Code
-- 已读 [心智模型 · 上下文里有什么](/claude-code/getting-started/mental-model#三上下文里有什么) 建立对「每次会话开头加载什么」的直觉
+- 已读 [心智模型 · 上下文里有什么](/claude-code/getting-started/mental-model#三、上下文里有什么) 建立对「每次会话开头加载什么」的直觉
 
 ## 一、CLAUDE.md 是什么
 
@@ -172,7 +172,7 @@ paths:
 - `src/app/api/knowledge/route.ts` → 自动加载 `api-design.md` + `security.md`
 - `src/lib/utils.ts`（不匹配任何 scoped rule）→ 只加载全局规则
 
-上下文更干净，响应更快。配合 [Hooks 路径感知](/claude-code/customization/hooks#92-路径感知matcher--脚本判断--rules-联动) 用效果最佳——rule 限定范围，hook 只在命中路径上跑检查。
+上下文更干净，响应更快。配合 [Hooks 路径感知](/claude-code/customization/hooks#_9-2-路径感知-matcher-脚本判断-rules-联动) 用效果最佳——rule 限定范围，hook 只在命中路径上跑检查。
 
 ### 8.4 已知问题与调试（2026.3 状态）
 

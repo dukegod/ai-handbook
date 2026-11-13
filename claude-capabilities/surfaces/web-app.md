@@ -30,7 +30,7 @@ verifiedWith:
 
 ### 1. Chat（与桌面端一致）
 
-详见 [Claude.ai · 5 模式](/claude-capabilities/surfaces/claude-ai#二5-个实战模式)。
+详见 [Claude.ai · 5 模式](/claude-capabilities/surfaces/claude-ai#二、5-个实战模式)。
 
 ### 2. Project + Knowledge base
 
@@ -125,5 +125,5 @@ verifiedWith:
 
 ## 如果你想
 
-- 团队 Workspace → [Claude.ai · 模式 4](/claude-capabilities/surfaces/claude-ai#模式-4团队协作)
+- 团队 Workspace → [Claude.ai · 模式 4](/claude-capabilities/surfaces/claude-ai#模式-4-团队协作)
 - 安全 / 隐私 → [安全](/claude-capabilities/agentic/safety)

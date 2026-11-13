@@ -161,4 +161,4 @@ Read file_path="src/auth.ts" offset="38" limit="30"
 ## 如果你想
 
 - 了解 Grep/Glob 在工具总览中的位置 → [工具总览](./overview)
-- 用 LSP 做更精准的代码跳转 → [工具总览 · 搜索](./overview#③-搜索3)
+- 用 LSP 做更精准的代码跳转 → [工具总览 · 搜索](./overview#_3-搜索-3)

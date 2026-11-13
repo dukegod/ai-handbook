@@ -206,6 +206,6 @@ Claude Code 版本迭代快，非官方接入没有兼容承诺。升级 Claude 
 
 ## 如果你想
 
-- 用官方 Claude 模型 → [安装与认证 · 方式 A/B](/claude-code/getting-started/installation#第-3-步完成认证)
+- 用官方 Claude 模型 → [安装与认证 · 方式 A/B](/claude-code/getting-started/installation#第-3-步-完成认证)
 - 深入模型选型 → [模型选择](/claude-code/basics/model-selection) / [模型 ID 与定价](/claude-capabilities/models/model-ids)
 - 长期把配置提交到项目共享 → [Settings 配置文件](/claude-code/customization/settings)

@@ -75,7 +75,7 @@ await session.initialize()
 await session.list_tools()    # 正常
 ```
 
-详见 [MCP 协议规范 · 握手协议](/claude-capabilities/mcp-protocol/protocol-spec#三握手协议)。
+详见 [MCP 协议规范 · 握手协议](/claude-capabilities/mcp-protocol/protocol-spec#三、握手协议)。
 
 ### 坑 2：capabilities 没声明
 
@@ -142,7 +142,7 @@ except McpError as e:
 # ✅ 协商：从最新到最旧，client 决定降级
 ```
 
-详见 [MCP 协议规范 · 版本](/claude-capabilities/mcp-protocol/protocol-spec#六协议版本)。
+详见 [MCP 协议规范 · 版本](/claude-capabilities/mcp-protocol/protocol-spec#六、协议版本)。
 
 ## 四、3 个实战场景
 

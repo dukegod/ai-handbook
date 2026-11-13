@@ -146,7 +146,7 @@ Claude Code 会记住你的选择，之后在该工具上反复失败。改法�
 
 **忘了配 API Key 就 `claude`**
 
-首次进入时若既没登录、也没设 `ANTHROPIC_API_KEY`，会卡在认证。按 [安装与认证 · 方式 A/B](./installation#第-3-步完成认证) 完成后再回来。
+首次进入时若既没登录、也没设 `ANTHROPIC_API_KEY`，会卡在认证。按 [安装与认证 · 方式 A/B](./installation#第-3-步-完成认证) 完成后再回来。
 
 **`-c` 加载了错的会话**
 
