@@ -4,12 +4,14 @@ description: 50% 价格折扣的离线批处理 API；24h SLA、提交 / 轮询 
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-haiku-4-5-...
+  scope: '2026-11-13 复核模型 ID、批量计价与 300k 输出 beta 的支持范围；本页示例未在本机重跑，batch 数量 / 大小上限与重试次数沿用 2026-08-07 的记录'
+  claudeCode: 2.1.319
+  model: claude-haiku-5-5
   messageBatches: 'https://platform.claude.com/docs/en/api/messages/batches'
-  accessedAt: 2026-08-07
+  pricing: 'https://platform.claude.com/docs/en/about-claude/pricing'
+  accessedAt: 2026-11-13
 ---
 
 # Message Batches
@@ -47,7 +49,7 @@ requests = [
     {
         "custom_id": f"comment-{i}",
         "params": {
-            "model": "claude-haiku-4-5-...",
+            "model": "claude-haiku-5-5",
             "max_tokens": 64,
             "messages": [{
                 "role": "user",
@@ -92,14 +94,16 @@ print(f"处理 {len(results)} 条")
 | 处理 SLA | 24h（多数情况 1-2h） |
 | 重试 | 失败请求自动重试 1 次 |
 
+**输出上限**：batch 与同步 Messages API 一致，默认 **128K**。**300k 输出是 beta**，需加请求头 `anthropic-beta: output-300k-2026-03-24`；官方点名的支持模型只有 Opus 5.5 / Opus 5 / Sonnet 5.5 / Sonnet 5 / Haiku 5.5 / Opus 4.8 / Opus 4.7 / Opus 4.6 / Sonnet 4.6——**Fable 5.2 不在其中**。
+
 ## 四、4 个实战场景
 
 ### 1. 离线分类
 
 ```python
-# 100 万条评论情感分类
-# Online: $1.5 / 1M input
-# Batch: $0.75 / 1M input → 节省 50%
+# 100 万条评论情感分类（Haiku 5.5）
+# Online: $0.10 / 1M input
+# Batch: $0.05 / 1M input → 节省 50%
 ```
 
 ### 2. 数据提取（文档 → 结构化）
@@ -108,7 +112,7 @@ print(f"处理 {len(results)} 条")
 # 10 万份发票 OCR + 字段提取
 requests = [
     {"custom_id": f"invoice-{i}", "params": {
-        "model": "claude-sonnet-5-...",
+        "model": "claude-sonnet-5-5",
         "tools": [EXTRACT_INVOICE_TOOL],   # 用 tool_use 强制 JSON
         "tool_choice": {"type": "tool", "name": "extract_invoice"},
         "messages": [{"role": "user", "content": pdf_text}],
@@ -135,6 +139,17 @@ schedule.every().day.at("02:00").do(submit_daily_batch)
 
 ## 五、Batch vs Online 决策
 
+**批量计价（官方 pricing 页）：输入输出同时 5 折**。
+
+| 模型 | Online 输入/输出 | Batch 输入/输出 |
+| --- | --- | --- |
+| Fable 5.2 | $8 / $40 | $4 / $20 |
+| Opus 5.5 | $4 / $20 | $2 / $10 |
+| Sonnet 5.5 | $2 / $10 | $1 / $5 |
+| Haiku 5.5 | $0.10 / $0.50 | $0.05 / $0.25 |
+
+> Haiku 5.5 上表为 prompt ≤ 100k token 档；超过 100k 时输入输出各跳 5 倍。
+
 | 场景 | 用 | 原因 |
 | --- | :---: | --- |
 | 实时对话 | **Online** | 24h SLA 不能用 |
@@ -143,7 +158,7 @@ schedule.every().day.at("02:00").do(submit_daily_batch)
 | 跨小时 ETL | **Batch** | 50% 折扣 |
 | 紧急重要但量大 | Online + parallel | Batch 太慢 |
 
-详见 [Haiku 4.5 · 批量任务实战](/claude-capabilities/models/haiku#四批量任务实战)。
+详见 [Haiku 5.5 · 批量任务实战](/claude-capabilities/models/haiku#四、批量任务实战)。
 
 ## 六、4 个常见坑
 
@@ -175,8 +190,9 @@ if (status.request_counts.succeeded +
 
 ## 参考
 
-- [Anthropic Docs · Message Batches API](https://platform.claude.com/docs/en/api/messages/batches)（访问于 2026-08-07）
-- [Haiku 4.5 · 批量任务实战](/claude-capabilities/models/haiku#四批量任务实战)
+- [Anthropic Docs · Message Batches API](https://platform.claude.com/docs/en/api/messages/batches)（访问于 2026-11-13）
+- [Anthropic Docs · Pricing](https://platform.claude.com/docs/en/about-claude/pricing)（访问于 2026-11-13）
+- [Haiku 5.5 · 批量任务实战](/claude-capabilities/models/haiku#四、批量任务实战)
 - [结构化输出](/claude-capabilities/api/structured-outputs)
 - [Messages API](/claude-capabilities/api/messages)
 - [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
@@ -189,6 +205,6 @@ if (status.request_counts.succeeded +
 
 ## 如果你想
 
-- 并发 + online vs batch 决策 → [Haiku 4.5 · 实战模式](/claude-capabilities/models/haiku#四批量任务实战)
+- 并发 + online vs batch 决策 → [Haiku 5.5 · 实战模式](/claude-capabilities/models/haiku#四、批量任务实战)
 - 切到 SDK → [Python SDK](/claude-capabilities/sdk/python-sdk)
 - Agent SDK → [Agent SDK](/claude-capabilities/sdk/agent-sdk)

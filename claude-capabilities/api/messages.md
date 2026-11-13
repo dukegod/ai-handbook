@@ -4,17 +4,22 @@ description: HTTP 主入口——请求结构、响应 blocks、5 个核心参�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-opus-5
+  scope: '2026-11-13 复核了模型 ID、anthropic-version 2026-10-21 的采样参数移除与迁移路径；请求/响应结构沿用 2026-08-07 的记录，示例未在本机重跑'
+  claudeCode: 2.1.319
+  model: claude-opus-5-5
   messagesApi: 'https://platform.claude.com/docs/en/api/messages'
-  accessedAt: 2026-08-07
+  apiVersion: 'https://platform.claude.com/docs/en/api/migration-2026-10-21'
+  deprecations: 'https://platform.claude.com/docs/en/about-claude/model-deprecations'
+  accessedAt: 2026-11-13
 ---
 
 # Messages API
 
 > **TL;DR**：Messages API 是 Claude API 的**HTTP 主入口**——发请求 `POST /v1/messages`、收响应 `content` blocks。本页是**协议层**视角（HTTP / 请求结构 / 响应结构 / 参数），[Python SDK](/claude-capabilities/sdk/python-sdk) 与 [TypeScript SDK](/claude-capabilities/sdk/typescript-sdk) 是它的客户端封装。
+>
+> ⚠️ API version `2026-10-21` 起 `temperature` / `top_p` / `top_k` 已被**移除**——再传会返回 **400**。
 
 ⏱ 预计阅读时间：7 分钟
 
@@ -25,9 +30,10 @@ verifiedWith:
 - 请求结构（model / messages / system / max_tokens / 关键参数）
 - 响应结构（content blocks / stop_reason / usage）
 - 5 个核心参数详解
+- API version `2026-10-21` 迁移（采样参数已移除）
 - 错误处理（status codes / retry）
 - 4 类常见消息结构
-- 5 个常见坑
+- 6 个常见坑
 
 ## 一、Messages API 是什么
 
@@ -39,7 +45,7 @@ verifiedWith:
 │ Anthropic API（Messages API）           │
 │   ↓ response: content blocks           │
 ├─────────────────────────────────────────┤
-│ Claude 模型（Opus 5 / Sonnet 5 / ...）  │
+│ Claude 模型（Opus 5.5 / Sonnet 5.5）    │
 └─────────────────────────────────────────┘
 ```
 
@@ -49,12 +55,12 @@ verifiedWith:
 POST https://api.anthropic.com/v1/messages
 Headers:
   x-api-key: $ANTHROPIC_API_KEY
-  anthropic-version: 2023-06-01
+  anthropic-version: 2026-10-21
   content-type: application/json
 
 Body:
   {
-    "model": "claude-sonnet-5-...",
+    "model": "claude-sonnet-5-5",
     "max_tokens": 1024,
     "messages": [{"role": "user", "content": "..."}]
   }
@@ -72,10 +78,10 @@ Body:
 ```bash
 curl https://api.anthropic.com/v1/messages \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
+  -H "anthropic-version: 2026-10-21" \
   -H "content-type: application/json" \
   -d '{
-    "model": "claude-sonnet-5-...",
+    "model": "claude-sonnet-5-5",
     "max_tokens": 1024,
     "messages": [{"role": "user", "content": "Hello, Claude"}]
   }'
@@ -89,7 +95,7 @@ import anthropic
 client = anthropic.Anthropic()  # 读 ANTHROPIC_API_KEY env var
 
 msg = client.messages.create(
-    model="claude-sonnet-5-...",
+    model="claude-sonnet-5-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude"}],
 )
@@ -105,7 +111,7 @@ import Anthropic from "@anthropic-ai/sdk";
 const client = new Anthropic();
 
 const msg = await client.messages.create({
-  model: "claude-sonnet-5-...",
+  model: "claude-sonnet-5-5",
   max_tokens: 1024,
   messages: [{ role: "user", content: "Hello, Claude" }],
 });
@@ -124,21 +130,24 @@ python3 hello.py    # 期望输出：'Hello! How can I help you today?'
 
 ```json
 {
-  "model": "claude-sonnet-5-...",     // 必填：Model ID
+  "model": "claude-sonnet-5-5",        // 必填：Model ID
   "max_tokens": 1024,                  // 必填：最大输出 token
   "messages": [                        // 必填：消息数组
     {"role": "user", "content": "..."}
   ],
   "system": "你是 helpful 助手",       // 可选：System prompt
-  "temperature": 1.0,                  // 可选：0-1
-  "top_p": 0.9,                        // 可选：nucleus sampling
-  "top_k": 40,                         // 可选
   "stop_sequences": ["\n\nHuman:"],    // 可选：自定义 stop
   "stream": false,                     // 可选：流式响应
   "metadata": {"user_id": "u_123"},   // 可选：追踪字段
   "tools": [...]                       // 可选：tool definitions
 }
 ```
+
+> **⚠️ `temperature` / `top_p` / `top_k` 已被移除（API version `2026-10-21` 起）**
+>
+> 这三个采样参数从 `2026-10-21` 起被**移除**——继续传会返回 **400 错误**，即使传的是默认值。更早的 API version 在 Claude 4.7 及之后的模型上把这些参数设成非默认值，同样会报错。
+>
+> 替代方案：**删掉这三个参数**，改用 [prompting](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) 引导模型行为。不传它们时采样走默认值（`temperature` 为 1.0），与 `2023-06-01` 请求省略它们的行为一致。SDK 与 CLI 的最新大版本已经不再提供这三个参数。
 
 ## 四、响应结构
 
@@ -153,7 +162,7 @@ python3 hello.py    # 期望输出：'Hello! How can I help you today?'
       "text": "Hello! How can I help you today?"
     }
   ],
-  "model": "claude-sonnet-5-...",
+  "model": "claude-sonnet-5-5",
   "stop_reason": "end_turn",
   "stop_sequence": null,
   "usage": {
@@ -173,21 +182,22 @@ python3 hello.py    # 期望输出：'Hello! How can I help you today?'
 ### 1. `model`（必填）
 
 ```
-claude-opus-5-...
-claude-sonnet-5-...
-claude-haiku-4-5-...
-claude-fable-5-...
+claude-opus-5-5
+claude-sonnet-5-5
+claude-haiku-5-5
+claude-fable-5-2
 ```
 
 完整列表见 [模型家族总览](/claude-capabilities/models/overview)。
+
+> 4.6 世代起，dateless ID（如 `claude-opus-5-5`）本身就是**固定快照**，不是会随时间漂移的 alias——写进代码就等于钉死这个版本。
 
 ### 2. `max_tokens`（必填）
 
 最大输出 token 数。**必须设**——不设会 400 错。
 
 各模型上限：
-- Opus 5 / Sonnet 5 / Fable 5: **128k**
-- Haiku 4.5: **64k**
+- Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5: **128k**（上一代 Haiku 4.5 是 64k）
 
 ### 3. `messages`（必填）
 
@@ -261,7 +271,7 @@ System prompt——放角色、规则、风格。详见 [System Prompt 设计](/
 | Status | 含义 | 处理 |
 | --- | --- | --- |
 | 200 | 成功 | — |
-| 400 | 请求参数错（model 不存在、max_tokens 超限） | 修参数 |
+| 400 | 请求参数错（model 不存在、max_tokens 超限、传了已移除的 `temperature` / `top_p` / `top_k`） | 修参数 |
 | 401 | API key 无效 | 检查 env var |
 | 403 | 权限不足（账号欠费 / ZDR 限制） | 检查账号 |
 | 404 | endpoint 不存在 | 检查 URL |
@@ -298,16 +308,16 @@ except anthropic.APIStatusError as e:
 | 500 / 529 | ✅ | 同上 |
 | 4xx（除 429） | ❌ | 改参数 |
 
-## 八、5 个常见坑
+## 八、6 个常见坑
 
 **1. 忘记设 `max_tokens`**
 
 ```python
 # ❌
-client.messages.create(model="claude-sonnet-5-...", messages=[...])  # 400
+client.messages.create(model="claude-sonnet-5-5", messages=[...])  # 400
 
 # ✅
-client.messages.create(model="claude-sonnet-5-...", max_tokens=1024, messages=[...])
+client.messages.create(model="claude-sonnet-5-5", max_tokens=1024, messages=[...])
 ```
 
 **2. `messages` 第一条不是 user**
@@ -354,10 +364,33 @@ total_output += msg.usage.output_tokens
 
 详见 [成本与 Token 管理](/claude-code/basics/cost-and-tokens)。
 
+**6. 还在传 `temperature` / `top_p` / `top_k`**
+
+```python
+# ❌ API version 2026-10-21 起直接 400
+client.messages.create(
+    model="claude-sonnet-5-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "写一首诗"}],
+    temperature=0.7,
+)
+
+# ✅ 删掉参数，用 prompt 引导行为
+client.messages.create(
+    model="claude-sonnet-5-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "写一首诗。语气克制，控制在四行以内。"}],
+)
+```
+
+迁移步骤见 [Anthropic Docs · 迁移到 API version 2026-10-21](https://platform.claude.com/docs/en/api/migration-2026-10-21)（访问于 2026-11-13）。
+
 ## 参考
 
-- [Anthropic Docs · Messages API](https://platform.claude.com/docs/en/api/messages)（访问于 2026-08-07）
-- [Anthropic Docs · API Overview](https://docs.claude.com/en/api/overview)（访问于 2026-08-07）
+- [Anthropic Docs · Messages API](https://platform.claude.com/docs/en/api/messages)（访问于 2026-11-13）
+- [Anthropic Docs · 迁移到 API version 2026-10-21](https://platform.claude.com/docs/en/api/migration-2026-10-21)（访问于 2026-11-13）
+- [Anthropic Docs · 模型退役与生命周期](https://platform.claude.com/docs/en/about-claude/model-deprecations)（访问于 2026-11-13）
+- [Anthropic Docs · API Overview](https://platform.claude.com/docs/en/api/overview)（访问于 2026-11-13）
 - [Python SDK](/claude-capabilities/sdk/python-sdk)
 - [TypeScript SDK](/claude-capabilities/sdk/typescript-sdk)
 - [Tool Use 协议](/claude-capabilities/core/tool-use)

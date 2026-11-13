@@ -4,13 +4,14 @@ description: org / workspace 管理端点；用量报告、成本追踪、成员
 audience: advanced
 difficulty: 🔴
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-opus-5
-  adminApi: 'https://platform.claude.com/docs/en/api/administration'
-  usageApi: 'https://platform.claude.com/docs/en/api/usage'
-  accessedAt: 2026-08-07
+  scope: '2026-11-13 复核模型 ID、Admin / Usage 端点与参数、鉴权口径；示例按官方文档改写，未在本机实跑（需 Admin Key 与真实 org）'
+  claudeCode: 2.1.319
+  model: claude-opus-5-5
+  adminApi: 'https://platform.claude.com/docs/en/manage-claude/admin-api'
+  usageApi: 'https://platform.claude.com/docs/en/manage-claude/usage-cost-api'
+  accessedAt: 2026-11-13
 ---
 
 # Admin & Usage
@@ -26,7 +27,9 @@ verifiedWith:
 | **Admin API** | 成员管理 / 邀请 / 角色 / 工作空间 | Admin Key |
 | **Usage API** | 用量报告 / 成本数据 | Admin Key |
 
-**关键**：**普通 `ANTHROPIC_API_KEY` 调 Admin / Usage 端点会 403**——必须用 Admin Key（在 Console 里单独生成）。
+**关键**：**普通 API key（`sk-ant-api...`）调 Admin / Usage 端点会被拒（403）**——必须用 Admin API key（`sk-ant-admin...`）或带 `org:admin` scope 的 OAuth token；反过来 Admin 凭据也不能调 Messages API。
+
+> **2026-11-13 复核**：Admin 端点在 SDK 里挂 **`client.organization.*`**（不是 `client.beta.organization`）；**用量 / 成本报告不在 Admin SDK 里**，得直接打 `GET /v1/organizations/usage_report/messages`。Usage and Cost API 已标 **legacy**——新集成建议直接上 [Usage and Cost Analytics API](https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api)。
 
 ```python
 import anthropic
@@ -34,39 +37,56 @@ import anthropic
 # 普通 client（调 Messages / Batch / Files）
 client = anthropic.Anthropic()    # 用 ANTHROPIC_API_KEY
 
-# Admin client
-admin = anthropic.AnthropicAdmin()  # 用 ANTHROPIC_ADMIN_KEY
+# Admin 端点：client.organization.*（需 Admin API key）
+org = client.organization.retrieve()
+print(org.name)
 ```
 
 ## 二、Usage 实战
 
 ### 1. 拉取月度用量
 
+用量报告不在 SDK 里，用裸 HTTP 打 `/v1/organizations/usage_report/messages`：
+
 ```python
-from datetime import datetime, timedelta
+import httpx
+from datetime import datetime, timedelta, timezone
 
-now = datetime.utcnow()
-start = (now - timedelta(days=30)).isoformat() + "Z"
-end = now.isoformat() + "Z"
+ADMIN_KEY = "sk-ant-admin..."     # 或 org:admin scope 的 OAuth token
 
-usage = admin.usage.reports(
-    start_time=start,
-    end_time=end,
-    bucket_width="1d",       # 按天分组
-    models=["claude-sonnet-5-...", "claude-opus-5-..."],   # 可选过滤
+def usage_report(**params):
+    return httpx.get(
+        "https://api.anthropic.com/v1/organizations/usage_report/messages",
+        params=params,
+        headers={"x-api-key": ADMIN_KEY, "anthropic-version": "2026-10-21"},
+    ).json()
+
+now = datetime.now(timezone.utc)
+start = (now - timedelta(days=30)).isoformat()
+end = now.isoformat()
+
+report = usage_report(
+    starting_at=start,
+    ending_at=end,
+    bucket_width="1d",                    # 按天分组
+    models=["claude-sonnet-5-5", "claude-opus-5-5"],   # 可选过滤
 )
 
-for bucket in usage.data:
-    print(f"{bucket.start_time}: {bucket.input_tokens + bucket.output_tokens} tokens")
+for bucket in report["data"]:
+    for item in bucket["results"]:
+        tokens = item["uncached_input_tokens"] + item["output_tokens"]
+        print(bucket["starting_at"], item["model"], tokens)
 ```
 
 ### 2. 按用户拆分
 
+`group_by[]` 的合法维度：`account_id` / `api_key_id` / `workspace_id` / `model` / `service_tier` / `context_window` / `inference_geo` / `speed` / `service_account_id`。
+
 ```python
-usage = admin.usage.reports(
-    start_time=start,
-    end_time=end,
-    group_by=["user_id", "model"],   # 多维分组
+report = usage_report(
+    starting_at=start,
+    ending_at=end,
+    group_by=["account_id", "model"],   # 多维分组
 )
 ```
 
@@ -74,18 +94,19 @@ usage = admin.usage.reports(
 
 ```python
 import json
-report = [
+rows = [
     {
-        "time": b.start_time,
-        "model": b.model,
-        "input": b.input_tokens,
-        "output": b.output_tokens,
-        "cache_read": b.cache_read_input_tokens,
+        "time": bucket["starting_at"],
+        "model": item["model"],
+        "input": item["uncached_input_tokens"],
+        "output": item["output_tokens"],
+        "cache_read": item["cache_read_input_tokens"],
     }
-    for b in usage.data
+    for bucket in report["data"]
+    for item in bucket["results"]
 ]
 with open("usage_report.json", "w") as f:
-    json.dump(report, f, indent=2)
+    json.dump(rows, f, indent=2)
 ```
 
 ## 三、Admin 实战
@@ -93,7 +114,7 @@ with open("usage_report.json", "w") as f:
 ### 1. 邀请成员
 
 ```python
-invite = admin.organization.invites.create(
+invite = client.organization.invites.create(
     email="alice@company.com",
     role="developer",     # developer / admin / billing
 )
@@ -103,19 +124,20 @@ print(f"invite id: {invite.id}")
 ### 2. 列出成员
 
 ```python
-members = admin.organization.members.list()
-for m in members.data:
-    print(f"{m.email}: {m.role}")
+# limit 是分页大小，不是总数——SDK 会自动翻页
+for user in client.organization.users.list(limit=10):
+    print(f"{user.email}: {user.role}")
 ```
 
-### 3. 创建 API key（子用户）
+### 3. API key：Console 建，API 管
+
+⚠ **Admin API 不能创建 API key**——key 在 Claude Console 里建，API 只能读、改名、改状态。
 
 ```python
-key = admin.organization.api_keys.create(
-    name="production-bot",
-    workspace_id="ws_01ABC...",
-)
-print(f"key: {key.id}, secret: {key.secret[:10]}...")
+for key in client.organization.api_keys.list():
+    print(key.id, key.name, key.status)
+
+client.organization.api_keys.update("apikey_01...", status="inactive", name="旧机器人")
 ```
 
 ## 四、4 个常见坑
@@ -123,48 +145,54 @@ print(f"key: {key.id}, secret: {key.secret[:10]}...")
 **1. 用普通 key 调 Admin**
 
 ```python
-client = anthropic.Anthropic()    # ANTHROPIC_API_KEY
-client.usage.reports(...)         # ❌ 403
+client = anthropic.Anthropic()           # 普通 API key
+client.organization.users.list()         # ❌ 403
 
-# ✅ 用 Admin client
-admin = anthropic.AnthropicAdmin()  # ANTHROPIC_ADMIN_KEY
-admin.usage.reports(...)
+# ✅ 用 Admin API key
+admin = anthropic.Anthropic(api_key="sk-ant-admin...")
+admin.organization.users.list()
 ```
 
 **2. `bucket_width` 选错**
 
+只有 `1m` / `1h` / `1d` 三档，**没有 `1mo`**——按月出账请用 `1d` 拉 31 天。
+
 ```
-"1m"  → 按分钟（细粒度，适合实时监控）
-"1h"  → 按小时
-"1d"  → 按天（默认）
-"1mo" → 按月（适合月度账单）
+"1m"  → 按分钟（默认 60 分钟，最多 1440）
+"1h"  → 按小时（默认 24 小时，最多 168）
+"1d"  → 按天（默认 7 天，最多 31）
 ```
 
 **3. 时间窗太大**
 
+桶数超上限会被截断或报错——按月分次拉，别一次要一年。
+
 ```python
-# ❌ 拉一年数据（100 万条）
-usage = admin.usage.reports(start_time="2025-01-01", end_time="2026-01-01")
+# ❌ 1d 粒度最多 31 个桶
+usage_report(starting_at="2025-01-01", ending_at="2026-01-01", bucket_width="1d")
 
 # ✅ 按月分次拉
 for month_start in month_starts:
-    usage = admin.usage.reports(start_time=month_start, end_time=month_end)
+    usage_report(starting_at=month_start, ending_at=month_end, bucket_width="1d")
 ```
+
+响应里有 `has_more` / `next_page`，翻页把 `next_page` 传回 `page` 参数继续拉。
 
 **4. 不存用量数据**
 
 ```python
 # ❌ 只看实时
-print(usage.data[0].input_tokens)
+print(report["data"][0]["results"][0]["uncached_input_tokens"])
 
 # ✅ 持久化到 DB / BI 工具（成本趋势分析）
-db.insert("usage_reports", report)
+db.insert("usage_reports", rows)
 ```
 
 ## 参考
 
-- [Anthropic Docs · Admin API](https://platform.claude.com/docs/en/api/administration)（访问于 2026-08-07）
-- [Anthropic Docs · Usage API](https://platform.claude.com/docs/en/api/usage)（访问于 2026-08-07）
+- [Anthropic Docs · Admin API](https://platform.claude.com/docs/en/manage-claude/admin-api)（访问于 2026-11-13）
+- [Anthropic Docs · Usage and Cost API](https://platform.claude.com/docs/en/manage-claude/usage-cost-api)（访问于 2026-11-13）
+- [Anthropic Docs · Get Messages Usage Report](https://platform.claude.com/docs/en/api/beta/organization/usage_report/retrieve_messages)（访问于 2026-11-13）
 - [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
 - [Messages API](/claude-capabilities/api/messages)
 

@@ -4,12 +4,14 @@ description: 预计算 token 用量的 count_tokens 端点；3 个实战场景�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-sonnet-5-...
+  scope: '2026-11-13 复核模型 ID、count_tokens 计数范围与 tokenizer 换代口径；示例未在本机实跑，token 数与成本为量级示意'
+  claudeCode: 2.1.319
+  model: claude-sonnet-5-5
   tokenCounting: 'https://platform.claude.com/docs/en/api/messages-count-tokens'
-  accessedAt: 2026-08-07
+  tokenCountingGuide: 'https://platform.claude.com/docs/en/build-with-claude/token-counting'
+  accessedAt: 2026-11-13
 ---
 
 # Token Counting
@@ -26,7 +28,7 @@ import anthropic
 client = anthropic.Anthropic()
 
 count = client.messages.count_tokens(
-    model="claude-sonnet-5-...",
+    model="claude-sonnet-5-5",
     messages=[{"role": "user", "content": "Hello, Claude"}],
     system="你是 helpful 助手",
 )
@@ -44,12 +46,14 @@ print(f"input tokens: {count.input_tokens}")
 ```python
 def estimate_cost(text: str, model: str) -> float:
     count = client.messages.count_tokens(model=model, messages=[{"role": "user", "content": text}])
-    pricing = {"claude-sonnet-5-...": 3, "claude-opus-5-...": 5, "claude-haiku-4-5-...": 1}
+    pricing = {"claude-sonnet-5-5": 2, "claude-opus-5-5": 4, "claude-haiku-5-5": 0.1}  # $/MTok 输入价
     return count.input_tokens / 1_000_000 * pricing[model]
 
-print(estimate_cost("一段 1000 字的文本", "claude-sonnet-5-..."))
-# 0.006
+print(estimate_cost("一段 1000 字的文本", "claude-sonnet-5-5"))
+# 1000 汉字约 1000-2000 token → 约 $0.002-0.004
 ```
+
+⚠ **Haiku 5.5 是唯一分档计费的型号**——prompt 超过 100k token 时，输入输出各跳 5 倍。报价别忘了乘。
 
 ### 2. 超限拦截
 
@@ -61,6 +65,8 @@ def safe_create(model, messages, max_tokens=1024, max_input=200_000):
         raise InputTooLongError(f"input {count.input_tokens} > {max_input}")
     return client.messages.create(model=model, messages=messages, max_tokens=max_tokens)
 ```
+
+当前四型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）都是 **1M context**——`max_input` 按目标型号的实际窗口设，别照抄 200k。
 
 ### 3. 拆分策略
 
@@ -84,7 +90,7 @@ with open("chart.png", "rb") as f:
     img = base64.b64encode(f.read()).decode()
 
 count = client.messages.count_tokens(
-    model="claude-sonnet-5-...",
+    model="claude-sonnet-5-5",
     messages=[{
         "role": "user",
         "content": [
@@ -96,7 +102,9 @@ count = client.messages.count_tokens(
 print(f"input tokens: {count.input_tokens}")   # 包含图片按尺寸算的 token
 ```
 
-详见 [Vision · Token 计算公式](/claude-capabilities/core/vision#三token-计算)。
+⚠ 图片和 PDF **必须用 base64 传**——`url` / `file` 来源的图像或文档块会让 `count_tokens` 直接报 `invalid_request_error`。
+
+详见 [Vision · Token 计算公式](/claude-capabilities/core/vision#三、token-计算)。
 
 ## 四、4 个常见坑
 
@@ -104,13 +112,20 @@ print(f"input tokens: {count.input_tokens}")   # 包含图片按尺寸算的 tok
 
 不能——`count_tokens` 只算**输入**，输出 token 取决于模型实际生成。
 
-**2. 不算 `tools`**
+**2. 以为 `tools` 不计入**
+
+官方口径：`input_tokens` 是 **messages + system prompt + tools** 的总和，图片和 PDF 也算。所以 `tools` 定义不用自己折算。
 
 ```python
-# count_tokens 不算 tools 定义占的 token
-# 生产里把 tools 也算进去
-total = count.input_tokens + sum(len(json.dumps(t)) for t in tools) // 4
+count = client.messages.count_tokens(
+    model="claude-sonnet-5-5",
+    system="你是 helpful 助手",
+    tools=[{"name": "get_weather", "description": "查天气", "input_schema": {...}}],
+    messages=[{"role": "user", "content": "北京今天天气？"}],
+)
 ```
+
+⚠ 另一头：server tools（web search / web fetch / code execution / tool search）和 MCP connector 会让 `count_tokens` 报 `invalid_request_error`——这类请求的用量得回 Messages 响应的 `usage` 里读。
 
 **3. 不算 cache**
 
@@ -120,11 +135,23 @@ total = count.input_tokens + sum(len(json.dumps(t)) for t in tools) // 4
 
 tokenizer 边界条件（特殊字符、多语言混合）会有微小差异。**预算留 5-10% buffer**。
 
+⚠ **更大的偏差来自换 tokenizer**：Claude 4.7 世代及之后的型号（Fable 5.x / Opus 4.7+ / Sonnet 5.5 / Haiku 5.5 等）用新 tokenizer，同样输入文本**约多 30% token**（官方口径，具体幅度取决于内容与负载形态）。`count_tokens` 按你传入的 `model` 的 tokenizer 计——**换型号必须重算**，不能复用旧型号量出来的数。
+
+换算口径（官方 models overview）：
+
+- **1M token ≈ 555k 词 ≈ 250 万 Unicode 字符**（当前 tokenizer，Claude Opus 4.7 引入）
+- 更早的型号：1M token ≈ 750k 词
+- 200k token ≈ 150k 词
+
+（按词数算是 750k → 555k，约 35%；官方给的 token 增幅是"约 30%"——两个口径描述同一件事。）
+
 ## 参考
 
-- [Anthropic Docs · Count Tokens](https://platform.claude.com/docs/en/api/messages-count-tokens)（访问于 2026-08-07）
+- [Anthropic Docs · Count Tokens](https://platform.claude.com/docs/en/api/messages-count-tokens)（访问于 2026-11-13）
+- [Anthropic Docs · Token counting](https://platform.claude.com/docs/en/build-with-claude/token-counting)（访问于 2026-11-13）
+- [Anthropic Docs · Models overview（context window 换算）](https://platform.claude.com/docs/en/about-claude/models/overview)（访问于 2026-11-13）
 - [Messages API](/claude-capabilities/api/messages)
-- [Vision · Token 计算](/claude-capabilities/core/vision#三token-计算)
+- [Vision · Token 计算](/claude-capabilities/core/vision#三、token-计算)
 - [Prompt Caching](/claude-capabilities/api/prompt-caching)
 - [成本与 Token 管理](/claude-code/basics/cost-and-tokens)
 

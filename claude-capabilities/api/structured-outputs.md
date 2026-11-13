@@ -4,12 +4,14 @@ description: 强制 JSON / JSON Schema 输出的 3 种方式；tool_use 实现 v
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-opus-5
+  scope: '2026-11-13 复核模型 ID 口径（示例改用 claude-sonnet-5-5）；3 种方式的可靠性排序与 Schema 写法沿用 2026-08-07 的记录，本页示例未在本机重跑'
+  claudeCode: 2.1.319
+  model: claude-opus-5-5
   structuredOutputs: 'https://platform.claude.com/docs/en/build-with-claude/structured-outputs'
-  accessedAt: 2026-08-07
+  modelIds: 'https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions'
+  accessedAt: 2026-11-13
 ---
 
 # 结构化输出
@@ -50,7 +52,7 @@ TOOL = {
 }
 
 msg = client.messages.create(
-    model="claude-sonnet-5-...",
+    model="claude-sonnet-5-5",
     max_tokens=512,
     tools=[TOOL],
     tool_choice={"type": "tool", "name": "extract_invoice"},   # 强制
@@ -70,11 +72,13 @@ for block in msg.content:
 - **字段类型校验**——SDK 帮你验证
 - **重试友好**——字段缺失 / 类型错时再请求一次
 
+示例用 `claude-sonnet-5-5`——4.6 世代起 dateless Model ID 本身就是**固定快照**，写进代码即钉死这个版本，不会随时间漂移。完整 ID 表见 [模型 ID 与定价](/claude-capabilities/models/model-ids)。
+
 ## 三、Prefill `{`
 
 ```python
 msg = client.messages.create(
-    model="claude-sonnet-5-...",
+    model="claude-sonnet-5-5",
     max_tokens=512,
     messages=[
         {"role": "user", "content": "提取：发票号 INV-001，金额 ¥1000"},
@@ -84,13 +88,13 @@ msg = client.messages.create(
 # Claude 从 { 开始输出 JSON
 ```
 
-详见 [Prefill 与 XML 标签 · 场景 1](/claude-capabilities/prompting/prefill-and-xml#场景-1强制-json-输出)。
+详见 [Prefill 与 XML 标签 · 场景 1](/claude-capabilities/prompting/prefill-and-xml#场景-1-强制-json-输出)。
 
 ## 四、手动 prompt 引导（不推荐）
 
 ```python
 msg = client.messages.create(
-    model="claude-sonnet-5-...",
+    model="claude-sonnet-5-5",
     max_tokens=512,
     system="你必须输出严格 JSON 格式，不要包含其他文字。",
     messages=[{"role": "user", "content": "提取：INV-001，¥1000"}],
@@ -175,6 +179,7 @@ except (ValueError, KeyError):
 ## 参考
 
 - [Anthropic Docs · Structured Outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)（访问于 2026-08-07）
+- [Anthropic Docs · Model IDs and Versions](https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions)（访问于 2026-11-13）
 - [Tool Use API](/claude-capabilities/api/tool-use)
 - [Prefill 与 XML 标签](/claude-capabilities/prompting/prefill-and-xml)
 - [Messages API](/claude-capabilities/api/messages)

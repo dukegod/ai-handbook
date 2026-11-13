@@ -1,15 +1,17 @@
 ---
 title: 流式响应
-description: SSE 协议的 stream=true 模式；5 类事件、Python / TypeScript 实战、何时该用流式
+description: SSE 协议的 stream=true 模式；6 类事件、Python / TypeScript 实战、何时该用流式
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-opus-5
+  scope: '2026-11-13 复核模型 ID 口径（示例改用 claude-sonnet-5-5）；SSE 事件类型数量按本页表格校正为 6 类，SDK 用法与选型建议沿用 2026-08-07 的记录，本页示例未在本机重跑'
+  claudeCode: 2.1.319
+  model: claude-opus-5-5
   streaming: 'https://platform.claude.com/docs/en/api/messages#stream'
-  accessedAt: 2026-08-07
+  modelIds: 'https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions'
+  accessedAt: 2026-11-13
 ---
 
 # 流式响应
@@ -42,7 +44,7 @@ verifiedWith:
   event: message_stop
 ```
 
-## 二、5 类事件
+## 二、6 类事件
 
 | 事件 | 含义 |
 | --- | --- |
@@ -61,7 +63,7 @@ import anthropic
 client = anthropic.Anthropic()
 
 with client.messages.stream(
-    model="claude-sonnet-5-...",
+    model="claude-sonnet-5-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "讲个故事"}],
 ) as stream:
@@ -75,6 +77,8 @@ print(f"input tokens: {final.usage.input_tokens}")
 print(f"output tokens: {final.usage.output_tokens}")
 ```
 
+示例用 `claude-sonnet-5-5`——4.6 世代起 dateless Model ID 本身就是**固定快照**，写进代码即钉死这个版本，不会随时间漂移。完整 ID 表见 [模型 ID 与定价](/claude-capabilities/models/model-ids)。
+
 ## 四、TypeScript 实战
 
 ```typescript
@@ -83,7 +87,7 @@ import Anthropic from "@anthropic-ai/sdk";
 const client = new Anthropic();
 
 const stream = client.messages.stream({
-  model: "claude-sonnet-5-...",
+  model: "claude-sonnet-5-5",
   max_tokens: 1024,
   messages: [{ role: "user", content: "讲个故事" }],
 });
@@ -152,6 +156,7 @@ with client.messages.stream(...) as stream:
 ## 参考
 
 - [Anthropic Docs · Messages API · Stream](https://platform.claude.com/docs/en/api/messages#stream)（访问于 2026-08-07）
+- [Anthropic Docs · Model IDs and Versions](https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions)（访问于 2026-11-13）
 - [Messages API](/claude-capabilities/api/messages)
 - [结构化输出](/claude-capabilities/api/structured-outputs)
 - [Python SDK · 流式实战](/claude-capabilities/sdk/python-sdk)

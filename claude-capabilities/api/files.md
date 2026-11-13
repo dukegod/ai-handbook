@@ -4,12 +4,13 @@ description: 上传 / 引用 / 删除文件的端点；与 PDF / 图片 / base64
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-sonnet-5-...
+  scope: '2026-11-13 复核模型 ID 与 Files API 端点口径；单文件 500 MB / org 100 GB / 30 天保留期沿用 2026-08-07 的记录，本页示例未在本机重跑'
+  claudeCode: 2.1.319
+  model: claude-sonnet-5-5
   filesApi: 'https://platform.claude.com/docs/en/api/files'
-  accessedAt: 2026-08-07
+  accessedAt: 2026-11-13
 ---
 
 # Files API
@@ -49,7 +50,7 @@ print(f"file_id: {file_obj.id}")
 
 ```python
 msg = client.messages.create(
-    model="claude-sonnet-5-...",
+    model="claude-sonnet-5-5",
     max_tokens=2048,
     messages=[{
         "role": "user",
@@ -102,7 +103,7 @@ content = [
 ]
 ```
 
-详见 [Vision · 3 种传图方式](/claude-capabilities/core/vision#二最小调用示例)。
+详见 [Vision · 3 种传图方式](/claude-capabilities/core/vision#二、最小调用示例)。
 
 ## 五、3 个实战场景
 
@@ -153,7 +154,7 @@ with open("huge.bin", "rb") as f:
 
 **3. PDF 超过 Pages 上限**
 
-PDF 解析按页计费，**1M context 装不下 → 用 RAG 切片**（详见 [长上下文 · RAG 模式](/claude-capabilities/core/long-context#模式-4rag超-1m-走-rag)）。
+PDF 解析按页计费，**1M context 装不下 → 用 RAG 切片**（详见 [长上下文 · RAG 模式](/claude-capabilities/core/long-context#模式-4-rag-超-1m-走-rag)）。
 
 **4. `purpose` 写错**
 
@@ -178,8 +179,8 @@ msg = client.messages.create(...content=[{"type": "file", "file_id": file_id}]..
 
 ## 参考
 
-- [Anthropic Docs · Files API](https://platform.claude.com/docs/en/api/files)（访问于 2026-08-07）
-- [Vision · 3 种传图方式](/claude-capabilities/core/vision#二最小调用示例)
+- [Anthropic Docs · Files API](https://platform.claude.com/docs/en/api/files)（访问于 2026-11-13）
+- [Vision · 3 种传图方式](/claude-capabilities/core/vision#二、最小调用示例)
 - [Messages API](/claude-capabilities/api/messages)
 - [长上下文 · RAG](/claude-capabilities/core/long-context)
 
@@ -191,5 +192,5 @@ msg = client.messages.create(...content=[{"type": "file", "file_id": file_id}]..
 
 ## 如果你想
 
-- PDF 处理 → [Vision · PDF 实战](/claude-capabilities/core/vision#四多图实战)
+- PDF 处理 → [Vision · PDF 实战](/claude-capabilities/core/vision#四、多图实战)
 - 长 context 文档处理 → [长上下文](/claude-capabilities/core/long-context)

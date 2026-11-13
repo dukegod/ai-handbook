@@ -4,12 +4,14 @@ description: HTTP 协议层的 tool_use / tool_result 协议；tool_choice 控�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-08-07
+lastUpdated: 2026-11-13
 verifiedWith:
-  claudeCode: 2.1.220
-  model: claude-opus-5
+  scope: '2026-11-13 复核了模型 ID、tool_choice 四档语义、tool_use / tool_result 字段与 stop_reason 取值；强制调用的型号限制取自官方 Define tools 页；本页代码示例未在本机重跑'
+  claudeCode: 2.1.319
+  model: claude-opus-5-5
   toolUseApi: 'https://platform.claude.com/docs/en/api/messages#tool-use'
-  accessedAt: 2026-08-07
+  defineTools: 'https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools'
+  accessedAt: 2026-11-13
 ---
 
 # Tool Use API
@@ -41,7 +43,7 @@ verifiedWith:
 继续请求 → Claude 看 tool_result 决定下一步
 ```
 
-详见 [core/tool-use · 多步循环](/claude-capabilities/core/tool-use#三多步-tool-call-循环agent-核心)。
+详见 [core/tool-use · 多步循环](/claude-capabilities/core/tool-use#三、多步-tool-call-循环-agent-核心)。
 
 ## 二、完整可运行多步循环
 
@@ -84,7 +86,7 @@ def run_agent(user_query):
     messages = [{"role": "user", "content": user_query}]
     for _ in range(20):
         msg = client.messages.create(
-            model="claude-sonnet-5-...",
+            model="claude-sonnet-5-5",
             max_tokens=4096,
             tools=TOOLS,
             messages=messages,
@@ -176,15 +178,27 @@ print(result)
 | `{"type": "tool", "name": "X"}` | 必须调 X |
 | `none` | 禁止调 |
 
+> ⚠️ **型号限制**：当前主力型号（Fable 5.2 / Opus 5.5 / Sonnet 5.5）**不支持强制调用**——`any` 和 `tool` 直接返回 **400**。只有 `auto` / `none` 可用；手动开 extended thinking（`thinking: {type: "enabled"}`）时同样禁用强制调用。
+
 ```python
-# 强制调 search_issues
+# 强制调 search_issues：需用支持强制调用的型号（如 claude-opus-5）
 msg = client.messages.create(
-    model="claude-sonnet-5-...",
+    model="claude-opus-5",
     tools=TOOLS,
     tool_choice={"type": "tool", "name": "search_issues"},
     messages=[...],
 )
+
+# 当前主力型号的替代写法：auto + prompt 指令
+msg = client.messages.create(
+    model="claude-sonnet-5-5",
+    tools=TOOLS,
+    tool_choice={"type": "auto"},
+    messages=[{"role": "user", "content": "必须调用 search_issues 工具来查 issue"}],
+)
 ```
+
+想在主力型号上**保证**入参合法，给工具定义加 `strict: true`（同时写 `additionalProperties: false`）——见 [Strict tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use)（访问于 2026-11-13）。
 
 ## 五、4 个常见坑
 
@@ -202,12 +216,13 @@ Claude 决定调哪个工具**全靠 description**。
 
 **4. JSON Schema 用 `$ref`**
 
-不支持——`input_schema` 用 JSON Schema 子集（详见 [core/tool-use · 4 常见坑](/claude-capabilities/core/tool-use#九常见坑)）。
+不支持——`input_schema` 用 JSON Schema 子集（详见 [core/tool-use · 4 常见坑](/claude-capabilities/core/tool-use#九、常见坑)）。
 
 ## 参考
 
-- [Anthropic Docs · Messages API · Tool use](https://platform.claude.com/docs/en/api/messages#tool-use)（访问于 2026-08-07）
-- [Tool Use 协议 · 多步循环模板](/claude-capabilities/core/tool-use#三多步-tool-call-循环agent-核心)
+- [Anthropic Docs · Messages API · Tool use](https://platform.claude.com/docs/en/api/messages#tool-use)（访问于 2026-11-13）
+- [Anthropic Docs · Define tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools)（访问于 2026-11-13）
+- [Tool Use 协议 · 多步循环模板](/claude-capabilities/core/tool-use#三、多步-tool-call-循环-agent-核心)
 - [Messages API](/claude-capabilities/api/messages)
 
 ## 下一步
