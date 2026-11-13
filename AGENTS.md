@@ -4,6 +4,16 @@
 >
 > 保持精炼。不重复 [contributing/style-guide.md](./contributing/style-guide.md) 已细写的规范。
 
+## ⚠️ 只改 AGENTS.md，不要动 CLAUDE.md
+
+**项目记忆的唯一真相源是 `AGENTS.md`。** `CLAUDE.md` 只是一个 11 字节的指针文件，内容固定为 `./AGENTS.md`，**永远保持不动**。
+
+无论改动只涉及 CLAUDE.md、只涉及 AGENTS.md，还是两者都涉及——**内容一律写进 AGENTS.md**。
+
+`scripts/hooks/pre-commit` 会校验这条不变量：若 `CLAUDE.md` 被暂存且内容不再是 `./AGENTS.md`，提交会被拒绝并提示 `git restore --staged CLAUDE.md && git restore CLAUDE.md`。
+
+> 旧版 hook 是 `cp CLAUDE.md AGENTS.md`——一旦有人把 CLAUDE.md 一起提交，就会用 11 字节的指针覆盖掉 AGENTS.md 全文且不报错。2026-11-13 已改为校验而非覆盖。
+
 ## 项目定位
 
 **AI Handbook** 是一份面向中文读者、长期维护的 **AI 全栈知识库**，覆盖六个方向：

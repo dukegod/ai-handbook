@@ -1,9 +1,25 @@
 #!/bin/sh
-# pre-commit hook: 自动同步 CLAUDE.md → AGENTS.md
-# 安装方式: npm install 时自动安装（见 package.json postinstall）
+# pre-commit hook: 保护 CLAUDE.md 不被改动
+#
+# 约定（2026-11-13 起）：AGENTS.md 是项目记忆的唯一真相源；
+# CLAUDE.md 只是一个 11 字节的指针（内容固定为 `./AGENTS.md`）。
+# 任何内容改动——即使只改 CLAUDE.md、或两者都改——都只写在 AGENTS.md 里，
+# CLAUDE.md 保持不动。
+#
+# 旧版 hook 做的是 `cp CLAUDE.md AGENTS.md`：一旦有人把 CLAUDE.md 一起提交，
+# 就会用 11 字节的指针覆盖掉 AGENTS.md 全文，且不会报错。现改为「校验」而非「覆盖」。
 
 if git diff --cached --name-only | grep -q '^CLAUDE.md$'; then
-  cp CLAUDE.md AGENTS.md
-  git add AGENTS.md
-  echo "pre-commit: CLAUDE.md → AGENTS.md 已同步"
+  expected='./AGENTS.md'
+  actual=$(cat CLAUDE.md)
+
+  if [ "$actual" != "$expected" ]; then
+    echo "pre-commit: CLAUDE.md 已被修改 —— 请只改 AGENTS.md。"
+    echo "  期望内容: $expected"
+    echo "  实际内容: $actual"
+    echo "  修正方式: git restore --staged CLAUDE.md && git restore CLAUDE.md"
+    exit 1
+  fi
+
+  echo "pre-commit: CLAUDE.md 仍是指针形态（./AGENTS.md），未改动 ✓"
 fi
