@@ -1,0 +1,92 @@
+claude-capabilities/api/messages.md
+  s_8aef4ac63b7dec::t_5e31d6300acc74 367-385
+  s_8aef4ac63b7dec::t_98e821a788ebca 48
+  s_8aef4ac63b7dec::t_fa49c42b563430 386
+  s_8aef4ac63b7dec::t_0ba12f471a32d7 7,9-11,13-15
+  s_8aef4ac63b7dec::t_ed53add60a8a74 98
+  s_8aef4ac63b7dec::t_5db4c90889a4b0 133
+  s_8aef4ac63b7dec::t_b97f01bf5e3513 390-393
+  s_8aef4ac63b7dec::t_07d193ce449c0b 185-188,193
+  s_8aef4ac63b7dec::t_738fe5ef2131ef 165
+  s_8aef4ac63b7dec::t_25c4844ca26d60 200
+  s_8aef4ac63b7dec::t_264c6d463f43c4 21-22,33,36
+  s_8aef4ac63b7dec::t_2f9efd059c2bc2 81,84
+  s_8aef4ac63b7dec::t_bbcdf2191bb347 114
+  s_8aef4ac63b7dec::t_ba8437757de150 58,63
+  s_8aef4ac63b7dec::t_456711823957b3 146-150
+  s_8aef4ac63b7dec::t_60e84189039d43 274
+  s_8aef4ac63b7dec::t_061ef4e6535dbb 311,317,320
+  s_8aef4ac63b7dec::t_6957baba8673aa 151,194,387
+claude-capabilities/api/token-counting.md
+  s_8aef4ac63b7dec::t_035e980b41d141 7,9-11,13-14,31,49,52-53,56-57,69-70,93,105,115-117,120-125,128-129,138-147,150-152
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 107,154
+  s_8aef4ac63b7dec::t_310228644d6909 106
+claude-capabilities/api/prompt-caching.md
+  s_8aef4ac63b7dec::t_e363015b47b1d7 3,7,9-11,13-14
+  s_8aef4ac63b7dec::t_8ee87720f7b33c 19
+  s_8aef4ac63b7dec::t_137d756343cdb9 178,185-186,191,194,204-208,210-213,215,217,220-221,230-231
+  s_8aef4ac63b7dec::t_552ca7417897c8 46-49,51,53,55-56,58-64
+  s_8aef4ac63b7dec::t_6f6e6d5e524225 27
+  s_8aef4ac63b7dec::t_9733006c422d40 151,163,168,172
+  s_8aef4ac63b7dec::t_2cb65b06f701c8 114-115
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 232,245
+  s_8aef4ac63b7dec::t_56f58399ef3e9a 195-201
+  s_8aef4ac63b7dec::t_69b88093b16400 173
+claude-capabilities/api/admin-usage.md
+  s_8aef4ac63b7dec::t_7cee9df7802eba 65-67,69-70
+  s_8aef4ac63b7dec::t_66f514665c6330 185,188
+  s_8aef4ac63b7dec::t_61db792d2db4c5 7,9-14,30-32,40-42,49,51-64,68,71-72,75-78,83-84,86-89,97,99-103,105-106,109,117,127-129,132-134,137-140,148-149,151-153,158-159,161-163,168-169,171-172,176,179,193-195
+  s_8aef4ac63b7dec::t_7432676b17c230 180
+claude-capabilities/api/files.md
+  s_8aef4ac63b7dec::t_ab4054ceb4f159 7,9-11,13
+  s_8aef4ac63b7dec::t_a09e34b2033f01 182
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 106,157,183,195
+  s_8aef4ac63b7dec::t_26aea5c8419bee 53
+claude-capabilities/api/message-batches.md
+  s_8aef4ac63b7dec::t_53dd8c715e6a57 193-194
+  s_8aef4ac63b7dec::t_c974afd08240ee 97-98
+  s_8aef4ac63b7dec::t_e060ec85951d86 52
+  s_8aef4ac63b7dec::t_f7fa0832eea1a7 115
+  s_8aef4ac63b7dec::t_380d467ac0dbd4 104-106
+  s_8aef4ac63b7dec::t_9bf180aab1af5d 7,9-11,13-14
+  s_8aef4ac63b7dec::t_9f4c48caad7f90 142-152
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 161,195,208
+claude-capabilities/api/structured-outputs.md
+  s_8aef4ac63b7dec::t_410a4bc3c34919 7,9-11,13-14
+  s_8aef4ac63b7dec::t_894792c39f7520 182
+  s_8aef4ac63b7dec::t_ec0a75451b4f94 75-76
+  s_8aef4ac63b7dec::t_49cbb28fc92831 55,81,97
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 91
+claude-capabilities/api/tool-use.md
+  s_8aef4ac63b7dec::t_ebffe7dc2bb120 223-224
+  s_8aef4ac63b7dec::t_3a31138f7903cf 7,9-11,13-14
+  s_8aef4ac63b7dec::t_14d332dc174731 89
+  s_8aef4ac63b7dec::t_c22f48b0ad42c8 46,219,225
+  s_8aef4ac63b7dec::t_b3280f9c0d5387 182,184,186,191-198,201
+  s_8aef4ac63b7dec::t_a64cbf644915bb 181
+  s_8aef4ac63b7dec::t_e73d7e83104523 202
+claude-capabilities/api/streaming.md
+  s_8aef4ac63b7dec::t_04b4e33eaa8706 47
+  s_8aef4ac63b7dec::t_754cc6dd37d5eb 66
+  s_8aef4ac63b7dec::t_70d25f7be08cb7 159
+  s_8aef4ac63b7dec::t_99ae23fbd84e52 3,7,10-11,13-14
+  s_8aef4ac63b7dec::t_ed99b69d21cafe 80-81
+  s_8aef4ac63b7dec::t_e4539adb4d39c9 9
+  s_8aef4ac63b7dec::t_60ae838dd4b5de 90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ef70c652bb141ebc4f68eee7994378b230b11c2a",
+  "prompts": {},
+  "sessions": {
+    "s_8aef4ac63b7dec": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36d1dab3-a85b-4125-8690-0d80af329bc4",
+        "model": "MiniMax-M3"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
