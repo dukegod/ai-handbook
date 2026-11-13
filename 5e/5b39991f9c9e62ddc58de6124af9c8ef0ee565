@@ -1,0 +1,63 @@
+AGENTS.md
+  s_8aef4ac63b7dec::t_a5059911512035 100-101
+  s_8aef4ac63b7dec::t_bc5a8ccd18c442 18
+  s_8aef4ac63b7dec::t_7c2c9c29911082 270
+  s_8aef4ac63b7dec::t_dd199337a6f99f 225,227,229,231-232,234-245,248-255,259
+  s_8aef4ac63b7dec::t_67260595d580eb 260
+claude-capabilities/models/fable.md
+  s_8aef4ac63b7dec::t_0b4158a6815092 2-3,7,9-11,15-16,19,21,23,25-34,36,38,48-49,53,61,69,73,79,87,93,99,107,113,125,131,141,151,155,162-163,167,169,183,185,188,191-195,199,201,203,205,209-213,215,217,219,225-229
+claude-code/basics/model-selection.md
+  s_8aef4ac63b7dec::t_6eb2ccc625d350 21
+  s_8aef4ac63b7dec::t_c1853bda499267 170
+  s_8aef4ac63b7dec::t_21c209156521f0 45
+  s_8aef4ac63b7dec::t_682e04ae9c0084 251
+  s_8aef4ac63b7dec::t_a3033a80244d9a 191-192
+  s_8aef4ac63b7dec::t_84989e53981a16 58
+  s_8aef4ac63b7dec::t_1d583f522e9cf5 78
+  s_8aef4ac63b7dec::t_9b34a3e873c8aa 3
+  s_8aef4ac63b7dec::t_729d6742ebcc51 7,9-10,16,41,102,118-119,127,178,238-240
+  s_8aef4ac63b7dec::t_fa13ca6c7e3754 52
+  s_8aef4ac63b7dec::t_d7e86edacb3016 153
+claude-capabilities/models/model-ids.md
+  s_8aef4ac63b7dec::t_023d5574dc93fe 3,6-7,12,15-16,18-21,26,28,30-34,36-39,41,43,45,47,49,51-73,75-88,90-94,98-125,127,131-135,141,145-146,148
+contributing/glossary.md
+  s_8aef4ac63b7dec::t_cf097d5b5746ef 7,9
+  s_8aef4ac63b7dec::t_3e05d35afaf71b 115-126
+claude-capabilities/models/choosing-model.md
+  s_8aef4ac63b7dec::t_e4a828b00c2643 7,9-10,16,21,237-239
+  s_8aef4ac63b7dec::t_468167d4e81066 53-54,57-59,61-62,64,83,107,121,136,182,205,227,248
+claude-capabilities/index.md
+  s_8aef4ac63b7dec::t_30327e3c97ae7c 26
+  s_8aef4ac63b7dec::t_42d438f69f9af5 42
+  s_8aef4ac63b7dec::t_37a031cfca3f3b 74
+.vitepress/config.ts
+  s_8aef4ac63b7dec::t_e7705efe452d1b 265-266
+  s_8aef4ac63b7dec::t_733dc0b6111e1f 261-264
+claude-capabilities/models/overview.md
+  s_8aef4ac63b7dec::t_f0f5aac3b8242f 300-303,311
+  s_8aef4ac63b7dec::t_468167d4e81066 3,23,71,78,88,107,121,145-146,149-151,153,192,203,205,229,268
+  s_8aef4ac63b7dec::t_265da9778c6a20 58
+  s_8aef4ac63b7dec::t_9af7059f88a889 39
+  s_8aef4ac63b7dec::t_d8cda093a5a266 258
+  s_8aef4ac63b7dec::t_ad0e0dad11b653 18
+  s_8aef4ac63b7dec::t_1acd0d39949ce5 240,244
+  s_8aef4ac63b7dec::t_dea718769b7e9d 62
+  s_8aef4ac63b7dec::t_1e2d9d258e3b16 7,9-10
+  s_8aef4ac63b7dec::t_b8b226f8aa9c59 262
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5e5b39991f9c9e62ddc58de6124af9c8ef0ee565",
+  "prompts": {},
+  "sessions": {
+    "s_8aef4ac63b7dec": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36d1dab3-a85b-4125-8690-0d80af329bc4",
+        "model": "MiniMax-M3"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
