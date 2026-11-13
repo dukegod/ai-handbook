@@ -1,0 +1,189 @@
+claude-capabilities/core/reasoning.md
+  s_8aef4ac63b7dec::t_44c081c78f0b20 200
+  s_8aef4ac63b7dec::t_18dadbcfe5bd09 7,9,11,14-15,22-23,125,129,131-133,139,141,145-147,151-152,167,185,192-194,198
+claude-capabilities/prompting/prefill-and-xml.md
+  s_8aef4ac63b7dec::t_4587552fb4ff39 304,311
+  s_8aef4ac63b7dec::t_23961131675f3c 161,163
+  s_8aef4ac63b7dec::t_5bedf2ebfde403 358-361
+  s_8aef4ac63b7dec::t_ca183453c56467 20,22-23
+  s_8aef4ac63b7dec::t_653f5d762c77af 216-218
+  s_8aef4ac63b7dec::t_8c26dadb115b87 7,9,11
+  s_8aef4ac63b7dec::t_133ea932b6aeef 149-151,153,160,162,164-167
+  s_8aef4ac63b7dec::t_85230afb89eeba 21
+  s_8aef4ac63b7dec::t_e75dfa6f4d7f83 223
+  s_8aef4ac63b7dec::t_1b030eec1ebb8f 168-169,224
+claude-capabilities/sdk/agent-sdk.md
+  s_8aef4ac63b7dec::t_e9e3058712304c 178
+ai-trends/model-selection/model-selection-guide.md
+  s_8aef4ac63b7dec::t_44a327a0f94e28 85
+  s_8aef4ac63b7dec::t_3b21063f13b2a8 66-67
+  s_8aef4ac63b7dec::t_a0531a7f89f38a 40
+  s_8aef4ac63b7dec::t_90d40339c77015 7,9,13
+claude-capabilities/core/tool-use.md
+  s_8aef4ac63b7dec::t_e56451753c1abb 302
+  s_8aef4ac63b7dec::t_b6f17acb98e43e 343,345,348-349,351-367,371
+  s_8aef4ac63b7dec::t_60f70e2a43cb02 98,100-112
+  s_8aef4ac63b7dec::t_dd7dc102ce3874 9,11,13,15
+  s_8aef4ac63b7dec::t_165445dc0d6ef7 30,33-34
+  s_8aef4ac63b7dec::t_a00fca98a41b13 187,189-196,200-212,221-223
+  s_8aef4ac63b7dec::t_414f888aad31d3 229
+  s_8aef4ac63b7dec::t_f2e090d2df5779 256,258-261,263-265
+  s_8aef4ac63b7dec::t_7945410d4ccdb1 139
+  s_8aef4ac63b7dec::t_b54d04877b4e9b 387,389
+  s_8aef4ac63b7dec::t_5ae83758d4fd4c 388,390,392
+  s_8aef4ac63b7dec::t_a27d49843d66b1 7,14,16
+  s_8aef4ac63b7dec::t_02003ba99706f1 372
+claude-code/reference/cli-flags.md
+  s_8aef4ac63b7dec::t_0e667cf1de0243 7,9-11,13,20,22,42,44-51,57-61,67-70,73-77,84-85,88-92,98-102,104-105,107-108,114,116,121,129-130,139,141,149-150,152-158,160-164,192-202,208
+claude-capabilities/api/prompt-caching.md
+  s_8aef4ac63b7dec::t_151a7d8564bca7 232,245
+claude-capabilities/prompting/few-shot.md
+  s_8aef4ac63b7dec::t_355b7160f4715d 120-121
+  s_8aef4ac63b7dec::t_0147d6a9b6bb89 7,9,11
+  s_8aef4ac63b7dec::t_b10d3c4cdd7d99 284-285
+  s_8aef4ac63b7dec::t_1973c6e110f760 290-294
+  s_8aef4ac63b7dec::t_cfdf1ee615bcf9 80
+claude-capabilities/prompting/templates.md
+  s_8aef4ac63b7dec::t_e2f6ffc7e93fca 75-76
+  s_8aef4ac63b7dec::t_c63c02c7ad7bc9 34
+  s_8aef4ac63b7dec::t_641eb83e745d6c 297-299
+  s_8aef4ac63b7dec::t_bb72ad25ffa45a 7,9,11
+claude-capabilities/models/sonnet.md
+  s_8aef4ac63b7dec::t_574479cefb2b50 127
+  s_8aef4ac63b7dec::t_08ea9473383751 217
+  s_8aef4ac63b7dec::t_bcc938d2df48b2 100
+  s_8aef4ac63b7dec::t_ce610851100eab 209
+  s_8aef4ac63b7dec::t_0fa411198af6a0 88-90
+  s_8aef4ac63b7dec::t_1484d5f983f0fd 66
+  s_8aef4ac63b7dec::t_f6238c399c572b 121
+  s_8aef4ac63b7dec::t_a5c83485d60974 2-3,7,10,13,16-17,20,26,28-35,37,43,46,48,52,60,67,69-74,78,82,84-85,92,98,102-108,110,112-117,119,123,129,131-135,137,144,146-147,152,157-158,160,162,164,166-171,174,176-180,182,189,194-195,197,200-201,207,210-215,219,221,227,229,231,233-259,261,263,267-275,278,283
+  s_8aef4ac63b7dec::t_c97ebd0e551fa6 45,47
+  s_8aef4ac63b7dec::t_2c2ed608146222 22,24
+  s_8aef4ac63b7dec::t_1f7d675f8ee412 188
+  s_8aef4ac63b7dec::t_8a3cd09f9e6340 9
+  s_8aef4ac63b7dec::t_b2b66d4b1bc1e0 223,225
+  s_8aef4ac63b7dec::t_7dc2a259984ac7 154-156
+  s_8aef4ac63b7dec::t_db3a04dbd27308 68
+  s_8aef4ac63b7dec::t_95cc7f3ddbf37b 208,216,218
+ai-trends/vendors/anthropic/index.md
+  s_8aef4ac63b7dec::t_b4d242a90b023b 143
+  s_8aef4ac63b7dec::t_39e78313858e64 141-142
+  s_8aef4ac63b7dec::t_fda3badc2576f8 114,130,135,190,196,199
+  s_8aef4ac63b7dec::t_19b541419d8ae3 191
+  s_8aef4ac63b7dec::t_01940c9fceb127 128
+  s_8aef4ac63b7dec::t_63c46b569a65c1 150,161
+  s_8aef4ac63b7dec::t_12519b0b4e44e0 118
+  s_8aef4ac63b7dec::t_e9e3058712304c 98
+  s_8aef4ac63b7dec::t_4547e4f6f13f20 96
+  s_8aef4ac63b7dec::t_6d6602fcae53ed 56
+  s_8aef4ac63b7dec::t_e27708155d1b78 40
+  s_8aef4ac63b7dec::t_5ed9210dbe102a 185
+  s_8aef4ac63b7dec::t_9e781b9e29eb50 62,64
+  s_8aef4ac63b7dec::t_41a33474b580d7 197,200
+  s_8aef4ac63b7dec::t_d572c7590378a5 58
+  s_8aef4ac63b7dec::t_cfb75e1415f6f9 3,7,9,13,16,19,22-31,44-54,73,100-112,120,122,145-149,151-155,157,171,198,206-209,214,227
+  s_8aef4ac63b7dec::t_b1aac494e012ff 66
+  s_8aef4ac63b7dec::t_7a77102bd2cd24 116
+  s_8aef4ac63b7dec::t_900208755c8cd5 82,97,144
+claude-capabilities/prompting/chain-of-thought.md
+  s_8aef4ac63b7dec::t_29f93cb816c854 7,11
+  s_8aef4ac63b7dec::t_9aa87f250c48b0 245-247,249
+  s_8aef4ac63b7dec::t_8961bf4421a87c 184,186-187,193-195,198-200
+  s_8aef4ac63b7dec::t_6cb96710f49b50 9
+claude-capabilities/api/tool-use.md
+  s_8aef4ac63b7dec::t_88ce6ea6e2de2b 182-184
+  s_8aef4ac63b7dec::t_1e188fe6754d86 220,222-245
+  s_8aef4ac63b7dec::t_66640840e99a35 251
+  s_8aef4ac63b7dec::t_44a84bc2102364 204
+  s_8aef4ac63b7dec::t_adcc351c793893 9,14
+claude-capabilities/models/opus.md
+  s_8aef4ac63b7dec::t_b759c6b3ce74a0 9
+  s_8aef4ac63b7dec::t_0baf69c2c103cb 41
+  s_8aef4ac63b7dec::t_36e97994234492 184
+  s_8aef4ac63b7dec::t_376ce49365dedb 37,40
+  s_8aef4ac63b7dec::t_a4484cf86b97f0 126-127
+  s_8aef4ac63b7dec::t_02d479d46d9c21 236
+  s_8aef4ac63b7dec::t_3a6cc1cb8820cf 2-3,7,10,16-19,22,24,26,28,30-36,38-39,43,45-50,52-54,58-63,75,77,90,101,109-110,115-119,121,124-125,130,132,134-148,152-158,160,162,164,166,168,179-180,186,188-191,196,198-210,214,216,218,220-235,237-248,250,254-260,262,277
+  s_8aef4ac63b7dec::t_e626d51a11fb80 42
+claude-capabilities/core/vision.md
+  s_8aef4ac63b7dec::t_fa574e221f42a5 226-227
+  s_8aef4ac63b7dec::t_596ba2254f9cf9 157
+  s_8aef4ac63b7dec::t_74f6640968fdd0 32
+  s_8aef4ac63b7dec::t_1b0fea23ae6a83 20,26,28
+  s_8aef4ac63b7dec::t_87fc2eee12a417 297-301
+  s_8aef4ac63b7dec::t_c93b68fbc3944a 7,9,11,13-14
+  s_8aef4ac63b7dec::t_c9ed84a2ae46c3 235
+  s_8aef4ac63b7dec::t_3027db195bcc56 120,124,127,129-145,147,149,152-154,159
+  s_8aef4ac63b7dec::t_cbafe04ffd3915 52
+  s_8aef4ac63b7dec::t_fca1b1916190d9 36-41,46-48
+  s_8aef4ac63b7dec::t_afeb496489ef41 303
+  s_8aef4ac63b7dec::t_049b6c35b7a908 242,245,249,252,256-257,260,264
+  s_8aef4ac63b7dec::t_4f5e58fb466b83 64,93,167,185,207
+  s_8aef4ac63b7dec::t_a8ffa67b14a0f3 158
+contributing/roadmap.md
+  s_8aef4ac63b7dec::t_e29a4b254bcc0b 191-192
+ai-trends/model-selection/model-comparison.md
+  s_8aef4ac63b7dec::t_e4ffbdb36af5fd 144
+  s_8aef4ac63b7dec::t_3c795dd086dc0c 238
+  s_8aef4ac63b7dec::t_a6e5f397d18956 230
+  s_8aef4ac63b7dec::t_e5b9409eda21c0 75
+  s_8aef4ac63b7dec::t_a54a77e76865eb 150
+  s_8aef4ac63b7dec::t_f43ef48c190098 66
+  s_8aef4ac63b7dec::t_27ee433c1fd7ae 7,9,13-22
+  s_8aef4ac63b7dec::t_544805846a7052 120
+  s_8aef4ac63b7dec::t_c52da2ba1a0624 93
+  s_8aef4ac63b7dec::t_e5eb977e5a1332 135
+  s_8aef4ac63b7dec::t_93512f47272494 146
+  s_8aef4ac63b7dec::t_22430396dad16a 81,83,85,87
+  s_8aef4ac63b7dec::t_48e9d4059a29b2 77
+claude-capabilities/api/structured-outputs.md
+  s_8aef4ac63b7dec::t_484aba40f2ea50 28,77-79,82,93
+  s_8aef4ac63b7dec::t_18bb78ef861548 3,19
+claude-capabilities/prompting/best-practices.md
+  s_8aef4ac63b7dec::t_e9c481dbcf5fb2 9
+  s_8aef4ac63b7dec::t_bbf19ae110b1a4 7,11-12
+  s_8aef4ac63b7dec::t_2ddf2ce5d52633 116,123-125
+  s_8aef4ac63b7dec::t_8631a3a661f5bc 164
+  s_8aef4ac63b7dec::t_9f492d07d3845b 34
+  s_8aef4ac63b7dec::t_23ebf61d6c29ce 258-259
+  s_8aef4ac63b7dec::t_6f67f912c92330 165
+claude-capabilities/models/haiku.md
+  s_8aef4ac63b7dec::t_476a9bbe2c959d 166,168,206
+AGENTS.md
+  s_8aef4ac63b7dec::t_063df512b7a253 113
+claude-capabilities/core/long-context.md
+  s_8aef4ac63b7dec::t_91e68e5d72eb76 231-233
+  s_8aef4ac63b7dec::t_151a7d8564bca7 247-248
+  s_8aef4ac63b7dec::t_8a4cb11d0a8c0b 3,7,9,11,14-15,20,26-27,30,34-39,41,43-47,51,53-60,63-64,66,70,72-75,78-81,86,111-112,123,150,166,186-187,192-193,199,216-220,222,224,226,228,238,240,244-246
+claude-capabilities/core/extended-thinking.md
+  s_8aef4ac63b7dec::t_82f82e2362a10d 276
+  s_8aef4ac63b7dec::t_c9a5787139067b 3,7,9,11,13-14,21,28,30-31,42,44,48,50,59,61-63,69-80,82-85,88,91-93,95-97,101-104,135,140-152,155-156,159,161,165,168,170,175-183,189,196-200,202,209,212,217,220,224,227,229-230,234-240,243-246,249,251,253,258,268-272,275
+claude-capabilities/prompting/system-prompts.md
+  s_8aef4ac63b7dec::t_151a7d8564bca7 50,270,296
+  s_8aef4ac63b7dec::t_a208bdd14b791b 7,9-11,14,38
+claude-capabilities/core/coding.md
+  s_8aef4ac63b7dec::t_002200a852f1a7 53
+  s_8aef4ac63b7dec::t_f24956791a6a62 165
+  s_8aef4ac63b7dec::t_6c8a60c51c5bf9 276
+  s_8aef4ac63b7dec::t_e13519d362c2fc 48
+  s_8aef4ac63b7dec::t_c13350583cb1db 7,9,11,13-14,26,28-29,36-37,50-51,106,113-114,131,154-161,167,169,175-176,183,193,202,215,217,219-223,265,267,272-274,277,282
+  s_8aef4ac63b7dec::t_7cb85a7cfdadb9 20
+claude-code/basics/cost-and-tokens.md
+  s_8aef4ac63b7dec::t_3683bf98ac3608 7,9-11,13-14,137-143,145-147
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3c7be5c24fcf8b5d9b4bd628f25e413fa6c4e686",
+  "prompts": {},
+  "sessions": {
+    "s_8aef4ac63b7dec": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36d1dab3-a85b-4125-8690-0d80af329bc4",
+        "model": "MiniMax-M3"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
