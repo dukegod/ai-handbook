@@ -1,0 +1,31 @@
+ai-trends/github-weekly/2026-W47/astryx.md
+  s_60282e27ec61df::t_bbe08d68a18c08 1-57
+ai-trends/github-weekly/2026-W47/index.md
+  s_60282e27ec61df::t_4def1db6462609 1-136
+ai-trends/github-weekly/2026-W47/mujoco.md
+  s_60282e27ec61df::t_969e33dabe2af6 1-59
+ai-trends/github-weekly/2026-W47/plannotator.md
+  s_60282e27ec61df::t_7a810ec61390dd 1-65
+ai-trends/github-weekly/2026-W47/taste-skill.md
+  s_60282e27ec61df::t_5bcf00a4be708b 1-65
+ai-trends/github-weekly/2026-W47/video-shotcraft.md
+  s_60282e27ec61df::t_4e0b8fb992db98 1-61
+ai-trends/github-weekly/index.md
+  s_60282e27ec61df::t_8e658df84b2392 7,34,36,44,61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "62ab26fadbc70325072bf4cc13b0d612c5d67c7c",
+  "prompts": {},
+  "sessions": {
+    "s_60282e27ec61df": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d7cb-5fac-7fc3-992b-40d4ab495fb2",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "dukegod <dukegod@users.noreply.github.com>"
+    }
+  }
+}
