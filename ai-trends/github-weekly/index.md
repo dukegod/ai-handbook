@@ -4,7 +4,7 @@ description: 每周一自动生成的 GitHub 榜单周报——本周热榜、�
 audience: intermediate
 difficulty: 🟡
 status: published
-lastUpdated: 2026-11-02
+lastUpdated: 2026-11-16
 ---
 
 # GitHub AI 动向
@@ -31,9 +31,9 @@ lastUpdated: 2026-11-02
 ```
 ai-trends/github-weekly/
 ├── index.md          ← 你在这里，按周倒序索引
-└── 2026-W46/
+└── 2026-W47/
     ├── index.md      ← 本周榜单全表 + 本周判断
-    ├── <repo>.md     ← 重点仓库深读（10 篇左右）
+    ├── <repo>.md     ← 重点仓库深读（10 篇）
     └── ...
 ```
 
@@ -41,6 +41,7 @@ ai-trends/github-weekly/
 
 | 周次 | 数据窗口 | 主题 |
 | --- | --- | --- |
+| [2026-W47](./2026-W47/index.md) | 2026-11-10 ~ 2026-11-16 | Meta 开源 Agent 设计系统，Google 补上无前情评审层，跨行业权威开始用 Skill 承载方法论 |
 | [2026-W46](./2026-W46/index.md) | 2026-11-03 ~ 2026-11-09 | NVIDIA 下场做语义层，Agent 从「单技能」转向「多 Agent 团队」 |
 | [2026-W45](./2026-W45/index.md) | 2026-10-26 ~ 2026-11-02 | Skill 生态吞掉周榜 13/16，JetBrains 亲自下场做 harness，DeepSeek 开源 Agent 授权模型 |
 | [2026-W44](./2026-W44/index.md) | 2026-10-20 ~ 2026-10-26 | harness 被拆成可自动优化的组件，插件层规范战先于协议开打 |
@@ -57,7 +58,7 @@ ai-trends/github-weekly/
 
 ## 下一步
 
-- 先读 [2026-W46 本期周报](./2026-W46/index.md)，再按需进深读
+- 先读 [2026-W47 本期周报](./2026-W47/index.md)，再按需进深读
 - 想追 A2A 协议本身 → 看 [A2A 协议行业深度调研](../industry/a2a-protocol.md)
 
 ## 如果你想
